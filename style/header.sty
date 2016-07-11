@@ -1,0 +1,140 @@
+%% Xheader by mKomm
+%% Use with book (standard) document class not KOMA!
+
+
+
+\usepackage[a4paper,total={12cm,20cm},centering,includehead,headheight=2mm]{geometry}
+\usepackage[nouppercase,headsepline]{scrpage2}
+\usepackage{ifthen}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\pagestyle{scrheadings}
+\usepackage{scrextend}
+\usepackage{lipsum}
+
+\usepackage{color}
+\usepackage{xcolor} %more advance color usage
+\definecolor{ucl}{rgb}{0.05,0.15,0.45}
+\definecolor{gray}{rgb}{0.65,0.65,0.65}
+
+\usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
+\usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
+\usepackage{url}
+\usepackage{breakurl}
+\usepackage{chngcntr} %fuer nummerierung der figures, tables
+\usepackage{microtype}
+\usepackage{tocloft}
+\usepackage{slashed}
+\usepackage{afterpage}
+\usepackage{subfloat}
+\usepackage{xr} %ref over documents
+\usepackage{axodraw4j}
+\usepackage{todonotes}
+\usepackage{nomencl} %list of abbreviations
+\makenomenclature
+
+\newcommand*{\numberfont}{\fontfamily{pnc}\selectfont}
+
+%% Setup TOC
+\renewcommand{\cfttoctitlefont}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
+\renewcommand{\cftchapfont}{\numberfont}
+\renewcommand{\cftsecfont}{}
+
+%% Setup HEADER/FOOTER
+\clearscrheadfoot
+\ihead{\headmark}
+\renewcommand{\chaptermark}[1]{\markboth{{\bf\color{gray}Chapter\ \thechapter.}\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{{\bf\color{gray}\thesection.}\ #1}}
+\ohead[\pagemark]{\pagemark}
+%\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
+
+\setheadsepline{0.8pt}[\color{gray}]
+
+%Vergroessere head&foot Breite
+%\setheadwidth[0.5cm]{text}
+%\setfootwidth[0.5cm]{text}
+%Headschrift
+\renewcommand*{\headfont}{\numberfont\small}
+%\renewcommand{\headrulewidth}{0.5pt}
+%alternativ: \renewcommand*{\headfont}{\normalfont\sffamily\scshape\large}
+%Footschrift
+%\renewcommand*{\footfont}{\numberfont}
+%Seitenzahlschrift
+\renewcommand*{\pnumfont}{\numberfont\small}
+\deftripstyle{ChapterStyle}{}{}{}{}{}{} %define style w/o headings
+\renewcommand*{\chapterpagestyle}{ChapterStyle} %apply style to chapters
+
+\KOMAoptions{cleardoublepage=scrheadings} %adds header to cleared double pages
+
+
+%% Setup Chapter Style
+\renewcommand*{\chapterformat}{
+    \fontsize{50}{0}\selectfont\color{gray}\numberfont\parbox[c][18mm][t]{3cm}{{\fontsize{16}{0}\selectfont Chapter}\\[0.12cm]\thechapter.}%{\color{gray}|}
+}
+\setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{1cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{1cm}}
+
+\renewcommand*{\sectionformat}{
+    \color{gray}\numberfont\thesection.\enspace%{\color{gray}|}
+}
+\setkomafont{section}{\normalfont\fontsize{14}{15}\selectfont\numberfont}
+
+\renewcommand*{\subsectionformat}{
+    \color{gray}\numberfont\thesubsection.\enspace%{\color{gray}|}
+}
+\setkomafont{subsection}{\normalfont\fontsize{12}{13}\selectfont\numberfont}
+
+\RedeclareSectionCommands[
+  beforeskip=1.0\baselineskip,
+  afterskip=0.1\baselineskip
+]{section,subsection,subsubsection}
+
+
+%strecke zeilenabstände im table
+\renewcommand{\arraystretch}{1.1}
+
+%Schicke Bild- und Tabellenbeschreibungen
+\usepackage[textfont=small,format=plain,indention=0.35cm,labelsep=colon]{caption} %use same as for parindent
+\setkomafont{caption}{\small}
+\setkomafont{captionlabel}{\small\numberfont}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}.}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}.}
+%abstand zwischen caption und figure,table
+\captionsetup[figure]{position=bottom,skip=0.2cm}
+\captionsetup[table]{position=top,skip=0.2cm}
+
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+
+%% change equation numbering style
+\def\tagform@#1{\maketag@@@{\ignorespaces{\numberfont(#1)\enspace}\unskip\@@italiccorr}} %kill parenthesis
+\renewcommand{\theequation}{\thechapter.\arabic{equation}.}
+
+
+%Sonst================================================
+\setlength{\jot}{0.4cm} %Vergroessert Zeilenabstand in align-Umgebung
+
+
+\newcommand{\setupTextStyle}{
+    %\setlength{\parindent}{0.35cm} %Absatzeinzug
+    \setlength{\parindent}{0.35cm} %Absatzeinzug
+    \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
+    \renewcommand{\baselinestretch}{1.1} \normalsize
+
+
+    %formel abstände 
+    \setlength{\abovedisplayskip}{-0.2cm plus 0.1cm}
+    \setlength{\abovedisplayshortskip}{-0.2cm plus 0.1cm}
+    \setlength{\belowdisplayskip}{-0.0cm plus 0.1cm}
+    \setlength{\belowdisplayshortskip}{-0.0cm plus 0.1cm}
+}
+
