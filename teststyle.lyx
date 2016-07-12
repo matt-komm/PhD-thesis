@@ -86,7 +86,7 @@ setupTextStyle
 
 \begin_layout Plain Layout
 
-
+%
 \backslash
 pagenumbering{roman}
 \backslash
@@ -109,7 +109,7 @@ cleardoublepage
 
 \begin_layout Plain Layout
 
-
+%
 \backslash
 pagenumbering{arabic}
 \backslash
@@ -1081,6 +1081,106 @@ status open
 
 
 \backslash
+cleardoublepage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+chaptername}{Appendix}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+thechapter{
+\backslash
+Alph{chapter}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{chapter}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{
+\backslash
+chaptername}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendixchapter{Additional Material}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lipsum[2]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendixchapter{Some plots}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 lipsum[2]
 \end_layout
 
@@ -1098,8 +1198,18 @@ status open
 
 \backslash
 cleardoublepage
+\end_layout
+
+\begin_layout Plain Layout
+
+%
 \backslash
 pagenumbering{Alph}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
 \backslash
 setcounter{page}{1}
 \end_layout

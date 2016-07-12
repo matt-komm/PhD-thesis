@@ -33,6 +33,7 @@
 \usepackage{slashed}
 \usepackage{afterpage}
 \usepackage{subfloat}
+\usepackage{setspace}
 \usepackage{xr} %ref over documents
 \usepackage{axodraw4j}
 \usepackage{todonotes}
@@ -46,10 +47,14 @@
 \renewcommand{\cftchapfont}{\numberfont}
 \renewcommand{\cftsecfont}{}
 
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+\newcommand{\appendixchapter}[1]{\tocless\chapter{#1}\addcontentsline{toc}{section}{\protect\numberline{\thechapter.}\rm#1}}
+
 %% Setup HEADER/FOOTER
 \clearscrheadfoot
 \ihead{\headmark}
-\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{gray}Chapter\ \thechapter.}\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{gray}\chaptername\ \thechapter.}\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{{\numberfont\color{gray}\thesection.}\ #1}}
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
@@ -60,22 +65,27 @@
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
 %Headschrift
-\renewcommand*{\headfont}{\rm\small}
+\renewcommand*{\headfont}{\numberfont\small\slshape}
 %\renewcommand{\headrulewidth}{0.5pt}
 %alternativ: \renewcommand*{\headfont}{\normalfont\sffamily\scshape\large}
 %Footschrift
 %\renewcommand*{\footfont}{\numberfont}
 %Seitenzahlschrift
-\renewcommand*{\pnumfont}{\numberfont\small}
+\renewcommand*{\pnumfont}{\numberfont\small\upshape}
+
 
 \renewcommand*\chapterpagestyle{empty} %removes header from all chapter pages
 \addtocontents{toc}{\protect\thispagestyle{empty}} %hack to remove also header from 1st TOC page
+
+%\deftripstyle{ChapterStyle}{}{}{\pagemark}{}{}{} %define style w/o headings
+%\renewcommand*\chapterpagestyle{ChapterStyle}
+%\addtocontents{toc}{\protect\thispagestyle{ChapterStyle}} %hack to remove also header from 1st TOC page
 
 \KOMAoptions{cleardoublepage=scrheadings} %adds header to cleared double pages
 
 
 %% Setup Chapter Style
-\renewcommand*{\chapterformat}{\fontsize{50}{0}\selectfont\color{gray}\numberfont\parbox[c][0mm][t]{3cm}{\vspace{-1cm}{\fontsize{16}{0}\selectfont Chapter}\\[0.2cm]\thechapter.}}
+\renewcommand*{\chapterformat}{\fontsize{50}{0}\selectfont\color{gray}\numberfont\parbox[c][0mm][t]{3cm}{\vspace{-1cm}{\fontsize{16}{0}\selectfont\chaptername}\\[0.2cm]\thechapter.}}
 \setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{2.5cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{1cm}}
@@ -99,9 +109,8 @@
 \renewcommand{\arraystretch}{1.1}
 
 %Schicke Bild- und Tabellenbeschreibungen
-\usepackage[textfont=small,format=plain,indention=0.0cm,labelsep=colon,width=.93\textwidth
-]{caption} %use same as for parindent
-\setkomafont{caption}{\small\linespread{1.05}}
+\usepackage[format=plain,indention=0.0cm,labelsep=colon,width=.93\textwidth]{caption} %use same as for parindent
+\setkomafont{caption}{\small}
 \setkomafont{captionlabel}{\small\numberfont}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
