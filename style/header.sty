@@ -61,33 +61,31 @@
 %\renewcommand*{\footfont}{\numberfont}
 %Seitenzahlschrift
 \renewcommand*{\pnumfont}{\numberfont\small}
-\deftripstyle{ChapterStyle}{}{}{}{}{}{} %define style w/o headings
-\renewcommand*{\chapterpagestyle}{ChapterStyle} %apply style to chapters
+
+\renewcommand*\chapterpagestyle{empty} %removes header from all chapter pages
+\addtocontents{toc}{\protect\thispagestyle{empty}} %hack to remove also header from 1st TOC page
 
 \KOMAoptions{cleardoublepage=scrheadings} %adds header to cleared double pages
 
 
 %% Setup Chapter Style
-\renewcommand*{\chapterformat}{
-    \fontsize{50}{0}\selectfont\color{gray}\numberfont\parbox[c][18mm][t]{3cm}{{\fontsize{16}{0}\selectfont Chapter}\\[0.12cm]\thechapter.}%{\color{gray}|}
-}
+\renewcommand*{\chapterformat}{\fontsize{50}{0}\selectfont\color{gray}\numberfont\parbox[c][0mm][t]{3cm}{\vspace{-1cm}{\fontsize{16}{0}\selectfont Chapter}\\[0.2cm]\thechapter.}}
 \setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
-\renewcommand*{\chapterheadstartvskip}{\vspace*{1cm}}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{2.5cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{1cm}}
 
-\renewcommand*{\sectionformat}{
-    \color{gray}\numberfont\thesection.\enspace%{\color{gray}|}
-}
+\renewcommand*{\sectionformat}{\color{gray}\numberfont\thesection.\ }
 \setkomafont{section}{\normalfont\fontsize{14}{15}\selectfont\numberfont}
 
-\renewcommand*{\subsectionformat}{
-    \color{gray}\numberfont\thesubsection.\enspace%{\color{gray}|}
-}
+\renewcommand*{\subsectionformat}{\color{gray}\numberfont\thesubsection.\ }
 \setkomafont{subsection}{\normalfont\fontsize{12}{13}\selectfont\numberfont}
 
+\renewcommand*{\subsubsectionformat}{\color{gray}\numberfont\thesubsubsection.\ }
+\setkomafont{subsubsection}{\normalfont\fontsize{11}{12}\selectfont\numberfont}
+
 \RedeclareSectionCommands[
-  beforeskip=1.0\baselineskip,
-  afterskip=0.1\baselineskip
+  beforeskip=0.8\baselineskip,
+  afterskip=0.01\baselineskip
 ]{section,subsection,subsubsection}
 
 
@@ -95,14 +93,18 @@
 \renewcommand{\arraystretch}{1.1}
 
 %Schicke Bild- und Tabellenbeschreibungen
-\usepackage[textfont=small,format=plain,indention=0.35cm,labelsep=colon]{caption} %use same as for parindent
-\setkomafont{caption}{\small}
+\usepackage[textfont=small,format=plain,indention=0.0cm,labelsep=colon,width=.93\textwidth
+]{caption} %use same as for parindent
+\setkomafont{caption}{\small\linespread{1.05}}
 \setkomafont{captionlabel}{\small\numberfont}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
-\captionsetup[figure]{position=bottom,skip=0.15cm}
-\captionsetup[table]{position=top,skip=0.15cm}
+\captionsetup[figure]{aboveskip=0.5\baselineskip,belowskip=0\baselineskip}
+\captionsetup[table]{aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
+\setlength\floatsep{1.\baselineskip plus 3pt minus 2pt}
+\setlength\textfloatsep{1.\baselineskip plus 3pt minus 2pt}
+\setlength\intextsep{1.\baselineskip plus 3pt minus 2pt}
 
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
@@ -128,7 +130,7 @@
     %\setlength{\parindent}{0.35cm} %Absatzeinzug
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
-    \renewcommand{\baselinestretch}{1.1} \normalsize
+    \renewcommand{\baselinestretch}{1.1}\normalsize
 
 
     %formel abstände 
