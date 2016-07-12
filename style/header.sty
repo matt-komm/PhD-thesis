@@ -43,8 +43,8 @@
 %% Setup HEADER/FOOTER
 \clearscrheadfoot
 \ihead{\headmark}
-\renewcommand{\chaptermark}[1]{\markboth{{\bf\color{gray}Chapter\ \thechapter.}\ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{{\bf\color{gray}\thesection.}\ #1}}
+\renewcommand{\chaptermark}[1]{\markboth{{\color{gray}Chapter\ \thechapter.}\ \rm#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{{\color{gray}\thesection.}\ \rm#1}}
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
@@ -98,11 +98,11 @@
 \usepackage[textfont=small,format=plain,indention=0.35cm,labelsep=colon]{caption} %use same as for parindent
 \setkomafont{caption}{\small}
 \setkomafont{captionlabel}{\small\numberfont}
-\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}.}
-\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}.}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
-\captionsetup[figure]{position=bottom,skip=0.2cm}
-\captionsetup[table]{position=top,skip=0.2cm}
+\captionsetup[figure]{position=bottom,skip=0.15cm}
+\captionsetup[table]{position=top,skip=0.15cm}
 
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
@@ -116,8 +116,8 @@
 {\box0\lower0.4pt\box2}}
 
 %% change equation numbering style
-\def\tagform@#1{\maketag@@@{\ignorespaces{\numberfont(#1)\enspace}\unskip\@@italiccorr}} %kill parenthesis
-\renewcommand{\theequation}{\thechapter.\arabic{equation}.}
+\def\tagform@#1{\maketag@@@{\ignorespaces{\small\numberfont(#1)\enspace}\unskip\@@italiccorr}} %kill parenthesis
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
 
 
 %Sonst================================================
@@ -126,7 +126,7 @@
 
 \newcommand{\setupTextStyle}{
     %\setlength{\parindent}{0.35cm} %Absatzeinzug
-    \setlength{\parindent}{0.35cm} %Absatzeinzug
+    \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
     \renewcommand{\baselinestretch}{1.1} \normalsize
 
