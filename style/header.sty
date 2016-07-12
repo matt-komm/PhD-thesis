@@ -6,8 +6,14 @@
 \usepackage[a4paper,total={12cm,20cm},centering,includehead,headheight=2mm]{geometry}
 \usepackage[nouppercase,headsepline]{scrpage2}
 \usepackage{ifthen}
+
+%\usepackage{lmodern}
+\usepackage{mathpazo}
+\usepackage[scaled]{helvet}
+\usepackage{courier}
+
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
+
 \pagestyle{scrheadings}
 \usepackage{scrextend}
 \usepackage{lipsum}
@@ -43,8 +49,8 @@
 %% Setup HEADER/FOOTER
 \clearscrheadfoot
 \ihead{\headmark}
-\renewcommand{\chaptermark}[1]{\markboth{{\color{gray}Chapter\ \thechapter.}\ \rm#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{{\color{gray}\thesection.}\ \rm#1}}
+\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{gray}Chapter\ \thechapter.}\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{{\numberfont\color{gray}\thesection.}\ #1}}
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
@@ -54,7 +60,7 @@
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
 %Headschrift
-\renewcommand*{\headfont}{\numberfont\small}
+\renewcommand*{\headfont}{\rm\small}
 %\renewcommand{\headrulewidth}{0.5pt}
 %alternativ: \renewcommand*{\headfont}{\normalfont\sffamily\scshape\large}
 %Footschrift

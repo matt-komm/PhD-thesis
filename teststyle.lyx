@@ -12,7 +12,7 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman palatino
+\font_roman default
 \font_sans default
 \font_typewriter default
 \font_math auto
@@ -203,7 +203,7 @@ lipsum[1]
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\sqrt{7\,TeV}=100\,{\rm GeV}
+\sqrt{7\,TeV}=100\,{\rm GeV}+\sqrt{\frac{\sum_{i}\Big(\mathcal{A}-\vec{x}^{2}\Big)_{i}^{\dagger}}{x-y^{3}}}
 \end{equation}
 
 \end_inset
