@@ -1,11 +1,14 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-
-
-\usepackage[a4paper,total={12cm,20cm},centering,includehead,headheight=2mm]{geometry}
+\usepackage[a4paper,total={12cm,20cm},centering,includehead]{geometry}
 \usepackage[nouppercase,headsepline]{scrpage2}
 \usepackage{ifthen}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amsmath}
+
 
 %\usepackage{lmodern}
 \usepackage{mathpazo}
@@ -36,6 +39,8 @@
 \usepackage{setspace}
 \usepackage{xr} %ref over documents
 \usepackage{axodraw4j}
+\usepackage[colorlinks=false,    
+    hidelinks=true]{hyperref}
 \usepackage{todonotes}
 \usepackage{nomencl} %list of abbreviations
 \makenomenclature
@@ -43,6 +48,8 @@
 \newcommand*{\numberfont}{\fontfamily{pnc}\selectfont}
 
 %% Setup TOC
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 \renewcommand{\cfttoctitlefont}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
 \renewcommand{\cftchapfont}{\numberfont}
 \renewcommand{\cftsecfont}{}
@@ -59,6 +66,7 @@
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
+\setlength{\headheight}{1.15\baselineskip}
 \setheadsepline{0.8pt}[\color{gray}]
 
 %Vergroessere head&foot Breite
@@ -66,6 +74,7 @@
 %\setfootwidth[0.5cm]{text}
 %Headschrift
 \renewcommand*{\headfont}{\numberfont\small\slshape}
+%\renewcommand*{\headfont}{\numberfont\small}
 %\renewcommand{\headrulewidth}{0.5pt}
 %alternativ: \renewcommand*{\headfont}{\normalfont\sffamily\scshape\large}
 %Footschrift
@@ -149,8 +158,8 @@
 
 
     %formel abstände 
-    \setlength{\abovedisplayskip}{-0.2cm plus 0.1cm}
-    \setlength{\abovedisplayshortskip}{-0.2cm plus 0.1cm}
+    \setlength{\abovedisplayskip}{-1.\parskip plus 0.1cm}
+    \setlength{\abovedisplayshortskip}{-1.\parskip plus 0.1cm}
     \setlength{\belowdisplayskip}{-0.0cm plus 0.1cm}
     \setlength{\belowdisplayshortskip}{-0.0cm plus 0.1cm}
 }
