@@ -20,11 +20,11 @@
 \pagestyle{scrheadings}
 \usepackage{scrextend}
 \usepackage{lipsum}
-
 \usepackage{color}
 \usepackage{xcolor} %more advance color usage
 \definecolor{ucl}{rgb}{0.05,0.15,0.45}
 \definecolor{gray}{rgb}{0.65,0.65,0.65}
+%\definecolor{gray}{rgb}{0.0,0.0,0.0}
 
 \usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
 \usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
@@ -66,8 +66,8 @@
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
-\setlength{\headheight}{1.15\baselineskip}
-\setheadsepline{0.8pt}[\color{gray}]
+\setlength{\headheight}{0.5\baselineskip}
+%\setheadsepline{0.8pt}[\color{gray}]
 
 %Vergroessere head&foot Breite
 %\setheadwidth[0.5cm]{text}
@@ -158,9 +158,9 @@
 
 
     %formel abstände 
-    \setlength{\abovedisplayskip}{-1.\parskip plus 0.1cm}
-    \setlength{\abovedisplayshortskip}{-1.\parskip plus 0.1cm}
-    \setlength{\belowdisplayskip}{-0.0cm plus 0.1cm}
-    \setlength{\belowdisplayshortskip}{-0.0cm plus 0.1cm}
+    \setlength{\abovedisplayskip}{-2.\parskip plus 0.1cm}
+    \setlength{\abovedisplayshortskip}{-2.\parskip plus 0.1cm}
+    \setlength{\belowdisplayskip}{0.1cm plus 0.1cm}
+    \setlength{\belowdisplayshortskip}{0.1cm plus 0.1cm}
 }
 
