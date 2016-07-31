@@ -24,7 +24,6 @@
 \usepackage{xcolor} %more advance color usage
 \definecolor{ucl}{rgb}{0.05,0.15,0.45}
 \definecolor{gray}{rgb}{0.65,0.65,0.65}
-%\definecolor{gray}{rgb}{0.0,0.0,0.0}
 
 \usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
 \usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
@@ -42,10 +41,12 @@
 \usepackage[colorlinks=false,    
     hidelinks=true]{hyperref}
 \usepackage{todonotes}
+\usepackage{perpage}
 \usepackage{nomencl} %list of abbreviations
 \makenomenclature
 
-\newcommand*{\numberfont}{\fontfamily{pnc}\selectfont}
+
+\newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
 
 %% Setup TOC
 \setcounter{secnumdepth}{3}
@@ -67,8 +68,7 @@
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
 \setlength{\headheight}{0.5\baselineskip}
-%\setheadsepline{0.8pt}[\color{gray}]
-
+\setheadsepline{0.6pt}[\color{gray}]
 %Vergroessere head&foot Breite
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
@@ -145,6 +145,17 @@
 \def\tagform@#1{\maketag@@@{\ignorespaces{\small\numberfont(#1)\enspace}\unskip\@@italiccorr}} %kill parenthesis
 \renewcommand{\theequation}{\thechapter.\arabic{equation}.}
 
+
+%% footnote
+\def\@fnsymbol#1{\ifcase#1\or *\or **\or ***\or
+   ****\or *****\or \else\@ctrerr\fi} %define alternative numbering using *, **, ***, ...
+\renewcommand{\thefootnote}{\numberfont\arabic{footnote}} %style
+\MakePerPage{footnote} %reset counter per new page
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  {\color{gray}\hrule width 0.3\textwidth height 0.6pt}
+  \kern 2pt
+}
 
 %Sonst================================================
 \setlength{\jot}{0.4cm} %Vergroessert Zeilenabstand in align-Umgebung
