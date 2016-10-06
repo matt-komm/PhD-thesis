@@ -11,11 +11,12 @@
 
 
 %\usepackage{lmodern}
-\usepackage{mathpazo}
-%\usepackage{newtxtext,newtxmath}
+%\usepackage{mathpazo}
+\usepackage{newtxtext,newtxmath}
+\usepackage{libertine}
 \usepackage[scaled]{helvet}
 %\usepackage{courier}
-\usepackage{inconsolata}
+\usepackage[scaled=0.9]{inconsolata}
 
 \pagestyle{scrheadings}
 \usepackage{scrextend}
@@ -144,7 +145,7 @@
 \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
 \advance\dimen0-0.2\ht0
 \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
-{\box0\lower0.4pt\box2}}
+{\box0\lower0.6pt\box2}}
 
 %% change equation numbering style
 \def\tagform@#1{\maketag@@@{\ignorespaces{\small\numberfont(#1)\enspace}\unskip\@@italiccorr}} %kill parenthesis
@@ -168,7 +169,6 @@
       {\textsuperscript{\thefootnotemark}\,} %def mark
       
 %% Lists
-
 \setlist[itemize,enumerate]{leftmargin=0.05\textwidth,itemsep=0.5\parskip,parsep=0pt,partopsep=0pt, topsep=0.0\parskip}
 
 %Sonst================================================
