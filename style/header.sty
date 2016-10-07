@@ -11,10 +11,19 @@
 
 
 %\usepackage{lmodern}
+
 %\usepackage{mathpazo}
+
+%\usepackage{mathpple}
+
 \usepackage{newtxtext,newtxmath}
-\usepackage{libertine}
-\usepackage[scaled]{helvet}
+
+%\usepackage{mbtimes}
+
+%\usepackage{libertine}
+
+
+%\usepackage[scaled]{helvet}
 %\usepackage{courier}
 \usepackage[scaled=0.9]{inconsolata}
 
@@ -46,6 +55,7 @@
 \usepackage{perpage}
 \usepackage{nomencl} %list of abbreviations
 \makenomenclature
+
 
 
 \newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
@@ -88,10 +98,6 @@
 \renewcommand*\chapterpagestyle{empty} %removes header from all chapter pages
 \addtocontents{toc}{\protect\thispagestyle{empty}} %hack to remove also header from 1st TOC page
 
-%\deftripstyle{ChapterStyle}{}{}{\pagemark}{}{}{} %define style w/o headings
-%\renewcommand*\chapterpagestyle{ChapterStyle}
-%\addtocontents{toc}{\protect\thispagestyle{ChapterStyle}} %hack to remove also header from 1st TOC page
-
 \KOMAoptions{cleardoublepage=scrheadings} %adds header to cleared double pages
 
 
@@ -100,10 +106,10 @@
 
 
 %% Setup Chapter Style
-\renewcommand*{\chapterformat}{\fontsize{50}{0}\selectfont\color{gray}\numberfont\parbox[c][0mm][t]{3cm}{\vspace{-1cm}{\fontsize{16}{0}\selectfont\chaptername}\\[0.2cm]\thechapter.}}
+\renewcommand*{\chapterformat}{\fontsize{50}{0}\selectfont\color{gray}\numberfont\parbox[c][0mm][t]{\widthof{\fontsize{16}{0}\selectfont\lsstyle\chaptername\hspace{0.35cm}}}{\vspace{-1cm}{\fontsize{16}{0}\selectfont\lsstyle\chaptername}\\[0.2cm]\thechapter.}}
 \setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{2.5cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{1cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.7cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
 \setkomafont{section}{\normalfont\fontsize{14}{14}\selectfont\numberfont}
@@ -126,7 +132,7 @@
 %Schicke Bild- und Tabellenbeschreibungen
 \usepackage[format=plain,indention=0.0cm,labelsep=colon,width=.93\textwidth]{caption} %use same as for parindent
 \setkomafont{caption}{\small}
-\setkomafont{captionlabel}{\small\numberfont}
+\setkomafont{captionlabel}{\numberfont\small}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
