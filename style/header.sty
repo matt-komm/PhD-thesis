@@ -5,10 +5,12 @@
 \usepackage[nouppercase,headsepline]{scrpage2}
 \usepackage{ifthen}
 
-\usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
+
 \usepackage{amsmath}
 
+\usepackage{calligra}
+
+\usepackage{miama}
 
 %\usepackage{lmodern}
 
@@ -26,6 +28,9 @@
 %\usepackage[scaled]{helvet}
 %\usepackage{courier}
 \usepackage[scaled=0.9]{inconsolata}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
 
 \pagestyle{scrheadings}
 \usepackage{scrextend}
@@ -106,10 +111,10 @@
 
 
 %% Setup Chapter Style
-\renewcommand*{\chapterformat}{\fontsize{50}{0}\selectfont\color{gray}\numberfont\parbox[c][0mm][t]{\widthof{\fontsize{16}{0}\selectfont\lsstyle\chaptername\hspace{0.35cm}}}{\vspace{-1cm}{\fontsize{16}{0}\selectfont\lsstyle\chaptername}\\[0.2cm]\thechapter.}}
+\renewcommand*{\chapterformat}{\fontsize{50}{0}\color{gray}\numberfont\parbox[c][15mm][b]{3.cm}{\vspace{0.0cm}{\fmmfamily\fontsize{56}{0}\selectfont\chaptername}\\[0.4cm]\hspace*{0.35cm}\sl\thechapter.}}
 \setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
-\renewcommand*{\chapterheadstartvskip}{\vspace*{2.5cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{0.7cm}}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{2.0cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
 \setkomafont{section}{\normalfont\fontsize{14}{14}\selectfont\numberfont}
