@@ -46,7 +46,7 @@
 \usepackage{url}
 \usepackage{breakurl}
 \usepackage{chngcntr} %fuer nummerierung der figures, tables
-\usepackage{microtype}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 \usepackage{tocloft}
 \usepackage{slashed}
 \usepackage{afterpage}
@@ -59,6 +59,7 @@
 \usepackage{todonotes}
 \usepackage{perpage}
 \usepackage{nomencl} %list of abbreviations
+\usepackage{stringstrings} %substrings
 \makenomenclature
 
 
@@ -111,7 +112,7 @@
 
 
 %% Setup Chapter Style
-\renewcommand*{\chapterformat}{\fontsize{50}{0}\color{gray}\numberfont\parbox[c][15mm][b]{3.cm}{\vspace{0.0cm}{\fmmfamily\fontsize{56}{0}\selectfont\chaptername}\\[0.4cm]\hspace*{0.35cm}\sl\thechapter.}}
+\renewcommand*{\chapterformat}{\fontsize{50}{0}\color{gray}\parbox[c][15mm][b]{3.cm}{\sl\lsstyle\vspace{0.0cm}{\fontsize{28}{0}\selectfont\substring{\chaptername}{1}{1}\fontsize{22}{0}\selectfont\substring{\chaptername}{2}{$}}\\[0.4cm]\hspace*{0.35cm}\rm\thechapter.}}
 \setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{2.0cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
