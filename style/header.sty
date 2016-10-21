@@ -2,7 +2,8 @@
 %% Use with book (standard) document class not KOMA!
 
 \usepackage[a4paper,total={12cm,20cm},centering,includehead]{geometry}
-\usepackage[nouppercase,headsepline]{scrpage2}
+%\usepackage[nouppercase,headsepline]{scrpage2}
+\usepackage[nouppercase]{scrpage2}
 \usepackage{ifthen}
 
 
@@ -86,7 +87,7 @@
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
 \setlength{\headheight}{0.5\baselineskip}
-\setheadsepline{0.6pt}[\color{gray}]
+%\setheadsepline{0.6pt}[\color{gray}]
 %Vergroessere head&foot Breite
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
@@ -118,13 +119,13 @@
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
-\setkomafont{section}{\normalfont\fontsize{14}{14}\selectfont\numberfont}
+\setkomafont{section}{\normalfont\fontsize{14}{0}\selectfont\numberfont}
 
 \renewcommand*{\subsectionformat}{\numberfont\thesubsection.\ }
-\setkomafont{subsection}{\normalfont\fontsize{12}{12}\selectfont\numberfont}
+\setkomafont{subsection}{\normalfont\fontsize{12}{0}\selectfont\numberfont}
 
 \renewcommand*{\subsubsectionformat}{\numberfont\thesubsubsection.\ }
-\setkomafont{subsubsection}{\normalfont\fontsize{11}{11}\selectfont\numberfont}
+\setkomafont{subsubsection}{\normalfont\fontsize{11}{0}\selectfont\numberfont}
 
 \RedeclareSectionCommands[
   beforeskip=0.8\baselineskip,
@@ -184,20 +185,20 @@
 \setlist[itemize,enumerate]{leftmargin=0.05\textwidth,itemsep=0.5\parskip,parsep=0pt,partopsep=0pt, topsep=0.0\parskip}
 
 %Sonst================================================
-\setlength{\jot}{0.4cm} %Vergroessert Zeilenabstand in align-Umgebung
+\setlength{\jot}{1.2ex plus 0.5ex minus 0.2ex} %Vergroessert Zeilenabstand in align-Umgebung
 
 
 \newcommand{\setupTextStyle}{
     %\setlength{\parindent}{0.35cm} %Absatzeinzug
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
-    \renewcommand{\baselinestretch}{1.1}\normalsize
+    \renewcommand{\baselinestretch}{1.05}\normalsize
 
 
     %formel abstände 
-    \setlength{\abovedisplayskip}{-2.\parskip plus 0.1cm}
-    \setlength{\abovedisplayshortskip}{-2.\parskip plus 0.1cm}
-    \setlength{\belowdisplayskip}{0.1cm plus 0.1cm}
-    \setlength{\belowdisplayshortskip}{0.1cm plus 0.1cm}
+    \setlength{\abovedisplayskip}{-1.5\parskip plus 0.3\parskip}
+    \setlength{\abovedisplayshortskip}{-1.5\parskip plus 0.3\parskip}
+    \setlength{\belowdisplayskip}{0.8\parskip plus 0.3\parskip}
+    \setlength{\belowdisplayshortskip}{0.8\parskip plus 0.3\parskip}
 }
 
