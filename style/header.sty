@@ -15,11 +15,11 @@
 
 %\usepackage{lmodern}
 
-%\usepackage{mathpazo}
+\usepackage{mathpazo}
 
 %\usepackage{mathpple}
 
-\usepackage{newtxtext,newtxmath}
+%\usepackage{newtxtext,newtxmath}
 
 %\usepackage{mbtimes}
 
@@ -71,7 +71,7 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \renewcommand{\cfttoctitlefont}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
-\renewcommand{\cftchapfont}{\numberfont}
+\renewcommand{\cftchapfont}{\fontsize{12}{0}\numberfont}
 \renewcommand{\cftsecfont}{}
 
 \newcommand{\nocontentsline}[3]{}
@@ -86,13 +86,13 @@
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
-\setlength{\headheight}{0.5\baselineskip}
+\setlength{\headheight}{0.01\baselineskip}
 %\setheadsepline{0.6pt}[\color{gray}]
 %Vergroessere head&foot Breite
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
 %Headschrift
-\renewcommand*{\headfont}{\numberfont\small\slshape}
+\renewcommand*{\headfont}{\small\slshape}
 %\renewcommand*{\headfont}{\numberfont\small}
 %\renewcommand{\headrulewidth}{0.5pt}
 %alternativ: \renewcommand*{\headfont}{\normalfont\sffamily\scshape\large}
@@ -113,7 +113,7 @@
 
 
 %% Setup Chapter Style
-\renewcommand*{\chapterformat}{\fontsize{50}{0}\color{gray}\parbox[c][15mm][b]{3.cm}{\sl\lsstyle\vspace{0.0cm}{\fontsize{28}{0}\selectfont\substring{\chaptername}{1}{1}\fontsize{22}{0}\selectfont\substring{\chaptername}{2}{$}}\\[0.4cm]\hspace*{0.35cm}\rm\thechapter.}}
+\renewcommand*{\chapterformat}{\fontsize{50}{0}\color{gray}\parbox[c][15mm][b]{3.cm}{\vspace{0.0cm}{\rm\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}\fontsize{16}{0}\selectfont\substring{\chaptername}{2}{$}}\\[0.4cm]\hspace*{0.35cm}\numberfont\thechapter.}}
 \setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{2.0cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
@@ -158,7 +158,7 @@
 \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
 \advance\dimen0-0.2\ht0
 \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
-{\box0\lower0.6pt\box2}}
+{\box0\lower0.43pt\box2}}
 
 %% change equation numbering style
 \def\tagform@#1{\maketag@@@{\ignorespaces{\small\numberfont(#1)\enspace}\unskip\@@italiccorr}} %kill parenthesis
@@ -192,7 +192,7 @@
     %\setlength{\parindent}{0.35cm} %Absatzeinzug
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
-    \renewcommand{\baselinestretch}{1.05}\normalsize
+    \renewcommand{\baselinestretch}{1.07}\normalsize
 
 
     %formel abstände 
