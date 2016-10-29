@@ -274,7 +274,7 @@ FUNCTION {format.names}
   numnames 'namesleft :=
   { namesleft #0 > }
   {
-    namesleft #4 >
+    namesleft #1 >
     {
       s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
       t * " {et~al.}"
@@ -372,7 +372,7 @@ FUNCTION {format.editors}
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { "``" title * "''," * }
+    { "``"  title  * "''," * }
   if$
 }
 
@@ -526,7 +526,7 @@ FUNCTION {format.date.paren}
 FUNCTION {format.collaboration}
 { collaboration empty$
     { "" }
-    { "{" collaboration * "}" * " Collaboration" * }
+    { "{" collaboration * "}" * }
   if$
 }
 
@@ -739,11 +739,11 @@ FUNCTION {format.crossref.editor}
 { editor #1 "{vv~}{ll}" format.name$
   editor num.names$ duplicate$
   #2 >
-    { pop$ " {et.~al.}" * }
+    { pop$ " {et~al.}" * }
     { #2 <
     'skip$
     { editor #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
-        { " {et.~al.}" * }
+        { " {et~al.}" * }
         { " and " * editor #2 "{vv~}{ll}" format.name$ * }
       if$
     }

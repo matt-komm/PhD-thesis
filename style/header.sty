@@ -30,7 +30,13 @@
 %\usepackage{courier}
 \usepackage[scaled=0.9]{inconsolata}
 
-\usepackage[T1]{fontenc}
+\usepackage{humanist}
+\usepackage{auncial}
+\usepackage{pbsi}
+\usepackage{aurical}
+\usepackage{sqrcaps}
+
+\usepackage[B1,OT1,T1]{fontenc}
 \usepackage[latin9]{inputenc}
 
 \pagestyle{scrheadings}
@@ -45,9 +51,10 @@
 \usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
 \usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
 \usepackage{url}
-\usepackage{breakurl}
+
 \usepackage{chngcntr} %fuer nummerierung der figures, tables
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=15,shrink=15]{microtype}
+\SetTracking{encoding={*}, shape=sc}{0}
 \usepackage{tocloft}
 \usepackage{slashed}
 \usepackage{afterpage}
@@ -55,23 +62,24 @@
 \usepackage{setspace}
 \usepackage{xr} %ref over documents
 \usepackage{axodraw4j}
-\usepackage[colorlinks=false,    
-    hidelinks=true]{hyperref}
+\usepackage[colorlinks=false,hidelinks=true]{hyperref}
+\usepackage{breakurl}
 \usepackage{todonotes}
 \usepackage{perpage}
 \usepackage{nomencl} %list of abbreviations
 \usepackage{stringstrings} %substrings
+
+
+
 \makenomenclature
-
-
 
 \newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
 
 %% Setup TOC
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
-\renewcommand{\cfttoctitlefont}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
-\renewcommand{\cftchapfont}{\fontsize{12}{0}\numberfont}
+\renewcommand{\cfttoctitlefont}{\fontsize{18}{20}\numberfont}
+\renewcommand{\cftchapfont}{\numberfont}
 \renewcommand{\cftsecfont}{}
 
 \newcommand{\nocontentsline}[3]{}
@@ -86,13 +94,13 @@
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
-\setlength{\headheight}{0.01\baselineskip}
+\setlength{\headheight}{-1.\parskip}
 %\setheadsepline{0.6pt}[\color{gray}]
 %Vergroessere head&foot Breite
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
 %Headschrift
-\renewcommand*{\headfont}{\small\slshape}
+\renewcommand*{\headfont}{\numberfont\small\slshape}
 %\renewcommand*{\headfont}{\numberfont\small}
 %\renewcommand{\headrulewidth}{0.5pt}
 %alternativ: \renewcommand*{\headfont}{\normalfont\sffamily\scshape\large}
@@ -113,7 +121,12 @@
 
 
 %% Setup Chapter Style
-\renewcommand*{\chapterformat}{\fontsize{50}{0}\color{gray}\parbox[c][15mm][b]{3.cm}{\vspace{0.0cm}{\rm\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}\fontsize{16}{0}\selectfont\substring{\chaptername}{2}{$}}\\[0.4cm]\hspace*{0.35cm}\numberfont\thechapter.}}
+\renewcommand*{\chapterformat}{
+    \parbox[c][0mm][c]{2.8cm}{\vspace*{-2.5cm}{
+        \parbox[t][15mm][b]{\widthof{\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[t][15mm][b]{5cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}%\vspace*{-0.cm}\\\rule{\widthof{\substring{\chaptername}{2}{$}}}{0.8pt}}
+    }\\[0.7cm]
+    \hspace*{0.45cm}\fontsize{46}{0}\selectfont\textrm{\thechapter.}}
+}
 \setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{2.0cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
