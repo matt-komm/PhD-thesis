@@ -94,8 +94,8 @@
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
-\setlength{\headheight}{-1.\parskip}
-%\setheadsepline{0.6pt}[\color{gray}]
+\setlength{\headheight}{0.1cm}
+\setheadsepline{0.5pt}[\color{gray}]
 %Vergroessere head&foot Breite
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
@@ -120,16 +120,21 @@
 \newenvironment{clearedpagestyle}{\clearpage\pagestyle{empty}\KOMAoptions{cleardoublepage=empty}}{\clearpage\pagestyle{scrheadings}\KOMAoptions{cleardoublepage=scrheadings}}
 
 
-%% Setup Chapter Style
-\renewcommand*{\chapterformat}{
-    \parbox[c][0mm][c]{2.8cm}{\vspace*{-2.5cm}{
-        \parbox[t][15mm][b]{\widthof{\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[t][15mm][b]{5cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}%\vspace*{-0.cm}\\\rule{\widthof{\substring{\chaptername}{2}{$}}}{0.8pt}}
-    }\\[0.7cm]
-    \hspace*{0.45cm}\fontsize{46}{0}\selectfont\textrm{\thechapter.}}
+\def\@makechapterhead#1{
+     \parbox[t][][t]{0.99\textwidth}{
+        \chapterheadstartvskip
+        \parbox[t][][t]{\widthof{\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[t][][t]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
+        \\[0.15cm]
+        {\color{gray}\rule{\textwidth}{0.5pt}}
+        \\[0.35cm]
+        \parbox[c][][c]{0.2\textwidth}{\fontsize{50}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.79\textwidth}{\vspace{0.15cm}\fontsize{18}{20}\selectfont\numberfont #1}
+        \chapterheadendvskip
+    }
 }
-\setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
-\renewcommand*{\chapterheadstartvskip}{\vspace*{2.0cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
+
+\setkomafont{chapter}{\fontsize{18}{20}\selectfont\numberfont}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{1.0cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.6cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
 \setkomafont{section}{\normalfont\fontsize{14}{0}\selectfont\numberfont}
@@ -186,7 +191,7 @@
 \MakePerPage{footnote} %reset counter per new page
 \renewcommand{\footnoterule}{%
   \kern \parskip
-  {\color{gray}\hrule width 0.35\textwidth height 0.6pt}
+  {\color{gray}\hrule width 0.35\textwidth height 0.5pt}
   \kern 2pt
 }
 \deffootnote[1.75em] %mark width - allows 4 **** to be placed
@@ -202,10 +207,9 @@
 
 
 \newcommand{\setupTextStyle}{
-    %\setlength{\parindent}{0.35cm} %Absatzeinzug
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
-    \renewcommand{\baselinestretch}{1.07}\normalsize
+    \renewcommand{\baselinestretch}{1.05}\normalsize
 
 
     %formel abstände 
