@@ -123,16 +123,16 @@
 \def\@makechapterhead#1{
      \parbox[t][][t]{0.99\textwidth}{
         \chapterheadstartvskip
-        \parbox[t][][t]{\widthof{\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{22}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[t][][t]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
-        \\[0.15cm]
+        \parbox[b][][b]{\widthof{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
+        \\[0.05cm]
         {\color{gray}\rule{\textwidth}{0.5pt}}
-        \\[0.35cm]
-        \parbox[c][][c]{0.2\textwidth}{\fontsize{50}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.79\textwidth}{\vspace{0.15cm}\fontsize{18}{20}\selectfont\numberfont #1}
+        \\[0.55cm]
+        \hspace*{0.05\textwidth}\parbox[c][][c]{0.18\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\normalfont\fontsize{16}{18}\selectfont\numberfont\numberfont #1}
         \chapterheadendvskip
     }
 }
 
-\setkomafont{chapter}{\fontsize{18}{20}\selectfont\numberfont}
+\setkomafont{chapter}{\normalfont\fontsize{16}{18}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{1.0cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.6cm}}
 
