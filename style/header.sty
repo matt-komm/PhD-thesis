@@ -1,7 +1,7 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-\usepackage[a4paper,total={12cm,20cm},centering,includehead]{geometry}
+\usepackage[a4paper,total={12cm,20cm},headsep=8pt,headheight=12pt,footskip=8pt,centering,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \usepackage[nouppercase]{scrpage2}
 \usepackage{ifthen}
@@ -53,7 +53,7 @@
 \usepackage{url}
 
 \usepackage{chngcntr} %fuer nummerierung der figures, tables
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=15,shrink=15]{microtype}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=nonfrench,factor=1100,stretch=15,shrink=15]{microtype}
 \SetTracking{encoding={*}, shape=sc}{0}
 \usepackage{tocloft}
 \usepackage{slashed}
@@ -68,6 +68,10 @@
 \usepackage{perpage}
 \usepackage{nomencl} %list of abbreviations
 \usepackage{stringstrings} %substrings
+
+\usepackage{lineno} %linenumbers
+\renewcommand\linenumberfont{\color{gray}\normalfont\footnotesize\sffamily}
+\linenumbers
 
 
 
@@ -94,8 +98,7 @@
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
-\setlength{\headheight}{0.1cm}
-\setheadsepline{0.5pt}[\color{gray}]
+\setheadsepline{0.6pt}[\color{gray}]
 %Vergroessere head&foot Breite
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
@@ -125,19 +128,19 @@
         \chapterheadstartvskip
         \parbox[b][][b]{\widthof{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
         \\[0.05cm]
-        {\color{gray}\rule{\textwidth}{0.5pt}}
+        {\color{gray}\rule{\textwidth}{0.6pt}}
         \\[0.55cm]
-        \hspace*{0.05\textwidth}\parbox[c][][c]{0.18\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\normalfont\fontsize{16}{18}\selectfont\numberfont\numberfont #1}
+        \hspace*{0.05\textwidth}\parbox[c][][c]{0.18\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
         \chapterheadendvskip
     }
 }
 
-\setkomafont{chapter}{\normalfont\fontsize{16}{18}\selectfont\numberfont}
-\renewcommand*{\chapterheadstartvskip}{\vspace*{1.0cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{0.6cm}}
+\setkomafont{chapter}{\normalfont\fontsize{15}{17}\selectfont\numberfont}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
-\setkomafont{section}{\normalfont\fontsize{14}{0}\selectfont\numberfont}
+\setkomafont{section}{\normalfont\fontsize{13}{0}\selectfont\numberfont}
 
 \renewcommand*{\subsectionformat}{\numberfont\thesubsection.\ }
 \setkomafont{subsection}{\normalfont\fontsize{12}{0}\selectfont\numberfont}
@@ -147,8 +150,9 @@
 
 \RedeclareSectionCommands[
   beforeskip=0.8\baselineskip,
-  afterskip=0.01\baselineskip
+  afterskip=1pt
 ]{section,subsection,subsubsection}
+
 
 
 %strecke zeilenabstände im table
@@ -190,8 +194,9 @@
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
 \MakePerPage{footnote} %reset counter per new page
 \renewcommand{\footnoterule}{%
-  \kern \parskip
-  {\color{gray}\hrule width 0.35\textwidth height 0.5pt}
+  \vspace{-1.\parskip}
+  \vspace{\footskip}
+  {\color{gray}\hrule width 0.35\textwidth height 0.6pt}
   \kern 2pt
 }
 \deffootnote[1.75em] %mark width - allows 4 **** to be placed
@@ -209,7 +214,7 @@
 \newcommand{\setupTextStyle}{
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
-    \renewcommand{\baselinestretch}{1.05}\normalsize
+    \renewcommand{\baselinestretch}{1.07}\normalsize
 
 
     %formel abstände 
