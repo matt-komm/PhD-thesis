@@ -35,6 +35,7 @@
 \usepackage{pbsi}
 \usepackage{aurical}
 \usepackage{sqrcaps}
+\usepackage{trajan} %activate with \trjnfamily
 
 \usepackage[B1,OT1,T1]{fontenc}
 \usepackage[latin9]{inputenc}
@@ -46,7 +47,7 @@
 \usepackage{color}
 \usepackage{xcolor} %more advance color usage
 \definecolor{ucl}{rgb}{0.05,0.15,0.45}
-\definecolor{gray}{rgb}{0.6,0.6,0.6}
+\definecolor{gray}{rgb}{0.55,0.55,0.55}
 
 \usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
 \usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
@@ -68,6 +69,7 @@
 \usepackage{perpage}
 \usepackage{nomencl} %list of abbreviations
 \usepackage{stringstrings} %substrings
+\usepackage{anyfontsize}
 
 \usepackage{lineno} %linenumbers
 \renewcommand\linenumberfont{\color{gray}\normalfont\footnotesize\sffamily}
@@ -78,6 +80,7 @@
 \makenomenclature
 
 \newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
+\newcommand*{\myrulewidth}{0.7pt}
 
 %% Setup TOC
 \setcounter{secnumdepth}{3}
@@ -95,10 +98,12 @@
 \ihead{\headmark}
 \renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{gray}\chaptername\ \thechapter.}\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{{\numberfont\color{gray}\thesection.}\ #1}}
+\fboxrule=\myrulewidth
+%\ohead[\vspace{-0.6pt}\fcolorbox{gray}{gray!30}{\parbox[c][][c]{0.6cm}{\pagemark}}]{\vspace{-0.6pt}\fcolorbox{gray}{gray!30}{\parbox[c][][c]{0.6cm}{\pagemark}}}
 \ohead[\pagemark]{\pagemark}
 %\renewcommand{\pagemark}{\markboth{\bf\color{gray}\thepage}{\bf\color{gray}\thepage}}
 
-\setheadsepline{0.6pt}[\color{gray}]
+\setheadsepline{\myrulewidth}[\color{gray}]
 %Vergroessere head&foot Breite
 %\setheadwidth[0.5cm]{text}
 %\setfootwidth[0.5cm]{text}
@@ -128,7 +133,7 @@
         \chapterheadstartvskip
         \parbox[b][][b]{\widthof{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
         \\[0.05cm]
-        {\color{gray}\rule{\textwidth}{0.6pt}}
+        {\color{gray}\rule{\textwidth}{\myrulewidth}}
         \\[0.55cm]
         \hspace*{0.05\textwidth}\parbox[c][][c]{0.18\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
         \chapterheadendvskip
@@ -196,7 +201,7 @@
 \renewcommand{\footnoterule}{%
   \vspace{-1.\parskip}
   \vspace{\footskip}
-  {\color{gray}\hrule width 0.35\textwidth height 0.6pt}
+  {\color{gray}\hrule width 0.35\textwidth height \myrulewidth}
   \kern 2pt
 }
 \deffootnote[1.75em] %mark width - allows 4 **** to be placed
