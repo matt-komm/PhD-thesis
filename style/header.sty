@@ -67,7 +67,8 @@
 \usepackage{breakurl}
 \usepackage{todonotes}
 \usepackage{perpage}
-\usepackage{nomencl} %list of abbreviations
+\usepackage[nottoc]{tocbibind} %puts references into toc
+\usepackage[toc,acronym]{glossaries} %list of abbreviations
 \usepackage{stringstrings} %substrings
 \usepackage{anyfontsize}
 
@@ -76,10 +77,11 @@
 \linenumbers
 
 
-
-\makenomenclature
+\makeglossaries
+\glossarystyle{list}
 
 \newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
+%\newcommand*{\numberfont}{\fontfamily{pbk}\selectfont}
 \newcommand*{\myrulewidth}{0.7pt}
 
 %% Setup TOC
@@ -145,13 +147,13 @@
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
-\setkomafont{section}{\normalfont\fontsize{13}{0}\selectfont\numberfont}
+\setkomafont{section}{\normalfont\fontsize{12}{14}\selectfont\numberfont}
 
 \renewcommand*{\subsectionformat}{\numberfont\thesubsection.\ }
-\setkomafont{subsection}{\normalfont\fontsize{12}{0}\selectfont\numberfont}
+\setkomafont{subsection}{\normalfont\fontsize{11}{13}\selectfont\numberfont}
 
 \renewcommand*{\subsubsectionformat}{\numberfont\thesubsubsection.\ }
-\setkomafont{subsubsection}{\normalfont\fontsize{11}{0}\selectfont\numberfont}
+\setkomafont{subsubsection}{\normalfont\fontsize{10}{12}\selectfont\numberfont}
 
 \RedeclareSectionCommands[
   beforeskip=0.8\baselineskip,

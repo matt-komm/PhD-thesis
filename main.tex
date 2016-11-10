@@ -1,22 +1,37 @@
 \documentclass[10pt,english,twoside,openright]{scrbook}
 \usepackage{style/header}
+
 \begin{document}
 \setupTextStyle
 
-\input{sections/title}
-\cleardoublepage
+%\input{sections/title}
+%\cleardoublepage
+
+
 \microtypesetup{protrusion=false}
 \tableofcontents
 \microtypesetup{protrusion=true}
 \cleardoublepage
 
-\input{sections/teststyle}
+%\input{sections/teststyle}
+
+%\input{sections/introduction}
+\input{sections/theory}
+%\input{sections/experiment}
+%\input{sections/simulation}
+%\input{sections/methodology}
+%\input{sections/polarization}
+%\input{sections/differential}
+%\input{sections/conclusion}
+
+
+\printglossary[type=\acronymtype,title={Abbreviations}]
 \cleardoublepage
 
 \nocite{*}
 \bibliographystyle{style/bibstyle}
 \renewcommand{\bibname}{References}
-\addcontentsline{toc}{chapter}{\bibname}
+%\addcontentsline{toc}{chapter}{\bibname}
 \bibliography{sections/references}
 
 \end{document}
