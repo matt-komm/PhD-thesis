@@ -47,7 +47,7 @@
 \usepackage{color}
 \usepackage{xcolor} %more advance color usage
 \definecolor{ucl}{rgb}{0.05,0.15,0.45}
-\definecolor{gray}{rgb}{0.55,0.55,0.55}
+\definecolor{gray}{rgb}{0.65,0.65,0.65}
 
 \usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
 \usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
@@ -76,13 +76,15 @@
 \renewcommand\linenumberfont{\color{gray}\normalfont\footnotesize\sffamily}
 \linenumbers
 
-
+%abbreviations
 \makeglossaries
 \glossarystyle{list}
+\renewcommand{\glstextformat}[1]{\textit{#1}}
 
 \newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
 %\newcommand*{\numberfont}{\fontfamily{pbk}\selectfont}
-\newcommand*{\myrulewidth}{0.7pt}
+\newlength{\myrulewidth}
+\setlength{\myrulewidth}{0.7pt}
 
 %% Setup TOC
 \setcounter{secnumdepth}{3}
@@ -134,17 +136,17 @@
      \parbox[t][][t]{0.99\textwidth}{
         \chapterheadstartvskip
         \parbox[b][][b]{\widthof{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
-        \\[0.05cm]
-        {\color{gray}\rule{\textwidth}{\myrulewidth}}
-        \\[0.55cm]
-        \hspace*{0.05\textwidth}\parbox[c][][c]{0.18\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
+        \\[0.4cm]
+        %{\color{gray}\rule{\textwidth}{\myrulewidth}}
+        %\\[0.55cm]
+        \hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.03\textwidth}{\color{gray}\rule{\myrulewidth}{1.3cm}\hspace{3.\myrulewidth}\rule{\myrulewidth}{1.3cm}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
         \chapterheadendvskip
     }
 }
 
 \setkomafont{chapter}{\normalfont\fontsize{15}{17}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{0.4cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.8cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
 \setkomafont{section}{\normalfont\fontsize{12}{14}\selectfont\numberfont}
