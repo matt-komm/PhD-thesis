@@ -1,0 +1,69 @@
+% PROCESSES
+\newcommand{\qcd}{\ensuremath{QCD}\xspace}
+\newcommand{\wjets}{\ensuremath{\textrm{W+jets}}\xspace}
+\newcommand{\zjets}{\ensuremath{\textrm{$Z/\gamma^*$+jets}}\xspace}
+\newcommand{\vjets}{\ensuremath{\textrm{V+jets}}\xspace}
+\newcommand{\ttbar}{\ensuremath{\mathrm{t}\bar{\mathrm{t}}}\xspace}
+\newcommand{\tw}{\ensuremath{\mathrm{tW}}\xspace}
+\newcommand{\tch}{\ensuremath{t\mathrm{\mbox{-}channel}}\xspace}
+
+
+% VARIABLES
+\newcommand{\muiso}{\ensuremath{I_\mathrm{rel.}^{\mu}}\xspace}
+\newcommand{\eiso}{\ensuremath{I_\mathrm{rel.}^{e}}\xspace}
+\newcommand{\mtop}{\ensuremath{m_{\mu\nu \mathrm{b}}}\xspace}
+\newcommand{\mw}{\ensuremath{m_{\mathrm{W}}}\xspace}
+\newcommand{\met}{\ensuremath{{E\!\!\!/}_{\mathrm{T}}}\xspace}
+\newcommand{\mtw}{\ensuremath{m_{\mathrm{T}}(\mathrm{W})}\xspace}
+\newcommand{\pvmiss}{\ensuremath{\vec{p_\mathrm{T}}\hspace{-1.02em}/\kern 0.5em}\xspace}
+\newcommand{\bdt}{\ensuremath{\mathrm{BDT}}\xspace}
+\newcommand{\bdtcut}{\ensuremath{0.2}\xspace}
+
+%UNITS
+\newcommand{\keV}{\ensuremath{\mathrm{keV}}\xspace}
+\newcommand{\MeV}{\ensuremath{\mathrm{MeV}}\xspace}
+\newcommand{\GeV}{\ensuremath{\mathrm{GeV}}\xspace}
+\newcommand{\TeV}{\ensuremath{\mathrm{TeV}}\xspace}
+
+\newcommand{\pb}{\ensuremath{\mathrm{pb}}\xspace}
+\newcommand{\fb}{\ensuremath{\mathrm{fb}}\xspace}
+\newcommand{\ab}{\ensuremath{\mathrm{ab}}\xspace}
+
+\newcommand{\pbinv}{\ensuremath{\mathrm{pb}^{-1}}\xspace}
+\newcommand{\fbinv}{\ensuremath{\mathrm{fb}^{-1}}\xspace}
+\newcommand{\abinv}{\ensuremath{\mathrm{ab}^{-1}}\xspace}
+
+
+% FORMATTING
+\newcommand{\typew}[1]{\texttt{\detokenize{#1}}}
+\newcount\colveccount
+\newcommand*\colvec[1]{
+    \global\colveccount#1
+    \begin{pmatrix}
+    \colvecnext
+}
+\def\colvecnext#1{
+    #1
+    \global\advance\colveccount-1
+    \ifnum\colveccount>0
+        \\
+        \expandafter\colvecnext
+    \else
+        \end{pmatrix}
+    \fi
+}
+
+% OTHER
+\newcommand{\invfb}{\ensuremath{\mathrm{fb}^{-1}}\xspace}
+\newcommand{\invpb}{\ensuremath{\mathrm{pb}^{-1}}\xspace}
+\newcommand{\jprime}{\ensuremath{j^{\prime}}\xspace}
+\newcommand{\qprime}{\ensuremath{q^{\prime}}\xspace}
+\newcommand{\bjtop}{\ensuremath{j_\mathrm{b,top}}\xspace}
+
+\newcommand{\AMCATNLO}{\textsc{mg}5\_a\textsc{mc@nlo}\xspace}
+\newcommand{\tunfold}{\textsc{TUnfold}\xspace}
+
+%\def\todolist{\subsection{TODO list}}
+%\newcommand{\addtodolist}[1]{\expandafter\def\expandafter\todolist\expandafter{\todolist{}\\ #1}}
+%\newcommand{\todo}[1]{\textsc{\color{red}{\textbf{TODO}: #1}}\addtodolist{#1}}
+%\newcommand{\todo}[1]{}

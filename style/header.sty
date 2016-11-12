@@ -53,7 +53,7 @@
 \usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
 \usepackage{url}
 
-\usepackage{chngcntr} %fuer nummerierung der figures, tables
+\usepackage{chngcntr} %fuer nummerierung der figures, tables, footnotes
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=nonfrench,factor=1100,stretch=15,shrink=15]{microtype}
 \SetTracking{encoding={*}, shape=sc}{0}
 \usepackage{tocloft}
@@ -65,8 +65,10 @@
 \usepackage{axodraw4j}
 \usepackage[colorlinks=false,hidelinks=true]{hyperref}
 \usepackage{breakurl}
-\usepackage{todonotes}
+\usepackage[color=white,linecolor=red,bordercolor=red,textsize
+=small]{todonotes}
 \usepackage{perpage}
+\usepackage{xspace} %intelligent spacing e.g. after inline equations
 \usepackage[nottoc]{tocbibind} %puts references into toc
 \usepackage[toc,acronym]{glossaries} %list of abbreviations
 \usepackage{stringstrings} %substrings
@@ -180,6 +182,26 @@
 \setlength\textfloatsep{1.\baselineskip plus 3pt minus 2pt}
 \setlength\intextsep{1.\baselineskip plus 3pt minus 2pt}
 
+%placements
+\newcommand{\mytable}[2]{
+    \begin{table}[htbp]
+    \caption{#1}
+    \centering
+    #2
+    \end{table}
+}
+
+\newcommand{\myfigure}[2]{
+    \begin{figure}[htbp]
+    \centering
+    #2
+    \caption{#1}
+    \end{figure}
+}
+
+%references font
+%\newcommand{\reffont}{\numberfont}
+
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
 \let\oldsqrt\sqrt
@@ -201,7 +223,7 @@
    ****\or *****\or \else\@ctrerr\fi} %define alternative numbering using *, **, ***, ...
 %\renewcommand{\thefootnote}{\numberfont\arabic{footnote}} %style
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
-\MakePerPage{footnote} %reset counter per new page
+\counterwithin*{footnote}{page} %reset counter per new page
 \renewcommand{\footnoterule}{%
   \vspace{-1.\parskip}
   \vspace{\footskip}

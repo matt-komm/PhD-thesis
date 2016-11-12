@@ -1,5 +1,6 @@
 \documentclass[10pt,english,twoside,openright]{scrbook}
 \usepackage{style/header}
+\input{style/shortcommands}
 
 \begin{document}
 \setupTextStyle
@@ -15,7 +16,7 @@
 
 %\input{sections/teststyle}
 
-%\input{sections/introduction}
+\input{sections/introduction}
 \input{sections/theory}
 %\input{sections/experiment}
 %\input{sections/reconstruction}
@@ -34,5 +35,8 @@
 \renewcommand{\bibname}{References}
 %\addcontentsline{toc}{chapter}{\bibname}
 \bibliography{sections/references}
+
+\todototoc
+\listoftodos
 
 \end{document}
