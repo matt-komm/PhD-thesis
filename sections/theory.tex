@@ -1,28 +1,64 @@
 \chapter{Theory and experimental status}
 
-An introduction to the \newacronym{sm}{SM}{Standard Model of particle physics}\gls{sm}, its particle content, interactions, and properties is provided in the following. Special focus is attributed to the top quark which is the heaviest known fundamental particle to date. Here, latest experimental results are discussed and the theoretical foundation of the measurements within this thesis is laid out.
+An introduction to the \gls{sm}, its particle content, interactions, and properties is provided in the following. Special focus is attributed to the top quark which is the heaviest known fundamental particle to date. Here, latest experimental results are discussed and the theoretical foundation of the measurements within this thesis is laid out.
 
 
 \section{General Quantum Field Theory of the Standard Model}
 
-The \gls{sm} describes the interactions between fundamental particles. It is based on \newacronym{qft}{QFT}{Quantum Field Theory}\gls{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or lifetimes of unstable particles which can be calculated within the \gls{sm} \gls{qft} framework -- even fully automatized. The \gls{sm} validity is constantly challenged by measuring such observables using new experimental data. No significant deviations have been found so far that would hint towards physics \newacronym{bsm}{BSM}{Beyond the Standard Model}\gls{bsm}.
+The \gls{sm} describes the interactions between fundamental particles. It is based on \gls{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or lifetimes of unstable particles which can be calculated within its framework -- even fully automatized. The \gls{sm} validity is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards physics \gls{bsm}.
 
 
 \subsection{Particle content}
 
-Fundamental particles are objects for which experiments have revealed no internal structure so far. For example, the electron spatial radius has been limited to be smaller than $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. They are therefore considered as point-like. The particles can be grouped by their spin. Fermions with spin $\frac{1}{2}$ are listed in Tab.~\ref{tab:theory-particlecontent-fermions}. Bosons with spin $1$ are connected to fundamental interactions and act as their mediators as explained later~(Secs.~\ref{sec:theory-ewk} and~\ref{sec:theory-qcd}). They are listed in Tab.~\ref{tab:theory-particlecontent-bosons}
+Fundamental particles are objects for which experiments have revealed no internal structure. For example, the spatial radius of an electron has been limited to be smaller than $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column encapsulating an isospin pair~(up/down) of fermions is called a generation. It is unknown why there are exactly three lepton and three quark generations.
 
-\mytable{\label{tab:theory-particlecontent-fermions}Particle content of the \gls{sm}.}{
+\mytable{\label{tab:theory-leptons}Leptons of the \gls{sm}. Particle masses are taken from Ref.~\cite{Olive:2016xmw}. Only \glspl{cl} are given for the neutrino masses.}{
+\begin{tabular}{r||c|c|c}
+                    & 1. generation                  & 2. generation                  & 3. generation \\
+\hline
+\hline
+name                & electron (e)                  & muon ($\mu$)                  & tau ($\tau$) \\
+\hline
+mass                & $511.0~\keV$                  & $105.66~\MeV$                 & $1.776~\GeV$ \\
+\hline
+electric charge     & $-1$                          & $-1$                          & $-1$ \\
+\hline
+isospin (\isoz)     & $\frac{1}{2}$                 & $\frac{1}{2}$                 & $\frac{1}{2}$ \\
+\hline
+\hline
+name                & electron neutrino             & muon neutrino                 & tau neutrino  \\
+                    & ($\nu_{e}$)                   & ($\nu_{\mu}$)                 & ($\nu_{\tau}$) \\
+\hline
+mass                & $<225~\eV$                    & $<0.19~\MeV$                  & $<18.2~\MeV$ \\
+                    & (95\% CL)                     & (90\% CL)                     & (95\%~CL)\\
+\hline
+electric charge     & 0                             & 0                             & 0 \\
+\hline
+isospin (\isoz)     & $-\frac{1}{2}$                & $-\frac{1}{2}$                & $-\frac{1}{2}$ \\
+\end{tabular}
+}
+
+\mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}.}{
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \end{tabular}
 }
 
-\mytable{\label{tab:theory-particlecontent-bosons}Particle content of the \gls{sm}.}{
+For the neutrinos, only limits on
+
+
+The bosons are connected to fundamental interactions and act as their mediators as explained later~(Secs.~\ref{sec:theory-ewk} and~\ref{sec:theory-qcd}). They are listed in Tab.~\ref{tab:theory-bosons}. The Higgs boson is the only scalar particle~(spin~$0$) of the \gls{sm}. All other bosons carry a spin of~$1$.
+
+
+\mytable{\label{tab:theory-bosons}Bosons of the \gls{sm}.}{
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \end{tabular}
 }
+
+
+Antiparticles
+
 
 \subsection{General properties}
 quantum fields, EW construction, gauge groups, symmetries, Noether currents, renormalization, running couplings

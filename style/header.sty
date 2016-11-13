@@ -70,23 +70,28 @@
 \usepackage{perpage}
 \usepackage{xspace} %intelligent spacing e.g. after inline equations
 \usepackage[nottoc]{tocbibind} %puts references into toc
-\usepackage[toc,acronym]{glossaries} %list of abbreviations
+\usepackage[nopostdot,toc,acronym,style=super]{glossaries} %list of abbreviations
 \usepackage{stringstrings} %substrings
 \usepackage{anyfontsize}
 
-\usepackage{lineno} %linenumbers
-\renewcommand\linenumberfont{\color{gray}\normalfont\footnotesize\sffamily}
+%global styles
+\newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
+%\newcommand*{\numberfont}{\fontfamily{pbk}\selectfont}
+\newlength{\myrulewidth}
+\setlength{\myrulewidth}{0.7pt}
+
+%line numbers
+\usepackage{lineno} 
+\renewcommand\linenumberfont{\color{gray}\normalfont\small\ttfamily}
 \linenumbers
 
 %abbreviations
 \makeglossaries
 \glossarystyle{list}
-\renewcommand{\glstextformat}[1]{\textit{#1}}
+\renewcommand{\glstextformat}[1]{#1}
 
-\newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
-%\newcommand*{\numberfont}{\fontfamily{pbk}\selectfont}
-\newlength{\myrulewidth}
-\setlength{\myrulewidth}{0.7pt}
+
+
 
 %% Setup TOC
 \setcounter{secnumdepth}{3}
@@ -167,7 +172,7 @@
 
 
 %strecke zeilenabstände im table
-\renewcommand{\arraystretch}{1.1}
+\renewcommand{\arraystretch}{1.2}
 
 %Schicke Bild- und Tabellenbeschreibungen
 \usepackage[format=plain,indention=0.0cm,labelsep=colon,width=.93\textwidth]{caption} %use same as for parindent
@@ -187,7 +192,7 @@
     \begin{table}[htbp]
     \caption{#1}
     \centering
-    #2
+    \small #2
     \end{table}
 }
 
