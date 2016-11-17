@@ -95,20 +95,48 @@ Each fundamental particle has additionally a charge-conjugated partner called an
 
 
 %##############################################
-\subsection{General properties}
+\subsection{Quantum field theory}
 %##############################################
 
-In the framework of \gls{qft}, particles are viewed as excitation modes of quantized fields. This is also referred to as ``second quantization'' which allows to describe many-particle systems. Field operators can be decomposed as
+In the framework of \gls{qft}, particles are viewed as excitation modes of quantized fields. This is also referred to as ``second quantization'' allowing to describe many-particle systems. Field operators can be decomposed as
 
 \begin{align}
-    \hat{\Psi}(x)&=\sum_{i}^{\mathrm{N}}u_{i}(x)\hat{a}_{i} \\
-    \hat{\Psi}^{\dagger}(x)&=\sum_{i}^{\mathrm{N}}u^{\star}_{i}(x)\hat{a}^{\dagger}_{i},
+    \hat{\psi}(x)&=\sum_{i}^{\mathrm{N}}u_{i}(x)\hat{a}_{i} \\
+    \hat{\psi}^{\dagger}(x)&=\sum_{i}^{\mathrm{N}}u^{\star}_{i}(x)\hat{a}^{\dagger}_{i},
 \end{align}
 
 where $u_{i}(x)$ denotes the ordinary wave function of a single particle and $\hat{a}^{\dagger}_{i}$ ($\hat{a}_{i}$) its creation (annihilation) operator, respectively.
 
+As in classical mechanics, the action of a system can be expressed as
 
-Lagrangian, EW construction, gauge groups, symmetries, Noether currents, renormalization, running couplings
+\begin{equation}
+S=\int\mathrm{L}\,\mathrm{dt}=\iint\mathcal{L}\,\mathrm{d}^{3}\vec{\mathrm{x}}\,\mathrm{dt}=\int\mathcal{L}\,\mathrm{d}^{4}\mathrm{x}
+\end{equation}
+
+with the Lagrangian density $\mathcal{L}$. For example, a system of free fermions is described by the Dirac Lagrangian,
+
+\begin{equation}
+\mathcal{L}_\mathrm{Dirac}=\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi,\qquad\bar{\psi}\equiv\psi^\dagger\gamma^{0}
+\end{equation}
+
+where $\gamma_\mu$ denotes the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
+
+\begin{equation}
+\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)-\frac{\partial\mathcal{L}}{\partial\bar{\psi}}=i\gamma^\mu\partial_\mu\psi-m\psi=0.
+\end{equation}
+
+
+In the \gls{sm}, interactions between particles are introduced by requiring local invariance of the Lagrangian for certain groups of transformations. In the following, this is briefly demonstrated for the case of a $\mathrm{U(1)}$ transformation which leads to electromagnetic interactions.
+
+
+EW construction, gauge groups, symmetries, 
+
+\subsection{Properties}
+
+
+Noether currents, renormalization, running couplings
+
+
 \subsection{Electroweak interactions}
 \label{sec:theory-ewk}
 chirality
