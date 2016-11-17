@@ -110,16 +110,16 @@ where $u_{i}(x)$ denotes the ordinary wave function of a single particle and $\h
 As in classical mechanics, the action of a system can be expressed as
 
 \begin{equation}
-S=\int\mathrm{L}\,\mathrm{dt}=\iint\mathcal{L}\,\mathrm{d}^{3}\vec{\mathrm{x}}\,\mathrm{dt}=\int\mathcal{L}\,\mathrm{d}^{4}\mathrm{x}
+S=\int\mathrm{L}\,\mathrm{d}t=\iint\mathcal{L}\,\mathrm{d}^{3}\vec{x}\,\mathrm{dt}=\int\mathcal{L}\,\mathrm{d}^{4}x
 \end{equation}
 
 with the Lagrangian density $\mathcal{L}$. For example, a system of free fermions is described by the Dirac Lagrangian,
 
 \begin{equation}
-\mathcal{L}_\mathrm{Dirac}=\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi,\qquad\bar{\psi}\equiv\psi^\dagger\gamma^{0}
+\mathcal{L}_\mathrm{Dirac}=\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi
 \end{equation}
 
-where $\gamma_\mu$ denotes the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
+using $\partial_\mu\equiv\partial/\partial x_\mu$ and $\bar{\psi}\equiv\psi^\dagger\gamma^{0}$ where $\gamma_\mu$ denote the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
 
 \begin{equation}
 \frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)-\frac{\partial\mathcal{L}}{\partial\bar{\psi}}=i\gamma^\mu\partial_\mu\psi-m\psi=0.
