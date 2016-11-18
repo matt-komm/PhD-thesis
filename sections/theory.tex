@@ -98,7 +98,7 @@ Each fundamental particle has additionally a charge-conjugated partner called an
 \subsection{Quantum field theory}
 %##############################################
 
-In the framework of \gls{qft}, particles are viewed as excitation modes of quantized fields. This is also referred to as ``second quantization'' allowing to describe many-particle systems. Field operators can be decomposed as
+In the framework of \gls{qft}, particles are described as excitation modes of quantized fields. This is also referred to as ``second quantization'' allowing to describe many-particle systems. Field operators can be decomposed as
 
 \begin{align}
     \hat{\psi}(x)&=\sum_{i}^{\mathrm{N}}u_{i}(x)\hat{a}_{i} \\
@@ -113,29 +113,60 @@ As in classical mechanics, the action of a system can be expressed as
 S=\int\mathrm{L}\,\mathrm{d}t=\iint\mathcal{L}\,\mathrm{d}^{3}\vec{x}\,\mathrm{dt}=\int\mathcal{L}\,\mathrm{d}^{4}x
 \end{equation}
 
-with the Lagrangian density $\mathcal{L}$. For example, a system of free fermions is described by the Dirac Lagrangian,
+with the Lagrangian density $\mathcal{L}$. For example, a system of free fermions is described by the Dirac Lagrangian density,
 
 \begin{equation}
+\label{eq:theory-diracL}
 \mathcal{L}_\mathrm{Dirac}=\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi
 \end{equation}
 
-using $\partial_\mu\equiv\partial/\partial x_\mu$ and $\bar{\psi}\equiv\psi^\dagger\gamma^{0}$ where $\gamma_\mu$ denote the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
+using the definitions $\partial_\mu\equiv\partial/\partial x_\mu$ and $\bar{\psi}\equiv\psi^\dagger\gamma^{0}$ where $\gamma_\mu$ denote the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
 
 \begin{equation}
-\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)-\frac{\partial\mathcal{L}}{\partial\bar{\psi}}=i\gamma^\mu\partial_\mu\psi-m\psi=0.
+\frac{\partial\mathcal{L}}{\partial\bar{\psi}}-\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)=\big(i\gamma^\mu\partial_\mu-m\big)\psi=0. \\
 \end{equation}
 
+Assuming $\psi\propto e^{-ip^{\mu}x_{\mu}}$ leads directly to the well-known energy-momentum relation
 
-In the \gls{sm}, interactions between particles are introduced by requiring local invariance of the Lagrangian for certain groups of transformations. In the following, this is briefly demonstrated for the case of a $\mathrm{U(1)}$ transformation which leads to electromagnetic interactions.
+\begin{align}
+0&=\big(i\gamma^\mu\partial_\mu-m\big)\cdot \big(-i\gamma^\nu\partial_\nu-m\big)\psi\\
+ &=\big(\partial^{\mu}\partial_{\mu}+m^{2}\big)\psi \qquad \mathrm{(``Klein\mbox{-}Gordan''~equation)}  \\
+ &\Rightarrow \big(-p^{\mu}p_{\mu}+m^{2}\big) = 0.
+\end{align}
 
 
-EW construction, gauge groups, symmetries, 
+In the \gls{sm}, interactions between particles are introduced by requiring local invariance of the Lagrangian density for certain groups of gauge transformations. In the following, this is briefly demonstrated for the case of a $\mathrm{U(1)}$ transformation which leads to electromagnetic interactions.
 
-\subsection{Properties}
+The transformation of Eq.~\ref{eq:theory-diracL} using 
 
+\begin{equation}
+\psi(x)\mapsto\psi^{\prime}(x)=\psi\exp^{-iq\alpha(x)}
+\end{equation}
 
-Noether currents, renormalization, running couplings
+where the phase $\alpha(x)$ depends on the local coordinates $x$ leads to
 
+\begin{equation}
+\mathcal{L}(\psi,\partial_\mu\psi)\mapsto\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})=\bar{\psi}\big(i\gamma^\mu\partial_\mu+q\gamma^\mu\partial_\mu\alpha(x)-m\big)\psi
+\end{equation}
+
+The invariance $\mathcal{L}(\psi,\partial_\mu\psi)=\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})$ is restored by adding a bosonic spin-1 field $A_{\mu}(x)$ which interacts with $\psi$ while transforming as
+
+\begin{equation}
+A_{\mu}(x)\mapsto A^{\prime}_{\mu}(x)=A_\mu(x)-\partial_\mu\alpha(x).
+\end{equation}
+
+This procedure yields a Lagrangian density containing the following terms:
+
+\begin{align}
+\mathcal{L}=~~&\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi &(\mathrm{fermion~propagator}) \\
+            +&q\bar{\psi}\gamma_{\mu}\psi A_{\mu} &(\mathrm{interaction}) \label{eq:theory-EM-int}\\
+            -&\tfrac{1}{4}\big(\partial_\mu A_\nu-\partial_\nu A_\mu\big)^{2} &(\mathrm{boson~propagator})
+\end{align}
+
+The boson propagator describing the dynamics of a free $A_\mu$ field has been additionally added to the Lagrangian density. It is already invariant under the local gauge transformation. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under the $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with charge $q$ and a photon described by $A_\mu$.
+
+Other interactions of the \gls{sm} are also connected to local gauge transformations which can be introduced through similar procedures. A common property follows from the Noether theorem which states that for each continuous transformation a conserved current exists. Hence the charge associated to each gauge group is conserved.
+Another property is that bosonic particles have to be massless because a term of the form $m^{2}_{A}A^\mu A_\mu$ would violate the invariance. However, experiments have measured non-zero masses for the \wboson and \zboson bosons which are connected to weak interactions.
 
 \subsection{Electroweak interactions}
 \label{sec:theory-ewk}
@@ -146,7 +177,7 @@ potential, yukawa interaction, mass term CKM
 \label{sec:theory-qcd}
 self-couplings, running coupling, nlo calculations
 \subsection{Observables}
-matrix elements, cross sections, decays, PDFs, angles (w polarizations)
+matrix elements, cross sections, decays, PDFs, angles (w polarizations), Noether currents, renormalization
 \subsection{Open questions}
 naturalness, gravity, gut, susy, dark matter
 
