@@ -23,7 +23,7 @@ Fundamental particles are objects for which experiments have revealed no interna
                         & 1. generation                 & 2. generation                 & 3. generation \\
     \hline
     \hline
-    name                & electron (e)                  & muon ($\mu$)                  & tau ($\tau$) \\
+    name                & electron ($\mathrm{e}^{-}$)   & muon ($\mu^{-}$)              & tau ($\tau^{-}$) \\
     \hline
     mass                & $511.0~\keV$                  & $105.66~\MeV$                 & $1.776~\GeV$ \\
     \hline
@@ -33,7 +33,7 @@ Fundamental particles are objects for which experiments have revealed no interna
     \hline
     \hline
     name                & electron neutrino             & muon neutrino                 & tau neutrino  \\
-                        & ($\nu_{e}$)                   & ($\nu_{\mu}$)                 & ($\nu_{\tau}$) \\
+                        & ($\nu_\mathrm{e}$)            & ($\nu_{\mu}$)                 & ($\nu_{\tau}$) \\
     \hline
     mass                & $<225~\eV$                    & $<0.19~\MeV$                  & $<18.2~\MeV$ \\
                         & (95\% CL)                     & (90\% CL)                     & (95\%~CL)\\
@@ -44,7 +44,7 @@ Fundamental particles are objects for which experiments have revealed no interna
     \end{tabular}
 }
 
-For the neutrinos masses, only upper limits on their masses are given. Those are derived by combining measurements of beta decay kinematics with results from neutrino oscillation experiments. In the \gls{sm}, neutrinos are assumed to be massless.
+For the neutrinos masses, only upper limits on their masses are given. Those are derived by combining measurements of beta decay kinematics with results from neutrino oscillation experiments. In the \gls{sm}, neutrinos are assumed to be massless. However, the observation\todo{need ref} of neutrino oscillations requires that at least two neutrinos have a non-zero mass.
 
 \mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}. For u,d,s,c,b quarks, \msbar masses are taken from Ref.~\cite{Olive:2016xmw}. The top quark pole mass is taken from Ref.~\cite{ATLAS:2014wva}.}{
 \begin{tabular}{r||c|c|c}
@@ -120,7 +120,7 @@ with the Lagrangian density $\mathcal{L}$. For example, a system of free fermion
 \mathcal{L}_\mathrm{Dirac}=\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi
 \end{equation}
 
-using the definitions $\partial_\mu\equiv\partial/\partial x_\mu$ and $\bar{\psi}\equiv\psi^\dagger\gamma^{0}$ where $\gamma_\mu$ denote the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
+using the definitions $\partial_\mu\equiv\partial/\partial x_\mu$ and $\bar{\psi}\equiv\psi^\dagger\gamma^{0}$ where $\gamma_\mu$ denote the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=\gamma^\mu\gamma^\nu+\gamma^\nu\gamma^\mu=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
 
 \begin{equation}
 \frac{\partial\mathcal{L}}{\partial\bar{\psi}}-\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)=\big(i\gamma^\mu\partial_\mu-m\big)\psi=0. \\
@@ -163,11 +163,9 @@ This procedure yields a Lagrangian density containing the following terms:
             -&\tfrac{1}{4}\big(\partial_\mu A_\nu-\partial_\nu A_\mu\big)^{2} &(\mathrm{boson~propagator})
 \end{align}
 
-The boson propagator describing the dynamics of a free $A_\mu$ field has been additionally added to the Lagrangian density. It is already invariant under the local gauge transformation. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under the $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with charge $q$ and a photon described by $A_\mu$.
+The boson propagator describing the dynamics of a free $A_\mu$ field has been additionally added to the Lagrangian density. It is already invariant under the local gauge transformation. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with electric charge $q$ and a photon described by $A_\mu$. Furthermore, the photon is predicted to be massless since adding a term of the form $m^{2}_{A}A^\mu A_\mu$ would violate the invariance.
 
-Other interactions of the \gls{sm} are also connected to local gauge transformations which can be introduced through similar procedures. A common property follows from the Noether theorem which states that for each continuous transformation a conserved current exists. Hence the charge associated to each gauge group is conserved. This would however be already the case for a global transformation. The requirement of invariance under local gauge transformations is a puzzling feature of the theory. \todo{make better!, ref to some philosophical arguments?}
-
-Another property is that bosonic particles have to be massless because a term of the form $m^{2}_{A}A^\mu A_\mu$ would violate the invariance. However, experiments have measured non-zero masses for the \wboson and \zboson bosons which are connected to weak interactions.
+Other interactions of the \gls{sm} are also connected to local gauge transformations which can be introduced through similar procedures. A common property follows from the Noether theorem which states that for each continuous transformation a conserved current exists. Hence the charge associated to each gauge group is conserved. This would however be already the case for a global transformation. The requirement of invariance under local gauge transformations is a puzzling feature of the theory. \todo{ref to some philosophical arguments? is there an implication from renormalization?}
 
 %##############################################
 \subsection{Electroweak interactions and Higgs mechanism}
@@ -178,15 +176,45 @@ Electromagnetism and weak interactions can be unified using a $\mathrm{U(1)}\oti
 
 \begin{itemize}
 
-\item Parity is not conserved in weak interactions. Such interactions depend on the spin being aligned towards~(``right-handed'') or against~(``left-handed'') the momentum of a particle. Experimentally, the Wu experiment~\cite{PhysRev.105.1413} demonstrated this feature by analyzing the direction of the electron in ${}_{27}^{60}\mathrm{Co}\to{}_{28}^{60}\mathrm{Ni}+e^{-}\bar{\nu}_{e}\gamma\gamma$ decays where the cobalt probe is polarized through a magnetic field. 
+\item Parity is not conserved in weak interactions. Such interactions depend on the spin being aligned towards or against the momentum of a particle. Experimentally, the Wu experiment~\cite{PhysRev.105.1413} discovered this feature in ${}_{27}^{60}\mathrm{Co}\to{}_{28}^{60}\mathrm{Ni}+e^{-}\bar{\nu}_{e}\gamma\gamma$ decays by analyzing the direction of the electron with respect to the polarization of the cobalt probe through an external magnetic field. 
 
-\item The UA1 and UA2 experiments at the CERN SPS Proton-Antiproton Collider discovered that the \wboson boson~\cite{Arnison:1983rp,Banner:1983jy} and \zboson boson~\cite{Arnison:1983mk,Bagnaia:1983zx} are massive.
+\item The UA1 and UA2 experiments at the CERN SPS Proton-Antiproton Collider discovered that \wboson bosons~\cite{Arnison:1983rp,Banner:1983jy} and \zboson bosons~\cite{Arnison:1983mk,Bagnaia:1983zx} -- mediators of weak interactions -- are massive. The masses of these particles have to be introduced in a different way if the concept of local gauge invariance should continue to hold.
 
 \end{itemize}
 
-The Glawhow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr}
+To account for the parity violation, fermion fields have to be first decomposed into chiral eigenstates using the projections
 
-chirality (-> no mass for fermions anymore), Higgs potential, yukawa interaction, mass term CKM
+\begin{align}
+\psi_\mathrm{L}&\equiv\mathrm{P}_\mathrm{L}\psi=\tfrac{1}{2}(1+\gamma_{5})\psi \\
+\psi_\mathrm{R}&\equiv\mathrm{P}_\mathrm{R}\psi=\tfrac{1}{2}(1-\gamma_{5})\psi
+\end{align}
+
+with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties: $(\gamma_{5})^{\dagger}=\gamma_{5}$; ~~$(\gamma_{5})^2=\mathrm{I}_\mathrm{4x4}$; ~~ $\{\gamma_{5},\gamma_{\mu}\}=\gamma_{5}\gamma_{0}+\gamma_{0}\gamma_{5}=0$.} where $\psi_\mathrm{L}$ ($\psi_\mathrm{R}$) is called ``left-handed'' (``right-handed'') respectively. In the case of massless particles, Eq.~\ref{eq:theory-diracL} decouples into two separate equations for $\psi=\psi_\mathrm{L}+\psi_\mathrm{R}$. In this case the chirality is equal to the helicity
+
+\begin{equation}
+\mathrm{H}\equiv\frac{\vec{p}\cdot\vec{s}}{|\vec{p}|}
+\end{equation}
+
+which denotes the aligned towards~($H=1$) or against~($H=-1$) of the spin $\vec{s}$ projected onto the momentum axis. For massive particles, Eq.~\ref{eq:theory-diracL} does not decouple. \todo{later this is not invariant under SU2 transformation}
+
+The Glawhow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} splits the fermion fields into ``left-handed'' doublets 
+
+\begin{align}
+\vec{E}_\mathrm{L}&=\Bigg\{\colvec{2}{e^{-}_\mathrm{L}}{\nu_\mathrm{e,L}},\colvec{2}{\mu^{-}_\mathrm{L}}{\nu_{\mu,\mathrm{L}}},\colvec{2}{\tau^{-}_\mathrm{L}}{\nu_{\tau,\mathrm{L}}}\Bigg\} \\
+\vec{Q}_\mathrm{L}&=\Bigg\{\colvec{2}{\mathrm{u}_\mathrm{L}}{\mathrm{d}_\mathrm{L}},\colvec{2}{\mathrm{c}_\mathrm{L}}{\mathrm{s}_\mathrm{L}},\colvec{2}{\mathrm{t}_\mathrm{L}}{\mathrm{b}_\mathrm{L}}\Bigg\}
+\end{align}
+
+and ``right-handed'' singlets 
+
+\begin{align}
+\vec{e}_\mathrm{R}&=\big\{\mathrm{e}^{-}_\mathrm{R},\mu^{-}_\mathrm{R},\tau^{-}_\mathrm{R}\big\} \\
+\vec{u}_\mathrm{R}&=\big\{\mathrm{u}_\mathrm{R},\mathrm{c}_\mathrm{R},\mathrm{t}_\mathrm{R}\big\} \\
+\vec{d}_\mathrm{R}&=\big\{\mathrm{d}_\mathrm{R},\mathrm{s}_\mathrm{R},\mathrm{b}_\mathrm{R}\big\}
+\end{align}
+
+of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any interaction within the \gls{sm}. 
+
+Higgs potential, yukawa interaction, mass term CKM
 
 %##############################################
 \subsection{Strong interactions}
