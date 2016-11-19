@@ -526,7 +526,7 @@ FUNCTION {format.date.paren}
 FUNCTION {format.collaboration}
 { collaboration empty$
     { "" }
-    { "{" collaboration * "}" * }
+    { "{" collaboration * " collaboration }" * }
   if$
 }
 

@@ -16,7 +16,7 @@ The \gls{sm} describes the interactions between fundamental particles. It is bas
 \subsection{Particle content}
 %##############################################
 
-Fundamental particles are objects for which experiments have revealed no internal structure. For example, only an upper limit on the spatial radius of an electron has been measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations.\todo{mention searches for 4th generation?}
+Fundamental particles are objects for which experiments have revealed no internal structure. For example, only an upper limit on the spatial radius of an electron has been measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Ordinary atoms consists of only particles from the first generator: electron, proton (uud) and neutron (udd).\todo{mention searches for 4th generation?}
 
 \mytable{\label{tab:theory-leptons}Leptons of the \gls{sm}. Particle masses are taken from Ref.~\cite{Olive:2016xmw}. Uncertainties on the measured masses are omitted because the precision is beyond the sub permille level. For the neutrino masses only \glspl{cl} are given.}{
 \begin{tabular}{r||c|c|c}
@@ -165,21 +165,46 @@ This procedure yields a Lagrangian density containing the following terms:
 
 The boson propagator describing the dynamics of a free $A_\mu$ field has been additionally added to the Lagrangian density. It is already invariant under the local gauge transformation. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under the $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with charge $q$ and a photon described by $A_\mu$.
 
-Other interactions of the \gls{sm} are also connected to local gauge transformations which can be introduced through similar procedures. A common property follows from the Noether theorem which states that for each continuous transformation a conserved current exists. Hence the charge associated to each gauge group is conserved.
+Other interactions of the \gls{sm} are also connected to local gauge transformations which can be introduced through similar procedures. A common property follows from the Noether theorem which states that for each continuous transformation a conserved current exists. Hence the charge associated to each gauge group is conserved. This would however be already the case for a global transformation. The requirement of invariance under local gauge transformations is a puzzling feature of the theory. \todo{make better!, ref to some philosophical arguments?}
+
 Another property is that bosonic particles have to be massless because a term of the form $m^{2}_{A}A^\mu A_\mu$ would violate the invariance. However, experiments have measured non-zero masses for the \wboson and \zboson bosons which are connected to weak interactions.
 
-\subsection{Electroweak interactions}
+%##############################################
+\subsection{Electroweak interactions and Higgs mechanism}
+%##############################################
 \label{sec:theory-ewk}
-chirality
-\subsection{Higgs mechanism}
-potential, yukawa interaction, mass term CKM
+
+Electromagnetism and weak interactions can be unified using a $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ gauge group. Furthermore, the theory needs to account for the following features found experimentally.
+
+\begin{itemize}
+
+\item Parity is not conserved in weak interactions. Such interactions depend on the spin being aligned towards~(``right-handed'') or against~(``left-handed'') the momentum of a particle. Experimentally, the Wu experiment~\cite{PhysRev.105.1413} demonstrated this feature by analyzing the direction of the electron in ${}_{27}^{60}\mathrm{Co}\to{}_{28}^{60}\mathrm{Ni}+e^{-}\bar{\nu}_{e}\gamma\gamma$ decays where the cobalt probe is polarized through a magnetic field. 
+
+\item The UA1 and UA2 experiments at the CERN SPS Proton-Antiproton Collider discovered that the \wboson boson~\cite{Arnison:1983rp,Banner:1983jy} and \zboson boson~\cite{Arnison:1983mk,Bagnaia:1983zx} are massive.
+
+\end{itemize}
+
+The Glawhow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr}
+
+chirality (-> no mass for fermions anymore), Higgs potential, yukawa interaction, mass term CKM
+
+%##############################################
 \subsection{Strong interactions}
+%##############################################
 \label{sec:theory-qcd}
 self-couplings, running coupling, nlo calculations
+
+%##############################################
 \subsection{Observables}
+%##############################################
 matrix elements, cross sections, decays, PDFs, angles (w polarizations), Noether currents, renormalization
+
+%##############################################
 \subsection{Open questions}
+%##############################################
 naturalness, gravity, gut, susy, dark matter
 
+%##############################################
 \section{The top quark}
+%##############################################
 \subsection{}
