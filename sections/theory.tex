@@ -16,7 +16,7 @@ The \gls{sm} describes the interactions between fundamental particles. It is bas
 \subsection{Particle content}
 %##############################################
 
-Fundamental particles are objects for which experiments have revealed no internal structure. For example, only an upper limit on the spatial radius of an electron has been measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Ordinary atoms consists of only particles from the first generator: electron, proton (uud) and neutron (udd).\todo{mention searches for 4th generation?}
+Fundamental particles are objects for which experiments have revealed no internal structure. For example, only an upper limit on the spatial radius of an electron has been measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Ordinary atoms consists of only particles from the first generator: electron, proton~p~(uud quarks) and neutron~n~(udd quarks).\todo{mention searches for 4th generation?}
 
 \mytable{\label{tab:theory-leptons}Leptons of the \gls{sm}. Particle masses are taken from Ref.~\cite{Olive:2016xmw}. Uncertainties on the measured masses are omitted because the precision is beyond the sub permille level. For the neutrino masses only \glspl{cl} are given.}{
 \begin{tabular}{r||c|c|c}
@@ -71,27 +71,26 @@ For the neutrinos masses, only upper limits on their masses are given. Those are
 }
 
 
-The bosons are connected to fundamental interactions as explained later in this chapter. They are listed in Tab.~\ref{tab:theory-bosons}. The Higgs boson is the only scalar particle~(spin~$0$) of the \gls{sm}. All other bosons carry a spin of~$1$.
+The bosons are connected to fundamental interactions by requiring invariance under a gauge group transformation as explained later in this chapter. They are listed in Tab.~\ref{tab:theory-bosons}. All bosons except the Higgs boson carry a spin of~$1$. The Higgs boson is the only scalar particle~(spin~$0$) of the \gls{sm}. For a long time, it was a purely hypothetical particle of the \gls{sm}. In July 2012, the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations independently reported an observation of a Higgs-like particle. Further investigations whether this new particle exhibits the expected interactions with other particles revealed that it is consistent with the \gls{sm} Higgs~\cite{Khachatryan:2016vau} boson. This discovery completed the \gls{sm} and thus gave further confidence into its theoretical footing.
 
 
 \mytable{\label{tab:theory-bosons}Bosons of the \gls{sm}. Z and W boson masses are taken from Ref.~\cite{Olive:2016xmw}. The uncertainties on their masses are omitted because the precision is beyond the sub permille level. The Higgs mass is taken from Ref.~\cite{Aad:2015zhl}.}{
-\begin{tabular}{r||c|c}
-    name                & mass                 & associated interaction \\
+\begin{tabular}{r||c|c|c}
+    name                & mass                 & associated interaction             & gauge group \\
     \hline
     \hline
-    photon (\photon)    & $0$                  & electromagnetism \\
+    photon (\photon)    & $0$                  & electromagnetism                   & $\mathrm{U(1)}$ \\
     \hline
-    Z boson (\zboson)   & $91.19~\GeV$         & weak interaction \\
+    Z boson (\zboson)   & $91.19~\GeV$         & \multirow{2}{*}{weak interaction}  & \multirow{2}{*}{$\mathrm{SU(2)}$}\\
+    W boson (\wboson)   & $80.39~\GeV$         &                                    & \\
     \hline
-    W boson (\wboson)   & $80.39~\GeV$         & weak interaction \\
-    \hline
-    Higgs boson (\higgs)& $125.09\pm0.24~\GeV$ & Yukawa interaction \\
+    Higgs boson (\higgs)& $125.09\pm0.24~\GeV$ & Yukawa interaction                 & $\mathrm{U(1)}$\\
     \hline  
-    8 gluons (g)        & $0$                  & strong interaction \\                 
+    8 gluons (g)        & $0$                  & strong interaction                 & $\mathrm{SU(3)}$ \\                 
     \end{tabular}
 }
 
-Each fundamental particle has additionally a charge-conjugated partner called antiparticle. Other properties such as mass are identical. The photon, Z boson, and Higgs boson are their own antiparticle. It is still under study if the neutrino is its own antiparticle. Fermions with such a property are called Majorana particles~\cite{Majorana2006}. Experimentally, this can be probed in double $\beta$ decays where in the case of Majorana neutrinos the decay can occur without emitting two neutrinos. However, this scenario seems to be disfavored by recent results as reviewed in Ref.~\cite{Dell'Oro:2016dbc}.
+Each fundamental particle has additionally a charge-conjugated partner called antiparticle. Other properties such as mass are identical. The photon, Z boson, and Higgs boson are their own antiparticle. It is still under study if the neutrino is its own antiparticle. Fermions with such a property are called Majorana particles~\cite{Majorana2006}. Experimentally, this can be probed in double $\beta$ decays~($\mathrm{nn}\to\mathrm{pp}+\mathrm{e}^{-}\mathrm{e}^{-}\nu_\mathrm{e}\nu_\mathrm{e}$) where in the case of Majorana neutrinos the decay can occur without emitting two neutrinos. However, this scenario seems to be disfavored by recent results as reviewed in Ref.~\cite{Dell'Oro:2016dbc}.
 
 
 %##############################################
@@ -143,10 +142,10 @@ The transformation of Eq.~\ref{eq:theory-diracL} using
 \psi(x)\mapsto\psi^{\prime}(x)=\psi\exp^{-iq\alpha(x)}
 \end{equation}
 
-where the phase $\alpha(x)$ depends on the local coordinates $x$ leads to
+where the phase $\alpha(x)$ depends on the local coordinates $x$ yields
 
 \begin{equation}
-\mathcal{L}(\psi,\partial_\mu\psi)\mapsto\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})=\bar{\psi}\big(i\gamma^\mu\partial_\mu+q\gamma^\mu\partial_\mu\alpha(x)-m\big)\psi
+\mathcal{L}(\psi,\partial_\mu\psi)\mapsto\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})=\bar{\psi}\big(i\gamma^\mu\partial_\mu+q\gamma^\mu\partial_\mu\alpha(x)-m\big)\psi.
 \end{equation}
 
 The invariance $\mathcal{L}(\psi,\partial_\mu\psi)=\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})$ is restored by adding a bosonic spin-1 field $A_{\mu}(x)$ which interacts with $\psi$ while transforming as
@@ -159,11 +158,11 @@ This procedure yields a Lagrangian density containing the following terms:
 
 \begin{align}
 \mathcal{L}=~~&\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi &(\mathrm{fermion~propagator}) \\
-            +&q\bar{\psi}\gamma_{\mu}\psi A_{\mu} &(\mathrm{interaction}) \label{eq:theory-EM-int}\\
+            +&q\bar{\psi}\gamma^{\mu}\psi A_{\mu} &(\mathrm{interaction}) \label{eq:theory-EM-int}\\
             -&\tfrac{1}{4}\big(\partial_\mu A_\nu-\partial_\nu A_\mu\big)^{2} &(\mathrm{boson~propagator})
 \end{align}
 
-The boson propagator describing the dynamics of a free $A_\mu$ field has been additionally added to the Lagrangian density. It is already invariant under the local gauge transformation. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with electric charge $q$ and a photon described by $A_\mu$. Furthermore, the photon is predicted to be massless since adding a term of the form $m^{2}_{A}A^\mu A_\mu$ would violate the invariance.
+The boson propagator describing the dynamics of a free $A_\mu$ field has been added additionally to the Lagrangian density. It is already invariant under the local gauge transformation. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with electric charge $q$ and a photon described by $A_\mu$. Furthermore, the photon is predicted to be massless since adding a term of the form $m^{2}_{A}A^\mu A_\mu$ would violate the invariance.
 
 Other interactions of the \gls{sm} are also connected to local gauge transformations which can be introduced through similar procedures. A common property follows from the Noether theorem which states that for each continuous transformation a conserved current exists. Hence the charge associated to each gauge group is conserved. This would however be already the case for a global transformation. The requirement of invariance under local gauge transformations is a puzzling feature of the theory. \todo{ref to some philosophical arguments? is there an implication from renormalization?}
 
@@ -182,41 +181,54 @@ Electromagnetism and weak interactions can be unified using a $\mathrm{U(1)}\oti
 
 \end{itemize}
 
-To account for the parity violation, fermion fields have to be first decomposed into chiral eigenstates using the projections
+To account for the violation of parity, fermion fields have to be first decomposed into chiral eigenstates using the projections
 
 \begin{align}
 \psi_\mathrm{L}&\equiv\mathrm{P}_\mathrm{L}\psi=\tfrac{1}{2}(1+\gamma_{5})\psi \\
 \psi_\mathrm{R}&\equiv\mathrm{P}_\mathrm{R}\psi=\tfrac{1}{2}(1-\gamma_{5})\psi
 \end{align}
 
-with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties: $(\gamma_{5})^{\dagger}=\gamma_{5}$; ~~$(\gamma_{5})^2=\mathrm{I}_\mathrm{4x4}$; ~~ $\{\gamma_{5},\gamma_{\mu}\}=\gamma_{5}\gamma_{0}+\gamma_{0}\gamma_{5}=0$.} where $\psi_\mathrm{L}$ ($\psi_\mathrm{R}$) is called ``left-handed'' (``right-handed'') respectively. In the case of massless particles, Eq.~\ref{eq:theory-diracL} decouples into two separate equations for $\psi=\psi_\mathrm{L}+\psi_\mathrm{R}$. In this case the chirality is equal to the helicity
+with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties: $(\gamma_{5})^{\dagger}=\gamma_{5}$; ~~$(\gamma_{5})^2=\mathrm{I}_\mathrm{4x4}$; ~~ $\{\gamma_{5},\gamma_{\mu}\}=\gamma_{5}\gamma_{0}+\gamma_{0}\gamma_{5}=0$.} where $\psi_\mathrm{L}$ ($\psi_\mathrm{R}$) is called ``left-handed'' (``right-handed'') respectively. In the case of massless particles, Eq.~\ref{eq:theory-diracL} decouples into two separate equations for $\psi=\psi_\mathrm{L}+\psi_\mathrm{R}$. Here, the chirality is equal to the Lorentz-invariant helicity
 
 \begin{equation}
 \mathrm{H}\equiv\frac{\vec{p}\cdot\vec{s}}{|\vec{p}|}
 \end{equation}
 
-which denotes the aligned towards~($H=1$) or against~($H=-1$) of the spin $\vec{s}$ projected onto the momentum axis. For massive particles, Eq.~\ref{eq:theory-diracL} does not decouple. \todo{later this is not invariant under SU2 transformation}
+which denotes whether the spin $\vec{s}$ is aligned along~($H=1$) or against~($H=-1$) the momentum axis. For massive particles, Eq.~\ref{eq:theory-diracL} does not decouple since chirality is not Lorentz invariant. \todo{later this is not invariant under SU2 transformation}
 
 The Glawhow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} splits the fermion fields into ``left-handed'' doublets 
 
 \begin{align}
-\vec{E}_\mathrm{L}&=\Bigg\{\colvec{2}{e^{-}_\mathrm{L}}{\nu_\mathrm{e,L}},\colvec{2}{\mu^{-}_\mathrm{L}}{\nu_{\mu,\mathrm{L}}},\colvec{2}{\tau^{-}_\mathrm{L}}{\nu_{\tau,\mathrm{L}}}\Bigg\} \\
-\vec{Q}_\mathrm{L}&=\Bigg\{\colvec{2}{\mathrm{u}_\mathrm{L}}{\mathrm{d}_\mathrm{L}},\colvec{2}{\mathrm{c}_\mathrm{L}}{\mathrm{s}_\mathrm{L}},\colvec{2}{\mathrm{t}_\mathrm{L}}{\mathrm{b}_\mathrm{L}}\Bigg\}
+\vec{\mathrm{E}}_\mathrm{L}&=\Bigg\{\colvec{2}{e^{-}_\mathrm{L}}{\nu_\mathrm{e,L}},\colvec{2}{\mu^{-}_\mathrm{L}}{\nu_{\mu,\mathrm{L}}},\colvec{2}{\tau^{-}_\mathrm{L}}{\nu_{\tau,\mathrm{L}}}\Bigg\} \label{eq:theory-su2-leptons} \\
+\vec{\mathrm{Q}}_\mathrm{L}&=\Bigg\{\colvec{2}{\mathrm{u}_\mathrm{L}}{\mathrm{d}_\mathrm{L}},\colvec{2}{\mathrm{c}_\mathrm{L}}{\mathrm{s}_\mathrm{L}},\colvec{2}{\mathrm{t}_\mathrm{L}}{\mathrm{b}_\mathrm{L}}\Bigg\} \label{eq:theory-su2-quarks}
 \end{align}
 
 and ``right-handed'' singlets 
 
 \begin{align}
-\vec{e}_\mathrm{R}&=\big\{\mathrm{e}^{-}_\mathrm{R},\mu^{-}_\mathrm{R},\tau^{-}_\mathrm{R}\big\} \\
-\vec{u}_\mathrm{R}&=\big\{\mathrm{u}_\mathrm{R},\mathrm{c}_\mathrm{R},\mathrm{t}_\mathrm{R}\big\} \\
-\vec{d}_\mathrm{R}&=\big\{\mathrm{d}_\mathrm{R},\mathrm{s}_\mathrm{R},\mathrm{b}_\mathrm{R}\big\}
+\vec{\mathrm{e}}_\mathrm{R}&=\big\{\mathrm{e}^{-}_\mathrm{R},\mu^{-}_\mathrm{R},\tau^{-}_\mathrm{R}\big\}  \label{eq:theory-u1-leptons} \\
+\vec{\mathrm{u}}_\mathrm{R}&=\big\{\mathrm{u}_\mathrm{R},\mathrm{c}_\mathrm{R},\mathrm{t}_\mathrm{R}\big\} \label{eq:theory-u1-up} \\
+\vec{\mathrm{d}}_\mathrm{R}&=\big\{\mathrm{d}_\mathrm{R},\mathrm{s}_\mathrm{R},\mathrm{b}_\mathrm{R}\big\} \label{eq:theory-u1-down} 
 \end{align}
 
-of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any interaction within the \gls{sm}. 
+of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any interaction within the \gls{sm}. The gauge transformation of the combined group is
 
-Higgs potential, yukawa interaction, mass term CKM
+\begin{equation}
+\psi\mapsto\psi\cdot\mathrm{e}^{-ig\alpha^{a}(x)\sigma^{a}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2} \label{eq:theory-u1su2-transformation}
+\end{equation}
 
-%##############################################
+where $\sigma^{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\prime}$ the corresponding conserved charges. This leads to four boson fields, $A^{a}_{\mu}$ and $B_{\mu}$, that interact with the fermions. Hence in analogy to Eq.~\ref{eq:theory-EM-int} one obtains
+
+\begin{equation}
+\mathcal{L}_\mathrm{interaction}=\sum_{\psi_\mathrm{f}}^\mathrm{fermions}\bar{\psi}_\mathrm{f}~\gamma^{\mu}\big(\tfrac{1}{2}gA_{\mu}^{a}\sigma^{a}+\tfrac{1}{2}g^{\prime}B_{\mu}\big)\psi_\mathrm{f}
+\end{equation}
+
+for all fermion doublets and singlets~(Eqs.~\ref{eq:theory-su2-leptons}-\ref{eq:theory-u1-down}). Unfortunately, a fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. 
+
+
+V-A, Higgs potential, vev invariant under sigma3, yukawa interaction, mass term CKM
+
+%##############################################}
 \subsection{Strong interactions}
 %##############################################
 \label{sec:theory-qcd}
