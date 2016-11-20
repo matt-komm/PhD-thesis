@@ -171,7 +171,7 @@ Other interactions of the \gls{sm} are also connected to local gauge transformat
 %##############################################
 \label{sec:theory-ewk}
 
-Electromagnetism and weak interactions can be unified using a $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ gauge group. Furthermore, the theory needs to account for the following features found experimentally.
+Electromagnetic and weak interactions can be unified using a $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ gauge group. Furthermore, the theory needs to account for the following features found experimentally.
 
 \begin{itemize}
 
@@ -184,8 +184,8 @@ Electromagnetism and weak interactions can be unified using a $\mathrm{U(1)}\oti
 To account for the violation of parity, fermion fields have to be first decomposed into chiral eigenstates using the projections
 
 \begin{align}
-\psi_\mathrm{L}&\equiv\mathrm{P}_\mathrm{L}\psi=\tfrac{1}{2}(1+\gamma_{5})\psi \\
-\psi_\mathrm{R}&\equiv\mathrm{P}_\mathrm{R}\psi=\tfrac{1}{2}(1-\gamma_{5})\psi
+\psi_\mathrm{L}&\equiv\mathrm{P}_\mathrm{L}\psi=\tfrac{1}{2}(1-\gamma_{5})\psi \\
+\psi_\mathrm{R}&\equiv\mathrm{P}_\mathrm{R}\psi=\tfrac{1}{2}(1+\gamma_{5})\psi
 \end{align}
 
 with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties: $(\gamma_{5})^{\dagger}=\gamma_{5}$; ~~$(\gamma_{5})^2=\mathrm{I}_\mathrm{4x4}$; ~~ $\{\gamma_{5},\gamma_{\mu}\}=\gamma_{5}\gamma_{0}+\gamma_{0}\gamma_{5}=0$.} where $\psi_\mathrm{L}$ ($\psi_\mathrm{R}$) is called ``left-handed'' (``right-handed'') respectively. In the case of massless particles, Eq.~\ref{eq:theory-diracL} decouples into two separate equations for $\psi=\psi_\mathrm{L}+\psi_\mathrm{R}$. Here, the chirality is equal to the Lorentz-invariant helicity
@@ -219,14 +219,38 @@ of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any 
 
 where $\sigma^{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\prime}$ the corresponding conserved charges. This leads to four boson fields, $A^{a}_{\mu}$ and $B_{\mu}$, that interact with the fermions. Hence in analogy to Eq.~\ref{eq:theory-EM-int} one obtains
 
+\begin{align}
+\mathcal{L}_\mathrm{interaction}=~~\sum_{\psi_\mathrm{L}}^\mathrm{doublets}&\bar{\psi}^{i}_\mathrm{L}~\gamma^{\mu}\big(\tfrac{1}{2}gA_{\mu}^{a}\sigma^{a}+\tfrac{1}{2}g^{\prime}B_{\mu}\big)\psi^{i}_\mathrm{L} \\
++\sum_{\psi^{i}_\mathrm{R}}^\mathrm{singlets}&\bar{\psi}^{i}_\mathrm{R}~\gamma^{\mu}\tfrac{1}{2}g^{\prime}B_{\mu}\psi^{i}_\mathrm{R} + \mathrm{\gls{hc}}
+\end{align}
+\todo{is it correct that singlets do not couple to A?}
+
+where the summation is implied over the fermion doublets and singlets. The coupling structure $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}$ between $A_{\mu}^{a}$ and $\psi$ is called a ``vector -- axialvector''~(V-A) structure because of its spatial transformation properties and obeys the observation of the Wu experiment.
+
+Unfortunately, a fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. To introduce mass terms for fermions and the \wboson/\zboson gauge bosons, a solution is provided by the Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585}. A new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{+},\phi^{0})$\footnote{$\phi^{+}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.} -- invariant under $\mathrm{U(1)}\otimes\mathrm{SU(2)}$ -- is added to the Lagrangian density which interacts via
+
+\begin{align}
+\mathcal{L}_\mathrm{Yukawa}=&-\lambda_{e}^{ii}\cdot\bar{\mathrm{E}}^{i}_\mathrm{L}\phi\cdot\mathrm{e}^{i}_\mathrm{R}-\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi\cdot\mathrm{u}^{k}_\mathrm{R} \label{eq:theory-yukawa}\\
+&+\bar{\phi}\gamma^{\mu}\big(\tfrac{1}{2}gA^{a}_{\mu}\sigma^{a}\phi+\tfrac{1}{2}g^{\prime}B_{\mu}\big)\phi+\mathrm{V}(\phi) +\mathrm{\gls{hc}} \label{eq:theory-phi-bosons}
+\end{align}
+
+with fermions and gauge bosons. A coupling between a Dirac and a scalar field is called a Yukawa interaction~(Eq.~\ref{eq:theory-yukawa}). In addition, a potential 
+
 \begin{equation}
-\mathcal{L}_\mathrm{interaction}=\sum_{\psi_\mathrm{f}}^\mathrm{fermions}\bar{\psi}_\mathrm{f}~\gamma^{\mu}\big(\tfrac{1}{2}gA_{\mu}^{a}\sigma^{a}+\tfrac{1}{2}g^{\prime}B_{\mu}\big)\psi_\mathrm{f}
+\mathrm{V}(\phi)=-\mu^2\phi\phi^\dagger+\frac{1}{2}\lambda(\phi^\dagger\phi)^2
 \end{equation}
 
-for all fermion doublets and singlets~(Eqs.~\ref{eq:theory-su2-leptons}-\ref{eq:theory-u1-down}). Unfortunately, a fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. 
+is added which has the form of a ``Mexcian hat''. The $\mathrm{SU(2)}$ symmetry is broken through a non-zero \gls{vev} of  $\phi_0=\sqrt{\mu^{2}/\lambda}\equiv v/\sqrt{2}$ for $\mu^2>0$ which allows to develop $\phi$ around the miminum as
 
+\begin{equation}
+\phi(x) \Bigg|_{\phi_0} = \colvec{2}{0}{\frac{1}{\sqrt{2}}\big(v+h(x)\big)}\cdot \mathrm{e}^{-i\theta^{a}(x)\sigma^{a}/(2v)} \label{eq:theory-phi-dev}.
+\end{equation}
 
-V-A, Higgs potential, vev invariant under sigma3, yukawa interaction, mass term CKM
+A $\mathrm{SU(2)}$ gauge transformation -- called ``unitary'' gauge -- can be performed such that the three massless so-called ``goldstone'' bosons, $\theta^{a}$, vanish. Only the Higgs boson, $h$, remains. The parametrization is chosen such that it leaves the \gls{vev} invariant under the $\mathrm{U(1)}$ transformation of Eq.~\ref{eq:theory-u1su2-transformation} for $a=3$.
+
+Inserting Eq.~\ref{eq:theory-phi-dev} into  Eq.~\ref{eq:theory-phi-bosons} results in 
+
+ mass term CKM
 
 %##############################################}
 \subsection{Strong interactions}
