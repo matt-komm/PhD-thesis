@@ -217,21 +217,21 @@ of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any 
 \psi\mapsto\psi\cdot\mathrm{e}^{-ig\vec{\alpha}(x)\cdot\vec{\omega}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2} \label{eq:theory-u1su2-transformation}
 \end{equation}
 
-where $\omega^{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\prime}$ the corresponding conserved charges. This leads to four boson fields, $A^{a}_{\mu}$ and $B_{\mu}$, that interact with the fermions. Hence in analogy to Eq.~\ref{eq:theory-EM-int} one obtains
+where $\omega^{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\prime}$ the corresponding conserved charges. This leads to four boson fields, $W^{a}_{\mu}$ and $B_{\mu}$, that interact with the fermions. Hence in analogy to Eq.~\ref{eq:theory-EM-int} one obtains
 
 \begin{align}
-\mathcal{L}_\mathrm{interaction}=~~\sum_{\psi_\mathrm{L}}^\mathrm{doublets}&\bar{\psi}^{i}_\mathrm{L}~\gamma^{\mu}\big(\tfrac{1}{2}g\vec{A}_{\mu}\cdot\vec{\omega}+\tfrac{1}{2}g^{\prime}B_{\mu}\big)\psi^{i}_\mathrm{L} \\
+\mathcal{L}_\mathrm{interaction}=~~\sum_{\psi_\mathrm{L}}^\mathrm{doublets}&\bar{\psi}^{i}_\mathrm{L}~\gamma^{\mu}\big(\tfrac{1}{2}g\vec{W}_{\mu}\cdot\vec{\omega}+\tfrac{1}{2}g^{\prime}B_{\mu}\big)\psi^{i}_\mathrm{L} \\
 +\sum_{\psi^{i}_\mathrm{R}}^\mathrm{singlets}&\bar{\psi}^{i}_\mathrm{R}~\gamma^{\mu}\tfrac{1}{2}g^{\prime}B_{\mu}\psi^{i}_\mathrm{R} + \mathrm{\gls{hc}}
 \end{align}
 \todo{is it correct that singlets do not couple to A?}
 
-where the summation is implied over the fermion doublets and singlets. The coupling structure $\propto(\gamma_{\mu}-\gamma_{\mu}\gamma_{5})$ between $A_{\mu}^{a}$ and $\psi$ is called a ``vector -- axialvector''~(V-A) structure because of its spatial transformation properties and obeys the observation of the Wu experiment.
+where the summation is implied over the fermion doublets and singlets. The coupling structure $\propto(\gamma_{\mu}-\gamma_{\mu}\gamma_{5})$ between $W_{\mu}^{a}$ and $\psi$ is called a ``vector -- axialvector''~(V-A) structure because of its spatial transformation properties and obeys the observation of the Wu experiment.
 
 Unfortunately, a fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. To introduce mass terms for fermions and the \wboson/\zboson gauge bosons, a solution is provided by the Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585}. A new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{+},\phi^{0})$\footnote{$\phi^{+}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.} -- invariant under $\mathrm{U(1)}\otimes\mathrm{SU(2)}$ -- is added to the Lagrangian density
 
 \begin{align}
 \mathcal{L}_{\phi}&=\big(D_{\mu}\phi^{\dagger}\big)\big(D^{\mu}\phi\big)+\mathrm{V}(\phi) \label{eq:theory-phi-propagator} \\
-D^{\mu}\phi&=\big(\partial^{\mu}+\tfrac{1}{2}ig\vec{A}^{\mu}\cdot\vec{\omega}+\tfrac{1}{2}ig^{\prime}B^{\mu}\big)\phi
+D^{\mu}\phi&=\big(\partial^{\mu}+\tfrac{1}{2}ig\vec{W}^{\mu}\cdot\vec{\omega}+\tfrac{1}{2}ig^{\prime}B^{\mu}\big)\phi
 \end{align}
 
 which interacts with the gauge bosons. In addition, $\phi$ has a potential 
@@ -248,16 +248,16 @@ in the form of a ``Mexcian hat'' that leads to a \gls{vev} of  $\phi_0=\sqrt{\mu
 
 where  $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $h$ the Higgs boson. A $\mathrm{SU(2)}$ transformation -- called ``unitary'' gauge -- can be performed such that $\vec{\theta}$ vanishes. Only the Higgs boson remains. The parametrization is chosen such that it leaves the \gls{vev} invariant under the $\mathrm{U(1)}$ transformation $\phi\mapsto\phi\cdot\mathrm{e}^{-ig\alpha_{3}(x)\omega_{3}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2}$.
 
-Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields the following terms without interactions
+Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields the following non-interaction terms
 
 \begin{align}
 \mathcal{L}_\mathrm{Higgs}&=~~~\tfrac{1}{2}(\partial_{\mu}h^{\dagger})(\partial^{\mu}h)-\lambda^2 v^2 h^2 \label{eq:theory-higgs} \\
-\mathcal{L}_\mathrm{A_1,A_2~bosons}&=-\tfrac{1}{8}g^2 v^2 \big(A_{1,\mu} A_{1}^{\mu}+A_{2,\mu} A_{2}^{\mu}\big) \label{eq:theory-a1a2} \\
-\mathcal{L}_\mathrm{A_3,B~bosons}&=-\tfrac{1}{8}v^2 \big(gA_{3,\mu}-g^{\prime}B_\mu\big)\big(gA_{3}^{\mu}-g^{\prime}B^\mu\big) \label{eq:theory-a3b}.
+\mathcal{L}_\mathrm{W_1,W_2~bosons}&=-\tfrac{1}{8}g^2 v^2 \big(W_{1,\mu} W_{1}^{\mu}+W_{2,\mu} W_{2}^{\mu}\big) \label{eq:theory-a1a2} \\
+\mathcal{L}_\mathrm{W_3,B~bosons}&=-\tfrac{1}{8}v^2 \big(gW_{3,\mu}-g^{\prime}B_\mu\big)\big(gW_{3}^{\mu}-g^{\prime}B^\mu\big) \label{eq:theory-a3b}.
 \end{align}
 
-The first term (Eq.~\ref{eq:theory-higgs}) describes the free scalar Higgs boson with mass $m=\lambda v$. Next, the $A_{1}$ and $A_{2}$
-fields in Eq.~\ref{eq:theory-a1a2} can be rewritten as a particle/antiparticle pair $\wboson=1/\sqrt{2}(A_1\mp iA_2)$ with mass $m_{\wboson}=\frac{1}{2}gv$. Lastly, the fields $A_3$ and $B$ appear to be mixed in Eq.~\ref{eq:theory-a3b}.
+The first term (Eq.~\ref{eq:theory-higgs}) describes a free scalar Higgs boson with mass $m=\lambda v$. Next, the $W_{1}$ and $W_{2}$
+fields in Eq.~\ref{eq:theory-a1a2} can be rewritten as a particle/antiparticle pair $\wboson=1/\sqrt{2}(W_1\mp iW_2)$ with mass $m_{\wboson}=\frac{1}{2}gv$. Lastly, the fields $W_3$ and $B$ appear to be in a mixed mass state~(Eq.~\ref{eq:theory-a3b}).
 
  mass term CKM
  

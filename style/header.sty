@@ -68,7 +68,7 @@
 \usepackage{breakurl}
 \usepackage[color=white,linecolor=red,bordercolor=red,textsize
 =small]{todonotes}
-\usepackage{perpage}
+\usepackage[perpage]{footmisc}
 \usepackage{xspace} %intelligent spacing e.g. after inline equations
 \usepackage[nottoc]{tocbibind} %puts references into toc
 \usepackage[nopostdot,toc,acronym,style=super]{glossaries} %list of abbreviations
@@ -229,15 +229,18 @@
    ****\or *****\or \else\@ctrerr\fi} %define alternative numbering using *, **, ***, ...
 %\renewcommand{\thefootnote}{\numberfont\arabic{footnote}} %style
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
-\counterwithin*{footnote}{page} %reset counter per new page
+%\counterwithin*{footnote}{page} %reset counter per new page
+\setlength{\footnotesep}{0.8em}
 \renewcommand{\footnoterule}{%
   \vspace{-1.\parskip}
   \vspace{\footskip}
   {\color{gray}\hrule width 0.35\textwidth height \myrulewidth}
   \kern 2pt
+  
+  %\vspace{-0.5\footnotesep}
 }
 \deffootnote[1.75em] %mark width - allows 4 **** to be placed
-      {2.5em} %indent of text
+      {1.75em} %indent of text
       {1em} %indent of paragraph
       {\textsuperscript{\thefootnotemark}\,} %def mark
       
