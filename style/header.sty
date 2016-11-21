@@ -225,8 +225,8 @@
 
 
 %% footnote
-\def\@fnsymbol#1{\ifcase#1\or *\or **\or ***\or
-   ****\or *****\or \else\@ctrerr\fi} %define alternative numbering using *, **, ***, ...
+\def\@fnsymbol#1{\ifcase#1\or $\bullet$\or $\bullet\bullet$\or $\bullet\bullet\bullet$\or
+   $\bullet\bullet\bullet\bullet$\or $\bullet\bullet\bullet\bullet\bullet$\or \else\@ctrerr\fi} %define alternative numbering using *, **, ***, ...
 %\renewcommand{\thefootnote}{\numberfont\arabic{footnote}} %style
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
 %\counterwithin*{footnote}{page} %reset counter per new page
