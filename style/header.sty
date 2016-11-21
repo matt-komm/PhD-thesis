@@ -230,9 +230,9 @@
 %\renewcommand{\thefootnote}{\numberfont\arabic{footnote}} %style
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
 %\counterwithin*{footnote}{page} %reset counter per new page
-\setlength{\footnotesep}{0.8em}
+\setlength{\footnotesep}{\parskip}
 \renewcommand{\footnoterule}{%
-  \vspace{-1.\parskip}
+  \vspace{-0.5\parskip}
   \vspace{\footskip}
   {\color{gray}\hrule width 0.35\textwidth height \myrulewidth}
   \kern 2pt
