@@ -176,7 +176,7 @@
 \renewcommand{\arraystretch}{1.25}
 
 %Schicke Bild- und Tabellenbeschreibungen
-\usepackage[format=plain,indention=0.0cm,labelsep=colon,width=.93\textwidth]{caption} %use same as for parindent
+\usepackage[format=plain,indention=0.0cm,labelsep=period,width=.93\textwidth]{caption} %use same as for parindent
 \setkomafont{caption}{\small}
 \setkomafont{captionlabel}{\numberfont\small}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
@@ -220,8 +220,8 @@
 {\box0\lower0.43pt\box2}}
 
 %% change equation numbering style
-\def\tagform@#1{\maketag@@@{\ignorespaces{\small\numberfont(#1)\enspace}\unskip\@@italiccorr}} %kill parenthesis
-\renewcommand{\theequation}{\thechapter.\arabic{equation}.}
+\def\tagform@#1{\maketag@@@{\ignorespaces{\small\numberfont(#1.)\enspace}\unskip\@@italiccorr}} %kill parenthesis
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
 
 
 %% footnote
