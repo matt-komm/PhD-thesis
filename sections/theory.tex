@@ -240,13 +240,19 @@ which interacts with the gauge bosons. In addition, $\phi$ has a potential
 \mathrm{V}(\phi)=-\mu^2\phi\phi^\dagger+\frac{1}{2}\lambda(\phi^\dagger\phi)^2
 \end{equation}
 
-in the form of a ``Mexcian hat'' that leads to a \gls{vev} of  $\phi_0=\sqrt{\mu^{2}/\lambda}\equiv v/\sqrt{2}$ for $\mu^2>0$. One says that this non-zero \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry\footnote{The symmetry still exists but is ``hidden'' when viewed around x for $\phi_0$ instead of $x=0$.} when parameterizing $\phi$ around the minimum as
+in the form of a ``Mexcian hat'' as shown in Fig.~\ref{fig:theory-higgs-potential} that leads to a \gls{vev} of  $\phi_0=\sqrt{\mu^{2}/\lambda}\equiv v/\sqrt{2}$ for $\mu^2>0$.
+
+\myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field with a non-zero \gls{vev} $\phi_0$ which leads to symmetry breaking.}{
+\includegraphics[width=0.5\textwidth]{figures/theory/higgspot.pdf}
+}
+
+One says that this non-zero \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry\footnote{The symmetry still exists but is ``hidden'' when viewed around x for $\phi_0$ instead of $x=0$.} when parameterizing $\phi$ around the minimum as
 
 \begin{equation}
 \phi(x) \big|_{\phi_0} = \colvec{2}{0}{\frac{1}{\sqrt{2}}\big(v+h(x)\big)}\cdot \mathrm{e}^{-i\vec{\theta}(x)\cdot\vec{\omega}/(2v)} \label{eq:theory-phi-dev}
 \end{equation}
 
-where  $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $h$ the Higgs boson. A $\mathrm{SU(2)}$ transformation -- called ``unitary'' gauge -- can be performed such that $\vec{\theta}$ vanishes. Only the Higgs boson remains. The parametrization is chosen such that it leaves the \gls{vev} invariant under the $\mathrm{U(1)}$ transformation $\phi\mapsto\phi\cdot\mathrm{e}^{-ig\alpha_{3}(x)\omega_{3}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2}$.
+where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $h$ the Higgs boson. A $\mathrm{SU(2)}$ transformation -- called ``unitary'' gauge -- can be performed such that $\vec{\theta}$ vanishes. Only the Higgs boson remains. The parametrization is chosen such that it leaves the \gls{vev} invariant under the $\mathrm{U(1)}$ transformation $\phi\mapsto\phi\cdot\mathrm{e}^{-ig\alpha_{3}(x)\omega_{3}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2}$.
 
 Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields the following non-interaction terms
 
@@ -277,7 +283,7 @@ self-couplings, running coupling, nlo calculations
 %##############################################
 \subsection{Observables}
 %##############################################
-matrix elements, cross sections, decays, PDFs, angles (w polarizations), Noether currents, renormalization
+matrix elements, cross sections, decays, PDFs, angles (w polarizations)/spin matrix, renormalization?
 
 %##############################################
 \subsection{Open questions}
