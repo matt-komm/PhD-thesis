@@ -29,8 +29,6 @@ Fundamental particles are objects for which experiments have revealed no interna
     \hline
     electric charge     & $-1$                          & $-1$                          & $-1$ \\
     \hline
-    isospin (\isoz)     & $\frac{1}{2}$                 & $\frac{1}{2}$                 & $\frac{1}{2}$ \\
-    \hline
     \hline
     name                & electron neutrino             & muon neutrino                 & tau neutrino  \\
                         & ($\nu_\mathrm{e}$)            & ($\nu_{\mu}$)                 & ($\nu_{\tau}$) \\
@@ -39,8 +37,6 @@ Fundamental particles are objects for which experiments have revealed no interna
                         & (95\% CL)                     & (90\% CL)                     & (95\%~CL)\\
     \hline
     electric charge     & 0                             & 0                             & 0 \\
-    \hline
-    isospin (\isoz)     & $-\frac{1}{2}$                & $-\frac{1}{2}$                & $-\frac{1}{2}$ \\
     \end{tabular}
 }
 
@@ -57,16 +53,13 @@ For the neutrinos masses, only upper limits on their masses are given. Those are
     \hline
     electric charge     & $\frac{2}{3}$                 & $\frac{2}{3}$                 & $\frac{2}{3}$ \\
     \hline
-    isospin (\isoz)     & $\frac{1}{2}$                 & $\frac{1}{2}$                 & $\frac{1}{2}$ \\
-    \hline
     \hline
     name                & down (d)                      & strange (s)                   & bottom (b)  \\
     \hline
     mass                & $4.7^{+0.5}_{-0.4}~\MeV$      & $96^{+8}_{-4}~\MeV$           & $4.18^{+0.04}_{-0.03}~\GeV$ \\
     \hline
     electric charge     & $-\frac{1}{3}$                & $-\frac{1}{3}$                & $-\frac{1}{3}$ \\
-    \hline
-    isospin (\isoz)     & $-\frac{1}{2}$                & $-\frac{1}{2}$                & $-\frac{1}{2}$ \\
+
     \end{tabular}
 }
 
@@ -229,7 +222,7 @@ Unfortunately, a fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\ps
 
 \begin{align}
 \mathcal{L}_{\phi}&=\big(D_{\mu}\phi^{\dagger}\big)\big(D^{\mu}\phi\big)+\mathrm{V}(\phi) \label{eq:theory-phi-propagator} \\
-D^{\mu}\phi&=\big(\partial^{\mu}+\tfrac{1}{2}ig\vec{W}^{\mu}\cdot\vec{\omega}+\tfrac{1}{2}ig^{\prime}B^{\mu}\big)\phi
+D^{\mu}\phi&=\big(\partial^{\mu}+\tfrac{1}{2}ig\vec{W}^{\mu}\cdot\vec{\omega}+\tfrac{1}{2}ig^{\prime}B^{\mu}\big)\phi \label{eq:theory-phi-codev}
 \end{align}
 
 which interacts with the gauge bosons. In addition, $\phi$ has a potential 
@@ -244,13 +237,18 @@ in the form of a ``Mexcian hat'' as shown in Fig.~\ref{fig:theory-higgs-potentia
 \includegraphics[width=0.5\textwidth]{figures/theory/higgspot.pdf}
 }
 
-One says that this non-zero \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry\footnote{The symmetry still exists but is ``hidden'' when viewed around x for $\phi_0$ instead of $x=0$.} when parameterizing $\phi$ around the minimum as
+One says that this non-zero \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry\footnote{The symmetry still exists but is ``hidden'' when viewed from $x$ where $\phi(x)=\phi_0$ instead of $x=0$.} when parameterizing $\phi$ around the minimum as
 
 \begin{equation}
 \phi(x) \big|_{\phi_0} = \colvec{2}{0}{\frac{1}{\sqrt{2}}\big(v+h(x)\big)}\cdot \mathrm{e}^{-i\vec{\theta}(x)\cdot\vec{\omega}/(2v)} \label{eq:theory-phi-dev}
 \end{equation}
 
-where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $h$ the Higgs boson. A $\mathrm{SU(2)}$ transformation -- called ``unitary'' gauge -- can be performed such that $\vec{\theta}$ vanishes. Only the Higgs boson remains. The parametrization is chosen such that it leaves the \gls{vev} invariant under the $\mathrm{U(1)}$ transformation $\phi\mapsto\phi\cdot\mathrm{e}^{-ig\alpha_{3}(x)\omega_{3}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2}$.
+where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $h$ the Higgs boson. A $\mathrm{SU(2)}$ transformation -- called ``unitary'' gauge -- can be performed such that $\vec{\theta}$ vanishes. Only the Higgs boson remains. The parametrization is chosen such that it leaves the \gls{vev} invariant under the $\mathrm{U(1)}$ transformation
+
+\begin{equation}
+\phi\mapsto\phi\cdot\mathrm{e}^{-ig\alpha_{3}(x)\omega_{3}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2}.
+\end{equation}
+
 
 Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields the following non-interaction terms
 
@@ -260,17 +258,50 @@ Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yi
 \mathcal{L}_\mathrm{W_3,B~bosons}&=-\tfrac{1}{8}v^2 \big(gW_{3,\mu}-g^{\prime}B_\mu\big)\big(gW_{3}^{\mu}-g^{\prime}B^\mu\big) \label{eq:theory-a3b}.
 \end{align}
 
-The first term (Eq.~\ref{eq:theory-higgs}) describes a free scalar Higgs boson with mass $m=\lambda v$. Next, the $W_{1}$ and $W_{2}$
-fields in Eq.~\ref{eq:theory-a1a2} can be rewritten as a particle/antiparticle pair $\wboson=1/\sqrt{2}(W_1\mp iW_2)$ with mass $m_{\wboson}=\frac{1}{2}gv$. Lastly, the fields $W_3$ and $B$ appear to be in a mixed mass state~(Eq.~\ref{eq:theory-a3b}).
+The first term (Eq.~\ref{eq:theory-higgs}) describes a free scalar boson, the Higgs boson \higgs, with mass $m=\lambda v$. Next, the $W_{1}$ and $W_{2}$
+fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle pair $\wboson=1/\sqrt{2}(W_1\mp iW_2)$ with mass $m_{\wboson}=\frac{1}{2}gv$. Lastly, the fields $W_3$ and $B$ appear to be in a mixed mass state~(Eq.~\ref{eq:theory-a3b}). By performing a rotation of the couplings
 
- mass term CKM
- 
- 
+\begin{equation}
+\colvec{2}{\zboson}{A}=\begin{pmatrix}
+\cos\theta_\mathrm{W} & -\sin\theta_\mathrm{W} \\
+\sin\theta_\mathrm{W} & \cos\theta_\mathrm{W}
+\end{pmatrix}
+\colvec{2}{W_{3}}{B},\quad \cos\theta_\mathrm{W}=\frac{g}{\sqrt{g^2+g^{\prime 2}}},
+\end{equation}
+
+where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson $\zboson$ with mass $m_\zboson=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $A_\mu$, the photon, can be identified. Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
 
 \begin{align}
-\mathcal{L}_\mathrm{Yukawa~lepton~int.}=&-\lambda_{e}^{ii}\cdot\bar{\mathrm{E}}^{i}_\mathrm{L}\phi\cdot\mathrm{e}^{i}_\mathrm{R} \label{eq:theory-lepton-yukawa}\\
-\mathcal{L}_\mathrm{Yukawa~quark~int.}=&-\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi\cdot\mathrm{u}^{k}_\mathrm{R} +\mathrm{\gls{hc}} \label{eq:theory-quark-yukawa}\\
+\mathcal{L}=&~~~~\partial_\mu+i\frac{g}{\sqrt{2}}\cdot\big(W^{+}_\mu T^{+}+W^{-}_\mu T^{-})\\
+&-i\frac{g^2T_3-g^{\prime 2}Y}{\sqrt{g^2+g^{\prime 2}}}\cdot\zboson_\mu-i\frac{g^{\prime}g\big(T^3+Y\big)}{\sqrt{g^2+g^{\prime 2}}}\cdot A_\mu
 \end{align}
+
+where $T^{\pm}$ denote the ladder operators, $Y$ the $\mathrm{U(1)}$ so-called ``hyper'' charge and $T_3$ the $\mathrm{SU(2)}$  charge. From the coupling to the photon one can read of the electric coupling constant to be $e=g^\prime g/\sqrt{g^2+g^{\prime 2}}$ and the corresponding electric charge to be $Q=T_3+Y$.
+
+The procedure of symmetry breaking through a non-zero \gls{vev} allows to introduce mass terms for the \wboson and \zboson bosons starting from a local gauge invariant theory. Additionally, the Higgs boson is predicted which was discovered in July 2012 independently by the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations and thus consolidating the electroweak theory further.
+\todo{value of vev from muon decays}
+
+
+Fermion masses can be generated through Yukawa interactions as
+
+\begin{align}
+\mathcal{L}_\mathrm{Yukawa~lepton~int.}=&-\lambda_{e}^{ii}\cdot\bar{\mathrm{E}}^{i}_\mathrm{L}\phi\cdot\mathrm{e}^{i}_\mathrm{R}+\mathrm{\gls{hc}} \label{eq:theory-lepton-yukawa}\\
+\mathcal{L}_\mathrm{Yukawa~quark~int.}=&-\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi\cdot\mathrm{u}^{k}_\mathrm{R} +\mathrm{\gls{hc}} \label{eq:theory-quark-yukawa}
+\end{align}
+
+where the coupling strengths are denoted by $\lambda$. A mass term for the electron, muon and tau lepton, $l$, of $m_l=-\lambda_l v/\sqrt{2}$ can be identified after the symmetry breaking. The quarks can be disentangled from their mixed mass state through a rotation of the fields 
+
+\begin{equation}
+\mathrm{u}^{\prime i}_\mathrm{L}=U^{ij}_\mathrm{u}\mathrm{u}^{j}_\mathrm{L},\quad \mathrm{d}^{\prime i}_\mathrm{L}=U^{ij}_\mathrm{d}\mathrm{d}^{j}_\mathrm{L}
+\end{equation}
+
+which allows to write the Lagrangian density in the quark mass eigenstates. This rotation leads to an interaction 
+
+\begin{equation}
+\mathcal{L}_{\wboson~\mathrm{interaction}}=\frac{g}{\sqrt{2}} \bar{\mathrm{u}}^{\prime i}_\mathrm{L}\gamma^{\mu}\underbrace{(U^\dagger_\mathrm{u}U_\mathrm{d})_{ij}}_{=\mathrm{V}_{ij}}\mathrm{d}^{\prime j} W^{+}_\mu+\mathrm{\gls{hc}}
+\end{equation}
+
+where $\mathrm{V}_{ij}$ is the \gls{ckm} matrix. \todo{add matrix from pdg?}
 
 %##############################################}
 \subsection{Strong interactions}
