@@ -9,7 +9,7 @@ An introduction to the \gls{sm}, its particle content, interactions, and propert
 \section{General Quantum Field Theory of the Standard Model}
 %##############################################
 
-The \gls{sm} describes the interactions between fundamental particles. It is based on \gls{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or lifetimes of unstable particles which can be calculated within its framework -- even fully automatized. The \gls{sm} validity is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards physics \gls{bsm}.
+The \gls{sm} describes the interactions between fundamental particles. It is based on \gls{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or decay rates of particles which can be calculated within its framework -- even fully automatized. The \gls{sm} validity is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards physics \gls{bsm}.
 
 
 %##############################################
@@ -208,7 +208,7 @@ of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any 
 \psi\mapsto\psi\cdot\mathrm{e}^{-ig\vec{\alpha}(x)\cdot\vec{\omega}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2} \label{eq:theory-u1su2-transformation}
 \end{equation}
 
-where $\omega^{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\prime}$ the corresponding conserved charges. This leads to four boson fields, $W^{a}_{\mu}$ and $B_{\mu}$, that interact with the fermions. Hence in analogy to Eq.~\ref{eq:theory-EM-int} one obtains
+where $\omega_{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\prime}$ the corresponding conserved charges. This leads to four boson fields, $W^{a}_{\mu}$ and $B_{\mu}$, that interact with the fermions. Hence in analogy to Eq.~\ref{eq:theory-EM-int} one obtains
 
 \begin{align}
 \mathcal{L}_\mathrm{interaction}=~~\sum_{\psi_\mathrm{L}}^\mathrm{doublets}&\bar{\psi}^{i}_\mathrm{L}~\gamma^{\mu}\big(\tfrac{1}{2}g\vec{W}_{\mu}\cdot\vec{\omega}+\tfrac{1}{2}g^{\prime}B_{\mu}\big)\psi^{i}_\mathrm{L} \\
@@ -216,7 +216,7 @@ where $\omega^{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\pri
 \end{align}
 \todo{is it correct that singlets do not couple to A?}
 
-where the summation is implied over the fermion doublets and singlets. The coupling structure $\propto(\gamma_{\mu}-\gamma_{\mu}\gamma_{5})$ between $W_{\mu}^{a}$ and $\psi$ is called a ``vector -- axialvector''~(V-A) structure because of its spatial transformation properties. \todo{elaborate more!} and obeys the observation of the Wu experiment.
+where the summation is implied over the fermion doublets and singlets. The coupling structure $\propto(\gamma_{\mu}-\gamma_{\mu}\gamma_{5})$ between $W_{\mu}^{a}$ and $\psi$ is called a \gls{va} structure because of its spatial transformation properties. \todo{elaborate more! e.g. antiparticle} and obeys the observation of the Wu experiment.
 
 Unfortunately, a fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. To introduce mass terms for fermions and the \wboson/\zboson gauge bosons, a solution is provided by the Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585}. A new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{+},\phi^{0})$\footnote{$\phi^{+}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.} -- invariant under $\mathrm{U(1)}\otimes\mathrm{SU(2)}$ -- is added to the Lagrangian density
 
@@ -228,7 +228,7 @@ D^{\mu}\phi&=\big(\partial^{\mu}+\tfrac{1}{2}ig\vec{W}^{\mu}\cdot\vec{\omega}+\t
 which interacts with the gauge bosons. In addition, $\phi$ has a potential 
 
 \begin{equation}
-\mathrm{V}(\phi)=-\mu^2\phi\phi^\dagger+\frac{1}{2}\lambda(\phi^\dagger\phi)^2
+\mathrm{V}(\phi)=-\mu^2\phi^\dagger\phi+\frac{1}{2}\lambda(\phi^\dagger\phi)^2
 \end{equation}
 
 in the form of a ``Mexcian hat'' as shown in Fig.~\ref{fig:theory-higgs-potential} that leads to a \gls{vev} of  $\phi_0=\sqrt{\mu^{2}/\lambda}\equiv v/\sqrt{2}$ for $\mu^2>0$.
@@ -279,7 +279,7 @@ where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, a
 where $T^{\pm}$ denote the ladder operators, $Y$ the $\mathrm{U(1)}$ so-called ``hyper'' charge and $T_3$ the $\mathrm{SU(2)}$  charge. From the coupling to the photon one can read of the electric coupling constant to be $e=g^\prime g/\sqrt{g^2+g^{\prime 2}}$ and the corresponding electric charge to be $Q=T_3+Y$.
 
 The procedure of symmetry breaking through a non-zero \gls{vev} allows to introduce mass terms for the \wboson and \zboson bosons starting from a local gauge invariant theory. Additionally, the Higgs boson is predicted which was discovered in July 2012 independently by the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations and thus consolidating the electroweak theory further.
-\todo{value of vev from muon decays}
+\todo{value of vev from muon decays, comment on generally low couplings except for the top quark}
 
 
 Fermion masses can be generated through Yukawa interactions as
@@ -301,18 +301,42 @@ which allows to write the Lagrangian density in the quark mass eigenstates. This
 \mathcal{L}_{\wboson~\mathrm{interaction}}=\frac{g}{\sqrt{2}} \bar{\mathrm{u}}^{\prime i}_\mathrm{L}\gamma^{\mu}\underbrace{(U^\dagger_\mathrm{u}U_\mathrm{d})_{ij}}_{=\mathrm{V}_{ij}}\mathrm{d}^{\prime j} W^{+}_\mu+\mathrm{\gls{hc}}
 \end{equation}
 
-where $\mathrm{V}_{ij}$ is the \gls{ckm} matrix. \todo{add matrix from pdg?}
+where $\mathrm{V}_{ij}$ is the \gls{ckm} matrix. \todo{add matrix from pdg?} \todo{comment on free parameters: masses, couplings, etc}
 
 %##############################################}
 \subsection{Strong interactions}
 %##############################################
 \label{sec:theory-qcd}
-self-couplings, running coupling, nlo calculations
+
+The theory of \gls{qcd} describes strong interactions between quarks. It is introduced into the \gls{sm} through a $\mathrm{SU(3)}$ gauge group for which the Lagrangian density
+
+\begin{align}
+\mathcal{L}_\mathrm{\gls{qcd}}=\bar{\psi}i\gamma^{\mu}\big(\partial_{\mu}-ig\vec{G}_\mu\vec{\lambda}\big)\psi-\tfrac{1}{4}\vec{G}_{\mu\nu}\vec{G}^{\mu\nu},\quad \psi=\colvec{3}{\psi_\mathrm{red}}{\psi_\mathrm{green}}{\psi_\mathrm{blue}}
+\end{align}
+
+is invariant under the transformation
+
+\begin{equation}
+\psi\mapsto\psi\mathrm{e}^{-ig\vec{\alpha}(x)\vec{\lambda}}.
+\end{equation}
+
+The fields $\vec{G}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The charge of the group is called ``color'' (red, green, blue) which is however equal in strength for all charges. The generators $\lambda_a$~($a\in{1\ldots8}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure leads to gluon self-interactions through the gluon field strength tensor
+
+\begin{equation}
+G_{\mu\nu}^{a}=\partial_{\mu} G_\nu^{a}-\partial_{\nu} G_{\mu}^{a}+gf^{abc}G_{\mu,b}G_{\nu,c}.
+\end{equation}
+
+\todo{figure if these are directly connected: nonalebian->gluons self interactions->color confinement}No free quarks can exist in nature because of a phenomenon called ``color-confinement''. Quarks are bound by the strong interaction into color-neutral singlets of either mesons consisting of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or hadrons consisting of quark triplets~($\mathrm{qqq}$). However, in 2003, a potential bound states containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. In 2013, the \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation~\cite{Aaij:2013zoa} followed by the discovery of more tetraquark candidates in 2014~\cite{Aaij:2014jqa} and 2016~\cite{Aaij:2016iza}.
+
+
+A process called hadronization leads to spontaneous creation of quark/antiquark pairs if the gluon field energy exceeds $2\cdot m_{\mathrm{q}}$.\todo{make better}
+
+jets, parton model, borken-scaling, running coupling
 
 %##############################################
 \subsection{Observables}
 %##############################################
-matrix elements, cross sections, decays, PDFs, angles (w polarizations)/spin matrix, renormalization?
+matrix elements, cross sections (unitarity bound), decays, PDFs, angles (w polarizations)/spin matrix, renormalization?, nlo calculations
 
 %##############################################
 \subsection{Open questions}
@@ -321,5 +345,7 @@ naturalness, gravity, gut, susy, dark matter
 
 %##############################################
 \section{The top quark}
+
+EFT (pseudo observables=form factors=e.g. w helicity/polarization?); EFT UV covered models see (https://indico.cern.ch/event/537012/contributions/2371763/attachments/1375462/2088456/talk4.pdf)
 %##############################################
 \subsection{}
