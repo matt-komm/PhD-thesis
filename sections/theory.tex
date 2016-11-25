@@ -187,7 +187,7 @@ with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties:
 \mathrm{H}\equiv\frac{\vec{p}\cdot\vec{s}}{|\vec{p}|}
 \end{equation}
 
-which denotes whether the spin $\vec{s}$ is aligned along~($H=1$) or against~($H=-1$) the momentum axis. For massive particles, Eq.~\ref{eq:theory-diracL} does not decouple since chirality is not Lorentz invariant. \todo{later this is not invariant under SU2 transformation}
+which denotes whether the spin $\vec{s}$ is aligned along~($H=1$) or against~($H=-1$) the momentum axis. For massive particles, Eq.~\ref{eq:theory-diracL} does not decouple since chirality is not Lorentz invariant. \todo{add that CPT is considered invariant}
 
 The Glawhow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} splits the fermion fields into ``left-handed'' doublets 
 
@@ -269,14 +269,20 @@ fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle 
 \colvec{2}{W_{3}}{B},\quad \cos\theta_\mathrm{W}=\frac{g}{\sqrt{g^2+g^{\prime 2}}},
 \end{equation}
 
-where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson $\zboson$ with mass $m_\zboson=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $A_\mu$, the photon, can be identified. Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
+where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson $\zboson$ with mass $m_\zboson=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $A_\mu$, the photon, can be identified. The angle is determined as $\sin^2\theta_\mathrm{W} \approx 0.2312$ through the mass ratio $m_\wboson/m_\zboson=\cos\theta_\mathrm{W}$. Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
 
 \begin{align}
 \mathcal{L}=&~~~~\partial_\mu+i\frac{g}{\sqrt{2}}\cdot\big(W^{+}_\mu T^{+}+W^{-}_\mu T^{-})\\
 &-i\frac{g^2T_3-g^{\prime 2}Y}{\sqrt{g^2+g^{\prime 2}}}\cdot\zboson_\mu-i\frac{g^{\prime}g\big(T^3+Y\big)}{\sqrt{g^2+g^{\prime 2}}}\cdot A_\mu
 \end{align}
 
-where $T^{\pm}$ denote the ladder operators, $Y$ the $\mathrm{U(1)}$ so-called ``hyper'' charge and $T_3$ the $\mathrm{SU(2)}$  charge. From the coupling to the photon one can read of the electric coupling constant to be $e=g^\prime g/\sqrt{g^2+g^{\prime 2}}$ and the corresponding electric charge to be $Q=T_3+Y$.
+where $T^{\pm}$ denote the ladder operators, $Y$ the $\mathrm{U(1)}$ so-called ``hyper'' charge and $T_3$ the $\mathrm{SU(2)}$  charge. From the coupling to the photon one can read of the electric coupling constant to be 
+
+\begin{equation}
+e=\frac{g^{\prime} g}{\sqrt{g^2+g^{\prime 2}}}~,\quad \aem=\frac{e^2}{4\pi}=\frac{1}{137}
+\end{equation}
+
+and the corresponding electric charge to be $Q=T_3+Y$. For the coupling constant $g$, one finds the relation $e=g\cdot\sin\theta_\mathrm{W}$ which yields $\aw=\aem/\sin^2\theta_\mathrm{W}\approx0.03157.$
 
 The procedure of symmetry breaking through a non-zero \gls{vev} allows to introduce mass terms for the \wboson and \zboson bosons starting from a local gauge invariant theory. Additionally, the Higgs boson is predicted which was discovered in July 2012 independently by the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations and thus consolidating the electroweak theory further.
 \todo{value of vev from muon decays, comment on generally low couplings except for the top quark}
@@ -289,7 +295,7 @@ Fermion masses can be generated through Yukawa interactions as
 \mathcal{L}_\mathrm{Yukawa~quark~int.}=&-\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi\cdot\mathrm{u}^{k}_\mathrm{R} +\mathrm{\gls{hc}} \label{eq:theory-quark-yukawa}
 \end{align}
 
-where the coupling strengths are denoted by $\lambda$. A mass term for the electron, muon and tau lepton, $l$, of $m_l=-\lambda_l v/\sqrt{2}$ can be identified after the symmetry breaking. The quarks can be disentangled from their mixed mass state through a rotation of the fields 
+where the coupling strengths are denoted by $\lambda$. A mass term for the electron, muon and tau lepton of $m_l=-\lambda_l v/\sqrt{2}$ can be identified after the symmetry breaking. The quarks can be disentangled from their mixed mass state through a rotation of the fields 
 
 \begin{equation}
 \mathrm{u}^{\prime i}_\mathrm{L}=U^{ij}_\mathrm{u}\mathrm{u}^{j}_\mathrm{L},\quad \mathrm{d}^{\prime i}_\mathrm{L}=U^{ij}_\mathrm{d}\mathrm{d}^{j}_\mathrm{L}
@@ -302,8 +308,9 @@ which allows to write the Lagrangian density in the quark mass eigenstates. This
 \end{equation}
 
 where $\mathrm{V}_{ij}$ is the \gls{ckm} matrix. \todo{add matrix from pdg?} \todo{comment on free parameters: masses, couplings, etc}
+\todo{custodial symmetry?}
 
-%##############################################}
+%##############################################
 \subsection{Strong interactions}
 %##############################################
 \label{sec:theory-qcd}
@@ -320,16 +327,33 @@ is invariant under the transformation
 \psi\mapsto\psi\mathrm{e}^{-ig\vec{\alpha}(x)\vec{\lambda}}.
 \end{equation}
 
-The fields $\vec{G}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The charge of the group is called ``color'' (red, green, blue) which is however equal in strength for all charges. The generators $\lambda_a$~($a\in{1\ldots8}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure leads to gluon self-interactions through the gluon field strength tensor
+The fields $\vec{G}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The charge of the group is called ``color'' (red, green, blue) which is however equal in strength for all charges. The world average of the strong coupling constant $\as=g/(4\pi^2)$ at the \zboson boson mass is currently estimated to be $\as(m_{\zboson})=0.1181\pm0.0011$~\cite{Olive:2016xmw}. The generators $\lambda_a$~($a\in{1\ldots8}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure predicts that gluons also carry color charge which leads to gluon self-interactions through the gluon field strength tensor
 
 \begin{equation}
 G_{\mu\nu}^{a}=\partial_{\mu} G_\nu^{a}-\partial_{\nu} G_{\mu}^{a}+gf^{abc}G_{\mu,b}G_{\nu,c}.
 \end{equation}
 
-\todo{figure if these are directly connected: nonalebian->gluons self interactions->color confinement}No free quarks can exist in nature because of a phenomenon called ``color-confinement''. Quarks are bound by the strong interaction into color-neutral singlets of either mesons consisting of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or hadrons consisting of quark triplets~($\mathrm{qqq}$). However, in 2003, a potential bound states containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. In 2013, the \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation~\cite{Aaij:2013zoa} followed by the discovery of more tetraquark candidates in 2014~\cite{Aaij:2014jqa} and 2016~\cite{Aaij:2016iza}.
+No free quarks can exist in nature because of a phenomenon called ``color-confinement''. Empirically, the \gls{qcd} interactions between two quarks can be understood as a ``Coulomb-plus-linear'' potential
+
+\begin{equation}
+V(r)=-\frac{4\cdot\as}{3r}+k\cdot r
+\end{equation}
+
+which is a reasonable approximation~\cite{Sumino2003173}. The linear term can be identified as a ``gluon-string'' tension similar to that of a harmonic oscillator.\todo{write better} At low energies, quarks are bound by the strong interaction into color-neutral singlets of either mesons consisting of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or hadrons consisting of quark triplets~($\mathrm{qqq}$). In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates in 2014~\cite{Aaij:2014jqa} and 2016~\cite{Aaij:2016iza}.
+
+The strong coupling leads to divergences at low energies $q$ due to its running behavior of
+
+\begin{equation}
+\as(q^2)=\frac{\as(\mu_\mathrm{R}^{2})}{1+\as(\mu_\mathrm{R}^2)\cdot\tfrac{33-2\cdot n_f}{12\pi}\cdot\ln\Big(\tfrac{|q^2|}{\mu_\mathrm{R}^{2}}\Big)}
+\end{equation}
+
+where $n_f$~($n^\mathrm{SM}_f=6$) denotes the number of quarks and $\mu_\mathrm{R}$ a reference scale where the coupling is known from measurements, e.g. $\mu_\mathrm{R}=m_{\zboson}$.
+
+At high energies, quarks are asymptotically free.
 
 
-A process called hadronization leads to spontaneous creation of quark/antiquark pairs if the gluon field energy exceeds $2\cdot m_{\mathrm{q}}$.\todo{make better}
+
+a process called hadronization leads to spontaneous creation of quark/antiquark pairs if the gluon field energy exceeds $2\cdot m_{\mathrm{q}}$.\todo{make better}
 
 jets, parton model, borken-scaling, running coupling
 
