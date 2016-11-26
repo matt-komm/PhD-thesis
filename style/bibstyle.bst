@@ -451,7 +451,7 @@ FUNCTION {make.full.names}
 
 FUNCTION {output.bibitem}
 { newline$
-  "\parbox{\textwidth-0.8cm}{" write$
+  "\parbox{\textwidth-\labelwidth-\labelsep}{" write$
   newline$
   "\bibitem{" write$
   cite$ write$
