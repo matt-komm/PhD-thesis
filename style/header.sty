@@ -9,9 +9,11 @@
 
 \usepackage{amsmath}
 
-\usepackage{calligra}
+%\usepackage{calligra}
 
-\usepackage{miama}
+\usepackage{comfortaa}
+
+\usepackage{miama} %activate with \fmmfamily
 
 %\usepackage{lmodern}
 
@@ -143,7 +145,7 @@
 \def\@makechapterhead#1{
      \parbox[t][][t]{0.99\textwidth}{
         \chapterheadstartvskip
-        \parbox[b][][b]{\widthof{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}}{\sc\fontsize{20}{0}\selectfont\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
+        \parbox[b][][b]{\widthof{\fontsize{20}{0}\selectfont\sc\substring{\chaptername}{1}{1}}}{\fontsize{20}{0}\selectfont\sc\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
         \\[0.4cm]
         %{\color{gray}\rule{\textwidth}{\myrulewidth}}
         %\\[0.55cm]
