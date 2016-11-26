@@ -1,43 +1,45 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-\usepackage[a4paper,total={12cm,20cm},headsep=8pt,headheight=12pt,footskip=8pt,centering,includehead]{geometry}
+\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=8pt,centering,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \usepackage[nouppercase]{scrpage2}
 \usepackage{ifthen}
-
-
 \usepackage{amsmath}
 
-%\usepackage{calligra}
 
-\usepackage{comfortaa}
+%%FONTS
 
+
+
+%special
+\usepackage{calligra}
 \usepackage{miama} %activate with \fmmfamily
-
-%\usepackage{lmodern}
-
-\usepackage{mathpazo}
-
-%\usepackage{mathpple}
-
-%\usepackage{newtxtext,newtxmath}
-
-%\usepackage{mbtimes}
-
-%\usepackage{libertine}
-
-
-%\usepackage[scaled]{helvet}
-%\usepackage{courier}
-\usepackage[scaled=0.9]{inconsolata}
-
 \usepackage{humanist}
 \usepackage{auncial}
 \usepackage{pbsi}
 \usepackage{aurical}
 \usepackage{sqrcaps}
 \usepackage{trajan} %activate with \trjnfamily
+
+
+%serif
+
+%\usepackage{mathpple}
+%\usepackage{newtxtext,newtxmath}
+%\usepackage{mbtimes}
+%\usepackage{libertine}
+\usepackage{mathpazo}
+
+%sans serif
+%\usepackage{comfortaa}
+\usepackage{tgheros}
+
+%typewriter
+%\usepackage{courier}
+\usepackage[scaled=0.9]{inconsolata}
+
+
 
 \usepackage[B1,OT1,T1]{fontenc}
 \usepackage[latin9]{inputenc}
@@ -78,7 +80,7 @@
 \usepackage{anyfontsize}
 
 %global styles
-\newcommand*{\numberfont}{\fontfamily{qcs}\selectfont}
+\newcommand*{\numberfont}{\fontfamily{qhv}\selectfont}
 %\newcommand*{\numberfont}{\fontfamily{pbk}\selectfont}
 \newlength{\myrulewidth}
 \setlength{\myrulewidth}{0.7pt}
@@ -100,7 +102,7 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \renewcommand{\cfttoctitlefont}{\fontsize{18}{20}\numberfont}
-\renewcommand{\cftchapfont}{\numberfont}
+\renewcommand{\cftchapfont}{\rm\bf}
 \renewcommand{\cftsecfont}{}
 
 \newcommand{\nocontentsline}[3]{}
@@ -147,29 +149,31 @@
         \chapterheadstartvskip
         \parbox[b][][b]{\widthof{\fontsize{20}{0}\selectfont\sc\substring{\chaptername}{1}{1}}}{\fontsize{20}{0}\selectfont\sc\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
         \\[0.4cm]
-        %{\color{gray}\rule{\textwidth}{\myrulewidth}}
-        %\\[0.55cm]
-        \hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.03\textwidth}{\color{gray}\rule{\myrulewidth}{1.3cm}\hspace{4.\myrulewidth}\rule{\myrulewidth}{1.3cm}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
+        {\color{gray}\rule{\textwidth}{\myrulewidth}}
+        \\[0.55cm]
+        %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.03\textwidth}{\color{gray}\rule{\myrulewidth}{1.3cm}\hspace{4.\myrulewidth}\rule{\myrulewidth}{1.3cm}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
+        \hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
+        
         \chapterheadendvskip
     }
 }
 
-\setkomafont{chapter}{\normalfont\fontsize{15}{17}\selectfont\numberfont}
+\setkomafont{chapter}{\normalfont\fontsize{16}{17}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.8cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
-\setkomafont{section}{\normalfont\fontsize{12}{14}\selectfont\numberfont}
+\setkomafont{section}{\normalfont\fontsize{14}{16}\selectfont\numberfont}
 
 \renewcommand*{\subsectionformat}{\numberfont\thesubsection.\ }
-\setkomafont{subsection}{\normalfont\fontsize{11}{13}\selectfont\numberfont}
+\setkomafont{subsection}{\normalfont\fontsize{13}{15}\selectfont\numberfont}
 
 \renewcommand*{\subsubsectionformat}{\numberfont\thesubsubsection.\ }
-\setkomafont{subsubsection}{\normalfont\fontsize{10}{12}\selectfont\numberfont}
+\setkomafont{subsubsection}{\normalfont\fontsize{12}{14}\selectfont\numberfont}
 
 \RedeclareSectionCommands[
-  beforeskip=0.8\baselineskip,
-  afterskip=1pt
+  beforeskip=0.7\baselineskip,
+  afterskip=0.01\baselineskip
 ]{section,subsection,subsubsection}
 
 
@@ -208,7 +212,7 @@
 }
 
 %references font
-%\newcommand{\reffont}{\numberfont}
+%\renewcommand\theremark{{\itshape\thesection\arabic{remark}}\reset@font}
 
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
@@ -254,7 +258,7 @@
 
 
 %% Bib
-\renewcommand\@biblabel[1]{\numberfont [#1]}
+\renewcommand\@biblabel[1]{ [{\small\numberfont#1}]}
 \setlength{\labelsep}{1.25ex}
 
 
@@ -265,8 +269,8 @@
 
 
     %formel abstände 
-    \setlength{\abovedisplayskip}{-1.5\parskip plus 0.3\parskip}
-    \setlength{\abovedisplayshortskip}{-1.5\parskip plus 0.3\parskip}
+    \setlength{\abovedisplayskip}{-1.\parskip plus 0.3\parskip}
+    \setlength{\abovedisplayshortskip}{-1.\parskip plus 0.3\parskip}
     \setlength{\belowdisplayskip}{0.8\parskip plus 0.3\parskip}
     \setlength{\belowdisplayshortskip}{0.8\parskip plus 0.3\parskip}
 }
