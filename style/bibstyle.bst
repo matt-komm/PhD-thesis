@@ -186,6 +186,8 @@ FUNCTION {fin.entry}
   if$
   write$
   newline$
+  "}" write$
+  newline$
 }
 
 FUNCTION {new.block}
@@ -449,6 +451,8 @@ FUNCTION {make.full.names}
 
 FUNCTION {output.bibitem}
 { newline$
+  "\parbox{\textwidth-0.8cm}{" write$
+  newline$
   "\bibitem{" write$
   cite$ write$
   "}" write$
@@ -526,7 +530,7 @@ FUNCTION {format.date.paren}
 FUNCTION {format.collaboration}
 { collaboration empty$
     { "" }
-    { "{" collaboration * " collaboration }" * }
+    { "{" collaboration * " Collaboration }" * }
   if$
 }
 
