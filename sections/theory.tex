@@ -315,13 +315,13 @@ where $\mathrm{V}_{ij}$ is the \gls{ckm} matrix. \todo{add matrix from pdg?} \to
 %##############################################
 \label{sec:theory-qcd}
 
-The theory of \gls{qcd} describes strong interactions between quarks. It is introduced into the \gls{sm} through a $\mathrm{SU(3)}$ gauge group for which the Lagrangian density
+The theory of \gls{qcd} describes strong interactions between quarks. It is introduced through a $\mathrm{SU(3)}$ gauge group resulting into the Lagrangian density
 
 \begin{align}
 \mathcal{L}_\mathrm{\gls{qcd}}=\bar{\psi}i\gamma^{\mu}\big(\partial_{\mu}-ig\vec{G}_\mu\vec{\lambda}\big)\psi-\tfrac{1}{4}\vec{G}_{\mu\nu}\vec{G}^{\mu\nu},\quad \psi=\colvec{3}{\psi_\mathrm{red}}{\psi_\mathrm{green}}{\psi_\mathrm{blue}}
 \end{align}
 
-is invariant under the transformation
+which is invariant under the transformation
 
 \begin{equation}
 \psi\mapsto\psi\mathrm{e}^{-ig\vec{\alpha}(x)\vec{\lambda}}.
@@ -333,36 +333,43 @@ The fields $\vec{G}_\mu$ describe eight gluons which represent the massless gaug
 G_{\mu\nu}^{a}=\partial_{\mu} G_\nu^{a}-\partial_{\nu} G_{\mu}^{a}+gf^{abc}G_{\mu,b}G_{\nu,c}.
 \end{equation}
 
-The world average of the strong coupling constant $\as=g/(4\pi^2)$ at the \zboson boson mass is currently estimated to be $\as(m_{\zboson})=0.1181\pm0.0011$~\cite{Olive:2016xmw}.
-
-No free quarks can exist in nature because of a phenomenon called ``color-confinement''. Empirically, the \gls{qcd} potential between two quarks can be approximated as a ``Coulomb-plus-linear'' potential~\cite{Sumino2003173}
+No free quarks can exist in nature because of a phenomenon called ``color-confinement''. The \gls{qcd} potential between two quarks can be approximated as a ``Coulomb-plus-linear'' potential~\cite{Sumino2003173}
 
 \begin{equation}
-V(r)=-\frac{4\cdot\as}{3r}+k\cdot r.
+V(r)=-\frac{4\cdot\as}{3r}+k\cdot r
 \end{equation}
 
-where at large distances $r$ or equivalently small energies a linear term dominates where $k$ can be understood as a ``gluon-spring'' tension similar to that of a harmonic oscillator. If two quarks get sufficiently separated new quark / antiquark pairs can be spontaneous created if the gluon field energy exceeds the masses of the new pair. Usually a cascade of new particles occurs binding ``free'' quarks into color-neutral singlets called hadrons. This process is referred to as hadronization. 
+where at large distances $r$ or equivalently small energies a linear term dominates. The factor $k$ can be understood as a ``gluon-spring'' tension similar to that of a harmonic oscillator. New quark / antiquark pairs can be spontaneous created if the gluon field energy exceeds the masses of the new pair. This can lead to a cascade of new particles emerging from the gluon field at sufficiently large energies which binds ``free'' quarks into color-neutral singlets called hadrons. This process is referred to as hadronization. In experiments, one can infer the original quark momentum by summing the particle momenta within the resulting jet.
 
-Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). Common mesons are the pions $\pi^{+}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$) and the kaons $\mathrm{K}^{+}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and the lambda~$\Lambda^{0}$~($\mathrm{uds}$). In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates in 2014~\cite{Aaij:2014jqa} and 2016~\cite{Aaij:2016iza}.\todo{baryon number B=(nq-nantiq)/3 is conserved}
+Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\pi^{+}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$) and the kaons $\mathrm{K}^{+}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates in 2014~\cite{Aaij:2014jqa} and 2016~\cite{Aaij:2016iza}.
+
+\todo{baryon number B=(nq-nantiq)/3 is conserved}
 
 At large energies, the strong coupling decreases due to its running behavior of
 
 \begin{equation}
-\as(q^2)=\frac{\as(\mu_\mathrm{R}^{2})}{1+\as(\mu_\mathrm{R}^2)\cdot\tfrac{33-2\cdot n_f}{12\pi}\cdot\ln\Big(\tfrac{|q^2|}{\mu_\mathrm{R}^{2}}\Big)}
+\as(q^2)=\frac{\as(\mu_\mathrm{R}^{2})}{1-\as(\mu_\mathrm{R}^2)\cdot\tfrac{33-2\cdot n_f}{12\pi}\cdot\ln\Big(\tfrac{|q^2|}{\mu_\mathrm{R}^{2}}\Big)}
 \end{equation}
 
-where $n_f$~($n^\mathrm{SM}_f=6$) denotes the number of quarks and $\mu_\mathrm{R}$ is a reference scale where the coupling is known from measurements, e.g. $\mu_\mathrm{R}=m_{\zboson}$. Hence, quarks are ``asymptotically free''.
+where $n_f$ denotes the number of quarks and $\mu_\mathrm{R}$ is a reference scale where the coupling is known from measurements, e.g. $\mu_\mathrm{R}=m_{\zboson}$. The world average of the strong coupling constant $\as=g/(4\pi^2)$ at the \zboson boson mass is currently estimated to be $\as(m_{\zboson})=0.1181\pm0.0011$~\cite{Olive:2016xmw}. Hence, quarks can be treated as ``asymptotically free'' at large energies. Following the behavior of $\as(q^2)$, an energy scale marked by $\Lambda_\mathrm{\gls{qcd}}\approx 200~\MeV$ is found at which the coupling constant becomes even larger than one. Below such energies, perturbative calculations of observables in the \gls{qft} framework can no longer be performed.
+
+
+Besides valence quarks, gluons and so-called ``sea quarks'' from gluon splittings~($\mathrm{g}\to\bar{\mathrm{q}}\mathrm{q}$) are considered constituents of a hadron as well. This group of particles is commonly referred to as partons. In hadron collision experiments, approximating all partons as free allows to treat hadron--hadron scattering as parton--parton interaction instead~\cite{Feynman:1969wa}. The momentum of a parton is expressed as a fraction of the hadron momentum $p_\mathrm{parton}=x\cdot p_\mathrm{hadron}$. The probability of 
+finding two parton flavors $f$ with momentum fraction $x$ interacting at an energy scale $q$ is given by the \gls{pdf} as $\mathrm{PDF}(x_{1},f_{1},q)\cdot\mathrm{PDF}(x_{2},f_{2},q)$. The \glspl{pdf} are normalized such that
+
+\begin{equation}
+\sum_{f}^\mathrm{partons}\int_{0}^{1}\mathrm{d}x~x\cdot \mathrm{PDF}(x,q,f)=1
+\end{equation}
+
+yields the total momentum of the hadron. The dependence on the energy scale $q$ is given by the DGLAP equations named after authors (Y. Dokshitzer, W. Gribow, L. Lipatow, G. Altarelli, G. Parisi)~\cite{Dokshitzer:1977sg,Gribov:1972ri,Altarelli:1977zs}.
 
 
 
-
-
-jets, parton model, borken-scaling, running coupling
 
 %##############################################
 \subsection{Observables}
 %##############################################
-matrix elements, cross sections (unitarity bound), decay rates, PDFs, angles (w polarizations)/spin matrix, renormalization?, nlo calculations
+matrix elements, cross sections (unitarity bound), decay rates, angles (w polarizations)/spin matrix, renormalization?, nlo calculations
 
 %##############################################
 \subsection{Open questions}
