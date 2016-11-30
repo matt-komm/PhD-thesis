@@ -6,7 +6,7 @@ An introduction to the \gls{sm}, its particle content, interactions, and propert
 
 
 %##############################################
-\section{General Quantum Field Theory of the Standard Model}
+\section{General quantum field theory of the Standard Model}
 %##############################################
 
 The \gls{sm} describes the interactions between fundamental particles. It is based on \gls{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or decay rates of particles which can be calculated within its framework -- even fully automatized. The \gls{sm} validity is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards physics \gls{bsm}.
@@ -370,24 +370,32 @@ A recent review of common \gls{pdf} sets can be found in Ref.~\cite{Accardi2016}
 \subsection{Observables}
 %##############################################
 
-A common particle scattering process is characterized by the incoming and outgoing particles as well as the interactions between them. It can be calculated using perturbation theory. The transition amplitude from the initial state to the final state is given by the \gls{smatrix} defined as
+A common particle scattering process is characterized by the incoming and outgoing particles as well as the interactions between them. It can be calculated using perturbation theory. Here, the \gls{smatrix} allows to describe the transition between two multiparticle states which is defined in the Heisenberg picture as
 
 \begin{align}
-\mathcal{S}&=\lim_{t\to\infty}\langle\psi_{1}^\mathrm{out}\ldots\psi_\mathrm{N}^\mathrm{out}|e^{-iH(t)}|\psi_{1}^\mathrm{in}\ldots\psi_\mathrm{N}^\mathrm{in}\rangle \\
-&=\sum_{n}^{\infty}\int \mathrm{d}x_{1}^{4}\ldots\mathrm{d}x_{n}^{4}~\langle\psi_{1}^\mathrm{out}\ldots\psi_\mathrm{N}^\mathrm{out}|T[\mathcal{H}_{1}\ldots\mathcal{H}_{n}]|\psi_{1}^\mathrm{in}\ldots\psi_\mathrm{N}^\mathrm{in}\rangle
+\mathcal{S}&=\mathrm{T}\big(e^{-i\int\mathrm{d}^{4}x~\mathcal{H}_\mathrm{int}(t)}\big)\\
+&=\sum_{n=0}^{\infty}\frac{(-i)^{n}}{n!}\int_{-\infty}^{\infty}\mathrm{d}^{4}x_{1}\ldots \int_{-\infty}^{\infty}\mathrm{d}^{4}x_{n}~\mathrm{T}\big(\mathcal{H}_\mathrm{int}(t_{1})\ldots\mathcal{H}_\mathrm{int}(t_{n})\big) \label{eq:theory-dyson}
 \end{align}
 
-given the interaction encoded in the Hamiltonian function $H$ or corresponding density $\mathcal{H}$.
+given the interaction encoded in the Hamiltonian density $\mathcal{H}_\mathrm{int}=\mathcal{H}-\mathcal{H}_\mathrm{free}$. The operator $\mathrm{T}$ ensures that $\mathcal{H}_\mathrm{int}(t_{i})$ are ordered by time. The transition amplitude from an initial state to a final state with particles $\psi_i^\mathrm{in/out}$ respectively is given by
 
-The master formular
+\begin{align}
+\mathcal{A}_\mathrm{in\to out}&=\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\mathcal{S}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle \\
+&=\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle+i(2\pi)^{4}\delta^{4}\big(\Sigma p^\mathrm{in}_{i}-\Sigma p^\mathrm{out}_{j}\big)\mathcal{M}
+\end{align}
 
-\begin{equation}
-\sigma
-\end{equation}
+where $\mathcal{M}$ captures all interaction terms at any order.
 
+Given a flux $L=\rho v$ of incoming particles with velocity $v$, the cross section $\sigma$ denotes the number of interactions per unit density~($\rho=1$) such that $\mathrm{d}N/\mathrm{d}t=L\sigma$ denotes the number of events per time. The flux $L$ is commonly called luminosity and measured as a multiple of inverse ``barn''~[$\mathrm{b}$] where $1~\mathrm{b}\equiv 10^{-28}~\mathrm{m}^{2}$. 
 
+For a collider experiment with beam energies $E_{i}$ one finds
 
-matrix elements, time ordered operator=green function, cross sections (unitarity bound), decay rates, angles (w polarizations)/spin matrix, renormalization?, nlo calculations
+\begin{align}
+\sigma&=\frac{1}{|\vec{v}_1-\vec{v}_2|}\frac{1}{4E_{1}E_{2}}~\int\,\big|\,\mathcal{M}\,\big|^{2}~\mathrm{d}\Phi^\mathrm{out} \\
+\mathrm{d}\Phi^\mathrm{out}&=(2\pi)^{4}\delta^{4}\big(p^\mathrm{in}_{1}+p^\mathrm{in}_{2}-\Sigma p^\mathrm{out}_{j}\big)~\prod_{j}\int\frac{\mathrm{d}^{3}~\vec{p}^\mathrm{~out}_{j}}{(2\pi)^{3}2E_{j}^\mathrm{out}}.
+\end{align}
+
+ (unitarity bound), decay rates, angles (w polarizations)/spin matrix, renormalization?, nlo calculations
 
 %##############################################
 \subsection{Open questions}
