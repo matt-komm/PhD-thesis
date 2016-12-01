@@ -341,7 +341,7 @@ V(r)=-\frac{4\cdot\as}{3r}+k\cdot r
 
 where at large distances $r$ or equivalently small energies a linear term dominates. The factor $k$ can be understood as a ``gluon-spring'' tension similar to that of a harmonic oscillator. New quark / antiquark pairs can be spontaneous created if the gluon field energy exceeds the masses of the new pair. This can lead to a cascade of new particles emerging from the gluon field at sufficiently large energies which binds ``free'' quarks into color-neutral singlets called hadrons. This process is referred to as hadronization. In experiments, one can infer the original quark momentum by summing the particle momenta within the resulting jet.
 
-Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\pi^{+}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$) and the kaons $\mathrm{K}^{+}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates in 2014~\cite{Aaij:2014jqa} and 2016~\cite{Aaij:2016iza}.
+Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\pi^{+}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$) and the kaons $\mathrm{K}^{+}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates in 2014~\cite{Aaij:2014jqa} and 2016~\cite{Aaij:2016iza} and even ``pentaquarks'' consisting of five quarks~\cite{Aaij:2015tga}.
 
 \todo{baryon number B=(nq-nantiq)/3 is conserved}
 
@@ -370,23 +370,25 @@ A recent review of common \gls{pdf} sets can be found in Ref.~\cite{Accardi2016}
 \subsection{Observables}
 %##############################################
 
-A common particle scattering process is characterized by the incoming and outgoing particles as well as the interactions between them. It can be calculated using perturbation theory. Here, the \gls{smatrix} allows to describe the transition between two multiparticle states which is defined in the Heisenberg picture as
+A particle scattering process or decay is characterized by the initial and final particles as well as the interactions between them. Experimental observables are inclusive and differential cross sections as well as decay rates which can be calculated using perturbation theory. 
+
+The cornerstone of such a calculation is the so-called \gls{smatrix} which describes the transition of a system from an initial to a final multiparticle state. In the Heisenberg picture it is defined as
 
 \begin{align}
 \mathcal{S}&=\mathrm{T}\exp\Big(-i\int\mathrm{d}^{4}x~\mathcal{H}_\mathrm{int}(t)\Big)\\
-&=\sum_{n=0}^{\infty}\frac{(-i)^{n}}{n!}\int_{-\infty}^{\infty}\mathrm{d}^{4}x_{1}\ldots \int_{-\infty}^{\infty}\mathrm{d}^{4}x_{n}~\mathrm{T}\big(\mathcal{H}_\mathrm{int}(t_{1})\ldots\mathcal{H}_\mathrm{int}(t_{n})\big) \label{eq:theory-dyson}
+&=\sum_{n=0}^{\infty}\frac{(-i)^{n}}{n!}\int_{-\infty}^{\infty}\mathrm{d}^{4}x_{1}\ldots \int_{-\infty}^{\infty}\mathrm{d}^{4}x_{n}~\mathrm{T}\big(\mathcal{H}_\mathrm{int}(t_{1})\ldots\mathcal{H}_\mathrm{int}(t_{n})\big) \label{eq:theory-evolution-series}
 \end{align}
 
-given the interaction encoded in the Hamiltonian density $\mathcal{H}_\mathrm{int}=\mathcal{H}-\mathcal{H}_\mathrm{free}$. The operator $\mathrm{T}$ ensures that $\mathcal{H}_\mathrm{int}(t_{i})$ are ordered by time. The transition amplitude from an initial state to a final state with particles $\psi_i^\mathrm{in/out}$ respectively is given by
+where the interaction is encoded in the non-free part of the Hamiltonian density $\mathcal{H}_\mathrm{int}=\mathcal{H}-\mathcal{H}_\mathrm{free}$. The operator $\mathrm{T}$ ensures that products of $\mathcal{H}_\mathrm{int}(t_{i})$ are ordered by time. The transition amplitude from an initial state to a final state with particles $\psi_i^\mathrm{in/out}$ respectively can hence be calculated using
 
 \begin{align}
 \mathcal{A}_\mathrm{in\to out}&=\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\mathcal{S}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle \\
-&=\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle+i(2\pi)^{4}\delta^{4}\big(\Sigma p^\mathrm{in}_{i}-\Sigma p^\mathrm{out}_{j}\big)\mathcal{M}
+&=\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle+i\mathcal{M}\,(2\pi)^{4}\delta^{4}\big(\Sigma p^\mathrm{in}_{i}-\Sigma p^\mathrm{out}_{j}\big)
 \end{align}
 
 where $\mathcal{M}$ captures the interaction terms at all orders of the perturbative series.
 
-Given a flux $L=\rho v$ of incoming particles with velocity $v$ which will interact, the cross section $\sigma$ is defined as the number of interactions per unit density~($\rho=1$). It is usually denoted in the unit ``barn''~[$\mathrm{b}$] which is defined as $1~\mathrm{b}\equiv 10^{-28}~\mathrm{m}^{2}$.  The number of events per time is given by $\mathrm{d}N/\mathrm{d}t=L\sigma$. The flux $L$ is commonly referred to as luminosity.
+Given a flux $L=\rho v$ of incoming particles with velocity $v$ which will interact, the cross section $\sigma$ is defined as the number of interactions per unit density~($\rho=1$). It is usually denoted in the unit ``barn''~[$\mathrm{b}$] which is defined as $1~\mathrm{b}\equiv 10^{-28}~\mathrm{m}^{2}$.  The number of interaction events per time is given by $\mathrm{d}N/\mathrm{d}t=L\sigma$. The flux $L$ is commonly referred to as luminosity.
 
 For a collider experiment with beam energies $E_{i}$ one finds the cross section
 
@@ -395,9 +397,15 @@ For a collider experiment with beam energies $E_{i}$ one finds the cross section
 \mathrm{d}\Phi^\mathrm{out}&=(2\pi)^{4}\delta^{4}\big(p^\mathrm{in}_{1}+p^\mathrm{in}_{2}-\Sigma p^\mathrm{out}_{j}\big)~\prod_{j}\int\frac{\mathrm{d}^{3}~\vec{p}^\mathrm{~out}_{j}}{(2\pi)^{3}2E_{j}^\mathrm{out}}
 \end{align}
 
-where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space of the scattered outgoing particle momenta. 
+where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space of the scattered outgoing particle momenta. For a theory with coupling constant $\alpha$, one can expand the cross section in terms of the perturbative series~(Eq.~\ref{eq:theory-evolution-series}) as
 
-The optical theorem follows from the unitarity $1=\mathcal{S}^{\dagger}\mathcal{S}$ of the \gls{smatrix}. It states that the imaginary part of a scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the scattering amplitude of producing all possible intermediate particles $X$ from the initial times the final state $\mathcal{M}^\dagger(i\to X)\mathcal{M}(f\to X)$. This leads to general constraints on the total cross section of a process. For example, the scattering amplitude of two particles can be expressed via the optical theorem as
+\begin{equation}
+\sigma=\underbrace{\underbrace{\underbrace{\alpha\cdot\sigma_\mathrm{1}}_\mathrm{LO}+\alpha^{2}\cdot\sigma_{2}}_\mathrm{NLO}+\alpha^{3}\cdot\sigma_{3}}_\mathrm{NNLO}+\ldots
+\end{equation}
+
+where LO, NLO, NNLO denote the leading, next-to-leading, and next-to-next-to-leading orders. 
+
+From the unitarity $1=\mathcal{S}^{\dagger}\mathcal{S}$ of the \gls{smatrix} the optical theorem can be derived. It states that the imaginary part of a scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the scattering amplitude of producing all possible intermediate particles $X$ from the initial times the final state $\mathcal{M}^\dagger(i\to X)\mathcal{M}(f\to X)$. This leads to general constraints on the total cross section. For example, the scattering amplitude of a $2\to2$ process can be expressed via the optical theorem as
 
 \begin{equation}
 \mathrm{Im}\Big(\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big)=2\,E_\mathrm{CM}|\vec{p}_\mathrm{CM}|\sum_{X}\sigma(\psi_{1}\psi_{2}\to X)
@@ -409,10 +417,12 @@ Since the total cross section is at least as big as the scattering cross section
 \Big|\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big|<64\pi^2.
 \end{equation}
 
-A theory may describe experimental data well but still violates the unitarity bound at higher energies beyond the experimental probing capabilities. This suggests a new physics model which restores unitarity through new particles or interactions at higher energies. This is commonly referred to as \gls{uv} completion. A unitarity-violating theory can therefore just reflect the low energy limit of an unknown \gls{uv}-complete theory.
+However, a theory may describe experimental data well but still violates the unitarity bound at higher energies. This would hint towards a new physics model which restores unitarity through new particles or interactions at higher energies. This is commonly referred to as \gls{uv} completion. Hence, a unitarity-violating theory may just reflect the low energy limit of an unknown \gls{uv}-complete theory beyond the experimental probing capabilities. 
+
+In the \gls{sm} unitarity is violated if there would be no Higgs boson
 
 
- decay rates, angles (w polarizations)/spin matrix, renormalization?, nlo calculations
+partonic cross section, PDFs, renormalization scale=alphaS, factorization scale=PDFs decay rates, angles (w polarizations)/spin matrix, nlo calculations
 
 %##############################################
 \subsection{Open questions}
