@@ -340,7 +340,7 @@ V(r)=-\frac{4\cdot\as}{3r}+k\cdot r
 
 where at large distances $r$ or equivalently small energies a linear term dominates. The factor $k$ can be understood as a ``gluon-spring'' tension similar to that of a harmonic oscillator. New quark / antiquark pairs can be created from the vacuum if the gluon field energy exceeds the mass of the new pair. This can lead to a cascade of new particles emerging from the gluon field at sufficiently large energies which binds ``free'' quarks into color-neutral singlets called hadrons. Such a process is referred to as hadronization. In experiments, one usually clusters collimated jets of particles to infer the momentum of a quark candidate.
 
-Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\pi^{+}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$) and the kaons $\mathrm{K}^{+}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates~\cite{Aaij:2014jqa,Aaij:2016iza} and even ``pentaquarks'' forming a bound state of five quarks~\cite{Aaij:2015tga}.\todo{balance tetraquarks/pentaquarks, ref to review?}
+Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\pi^{+}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$), kaons $\mathrm{K}^{+}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$) and $\mathrm{J}/\Psi$~($\mathrm{c}\bar{\mathrm{c}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates~\cite{Aaij:2014jqa,Aaij:2016iza} and even ``pentaquarks'' forming a bound state of five quarks~\cite{Aaij:2015tga}.\todo{balance tetraquarks/pentaquarks, ref to review?}
 
 Besides valence quarks, gluons and so-called ``sea quarks'' from gluon splittings~($\mathrm{g}\to\bar{\mathrm{q}}\mathrm{q}$) are considered constituents of a hadron as well. This whole group of particles is commonly referred to as partons. In hadron collision experiments at a sufficiently high momentum transfer, one can approximate all partons as free which allows to treat hadron--hadron scattering as a single parton--parton interaction instead~\cite{Feynman:1969wa}. The momentum of a parton is expressed as a fraction of the hadron momentum $\vec{p}_\mathrm{parton}=x\cdot \vec{p}_\mathrm{hadron}$. Then, the probability of 
 finding two parton flavors $f_{i}$ with momentum fraction $x_{i}$ interacting at an energy scale $\mu_\mathrm{F}$ is given by the \gls{pdf} as $\mathrm{PDF}(x_{1},f_{1},\mu_\mathrm{F})\cdot\mathrm{PDF}(x_{2},f_{2},\mu_\mathrm{F})$. The \glspl{pdf} are normalized such that
@@ -374,8 +374,8 @@ A particle scattering process or decay is characterized by the initial and final
 The cornerstone of such a calculation is the so-called \gls{smatrix} which describes the transition of a system from an initial to a final multiparticle state. In the Heisenberg picture, the time evolution of such a system is given by the Dyson series
 
 \begin{align}
-\mathcal{S}&=\mathrm{T}\exp\Big(-i\int\mathrm{d}^{4}x~\mathcal{H}_\mathrm{int}(t)\Big)\\
-&=\sum_{n=0}^{\infty}\frac{(-i)^{n}}{n!}\int_{-\infty}^{\infty}\mathrm{d}^{4}x_{1}\ldots \int_{-\infty}^{\infty}\mathrm{d}^{4}x_{n}~\mathrm{T}\big(\mathcal{H}_\mathrm{int}(t_{1})\ldots\mathcal{H}_\mathrm{int}(t_{n})\big) \label{eq:theory-dyson-series}
+\mathcal{S}&=\mathrm{T}\Big[\exp\Big(-i\int\mathrm{d}^{4}x~\mathcal{H}_\mathrm{int}(t)\Big)\Big]\\
+&=\sum_{n=0}^{\infty}\frac{(-i)^{n}}{n!}\int_{-\infty}^{\infty}\mathrm{d}^{4}x_{1}\ldots \int_{-\infty}^{\infty}\mathrm{d}^{4}x_{n}~\mathrm{T}\Big[\mathcal{H}_\mathrm{int}(t_{1})\ldots\mathcal{H}_\mathrm{int}(t_{n})\Big] \label{eq:theory-dyson-series}
 \end{align}
 
 where particle interactions are described within the non-free part of the Hamiltonian density $\mathcal{H}_\mathrm{int}=\mathcal{H}-\mathcal{H}_\mathrm{free}$. The operator $\mathrm{T}$ ensures that products of $\mathcal{H}_\mathrm{int}(t_{i})$ are ordered by time. The transition amplitude from an initial state to a final state with particles $\psi_i^\mathrm{in/out}$ respectively can hence be calculated using
@@ -389,17 +389,17 @@ where $\mathcal{M}$ captures the interaction terms at all orders of the perturba
 
 Given a flux $L=\rho v$ of incoming particles with velocity $v$ which will interact, the cross section $\sigma$ is defined as the number of interactions per unit density~($\rho=1$). It is usually denoted in the unit ``barn''~[$\mathrm{b}$] which is defined as $1~\mathrm{b}\equiv 10^{-28}~\mathrm{m}^{2}$.  The number of interaction events per time is given by $\mathrm{d}N/\mathrm{d}t=L\sigma$. The flux $L$ is commonly referred to as luminosity.
 
-For a collider experiment with beam energies $E_{i}$ one finds the cross section
+For a collider experiment with beam energies $E_{i}$ one finds the cross section \todo{explain cm energy}
 
 \begin{align}
 \sigma&=\frac{1}{|\vec{v}_1-\vec{v}_2|}\frac{1}{4E_{1}E_{2}}~\int\,\big|\,\mathcal{M}\,\big|^{2}~\mathrm{d}\Phi^\mathrm{out} \label{eq:theory-xsec-calculation} \\
 \mathrm{d}\Phi^\mathrm{out}&=(2\pi)^{4}\delta^{4}\big(p^\mathrm{in}_{1}+p^\mathrm{in}_{2}-\Sigma p^\mathrm{out}_{j}\big)~\prod_{j}\int\frac{\mathrm{d}^{3}~\vec{p}^\mathrm{~out}_{j}}{(2\pi)^{3}2E_{j}^\mathrm{out}}
 \end{align}
 
-where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space of the scattered outgoing particle momenta. In case of e.g. hadron--hadron collisions, Eq.~\ref{eq:theory-xsec-calculation} only calculates the partonic cross section. An additional integration over the \glspl{pdf} is required to sum up the individual contributions per parton flavor and per momentum fraction. Exemplary, for the process $\mathrm{pp}\to \bar{\mathrm{t}}\mathrm{t}$ this leads to
+where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space spanned by the outgoing particle momenta. In case of hadron--hadron collisions, Eq.~\ref{eq:theory-xsec-calculation} only calculates the partonic cross section. An additional integration over the \glspl{pdf} is required to sum up the individual contributions per parton flavor $f_{i}$ and per momentum fraction $x_{i}$. Exemplary, for the process $\mathrm{pp}\to \bar{\mathrm{t}}\mathrm{t}$ this leads to
 
 \begin{equation}
-\sigma(\mathrm{pp}\to \bar{\mathrm{t}}\mathrm{t})=\sum_{i,j}\iint\mathrm{d}x_{1}\,\mathrm{d}x_{2}~\mathrm{PDF}(x_{1},f_{i},\mu_\mathrm{F})\,\mathrm{PDF}(x_{2},f_{j},\mu_\mathrm{F})\,\sigma(f_{i}f_{j}\to X)
+\sigma(\mathrm{pp}\to \bar{\mathrm{t}}\mathrm{t})=\sum_{i,j}\iint\mathrm{d}x_{1}\,\mathrm{d}x_{2}~\mathrm{PDF}(x_{1},f_{i})\,\mathrm{PDF}(x_{2},f_{j})\,\sigma(f_{i}f_{j}\to t\bar{t})
 \end{equation}
 
 where a scattering can be initiated by a quark/antiquark pair or two gluons in the initial state.
@@ -410,12 +410,12 @@ One can expand a cross section in terms of the coupling constant $\alpha$ using 
 \sigma=\alpha\cdot\sigma_\mathrm{1}+\alpha^{2}\cdot\sigma_{2}+\alpha^{3}\cdot\sigma_{3}+\ldots.
 \end{equation}
 
-Depending at which term the series is cut off one speaks of \gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, observables calculated beyond \gls{lo} tend to be less affected by theoretical uncertainties which originate from a variation of the renormalization and factorization scales\footnote{\gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
+Depending at which term the series is cut off one speaks of \gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{\gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
 
 From the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix} the optical theorem can be derived. It states that the imaginary part of a scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the scattering amplitude of producing all possible intermediate particles $X$ from the initial times the final state $\mathcal{M}^\dagger(i\to X)\mathcal{M}(f\to X)$. This leads to general constraints on the total cross section. For example, the scattering amplitude of a $2\to2$ process can be expressed via the optical theorem as
 
 \begin{equation}
-\mathrm{Im}\Big(\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big)=2\,E_\mathrm{cm}|\vec{p}_\mathrm{cm}|\sum_{X}\sigma(\psi_{1}\psi_{2}\to X)
+\mathrm{Im}\Big(\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big)=2\,E_\mathrm{\gls{cm}}|\vec{p}_\mathrm{\gls{cm}}|\sum_{X}\sigma(\psi_{1}\psi_{2}\to X)
 \end{equation}
 
 Since the total cross section is at least as big as the scattering cross section $\sigma(\psi_{1}\psi_{2}\to \mathrm{any})>\sigma(\psi_{1}\psi_{2}\to \psi_{1}\psi_{2})$ one finds the constraint
@@ -442,15 +442,18 @@ However, a theory may describe experimental data well but still violates the uni
 \section{The top quark}
 %##############################################
 
-The top quark is the heaviest known fundamental particle so far. Its mass of $m_\mathrm{t}=173.34\pm0.71~\GeV$ is close to the minimum of the Higgs potential which implies a Yukawa coupling of $|\lambda_\mathrm{t}|\approx 1$. It is therefore considered that it may play an important role in the electroweak symmetry breaking mechanism itself. Furthermore, new physics ...
+The top quark is the heaviest known fundamental particle so far. Its very high mass of $m_\mathrm{t}=173.34\pm0.71~\GeV$~\cite{ATLAS:2014wva} -- comparable to the mass of a gold atom~($\approx 184~\GeV$) -- is close to the minimum of the Higgs potential which implies a Yukawa coupling of $|\lambda_\mathrm{t}|\approx 1$. Therefore, it may play an important role in the electroweak symmetry breaking mechanism itself. Furthermore, in various extensions to the \gls{sm} new massive particles are predicted which can interact with top quarks.\todo{which ones?} Hence, the production mechanisms of top quarks, their strength and coupling structure, may be altered through direct decays of such particles or higher order corrections.
 
-The 1995, it was discovered by the \gls{cdf}~\cite{Abe:1995hr} and \gls{d0}~\cite{Abachi:1994td} collaborations at the Tevatron collider, Fermilab using $p\bar{p}$ collision data.
+In 1995, the top quark was discovered by the \gls{cdf}~\cite{Abe:1995hr} and \gls{d0}~\cite{Abachi:1994td} collaborations at the Tevatron collider, Fermilab using $p\bar{p}$ collision data. The production of top quark / antiquark pairs which occurs through strong interactions was analyzed. Already before its direct observation, the discovery of the bottom quark~\cite{Augustin:1975yq,PhysRevLett.39.252} and the attempt to explain CP-violation by introducing the \gls{ckm} matrix hinted strongly towards its existence~\cite{Kobayashi01021973}.
 
-introduction, discovery of ttbar, ST, decay
+Another milestone was the observation of single top quark production which occurs through electroweak interactions only. This more rarer process was discovered in 2009 also at the Tevatron collider~\cite{PhysRevLett.103.092002,PhysRevLett.103.092001}. Only very few candidate events ... 
+
+need LHC to probe top quark inside out!!!
+
 
 \subsection{Production processes}
 
-ttbar, t,tW,s channel, associated production (e.g. tHq)
+ttbar, t,tW,s channel, associated production (e.g. tHq), decay + coupling structure, Vtb
 
 \subsection{Experimental results}
 
@@ -461,6 +464,8 @@ ttbar, t,tW,s channel
 vacuum stability, MS bar vs. polemass
 
 \subsection{Flavor schemes}
+
+4vs5
 
 \subsection{Effective operators and anomalous couplings}
 
