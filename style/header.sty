@@ -254,6 +254,13 @@
 \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
 {\box0\lower0.43pt\box2}}
 
+% define prime with better vertical alignment and no vertical space to fix line spreading
+\let\oldprime\prime
+\def\prime{\mathalpha{\raisebox{-0.5pt}[0pt][0pt]{$\scriptstyle\oldprime$}}}
+
+%\def\prime{\mathpalette\myprime} 
+%\def\myprime{\setbox0=-} %\raisebox{4.5pt}{$\scriptstyle\oldprime$}}
+
 %% change equation numbering style
 \def\tagform@#1{\maketag@@@{\ignorespaces{\small\numberfont(#1.)\enspace}\unskip\@@italiccorr}} %kill parenthesis
 \renewcommand{\theequation}{\thechapter.\arabic{equation}}
