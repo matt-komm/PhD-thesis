@@ -83,10 +83,10 @@
 \usepackage{chngcntr} %fuer nummerierung der figures, tables, footnotes
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=nonfrench,factor=1100,stretch=15,shrink=15]{microtype}
 \SetTracking{encoding={*}, shape=sc}{0}
-\usepackage{tocloft}
 \usepackage{slashed}
 \usepackage{afterpage}
-\usepackage{subfloat}
+\usepackage{graphicx,graphics}
+\usepackage{tocloft}
 \usepackage{multirow}
 \usepackage{setspace}
 \usepackage{xr} %ref over documents
@@ -211,14 +211,22 @@
 \renewcommand{\arraystretch}{1.25}
 
 %Schicke Bild- und Tabellenbeschreibungen
-\usepackage[format=plain,indention=0.0cm,labelsep=period,width=.93\textwidth]{caption} %use same as for parindent
+
+\usepackage[format=plain,indention=0.0cm,labelsep=period]{caption} %use same as for parindent
+%\usepackage{subcaption}
+\usepackage{subfig}
+%\captionsetup{width=0.93\textwidth}
+
+
 \setkomafont{caption}{\small}
 \setkomafont{captionlabel}{\numberfont\small}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
 \captionsetup[figure]{aboveskip=0.5\baselineskip,belowskip=0\baselineskip}
 \captionsetup[table]{aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
+\captionsetup[subfloat]{captionskip=0.5\baselineskip} %distance between fig & subcaption
 \setlength\floatsep{1.\baselineskip plus 3pt minus 2pt}
 \setlength\textfloatsep{1.\baselineskip plus 3pt minus 2pt}
 \setlength\intextsep{1.\baselineskip plus 3pt minus 2pt}
@@ -226,17 +234,23 @@
 %placements
 \newcommand{\mytable}[2]{
     \begin{table}[htbp]
+    \centering
+    \begin{minipage}[c]{0.93\textwidth}
     \caption{#1}
     \centering
     \small #2
+    \end{minipage}
     \end{table}
 }
 
 \newcommand{\myfigure}[2]{
     \begin{figure}[htbp]
     \centering
+    \begin{minipage}[c]{0.93\textwidth}
+    \centering
     #2
     \caption{#1}
+    \end{minipage}
     \end{figure}
 }
 

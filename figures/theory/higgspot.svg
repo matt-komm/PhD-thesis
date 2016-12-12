@@ -235,17 +235,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7955016"
-     inkscape:cx="254.85794"
-     inkscape:cy="247.7066"
+     inkscape:zoom="1.1250092"
+     inkscape:cx="226.65379"
+     inkscape:cy="141.44068"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1247"
-     inkscape:window-height="608"
-     inkscape:window-x="323"
-     inkscape:window-y="175"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
      fit-margin-top="1"
      fit-margin-left="1"
      fit-margin-right="1"
@@ -258,7 +258,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -360,7 +360,9 @@
          sodipodi:role="line"
          id="tspan6213"
          x="553.39679"
-         y="300.69174">V(  ) </tspan></text>
+         y="300.69174"><tspan
+   style="-inkscape-font-specification:'URW Palladio L Medium';font-family:'URW Palladio L';font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal"
+   id="tspan12203">V</tspan>(  ) </tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34px;line-height:125%;font-family:'Palatino Linotype';-inkscape-font-specification:'Palatino Linotype';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
@@ -371,7 +373,9 @@
          sodipodi:role="line"
          id="tspan6213-9"
          x="591.53271"
-         y="582.35889">Im(  )</tspan></text>
+         y="582.35889"><tspan
+   style="-inkscape-font-specification:'URW Palladio L Medium';font-family:'URW Palladio L';font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal"
+   id="tspan12205">Im</tspan>(  )</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34px;line-height:125%;font-family:'Palatino Linotype';-inkscape-font-specification:'Palatino Linotype';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
@@ -382,7 +386,9 @@
          sodipodi:role="line"
          id="tspan6213-9-2"
          x="195.6461"
-         y="605.61469">Re(  )</tspan></text>
+         y="605.61469"><tspan
+   style="-inkscape-font-specification:'URW Palladio L Medium';font-family:'URW Palladio L';font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal"
+   id="tspan12201">Re</tspan>(  )</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:125%;font-family:'Palatino Linotype';-inkscape-font-specification:'Palatino Linotype';text-align:start;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
@@ -393,7 +399,8 @@
          sodipodi:role="line"
          id="tspan6213-9-2-4"
          x="529.60468"
-         y="660.51379">0</tspan></text>
+         y="660.51379"
+         style="-inkscape-font-specification:'URW Palladio L Medium';font-family:'URW Palladio L';font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal">0</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;font-family:Calibri;-inkscape-font-specification:Calibri;display:inline;fill:#000000;fill-opacity:1;stroke:none"
