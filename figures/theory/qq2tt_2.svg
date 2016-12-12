@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="38.163296mm"
-   height="26.760443mm"
-   viewBox="0 0 135.22428 94.820466"
+   height="30mm"
+   viewBox="0 0 135.22428 106.29921"
    id="svg9718"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -131,7 +131,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="85.161448"
+     inkscape:cx="-0.017123429"
      inkscape:cy="13.382294"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -161,10 +161,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(659.04071,257.90517)">
+     transform="translate(659.04071,269.38392)">
     <g
        id="g2314"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2318)"
          id="g2316">
@@ -177,7 +177,7 @@
     </g>
     <g
        id="g2324"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2328)"
          id="g2326">
@@ -190,7 +190,7 @@
     </g>
     <g
        id="g2334"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2338)"
          id="g2336">
@@ -203,7 +203,7 @@
     </g>
     <g
        id="g2344"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2348)"
          id="g2346">
@@ -216,7 +216,7 @@
     </g>
     <g
        id="g2354"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2358)"
          id="g2356">
@@ -229,7 +229,7 @@
     </g>
     <g
        id="g2364"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2368)"
          id="g2366">
@@ -242,7 +242,7 @@
     </g>
     <g
        id="g2374"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2378)"
          id="g2376">
@@ -255,7 +255,7 @@
     </g>
     <g
        id="g2384"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2388)"
          id="g2386">
@@ -268,7 +268,7 @@
     </g>
     <g
        id="g2394"
-       transform="matrix(0.125,0,0,-0.125,-813.87784,-168.80871)">
+       transform="matrix(0.125,0,0,-0.125,-813.87784,-173.45157)">
       <g
          clip-path="url(#clipPath2398)"
          id="g2396">
@@ -283,61 +283,61 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:5px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-659.13361"
-       y="-250.25661"
+       y="-254.89946"
        id="text6640-0"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6642-29"
          x="-659.13361"
-         y="-250.25661"
+         y="-254.89946"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L Medium'">g</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:5px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-659.16638"
-       y="-167.68404"
+       y="-172.32689"
        id="text6640-9-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6642-4-6"
          x="-659.16638"
-         y="-167.68404"
+         y="-172.32689"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L Medium'">g</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:5px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-594.89703"
-       y="-222.05565"
+       y="-226.6985"
        id="text6640-4-3"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6642-8-8"
          x="-594.89703"
-         y="-222.05565"
+         y="-226.6985"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L Medium'">g</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:5px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-529.01819"
-       y="-248.23584"
+       y="-252.87869"
        id="text6640-8-2"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6642-2-8"
          x="-529.01819"
-         y="-248.23584"
+         y="-252.87869"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L Medium'">t</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:5px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-529.05103"
-       y="-167.66328"
+       y="-172.30614"
        id="text6640-9-2-5"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6642-4-3-9"
          x="-529.05103"
-         y="-167.66328"
+         y="-172.30614"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L Medium'">t</tspan></text>
     <rect
        style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -345,10 +345,10 @@
        width="5.2030087"
        height="0.90206528"
        x="-529.37378"
-       y="-179.56155" />
+       y="-184.20441" />
     <g
        id="g1914-0-7-0"
-       transform="matrix(0.125,0,0,-0.125,-784.69341,-52.432647)">
+       transform="matrix(0.125,0,0,-0.125,-784.69341,-57.075504)">
       <g
          clip-path="url(#clipPath1918-8-8-2)"
          id="g1916-5-3-5">
@@ -361,7 +361,7 @@
     </g>
     <g
        id="g1924-8-1-3"
-       transform="matrix(0.125,0,0,-0.125,-784.69341,-52.432647)">
+       transform="matrix(0.125,0,0,-0.125,-784.69341,-57.075504)">
       <g
          clip-path="url(#clipPath1928-4-0-6)"
          id="g1926-9-2-1">
@@ -374,7 +374,7 @@
     </g>
     <g
        id="g1914-0-7-0-8"
-       transform="matrix(0.125,0,0,-0.125,-745.6134,-51.956057)">
+       transform="matrix(0.125,0,0,-0.125,-745.6134,-56.598914)">
       <g
          clip-path="url(#clipPath1918-8-8-2-8)"
          id="g1916-5-3-5-7">
@@ -387,7 +387,7 @@
     </g>
     <g
        id="g1924-8-1-3-2"
-       transform="matrix(0.125,0,0,-0.125,-745.6134,-51.956057)">
+       transform="matrix(0.125,0,0,-0.125,-745.6134,-56.598914)">
       <g
          clip-path="url(#clipPath1928-4-0-6-7)"
          id="g1926-9-2-1-5">
