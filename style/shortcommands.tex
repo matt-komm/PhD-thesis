@@ -43,8 +43,15 @@
 \newcommand{\wboson}{\ensuremath{{\mathrm{W}^\mathrm{\pm}}}\xspace}
 \newcommand{\higgs}{\ensuremath{{\mathrm{H}^{0}}}\xspace}
 
-\newcommand{\rmplus}{\ensuremath{\mathrm{\mbox{+}}}}
-\newcommand{\rmminus}{\ensuremath{\raisebox{-0.5pt}[0pt][0pt]{$\mathrm{\mbox{-}}$}}}
+\def\minus{%
+  \setbox0=\hbox{-}%
+  \vcenter{%
+    \hrule width\wd0 height \the\fontdimen8\textfont3%
+  }%
+}
+
+\newcommand{\rmplus}{\ensuremath{+}}
+\newcommand{\rmminus}{\ensuremath{\minus}}
 
 % FORMATTING
 \newcommand{\typew}[1]{\texttt{\detokenize{#1}}}
