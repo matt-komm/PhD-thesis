@@ -181,7 +181,7 @@ To account for the violation of parity, fermion fields have to be first decompos
 \psi_\mathrm{R}&\equiv\mathrm{P}_\mathrm{R}\psi=\tfrac{1}{2}(1+\gamma_{5})\psi
 \end{align}
 
-with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties: $(\gamma_{5})^{\dagger}=\gamma_{5}$; ~~$(\gamma_{5})^2=\mathrm{I}_\mathrm{4x4}$; ~~ $\{\gamma_{5},\gamma_{\mu}\}=\gamma_{5}\gamma_{0}+\gamma_{0}\gamma_{5}=0$.} where $\psi_\mathrm{L}$ ($\psi_\mathrm{R}$) is called ``left-handed'' (``right-handed'') respectively. In the case of massless particles, Eq.~\ref{eq:theory-diracL} decouples into two independent equations for $\psi_\mathrm{L}$ and $\psi_\mathrm{R}$. Here, the chirality is equal to the Lorentz-invariant helicity
+with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties: $(\gamma_{5})^{\dagger}=\gamma_{5}$; ~~$(\gamma_{5})^2=\mathrm{I}_\mathrm{4x4}$; ~~ $\{\gamma_{5},\gamma_{\mu}\}=\gamma_{5}\gamma_{\mu}+\gamma_{\mu}\gamma_{5}=0$.} where $\psi_\mathrm{L}$ ($\psi_\mathrm{R}$) is called ``left-handed'' (``right-handed'') respectively. In the case of massless particles, Eq.~\ref{eq:theory-diracL} decouples into two independent equations for $\psi_\mathrm{L}$ and $\psi_\mathrm{R}$. Here, the chirality is equal to the Lorentz-invariant helicity
 
 \begin{equation}
 \mathrm{H}\equiv\frac{\vec{p}\cdot\vec{s}}{|\vec{p}|}
@@ -192,7 +192,7 @@ which denotes whether the spin $\vec{s}$ is aligned along~($H=1$) or against~($H
 The Glawhow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} splits the fermion fields into ``left-handed'' doublets 
 
 \begin{align}
-\vec{\mathrm{E}}_\mathrm{L}&=\Bigg\{\colvec{2}{e^{\rmminus}_\mathrm{L}}{\nu_\mathrm{e,L}},\colvec{2}{\mu^{\rmminus}_\mathrm{L}}{\nu_{\mu,\mathrm{L}}},\colvec{2}{\tau^{\rmminus}_\mathrm{L}}{\nu_{\tau,\mathrm{L}}}\Bigg\} \label{eq:theory-su2-leptons} \\
+\vec{\mathrm{E}}_\mathrm{L}&=\Bigg\{\colvec{2}{\nu_\mathrm{e,L}}{e^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\mu,\mathrm{L}}}{\mu^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\tau,\mathrm{L}}}{\tau^{\rmminus}_\mathrm{L}}\Bigg\} \label{eq:theory-su2-leptons} \\
 \vec{\mathrm{Q}}_\mathrm{L}&=\Bigg\{\colvec{2}{\mathrm{u}_\mathrm{L}}{\mathrm{d}_\mathrm{L}},\colvec{2}{\mathrm{c}_\mathrm{L}}{\mathrm{s}_\mathrm{L}},\colvec{2}{\mathrm{t}_\mathrm{L}}{\mathrm{b}_\mathrm{L}}\Bigg\} \label{eq:theory-su2-quarks}
 \end{align}
 
@@ -237,13 +237,13 @@ in the form of a ``Mexcian hat'' as shown in Fig.~\ref{fig:theory-higgs-potentia
 \includegraphics[width=0.5\textwidth]{figures/theory/higgspot.pdf}
 }
 
-One says that this non-zero \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry. In fact, the symmetry still exists but is ``hidden'' when viewed from $x$ where $\phi(x)=\phi_0$ instead of $x=0$. When parameterizing $\phi$ around the minimum as
+One says that this shifted \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry when parameterizing $\phi$ around the minimum as
 
 \begin{equation}
 \phi(x) \big|_{\phi_0} = \colvec{2}{0}{\frac{1}{\sqrt{2}}\big(v+h(x)\big)}\cdot \mathrm{e}^{-i\vec{\theta}(x)\cdot\vec{\omega}/(2v)} \label{eq:theory-phi-dev}
 \end{equation}
 
-where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $h$ the Higgs boson. A $\mathrm{SU(2)}$ transformation, called ``unitary'' gauge, can be performed such that $\vec{\theta}$ vanishes. One says that these three Goldstone bosons and their degrees of freedom are ``eaten'' by the \wboson and \zboson bosons to become massive and hence can have also a longitudinal polarization. After the gauge transformation, the Higgs boson remains. The parametrization is chosen such that it leaves the minimum invariant under the $\mathrm{U(1)}$ transformation
+where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $h$ the Higgs boson. In fact, the symmetry still exists but is ``hidden''. A $\mathrm{SU(2)}$ transformation, called ``unitary'' gauge, can be performed such that $\vec{\theta}$ vanishes. One says that these three Goldstone bosons and their degrees of freedom are ``eaten'' by the \wboson and \zboson bosons to become massive and hence can have also a longitudinal polarization. After the gauge transformation, the Higgs boson remains. The parametrization is chosen such that it leaves the minimum invariant under the $\mathrm{U(1)}$ transformation
 
 \begin{equation}
 \phi\mapsto\phi\cdot\mathrm{e}^{-ig\alpha_{3}(x)\omega_{3}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2}. \label{eq:theory-broken-u1-trans}
@@ -283,7 +283,7 @@ e=\frac{g^{\prime} g}{\sqrt{g^2+g^{\prime 2}}}~,\quad \aem=\frac{e^2}{4\pi}=\fra
 
 and the corresponding electric charge to be $Q=T_3+Y$ which is invariant under Eq.~\ref{eq:theory-broken-u1-trans}. For the weak coupling constant one finds the relation $e=g\cdot\sin\theta_\mathrm{W}$ which yields $\aw=\aem/\sin^2\theta_\mathrm{W}\approx0.03157.$
 
-In conclusion, starting from a local gauge invariant theory, the procedure of symmetry breaking through a non-zero \gls{vev} leads to three Goldstone bosons which are absorbed into mass terms for the \wboson and \zboson bosons. The value of the \gls{vev} can be determined from the Fermi coupling constant, measured in muon decays, as $v = (\sqrt{2}\mathrm{G_{F}})^{-1/2}\approx 246~\GeV$~\cite{PhysRevLett.106.041803}. Additionally, the Higgs boson is predicted which was discovered in July 2012 independently by the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations and thus completing the electroweak theory.
+In conclusion, starting from a local gauge invariant theory, the procedure of symmetry breaking through a shifted \gls{vev} leads to three Goldstone bosons which are absorbed into mass terms for the \wboson and \zboson bosons. The value of the \gls{vev} can be determined from the Fermi coupling constant, measured in muon decays, as $v = (\sqrt{2}\mathrm{G_{F}})^{-1/2}\approx 246~\GeV$~\cite{PhysRevLett.106.041803}. Additionally, the Higgs boson is predicted which was discovered in July 2012 independently by the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations and thus completing the electroweak theory.
 
 
 Fermion masses can be generated through Yukawa interactions as
@@ -348,7 +348,7 @@ finding two parton flavors $f_{i}$ with momentum fraction $x_{i}$ interacting at
 \sum_{f}^\mathrm{partons}\int_{0}^{1}\mathrm{d}x~x\cdot \mathrm{PDF}(x,\mu_\mathrm{F},f)=1
 \end{equation}
 
-yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``factorization scale'' below which non-perturbative low energy effects such as soft gluon emissions have been absorbed by the \gls{pdf}. Measuring the \glspl{pdf} at scale $\mu_\mathrm{F}$, one can extrapolate them to any other scale by solving the DGLAP\footnote{named after the authors: Y. Dokshitzer, W. Gribow, L. Lipatow, G. Altarelli, G. Parisi} equation~\cite{Dokshitzer:1977sg,Gribov:1972ri,Altarelli:1977zs}. A recent review of common \gls{pdf} sets can be found in Ref.~\cite{Accardi2016}. \todo{name the PDF groups here}
+yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``factorization scale'' below which non-perturbative low energy effects such as soft gluon emissions have been absorbed by the \gls{pdf}. Measuring the \glspl{pdf} at scale $\mu_\mathrm{F}$, one can extrapolate them to any other scale by solving the DGLAP\footnote{Named after the authors: Y. Dokshitzer, W. Gribow, L. Lipatow, G. Altarelli, G. Parisi} equation~\cite{Dokshitzer:1977sg,Gribov:1972ri,Altarelli:1977zs}. A recent review of common \gls{pdf} sets can be found in Ref.~\cite{Accardi2016}. \todo{name the PDF groups here}
 
 \todo{baryon number B=(nq-nantiq)/3 is conserved}
 
@@ -411,7 +411,7 @@ where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space spanned by t
 
 where a scattering can occur through a quark / antiquark pair or two gluons in the initial state.
 
-One can expand a cross section in terms of the coupling constant $\alpha$ using the perturbative series~(Eq.~\ref{eq:theory-dyson-series}) as
+One can expand observables in terms of the coupling constant $\alpha$ using the perturbative series~(Eq.~\ref{eq:theory-dyson-series}) as
 
 \begin{equation}
 \sigma=\alpha\cdot\sigma_\mathrm{1}+\alpha^{2}\cdot\sigma_{2}+\alpha^{3}\cdot\sigma_{3}+\ldots.
@@ -453,19 +453,31 @@ The top quark is the heaviest known fundamental particle so far. Its high mass o
 
 Historically, the top quark was discovered in 1995 by the \gls{cdf}~\cite{Abe:1995hr} and \gls{d0}~\cite{Abachi:1994td} collaborations at the Tevatron collider at Fermilab using proton-antiproton collision data. The production of top quark pairs which occurs through strong interactions was analyzed. Already before the direct observation of this process, the discovery of the bottom quark~\cite{Augustin:1975yq,PhysRevLett.39.252} and the attempt to explain CP-violation by introducing the \gls{ckm} matrix hinted strongly towards its existence~\cite{Kobayashi01021973} however without knowing its mass. Another milestone was the observation of single top quark production which occurs through electroweak interactions only. This much more rarer process was discovered in 2009 at the Tevatron collider as well~\cite{PhysRevLett.103.092002,PhysRevLett.103.092001}. The lower cross section of this process together with the overwhelming background necessitated the use of sophisticated analysis techniques such as multivariate classifiers and the matrix element method~\cite{Mitrevski}.
 
-With start of the physics program at the \gls{lhc} in 2010, the production mechanisms of top quark can be precisely probed in proton-proton collisions now. This thesis focuses on the production of single top quark events at center-of-mass energies of $8~\TeV$ and $13~\TeV$.
+With start of the physics program at the \gls{lhc} in 2010, the production mechanisms of top quarks can be probed with unprecedented precision. This thesis focuses on the production of single top quarks at center-of-mass energies of $8~\TeV$ and $13~\TeV$.
 
 %##############################################
-\subsection{Decay and production processes}
+\subsection{Decay properties}
 %##############################################
 
-The top quark decays via electroweak interactions almost exclusively into on-shell W bosons and a b quark because of its high mass. This leads to a very short lifetime of only $1/\Gamma_\mathrm{t}\approx 5\cdot10^{-25}~\mathrm{s}$~\cite{Olive:2016xmw} which is even below the typical hadronization timescale of $1/\Lambda_\mathrm{QCD}\approx 10^{-23}~\mathrm{s}$. Hence, the top quark spin orientation is not lost due to soft gluon emissions. The spin orientation can even be reconstructed from the angular distributions of its decay products since electroweak interactions via \wboson exchange features a \gls{va} coupling structure. This offers the possibility to study the polarization of top quarks as a pseudo observable in various \gls{sm} processes. One can utilize top quark decays to investigate the polarization states of the \wboson boson~\cite{AguilarSaavedra:2010nx} in $\mathrm{t}\to\mathrm{b}\ell\bar{\nu}$ decays. For this, the top quark decay width is decomposed into
+The top quark decays via electroweak interactions almost exclusively into on-shell W bosons and a b quark because of its high mass. This leads to a very short lifetime of only $1/\Gamma_\mathrm{t}\approx 5\cdot10^{-25}~\mathrm{s}$~\cite{Olive:2016xmw} which is even below the typical hadronization timescale of $1/\Lambda_\mathrm{QCD}\approx 10^{-23}~\mathrm{s}$. Hence, the top quark spin orientation is not altered by non-perturbative soft gluon emissions. The spin orientation can even be reconstructed from the angular distributions of its decay products since electroweak interactions via $\mathrm{W}$ boson exchange features a \gls{va} coupling structure. This offers the possibility to study the polarization of top quarks as a pseudo observable in various \gls{sm} processes. One can utilize the top quark decay chain $\mathrm{t}\to\mathrm{b}\ell\bar{\nu}$ to investigate the polarization states of the \wboson boson~\cite{AguilarSaavedra:2010nx}. For this, the top quark decay width is decomposed into
 
 \begin{equation}
-\frac{\mathrm{d}\Gamma}{\Gamma\cdot\mathrm{d}\cos\theta^\star}=\tfrac{3}{8}\big(1+\cos\theta^\star\big)^{2}\mathrm{F}_{\rmplus}+\tfrac{3}{8}\big(1-\cos\theta^\star\big)^{2}\mathrm{F}_{\rmminus}+\tfrac{3}{4}\sin^{2}\theta^\star\mathrm{F}_{0}
+\frac{\mathrm{d}\Gamma}{\Gamma\cdot\mathrm{d}\cos\theta^\star}=\tfrac{3}{8}\big(1-\cos\theta^\star\big)^{2}\mathrm{F}_\mathrm{L}+\tfrac{3}{8}\big(1+\cos\theta^\star\big)^{2}\mathrm{F}_\mathrm{R}+\tfrac{3}{4}\sin^{2}\theta^\star\mathrm{F}_{0}
 \end{equation}
 
-where $\mathrm{F}_{\rmplus}$, $\mathrm{F}_{\rmminus}$, and $\mathrm{F}_{0}$ denote the left-, right-, and longitudinal polarization fraction. These dimensionless form factors are normalized as $\mathrm{F}_{\rmplus}+\mathrm{F}_{\rmminus}+\mathrm{F}_{0}=1$. The angle $\cos\theta^\star(\vec{\mathrm{s}}_\mathrm{t},\vec{\ell})$ 
+where $\mathrm{F}_\mathrm{L}$, $\mathrm{F}_\mathrm{R}$ denote the left-, right-handed, and longitudinal polarization fraction respectively. Theses dimensionless form factors are normalized as $\mathrm{F}_\mathrm{L}+\mathrm{F}_\mathrm{R}+\mathrm{F}_{0}=1$. The angle $\theta^\star(\vec{s}_\mathrm{W},\vec{p}_{\ell})$ is taken between the lepton momentum $\vec{p}_{\ell}$ in the $\mathrm{W}$ boson rest frame and a spin quantization axis $\vec{s}_\mathrm{W}$. A common basis is the helicity basis where the negative top quark momentum $\vec{s}_\mathrm{W}=-\vec{p}_\mathrm{t}^\mathrm{(W)}$ is used to quantize the $\mathrm{W}$ boson spin\footnote{There are multiple equivalent definitions in literature: $\vec{s}_\mathrm{W}=-\vec{p}_\mathrm{t}^\mathrm{(W)}=\vec{p}_\mathrm{W}^\mathrm{(t)}=\vec{p}_\mathrm{b}^\mathrm{(W)}$}. Figure~\ref{fig:theory-top-decay}
+
+\myfigure{\label{fig:theory-top-decay} Decay of the top quark through \wboson exchange: (a)~Feynman diagram; (b)~helicity angle in $\mathrm{W}$ boson rest frame.}{
+\subfloat[]{\includegraphics[scale=0.75]{figures/theory/t_decay.pdf}}\hspace{0.15\textwidth}
+\subfloat[]{\includegraphics[scale=0.75]{figures/theory/whel.pdf}}
+}
+
+%##############################################
+\subsection{Pair production}
+%##############################################
+
+
+Other options
 
  parametrization  
 
@@ -479,6 +491,10 @@ Top quarks can be produced in pairs through strong interactions via gluon or qua
 \subfloat[]{\includegraphics[scale=0.75]{figures/theory/qq2tt_2.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[scale=0.75]{figures/theory/qq2tt_3.pdf}}
 }
+
+%##############################################
+\subsection{Single top quark production}
+%##############################################
 
 The production of single top quarks via electroweak interaction can be characterized into three channels depending on the \wboson boson. Figure~\ref{fig:theory-feynman-singletop} shows the corresponding diagrams at \gls{lo}. The t-channel production mode has the highest cross section in $\mathrm{pp}$ collisions. The second largest is the \wboson-associated production mode. At \gls{nlo} it interferes with \ttbar production which complicates its definition. A recent approach is to combine both production modes and the inference between them into a process with a $\mathrm{WbWb}$ final state~\cite{Cascioli:2013wga}. Lastly, the s-channel is the smallest production mode due to the large virtuality $Q^{2}=-p_{\mu}p^{\mu}$ of the b quark.
 
@@ -498,6 +514,8 @@ xsecs of all top processes, ST supressed by PDFs, t,tW,s channel, exotic product
 %##############################################
 \subsection{Experimental results}
 %##############################################
+
+w helicity results (mention possibility for other polarizations in ST)
 
 ttbar, t,tW,s channel
 
