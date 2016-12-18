@@ -1,3 +1,16 @@
+%SYMBOLS
+\def\minus{%
+  \setbox0=\hbox{-}%
+  \vcenter{%
+    \hrule width\wd0 height \the\fontdimen8\textfont3%
+  }%
+}
+
+\newcommand{\rmplus}{\ensuremath{+}}
+\newcommand{\rmminus}{\ensuremath{\minus}}
+
+
+
 % PROCESSES
 \newcommand{\qcd}{\ensuremath{QCD}\xspace}
 \newcommand{\wjets}{\ensuremath{\textrm{W\mbox{+}jets}}\xspace}
@@ -22,6 +35,10 @@
 \newcommand{\aw}{\ensuremath{{\alpha_\mathrm{W}}}\xspace}
 \newcommand{\as}{\ensuremath{{\alpha_\mathrm{s}}}\xspace}
 
+\newcommand{\vtb}{\ensuremath{{\mathrm{V}_\mathrm{tb}}}\xspace}
+\newcommand{\vts}{\ensuremath{{\mathrm{V}_\mathrm{ts}}}\xspace}
+\newcommand{\vtd}{\ensuremath{{\mathrm{V}_\mathrm{td}}}\xspace}
+
 %UNITS
 \newcommand{\eV}{\ensuremath{\mathrm{eV}}\xspace}
 \newcommand{\keV}{\ensuremath{\mathrm{keV}}\xspace}
@@ -40,18 +57,10 @@
 %PARTICLES
 \newcommand{\photon}{\ensuremath{{\gamma}}\xspace}
 \newcommand{\zboson}{\ensuremath{{\mathrm{Z}^{0}}}\xspace}
-\newcommand{\wboson}{\ensuremath{{\mathrm{W}^\mathrm{\pm}}}\xspace}
+\newcommand{\wboson}{\ensuremath{{\mathrm{W}^{\pm}}}\xspace}
 \newcommand{\higgs}{\ensuremath{{\mathrm{H}^{0}}}\xspace}
 
-\def\minus{%
-  \setbox0=\hbox{-}%
-  \vcenter{%
-    \hrule width\wd0 height \the\fontdimen8\textfont3%
-  }%
-}
 
-\newcommand{\rmplus}{\ensuremath{+}}
-\newcommand{\rmminus}{\ensuremath{\minus}}
 
 % FORMATTING
 \newcommand{\typew}[1]{\texttt{\detokenize{#1}}}
