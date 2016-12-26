@@ -117,19 +117,19 @@ ROOT.gStyle.SetOptTitle(0)
 # For the axis titles:
 ROOT.gStyle.SetTitleColor(1, "XYZ")
 ROOT.gStyle.SetTitleFont(43, "XYZ")
-ROOT.gStyle.SetTitleSize(32*cvscale, "XYZ")
+ROOT.gStyle.SetTitleSize(36*cvscale, "XYZ")
 # ROOT.gStyle.SetTitleXSize(Float_t size = 0.02) # Another way to set the size?
 # ROOT.gStyle.SetTitleYSize(Float_t size = 0.02)
-ROOT.gStyle.SetTitleXOffset(1.135)
+ROOT.gStyle.SetTitleXOffset(1.2)
 #ROOT.gStyle.SetTitleYOffset(1.2)
-ROOT.gStyle.SetTitleOffset(1.32, "YZ") # Another way to set the Offset
+ROOT.gStyle.SetTitleOffset(1.2, "YZ") # Another way to set the Offset
 
 # For the axis labels:
 
 ROOT.gStyle.SetLabelColor(1, "XYZ")
 ROOT.gStyle.SetLabelFont(43, "XYZ")
 ROOT.gStyle.SetLabelOffset(0.0077, "XYZ")
-ROOT.gStyle.SetLabelSize(28*cvscale, "XYZ")
+ROOT.gStyle.SetLabelSize(30*cvscale, "XYZ")
 #ROOT.gStyle.SetLabelSize(0.04, "XYZ")
 
 # For the axis:
@@ -200,8 +200,8 @@ cv = ROOT.TCanvas("cv"+str(random.random()),"",int(cvscale*800),int(cvscale*600)
 cv.SetPad(0.0, 0.0, 1.0, 1.0)
 cv.SetFillStyle(4000)
 
-cvxmin=0.14
-cvxmax=0.74
+cvxmin=0.145
+cvxmax=0.71
 cvymin=0.14
 cvymax=0.935
             
@@ -240,8 +240,8 @@ cv.SetTopMargin(1-cvymax)
 cv.SetBottomMargin(cvymin)
 
 axis=ROOT.TH2F("axis"+str(random.random()),";cos#kern[-0.5]{ }#theta*;1/#kern[-0.7]{ }#Gamma#kern[-0.2]{ }#times#kern[-0.2]{ }d#kern[-0.5]{ }#Gamma/#kern[-0.7]{ }d#kern[-0.5]{ }cos#kern[-0.5]{ }#theta*",50,-1,1,50,0,1.5)
-axis.GetXaxis().SetTickLength(0.015/(1-cv.GetLeftMargin()-cv.GetRightMargin()))
-axis.GetYaxis().SetTickLength(0.015/(1-cv.GetTopMargin()-cv.GetBottomMargin()))
+axis.GetXaxis().SetTickLength(0.025/(1-cv.GetLeftMargin()-cv.GetRightMargin()))
+axis.GetYaxis().SetTickLength(0.025/(1-cv.GetTopMargin()-cv.GetBottomMargin()))
 axis.Draw("AXIS")
             
 tfL = ROOT.TF1("tfL","3./8.*pow(1-x,2)",-2,2)
@@ -264,11 +264,11 @@ tfSM.Draw("SameL")
 
 ROOT.gPad.RedrawAxis()
             
-legend = ROOT.TLegend(0.745,cvymax,0.99,cvymax-0.075*6)
+legend = ROOT.TLegend(cvxmax+0.01,cvymax,0.99,cvymax-0.075*6)
 legend.SetFillColor(ROOT.kWhite)
 legend.SetBorderSize(0)
 legend.SetTextFont(43)
-legend.SetTextSize(28*cvscale)
+legend.SetTextSize(32*cvscale)
 legend.AddEntry(tfL,"left-handed","L")
 legend.AddEntry(tfR,"right-handed","L")
 legend.AddEntry(tf0,"longitudinal","L")
