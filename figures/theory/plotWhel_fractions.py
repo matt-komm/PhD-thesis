@@ -239,7 +239,7 @@ cv.SetLogz(0)
 cv.SetTopMargin(1-cvymax)
 cv.SetBottomMargin(cvymin)
 
-axis=ROOT.TH2F("axis"+str(random.random()),";cos#kern[-0.5]{ }#theta*;1/#kern[-0.7]{ }#Gamma#kern[-0.2]{ }#times#kern[-0.2]{ }d#kern[-0.5]{ }#Gamma/#kern[-0.7]{ }d#kern[-0.5]{ }cos#kern[-0.5]{ }#theta*",50,-1,1,50,0,1.5)
+axis=ROOT.TH2F("axis"+str(random.random()),";cos#kern[-0.5]{ }#theta#lower[0.35]{#scale[0.6]{W}}#kern[-1.7]{*};1/#kern[-0.7]{ }#Gamma#kern[-0.2]{ }#times#kern[-0.2]{ }d#kern[-0.5]{ }#Gamma/#kern[-0.7]{ }d#kern[-0.5]{ }cos#kern[-0.5]{ }#theta#lower[0.35]{#scale[0.6]{W}}#kern[-1.7]{*}",50,-1,1,50,0,1.5)
 axis.GetXaxis().SetTickLength(0.025/(1-cv.GetLeftMargin()-cv.GetRightMargin()))
 axis.GetYaxis().SetTickLength(0.025/(1-cv.GetTopMargin()-cv.GetBottomMargin()))
 axis.Draw("AXIS")
