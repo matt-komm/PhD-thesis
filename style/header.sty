@@ -176,20 +176,24 @@
      \parbox[t][][t]{0.99\textwidth}{
         \chapterheadstartvskip
         \parbox[b][][b]{\widthof{\fontsize{20}{0}\selectfont\sc\substring{\chaptername}{1}{1}}}{\fontsize{20}{0}\selectfont\sc\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
-        \\[0.4cm]
+        %\\[0.4cm]
         %{\color{gray}\rule{\textwidth}{\myrulewidth}}
-        %\\[0.55cm]
+        \\[0.05cm]
+        {\color{gray}\rule{\textwidth}{\myrulewidth}}
+        \\[0.3cm]
         %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.03\textwidth}{\color{gray}\rule{\myrulewidth}{1.3cm}\hspace{4.\myrulewidth}\rule{\myrulewidth}{1.3cm}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
-        \parbox[c][][c]{0.15\textwidth}{\centering\fontsize{40}{0}\numberfont{\thechapter.}}\parbox[c][][c]{0.05\textwidth}{\centering\color{gray}\rule{4.\myrulewidth}{1.3cm}}\hspace{0.05\textwidth}\parbox[c][][c]{0.74\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
+        %\parbox[c][][c]{0.15\textwidth}{\centering\fontsize{30}{0}\numberfont{\thechapter.}}\parbox[c][][c]{0.05\textwidth}{\centering\color{gray}\rule{3.\myrulewidth}{1.3cm}}\hspace{0.05\textwidth}\parbox[c][][c]{0.74\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
+        \parbox[c][][c]{0.15\textwidth}{\centering\fontsize{35}{0}\numberfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.79\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
         %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
-        
+        \\[0.3cm]
+        {\color{gray}\rule{\textwidth}{\myrulewidth}}
         \chapterheadendvskip
     }
 }
 
-\setkomafont{chapter}{\normalfont\fontsize{16}{17}\selectfont\numberfont}
+\setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{0.8cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.2cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
 \setkomafont{section}{\normalfont\fontsize{14}{16}\selectfont\numberfont}
@@ -318,7 +322,7 @@
 \newcommand{\setupTextStyle}{
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
-    \renewcommand{\baselinestretch}{1.07}\normalsize
+    \renewcommand{\baselinestretch}{1.08}\normalsize
 
 
     %formel abstände 

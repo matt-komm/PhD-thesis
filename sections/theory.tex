@@ -348,16 +348,16 @@ finding two parton flavors $f_{i}$ with momentum fraction $x_{i}$ interacting at
 \sum_{f}^\mathrm{partons}\int_{0}^{1}\mathrm{d}x~x\cdot \mathrm{PDF}(x,\mu_\mathrm{F},f)=1
 \end{equation}
 
-yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``factorization scale'' below which non-perturbative low energy effects such as soft gluon emissions have been absorbed into the \gls{pdf}. Measuring the \glspl{pdf} at scale $\mu_\mathrm{F}$, one can extrapolate them to any other scale by solving the DGLAP\footnote{Named after the authors: Y. Dokshitzer, W. Gribow, L. Lipatow, G. Altarelli, G. Parisi} equation~\cite{Dokshitzer:1977sg,Gribov:1972ri,Altarelli:1977zs}. A recent review of common \gls{pdf} sets can be found in Ref.~\cite{Accardi2016}. There are various groups estimating \gls{pdf} sets from fits to experimental data using different approaches; e.g. CTEQ, MMHT~(formerly MSTW), ABM, HERAPDF, and NNPDF. Exemplary distributions taken from the NNPDF group~(version 3.0) at \gls{nlo} in 4~flavor scheme are shown in Fig.~\ref{fig:theory-nnpdf-dist} for $\mu_\mathrm{F}=2~\GeV$ and $\mu_\mathrm{F}=100~\GeV$. At a momentum fraction of $x\approx0.2$ one can observe two peaks for the up and down quark distributions as expected from the valence quark composition of the proton.
+yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``factorization scale'' below which non-perturbative low energy effects such as soft gluon emissions have been absorbed into the \gls{pdf}. Measuring the \glspl{pdf} at scale $\mu_\mathrm{F}$, one can extrapolate them to any other scale by solving the DGLAP\footnote{Named after the authors: Y. Dokshitzer, W. Gribow, L. Lipatow, G. Altarelli, G. Parisi} equation~\cite{Dokshitzer:1977sg,Gribov:1972ri,Altarelli:1977zs}. A recent review of common \gls{pdf} sets can be found in Ref.~\cite{Accardi2016}. There are various groups estimating \gls{pdf} sets from fits to experimental data using different approaches; e.g. CTEQ, MMHT~(formerly MSTW), ABM, HERAPDF, and NNPDF. Exemplary distributions taken from the NNPDF group~(version 3.0) are shown in Fig.~\ref{fig:theory-nnpdf-dist} for $\mu_\mathrm{F}=2~\GeV$ and $\mu_\mathrm{F}=100~\GeV$. At a momentum fraction of $x\approx0.2$ one can observe two peaks for the up and down quark distributions as expected from the valence quark composition of the proton.
 
-\myfigure{\label{fig:theory-nnpdf-dist}NNPDF3.0 \gls{nlo} set in 4 flavor scheme for factorization scales of (a)~$2~\GeV$ and (b)~$100~\GeV$. The gluon \gls{pdf} has been scaled down by a factor of $0.2$.}{
+\myfigure{\label{fig:theory-nnpdf-dist}NNPDF3.0 NLO set in 4 flavor scheme for $\as(m_{\zboson})=0.118$ factorization scales of (a)~$2~\GeV$ and (b)~$100~\GeV$. The gluon \gls{pdf} has been scaled down by a factor of $0.2$.}{
 \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/theory/nnpdf_q2.pdf}}\hspace{0.01\textwidth}
 \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/theory/nnpdf_q100.pdf}}
 }
 
 \todo{baryon number B=(nq-nantiq)/3 is conserved}
 
-At high energies, quantum fluctuations lead to divergences as well. In order to let a theory still describe the experimental energy regime, physical quantities are redefined at the so-called ``renormalization scale'' $\mu_\mathrm{R}$. Coupling constants exhibit therefore a running behavior as a function of $\mu_\mathrm{R}$ beyond which high energy effects such as loop corrections of propagators have been absorbed. In particular, the running behavior of the strong coupling constant is found to be 
+At high energies, quantum fluctuations lead to divergences as well. In order to let a theory still describe the experimental energy regime, physical quantities are redefined at the so-called ``renormalization scale'' $\mu_\mathrm{R}$. This leads to a ``running'' behavior of the coupling constants as a function of $\mu_\mathrm{R}$. Beyond this scale, high energy effects such as loop corrections of propagators have been absorbed in the physical quantities through renormalization. In particular, the running behavior of the strong coupling constant is found to be 
 
 \begin{equation}
 \as(\mu_\mathrm{R})=\frac{\as(\mu_{0}^{2})}{1+\as(\mu_\mathrm{0}^2)\cdot\tfrac{33-2\cdot n_f}{12\pi}\cdot\ln\Big(\tfrac{|\mu_\mathrm{R}^2|}{\mu_{0}^{2}}\Big)}
@@ -389,34 +389,34 @@ where particle interactions are described within the non-free part of the Hamilt
 &=\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle+i\mathcal{M}\,(2\pi)^{4}\delta^{4}\big(\Sigma p^\mathrm{in}_{i}-\Sigma p^\mathrm{out}_{j}\big)
 \end{align}
 
-where $\mathcal{M}$ captures the interaction terms at all orders of the perturbative series.
+where $\mathcal{M}$ captures the interaction terms at all orders of the perturbative series. If $\mathcal{H}_\mathrm{int}>1$ the series does not converges and one says the problem is not solvable perturbatively. Exemplary, the ground states of hadrons can not be calculated perturbatively because of the running of the strong coupling constant. An alternative approach based on lattice gauge theory solved this problem~\cite{Durr:2008zz}.
 
-The decay rate $\mathrm{N}/\mathrm{d}t=\Gamma\cdot\mathrm{N}$ can be calculated from the width $\Gamma$ which is given by
+The decay rate $\mathrm{d}\mathrm{N}/\mathrm{d}t=\Gamma\cdot\mathrm{N}$ of an unstable particle can be calculated from the width $\Gamma$ which is given by
 
-\begin{equation}
-\Gamma=...
-\end{equation}
+\begin{align}
+\Gamma&=\frac{1}{2m}\sum_\mathrm{out}\int\,\big|\,\mathcal{M}(\mathrm{in}\to\mathrm{out})\,\big|^2\mathrm{d}\Phi^\mathrm{out}\\
+\mathrm{d}\Phi^\mathrm{out}&=(2\pi)^{4}\delta^{4}\big(\Sigma p^\mathrm{in}_{i}-\Sigma p^\mathrm{out}_{j}\big)~\prod_{j}\int\frac{\mathrm{d}^{3}~\vec{p}^\mathrm{~out}_{j}}{(2\pi)^{3}2E_{j}^\mathrm{out}}
+\end{align}
 
- \todo{finish!!!}
+where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space spanned by the outgoing particle momenta.
 
-Given a flux $L=\rho v$ of incoming particles with velocity $v$, the cross section $\sigma$ is defined as the number of interactions per unit density~($\rho=1$). It is usually denoted in the unit ``barn''~[$\mathrm{b}$] which is defined as $1~\mathrm{b}\equiv 10^{-28}~\mathrm{m}^{2}$.  The number of interaction events per time is given by $\mathrm{d}N/\mathrm{d}t=L\sigma$. The flux $L$ is commonly referred to as luminosity.
+For a scattering process, the cross section $\sigma$ is defined as the number of interactions per unit density~($\rho=1$) given a flux $L=\rho v$ of incoming particles with velocity $v$. It is usually denoted in the unit ``barn''~[$\mathrm{b}$] which is defined as $1~\mathrm{b}\equiv 10^{-28}~\mathrm{m}^{2}$.  The number of interaction events per time is given by $\mathrm{d}N/\mathrm{d}t=L\sigma$. The flux $L$ is commonly referred to as luminosity.
 
 For a collider experiment with beam energies $E_{i}$ one finds the cross section \todo{explain cm energy}
 
-\begin{align}
-\sigma&=\frac{1}{|\vec{v}_1-\vec{v}_2|}\frac{1}{4E_{1}E_{2}}~\int\,\big|\,\mathcal{M}\,\big|^{2}~\mathrm{d}\Phi^\mathrm{out} \label{eq:theory-xsec-calculation} \\
-\mathrm{d}\Phi^\mathrm{out}&=(2\pi)^{4}\delta^{4}\big(p^\mathrm{in}_{1}+p^\mathrm{in}_{2}-\Sigma p^\mathrm{out}_{j}\big)~\prod_{j}\int\frac{\mathrm{d}^{3}~\vec{p}^\mathrm{~out}_{j}}{(2\pi)^{3}2E_{j}^\mathrm{out}}
-\end{align}
+\begin{equation}
+\sigma=\frac{1}{|\vec{v}_1-\vec{v}_2|}\frac{1}{4E_{1}E_{2}}~\int\,\big|\,\mathcal{M}(\mathrm{in}\to\mathrm{out})\,\big|^{2}~\mathrm{d}\Phi^\mathrm{out}. \label{eq:theory-xsec-calculation}
+\end{equation}
 
-where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space spanned by the outgoing particle momenta. In case of hadron--hadron collisions, Eq.~\ref{eq:theory-xsec-calculation} only calculates the partonic cross section. An additional integration over the \glspl{pdf} is required to sum up the individual contributions per parton flavor $f_{i}$ and per momentum fraction $x_{i}$. Exemplary, for the process $\mathrm{pp}\to \bar{\mathrm{t}}\mathrm{t}$ this leads to
+In the case of hadron--hadron collisions, Eq.~\ref{eq:theory-xsec-calculation} only calculates the partonic cross section. An additional integration over the \glspl{pdf} is required to sum up the individual contributions per parton flavor $f_{i}$ and per momentum fraction $x_{i}$ which can initiate an interaction. Exemplary, for the process $\mathrm{pp}\to \bar{\mathrm{t}}\mathrm{t}$ this leads to
 
 \begin{equation}
 \sigma(\mathrm{pp}\to \bar{\mathrm{t}}\mathrm{t})=\sum_{i,j}\iint\mathrm{d}x_{1}\,\mathrm{d}x_{2}~\mathrm{PDF}(x_{1},f_{i})\,\mathrm{PDF}(x_{2},f_{j})\,\sigma(f_{i}f_{j}\to t\bar{t})
 \end{equation}
 
-where a scattering can occur through a quark / antiquark pair or two gluons in the initial state.
+where a scattering can occur through a $\mathrm{q\bar{q}}$ pair or two gluons in the initial state.
 
-One can expand observables in terms of the coupling constant $\alpha$ using the perturbative series~(Eq.~\ref{eq:theory-dyson-series}) as
+Calculations of observables can be written in terms of the number of interaction vertices contributing to $\mathcal{M}$ originating from the perturbative series~(Eq.~\ref{eq:theory-dyson-series}). This allows to the expand an observable in terms of the coupling constant $\alpha$ as
 
 \begin{equation}
 \sigma=\alpha\cdot\sigma_\mathrm{1}+\alpha^{2}\cdot\sigma_{2}+\alpha^{3}\cdot\sigma_{3}+\ldots.
@@ -491,6 +491,28 @@ The expected distributions per helicity state as a function of $\cos\theta^\star
 \includegraphics[width=0.49\textwidth]{figures/theory/whel_fractions.pdf}
 }
 
+For a general analysis of the top quark spin, one introduces the so-called ``spin-analyzing power'' $\alpha_{X}\in[-1;\,1]$ with respect to the decay product $X=\ell,\nu,\mathrm{W},\mathrm{b}$. It denotes the fraction of instances when the top quark spin is aligned along the spin analyzer momentum in the top quark rest frame. The calculated spin-analyzing powers at \gls{lo} and \gls{nlo} in the \gls{sm} are summarized in Table~\ref{tab:theory-spin-powers}. In particular, the charged lepton is a nearly perfect spin-analyzer to study the top quark polarization.
+
+For the corresponding particle or antiparticle partner the spin-analyzing power flips its sign. However, any top quark polarization $\mathrm{P}_\mathrm{t}$ also changes sign which keeps the product $\mathrm{P}_\mathrm{t}\cdot\alpha_{X}=(-\mathrm{P}_{\bar{\mathrm{t}}})\cdot(-\alpha_{\bar{X}})$ independent whether the spin-analyzer is a particle or its antiparticle.
+
+\mytable{\label{tab:theory-spin-powers}Spin-analyzing powers of the top quark. The values are taken from Ref.~\cite{AguilarSaavedra:2010nx} and references therein.}{
+\begin{tabular}{c||c|c}
+decay product       & $\alpha_{X}^\mathrm{LO}$  & $\alpha_{X}^\mathrm{NLO}$ \\
+\hline
+\hline
+$\ell^{\rmplus}$    & 1.0                       & 0.998 \\
+\hline
+$\nu$               & -0.32                     & -0.33 \\
+\hline
+$\mathrm{b}$        & -0.41                     & -0.39 \\
+\hline
+$\mathrm{W}^{\rmplus}$        & 0.41                     & 0.39 
+\end{tabular}
+}
+
+
+
+
 %##############################################
 \subsection{Pair production}
 %##############################################
@@ -510,7 +532,7 @@ Similar to the study of the $\mathrm{W}$ boson helicity fractions in top quark d
 &-\mathrm{C}\,\alpha_{X}\alpha_{X^\prime}\,\cos\theta_\mathrm{t}^\star \cos\theta_{\bar{\mathrm{t}}}^\star\Big)
 \end{align}
 
-where $\mathrm{P}_\mathrm{t}$ and $\mathrm{P}_{\bar{\mathrm{t}}}$ denote the polarization fractions and $\mathrm{C}$ the $\mathrm{t\bar{t}}$ spin correlation. The factors $\alpha_{X}$ are called spin-analyzing powers of the top quark spin \todo{find out if correct and explain}  In the helicity basis, the angles $\cos\theta_{\mathrm{t},\bar{\mathrm{t}}}^\star$ are taken between the momenta of the $\ell^{\rmplus}/\ell^{\rmminus}$ leptons in the corresponding $\mathrm{t}/\bar{\mathrm{t}}$ rest frames and the momenta of the $\mathrm{t}/\bar{\mathrm{t}}$ in the $\mathrm{t}\bar{\mathrm{t}}$ rest frame respectively. Since the top quarks are produced isotropic at \gls{lo}, only a small net polarization of $\mathrm{P}_\mathrm{t}=-\mathrm{P}_{\bar{\mathrm{t}}}\approx0.3\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ from electroweak corrections is expected~\cite{Bernreuther:2013aga}. However, the spins of a top quark pair are linked through the $\mathrm{g\mathrm{t}\bar{\mathrm{t}}}$ vertex yielding a large correlation between them~\cite{Mahlon:2010gw}. It depends on the boost of the top quarks with respect to their zmf
+where $\mathrm{P}_\mathrm{t}$ and $\mathrm{P}_{\bar{\mathrm{t}}}$ denote the polarization fractions and $\mathrm{C}$ the $\mathrm{t\bar{t}}$ spin correlation. In the helicity basis, the angles $\cos\theta_{\mathrm{t},\bar{\mathrm{t}}}^\star$ are taken between the momenta of the leptons~($X=\ell^{\rmplus}\,/\,X^\prime=\ell^{\rmminus}$) in the corresponding $\mathrm{t}/\bar{\mathrm{t}}$ rest frames and the momenta of the $\mathrm{t}/\bar{\mathrm{t}}$ in the $\mathrm{t}\bar{\mathrm{t}}$ rest frame respectively. Since the top quarks are produced isotropic at \gls{lo}, only a small net polarization of $\mathrm{P}_\mathrm{t}=-\mathrm{P}_{\bar{\mathrm{t}}}\approx0.3\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ from electroweak higher order corrections is expected~\cite{Bernreuther:2013aga}. However, the spins of a top quark pair are linked through the $\mathrm{g\mathrm{t}\bar{\mathrm{t}}}$ vertex yielding a large correlation between them~\cite{Mahlon:2010gw}. It depends on the boost of the top quarks with respect to their zmf
 
 
 
