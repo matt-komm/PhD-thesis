@@ -241,14 +241,14 @@ cv.SetTopMargin(1-cvymax)
 cv.SetBottomMargin(cvymin)
 
 N=1000
-Q=2
+Q=10
 
 axis=ROOT.TH2F("axis"+str(random.random()),";x;PDF(x,#kern[-0.5]{ }#mu#lower[0.6]{#scale[0.7]{F}}="+str(Q)+"#kern[-0.5]{ }GeV)",50,0.001,1,50,0,1.2)
 axis.GetXaxis().SetTickLength(0.025/(1-cv.GetLeftMargin()-cv.GetRightMargin()))
 axis.GetYaxis().SetTickLength(0.025/(1-cv.GetTopMargin()-cv.GetBottomMargin()))
 axis.Draw("AXIS")
             
-lhapdf.initPDFSetByName("NNPDF30_nlo_as_0118_nf_4.LHgrid")
+lhapdf.initPDFSetByName("NNPDF30_nnlo_as_0118_nf_5.LHgrid")
 lhapdf.initPDF(0)
 
 xvalues = numpy.logspace(-3,0,N)#numpy.logspace(-4,0)
@@ -256,15 +256,17 @@ yvaluesList=[]
 graphList = []
 
 styles =[
-    [0,ROOT.kBlack,4,1,5,"g (#times#kern[-0.5]{ }0.2)"],
-    [1,ROOT.kBlue-4,4,1,1,"d"],
-    [-1,ROOT.kBlue+1,6,2,1,"#bar{d}"],
-    [2,ROOT.kViolet,4,1,1,"u"],
-    [-2,ROOT.kPink+4,6,2,1,"#bar{u}"],
-    [3,ROOT.kTeal+9,4,1,1,"s"],
-    [-3,ROOT.kTeal+3,6,2,1,"#bar{s}"],
-    [4,ROOT.kOrange+7,4,1,1,"c"],
-    [-4,ROOT.kOrange+9,6,2,1,"#bar{c}"],
+    [0,ROOT.kBlack,     5,1,10,"g (#times#kern[-0.5]{ }0.1)"],
+    [1,ROOT.kBlue-4,    5,1,1,"d"],
+    [-1,ROOT.kBlue+1,   8,2,1,"#bar{d}"],
+    [2,ROOT.kViolet,    5,1,1,"u"],
+    [-2,ROOT.kPink+4,   8,2,1,"#bar{u}"],
+    [3,ROOT.kTeal+9,    5,1,1,"s"],
+    [-3,ROOT.kTeal+3,   8,2,1,"#bar{s}"],
+    [4,ROOT.kOrange+7,  5,1,1,"c"],
+    [-4,ROOT.kOrange+9, 8,2,1,"#bar{c}"],
+    [5,ROOT.kSpring+9,  5,1,1,"b"],
+    [-5,ROOT.kSpring+4, 8,2,1,"#bar{b}"],
 
 ]
 

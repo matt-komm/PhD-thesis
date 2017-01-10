@@ -129,7 +129,7 @@
 %% Setup TOC
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
-\renewcommand{\cfttoctitlefont}{\fontsize{18}{20}\numberfont}
+\renewcommand{\cfttoctitlefont}{\Huge\numberfont}
 \renewcommand{\cftchapfont}{\rm\bf}
 \renewcommand{\cftsecfont}{}
 
@@ -191,18 +191,18 @@
     }
 }
 
-\setkomafont{chapter}{\normalfont\fontsize{18}{20}\selectfont\numberfont}
+\setkomafont{chapter}{\normalfont\Huge\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.2cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
-\setkomafont{section}{\normalfont\fontsize{14}{16}\selectfont\numberfont}
+\setkomafont{section}{\normalfont\LARGE\selectfont\numberfont}
 
 \renewcommand*{\subsectionformat}{\numberfont\thesubsection.\ }
-\setkomafont{subsection}{\normalfont\fontsize{13}{15}\selectfont\numberfont}
+\setkomafont{subsection}{\normalfont\Large\selectfont\numberfont}
 
 \renewcommand*{\subsubsectionformat}{\numberfont\thesubsubsection.\ }
-\setkomafont{subsubsection}{\normalfont\fontsize{12}{14}\selectfont\numberfont}
+\setkomafont{subsubsection}{\normalfont\large\selectfont\numberfont}
 
 \RedeclareSectionCommands[
   beforeskip=1.75\parskip,
@@ -292,6 +292,7 @@
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
 %\counterwithin*{footnote}{page} %reset counter per new page
 \setlength{\footnotesep}{\parskip}
+\addtokomafont{footnote}{\small}
 \renewcommand{\footnoterule}{%
   \vspace{-0.5\parskip}
   \vspace{\footskip}
