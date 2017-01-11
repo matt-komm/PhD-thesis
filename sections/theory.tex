@@ -394,7 +394,7 @@ where particle interactions are described within the non-free part of the Hamilt
 &=\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle+i\mathcal{M}\,(2\pi)^{4}\delta^{4}\big(\Sigma p^\mathrm{in}_{i}-\Sigma p^\mathrm{out}_{j}\big)
 \end{align}
 
-where $\mathcal{M}$ captures the interaction terms at all orders of the perturbative series. If $\mathcal{H}_\mathrm{int}>1$ the series does not converges and one says the problem is not solvable perturbatively. Exemplary, the ground states of hadrons can not be calculated perturbatively because of the running of the strong coupling constant. An alternative approach based on lattice gauge theory solved this problem~\cite{Durr:2008zz}.
+where $\mathcal{M}$ captures the interaction terms at all orders of the perturbative series. If $\mathcal{H}_\mathrm{int}>1$ the series does not converges and one says the problem is not solvable perturbatively. Exemplary, the ground states of hadrons can not be calculated perturbatively because of the running of the strong coupling constant. An alternative approach is required. This problem was solved using lattice gauge theory~\cite{Durr:2008zz}.
 
 The decay rate $\mathrm{d}\mathrm{N}/\mathrm{d}t=\Gamma\cdot\mathrm{N}$ of an unstable particle can be calculated from the width $\Gamma$ which is given by
 
@@ -403,11 +403,11 @@ The decay rate $\mathrm{d}\mathrm{N}/\mathrm{d}t=\Gamma\cdot\mathrm{N}$ of an un
 \mathrm{d}\Phi^\mathrm{out}&=(2\pi)^{4}\delta^{4}\big(\Sigma p^\mathrm{in}_{i}-\Sigma p^\mathrm{out}_{j}\big)~\prod_{j}\int\frac{\mathrm{d}^{3}~\vec{p}^\mathrm{~out}_{j}}{(2\pi)^{3}2E_{j}^\mathrm{out}}
 \end{align}
 
-where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space spanned by the outgoing particle momenta.
+where $\mathrm{d}\Phi^\mathrm{out}$ integrates over the phase space spanned by the outgoing particle momenta. The $\delta$ function ensures conservation of momentum and energy between the initial and final state. For a decay into a specific final state $f$ one defines the branching ratio as $\mathcal{B}(X\to f)=\Gamma(X \to f)/\sum\Gamma(X \to\mathrm{any})$ where $\sum_{f}\mathcal{B}(X \to f)=1$.
 
 For a scattering process, the cross section $\sigma$ is defined as the number of interactions per unit density~($\rho=1$) given a flux $L=\rho v$ of incoming particles with velocity $v$. It is usually denoted in the unit ``barn''~[$\mathrm{b}$] which is defined as $1~\mathrm{b}\equiv 10^{-28}~\mathrm{m}^{2}$.  The number of interaction events per time is given by $\mathrm{d}N/\mathrm{d}t=L\sigma$. The flux $L$ is commonly referred to as luminosity.
 
-For a collider experiment with beam energies $E_{i}$ one finds the cross section \todo{explain cm energy}
+For a collider experiment with beam energies $E_{i}$ and velocities $\vec{v}_{i}$ one finds the cross section as 
 
 \begin{equation}
 \sigma=\frac{1}{|\vec{v}_1-\vec{v}_2|}\frac{1}{4E_{1}E_{2}}~\int\,\big|\,\mathcal{M}(\mathrm{in}\to\mathrm{out})\,\big|^{2}~\mathrm{d}\Phi^\mathrm{out}. \label{eq:theory-xsec-calculation}
@@ -428,6 +428,8 @@ Calculations of observables can be written in terms of the number of interaction
 \begin{equation}
 \sigma=\alpha\cdot\sigma_\mathrm{1}+\alpha^{2}\cdot\sigma_{2}+\alpha^{3}\cdot\sigma_{3}+\ldots.
 \end{equation}
+
+\todo{what is NNLL?}
 
 Depending at which term the series is cut off one speaks of \gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{\gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
 
@@ -461,7 +463,7 @@ Hypothetical, a theory may describe experimental data well but still violates th
 \section{The top quark}
 %##############################################
 
-The top quark is the heaviest known fundamental particle so far. Its high mass of $m_\mathrm{t}=173.34\pm0.71~\GeV$~\cite{ATLAS:2014wva} is close to the minimum of the Higgs potential. This implies a Yukawa coupling of $|\lambda_\mathrm{t}|\approx 1$. All other Yukawa couplings are however of the order of $10^{-2}$ instead. The top quark may therefore play an important role in understanding the mechanisms of electroweak symmetry breaking itself. Furthermore, top quarks are excellent probes to search for \gls{bsm} physics. For example, many extensions of the \gls{sm} predict additional $\mathrm{W}^{\prime}$ and $\mathrm{Z}^{\prime}$ bosons which are heavier versions of their \gls{sm} counterparts and can interact with top quarks. Other \gls{bsm} models can have an extended Higgs sector leading to additional heavy neutral and charged Higgs bosons which may couple to top quarks predominately due to its high mass~(see Ref.~\cite{Boos:2006xe} and references therein). \todo{find better/more refs}
+The top quark is the heaviest known fundamental particle so far. Its high mass of $m_\mathrm{t}=173.34\pm0.71~\GeV$~\cite{ATLAS:2014wva} is close to the minimum of the Higgs potential. This implies a Yukawa coupling of $|\lambda_\mathrm{t}|\approx 1$. All other Yukawa couplings are however of the order of $10^{-2}$ instead. The top quark may therefore play an important role in understanding the mechanisms of electroweak symmetry breaking itself. Furthermore, top quarks are excellent probes to search for \gls{bsm} physics. For example, many extensions of the \gls{sm} predict additional $\mathrm{W}^{\prime}$ and $\mathrm{Z}^{\prime}$ bosons which are heavier versions of their \gls{sm} counterparts and can interact with top quarks. Other \gls{bsm} models can have an extended Higgs sector leading to additional heavy neutral and charged Higgs bosons which may couple to top quarks predominately due to its high mass~(see Ref.~\cite{Boos:2006xe} and references therein). \todo{find better/more refs} \todo{fcnc}
 
 Historically, the top quark was discovered in 1995 by the \gls{cdf}~\cite{Abe:1995hr} and \gls{d0}~\cite{Abachi:1994td} collaborations at the Tevatron collider at Fermilab using proton-antiproton collision data. The production of top quark pairs which occurs through strong interactions was analyzed. Already before the direct observation of this process, the discovery of the bottom quark~\cite{Augustin:1975yq,PhysRevLett.39.252} and the attempt to explain CP-violation by introducing the \gls{ckm} matrix hinted strongly towards its existence~\cite{Kobayashi01021973} however without knowing its mass. Another milestone was the observation of single top quark production which occurs through electroweak interactions only. This much more rarer process was discovered in 2009 at the Tevatron collider as well~\cite{PhysRevLett.103.092002,PhysRevLett.103.092001}. The lower cross section of this process together with the overwhelming background necessitated the use of sophisticated analysis techniques such as multivariate classifiers and the matrix element method~\cite{Mitrevski}.
 
@@ -547,11 +549,11 @@ $13~\TeV$    & $831$ & $8$ & ${}^{+19.8}_{-29.2}$ & $\pm35.6$ & \\
 Similar to the study of the $\mathrm{W}$ boson helicity fractions in top quark decays, the polarization of the top quarks arising in pair production can be analyzed by decomposing the \ttbar cross section as a function of the polarization angles. One finds
 
 \begin{align}
-\frac{\mathrm{d}^{2}\sigma}{\sigma\cdot\mathrm{d}\cos\theta_\mathrm{t}^\star~\mathrm{d}\cos\theta_{\bar{\mathrm{t}}}^\star}=\frac{1}{4}\Big(1&+\mathrm{P}_\mathrm{t}\,\alpha_{X}\,\cos\theta_\mathrm{t}^\star+\mathrm{P}_{\bar{\mathrm{t}}}\,\alpha_{X^\prime}\,\cos\theta_{\bar{\mathrm{t}}}^\star \nonumber \\
-&-\mathrm{C}\,\alpha_{X}\alpha_{X^\prime}\,\cos\theta_\mathrm{t}^\star \cos\theta_{\bar{\mathrm{t}}}^\star\Big) \label{eq:theory-ttbar-correlation}
+\frac{\mathrm{d}^{2}\sigma}{\sigma\cdot\mathrm{d}\cos\theta_{\mathrm{t}X}^\star~\mathrm{d}\cos\theta_{\bar{\mathrm{t}}X^\prime}^\star}=\frac{1}{4}\Big(1&+\mathrm{P}_\mathrm{t}\,\alpha_{X}\,\cos\theta_{\mathrm{t}X}^\star+\mathrm{P}_{\bar{\mathrm{t}}}\,\alpha_{X^\prime}\,\cos\theta_{\bar{\mathrm{t}}X^\prime}^\star \nonumber \\
+&-\mathrm{C}\,\alpha_{X}\alpha_{X^\prime}\,\cos\theta_{\mathrm{t}X}^\star \cos\theta_{\bar{\mathrm{t}}X^\prime}^\star\Big) \label{eq:theory-ttbar-correlation}
 \end{align}
 
-where $\mathrm{P}_\mathrm{t}$ and $\mathrm{P}_{\bar{\mathrm{t}}}$ denote the polarization fractions and $\mathrm{C}$ the $\mathrm{t\bar{t}}$ spin correlation. In the helicity basis, the angles $\cos\theta_{\mathrm{t},\bar{\mathrm{t}}}^\star$ are taken between the momenta of the leptons~($X=\ell^{\rmplus}\,/\,X^\prime=\ell^{\rmminus}$) in the corresponding $\mathrm{t}/\bar{\mathrm{t}}$ rest frames and the momenta of the $\mathrm{t}/\bar{\mathrm{t}}$ in the $\ttbar$ \gls{zmf} respectively. Since the top quarks are produced isotropic at \gls{lo}, only a small net polarization of $\mathrm{P}_\mathrm{t}=-\mathrm{P}_{\bar{\mathrm{t}}}\approx0.3\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ from electroweak higher order corrections is expected~\cite{Bernreuther:2010ny,Bernreuther:2013aga}. However, the spins of a top quark pair are linked through the $\mathrm{g\mathrm{t}\bar{\mathrm{t}}}$ vertex yielding a large correlation between them~\cite{Mahlon:2010gw}. It depends on the boost of the top quarks with respect to their \gls{zmf} and amounts to $C\approx32\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ at $8~\TeV$~\cite{Bernreuther:2013aga}. Experimentally, the azimuthal $\Delta\phi$ angle between the two leptons in the laboratory frame is sometimes studied instead of the helicity angle. This observable has the advantage that the whole \ttbar system does not need to be reconstructed which involves finding solutions for the two unknown neutrino momenta while matching the two jets with the two leptons to setup two top quark decay chains\footnote{Kinematic fitting is sometimes deployed to solve this problem using the invariant mass of the intermediate top quarks and $\mathrm{W}$~bosons as constraints.}. The amount of correlation cannot be easily extracted from the $\Delta\phi$ distribution directly since its functional form does not resemble Eq.~\ref{eq:theory-ttbar-correlation}. However it can be used to test the presence of \ttbar correlation and to distinguish it from a potential \gls{bsm} scenario without correlation.
+where $\mathrm{P}_\mathrm{t}$ and $\mathrm{P}_{\bar{\mathrm{t}}}$ denote the polarization fractions and $\mathrm{C}$ the $\mathrm{t\bar{t}}$ spin correlation. In the helicity basis, the angles are taken between the momenta of the leptons~($X=\ell^{\rmplus}\,/\,X^\prime=\ell^{\rmminus}$) in the corresponding $\mathrm{t}/\bar{\mathrm{t}}$ rest frames and the momenta of the $\mathrm{t}/\bar{\mathrm{t}}$ in the $\ttbar$ \gls{zmf} respectively. Since the top quarks are produced isotropic at \gls{lo}, only a small net polarization of $\mathrm{P}_\mathrm{t}=-\mathrm{P}_{\bar{\mathrm{t}}}\approx0.3\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ from electroweak higher order corrections is expected~\cite{Bernreuther:2010ny,Bernreuther:2013aga}. However, the spins of a top quark pair are linked through the $\mathrm{g\mathrm{t}\bar{\mathrm{t}}}$ vertex yielding a large correlation between them~\cite{Mahlon:2010gw}. It depends on the boost of the top quarks with respect to their \gls{zmf} and amounts to $C\approx32\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ at $8~\TeV$~\cite{Bernreuther:2013aga}. Experimentally, the azimuthal $\Delta\phi$ angle between the two leptons in the laboratory frame is sometimes studied instead of the helicity angle. This observable has the advantage that the whole \ttbar system does not need to be reconstructed which involves finding solutions for the two unknown neutrino momenta while matching the two jets with the two leptons to setup two top quark decay chains\footnote{Kinematic fitting is sometimes deployed to solve this problem using the invariant mass of the intermediate top quarks and $\mathrm{W}$~bosons as constraints.}. The amount of correlation cannot be easily extracted from the $\Delta\phi$ distribution directly since its functional form does not resemble Eq.~\ref{eq:theory-ttbar-correlation}. However it can be used to test the presence of \ttbar correlation and to distinguish it from a potential \gls{bsm} scenario without correlation.
 
 
 %##############################################
@@ -586,15 +588,29 @@ $s$-channel     & $5$  & $24$ & ${}^{+0.15}_{-0.12}$ & $\pm0.16$ &      & $10$  
 \end{tabular}
 }
 
-Vtb
+Measurements of single-top-quark cross sections allow to extract a model-independent limit on the \gls{ckm} matrix element $\vtb$. If one assumes $|\vtd|^2+|\vts|^2\ll|\vtb|^2$ then the $\mathrm{t}\to\mathrm{bW}$ branching ratio can be approximated as
 
+\begin{equation}
+\mathcal{B}(\mathrm{t}\to\mathrm{bW})=\frac{|\vtb|^2}{\underbrace{|\vtd|^2+|\vts|^2}_{\ll|\vtb|^2}+|\vtb|^2}\approx 100\%.
+\end{equation}
 
+Hence the cross section is independent of the top quark decay vertex and therefore directly proportional to $\propto|f_\mathrm{L}\cdot\vtb|^2$. The form factor $f_\mathrm{L}$ can absorb potential contributions from \gls{bsm} physics that modify the left-handed coupling strength. It is $f_\mathrm{L}^\mathrm{SM}=1$ in the \gls{sm}. A measured single-top-quark cross section can then be used to extract the absolute value of $|f_\mathrm{L}\vtb|$ as
 
+\begin{equation}
+|f_\mathrm{L}\vtb|=\sqrt{\frac{\sigma_\mathrm{measured}}{\sigma_\mathrm{theory}}}.
+\end{equation}
 
+It should be noted that this procedure does not require to assume three quark generations nor unitarity $\sum_j|\mathrm{V}_{ij}|^2=1$ of the \gls{ckm} matrix.
 
+In $t$-channel single-top-quark production, the differential cross section can be expressed as
 
+\begin{equation}
+\frac{\mathrm{d}\sigma}{\sigma\cdot\mathrm{d}\cos\theta^\star_{\mathrm{t}X}}=\frac{1}{2}\big(1+\mathrm{P}_\mathrm{t}\alpha_{X}\cos\theta^\star_{\mathrm{t}X}\big)
+\end{equation}
 
-xsecs of all top processes, ST supressed by PDFs, exotic production (e.g. tHq, FCNC), decay + coupling structure
+various bases
+
+?exotic production (e.g. tHq, FCNC)
 
 %##############################################
 \subsection{Top quark mass}
