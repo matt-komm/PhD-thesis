@@ -1,6 +1,7 @@
 # other
 .*
 *~
+papers/*
 temp/*
 
 ## Core latex/pdflatex auxiliary files:

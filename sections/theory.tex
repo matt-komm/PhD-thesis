@@ -530,7 +530,7 @@ The dominant mechanism producing top quarks at hadron colliders is top quark pai
 \subfloat[]{\includegraphics[scale=0.75]{figures/theory/qq2tt_3.pdf}}
 }
 
-The theoretical \ttbar cross sections in pp collisions at center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-ttbar-xsecs}. Those have been calculated at \gls{nnlo}+NNLL accuracy using the \textsc{Top++}\,2.0 program~\cite{Czakon:2011xx,Czakon:2013goa} assuming a top quark mass of $172.5~\GeV$. 
+The theoretical \ttbar cross sections in pp collisions at center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-ttbar-xsecs}. Those have been calculated at \gls{nnlo}+NNLL accuracy using the \textsc{Top++}\,2.0 program~\cite{Czakon:2011xx,Czakon:2013goa} assuming a top quark mass of $172.5~\GeV$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
 
 \mytable{\label{tab:theory-ttbar-xsecs}Top quark pair production cross sections in $\pb$ per center-of-mass energy.}{
 \begin{tabular}{|c| r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}$}l | r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}$}l |}
@@ -558,20 +558,18 @@ where $\mathrm{P}_\mathrm{t}$ and $\mathrm{P}_{\bar{\mathrm{t}}}$ denote the pol
 \subsection{Single top quark production}
 %##############################################
 
-Top quarks can be produced singly through electroweak interactions. At \gls{lo}, one can categorized the production into three channels depending on the exchanged $\mathrm{W}$~boson and its virtuality $Q^{2}=-p_{\mu}p^{\mu}$. Figure~\ref{fig:theory-feynman-singletop} shows the corresponding Feynman diagrams. Overall, the single top quark cross sections are smaller than for pair production due to the electroweak coupling strength $\aw<\as$. Additionally, the required sea quarks~($\mathrm{b}$, $\bar{\mathrm{q}}$) in the initial states whose \glspl{pdf} rise less steeply at low momentum fractions compared to the gluon \gls{pdf} suppresses the cross section further~(see Fig.~\ref{fig:theory-nnpdf-dist}).
+Top quarks can be produced singly through electroweak interactions. At \gls{lo}, one can categorized the production into three channels depending on the exchanged $\mathrm{W}$~boson and its virtuality $Q^{2}=-p_{\mu}p^{\mu}$. Figure~\ref{fig:theory-feynman-singletop} shows the corresponding Feynman diagrams. Overall, the single top quark cross sections are smaller than for pair production due to the electroweak coupling strength $\aw<\as$. Additionally, the requirement of sea quarks~($\mathrm{b}$, $\bar{\mathrm{q}}$) in the initial states whose \glspl{pdf} increase less steeply at low momentum fractions compared to the gluon \gls{pdf} suppresses the cross sections further~(see Fig.~\ref{fig:theory-nnpdf-dist}).
 
 \myfigure{\label{fig:theory-feynman-singletop}Feynman diagrams of electroweak single top quark production at \gls{lo} in the 5 flavor scheme.}{
-\subfloat[\label{fig:theory-singletop-tch}$t$-channel]{\includegraphics[scale=0.75]{figures/theory/ST_tch.pdf}}\hspace{0.03\textwidth}
-\subfloat[\label{fig:theory-singletop-tWch}tW-channel]{\includegraphics[scale=0.75]{figures/theory/ST_tWch.pdf}}\hspace{0.03\textwidth}
-\subfloat[\label{fig:theory-singletop-sch}$s$-channel]{\includegraphics[scale=0.75]{figures/theory/ST_sch.pdf}}
+\subfloat[\label{fig:theory-singletop-tch}$t$ channel]{\includegraphics[scale=0.75]{figures/theory/ST_tch.pdf}}\hspace{0.05\textwidth}
+\subfloat[\label{fig:theory-singletop-sch}$s$ channel]{\includegraphics[scale=0.75]{figures/theory/ST_sch.pdf}} \\
+\subfloat[\label{fig:theory-singletop-tWch}tW channel]{\includegraphics[scale=0.75]{figures/theory/ST_tWch2.pdf}\hspace{0.05\textwidth}\includegraphics[scale=0.75]{figures/theory/ST_tWch.pdf}}
 }
-
-\paragraph{$\boldsymbol{t}$-channel} The $t$-channel production mode~(Fig.~\ref{fig:theory-singletop-tch}) has the highest cross section in $\mathrm{pp}$ collisions. Here, the virtuality of the $\mathrm{W}$~boson is found to be $Q^2>0$ and hence it is said to be ``space-like''. A characteristic feature of this mode is the additional spectator quark $q^\prime$ which recoils against the $\mathrm{W}$~boson and is therefore scattered fairly forward. \todo{charge asym}
-
-\paragraph{tW-channel} The second largest mode is the production of a single top quark in association with a $\mathrm{W}$~boson~(Fig.~\ref{fig:theory-singletop-tWch}). Here, the $\mathrm{W}$~boson can be produced ``on-shell'' $Q^2=-m_\mathrm{W}^{2}$. It is slangy referred to as ``tW-channel''. This process interferes at \gls{nlo} with \ttbar production which complicates its definition. A recent approach is to combine both production modes and the inference between them into a process with a $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\mathrm{b}\bar{\mathrm{b}}+X$ final state~\cite{Cascioli:2013wga}.
-
-\paragraph{$\boldsymbol{s}$-channel} Lastly, the $s$-channel is the smallest production mode~(Fig.~\ref{fig:theory-singletop-sch}) because of the ``time-like'' $\mathrm{W}$~boson which has to have a large virtuality $Q^2<0$ to produce the heavier top quark. In various \gls{bsm} scenarios, the cross section of this process is expected to increase due to new heavy particles such as $\mathrm{W}^\prime$ or charged Higgs bosons which may even be on their mass shell and hence occur as a resonance.
-
+\begin{description}
+\item[$\boldsymbol{t}$ channel] The $t$-channel single-top-quark production mode~(Fig.~\ref{fig:theory-singletop-tch}) has the highest cross section in $\mathrm{pp}$ collisions. Here, the virtuality of the $\mathrm{W}$~boson is found to be $Q^2>0$ and hence it is said to be ``space-like''. A characteristic feature of this mode is the additional spectator quark $q^\prime$ which recoils against the $\mathrm{W}$~boson and is therefore scattered fairly forward. \todo{charge asym}
+\item[$\boldsymbol{s}$ channel] The mode with the smallest single-top-quark production cross section is via the $s$ channel~(Fig.~\ref{fig:theory-singletop-sch}). This is because of the ``time-like'' $\mathrm{W}$~boson which has to have a large virtuality $Q^2<0$ to produce the heavier top quark. In various \gls{bsm} scenarios, the cross section of this process is expected to increase due to new heavy particles such as $\mathrm{W}^\prime$ or charged Higgs bosons which may even be produced on their mass shell, $p_{\mu}p^{\mu}-m^{2}=0$, and hence occur as a resonance.
+\item[tW channel] The second largest mode is the production of a single top quark in association with a $\mathrm{W}$~boson~(Fig.~\ref{fig:theory-singletop-tWch}). Here, the $\mathrm{W}$~boson can be produced on shell $Q^2=-m_\mathrm{W}^{2}$. It is slangy referred to as ``tW channel''. This process interferes at \gls{nlo} with \ttbar production which complicates its definition. A recent approach is to combine both production modes and the inference between them into a process with a $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\mathrm{b}\bar{\mathrm{b}}+X$ final state~\cite{Cascioli:2013wga}.
+\end{description}
 
 The theoretical cross sections of the three single top quark production modes in pp collisions for center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-singletop-xsecs}. These have been calculated at \gls{nlo} in \gls{qcd} with \textsc{\gls{hathor}}\,$2.1$~\cite{Aliev:2010zk,Kant:2014oha} using a top quark mass of $m_\mathrm{t}=172.5~\GeV$ and factorization and renormalization scales of $\mu_\mathrm{R}=\mu_\mathrm{F}=m_\mathrm{t}$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
 
