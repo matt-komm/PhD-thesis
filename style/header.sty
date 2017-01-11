@@ -113,6 +113,7 @@
 \newlength{\myrulewidth}
 \setlength{\myrulewidth}{0.7pt}
 
+
 %line numbers
 \usepackage{lineno} 
 \renewcommand\linenumberfont{\color{gray}\normalfont\small\ttfamily}
@@ -221,16 +222,15 @@
 \usepackage{subfig}
 %\captionsetup{width=0.93\textwidth}
 
-
-\setkomafont{caption}{\small}
 \setkomafont{captionlabel}{\numberfont\small}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\thesubfigure}{\alph{subfigure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
-\captionsetup[figure]{aboveskip=0.5\baselineskip,belowskip=0\baselineskip}
-\captionsetup[table]{aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
-\captionsetup[subfloat]{captionskip=0.5\baselineskip} %distance between fig & subcaption
+\captionsetup[figure]{font={small,stretch=1.12},aboveskip=0.5\baselineskip,belowskip=0\baselineskip}
+\captionsetup[table]{font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
+\captionsetup[subfloat]{font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
+
 \setlength\floatsep{1.\baselineskip plus 3pt minus 2pt}
 \setlength\textfloatsep{1.\baselineskip plus 3pt minus 2pt}
 \setlength\intextsep{1.\baselineskip plus 3pt minus 2pt}
@@ -299,7 +299,7 @@
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
 %\counterwithin*{footnote}{page} %reset counter per new page
 \setlength{\footnotesep}{\parskip}
-\addtokomafont{footnote}{\small}
+\addtokomafont{footnote}{\small\setstretch{1.15}}
 \renewcommand{\footnoterule}{%
   \vspace{-0.5\parskip}
   \vspace{\footskip}
@@ -308,6 +308,8 @@
   
   %\vspace{-0.5\footnotesep}
 }
+%\renewcommand{\footnotelayout}{}
+
 \deffootnote[2em] %mark width - allows 4 **** to be placed
       {2em} %indent of text
       {1em} %indent of paragraph
