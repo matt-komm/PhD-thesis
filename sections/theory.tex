@@ -502,15 +502,15 @@ The expected distributions per helicity state as a function of $\cos\theta^\star
 For a general analysis of the top quark spin, one introduces the so-called ``spin-analyzing power'' $\alpha_{X}\in[-1;\,1]$ with respect to the decay product $X=\ell,\nu,\mathrm{W},\mathrm{b}$. It denotes the fraction of instances when the top quark spin is aligned along the spin analyzer momentum in the top quark rest frame. The calculated spin-analyzing powers at \gls{lo} and \gls{nlo} in the \gls{sm} are summarized in Tab.~\ref{tab:theory-spin-powers}. In particular, the charged lepton is a nearly perfect spin-analyzer to study the top quark polarization.
 
 \mytable{\label{tab:theory-spin-powers}Spin-analyzing powers of the top quark. The values are taken from Ref.~\cite{AguilarSaavedra:2010nx} and references therein.}{
-\begin{tabular}{|c|c c|}
+\begin{tabular}{|c| r@{.}l r@{.}l |}
 \hline
-decay product $X$       & \hspace{0.5cm}$\alpha_{X}^\mathrm{LO}$\hspace{0.5cm}  & \hspace{0.5cm}$\alpha_{X}^\mathrm{NLO}$\hspace{0.5cm} \\
+decay product $X$       & \multicolumn{2}{c}{$\alpha_{X}^\mathrm{LO}$}  & \multicolumn{2}{c |}{$\alpha_{X}^\mathrm{NLO}$} \\
 \hline
 \hline
-$\ell^{\rmplus}$        & 1.0                       & 0.998 \\
-$\nu$                   & -0.32                     & -0.33 \\
-$\mathrm{b}$            & -0.41                     & -0.39 \\
-$\mathrm{W}^{\rmplus}$  & 0.41                      & 0.39 \\
+$\ell^{\rmplus}$        & 1&0                       & 0&998 \\
+$\nu$                   & -0&32                     & -0&33 \\
+$\mathrm{b}$            & -0&41                     & -0&39 \\
+$\mathrm{W}^{\rmplus}$  & 0&41                      & 0&39 \\
 \hline
 \end{tabular}
 }
@@ -522,7 +522,7 @@ For the corresponding particle or antiparticle partner the spin-analyzing power 
 \subsection{Pair production}
 %##############################################
 
-The dominant mechanism producing top quarks at hadron colliders is top quark pair production through strong interactions via gluon~($gg\to\ttbar$) or quark fusion~($\mathrm{q}\bar{\mathrm{q}}\to\ttbar$). Figure~\ref{fig:theory-feynman-ttbar} shows the contributing Feynman diagrams at \gls{lo}. Especially the production channel via gluon fusion leads to a large cross section at the \gls{lhc} because of the steeply increasing gluon \gls{pdf} at small momentum fractions. This channel contributes approximately $80\range90\%$ to the total cross section in the \gls{lhc} \gls{cm} energy regime of $7\range14~\TeV$~\cite{Olive:2016xmw}.
+The dominant mechanism producing top quarks at hadron colliders is top quark pair production through strong interactions via gluon~($gg\to\ttbar$) or quark fusion~($\mathrm{q}\bar{\mathrm{q}}\to\ttbar$). Figure~\ref{fig:theory-feynman-ttbar} shows the contributing Feynman diagrams at \gls{lo}. Especially the production channel via gluon fusion leads to a large cross section at the \gls{lhc} because of the steeply increasing gluon \gls{pdf} at small momentum fractions. This channel contributes approximately $80\range90\%$ to the total cross section in the \gls{lhc} center-of-mass energy regime of $7\range14~\TeV$~\cite{Olive:2016xmw}.
 
 \myfigure{\label{fig:theory-feynman-ttbar}Feynman diagrams of \ttbar production at \gls{lo}: (a)~quark fusion; (b,c)~gluon fusion.}{
 \subfloat[]{\includegraphics[scale=0.75]{figures/theory/qq2tt_1.pdf}}\hspace{0.03\textwidth}
@@ -530,16 +530,28 @@ The dominant mechanism producing top quarks at hadron colliders is top quark pai
 \subfloat[]{\includegraphics[scale=0.75]{figures/theory/qq2tt_3.pdf}}
 }
 
-\todo{add xsec here}
+The theoretical \ttbar cross sections in pp collisions at center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-ttbar-xsecs}. Those have been calculated at \gls{nnlo}+NNLL accuracy using the \textsc{Top++}\,2.0 program~\cite{Czakon:2011xx,Czakon:2013goa} assuming a top quark mass of $172.5~\GeV$. 
+
+\mytable{\label{tab:theory-ttbar-xsecs}Top quark pair production cross sections in $\pb$ per center-of-mass energy.}{
+\begin{tabular}{|c| r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}$}l | r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}$}l |}
+\hline
+energy       & \multicolumn{5}{c |}{$\sigma_{\ttbar}$}     \\
+\hline
+\hline
+$8~\TeV$     & $252$ & $9$ & ${}^{+6.4}_{-8.6}$ & $\pm11.7$ & \\
+$13~\TeV$    & $831$ & $8$ & ${}^{+19.8}_{-29.2}$ & $\pm35.6$ & \\
+\hline
+\end{tabular}
+}
 
 Similar to the study of the $\mathrm{W}$ boson helicity fractions in top quark decays, the polarization of the top quarks arising in pair production can be analyzed by decomposing the \ttbar cross section as a function of the polarization angles. One finds
 
 \begin{align}
-\frac{\mathrm{d}^{2}\sigma}{\sigma\cdot\mathrm{d}\cos\theta_\mathrm{t}^\star\mathrm{d}\cos\theta_{\bar{\mathrm{t}}}^\star}=\frac{1}{4}\Big(1&+\mathrm{P}_\mathrm{t}\,\alpha_{X}\,\cos\theta_\mathrm{t}^\star+\mathrm{P}_{\bar{\mathrm{t}}}\,\alpha_{X^\prime}\,\cos\theta_{\bar{\mathrm{t}}}^\star \nonumber \\
-&-\mathrm{C}\,\alpha_{X}\alpha_{X^\prime}\,\cos\theta_\mathrm{t}^\star \cos\theta_{\bar{\mathrm{t}}}^\star\Big)
+\frac{\mathrm{d}^{2}\sigma}{\sigma\cdot\mathrm{d}\cos\theta_\mathrm{t}^\star~\mathrm{d}\cos\theta_{\bar{\mathrm{t}}}^\star}=\frac{1}{4}\Big(1&+\mathrm{P}_\mathrm{t}\,\alpha_{X}\,\cos\theta_\mathrm{t}^\star+\mathrm{P}_{\bar{\mathrm{t}}}\,\alpha_{X^\prime}\,\cos\theta_{\bar{\mathrm{t}}}^\star \nonumber \\
+&-\mathrm{C}\,\alpha_{X}\alpha_{X^\prime}\,\cos\theta_\mathrm{t}^\star \cos\theta_{\bar{\mathrm{t}}}^\star\Big) \label{eq:theory-ttbar-correlation}
 \end{align}
 
-where $\mathrm{P}_\mathrm{t}$ and $\mathrm{P}_{\bar{\mathrm{t}}}$ denote the polarization fractions and $\mathrm{C}$ the $\mathrm{t\bar{t}}$ spin correlation. In the helicity basis, the angles $\cos\theta_{\mathrm{t},\bar{\mathrm{t}}}^\star$ are taken between the momenta of the leptons~($X=\ell^{\rmplus}\,/\,X^\prime=\ell^{\rmminus}$) in the corresponding $\mathrm{t}/\bar{\mathrm{t}}$ rest frames and the momenta of the $\mathrm{t}/\bar{\mathrm{t}}$ in the $\mathrm{t}\bar{\mathrm{t}}$ rest frame respectively. Since the top quarks are produced isotropic at \gls{lo}, only a small net polarization of $\mathrm{P}_\mathrm{t}=-\mathrm{P}_{\bar{\mathrm{t}}}\approx0.3\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ from electroweak higher order corrections is expected~\cite{Bernreuther:2010ny,Bernreuther:2013aga}. However, the spins of a top quark pair are linked through the $\mathrm{g\mathrm{t}\bar{\mathrm{t}}}$ vertex yielding a large correlation between them~\cite{Mahlon:2010gw}. It depends on the boost of the top quarks with respect to their \gls{zmf} and amounts to $C\approx32\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ at $8~\TeV$~\cite{Bernreuther:2013aga}. Experimentally, the azimuthal $\Delta\phi$ angle between the two leptons in the laboratory frame is sometimes studied instead of the helicity angle. This observable has the advantage that the whole \ttbar system does not need to be reconstructed which involves finding solutions for the two unknown neutrino momenta while matching the two jets with the two leptons to setup two top quark decay chains\footnote{Kinematic fitting is sometimes deployed to solve this problem using the invariant mass of the intermediate top quarks and $\mathrm{W}$~bosons as constraints.}. The $\Delta\phi$ distribution can still be used to test the presence of \ttbar correlation and to distinguish it from a potential \gls{bsm} scenario without correlation.
+where $\mathrm{P}_\mathrm{t}$ and $\mathrm{P}_{\bar{\mathrm{t}}}$ denote the polarization fractions and $\mathrm{C}$ the $\mathrm{t\bar{t}}$ spin correlation. In the helicity basis, the angles $\cos\theta_{\mathrm{t},\bar{\mathrm{t}}}^\star$ are taken between the momenta of the leptons~($X=\ell^{\rmplus}\,/\,X^\prime=\ell^{\rmminus}$) in the corresponding $\mathrm{t}/\bar{\mathrm{t}}$ rest frames and the momenta of the $\mathrm{t}/\bar{\mathrm{t}}$ in the $\ttbar$ \gls{zmf} respectively. Since the top quarks are produced isotropic at \gls{lo}, only a small net polarization of $\mathrm{P}_\mathrm{t}=-\mathrm{P}_{\bar{\mathrm{t}}}\approx0.3\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ from electroweak higher order corrections is expected~\cite{Bernreuther:2010ny,Bernreuther:2013aga}. However, the spins of a top quark pair are linked through the $\mathrm{g\mathrm{t}\bar{\mathrm{t}}}$ vertex yielding a large correlation between them~\cite{Mahlon:2010gw}. It depends on the boost of the top quarks with respect to their \gls{zmf} and amounts to $C\approx32\%$ for $m_\mathrm{t\bar{t}}>2m_\mathrm{t}$ at $8~\TeV$~\cite{Bernreuther:2013aga}. Experimentally, the azimuthal $\Delta\phi$ angle between the two leptons in the laboratory frame is sometimes studied instead of the helicity angle. This observable has the advantage that the whole \ttbar system does not need to be reconstructed which involves finding solutions for the two unknown neutrino momenta while matching the two jets with the two leptons to setup two top quark decay chains\footnote{Kinematic fitting is sometimes deployed to solve this problem using the invariant mass of the intermediate top quarks and $\mathrm{W}$~bosons as constraints.}. The amount of correlation cannot be easily extracted from the $\Delta\phi$ distribution directly since its functional form does not resemble Eq.~\ref{eq:theory-ttbar-correlation}. However it can be used to test the presence of \ttbar correlation and to distinguish it from a potential \gls{bsm} scenario without correlation.
 
 
 %##############################################
@@ -561,17 +573,17 @@ Top quarks can be produced singly through electroweak interactions. At \gls{lo},
 \paragraph{$\boldsymbol{s}$-channel} Lastly, the $s$-channel is the smallest production mode~(Fig.~\ref{fig:theory-singletop-sch}) because of the ``time-like'' $\mathrm{W}$~boson which has to have a large virtuality $Q^2<0$ to produce the heavier top quark. In various \gls{bsm} scenarios, the cross section of this process is expected to increase due to new heavy particles such as $\mathrm{W}^\prime$ or charged Higgs bosons which may even be on their mass shell and hence occur as a resonance.
 
 
-The theoretical cross sections of the three single top quark production modes for \gls{cm} energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-singletop-xsecs}. These have been calculated at \gls{nlo} in \gls{qcd} with \textsc{\gls{hathor}}\,$2.1$~\cite{Aliev:2010zk,Kant:2014oha} using a top quark mass of $m_\mathrm{t}=172.5~\GeV$ and factorization and renormalization scales of $\mu_\mathrm{R}=\mu_\mathrm{F}=m_\mathrm{t}$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
+The theoretical cross sections of the three single top quark production modes in pp collisions for center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-singletop-xsecs}. These have been calculated at \gls{nlo} in \gls{qcd} with \textsc{\gls{hathor}}\,$2.1$~\cite{Aliev:2010zk,Kant:2014oha} using a top quark mass of $m_\mathrm{t}=172.5~\GeV$ and factorization and renormalization scales of $\mu_\mathrm{R}=\mu_\mathrm{F}=m_\mathrm{t}$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
 
-\mytable{\label{tab:theory-singletop-xsecs}Single top quark cross sections per production mode in $\pb$.}{
-\begin{tabular}{|c|c c|}
+\mytable{\label{tab:theory-singletop-xsecs}Single top quark cross sections in $\pb$ per production mode and per center-of-mass energy.}{
+\begin{tabular}{|c| r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}$}l | r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}$}l |}
 \hline
-mode            & $8~\TeV$          & $13~\TeV$     \\
+mode            & \multicolumn{5}{c |}{$8~\TeV$} & \multicolumn{5}{c |}{$13~\TeV$}     \\
 \hline
 \hline
-$t$-channel     & $84.7^{+2.6}_{-1.7}\,\mathrm{(scale)}\pm2.8\,\mathrm{(PDF)}$ & $217.0^{+6.6}_{-4.6}\,\mathrm{(scale)}\pm6.2\,\mathrm{(PDF)}$ \\
-tW-channel      & & \\
-$s$-channel     & & \\
+$t$-channel     & $84$ & $7$ & ${}^{+2.6}_{-1.7}$ & $\pm2.8$ &      & $217$ & $0$ & ${}^{+6.6}_{-4.6}$ & $\pm6.2$ & \\
+tW-channel      & $22$ & $4$ & $\pm0.6$ & $\pm1.4$ &      & $71$  & $7$ & $\pm1.8$ & $\pm3.4$ & \\
+$s$-channel     & $5$  & $24$ & ${}^{+0.15}_{-0.12}$ & $\pm0.16$ &      & $10$  & $32$ & ${}^{+0.29}_{-0.24}$ & $\pm0.27$ & \\
 \hline
 \end{tabular}
 }

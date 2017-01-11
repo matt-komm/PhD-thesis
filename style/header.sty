@@ -213,7 +213,7 @@
 
 
 %strecke zeilenabstände im table
-\renewcommand{\arraystretch}{1.25}
+\renewcommand{\arraystretch}{1.4}
 
 %Schicke Bild- und Tabellenbeschreibungen
 
@@ -294,7 +294,7 @@
 
 %% footnote
 %\def\@fnsymbol#1{\ifcase#1\or $\bullet$\or $\bullet\bullet$\or $\bullet\bullet\bullet$\or$\bullet\bullet\bullet\bullet$\or $\bullet\bullet\bullet\bullet\bullet$\or \else\@ctrerr\fi} %define alternative numbering using *, **, ***, ...
-\def\@fnsymbol#1{{\tiny(}\ifcase#1\or $\star$\or $\star\star$\or $\star\star\star$\or $\star\star\star\star$\or \else\@ctrerr\fi{\tiny)}}
+\def\@fnsymbol#1{{\tiny(}\ifcase#1\or $\boldsymbol{\star}$\or $\boldsymbol{\star}\boldsymbol{\star}$\or $\boldsymbol{\star}\boldsymbol{\star}\boldsymbol{\star}$\or $\boldsymbol{\star}\boldsymbol{\star}\boldsymbol{\star}\boldsymbol{\star}$\or \else\@ctrerr\fi{\tiny)}}
 %\renewcommand{\thefootnote}{\numberfont\arabic{footnote}} %style
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
 %\counterwithin*{footnote}{page} %reset counter per new page
