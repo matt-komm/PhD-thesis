@@ -237,7 +237,7 @@
 
 %placements
 \newcommand{\mytable}[2]{
-    \begin{table}[htbp]
+    \begin{table}[htb]
     \centering
     \begin{minipage}[c]{0.93\textwidth}
     \caption{#1}
@@ -248,7 +248,7 @@
 }
 
 \newcommand{\myfigure}[2]{
-    \begin{figure}[htbp]
+    \begin{figure}[htb]
     \centering
     \begin{minipage}[c]{0.93\textwidth}
     \centering
@@ -283,6 +283,13 @@
 %% change equation numbering style
 \def\tagform@#1{\maketag@@@{\ignorespaces{\small\numberfont(#1.)\enspace}\unskip\@@italiccorr}} %kill parenthesis
 \renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+%% paragraphs
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+    {-0.1\parskip}%
+    {-1em}%
+    {\normalfont\normalsize\bfseries}
+}
 
 
 %% footnote
@@ -323,6 +330,7 @@
 \newcommand{\setupTextStyle}{
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
+    %\setlength{\parsep}{0cm}
     \renewcommand{\baselinestretch}{1.08}\normalsize
 
 

@@ -19,47 +19,50 @@ The \gls{sm} describes the interactions between fundamental particles. It is bas
 Fundamental particles are objects for which experiments have revealed no internal structure. For example, only an upper limit on the spatial radius of an electron has been measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Atoms forming ordinary matter consist of only particles from the first generation: electrons, protons, and neutrons, where the later two are bound states of uud quarks and udd quarks respectively.\todo{mention searches for 4th generation?}
 
 \mytable{\label{tab:theory-leptons}Leptons of the \gls{sm}. Particle masses are taken from Ref.~\cite{Olive:2016xmw}. Uncertainties on the measured masses are omitted because the precision is beyond the sub permille level. For the neutrino masses only \glspl{cl} are given.}{
-\begin{tabular}{r||c|c|c}
+    \begin{tabular}{|r|c c c|}
+    \hline
                         & 1. generation                 & 2. generation                 & 3. generation \\
     \hline
     \hline
     name                & electron neutrino             & muon neutrino                 & tau neutrino  \\
                         & ($\nu_\mathrm{e}$)            & ($\nu_{\mu}$)                 & ($\nu_{\tau}$) \\
-    \hline
+    
     mass                & $<225~\eV$                    & $<0.19~\MeV$                  & $<18.2~\MeV$ \\
                         & (95\% CL)                     & (90\% CL)                     & (95\%~CL)\\
-    \hline
+    
     electric charge     & 0                             & 0                             & 0 \\
     \hline
-    \hline
-    name                & electron ($\mathrm{e}^{\rmminus}$)   & muon ($\mu^{\rmminus}$)              & tau ($\tau^{\rmminus}$) \\
-    \hline
+    name                & electron                      & muon                          & tau  \\
+                        & ($\mathrm{e}^{\rmminus}$)     & ($\mu^{\rmminus}$)            & ($\tau^{\rmminus}$) \\
+    
     mass                & $511.0~\keV$                  & $105.66~\MeV$                 & $1.776~\GeV$ \\
-    \hline
+                        &                               &                               &  \\
     electric charge     & $-1$                          & $-1$                          & $-1$ \\
+    \hline
     \end{tabular}
 }
 
 For the neutrinos masses, only upper limits on their masses are given. Those are derived by combining measurements of beta decay kinematics with results from neutrino oscillation experiments. In the \gls{sm}, neutrinos are assumed to be massless. However, the observation \todo{need ref} of neutrino oscillations requires that at least two neutrinos have a non-zero mass.
 
 \mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}. For u,d,s,c,b quarks \msbar masses are quoted, taken from Ref.~\cite{Olive:2016xmw}. The top quark pole mass is taken from Ref.~\cite{ATLAS:2014wva}.}{
-\begin{tabular}{r||c|c|c}
+\begin{tabular}{|r|c c c|}
+    \hline
                         & 1. generation                 & 2. generation                 & 3. generation \\
     \hline
     \hline
     name                & up (u)                        & charm (c)                     & top (t) \\
-    \hline
+    
     mass                & $2.2^{+0.6}_{-0.4}~\MeV$      & $1.27\pm0.03~\GeV$            & $173.34\pm0.71~\GeV$ \\
-    \hline
+    
     electric charge     & $\frac{2}{3}$                 & $\frac{2}{3}$                 & $\frac{2}{3}$ \\
-    \hline
+    
     \hline
     name                & down (d)                      & strange (s)                   & bottom (b)  \\
-    \hline
+    
     mass                & $4.7^{+0.5}_{-0.4}~\MeV$      & $96^{+8}_{-4}~\MeV$           & $4.18^{+0.04}_{-0.03}~\GeV$ \\
-    \hline
+    
     electric charge     & $-\frac{1}{3}$                & $-\frac{1}{3}$                & $-\frac{1}{3}$ \\
-
+    \hline
     \end{tabular}
 }
 
@@ -68,18 +71,20 @@ The bosons are connected to fundamental interactions by requiring invariance und
 
 
 \mytable{\label{tab:theory-bosons}Bosons of the \gls{sm}. Z and W boson masses are taken from Ref.~\cite{Olive:2016xmw}. The uncertainties on their masses are omitted because the precision is beyond the sub permille level. The Higgs mass is taken from Ref.~\cite{Aad:2015zhl}.}{
-\begin{tabular}{r||c|c|c}
+\begin{tabular}{|r|c c c|}
+    \hline
     name                & mass                 & associated interaction             & gauge group \\
     \hline
     \hline
     photon (\photon)    & $0$                  & electromagnetism                   & $\mathrm{U(1)}$ \\
-    \hline
-    Z boson (\zboson)   & $91.19~\GeV$         & \multirow{2}{*}{weak interaction}  & \multirow{2}{*}{$\mathrm{SU(2)}$}\\
+    
+    Z boson (\zboson)   & $91.19~\GeV$         & \multirow{2}{*}{$\Big\}$ weak interaction}  & \multirow{2}{*}{$\mathrm{SU(2)}$}\\
     W boson (\wboson)   & $80.39~\GeV$         &                                    & \\
-    \hline
+    
     Higgs boson (\higgs)& $125.09\pm0.24~\GeV$ & Yukawa interaction                 & $\mathrm{U(1)}$\\
-    \hline  
-    8 gluons (g)        & $0$                  & strong interaction                 & $\mathrm{SU(3)}$ \\                 
+      
+    8 gluons (g)        & $0$                  & strong interaction                 & $\mathrm{SU(3)}$ \\  
+    \hline               
     \end{tabular}
 }
 
@@ -350,7 +355,7 @@ finding two parton flavors $f_{i}$ with momentum fraction $x_{i}$ interacting at
 
 yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``factorization scale'' below which non-perturbative low energy effects such as soft gluon emissions have been absorbed into the \gls{pdf}. Measuring the \glspl{pdf} at scale $\mu_\mathrm{F}$, one can extrapolate them to any other scale by solving the DGLAP\footnote{Named after the authors: Y. Dokshitzer, W. Gribow, L. Lipatow, G. Altarelli, G. Parisi} equation~\cite{Dokshitzer:1977sg,Gribov:1972ri,Altarelli:1977zs}. A review of common \gls{pdf} sets currently used can be found in Ref.~\cite{Accardi2016}. There are various groups estimating \gls{pdf} sets from fits to experimental data using different approaches; e.g. CTEQ, MMHT~(formerly MSTW), ABM, HERAPDF, and NNPDF. Exemplary distributions taken from the NNPDF group~(version 3.0) are shown in Fig.~\ref{fig:theory-nnpdf-dist} for $\mu_\mathrm{F}=10~\GeV$ and $\mu_\mathrm{F}=100~\GeV$. More information on this \gls{pdf} set can be found in Ref.~\cite{Ball:2014uwa}. At a momentum fraction of $x\approx0.2$ one can observe two peaks for the up and down quark distributions as expected from the valence quark composition of the proton.
 
-\myfigure{\label{fig:theory-nnpdf-dist}NNPDF3.0 NNLO set in 5 flavor scheme for $\as(m_{\zboson})=0.118$ and factorization scales of (a)~$10~\GeV$ and (b)~$100~\GeV$. The gluon \gls{pdf} has been scaled down by a factor of $0.1$.}{
+\myfigure{\label{fig:theory-nnpdf-dist}NNPDF\,$3.0$ NNLO PDF set in 5 flavor scheme for $\as(m_{\zboson})=0.118$ and factorization scales of (a)~$10~\GeV$ and (b)~$100~\GeV$. The gluon \gls{pdf} has been scaled down by a factor of $0.1$.}{
 \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/theory/nnpdf_q10.pdf}}\hspace{0.01\textwidth}
 \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/theory/nnpdf_q100.pdf}}
 }
@@ -456,11 +461,12 @@ Hypothetical, a theory may describe experimental data well but still violates th
 \section{The top quark}
 %##############################################
 
-The top quark is the heaviest known fundamental particle so far. Its high mass of $m_\mathrm{t}=173.34\pm0.71~\GeV$~\cite{ATLAS:2014wva} is close to the minimum of the Higgs potential. This implies a Yukawa coupling of $|\lambda_\mathrm{t}|\approx 1$. All other Yukawa couplings are however of the order of $10^{-2}$ instead. The top quark may therefore play an important role in understanding the mechanisms of electroweak symmetry breaking itself. Furthermore, top quarks are excellent probes to search for \gls{bsm} physics. For example, many extensions of the \gls{sm} predict additional $\wboson^{\prime}$ and $\zboson^{\prime}$ bosons which are heavier versions of their \gls{sm} counterparts and can interact with top quarks~(see Ref.~\cite{Boos:2006xe} and references therein). \todo{find better/more refs}
+The top quark is the heaviest known fundamental particle so far. Its high mass of $m_\mathrm{t}=173.34\pm0.71~\GeV$~\cite{ATLAS:2014wva} is close to the minimum of the Higgs potential. This implies a Yukawa coupling of $|\lambda_\mathrm{t}|\approx 1$. All other Yukawa couplings are however of the order of $10^{-2}$ instead. The top quark may therefore play an important role in understanding the mechanisms of electroweak symmetry breaking itself. Furthermore, top quarks are excellent probes to search for \gls{bsm} physics. For example, many extensions of the \gls{sm} predict additional $\mathrm{W}^{\prime}$ and $\mathrm{Z}^{\prime}$ bosons which are heavier versions of their \gls{sm} counterparts and can interact with top quarks. Other \gls{bsm} models can have an extended Higgs sector leading to additional heavy neutral and charged Higgs bosons which may couple to top quarks predominately due to its high mass~(see Ref.~\cite{Boos:2006xe} and references therein). \todo{find better/more refs}
 
 Historically, the top quark was discovered in 1995 by the \gls{cdf}~\cite{Abe:1995hr} and \gls{d0}~\cite{Abachi:1994td} collaborations at the Tevatron collider at Fermilab using proton-antiproton collision data. The production of top quark pairs which occurs through strong interactions was analyzed. Already before the direct observation of this process, the discovery of the bottom quark~\cite{Augustin:1975yq,PhysRevLett.39.252} and the attempt to explain CP-violation by introducing the \gls{ckm} matrix hinted strongly towards its existence~\cite{Kobayashi01021973} however without knowing its mass. Another milestone was the observation of single top quark production which occurs through electroweak interactions only. This much more rarer process was discovered in 2009 at the Tevatron collider as well~\cite{PhysRevLett.103.092002,PhysRevLett.103.092001}. The lower cross section of this process together with the overwhelming background necessitated the use of sophisticated analysis techniques such as multivariate classifiers and the matrix element method~\cite{Mitrevski}.
 
 With the start of the physics program at the \gls{lhc} in 2010, the production mechanisms of top quarks can be probed with unprecedented precision. This thesis focuses on the production of single top quarks at center-of-mass energies of $8~\TeV$ and $13~\TeV$.
+
 
 %##############################################
 \subsection{Decay properties}
@@ -480,7 +486,7 @@ where $\mathrm{F}_\mathrm{L}$, $\mathrm{F}_\mathrm{R}$, and $\mathrm{F}_{0}$ den
 \cos\theta^\star_\mathrm{W}=\frac{\vec{s}_\mathrm{W}\cdot\vec{p}_{\ell}^\scriptn{\mathrm{(W)}}}{\big|\vec{s}_\mathrm{W}\big|\cdot\big|\vec{p}_{\ell}^\scriptn{\mathrm{(W)}}\big|}
 \end{equation}
 
-is taken between the lepton momentum $\vec{p}_{\ell}^\scriptn{\mathrm{(W)}}$ in the W boson rest frame and a spin quantization axis $\vec{s}_\mathrm{W}$. A common choice is provided by the helicity basis where the negative top quark momentum $\vec{s}_\mathrm{W}=-\vec{p}_\mathrm{t}^\scriptn{\mathrm{(W)}}$ in the $\mathrm{W}$ boson rest frame is used to quantize the W boson spin\footnote{There are multiple equivalent definitions in literature: $\vec{s}_\mathrm{W}=-\vec{p}_\mathrm{t}^\scriptn{\mathrm{(W)}}=\vec{p}_\mathrm{W}^\scriptn{\mathrm{(t)}}=\vec{p}_\mathrm{b}^\scriptn{\mathrm{(W)}}$. It should be noted that multiple sequential boosts into various rest frames are Lorentz-invariant but can induce unwanted rotations.}. Figure~\ref{fig:theory-top-decay} shows the Feynman diagram of leptonic top quark decays involving two electroweak vertices, $\mathrm{Wtb}$ and $\mathrm{W}\ell\nu$, which feature both a \gls{va} coupling structure. The polarization angle in the helicity basis is shown in Fig.~\ref{fig:theory-top-whel-angle} where the decay chain is drawn in the W boson rest frame.
+is taken between the lepton momentum $\vec{p}_{\ell}^\scriptn{\mathrm{(W)}}$ in the W boson rest frame and a spin quantization axis $\vec{s}_\mathrm{W}$. A common choice is provided by the helicity basis where the negative top quark momentum $\vec{s}_\mathrm{W}=-\vec{p}_\mathrm{t}^\scriptn{\mathrm{(W)}}$ in the $\mathrm{W}$ boson rest frame is used to quantize the W boson spin\footnote{There are multiple equivalent definitions in literature for the helicity basis: $\vec{s}_\mathrm{W}=-\vec{p}_\mathrm{t}^\scriptn{\mathrm{(W)}}=\vec{p}_\mathrm{W}^\scriptn{\mathrm{(t)}}=\vec{p}_\mathrm{b}^\scriptn{\mathrm{(W)}}$. It should be noted that multiple sequential boosts into various rest frames are Lorentz-invariant but can induce unwanted rotations.}. Figure~\ref{fig:theory-top-decay} shows the Feynman diagram of leptonic top quark decays involving two electroweak vertices, $\mathrm{Wtb}$ and $\mathrm{W}\ell\nu$, which feature both a \gls{va} coupling structure. The polarization angle in the helicity basis is shown in Fig.~\ref{fig:theory-top-whel-angle} where the decay chain is drawn in the W boson rest frame.
 
 \myfigure{Decay of the top quark through \wboson boson exchange: (a)~Feynman diagram; (b)~helicity angle in $\mathrm{W}$ boson rest frame.}{
 \subfloat[\label{fig:theory-top-decay}]{\includegraphics[scale=0.75]{figures/theory/t_decay.pdf}}\hspace{0.15\textwidth}
@@ -496,17 +502,16 @@ The expected distributions per helicity state as a function of $\cos\theta^\star
 For a general analysis of the top quark spin, one introduces the so-called ``spin-analyzing power'' $\alpha_{X}\in[-1;\,1]$ with respect to the decay product $X=\ell,\nu,\mathrm{W},\mathrm{b}$. It denotes the fraction of instances when the top quark spin is aligned along the spin analyzer momentum in the top quark rest frame. The calculated spin-analyzing powers at \gls{lo} and \gls{nlo} in the \gls{sm} are summarized in Tab.~\ref{tab:theory-spin-powers}. In particular, the charged lepton is a nearly perfect spin-analyzer to study the top quark polarization.
 
 \mytable{\label{tab:theory-spin-powers}Spin-analyzing powers of the top quark. The values are taken from Ref.~\cite{AguilarSaavedra:2010nx} and references therein.}{
-\begin{tabular}{c||c|c}
+\begin{tabular}{|c|c c|}
+\hline
 decay product $X$       & \hspace{0.5cm}$\alpha_{X}^\mathrm{LO}$\hspace{0.5cm}  & \hspace{0.5cm}$\alpha_{X}^\mathrm{NLO}$\hspace{0.5cm} \\
 \hline
 \hline
-$\ell^{\rmplus}$    & 1.0                       & 0.998 \\
+$\ell^{\rmplus}$        & 1.0                       & 0.998 \\
+$\nu$                   & -0.32                     & -0.33 \\
+$\mathrm{b}$            & -0.41                     & -0.39 \\
+$\mathrm{W}^{\rmplus}$  & 0.41                      & 0.39 \\
 \hline
-$\nu$               & -0.32                     & -0.33 \\
-\hline
-$\mathrm{b}$        & -0.41                     & -0.39 \\
-\hline
-$\mathrm{W}^{\rmplus}$        & 0.41                     & 0.39 
 \end{tabular}
 }
 
@@ -525,6 +530,8 @@ The dominant mechanism producing top quarks at hadron colliders is top quark pai
 \subfloat[]{\includegraphics[scale=0.75]{figures/theory/qq2tt_3.pdf}}
 }
 
+\todo{add xsec here}
+
 Similar to the study of the $\mathrm{W}$ boson helicity fractions in top quark decays, the polarization of the top quarks arising in pair production can be analyzed by decomposing the \ttbar cross section as a function of the polarization angles. One finds
 
 \begin{align}
@@ -539,20 +546,35 @@ where $\mathrm{P}_\mathrm{t}$ and $\mathrm{P}_{\bar{\mathrm{t}}}$ denote the pol
 \subsection{Single top quark production}
 %##############################################
 
-Top quarks can be produced singly through electroweak interactions. At \gls{lo}, one can categorized the production into three channels depending on the exchanged $\mathrm{W}$~boson and its virtuality $Q^{2}=-p_{\mu}p^{\mu}$. Figure~\ref{fig:theory-feynman-singletop} shows the corresponding Feynman diagrams. Overall, the single top quark cross sections are smaller than for pair production due to the required sea quarks~($\mathrm{b}$, $\bar{\mathrm{q}}$) in the initial states and their less steeply increasing \glspl{pdf} at low momentum fractions compared to the gluon \gls{pdf}.
+Top quarks can be produced singly through electroweak interactions. At \gls{lo}, one can categorized the production into three channels depending on the exchanged $\mathrm{W}$~boson and its virtuality $Q^{2}=-p_{\mu}p^{\mu}$. Figure~\ref{fig:theory-feynman-singletop} shows the corresponding Feynman diagrams. Overall, the single top quark cross sections are smaller than for pair production due to the electroweak coupling strength $\aw<\as$. Additionally, the required sea quarks~($\mathrm{b}$, $\bar{\mathrm{q}}$) in the initial states whose \glspl{pdf} rise less steeply at low momentum fractions compared to the gluon \gls{pdf} suppresses the cross section further~(see Fig.~\ref{fig:theory-nnpdf-dist}).
 
 \myfigure{\label{fig:theory-feynman-singletop}Feynman diagrams of electroweak single top quark production at \gls{lo} in the 5 flavor scheme.}{
-\subfloat[$t$-channel]{\includegraphics[scale=0.75]{figures/theory/ST_tch.pdf}}\hspace{0.03\textwidth}
-\subfloat[tW-channel]{\includegraphics[scale=0.75]{figures/theory/ST_tWch.pdf}}\hspace{0.03\textwidth}
-\subfloat[$s$-channel]{\includegraphics[scale=0.75]{figures/theory/ST_sch.pdf}}
+\subfloat[\label{fig:theory-singletop-tch}$t$-channel]{\includegraphics[scale=0.75]{figures/theory/ST_tch.pdf}}\hspace{0.03\textwidth}
+\subfloat[\label{fig:theory-singletop-tWch}tW-channel]{\includegraphics[scale=0.75]{figures/theory/ST_tWch.pdf}}\hspace{0.03\textwidth}
+\subfloat[\label{fig:theory-singletop-sch}$s$-channel]{\includegraphics[scale=0.75]{figures/theory/ST_sch.pdf}}
 }
 
-The $t$-channel production mode has the highest cross section in $\mathrm{pp}$ collisions. Here, the virtuality of the $\mathrm{W}$~boson is found to be $Q^2>0$ and hence it is said to be space-like. A characteristic feature of the $t$-channel production mode is the spectator quark $q^\prime$ which recoils against the $\mathrm{W}$~boson and is therefore  scattered fairly forward.
+\paragraph{$\boldsymbol{t}$-channel} The $t$-channel production mode~(Fig.~\ref{fig:theory-singletop-tch}) has the highest cross section in $\mathrm{pp}$ collisions. Here, the virtuality of the $\mathrm{W}$~boson is found to be $Q^2>0$ and hence it is said to be ``space-like''. A characteristic feature of this mode is the additional spectator quark $q^\prime$ which recoils against the $\mathrm{W}$~boson and is therefore scattered fairly forward. \todo{charge asym}
 
-The second largest mode is the production of a single top quark in association with a $\mathrm{W}$~boson. Here, the $\mathrm{W}$~boson can be produced ``on-shell'' $Q^2=-m_\mathrm{W}^{2}$. It is slangy referred to as ``tW-channel''. This process interferes at \gls{nlo} with \ttbar production which complicates its definition. A recent approach is to combine both production modes and the inference between them into a process with a $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\mathrm{b}\bar{\mathrm{b}}+X$ final state~\cite{Cascioli:2013wga}.
+\paragraph{tW-channel} The second largest mode is the production of a single top quark in association with a $\mathrm{W}$~boson~(Fig.~\ref{fig:theory-singletop-tWch}). Here, the $\mathrm{W}$~boson can be produced ``on-shell'' $Q^2=-m_\mathrm{W}^{2}$. It is slangy referred to as ``tW-channel''. This process interferes at \gls{nlo} with \ttbar production which complicates its definition. A recent approach is to combine both production modes and the inference between them into a process with a $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\mathrm{b}\bar{\mathrm{b}}+X$ final state~\cite{Cascioli:2013wga}.
 
-Lastly, the $s$-channel is the smallest production mode because of the intermediate $\mathrm{W}$~boson which has to be largely off its mass shell $Q^2<0$. The
+\paragraph{$\boldsymbol{s}$-channel} Lastly, the $s$-channel is the smallest production mode~(Fig.~\ref{fig:theory-singletop-sch}) because of the ``time-like'' $\mathrm{W}$~boson which has to have a large virtuality $Q^2<0$ to produce the heavier top quark. In various \gls{bsm} scenarios, the cross section of this process is expected to increase due to new heavy particles such as $\mathrm{W}^\prime$ or charged Higgs bosons which may even be on their mass shell and hence occur as a resonance.
 
+
+The theoretical cross sections of the three single top quark production modes for \gls{cm} energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-singletop-xsecs}. These have been calculated at \gls{nlo} in \gls{qcd} with \textsc{\gls{hathor}}\,$2.1$~\cite{Aliev:2010zk,Kant:2014oha} using a top quark mass of $m_\mathrm{t}=172.5~\GeV$ and factorization and renormalization scales of $\mu_\mathrm{R}=\mu_\mathrm{F}=m_\mathrm{t}$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
+
+\mytable{\label{tab:theory-singletop-xsecs}Single top quark cross sections per production mode in $\pb$.}{
+\begin{tabular}{|c|c c|}
+\hline
+mode            & $8~\TeV$          & $13~\TeV$     \\
+\hline
+\hline
+$t$-channel     & $84.7^{+2.6}_{-1.7}\,\mathrm{(scale)}\pm2.8\,\mathrm{(PDF)}$ & $217.0^{+6.6}_{-4.6}\,\mathrm{(scale)}\pm6.2\,\mathrm{(PDF)}$ \\
+tW-channel      & & \\
+$s$-channel     & & \\
+\hline
+\end{tabular}
+}
 
 Vtb
 
