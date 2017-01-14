@@ -439,11 +439,14 @@ From the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix} the
 \mathrm{Im}\Big(\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big)=2\,E_\mathrm{\gls{cm}}|\vec{p}_\mathrm{\gls{cm}}|\sum_{X}\sigma(\psi_{1}\psi_{2}\to X).
 \end{equation}
 
-Since the total cross section is at least as big as the scattering cross section $\sigma(\psi_{1}\psi_{2}\to \mathrm{any})>\sigma(\psi_{1}\psi_{2}\to \psi_{1}\psi_{2})$ one finds the constraint
+Since the total cross section is at least as big as the scattering cross section one finds the constraint
 
-\begin{equation}
-\Big|\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big|<64\pi^2.
-\end{equation}
+\begin{align}
+&\sigma(\psi_{1}\psi_{2}\to \mathrm{any})>\sigma(\psi_{1}\psi_{2}\to \psi_{1}\psi_{2}) \\
+&\Rightarrow\Big|\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big|<64\pi^2.
+\end{align}
+
+\todo{find out if this is for fixed initial/final state momenta}
 
 Hypothetical, a theory may describe experimental data well but still violates the unitarity bound at higher energies beyond the experimental probing capabilities. Such a case would hint towards a new physics model which restores unitarity by introducing new particles or interactions at energies before it is violated. This is called \gls{uv} completion. A unitarity-violating theory may just reflect the low energy limit of an unknown \gls{uv}-complete theory within the experimental energy regime. Exemplary,  the $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\to\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}$ scattering amplitude would grow as $\mathcal{M}\sim s/m_\wboson^2$ if there is no Higgs boson and eventually violate unitarity at $\sqrt{s}\approx1~\TeV$.
 
@@ -507,20 +510,22 @@ The expected distributions per helicity state as a function of $\cos\theta^\star
 \includegraphics[width=0.49\textwidth]{figures/theory/whel_fractions.pdf}
 }
 
-For a general analysis of the top quark spin, one introduces the so-called ``spin-analyzing power'' $\alpha_{X}\in[-1;\,1]$ with respect to the decay product $X=\ell,\nu,\mathrm{W},\mathrm{b}$.\todo{add alphas for had decays} It denotes the fraction of instances when the top quark spin is aligned along the spin analyzer momentum in the top quark rest frame. The calculated spin-analyzing powers at \gls{lo} and \gls{nlo} in the \gls{sm} are summarized in Tab.~\ref{tab:theory-spin-powers}. For the corresponding particle or antiparticle partner the spin-analyzing power flips its sign. This may however not hold for \gls{bsm} physics inducing CP-violation in the top quark sector. 
+For a general analysis of the top quark spin one introduces the so-called ``spin-analyzing power'', $\alpha_{X}\in[-1;\,1]$, with respect to the decay product $X=\ell,\nu,\mathrm{W},\mathrm{b}$. It denotes the fraction of instances when the top quark spin is aligned along the momentum of the spin analyzer in the top quark rest frame. The calculated spin-analyzing powers at \gls{lo} and \gls{nlo} in the \gls{sm} are summarized in Tab.~\ref{tab:theory-spin-powers}. Additionally the spin-analyzing powers for $X=\mathrm{q},\mathrm{q}^\prime$ for $\mathrm{W}\to \mathrm{q}\,\mathrm{q}^\prime$ decays are provided where $\mathrm{q}$ ($\mathrm{q}^\prime$) denotes all up-type (down-type) quarks respectively. However, studying the top quark spin in those decays is experimentally very challenging since the original quark flavor of a jet and its origin in case of additional final state radiation are difficult to infer. In the case of top antiquark decays the spin-analyzing powers for the corresponding particle or antiparticle partners just flip their sign $\alpha_{X}=\alpha_{\bar{X}}$. This even holds for \gls{bsm} physics inducing \gls{cp}-violation in the top quark sector~\cite{AguilarSaavedra:2010nx}. 
 
 The charged lepton is a nearly perfect spin analyzer to study the top quark polarization. It is even larger than the spin-analyzing power of its mother particle, the $\mathrm{W}$~boson, due to constructive (destructive) interference of the longitudinal and left-handed $\mathrm{W}$~boson helicity states in cases when the lepton is aligned (antialigned) with the top quark spin respectively~\cite{Bernreuther:2008ju}.
 
 \mytable{\label{tab:theory-spin-powers}Spin-analyzing powers of the top quark. The values are taken from Ref.~\cite{AguilarSaavedra:2010nx} and references therein.}{
 \begin{tabular}{|c| r@{.}l r@{.}l |}
 \hline
-decay product $X$       & \multicolumn{2}{c}{$\alpha_{X}^\mathrm{LO}$}  & \multicolumn{2}{c |}{$\alpha_{X}^\mathrm{NLO}$} \\
+decay product $X$           & \multicolumn{2}{c}{$\alpha_{X}^\mathrm{LO}$}      & \multicolumn{2}{c |}{$\alpha_{X}^\mathrm{NLO}$} \\
 \hline
 \hline
-$\ell^{\rmplus}$        & 1&0                       & 0&998 \\
-$\nu$                   & -0&32                     & -0&33 \\
-$\mathrm{b}$            & -0&41                     & -0&39 \\
-$\mathrm{W}^{\rmplus}$  & 0&41                      & 0&39 \\
+$\ell^{\rmplus}$            & \hspace{0.5cm}1&00\hspace{0.5cm}                  & \hspace{0.5cm}0&998\hspace{0.5cm} \\
+$\nu$                       & -0&32                     & -0&33 \\
+$\bar{\mathrm{q}}^\prime$ (down-type)   & 1&00          & 0&93 \\
+$\mathrm{q}$~(up-type)      & -0&32                     & -0&31 \\
+$\mathrm{b}$                & -0&41                     & -0&39 \\
+$\mathrm{W}^{\rmplus}$      & 0&41                      & 0&39 \\
 \hline
 \end{tabular}
 }
@@ -584,7 +589,7 @@ Top quarks can be produced singly through electroweak interactions. At \gls{lo},
 \begin{description}
 \item[$\boldsymbol{t}$ channel] The $t$-channel single-top-quark production mode~(Fig.~\ref{fig:theory-singletop-tch}) has the highest cross section in $\mathrm{pp}$ collisions. Here, the virtuality of the $\mathrm{W}$~boson is found to be $Q^2>0$ and hence it is said to be ``space-like''. A characteristic feature of this mode is the additional spectator quark $q^\prime$ which recoils against the $\mathrm{W}$~boson and is therefore scattered fairly forward. The $t$-channel production of top quarks compared to top antiquarks occurs asymmetric. Top quarks are produced very roughly two time more often than top antiquark reflecting the $\mathrm{u}$ over the $\mathrm{d}$~valence quark composition of the proton. This ratio depends however on the center-of-mass energy where at higher energies, lower momentum fractions are reached at which the contributions from the valence quarks become less dominant. Hence the $\sigma(\mathrm{t})/\sigma(\bar{\mathrm{t}})$ charge ratio is sensitive to proton \glspl{pdf} ratio.
 \item[$\boldsymbol{s}$ channel] The mode with the smallest single-top-quark production cross section is via the $s$ channel~(Fig.~\ref{fig:theory-singletop-sch}). This is because of the ``time-like'' $\mathrm{W}$~boson which has to have a large virtuality $Q^2<0$ to produce the heavier top quark. In various \gls{bsm} scenarios, the cross section of this process is expected to increase due to new heavy particles such as $\mathrm{W}^\prime$ or charged Higgs bosons which may even be produced on their mass shell, $p_{\mu}p^{\mu}-m^{2}=0$, and hence occur as a resonance.
-\item[tW channel] The second largest mode is the production of a single top quark in association with a $\mathrm{W}$~boson~(Fig.~\ref{fig:theory-singletop-tWch}). Here, the $\mathrm{W}$~boson can be produced on shell $Q^2=-m_\mathrm{W}^{2}$. It is slangy referred to as ``tW channel''. This process interferes at \gls{nlo} with \ttbar production which complicates its definition. A recent approach is to combine both production modes and the inference between them into a process with a $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\mathrm{b}\bar{\mathrm{b}}+X$ final state~\cite{Cascioli:2013wga}.
+\item[tW channel] The second largest mode is the production of a single top quark in association with a $\mathrm{W}$~boson~(Fig.~\ref{fig:theory-singletop-tWch}). Here, the $\mathrm{W}$~boson can be produced on shell $Q^2=-m_\mathrm{W}^{2}$. It is slangy referred to as ``tW channel''. This process interferes at \gls{nlo} with \ttbar production which complicates its definition. A recent approach is to combine both production modes and the inference between them into a process with a $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\,\mathrm{b}\,\bar{\mathrm{b}}+X$ final state~\cite{Cascioli:2013wga}. \todo{mention diagram removal and subtraction; what is the current default?}
 \end{description}
 
 The theoretical cross sections of the three single top quark production modes in pp collisions for center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-singletop-xsecs}. These have been calculated at \gls{nlo} in \gls{qcd} with \textsc{\gls{hathor}}\,$2.1$~\cite{Aliev:2010zk,Kant:2014oha} using a top quark mass of $m_\mathrm{t}=172.5~\GeV$ and factorization and renormalization scales of $\mu_\mathrm{R}=\mu_\mathrm{F}=m_\mathrm{t}$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
@@ -616,21 +621,27 @@ Hence the cross section is independent of the top quark decay vertex and therefo
 
 It should be noted that for this interpretation of single-top-quark cross sections no assumptions on the number of quark generations and subsequent the unitarity $\sum_j|\mathrm{V}_{ij}|^2=1$ of the \gls{ckm} matrix is not required.
 
-In $t$-channel single-top-quark production, the polarization of top quarks can be investigated as well. Opposed to \ttbar production, a high degree of polarization is expected due to the electroweak couplings at \gls{lo} in production and decay. For this, the differential cross section is parametrized as
+In $t$-channel single-top-quark production, the polarization of top quarks can be investigated as well. In contrast to \ttbar production, a high degree of polarization is expected since there are only electroweak \gls{va} interactions involved in production and decay at \gls{lo}. The differential cross section can be parametrized as
 
 \begin{equation}
-\frac{\mathrm{d}\sigma}{\sigma\cdot\mathrm{d}\cos\theta^\star_{\mathrm{t}X}}=\frac{1}{2}\big(1+\mathrm{P}_\mathrm{t}\alpha_{X}\cos\theta^\star_{\mathrm{t}X}\big)
+\frac{\mathrm{d}\sigma}{\sigma\cdot\mathrm{d}\cos\theta^\star_{X}}=\frac{1}{2}\big(1+\mathrm{P}_\mathrm{t}\alpha_{X}\cos\theta^\star_{X}\big)
 \end{equation}
 
 where $\mathrm{P}_\mathrm{t}$ denotes the polarization along a given axis and $\alpha_{X}$ the spin-analyzing power with respect to decay product $X$. The polarization angle
 
 \begin{equation}
-\cos\theta^\star_{\mathrm{t}X}=\frac{\vec{s}_\mathrm{t}\cdot \vec{p}_{X}^\scriptn{\mathrm{(t)}}}{\big|\vec{s}_\mathrm{t}\big|\cdot\big|\vec{p}_{X}^\scriptn{\mathrm{(t)}}\big|}
+\cos\theta^\star_{X}=\frac{\vec{s}_\mathrm{t}\cdot \vec{p}_{X}^\scriptn{\mathrm{(t)}}}{\big|\vec{s}_\mathrm{t}\big|\cdot\big|\vec{p}_{X}^\scriptn{\mathrm{(t)}}\big|}
 \end{equation}
 
-is taken between the spin analyzer $X$ in the top quark rest frame and a suitable spin quantization axis $\vec{s}_\mathrm{t}$. 
+is taken between the spin analyzer $X$ in the top quark rest frame and a suitable spin quantization axis $\vec{s}_\mathrm{t}$. Figure~\ref{fig:theory-t-channel-prod-decay} shows a sketch of spin orientations in the top quark rest frame for $t$-channel production and decay. A symmetry between the spectator quark on the production side and the charged lepton on the decay side can be observed. This motivates to choose the spectator quark momentum in the top quark rest frame to quantize the top quark spin. For this axis, a high degree of polarization can be expected. This is due to the fact that the charged lepton is a nearly perfect spin analyzer. Thus the spectator quark momentum is aligned along the top quark spin as well because of the observed symmetry~(see also Tab.~\ref{tab:theory-spin-powers}).
 
-\myfigure{\label{fig:theory-t-channel-prod-decay}Feynman diagram of production and decay for $t$-channel single-top-quark production.}{
+
+However, for this to be true the spectator quark would have to be down-type.
+
+
+ since a high polarization along a down-type spectator quark can be expected. This is also derived from the fact that the charged lepton is a nearly perfect spin analyzer~(see Tab.~\ref{tab:theory-spin-powers}). Thus the
+
+\myfigure{\label{fig:theory-t-channel-prod-decay}Sketch of spin orientations in $t$-channel single-top-quark production and decay.}{
 \includegraphics[scale=0.75]{figures/theory/t-channel-prod-decay.pdf}
 }
 
