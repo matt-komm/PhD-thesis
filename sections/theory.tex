@@ -507,16 +507,9 @@ The expected distributions per helicity state as a function of $\cos\theta^\star
 \includegraphics[width=0.49\textwidth]{figures/theory/whel_fractions.pdf}
 }
 
-For a general analysis of the top quark spin, one introduces the so-called ``spin-analyzing power'' $\alpha_{X}\in[-1;\,1]$ with respect to the decay product $X=\ell,\nu,\mathrm{W},\mathrm{b}$. It denotes the fraction of instances when the top quark spin is aligned along the spin analyzer momentum in the top quark rest frame. The calculated spin-analyzing powers at \gls{lo} and \gls{nlo} in the \gls{sm} are summarized in Tab.~\ref{tab:theory-spin-powers}. In particular, the charged lepton is a nearly perfect spin analyzer to study the top quark polarization. It is even larger than the spin-analyzing power of the $\mathrm{W}$~boson mother particle due to constructive (destructive) interference of the longitudinal and left-handed $\mathrm{W}$~boson helicity states in cases when the lepton is aligned (antialigned) with the top quark spin respectively~\cite{Bernreuther:2008ju}.
+For a general analysis of the top quark spin, one introduces the so-called ``spin-analyzing power'' $\alpha_{X}\in[-1;\,1]$ with respect to the decay product $X=\ell,\nu,\mathrm{W},\mathrm{b}$.\todo{add alphas for had decays} It denotes the fraction of instances when the top quark spin is aligned along the spin analyzer momentum in the top quark rest frame. The calculated spin-analyzing powers at \gls{lo} and \gls{nlo} in the \gls{sm} are summarized in Tab.~\ref{tab:theory-spin-powers}. For the corresponding particle or antiparticle partner the spin-analyzing power flips its sign. This may however not hold for \gls{bsm} physics inducing CP-violation in the top quark sector. 
 
-A sketch of various spin orientations is shown in Fig.~\ref{fig:theory-top-spin-orientations} demonstrating that the lepton momentum in the top quark rest frame tends to be aligned along the top quark spin. Antialigned scenarios~(Figs.~\ref{fig:theory-top-spin-orientations-long-suppressed} and~\ref{fig:theory-top-spin-orientations-left-suppressed}) are suppressed by the \gls{va} coupling structure which does not allow right-handed particles~($\nu$) or left-handed antiparticles~($\ell^{\rmplus}$) to interact.
-
-\myfigure{\label{fig:theory-top-spin-orientations}Sketches of various spin orientations in top quark decays for (a,b)~longitudinal and (c,d)~left-handed $\mathrm{W}$~boson helicities. Suppressed spin orientations are marked in red.}{
-\subfloat[]{\includegraphics[scale=0.75]{figures/theory/top_spins_long_allowed.pdf}}\hspace{0.15\textwidth}
-\subfloat[\label{fig:theory-top-spin-orientations-long-suppressed}]{\includegraphics[scale=0.75]{figures/theory/top_spins_long_suppressed.pdf}}\\
-\subfloat[]{\includegraphics[scale=0.75]{figures/theory/top_spins_left_allowed.pdf}}\hspace{0.15\textwidth}
-\subfloat[\label{fig:theory-top-spin-orientations-left-suppressed}]{\includegraphics[scale=0.75]{figures/theory/top_spins_left_suppressed.pdf}}
-}
+The charged lepton is a nearly perfect spin analyzer to study the top quark polarization. It is even larger than the spin-analyzing power of its mother particle, the $\mathrm{W}$~boson, due to constructive (destructive) interference of the longitudinal and left-handed $\mathrm{W}$~boson helicity states in cases when the lepton is aligned (antialigned) with the top quark spin respectively~\cite{Bernreuther:2008ju}.
 
 \mytable{\label{tab:theory-spin-powers}Spin-analyzing powers of the top quark. The values are taken from Ref.~\cite{AguilarSaavedra:2010nx} and references therein.}{
 \begin{tabular}{|c| r@{.}l r@{.}l |}
@@ -532,8 +525,14 @@ $\mathrm{W}^{\rmplus}$  & 0&41                      & 0&39 \\
 \end{tabular}
 }
 
-For the corresponding particle or antiparticle partner the spin-analyzing power flips its sign. However, any top quark polarization $\mathrm{P}_\mathrm{t}$ also changes sign which keeps the product $\mathrm{P}_\mathrm{t}\cdot\alpha_{X}=(-\mathrm{P}_{\bar{\mathrm{t}}})\cdot(-\alpha_{\bar{X}})$ independent whether the spin-analyzer is a particle or its antiparticle. This may not hold for \gls{bsm} physics inducing CP-violation in the top quark sector.
+A simplified sketch of various spin orientations is shown in Fig.~\ref{fig:theory-top-spin-orientations} demonstrating that the lepton momentum in the top quark rest frame tends to be aligned along the top quark spin. Antialigned scenarios~(Figs.~\ref{fig:theory-top-spin-orientations-long-suppressed} and~\ref{fig:theory-top-spin-orientations-left-suppressed}) are suppressed by the \gls{va} coupling structure which does not allow right-handed particles~($\nu$) or left-handed antiparticles~($\ell^{\rmplus}$) to interact.
 
+\myfigure{\label{fig:theory-top-spin-orientations}Sketches of various spin orientations in top quark decays for (a,b)~longitudinal and (c,d)~left-handed $\mathrm{W}$~boson helicities. Suppressed spin orientations are marked in red.}{
+\subfloat[]{\includegraphics[scale=0.75]{figures/theory/top_spins_long_allowed.pdf}}\hspace{0.15\textwidth}
+\subfloat[\label{fig:theory-top-spin-orientations-long-suppressed}]{\includegraphics[scale=0.75]{figures/theory/top_spins_long_suppressed.pdf}}\\
+\subfloat[]{\includegraphics[scale=0.75]{figures/theory/top_spins_left_allowed.pdf}}\hspace{0.15\textwidth}
+\subfloat[\label{fig:theory-top-spin-orientations-left-suppressed}]{\includegraphics[scale=0.75]{figures/theory/top_spins_left_suppressed.pdf}}
+}
 
 %##############################################
 \subsection{Pair production}
@@ -615,19 +614,30 @@ Hence the cross section is independent of the top quark decay vertex and therefo
 |f_\mathrm{L}\vtb|=\sqrt{\frac{\sigma_\mathrm{measured}}{\sigma_\mathrm{theory}}}.
 \end{equation}
 
-It should be noted that this procedure does not require to assume three quark generations nor unitarity $\sum_j|\mathrm{V}_{ij}|^2=1$ of the \gls{ckm} matrix.
+It should be noted that for this interpretation of single-top-quark cross sections no assumptions on the number of quark generations and subsequent the unitarity $\sum_j|\mathrm{V}_{ij}|^2=1$ of the \gls{ckm} matrix is not required.
 
-In $t$-channel single-top-quark production, the differential cross section as a function of the polarization angle can be expressed as
+In $t$-channel single-top-quark production, the polarization of top quarks can be investigated as well. Opposed to \ttbar production, a high degree of polarization is expected due to the electroweak couplings at \gls{lo} in production and decay. For this, the differential cross section is parametrized as
 
 \begin{equation}
 \frac{\mathrm{d}\sigma}{\sigma\cdot\mathrm{d}\cos\theta^\star_{\mathrm{t}X}}=\frac{1}{2}\big(1+\mathrm{P}_\mathrm{t}\alpha_{X}\cos\theta^\star_{\mathrm{t}X}\big)
 \end{equation}
 
-where $\mathrm{P}_\mathrm{t}$ denotes the polarization along a given axis and $\alpha_{X}$ the spin-analyzing power with respect to decay product $X$. In the \gls{sm}, the top quark is produced highly polarized along the momentum of the spectator quark ${q^\prime}$~(see Fig.~\ref{fig:theory-singletop-tch}).
+where $\mathrm{P}_\mathrm{t}$ denotes the polarization along a given axis and $\alpha_{X}$ the spin-analyzing power with respect to decay product $X$. The polarization angle
 
-various bases
+\begin{equation}
+\cos\theta^\star_{\mathrm{t}X}=\frac{\vec{s}_\mathrm{t}\cdot \vec{p}_{X}^\scriptn{\mathrm{(t)}}}{\big|\vec{s}_\mathrm{t}\big|\cdot\big|\vec{p}_{X}^\scriptn{\mathrm{(t)}}\big|}
+\end{equation}
 
-?exotic production (e.g. tHq, FCNC)
+is taken between the spin analyzer $X$ in the top quark rest frame and a suitable spin quantization axis $\vec{s}_\mathrm{t}$. 
+
+\myfigure{\label{fig:theory-t-channel-prod-decay}Feynman diagram of production and decay for $t$-channel single-top-quark production.}{
+\includegraphics[scale=0.75]{figures/theory/t-channel-prod-decay.pdf}
+}
+
+polarization values~\cite{Schwienhorst:2010je}
+
+
+various bases, extended W boson helicities
 
 %##############################################
 \subsection{Top quark mass}
