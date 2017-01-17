@@ -44,7 +44,7 @@ Fundamental particles are objects for which experiments have revealed no interna
 
 For the neutrinos masses, only upper limits on their masses are given. Those are derived by combining measurements of beta decay kinematics with results from neutrino oscillation experiments. In the \gls{sm}, neutrinos are assumed to be massless. However, the observation \todo{need ref} of neutrino oscillations requires that at least two neutrinos have a non-zero mass.
 
-\mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}. For u,d,s,c,b quarks \msbar masses are quoted, taken from Ref.~\cite{Olive:2016xmw}. The top quark pole mass is taken from Ref.~\cite{ATLAS:2014wva}.}{
+\mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}. For u,d,s,c,b quarks \gls{msbar} masses are quoted, taken from Ref.~\cite{Olive:2016xmw}. The top quark pole mass is taken from Ref.~\cite{ATLAS:2014wva}.}{
 \begin{tabular}{|r|c c c|}
     \hline
                         & 1. generation                 & 2. generation                 & 3. generation \\
@@ -362,7 +362,7 @@ yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``
 
 \todo{baryon number B=(nq-nantiq)/3 is conserved}
 
-At high energies, quantum fluctuations lead to divergences as well. In order to let a theory still describe the experimental energy regime, physical quantities are redefined at the so-called ``renormalization scale'' $\mu_\mathrm{R}$. This leads to a ``running'' behavior of the coupling constants as a function of $\mu_\mathrm{R}$. Beyond this scale, high energy effects such as loop corrections of propagators have been absorbed in the physical quantities through renormalization. In particular, the running behavior of the strong coupling constant is found to be 
+At high energies, quantum fluctuations lead to divergences as well. In order to let a theory still describe the experimental energy regime, physical quantities are redefined at the so-called ``renormalization scale'' $\mu_\mathrm{R}$. This leads to a ``running'' behavior of the coupling constants as a function of $\mu_\mathrm{R}$. Beyond this scale, high energy effects such as loop corrections to propagators~(so-called ``self-energy'') have been absorbed in the physical quantities through renormalization of the fields. In particular, the running behavior of the strong coupling constant is found to be 
 
 \begin{equation}
 \as(\mu_\mathrm{R})=\frac{\as(\mu_{0}^{2})}{1+\as(\mu_\mathrm{0}^2)\cdot\tfrac{33-2\cdot n_f}{12\pi}\cdot\ln\Big(\tfrac{|\mu_\mathrm{R}^2|}{\mu_{0}^{2}}\Big)}
@@ -370,13 +370,14 @@ At high energies, quantum fluctuations lead to divergences as well. In order to 
 
 where $n_f$ denotes the number of quarks and $\mu_{0}$ is a reference scale where the coupling is known from measurements, e.g. $\mu_{0}=m_{\zboson}$. The world average of the strong coupling constant $\as=g/(4\pi^2)$ at the \zboson boson mass is currently estimated to be $\as(m_{\zboson})=0.1181\pm0.0011$~\cite{Olive:2016xmw}. 
 
-Quarks can be treated as ``asymptotically free'' since the coupling decreases with larger energies. On the other hand, following the behavior of $\as(q^2)$ towards lower energies, a limit $\Lambda_\mathrm{\gls{qcd}}\approx 200~\MeV$ is found at which $\as$ becomes even larger than one. Below such energies, perturbative calculations of observables can no longer be performed. 
+Quarks can be treated as ``asymptotically free'' since the coupling decreases with larger energies. On the other hand, following the behavior of $\as(q^2)$ towards lower energies, a limit $\Lambda_\mathrm{\gls{qcd}}\approx 200~\MeV$ is found at which $\as$ becomes even larger than one. Below such energies, perturbative calculations of observables can no longer be performed~(see Sec.~\ref{sec:theory-observables}). 
 
 
 
 %##############################################
 \subsection{Observables}
 %##############################################
+\label{sec:theory-observables}
 
 A particle scattering process or decay is characterized by the initial and final particles as well as the interactions between them. Experimental observables are inclusive and differential cross sections as well as decay rates which can be calculated using perturbation theory. 
 
@@ -420,7 +421,6 @@ In the case of hadron--hadron collisions, Eq.~\ref{eq:theory-xsec-calculation} o
 \end{equation}
 
 where additional summations and integrations over the \glspl{pdf} are required to account for the individual contributions per parton flavor $f_{i}$ and per momentum fraction $x_{i}$.
-
 
 
 Calculations of observables can be written in terms of the number of interaction vertices contributing to $\mathcal{M}$ originating from the perturbative series~(Eq.~\ref{eq:theory-dyson-series}). This allows to the expand an observable as a power series in terms of the coupling constant $\alpha$ as
@@ -682,22 +682,39 @@ The differential cross section as a function of the polarization angles with the
 \tilde{\mathrm{F}}_\mathrm{0}^\mathrm{N,T}&=\mathrm{F}_\mathrm{0}^\mathrm{N,T}.
 \end{align}
 
-need to be used instead.
-
 
 %##############################################
 \subsection{Mass and modeling}
 %##############################################
 
-The confinement of quarks into color-neutral singlets at low energies prevents the experimental determination of the ``free'' quark mass. This is counterintuitive to e.g. the determination of the electron mass which can measured at rest.
+Quarks cannot be observed freely at low energies because of strong interactions. Hence, the concept of mass for a quark needs to be defined within renormalization. The top quark is however special since it can be treated as a nearly free particle at the electroweak energy scale nonetheless. This leads to two common definitions of its mass which are described in the following. It is important to know which definition is used when comparing theoretical predictions to experimental data or even attempting to infer the ``mass'' from data itself.
 
-Renormalization as briefly described in Sec.~\ref{sec:theory-qcd} provides the means to redefine the mass of a quark at a certain energy scale instead. This procedure is similar the strong coupling constant by absorbing divergent loop corrections as shown in Fig.~.
+The general problem arises from higher order corrections to the ``bare'' quark propagator as depicted in Fig.~\ref{fig:theory-quark-selfenergy}. 
 
+\myfigure{\label{fig:theory-quark-selfenergy}Feyman diagrams at \gls{lo} and beyond contributing to the quark propagator.}{
+\includegraphics[scale=0.75]{figures/theory/quark_selfenergy.pdf}
+}
 
+These result in corrections which are absorbed into the mass definition using the concept of renormalization. The procedure is similar to the running strong coupling constant as briefly described in Sec.~\ref{sec:theory-qcd}. The ``bare'' quark propagator is modified after renormalization as
 
+\begin{equation}
+\frac{i}{\gamma_{\mu}p^{\mu}-m_\mathrm{bare}}\quad\Rightarrow\quad\frac{i}{\gamma_{\mu}p^{\mu}-m_\mathrm{bare}+\Sigma(p,m_\mathrm{bare},\mu)}
+\end{equation}
 
+where $m_\mathrm{bare}$ denotes the bare mass of a quark which is however unphysical. The function $\Sigma(p,m_\mathrm{bare},\mu)$ is called ``self-energy'' and contains finite and but also divergent terms where the later arise from the used regularization procedure. It depends on the renormalization scale $\mu$ beyond which higher order corrections have been absorbed.
 
-vacuum stability, MS bar vs. polemass
+For the top quark, a common scheme is the on-shell renormalization. Here, one requires $\Sigma(p)=0$ and $\mathrm{d}\Sigma/\mathrm{d}p=0$ for $p=m$ which defines $m$ as the pole mass. However, this scheme is normally only suited for particles which are free at low energies like the leptons. For the top quark, an additional problem in the calculation of the self-energy arises from special diagrams called ``renormalons'' which feature vacuum polarization bubbles~(see last diagram in Fig.~\ref{fig:theory-quark-selfenergy}). These lead to an ambiguity on the order of $\Lambda_\mathrm{QCD}\approx200~\MeV$ in the top quark pole mass definition\footnote{Technically, this ambiguity stems from the chosen path of integration around the singularities from the renormalons.}. Despite this, one usually refers to the pole mass as the top quark mass which is also adopted in this thesis. However, since this level of precision is nearly approached in measurements of the top quark mass, the ambiguity has to be understood further or one should move to other schemes~\cite{???}.
+
+http://arXiv.org/abs/hep-ph/9612329v1
+
+The other renormalization scheme is the \glsreset{msbar}\gls{msbar}. Here, additional finite terms within the self-energy are absorbed into the mass definition. This allows to define also the mass of quarks at very low energies. In literature, this scheme is commonly used for the light quarks~\cite{???}. For the top quark, a difference of
+
+\begin{equation}
+m_\mathrm{pole}=m_{\gls{msbar}}+10~\GeV
+\end{equation}
+
+It should be stressed that the top quark mass is not an observable. Measuring the top quark mass means to use experimental observables like (differential) cross sections to infer the top quark mass by comparing to theoretical calculation of the observable for different masses and definitions.
+
 
 flavor schemes 4vs5
 

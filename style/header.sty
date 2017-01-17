@@ -84,6 +84,7 @@
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=nonfrench,factor=1100,stretch=15,shrink=15]{microtype}
 \SetTracking{encoding={*}, shape=sc}{0}
 \usepackage{slashed}
+\usepackage{bm} % bold math symbols
 \usepackage{afterpage}
 \usepackage{graphicx,graphics}
 \usepackage{tocloft}
@@ -123,8 +124,8 @@
 \makeglossaries
 \glossarystyle{list}
 \renewcommand{\glstextformat}[1]{#1}
-
-
+%\renewcommand*{\glstextformat}[1]{\textsf{\textsc{#1}}}
+\renewcommand{\glsnamefont}[1]{\boldmath{\textbf{ #1}}}
 
 
 %% Setup TOC
