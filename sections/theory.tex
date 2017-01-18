@@ -426,7 +426,7 @@ where additional summations and integrations over the \glspl{pdf} are required t
 Calculations of observables can be written in terms of the number of interaction vertices contributing to $\mathcal{M}$ originating from the perturbative series~(Eq.~\ref{eq:theory-dyson-series}). This allows to the expand an observable as a power series in terms of the coupling constant $\alpha$ as
 
 \begin{equation}
-\sigma=\alpha\cdot\sigma_\mathrm{1}+\alpha^{2}\cdot\sigma_{2}+\alpha^{3}\cdot\sigma_{3}+\ldots.
+\sigma=\sigma_\mathrm{\gls{lo}}\Big(1+\frac{\alpha}{2\pi}\cdot\sigma_\mathrm{1}+\big(\frac{\alpha}{2\pi}\big)^2\cdot\sigma_{1}+\big(\frac{\alpha}{2\pi}\big)^{3}\cdot\sigma_{2}+\ldots\Big).
 \end{equation}
 
 \todo{what is NNLL?}
@@ -684,14 +684,14 @@ The differential cross section as a function of the polarization angles with the
 
 
 %##############################################
-\subsection{Mass and modeling}
+\subsection{Top quark mass definition}
 %##############################################
 
-Quarks cannot be observed freely at low energies because of strong interactions. Hence, the concept of mass for a quark needs to be defined within renormalization. The top quark is however special since it can be treated as a nearly free particle at the electroweak energy scale nonetheless. This leads to two common definitions of its mass which are described in the following. It is important to know which definition is used when comparing theoretical predictions to experimental data or even attempting to infer the ``mass'' from data itself.
+Quarks cannot be observed freely at low energies because of strong interactions. Hence, the concept of mass for a quark needs to be defined through renormalization. The top quark is however special since it can be treated as a nearly free particle around and beyond the electroweak energy scale nonetheless. This leads to two common definitions of its mass which are described in the following. It is important to know which definition is used when comparing theoretical predictions to experimental data or even attempting to infer the ``mass'' from data itself.
 
 The general problem arises from higher order corrections to the ``bare'' quark propagator as depicted in Fig.~\ref{fig:theory-quark-selfenergy}. 
 
-\myfigure{\label{fig:theory-quark-selfenergy}Feyman diagrams at \gls{lo} and beyond contributing to the quark propagator.}{
+\myfigure{\label{fig:theory-quark-selfenergy}Feynman diagrams at \gls{lo} and beyond contributing to the quark propagator.}{
 \includegraphics[scale=0.75]{figures/theory/quark_selfenergy.pdf}
 }
 
@@ -701,20 +701,27 @@ These result in corrections which are absorbed into the mass definition using th
 \frac{i}{\gamma_{\mu}p^{\mu}-m_\mathrm{bare}}\quad\Rightarrow\quad\frac{i}{\gamma_{\mu}p^{\mu}-m_\mathrm{bare}+\Sigma(p,m_\mathrm{bare},\mu)}
 \end{equation}
 
-where $m_\mathrm{bare}$ denotes the bare mass of a quark which is however unphysical. The function $\Sigma(p,m_\mathrm{bare},\mu)$ is called ``self-energy'' and contains finite and but also divergent terms where the later arise from the used regularization procedure. It depends on the renormalization scale $\mu$ beyond which higher order corrections have been absorbed.
+where $m_\mathrm{bare}$ denotes the bare mass of a quark which is however unphysical and just a parameter in the Lagrangian. The function $\Sigma(p,m_\mathrm{bare},\mu)$ is called ``self-energy'' and contains finite corrections but also divergent terms where the later arise from the used regularization procedure\footnote{Dimensional regularization with $\epsilon=(4-d)/2$ leads to counterterms with $1/\epsilon$ divergences.}. It depends on the renormalization scale $\mu$ beyond which higher order corrections have been absorbed.
 
-For the top quark, a common scheme is the on-shell renormalization. Here, one requires $\Sigma(p)=0$ and $\mathrm{d}\Sigma/\mathrm{d}p=0$ for $p=m$ which defines $m$ as the pole mass. However, this scheme is normally only suited for particles which are free at low energies like the leptons. For the top quark, an additional problem in the calculation of the self-energy arises from special diagrams called ``renormalons'' which feature vacuum polarization bubbles~(see last diagram in Fig.~\ref{fig:theory-quark-selfenergy}). These lead to an ambiguity on the order of $\Lambda_\mathrm{QCD}\approx200~\MeV$ in the top quark pole mass definition\footnote{Technically, this ambiguity stems from the chosen path of integration around the singularities from the renormalons.}. Despite this, one usually refers to the pole mass as the top quark mass which is also adopted in this thesis. However, since this level of precision is nearly approached in measurements of the top quark mass, the ambiguity has to be understood further or one should move to other schemes~\cite{???}.
+For the top quark, a common scheme is the on-shell renormalization. Here, one requires $\Sigma(p)=0$ and $\mathrm{d}\Sigma/\mathrm{d}p=0$ for $p=m$ which defines $m$ as the pole mass. However, this scheme is normally only suited for particles which are free at low energies like the leptons. For the top quark, an additional problem in the calculation of the self-energy arises from special diagrams called ``renormalons'' which feature vacuum polarization bubbles~(see last diagram in Fig.~\ref{fig:theory-quark-selfenergy}). These lead to an ambiguity on the order of $\Lambda_\mathrm{QCD}\approx200~\MeV$ in the top-quark pole mass definition\footnote{Technically, this ambiguity stems from the chosen path of integration around the singularities from the renormalons~\cite{Smith:1996xz}.}. Despite this, one usually refers to the pole mass as the top quark mass which is also adopted in this thesis. However, since this level of precision is nearly approached in measurements of the top quark mass, the ambiguity has to be understood further or one should move to other schemes instead~\cite{Smith:1996xz}.
 
-http://arXiv.org/abs/hep-ph/9612329v1
-
-The other renormalization scheme is the \glsreset{msbar}\gls{msbar}. Here, additional finite terms within the self-energy are absorbed into the mass definition. This allows to define also the mass of quarks at very low energies. In literature, this scheme is commonly used for the light quarks~\cite{???}. For the top quark, a difference of
+The other common renormalization scheme is the \glsreset{msbar}\gls{msbar}. Here, only the divergent terms within the self-energy are absorbed into the mass definition. The mass will therefore depend explicitly on the renormalization scale. However, this allows to define also the mass of quarks at very low energies. In literature, this scheme is commonly used for the light quarks~\cite{Olive:2016xmw}. For the top quark, a difference of
 
 \begin{equation}
-m_\mathrm{pole}=m_{\gls{msbar}}+10~\GeV
+m_\mathrm{pole}^\mathrm{t}-m_{\gls{msbar}}^\mathrm{t}(\mu)=173.5~\GeV-163.1~\GeV=10.4~\GeV
 \end{equation}
 
-It should be stressed that the top quark mass is not an observable. Measuring the top quark mass means to use experimental observables like (differential) cross sections to infer the top quark mass by comparing to theoretical calculation of the observable for different masses and definitions.
+has been calculated at \gls{nnlo} in \gls{qcd} between the pole and \gls{msbar} mass definitions for $\mu=m_\mathrm{pole}$~\cite{Jegerlehner:2012kn}.
 
+In conclusion, it should be stressed that the top quark mass is not an observable. Measuring the top quark mass requires to use experimental observables like (differential) cross sections to infer the top quark mass by comparing to theoretical calculation of the observable for different masses and definitions.
+
+
+%##############################################
+\subsection{Flavor schemes}
+%##############################################
+
+In single-top-quark production via $t$ and tW channel, a $\mathrm{b}$~quark is required in the initial state~(Figs.~\ref{fig:theory-singletop-tch}, \ref{fig:theory-singletop-tWch}).
+Since the 
 
 flavor schemes 4vs5
 
