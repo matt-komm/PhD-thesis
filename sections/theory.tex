@@ -643,7 +643,7 @@ is taken between the spin analyzer $X$ in the top quark rest frame and a suitabl
 
 A potential spin axis is given in the helicity basis where the top quark momentum in the partonic center-of-mass system is chosen, $\vec{s}_\mathrm{t}^\scriptn{\,\mathrm{hel.}}=\vec{p}_\mathrm{t}^\scriptn{\mathrm{(tq)}}$. However, this system cannot be reconstructed unambiguously beyond \gls{lo} when additional jets are present in the final state. An alternative axis is motivated in Fig.~\ref{fig:theory-t-channel-prod-decay} where a sketch of spin orientations in the top quark rest frame for $t$-channel production and decay is shown. There exists a symmetry between a down-type spectator quark on the production side and the charged antilepton on the decay side leading to a correlation between their spins and the intermediate top quark. This suggests to take the spectator quark momentum in the top quark rest frame as the spin quantization axis, $\vec{s}_\mathrm{t}=\vec{p}_{\mathrm{q}^\prime}^\scriptn{\mathrm{(t)}}$. At \gls{lo}, this axis would coincide with the axis in helicity basis since the top quark and the spectator quark are back-to-back in the center-of-mass system~\cite{Schwienhorst:2010je}. A high degree of polarization can therefore be expected. This is also motivated by the fact that the charged lepton is a nearly perfect spin analyzer and thus the down-type spectator quark is a good spin analyzer as well because of depicted symmetry. Higher-order corrections however dilute this symmetry somewhat as also expected from Tab.~\ref{tab:theory-spin-powers} where a slightly lower spin-analyzing power for the down-type quark compared to the charge lepton at \gls{nlo} is expected. 
 
-\myfigure{\label{fig:theory-t-channel-prod-decay}Sketch of spin orientations in $t$-channel single-top-quark production and decay. Figure inspired from Ref.~\cite{Schwienhorst:2010je}.}{
+\myfigure{\label{fig:theory-t-channel-prod-decay}Sketch of spin orientations in $t$-channel single-top-quark production and decay. Figure is inspired from Ref.~\cite{Schwienhorst:2010je}.}{
 \includegraphics[scale=0.75]{figures/theory/t-channel-prod-decay.pdf}
 }
 
@@ -713,17 +713,36 @@ m_\mathrm{pole}^\mathrm{t}-m_{\gls{msbar}}^\mathrm{t}(\mu)=173.5~\GeV-163.1~\GeV
 
 has been calculated at \gls{nnlo} in \gls{qcd} between the pole and \gls{msbar} mass definitions for $\mu=m_\mathrm{pole}$~\cite{Jegerlehner:2012kn}.
 
-In conclusion, it should be stressed that the top quark mass is not an observable. Measuring the top quark mass requires to use experimental observables like (differential) cross sections to infer the top quark mass by comparing to theoretical calculation of the observable for different masses and definitions.
+In conclusion, it should be stressed that the top quark mass is not an observable. Measuring the top quark mass requires to use experimental observables like (differential) cross sections to infer the top quark mass by comparing data to theoretical calculation for different masses and definitions. 
 
 
 %##############################################
 \subsection{Flavor schemes}
 %##############################################
 
-In single-top-quark production via $t$ and tW channel, a $\mathrm{b}$~quark is required in the initial state~(Figs.~\ref{fig:theory-singletop-tch}, \ref{fig:theory-singletop-tWch}).
-Since the 
+In single-top-quark production via $t$ channel, a $\mathrm{b}$~quark is required in the initial state. There are two different ways called 4 and 5~\gls{fs} to treat the $\mathrm{b}$~quark in theoretical calculations. They differ in the number of quark flavors which are included within the proton~\gls{pdf}. Figure~\ref{fig:theory-flavorscheme} shows the Feynam diagram where in 5~\gls{fs} the $\mathrm{b}$~quark originates from the proton but stems from gluon splitting in 4~\gls{fs} instead.
 
-flavor schemes 4vs5
+\myfigure{\label{fig:theory-flavorscheme}Feynman diagrams at \gls{lo} for $t$-channel single-top-quark production in 4 and 5~\glsreset{fs}\gls{fs}.}{
+\includegraphics[scale=0.75]{figures/theory/flavorscheme.pdf}
+}
+
+Since the $\mathrm{b}$~quark mass of $m_\mathrm{b}\approx4.2~\GeV$ is higher than the mass of the proton, $m_\mathrm{p}\approx1~\GeV$, the 4~\gls{fs} seems more natural at first glance. The $\mathrm{b}$~quark is treated as a heavy quark state that decouples completely from the \as and \gls{pdf} evolution through renormalization and the DGLAP equation respectively. However, this approach results in terms proportional to $\propto\log(Q^2/m_\mathrm{b}^2)$ which may prohibit the convergence of perturbative calculations at high energies~\cite{Maltoni:2012pa}.
+
+Such logarithms can be however absorbed into the \gls{pdf}
+
+
+Both schemes are valid approaches for calculations of observables. The difference and range of validity at fixed order stems from the energy scale at which a process is described. At higher orders both approaches will converge. This is demonstrated in Fig.~\ref{fig:theory-t-channel-xsec-fs} for calculations of the $t$-channel single-top-quark cross section at $14~\TeV$ as a function of the renormalization scale. The dashed curves show the \gls{lo} predictions which are far apart and approach the \gls{nlo} prediction only at low (large) scales for 4~\gls{fs} (5~\gls{fs}) respectively. The \gls{nlo} predictions on the other hand start to converge already at a typical scale of $\mu=m_\mathrm{t}/2$.
+
+\myfigure{\label{fig:theory-t-channel-xsec-fs}Single-top-quark cross section in $t$ channel for top quarks at $14~\TeV$ as a function of the renormalization scale $\kappa=\mu/m_\mathrm{t}$. Shown are the predicted cross sections in 4 and 5~flavor schemes at \gls{lo} and \gls{nlo}. Figure is taken from Ref.~\cite{Maltoni:2012pa}}{
+\includegraphics[scale=0.9]{figures/theory/t-channel-xsec-fs}
+}
+
+Ratios of 4~\gls{fs} over 5~\gls{fs} differential single-top-quark cross sections as a function of the top quark and spectator jet transverse momentum and pseudo rapidity are shown in Fig.~\ref{fig:theory-t-channel-xsec-fs-diff}. In particular, the top quark \pt shows a nearly linear increasing ratio.
+
+\myfigure{\label{fig:theory-t-channel-xsec-fs-diff}Ratio of 4~\gls{fs}~($\sigma_{2\to3}$) over 5~\gls{fs}~($\sigma_{2\to2}$) differential single-top-quark cross sections in $t$ channel for top quarks at $14~\TeV$ as a function of (a)~the transverse momentum and (b)~the pseudo rapidity of the top quark and light (spectator) jet. Figures are taken from Ref.~\cite{Campbell:2009ss}}{
+\subfloat[]{\includegraphics[scale=1]{figures/theory/t-channel-fs-diff-pt.pdf}}\\
+\subfloat[]{\includegraphics[scale=1]{figures/theory/t-channel-fs-diff-eta.pdf}}
+}
 
 %##############################################
 \subsection{Effective operators and anomalous couplings}
