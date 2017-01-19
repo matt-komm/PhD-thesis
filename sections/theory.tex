@@ -426,12 +426,12 @@ where additional summations and integrations over the \glspl{pdf} are required t
 Calculations of observables can be written in terms of the number of interaction vertices contributing to $\mathcal{M}$ originating from the perturbative series~(Eq.~\ref{eq:theory-dyson-series}). This allows to the expand an observable as a power series in terms of the coupling constant $\alpha$ as
 
 \begin{equation}
-\sigma=\sigma_\mathrm{\gls{lo}}\Big(1+\frac{\alpha}{2\pi}\cdot\sigma_\mathrm{1}+\big(\frac{\alpha}{2\pi}\big)^2\cdot\sigma_{1}+\big(\frac{\alpha}{2\pi}\big)^{3}\cdot\sigma_{2}+\ldots\Big).
+\sigma=\sigma_\mathrm{\glsunset{lo}\gls{lo}}\Big(1+\frac{\alpha}{2\pi}\cdot\sigma_\mathrm{1}+\big(\frac{\alpha}{2\pi}\big)^2\cdot\sigma_{2}+\big(\frac{\alpha}{2\pi}\big)^{3}\cdot\sigma_{3}+\ldots\Big).
 \end{equation}
 
 \todo{what is NNLL?}
 
-Depending at which term the series is cut off one speaks of \gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{\gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
+Depending at which term the series is cut off one speaks of \glsreset{lo}\gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{\gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
 
 From the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix} the optical theorem can be derived. It states that the imaginary part of a scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the scattering amplitude of producing all possible intermediate particles $X$ from the initial times the final state $\sum_{X}\mathcal{M}^\dagger(i\to X)\mathcal{M}(f\to X)$. This leads to general constraints on the total cross section. For example, the scattering amplitude of a $2\to2$ process can be expressed via the optical theorem as
 
@@ -624,7 +624,7 @@ It should be noted that for this interpretation of single-top-quark cross sectio
 
 
 %##############################################
-\subsection{Polarization in $t$~channel single-top-quark production}
+\subsection{Polarization in $t$-channel single-top-quark production}
 %##############################################
 
 In $t$-channel single-top-quark production, the polarization of top quarks can be investigated as well. In contrast to \ttbar production, a high degree of polarization is expected since there are only electroweak \gls{va} interactions involved in production and decay at \gls{lo}. The differential cross section can be parametrized as
@@ -684,7 +684,7 @@ The differential cross section as a function of the polarization angles with the
 
 
 %##############################################
-\subsection{Top quark mass definition}
+\subsection{Mass definitions}
 %##############################################
 
 Quarks cannot be observed freely at low energies because of strong interactions. Hence, the concept of mass for a quark needs to be defined through renormalization. The top quark is however special since it can be treated as a nearly free particle around and beyond the electroweak energy scale nonetheless. This leads to two common definitions of its mass which are described in the following. It is important to know which definition is used when comparing theoretical predictions to experimental data or even attempting to infer the ``mass'' from data itself.
@@ -730,9 +730,9 @@ Since the $\mathrm{b}$~quark mass of $m_\mathrm{b}\approx4.2~\GeV$ is higher tha
 
 However, this approach results in terms proportional to $\log(Q^2/m_\mathrm{b}^2)$ arising from the intermediate $\mathrm{b}$~quark propagator which may prohibit the convergence of perturbative calculations at high momentum transfers $Q$. In this case, such terms together with the $g\to\mathrm{b}\bar{\mathrm{b}}$ splitting function can be absorbed into a \gls{pdf} for the $\mathrm{b}$~quark instead~\cite{Maltoni:2012pa}.
 
-Both schemes are valid approaches for calculations of observables. The difference at fixed order stems from the energy scale at which a process is described. At sufficiently high orders both approaches will converge. This is demonstrated in Fig.~\ref{fig:theory-t-channel-xsec-fs} where the $t$-channel single-top-quark cross section at $14~\TeV$ as a function of the renormalization scale is depicted. The dashed curves show the \gls{lo} predictions which are far apart and approach the \gls{nlo} prediction only at low (large) scales for 4~\gls{fs} (5~\gls{fs}) respectively. The \gls{nlo} predictions on the other hand start to converge already at a typical scale choice of $\mu\approx m_\mathrm{t}/2$ for this process.
+Both schemes are valid approaches for calculations of observables. The difference at fixed order stems from the energy scale at which a process is described. At sufficiently high orders both approaches will converge. This is demonstrated in Fig.~\ref{fig:theory-t-channel-xsec-fs} where the $t$-channel single-top-quark cross section at $14~\TeV$ as a function of the renormalization and factorization scale is depicted. The dashed curves show the \gls{lo} predictions which are far apart. Their opposite behavior originates from the running of coupling constant \as in the 4~\gls{fs} versus the scale dependence of the $\mathrm{b}$~quark \gls{pdf} in the 5~\gls{fs}~\cite{Maltoni:2012pa}. They approach the \gls{nlo} prediction only at low (large) scales for 4~\gls{fs} (5~\gls{fs}) respectively. The \gls{nlo} predictions on the other hand start to converge already at a scale choice of $\mu\approx m_\mathrm{t}/2$ for this process.
 
-\myfigure{\label{fig:theory-t-channel-xsec-fs}Single-top-quark cross section in $t$ channel for top quarks at $14~\TeV$ as a function of the renormalization scale $\kappa=\mu/m_\mathrm{t}$. The predicted cross sections in 4 and 5~flavor schemes at \gls{lo} and \gls{nlo} are shown. The figure has been taken from Ref.~\cite{Maltoni:2012pa}}{
+\myfigure{\label{fig:theory-t-channel-xsec-fs}Single-top-quark cross section in $t$ channel for top quarks at $14~\TeV$ as a function of the renormalization and factorization scale $\kappa=\mu/m_\mathrm{t}$. The predicted cross sections in 4 and 5~flavor schemes at \gls{lo} and \gls{nlo} are shown. The figure has been taken from Ref.~\cite{Maltoni:2012pa}}{
 \includegraphics[scale=0.9]{figures/theory/t-channel-xsec-fs}
 }
 
@@ -745,9 +745,15 @@ Differential distributions are also affected by the flavor scheme choice. Ratios
 
 
 %##############################################
-\subsection{Effective operators and anomalous couplings}
+\subsection{Anomalous couplings}
 %##############################################
 
+In direct searches for \gls{bsm} signals one usually probes only for a certain model within its given parameter space. Typical models are the \gls{mssm}~\cite{Csaki:1996ks} which introduces a superpartner for each \gls{sm} particle using a minimal number of new parameters or the \gls{2hdm}~\cite{Branco:2011iw} where the Higgs sector is extended by an additional Higgs doublet. Since no signal has been found yet it may be that the energy scale at which new \gls{bsm} signal appear in direct searches is not reachable. This however motivates to probe for deviations of \gls{sm} parameters like the couplings which could receive corrections from potential new particles or interactions nonetheless. 
+
+\myfigure{\label{fig:theory-t-channel-eff}Potential \gls{bsm} Feynman diagram of single-top-quark production via flavor-changing neutral current interaction. At low energies $p\ll m_\chi$ the propagator in (a) can be approximated as an anomalous 4-fermion coupling~(b).}{
+\subfloat[]{\parbox{0.4\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-chi.pdf}\\$\propto\frac{1}{p^2-m^{2}_{\chi}}$}}
+\subfloat[]{\parbox{0.4\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-contact.pdf}\\$\propto\frac{1}{m^{2}_{\chi}}$}}
+}
 
 EFT (pseudo observables=form factors=e.g. w helicity/polarization?); EFT UV covered models see (https://indico.cern.ch/event/537012/contributions/2371763/attachments/1375462/2088456/talk4.pdf)
 
