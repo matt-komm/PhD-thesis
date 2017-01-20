@@ -431,7 +431,7 @@ Calculations of observables can be written in terms of the number of interaction
 
 \todo{what is NNLL?}
 
-Depending at which term the series is cut off one speaks of \glsreset{lo}\gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{\gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
+Depending at which term the series is cut off one speaks of \glsreset{lo}\gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{Partonic \gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
 
 From the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix} the optical theorem can be derived. It states that the imaginary part of a scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the scattering amplitude of producing all possible intermediate particles $X$ from the initial times the final state $\sum_{X}\mathcal{M}^\dagger(i\to X)\mathcal{M}(f\to X)$. This leads to general constraints on the total cross section. For example, the scattering amplitude of a $2\to2$ process can be expressed via the optical theorem as
 
@@ -738,7 +738,7 @@ Both schemes are valid approaches for calculations of observables. The differenc
 
 Differential distributions are also affected by the flavor scheme choice. Ratios of 4~\gls{fs} over 5~\gls{fs} differential $t$-channel cross sections at \gls{nlo} as a function of the transverse momentum and pseudo rapidity with respect to the top quark and spectator jet are shown in Fig.~\ref{fig:theory-t-channel-xsec-fs-diff}. The differences between both schemes are found to be around the $10~\%$ level~\cite{Campbell:2009ss}. In particular, the top quark \pt displays here an almost linear increasing ratio.
 
-\myfigure{\label{fig:theory-t-channel-xsec-fs-diff}Ratio of 4~\gls{fs}~($\sigma_{2\to3}$) over 5~\gls{fs}~($\sigma_{2\to2}$) differential single-top-quark cross sections in $t$ channel for top quarks at $14~\TeV$ as a function of (a)~the transverse momentum and (b)~the pseudo rapidity of the top quark and light (spectator) jet. The figures have been taken from Ref.~\cite{Campbell:2009ss}}{
+\myfigure{\label{fig:theory-t-channel-xsec-fs-diff}Ratio of 4~\gls{fs}~($\sigma^{2\to3}$) over 5~\gls{fs}~($\sigma^{2\to2}$) differential single-top-quark cross sections in $t$ channel for top quarks at $14~\TeV$ as a function of (a)~the transverse momentum and (b)~the pseudo rapidity of the top quark and light (spectator) jet. The figures have been taken from Ref.~\cite{Campbell:2009ss}}{
 \subfloat[]{\includegraphics[scale=1]{figures/theory/t-channel-fs-diff-pt.pdf}}\\
 \subfloat[]{\includegraphics[scale=1]{figures/theory/t-channel-fs-diff-eta.pdf}}
 }
@@ -748,16 +748,30 @@ Differential distributions are also affected by the flavor scheme choice. Ratios
 \subsection{Anomalous couplings}
 %##############################################
 
-In direct searches for \gls{bsm} signals one usually probes only for a certain model within its given parameter space. Typical models are the \gls{mssm}~\cite{Csaki:1996ks} which introduces a superpartner for each \gls{sm} particle using a minimal number of new parameters or the \gls{2hdm}~\cite{Branco:2011iw} where the Higgs sector is extended by an additional Higgs doublet. Since no signal has been found yet it may be that the energy scale at which new \gls{bsm} signal appear in direct searches is not reachable. This however motivates to probe for deviations of \gls{sm} parameters like the couplings which could receive corrections from potential new particles or interactions nonetheless. 
+Direct searches for \gls{bsm} physics can be viewed as a top-down approach. The starting point is marked by a well-defined and usually \gls{uv}-complete \gls{bsm} theory. Experimentally, one is then interested to detect additional events originating from a new process within such a theory. Exemplary models are the \gls{mssm}~(reviewed in Ref.~\cite{Csaki:1996ks}) or the \gls{2hdm}~\cite{Branco:2011iw}. Since no signal has been found yet it may be that the energy scale at which a \gls{bsm} process becomes significant is not probable in direct searches. Nonetheless, new particles or interactions can contribute higher-order corrections to processes within the \gls{sm} already at low energies. An example is the observation of the rare $\mathrm{B}^{0}_\mathrm{s}\to\mu\mu$ decay~\cite{CMS:2014xfa} which can be altered by contributions from the \gls{mssm}. This motivates a model-independent bottom-up approach where observables of the \gls{sm} are measured with great precision and compared to their expectation. Any deviations can then be interpreted within multiple \gls{bsm} theories. \todo{may add ref to CMS-PAS-SUS-15-010 which shows limits on mssm for bs decay}
 
-\myfigure{\label{fig:theory-t-channel-eff}Potential \gls{bsm} Feynman diagram of single-top-quark production via flavor-changing neutral current interaction. At low energies $p\ll m_\chi$ the propagator in (a) can be approximated as an anomalous 4-fermion coupling~(b).}{
-\subfloat[]{\parbox{0.4\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-chi.pdf}\\$\propto\frac{1}{p^2-m^{2}_{\chi}}$}}
-\subfloat[]{\parbox{0.4\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-contact.pdf}\\$\propto\frac{1}{m^{2}_{\chi}}$}}
+The general idea of a bottom-up approach is depicted in Fig.~\ref{fig:theory-t-channel-eff} for some exemplary \gls{uv}-complete theory with a new heavy scalar particle $\chi$. If the new particle has a sufficiently high mass it would not be possible to observe it as a simple resonance in $s$~channel. However, the shown production of single top quarks would be altered through additional contributions from this new process. At low energies, it would mimic a 4-fermion contact interaction with a simple scalar coupling structure. The \mbox{\gls{sm}+\gls{bsm}} cross section of this process may still correspond to the one expected from the \gls{sm} alone by slightly tuning the \gls{sm} couplings correspondingly. However, since this new process has a scalar coupling structure it would show up as a deviation from the \gls{va} coupling structure. Observables such as the top quark polarization can then be used to probe for such anomalous coupling at the production vertex.
+
+\myfigure{\label{fig:theory-t-channel-eff}Feynman diagram of potential \gls{bsm} physics contributing to single-top-quark production via flavor-changing neutral current interaction. At low energies $p\ll m_\chi$ the propagator in (a) can be approximated as an anomalous 4-fermion coupling~(b).}{
+\subfloat[\label{fig:theory-t-channel-chi-uv}$t$~channel]{\parbox{0.35\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-chi.pdf}\\$\propto\lambda^2\frac{i}{p^2-m^{2}_{\chi}}$}}
+\subfloat[\label{fig:theory-t-channel-eff-ir}effective interaction]{\parbox{0.35\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-contact.pdf}\\$\propto-\lambda^2\frac{1}{m^{2}_{\chi}}$}}
 }
+
+\gls{eft} can be used to characterize such deviations from the coupling structure in a model-independent manner. It can be derived using an \gls{ope} as first proposed in Ref.~\cite{Wilson:1972ee}. Here the product of operators is expanded as
+
+\begin{equation}
+O_{1}(x_{1})\ldots O_{n}(x_{n})=\sum_{i}c_{1\ldots n}^{i}(x_{1},\ldots x_{n})O_{i}^\mathrm{eff}(x_{n})
+\end{equation}
+
+where $O_{i}^\mathrm{eff}$ is now an effective operator and $c^{i}$ are 
+
+This is applicable only if the low energy limit of a \gls{uv}-complete theory is relevant. Otherwise unitarity as discussed in Sec.~\ref{sec:theory-observables} will be violate if the energy scale of a process approaches the scale of the concrete \gls{bsm} theory which would be $m_\chi$ in the example above. At such energy scales the \gls{eft} approach is invalid.
+
+
 
 EFT (pseudo observables=form factors=e.g. w helicity/polarization?); EFT UV covered models see (https://indico.cern.ch/event/537012/contributions/2371763/attachments/1375462/2088456/talk4.pdf)
 
-
+https://arxiv.org/abs/1008.4884
 %##############################################
 \subsection{Experimental results}
 %##############################################
