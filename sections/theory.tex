@@ -682,6 +682,8 @@ The differential cross section as a function of the polarization angles with the
 \tilde{\mathrm{F}}_\mathrm{0}^\mathrm{N,T}&=\mathrm{F}_\mathrm{0}^\mathrm{N,T}.
 \end{align}
 
+\todo{ref to https://arxiv.org/abs/1404.1585?}
+
 
 %##############################################
 \subsection{Mass definitions}
@@ -748,30 +750,49 @@ Differential distributions are also affected by the flavor scheme choice. Ratios
 \subsection{Anomalous couplings}
 %##############################################
 
-Direct searches for \gls{bsm} physics can be viewed as a top-down approach. The starting point is marked by a well-defined and usually \gls{uv}-complete \gls{bsm} theory. Experimentally, one is then interested to detect additional events originating from a new process within such a theory. Exemplary models are the \gls{mssm}~(reviewed in Ref.~\cite{Csaki:1996ks}) or the \gls{2hdm}~\cite{Branco:2011iw}. Since no signal has been found yet it may be that the energy scale at which a \gls{bsm} process becomes significant is not probable in direct searches. Nonetheless, new particles or interactions can contribute higher-order corrections to processes within the \gls{sm} already at low energies. An example is the observation of the rare $\mathrm{B}^{0}_\mathrm{s}\to\mu\mu$ decay~\cite{CMS:2014xfa} which can be altered by contributions from the \gls{mssm}. This motivates a model-independent bottom-up approach where observables of the \gls{sm} are measured with great precision and compared to their expectation. Any deviations can then be interpreted within multiple \gls{bsm} theories. \todo{may add ref to CMS-PAS-SUS-15-010 which shows limits on mssm for bs decay}
+Direct searches for \gls{bsm} physics can be viewed as a top-down approach. The starting point is marked by a well-defined and usually \gls{uv}-complete \gls{bsm} theory. Experimentally, one is then interested to detect additional events originating from a new process within such a theory. Exemplary models are the \gls{mssm}~(reviewed in Ref.~\cite{Csaki:1996ks}) or the \gls{2hdm}~\cite{Branco:2011iw}. Since no signal has been found yet it may be that the energy scale at which a \gls{bsm} process becomes significant is not probable in direct searches. Nonetheless, new particles or interactions can contribute higher-order corrections to processes within the \gls{sm} already at low energies. An example is the observation of the rare $\mathrm{B}^{0}_\mathrm{s}\to\mu\mu$ decay~\cite{CMS:2014xfa} which can be altered by contributions from the \gls{mssm}. This motivates a model-independent bottom-up approach where observables of the \gls{sm} are measured with great precision and compared to their expectation. Any deviations can then be interpreted within multiple new theories. \todo{may add ref to CMS-PAS-SUS-15-010 which shows limits on mssm for bs decay}
 
-The general idea of a bottom-up approach is depicted in Fig.~\ref{fig:theory-t-channel-eff} for some exemplary \gls{uv}-complete theory with a new heavy scalar particle $\chi$. If the new particle has a sufficiently high mass it would not be possible to observe it as a simple resonance in $s$~channel. However, the shown production of single top quarks would be altered through additional contributions from this new process. At low energies, it would mimic a 4-fermion contact interaction with a simple scalar coupling structure. The \mbox{\gls{sm}+\gls{bsm}} cross section of this process may still correspond to the one expected from the \gls{sm} alone by slightly tuning the \gls{sm} couplings correspondingly. However, since this new process has a scalar coupling structure it would show up as a deviation from the \gls{va} coupling structure. Observables such as the top quark polarization can then be used to probe for such anomalous coupling at the production vertex.
+The general idea of a bottom-up approach is depicted in Fig.~\ref{fig:theory-t-channel-eff} for some exemplary \gls{uv}-complete theory with a new heavy scalar particle $\chi$. If the new particle has a sufficiently high mass it would not be possible to observe it as a simple resonance in $s$~channel. However, the shown production of single top quarks would be altered through additional contributions from this new process. At energies $q\ll m_{\chi}$ it would mimic a 4-fermion contact interaction with a simple scalar coupling structure. The \mbox{\gls{sm}+\gls{bsm}} cross section of this process may still correspond to the one expected from the \gls{sm} alone by fine-tuning the \gls{sm} and \gls{bsm} couplings correspondingly. However, since this new process has a scalar coupling structure it would show up as a deviation from the expected \gls{va} coupling structure. Observables such as the top quark polarization can then be used to probe for such anomalous couplings at the production vertex.
 
 \myfigure{\label{fig:theory-t-channel-eff}Feynman diagram of potential \gls{bsm} physics contributing to single-top-quark production via flavor-changing neutral current interaction. At low energies $p\ll m_\chi$ the propagator in (a) can be approximated as an anomalous 4-fermion coupling~(b).}{
-\subfloat[\label{fig:theory-t-channel-chi-uv}$t$~channel]{\parbox{0.35\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-chi.pdf}\\$\propto\lambda^2\frac{i}{p^2-m^{2}_{\chi}}$}}
-\subfloat[\label{fig:theory-t-channel-eff-ir}effective interaction]{\parbox{0.35\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-contact.pdf}\\$\propto-\lambda^2\frac{1}{m^{2}_{\chi}}$}}
+\subfloat[\label{fig:theory-t-channel-chi-uv}$t$~channel]{\parbox{0.35\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-chi.pdf}\\$\propto \frac{g^2}{p^2-m^{2}_{\chi}}$}}
+\subfloat[\label{fig:theory-t-channel-eff-ir}effective interaction]{\parbox{0.35\textwidth}{\centering\includegraphics[scale=0.75]{figures/theory/t-channel-contact.pdf}\\$\propto \frac{g^2}{m^{2}_{\chi}}$}}
 }
 
-\gls{eft} can be used to characterize such deviations from the coupling structure in a model-independent manner. It can be derived using an \gls{ope} as first proposed in Ref.~\cite{Wilson:1972ee}. Here the product of operators is expanded as
+\Glspl{eft} provide a framework to characterize such deviations from the coupling structure in a model-independent manner. Those can be derived using an \gls{ope} as first proposed in Ref.~\cite{Wilson:1972ee}. Here, the product of operators is expanded as
+
+\todo{the operators are renormalizable through ope for low scales?}
 
 \begin{equation}
-O_{1}(x_{1})\ldots O_{n}(x_{n})=\sum_{i}c_{1\ldots n}^{i}(x_{1},\ldots x_{n})O_{i}^\mathrm{eff}(x_{n})
+{O}_{1}(x_{1})\ldots {O}_{n}(x_{n})=\sum_{i}c_{1\ldots n}^{i}(x_{1},\ldots x_{n}){O}_{i}^\mathrm{eff}(x_{n})
 \end{equation}
 
-where $O_{i}^\mathrm{eff}$ is now an effective operator and $c^{i}$ are 
+where $\mathcal{O}_{i}^\mathrm{eff}$ are effective operators and $c^{i}$ are the so-called Wilson coefficients.
 
-This is applicable only if the low energy limit of a \gls{uv}-complete theory is relevant. Otherwise unitarity as discussed in Sec.~\ref{sec:theory-observables} will be violate if the energy scale of a process approaches the scale of the concrete \gls{bsm} theory which would be $m_\chi$ in the example above. At such energy scales the \gls{eft} approach is invalid.
+Such an expansion is only applicable if the low energy limit of a \gls{uv}-complete theory is relevant. Otherwise unitarity as discussed in Sec.~\ref{sec:theory-observables} will be violate if the energy scale of a process within the \gls{eft} approaches the scale of the concrete \gls{bsm} theory. This would be $m_\chi$ in the example above. At such energy scales the \gls{eft} approach is invalid.
 
+For the \gls{sm} which contains only operators up to dimension four one can expand its Lagrangian as
 
+\begin{equation}
+\mathcal{L}_\mathrm{eff}=\mathcal{L}_\mathrm{\gls{sm}}^\mathrm{(4)}+\frac{1}{\Lambda}\sum_{i}c_{i}^\mathrm{(5)}{O}_{i}^\mathrm{(5)}+\frac{1}{\Lambda^{2}}\sum_{i}c_{i}^\mathrm{(6)}{O}_{i}^\mathrm{(6)}+\mathcal{O}\big(\frac{C}{\Lambda^3}\big)
+\end{equation}
+
+with new effective operators of dimension five and six which are suppressed by the new physics scale $\Lambda$. Requiring gauge invariance and baryon number conservation leads to 59 independent operators of dimension six~\cite{Grzadkowski:2010es}. The only operator of dimension five is
+
+\begin{equation}
+\mathcal{L}_\mathrm{eff.}^\mathrm{(5)}=\frac{1}{\Lambda}\big(\vec{\mathrm{E}}_{\mathrm{L}}^{i}\epsilon_{ij}\phi_{j}\big)^\mathrm{T}\mathcal{C}\big(\vec{\mathrm{E}}_{\mathrm{L}}^{i}\epsilon_{ij}\phi_{j}\big)
+\end{equation}
+
+leading to potential neutrino masses and mixing after the electroweak symmetry breaking. 
+
+For the top quark sector only a subset of operators are relevant~\cite{AguilarSaavedra:2008zc}.
 
 EFT (pseudo observables=form factors=e.g. w helicity/polarization?); EFT UV covered models see (https://indico.cern.ch/event/537012/contributions/2371763/attachments/1375462/2088456/talk4.pdf)
 
-https://arxiv.org/abs/1008.4884
+total sm https://arxiv.org/abs/1008.4884
+neutrino mass from dim 5: http://arxiv.org/abs/1008.3869v3
+global fit: https://arxiv.org/abs/1506.08845
+
 %##############################################
 \subsection{Experimental results}
 %##############################################
