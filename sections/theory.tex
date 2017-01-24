@@ -2,7 +2,7 @@
 \chapter{Theory and experimental status}
 %##############################################
 
-An introduction to the \gls{sm}, its particle content, interactions, and properties is provided in the following. Special focus is attributed to the top quark which is the heaviest known fundamental particle to date. Here, latest experimental results are discussed and the theoretical foundation of the measurements within this thesis is laid out.
+An introduction to the \gls{sm}, its particle content, interactions, and properties is provided in the following. Special focus is attributed to the top quark which is the heaviest known fundamental particle to date. A feature of the top quark is that it can be produced polarized due to the coupling structure in the \gls{sm} whereas new \gls{bsm} physics may alter this prediction. Finally, recent experimental results are discussed.
 
 
 %##############################################
@@ -16,7 +16,7 @@ The \gls{sm} describes the interactions between fundamental particles. It is bas
 \subsection{Particle content}
 %##############################################
 
-Fundamental particles are objects for which experiments have revealed no internal structure. For example, only an upper limit on the spatial radius of an electron has been measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Atoms forming ordinary matter consist of only particles from the first generation: electrons, protons, and neutrons, where the later two are bound states of uud quarks and udd quarks respectively.\todo{mention searches for 4th generation?}
+Fundamental particles are objects for which experiments have revealed no internal structure. For example, only an upper limit on the spatial radius of an electron has been measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Atoms forming ordinary matter consist of only particles from the first generation: electrons, protons, and neutrons, where the later two are bound states of uud quarks and udd quarks respectively.
 
 \mytable{\label{tab:theory-leptons}Leptons of the \gls{sm}. Particle masses are taken from Ref.~\cite{Olive:2016xmw}. Uncertainties on the measured masses are omitted because the precision is beyond the sub permille level. For the neutrino masses only \glspl{cl} are given.}{
     \begin{tabular}{|r|c c c|}
@@ -42,7 +42,7 @@ Fundamental particles are objects for which experiments have revealed no interna
     \end{tabular}
 }
 
-For the neutrinos masses, only upper limits on their masses are given. Those are derived by combining measurements of beta decay kinematics with results from neutrino oscillation experiments. In the \gls{sm}, neutrinos are assumed to be massless. However, the observation \todo{need ref} of neutrino oscillations requires that at least two neutrinos have a non-zero mass.
+For the neutrinos masses, only upper limits on their masses are given. Those are derived by combining measurements of beta decay kinematics with results from neutrino oscillation experiments. In the \gls{sm}, neutrinos are assumed to be massless. However, the observation of neutrino oscillations requires that at least two neutrinos have a non-zero mass~\cite{Fukuda:1998mi}.
 
 \mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}. For u,d,s,c,b quarks \gls{msbar} masses are quoted, taken from Ref.~\cite{Olive:2016xmw}. The top quark pole mass is taken from Ref.~\cite{ATLAS:2014wva}.}{
 \begin{tabular}{|r|c c c|}
@@ -192,7 +192,7 @@ with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties:
 H=\frac{\vec{p}\cdot\vec{s}}{|\vec{p}|}
 \end{equation}
 
-which denotes whether the spin $\vec{s}$ is aligned along~($H=+1$) or against~($H=-1$) the momentum axis. For massive particles, Eq.~\ref{eq:theory-diracL} cannot be decomposed since chirality is not Lorentz invariant. \todo{CP is violated}\todo{add that CPT is considered invariant}
+which denotes whether the spin $\vec{s}$ is aligned along~($H=+1$) or against~($H=-1$) the momentum axis. For massive particles, Eq.~\ref{eq:theory-diracL} cannot be decomposed since chirality is not Lorentz invariant. \todo{CP is also violated; add that CPT is considered invariant?}
 
 The Glawhow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} splits the fermion fields into ``left-handed'' doublets 
 
@@ -207,7 +207,7 @@ and ``right-handed'' singlets
 \vec{\mathrm{e}}_\mathrm{R}=\big\{\mathrm{e}^{\rmminus}_\mathrm{R},\mu^{\rmminus}_\mathrm{R},\tau^{\rmminus}_\mathrm{R}\big\},\quad\vec{\mathrm{u}}_\mathrm{R}=\big\{\mathrm{u}_\mathrm{R},\mathrm{c}_\mathrm{R},\mathrm{t}_\mathrm{R}\big\},\quad\vec{\mathrm{d}}_\mathrm{R}=\big\{\mathrm{d}_\mathrm{R},\mathrm{s}_\mathrm{R},\mathrm{b}_\mathrm{R}\big\} \label{eq:theory-su2-singlets}
 \end{align}
 
-of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any interaction within the \gls{sm}\todo{they could if massive?}. The gauge transformation of the combined group is
+of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any interaction within the \gls{sm}. The gauge transformation of the combined group is
 
 \begin{equation}
 \psi\mapsto\psi\cdot\mathrm{e}^{-ig\vec{\alpha}(x)\cdot\vec{\omega}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2} \label{eq:theory-u1su2-transformation}
@@ -256,11 +256,10 @@ where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $h$ the Hi
 Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields the following non-interaction terms
 
 \begin{align}
-\mathcal{L}_\mathrm{Higgs}&=~~~\tfrac{1}{2}(\partial_{\mu}h^{\dagger})(\partial^{\mu}h)-\lambda^2 v^2 h^2 \label{eq:theory-higgs} \\
-\mathcal{L}_\mathrm{W_1,W_2~bosons}&=-\tfrac{1}{8}g^2 v^2 \big(W_{1,\mu} W_{1}^{\mu}+W_{2,\mu} W_{2}^{\mu}\big) \label{eq:theory-a1a2} \\
-\mathcal{L}_\mathrm{W_3,B~bosons}&=-\tfrac{1}{8}v^2 \big(gW_{3,\mu}-g^{\prime}B_\mu\big)\big(gW_{3}^{\mu}-g^{\prime}B^\mu\big) \label{eq:theory-a3b}.
+\mathcal{L}_\mathrm{Higgs}=&~~~~\tfrac{1}{2}(\partial_{\mu}h^{\dagger})(\partial^{\mu}h)-\lambda^2 v^2 h^2 \label{eq:theory-higgs} \\
+\mathcal{L}_\mathrm{W_1,W_2~bosons}=&-\tfrac{1}{4}\big(\mathrm{W}_{1,\mu\nu}\mathrm{W}^{\mu\nu}_{1}+\mathrm{W}_{2,\mu\nu}\mathrm{W}^{\mu\nu}_{2}\big)\nonumber\\&+\tfrac{1}{8}g^2 v^2 \big(W_{1,\mu} W_{1}^{\mu}+W_{2,\mu} W_{2}^{\mu}\big) \label{eq:theory-a1a2} \\
+\mathcal{L}_\mathrm{W_3,B~bosons}=&-\tfrac{1}{4}\big(\mathrm{B}_{\mu\nu}\mathrm{B}^{\mu\nu}+\mathrm{W}_{3,\mu\nu}\mathrm{W}^{\mu\nu}_{3}\big)\nonumber\\&+\tfrac{1}{8}v^2 \big(gW_{3,\mu}-g^{\prime}B_\mu\big)\big(gW_{3}^{\mu}-g^{\prime}B^\mu\big) \label{eq:theory-a3b}.
 \end{align}
-\todo{add propagators for W and B or remove propagator for h and call it mass terms}
 
 The first term (Eq.~\ref{eq:theory-higgs}) describes a free scalar boson, the Higgs boson \higgs, with mass $m=\lambda v$. Next, the $W_{1}$ and $W_{2}$
 fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle pair $\wboson=1/\sqrt{2}(W_1\mp iW_2)$ with mass $m_{\wboson}=\frac{1}{2}gv$. Lastly, the fields $W_3$ and $B$ appear to be in a mixed mass state~(Eq.~\ref{eq:theory-a3b}). By performing a rotation of the couplings
@@ -309,16 +308,17 @@ where the coupling strengths are denoted by $\lambda$. A mass term for the elect
 which allows to write the Lagrangian density in the quark mass eigenstates. In particular, using Eqs.~\ref{eq:theory-codev-su2-interaction} and~\ref{eq:theory-codev-breaking} this leads to an interaction between the $\mathrm{W}$~boson and fermions of
 
 
-\todo{add couplings to leptons}
+
 \begin{align}
-\mathcal{L}_{\mathrm{qqW}~\mathrm{int.}}&=i\frac{g}{\sqrt{2}}\mathrm{V}_{ij}\,\bar{\mathrm{u}}^{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\mathrm{d}^{j}~+~i\frac{g}{\sqrt{2}}\mathrm{V}_{ij}^\dagger\,\bar{\mathrm{d}}^{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\mathrm{u}^{j} \label{eq:theory-qqW-int}
+\mathcal{L}_{\mathrm{W}\bar{\mathrm{f}}\mathrm{f}~\mathrm{int.}}&=i\frac{g}{2\sqrt{2}}\,\Big[\bar{\nu}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\ell^{\rmminus}_{i}~+~{\ell}^{\rmplus}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\nu_{i}\Big]\\
+&~~+i\frac{g}{2\sqrt{2}}\Big[\mathrm{V}_{ij}\,\bar{\mathrm{u}}^{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\mathrm{d}_{j}~+~\mathrm{V}_{ij}^\dagger\,\bar{\mathrm{d}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\mathrm{u}_{j}\Big] \label{eq:theory-qqW-int}
 \end{align}
 
 where $\mathrm{V}_{ij}=(U^\dagger_\mathrm{u}U_\mathrm{d})_{ij}$ is the \gls{ckm} matrix. \todo{add matrix from pdg?} 
-The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}$, between the $\mathrm{W}$~boson and the fermions is referred to as a \gls{va} structure because of its spatial transformation properties. Unlike normal vectors axial vectors do not switch sign under parity transformation\footnote{A typical example of an axial vector (also known as pseudovector) is the angular momentum $\vec{L}=\vec{r}\times \vec{p}$.}. It allows only left-handed fermions or right-handed antifermions to couple to $\mathrm{W}$~bosons as observed by the Wu experiment.
+The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}$, between the $\mathrm{W}$~boson and the fermions is referred to as a \gls{va} structure because of its spatial transformation properties. Axial vectors do not switch sign under parity transformation  unlike normal spatial vectors\footnote{A typical example of an axial vector (also known as pseudovector) is the angular momentum $\vec{L}=\vec{r}\times \vec{p}$.}. It allows only left-handed fermions or right-handed antifermions to couple to $\mathrm{W}$~bosons as observed by the Wu experiment.
 
 
-\todo{comment on free parameters: masses, couplings, and custodial symmetry etc}
+%\todo{comment on free parameters: masses, couplings, and custodial symmetry etc}
 
 
 
@@ -353,7 +353,7 @@ V(r)=-\frac{4\cdot\as}{3r}+k\cdot r
 
 where at large distances $r$ or equivalently small energies a linear term dominates. The factor $k$ can be understood as a ``gluon-spring'' tension similar to that of a harmonic oscillator. New quark / antiquark pairs can be created from the vacuum if the gluon field energy exceeds the mass of the new pair. This can lead to a cascade of new particles emerging from the gluon field at sufficiently large energies which binds ``free'' quarks into color-neutral singlets called hadrons. Such a process is referred to as hadronization. In experiments, one usually clusters collimated jets of particles to infer the momentum of a quark candidate.
 
-Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\pi^{\rmplus}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$), kaons $\mathrm{K}^{\rmplus}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$) and $\mathrm{J}/\Psi$~($\mathrm{c}\bar{\mathrm{c}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates~\cite{Aaij:2014jqa,Aaij:2016iza} and even ``pentaquarks'' forming a bound state of five quarks~\cite{Aaij:2015tga}.\todo{balance tetraquarks/pentaquarks, ref to review?}
+Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\pi^{\rmplus}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$), kaons $\mathrm{K}^{\rmplus}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$) and $\mathrm{J}/\Psi$~($\mathrm{c}\bar{\mathrm{c}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). The baryon number, $\mathrm{B}\equiv N\text{(baryons)}-N\text{(antibaryons)}$, is conserved in scattering or decay processes. In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates~\cite{Aaij:2014jqa,Aaij:2016iza} and even ``pentaquarks'' forming a bound state of five quarks~\cite{Aaij:2015tga}.
 
 Besides valence quarks, gluons and so-called ``sea quarks'' from spontaneous gluon splittings~($\mathrm{g}\to\bar{\mathrm{q}}\mathrm{q}$) are considered constituents of a hadron as well. This whole group of particles is commonly referred to as partons. In hadron collision experiments at a sufficiently high momentum transfer, one can approximate all partons as free which allows to treat hadron-hadron scattering as a single parton-parton interaction instead~\cite{Feynman:1969wa}. The momentum of a parton is expressed as a fraction of the hadron momentum $\vec{p}_\mathrm{parton}=x\cdot \vec{p}_\mathrm{hadron}$. Then, the probability of 
 finding two parton flavors $f_{i}$ with momentum fraction $x_{i}$ interacting at an energy scale $\mu_\mathrm{F}$ is given by the \gls{pdf} as $\mathrm{PDF}(x_{1},f_{1},\mu_\mathrm{F})\cdot\mathrm{PDF}(x_{2},f_{2},\mu_\mathrm{F})$. The \glspl{pdf} are normalized such that
@@ -368,8 +368,6 @@ yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``
 \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/theory/nnpdf_q10.pdf}}\hspace{0.01\textwidth}
 \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/theory/nnpdf_q100.pdf}}
 }
-
-\todo{baryon number B=(nq-nantiq)/3 is conserved}
 
 At high energies, quantum fluctuations lead to divergences as well. In order to let a theory still describe the experimental energy regime, physical quantities are redefined at the so-called ``renormalization scale'' $\mu_\mathrm{R}$. This leads to a ``running'' behavior of the coupling constants as a function of $\mu_\mathrm{R}$. Beyond this scale, high energy effects such as loop corrections to propagators~(so-called ``self-energy'') have been absorbed in the physical quantities through renormalization of the fields. In particular, the running behavior of the strong coupling constant is found to be 
 
@@ -442,20 +440,16 @@ Calculations of observables can be written in terms of the number of interaction
 
 Depending at which term the series is cut off one speaks of \glsreset{lo}\gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{Partonic \gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
 
-From the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix} the optical theorem can be derived. It states that the imaginary part of a scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the scattering amplitude of producing all possible intermediate particles $X$ from the initial times the final state $\sum_{X}\mathcal{M}^\dagger(i\to X)\mathcal{M}(f\to X)$. This leads to general constraints on the total cross section. For example, the scattering amplitude of a $2\to2$ process can be expressed via the optical theorem as
-
-\begin{equation}
-\mathrm{Im}\Big(\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big)=2\,E_\mathrm{\gls{cm}}|\vec{p}_\mathrm{\gls{cm}}|\sum_{X}\sigma(\psi_{1}\psi_{2}\to X).
-\end{equation}
-
-Since the total cross section is at least as big as the scattering cross section one finds the constraint
+From the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix} the optical theorem can be derived. It states that the imaginary part of a scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the scattering amplitude of producing all possible intermediate particles $\chi$ from the initial times the final state $\sum_{X}\mathcal{M}^\dagger(i\to \chi)\mathcal{M}(f\to \chi)$. This leads to general constraints on the total cross section. For example, the scattering amplitude of a $2\to2$ process can be expressed via the optical theorem as
 
 \begin{align}
-&\sigma(\psi_{1}\psi_{2}\to \mathrm{any})>\sigma(\psi_{1}\psi_{2}\to \psi_{1}\psi_{2}) \\
-&\Rightarrow\Big|\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big|<64\pi^2.
+2\,\mathrm{Im}\Big(\mathcal{M}(\psi_{1}\psi_{2}\to\psi_{1}\psi_{2})\Big)&=4E_1E_2\,|v_1-v_2|\,\sigma_\mathrm{tot}(\psi_{1}\psi_{2}\to\mathrm{any})\\
+&=\sum_{\chi}\beta_{\chi}\int\frac{\mathrm{d}\cos\theta}{16\pi}\,\big|\mathcal{M}(\psi_{1}\psi_{2}\to \chi)\big|^2
 \end{align}
 
-\todo{find out if this is for fixed initial/final state momenta}
+where $\beta_{\chi}$ is given by the integral over the final state phase space.
+
+Since the total cross section is at least as big as the scattering cross section one finds that the matrix elements are bound and cannot be arbitrary large. Exemplary bounds on effective four-fermion interactions (in the context of dark matter production) are derived in Ref.~\cite{Endo:2014mja}. 
 
 Hypothetical, a theory may describe experimental data well but still violates the unitarity bound at higher energies beyond the experimental probing capabilities. Such a case would hint towards a new physics model which restores unitarity by introducing new particles or interactions at energies before it is violated. This is called \gls{uv} completion. A unitarity-violating theory may just reflect the low energy limit of an unknown \gls{uv}-complete theory within the experimental energy regime. Exemplary,  the $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\to\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}$ scattering amplitude would grow as $\mathcal{M}\sim s/m_\wboson^2$ if there is no Higgs boson and eventually violate unitarity at $\sqrt{s}\approx1~\TeV$.
 
@@ -475,7 +469,7 @@ Hypothetical, a theory may describe experimental data well but still violates th
 \section{The top quark}
 %##############################################
 
-The top quark is the heaviest known fundamental particle so far. Its high mass of $m_\mathrm{t}=173.34\pm0.71~\GeV$~\cite{ATLAS:2014wva} is close to the minimum of the Higgs potential. This implies a Yukawa coupling of $|\lambda_\mathrm{t}|\approx 1$. All other Yukawa couplings are however of the order of $10^{-2}$ instead. The top quark may therefore play an important role in understanding the mechanisms of electroweak symmetry breaking itself. Furthermore, top quarks are excellent probes to search for \gls{bsm} physics. For example, many extensions of the \gls{sm} predict additional $\mathrm{W}^{\prime}$ and $\mathrm{Z}^{\prime}$ bosons which are heavier versions of their \gls{sm} counterparts and can interact with top quarks. Other \gls{bsm} models can have an extended Higgs sector leading to additional heavy neutral and charged Higgs bosons which may couple to top quarks predominately due to its high mass~(see Ref.~\cite{Boos:2006xe} and references therein). \todo{find better/more refs} \todo{fcnc}
+The top quark is the heaviest known fundamental particle so far. Its high mass of $m_\mathrm{t}=173.34\pm0.71~\GeV$~\cite{ATLAS:2014wva} is close to the minimum of the Higgs potential. This implies a Yukawa coupling of $|\lambda_\mathrm{t}|\approx 1$. All other Yukawa couplings are however of the order of $10^{-2}$ instead. The top quark may therefore play an important role in understanding the mechanisms of electroweak symmetry breaking itself. Furthermore, top quarks are excellent probes to search for \gls{bsm} physics. For example, many extensions of the \gls{sm} predict additional $\mathrm{W}^{\prime}$ and $\mathrm{Z}^{\prime}$ bosons which are heavier versions of their \gls{sm} counterparts and can interact with top quarks. Other \gls{bsm} models can have an extended Higgs sector leading to additional heavy neutral and charged Higgs bosons which may couple to top quarks predominately due to its high mass~(see Ref.~\cite{Boos:2006xe} and references therein). \todo{find better/more refs}
 
 Historically, the top quark was discovered in 1995 by the \gls{cdf}~\cite{Abe:1995hr} and \gls{d0}~\cite{Abachi:1994td} collaborations at the Tevatron collider at Fermilab using proton-antiproton collision data. The production of top quark pairs which occurs through strong interactions was analyzed. Already before the direct observation of this process, the discovery of the bottom quark~\cite{Augustin:1975yq,PhysRevLett.39.252} and the attempt to explain CP-violation by introducing the \gls{ckm} matrix hinted strongly towards its existence~\cite{Kobayashi01021973} however without knowing its mass. Another milestone was the observation of single top quark production which occurs through electroweak interactions only. This much more rarer process was discovered in 2009 at the Tevatron collider as well~\cite{PhysRevLett.103.092002,PhysRevLett.103.092001}. The lower cross section of this process together with the overwhelming background necessitated the use of sophisticated analysis techniques such as multivariate classifiers and the matrix element method~\cite{Mitrevski}.
 
