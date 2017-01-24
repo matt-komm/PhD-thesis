@@ -236,24 +236,24 @@
 \setlength\intextsep{1.\baselineskip plus 3pt minus 2pt}
 
 %placements
-\newcommand{\mytable}[2]{
-    \begin{table}[htb]
+\newcommand{\mytable}[3][htb]{
+    \begin{table}[#1]
     \centering
     \begin{minipage}[c]{0.93\textwidth}
-    \caption{#1}
+    \caption{#2}
     \centering
-    \small #2
+    \small #3
     \end{minipage}
     \end{table}
 }
 
-\newcommand{\myfigure}[2]{
-    \begin{figure}[htb]
+\newcommand{\myfigure}[3][htb]{
+    \begin{figure}[#1]
     \centering
     \begin{minipage}[c]{0.93\textwidth}
     \centering
-    #2
-    \caption{#1}
+    #3
+    \caption{#2}
     \end{minipage}
     \end{figure}
 }
