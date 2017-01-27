@@ -200,11 +200,17 @@
      \parbox[t][][t]{0.99\textwidth}{
         \chapterheadstartvskip
         
-        {\textls*[130]{\LARGE\textsf{\chaptername}}}\\
+        %\parbox[c][2cm][c]{0.15\textwidth}{\centering\textls*[130]{\LARGE\textsf{\chaptername}}}\\
             %\\[0.35cm]
-        \parbox[c][2cm][c]{0.15\textwidth}{\centering\fontsize{40}{0}\numberfont{\thechapter}}
-        %\parbox[c][][c]{5.\myrulewidth}{\color{gray}\rule{2\myrulewidth}{2.5cm}}
-        \hspace{0.125\textwidth}\parbox[c][][c]{0.71\textwidth}{\begin{flushleft}\usekomafont{chapter} #1\end{flushleft}}
+        
+        \hspace{0.03\textwidth}\parbox[c][2.cm][c]{0.169\textwidth}{
+            \color{gray}
+            \centering\textls*[130]{\LARGE\textsf{\chaptername}}
+            \vfill
+            \fontsize{40}{0}\numberfont{\thechapter}
+        }
+        \hspace{0.05\textwidth}\parbox[c][][c]{5.\myrulewidth}{\color{gray}\rule{1.5\myrulewidth}{2.5cm}}
+        \hspace{0.08\textwidth}\parbox[c][][c]{0.66\textwidth}{\begin{flushleft}\usekomafont{chapter} #1\end{flushleft}}
         %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
         %\\[0.3cm]
         %{\color{gray}\rule{\textwidth}{\myrulewidth}}
@@ -214,7 +220,7 @@
 
 \setkomafont{chapter}{\normalfont\Huge\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{4\parskip}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.7cm}}
 
 \renewcommand*{\sectionformat}{\numberfont\thesection.\ }
 \setkomafont{section}{\normalfont\LARGE\selectfont\numberfont}
@@ -226,7 +232,7 @@
 \setkomafont{subsubsection}{\normalfont\large\selectfont\numberfont}
 
 \RedeclareSectionCommands[
-  beforeskip=2.\parskip,
+  beforeskip=0.9\baselineskip,
   afterskip=0.01\baselineskip
 ]{section,subsection,subsubsection}
 
@@ -315,7 +321,7 @@
 }
 
 %%chapter intro
-\newcommand{\intro}[1]{\begin{center}\parbox{0.93\textwidth}{\textsl{#1}\\[3\parskip]}\end{center}}
+\newcommand{\intro}[1]{\hspace{0.03\textwidth}\parbox{0.969\textwidth}{#1\\[0.3cm]}}
 
 
 %% footnote
