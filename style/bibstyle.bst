@@ -808,22 +808,22 @@ FUNCTION {format.incoll.inproc.crossref}
 
 FUNCTION {format.url}
 {
-  url duplicate$ empty$
-    { pop$ "" }
-    {
-      "\url "
-      "{" * swap$ * "}" *
-    }
+  url empty$
+    { "" }
+    { "\href{" url * "}{\texttt{" * url * "}}" * }
   if$
 }
+
 FUNCTION {href.command}
 {
   "\href "
 }
+
 FUNCTION {noop.command}
 {
   "\hrefCMSnoop "
 }
+
 FUNCTION {link.tag.open}
 {
   doi duplicate$ empty$
@@ -849,11 +849,12 @@ FUNCTION {link.tag.shut}
 }
 FUNCTION {link.open}
 {
-  link.tag.open output.nopunct
+  %link.tag.open output.nopunct
 }
+
 FUNCTION {link.shut}
 {
-  link.tag.shut *
+  %link.tag.shut *
 }
 FUNCTION {add.doi}
 {
@@ -889,20 +890,22 @@ FUNCTION {article}
        }
        if$
        report missing$
-         { format.doi output format.eprint output }
-         { blank.sep format.report output format.doi output format.eprint output }
+         { new.sentence new.block format.doi output format.eprint output }
+         { blank.sep format.report output new.sentence new.block format.doi output format.eprint output }
        if$
     }
     { format.article.crossref output.nonnull
       format.pages output
+      new.sentence 
+      new.block
       format.doi output
       format.eprint output
     }
   if$
   new.sentence
+  new.block
   note output
   new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
@@ -933,10 +936,21 @@ FUNCTION {book}
   if$
   format.edition output
   format.date "year" output.check
+  new.sentence 
+  new.block
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
   new.block
   note output
   new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
@@ -960,10 +974,21 @@ FUNCTION {booklet}
   howpublished output
   address output
   format.date output
+  new.sentence 
+  new.block
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
   new.block
   note output
   new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
@@ -998,14 +1023,14 @@ FUNCTION {inbook}
   if$
   format.edition output
   format.date "year" output.check
+  new.sentence 
   new.block
+  format.doi output
   format.eprint output
+  new.sentence
   new.block
   note output
   new.sentence
-  format.doi output
-  new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
@@ -1032,14 +1057,21 @@ FUNCTION {incollection}
       format.chapter.pages output
     }
   if$
+  new.sentence 
   new.block
-  format.eprint output
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
   new.block
   note output
   new.sentence
-  format.doi output
-  new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
@@ -1066,14 +1098,21 @@ FUNCTION {inproceedings}
       format.pages output
     }
   if$
+  new.sentence 
   new.block
-  format.eprint output
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
   new.block
   note output
   new.sentence
-  format.doi output
-  new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
@@ -1108,10 +1147,21 @@ FUNCTION {manual}
   if$
   format.edition output
   format.date output
-  format.eprint output
-  format.url output
+  new.sentence 
+  new.block
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
   new.block
   note output
+  new.sentence
   fin.entry
 }
 
@@ -1126,8 +1176,21 @@ FUNCTION {mastersthesis}
   school "school" output.check
   address output
   format.date "year" output.check
+  new.sentence 
+  new.block
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
   new.block
   note output
+  new.sentence
   fin.entry
 }
 
@@ -1150,10 +1213,21 @@ FUNCTION {misc}
   link.shut
   howpublished output
   format.date output
+  new.sentence 
+  new.block
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
   new.block
   note output
   new.sentence
-  format.doi output
   fin.entry
   empty.misc.check
 }
@@ -1169,14 +1243,21 @@ FUNCTION {phdthesis}
   school "school" output.check
   address output
   format.date "year" output.check
+  new.sentence 
   new.block
-  format.eprint output
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
   new.block
   note output
   new.sentence
-  format.doi output
-  new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
@@ -1199,13 +1280,21 @@ FUNCTION {proceedings}
   publisher output
   address output
   format.date.paren "year" output.check
+  new.sentence 
   new.block
-  format.eprint output
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
+  new.sentence
+  new.block
   note output
   new.sentence
-  format.doi output
-  new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
@@ -1224,14 +1313,22 @@ FUNCTION {techreport}
   link.shut
   blank.sep
   format.tr.number output.nonnull
-  institution "institution" output.check
-  address output
   format.date "year" output.check
+  new.sentence 
   new.block
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
   new.sentence
-  format.doi output
-  format.eprint output
+  new.block
   note output
+  new.sentence
   fin.entry
 }
 
@@ -1249,12 +1346,21 @@ FUNCTION {unpublished}
   link.shut
   blank.sep
   format.date.paren "year"  output.check
+  new.sentence 
+  new.block
+  doi empty$ and eprint empty$
+  {
+      format.url output
+  }
+  {
+      format.doi output
+      format.eprint output
+  }
+  if$
   new.sentence
-  format.eprint output
+  new.block
+  note output
   new.sentence
-  note "note" output.check
-  new.sentence
-  format.SLACcitation output
   fin.entry
 }
 
