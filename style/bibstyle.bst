@@ -530,7 +530,7 @@ FUNCTION {format.date.paren}
 FUNCTION {format.collaboration}
 { collaboration empty$
     { "" }
-    { "{" collaboration * " Collaboration }" * }
+    { "{" collaboration * " Collaboration}" * }
   if$
 }
 
