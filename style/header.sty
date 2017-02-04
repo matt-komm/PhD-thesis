@@ -90,6 +90,7 @@
 \usepackage{tocloft}
 \usepackage{multirow}
 \usepackage{setspace}
+\usepackage[Symbolsmallscale]{upgreek} % for upright greek symbols
 \usepackage{xr} %ref over documents
 \usepackage{axodraw4j}
 \usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=true]{hyperref}
@@ -303,6 +304,7 @@
 % define prime with better vertical alignment and no vertical space to fix line spreading
 \let\oldprime\prime
 \def\prime{\mathalpha{\raisebox{-0.5pt}[0pt][0pt]{$\scriptstyle\oldprime$}}}
+
 
 %no linebreaks for inline equations
 \binoppenalty=\maxdimen

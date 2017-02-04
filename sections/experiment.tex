@@ -1,73 +1,56 @@
 \chapter{Experimental setup}
 
-\intro{The measurements within this thesis are based on proton-proton collision data recorded with the CMS detector in 2012, 2015, and 2016 at center-of-mass energies of 8 and 13~\TeV. The experimental setup is described in this chapter. First, the \gls{lhc}~\cite{Evans:2008zzb}, its preacceleator chain and other experiments at the \gls{lhc} are briefly introduced. Then the CMS detector and its components are detailed. A review of the operations summarizes the chapter.}
+\intro{The measurements within this thesis are based on proton-proton collision data recorded with the CMS detector in 2012, 2015, and 2016 at center-of-mass energies of 8 and 13~\TeV. The experimental setup is described in this chapter. First, the \gls{lhc}, its preacceleator chain and other experiments at the \gls{lhc} are briefly introduced. Then, the CMS detector and its components are detailed. A review of the operations summarizes the chapter.}
 
 %##############################################
 \section{Large Hadron Collider}
 %##############################################
 
-The \glsreset{lhc}\gls{lhc} is a 26.7~km long accelerator and storage ring for protons and heavy ions at the \glsreset{cern}\gls{cern}, Geneva, Switzerland. It was constructed between 1998\range2008 in the existing tunnel of the former \glsreset{lep}\gls{lep} which lies 45\range170~m below the surface. The \gls{lhc} ring features two beam pipes which can be separately filled with up to 2'808 countercycling bunches of protons with a bunch-to-bunch spacing of 25~ns per pipe. The beams can be focused for collision at four \glspl{ip}. The design allows to accelerate protons with a momentum of 450~\GeV at injection to up to 7~\TeV yielding a center-of-mass energy of 14~\TeV in collisions.
+The \glsreset{lhc}\gls{lhc} is a 26.7~km long accelerator and storage ring for protons and lead ions at the \glsreset{cern}\gls{cern}, Geneva, Switzerland. It was constructed between 1998\range2008 in the existing tunnel of the former \glsreset{lep}\gls{lep} which lies 45\range170~m below the surface. The \gls{lhc} ring features two beam pipes which can be separately filled with up to 2'808 countercycling bunches of protons with a bunch-to-bunch spacing of 25~ns per pipe. The beams can be focused for crossing each other at four \glspl{ip} where however only two of them are meant for a high luminosity collisions. The design allows to accelerate protons with a momentum of 450~\GeV at injection to up to 7~\TeV yielding a center-of-mass energy of 14~\TeV in collisions.
 
 To bend the beams 1'232 dipol cryostats are deployed hosting both beam pipes and two dipol magnets within a cold mass in a twin-bore design. The cold mass itself is placed in a vacuum vessel for thermal insulation. The magnet coils consist of \gls{nbti} alloy fibers which are cooled down to 1.9~K using superfluid helium. At this temperature, the magnets are superconducting. This allows to produce the required magnetic field strength to sustain a closed beam orbit ranging from 0.54~T at injection energy to up to 8.33~T for the maximum beam energy. At maximum field a current of 11850~A is required. Such high magnetic fields cannot be achieved with normal conductors due to magnetic saturation. 
 
-Additional about 3'800 single aperture and 1'000 twin aperture magnets are installed to keep the beam particles focused around the nominal orbit~(quadrupoles) and for further orbit corrections~(sextu-, octu-, and decapoles). Special quadrupole triplets at each side of the four \glspl{ip} focus the beams for collision. The envelop of the particle trajectories with respect to the nominal beam orbit is described by the beta function which can be approximated around the \glspl{ip} as 
+Additional about 3'800 single aperture and 1'000 twin aperture magnets are installed. Quadrupole magnets keep the beam particles focused around the nominal orbit. Further, non-linear corrections to the orbit are applied using sextu-, octu-, and decapoles. Special quadrupole triplets at each side of the four \glspl{ip} focus the beams for collision. The envelop of the particle trajectories with respect to the nominal beam orbit is described by the beta function which can be approximated around the \glspl{ip} as 
 
 \begin{equation}
-\beta(x)=\beta^\star+\frac{x^2}{\beta^\star}.
+\beta(x)\approx\beta^\star+\frac{x^2}{\beta^\star}.
 \end{equation}
 
-At two high luminosity \glspl{ip}, the beams can be squeezed to $\beta^\star=0.55~\mathrm{m}$.\todo{performance was much better} The transverse beam size is given as $\sigma^{\star}=\sqrt{\epsilon_\mathrm{n}\cdot\beta^\star/\gamma}\approx17~{\mu\mathrm{m}}$ for $\gamma=E/m_\mathrm{p}\approx7000$ where $\epsilon_\mathrm{n}$ denotes the normalized beam emittance. It is a measure of the phase space area occupied by the particles within the beam which is constant following Liouville's theorem. The emittance cannot be larger than $\epsilon_\mathrm{n}>3.75~\mu\mathrm{m}\cdot\mathrm{rad}$ in order to not loose significant amounts of the beam in the \gls{lhc} arcs where $\beta(x)$ is the largest.
+In design, the beams can be squeezed to $\beta^\star=0.55~\mathrm{m}$ at the two high luminosity \glspl{ip}. The transverse beam size is given as $\sigma^{\star}=\sqrt{\epsilon_\mathrm{n}\cdot\beta^\star/\gamma}\approx17\upmu\mathrm{m}$ for $\gamma=E_\mathrm{p}/m_\mathrm{p}=7000$ where $\epsilon_\mathrm{n}$ denotes the normalized beam emittance. It is a measure of the phase space area occupied by the particles within the beam which is constant following Liouville's theorem. The emittance cannot be larger than $\epsilon_\mathrm{n}>3.75~\upmu\mathrm{m}\cdot\mathrm{rad}$ in order to not loose significant amounts of the beam in the \gls{lhc} arcs where $\beta(x)$ is the largest.
 
-The expected luminosity at the \glspl{ip} can be calculated from the machine and beam parameters as
+For acceleration and longitudinal focusing, a system of eight superconducting cavity per beam with a resonance frequency of $400.8~\mathrm{MHz}$ are installed. This matches the 35640~harmonic mode of the beam revolution frequency of $f_\mathrm{rev}=11'245~\mathrm{Hz}$. The cavity system yields an energy gain per turn of 485~keV which results in an acceleration time of about 20~min from injection to the maximum beam energy.
+
+The expected luminosity at the \glspl{ip} can be calculated from the introduced machine and beam parameters as
 
 \begin{equation}
-L=\frac{N_\mathrm{p}^{2}n_\mathrm{b}f\gamma}{4\pi\sigma^{2}}\cdot F
+L=\frac{N_\mathrm{p}^{2}n_\mathrm{b}f_\mathrm{rev}}{4\pi\sigma^{2}}\cdot F,\qquad F=1\Bigg/\sqrt{1+\Big(\frac{\theta\cdot\sigma_{z}}{2\sigma^\star}\Big)^2}
 \end{equation}
 
-where $N_\mathrm{p}$ denotes the number of protons per bunch, $n_\mathrm{b}$ the number of colliding bunches, and $f$ the beam revolution frequency. The factor 
+where $N_\mathrm{p}$ denotes the number of protons per bunch and $n_\mathrm{b}$ the number of colliding bunches. The factor $F$ accounts for a reduction in luminosity due to the slightly tilted beams by the crossing angle $\theta$.
 
-\begin{equation}
-F=1\Bigg/\sqrt{1+\Big(\frac{\theta\cdot\sigma_{z}}{2\sigma^\star}\Big)^2}
-\end{equation}
+In 2016, the design luminosity of $10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$ was surpassed through various new developments~\cite{Team:2229040}. In detail these were a decrease of the transverse emittance, a smaller longitudinal bunch size, a better focusing at the \glspl{ip} down to $\beta^\star=0.4~\mathrm{cm}$, and a smaller crossing angle compared to the design values. This resulted in a peak luminosity of $1.5\cdot 10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$. An overview of the peak luminosity in recorded pp collisions by the CMS experiment from 2010--2016 is shown in Fig.~\ref{fig:experiment-peaklumi}. More information on the \gls{lhc} and its design parameters can be found in Ref.~\cite{Evans:2008zzb}.
 
-accounts for a reduction in luminosity due to the crossing angle $\theta$ of the beams. frequency, np,->lumi
+\myfigure{\label{fig:experiment-peaklumi}Peak luminosity in proton-proton collision data recored by the CMS experiment. The figure is taken from the public luminosity result webpage of CMS~\cite{lumipublic}.}{
+\includegraphics[width=0.95\textwidth]{figures/experiment/peak_lumi_pp.pdf}
+}
 
-Lumi, pileup
+During a bunch crossing multiple proton-proton interactions can occur which are referred to as \gls{pu}. Their number on average is proportional to the luminosity and the total inelastic pp cross section. In 2012, an average number of 21 pileup interactions has been observed in 8~\TeV pp collisions. This increased in 2016 due to the higher luminosity and cross section at 13~\TeV to ??? interaction per bunch crossing. \todo{no pu number found}
 
-
-
-
-
- yielding a magnetic field of 
-
- that is accommodate both beam pipes in a common twin-bore design.
-
-
-
-A gap of ? allows to ramp up kicker magnets for injection or beam dump.
-
-
-
-
-The \gls{lhc} ring consists of eight straight and eight curved sections. 
-
-Two transfer tunnels connect the \gls{lhc} to the accelerator complex at \gls{cern}.
-
-beta, emittance, lumi, beam profile, pipe vaccum, collimator, cavities, beam dump, monitoring, scrubbing, quench training, energy measurement
-
-More information on the \gls{lhc} can be found in Ref.~\cite{Evans:2008zzb}.
+\todo{add short overview of operation and energies and delivered lumis}
 
 %##############################################
 \subsection{Accelerator complex}
 %##############################################
 
-\myfigure{The accelerator complex at CERN. The figure is taken in parts from Ref.~\cite{Mobs:2225847}.}{
+An overview of the accelerator complex at \gls{cern} is given in Fig.~\ref{fig:experiment-accelerator-complex} which includes the systems for filling the \gls{lhc} with bunches of protons or lead ions.
+
+\myfigure{\label{fig:experiment-accelerator-complex}The accelerator complex at CERN. The figure is taken from Ref.~\cite{Mobs:2225847}.}{
 \includegraphics[width=0.99\textwidth]{figures/experiment/CERN_accelerator_complex.jpg}
 }
 
+The production sequence of proton bunches for the \gls{lhc} is as follows. In the linear accelerator ``Linac~2'', hydrogen atoms are stripped of their electron through an electric field. The remaining protons are accelerated to a momentum of 50~\MeV and injected into the \glsreset{psb}\gls{psb}. It consists of four vertically separated beam pipes which allow multi-turn injections to increase the bunch intensity which however also increases the transverse emittance~\cite{doi:10.1142/S0217751X13300196}. After accelerating the protons to 1.4~\GeV, the beams are injected into the \glsreset{ps}\gls{ps}. Here the required bunch spacing of 25~ns is formed. Until recently the standard procedure was to use only six bunches from two \gls{psb} cycles and split them first by three, accelerate them to 25~\GeV, and then split again into two twice to produce 72~bunches with the required spacing~\cite{Benedikt:2001ar}. A new scheme called \gls{bcms} utilizes all eight bunches from two \gls{psb} cycles which are first narrowed and then combined to four followed by the same splitting and acceleration procedure as before which results in 48~bunches with higher intensity and lower transverse emittance~\cite{bcms}. Finally, the protons are accelerated in the \glsreset{sps}\gls{sps} to the \gls{lhc} injection energy of 450~GeV.
 
-
-momentum compaction
+\todo{gap? beam life and filling time?}
 
 %##############################################
 \subsection{Experiments}
