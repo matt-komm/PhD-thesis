@@ -230,10 +230,10 @@
 \setkomafont{section}{\normalfont\LARGE\selectfont\numberfont}
 
 \renewcommand*{\subsectionformat}{\numberfont\thesubsection.\ }
-\setkomafont{subsection}{\normalfont\Large\selectfont\numberfont}
+\setkomafont{subsection}{\normalfont\LARGE\selectfont\numberfont}
 
 \renewcommand*{\subsubsectionformat}{\numberfont\thesubsubsection.\ }
-\setkomafont{subsubsection}{\normalfont\large\selectfont\numberfont}
+\setkomafont{subsubsection}{\normalfont\LARGE\selectfont\numberfont}
 
 \RedeclareSectionCommands[
   beforeskip=0.9\baselineskip,
@@ -246,7 +246,10 @@
 
 %Schicke Bild- und Tabellenbeschreibungen
 
-\usepackage[format=plain,indention=0.0cm,labelsep=period]{caption} %use same as for parindent
+\usepackage[format=plain,indention=0.0cm]{caption} %use same as for parindent
+\newlength{\letterheight}
+\settoheight{\letterheight}{T}
+\DeclareCaptionLabelSeparator{vline}{\hspace{1.ex}{\color{gray}\rule{\myrulewidth}{\letterheight}}\hspace{1.2ex}}
 %\usepackage{subcaption}
 \usepackage{subfig}
 %\captionsetup{width=0.93\textwidth}
@@ -256,9 +259,9 @@
 \renewcommand{\thesubfigure}{\alph{subfigure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
-\captionsetup[figure]{font={small,stretch=1.12},aboveskip=0.5\baselineskip,belowskip=0\baselineskip}
-\captionsetup[table]{font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
-\captionsetup[subfloat]{font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
+\captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.5\baselineskip,belowskip=0\baselineskip}
+\captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
+\captionsetup[subfloat]{labelsep=vline,font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
 
 \setlength\floatsep{1.\baselineskip plus 3pt minus 2pt}
 \setlength\textfloatsep{1.\baselineskip plus 3pt minus 2pt}
