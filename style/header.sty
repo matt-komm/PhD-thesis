@@ -7,6 +7,7 @@
 \usepackage{ifthen}
 \usepackage{amsmath}
 
+
 %%FONTS
 
 
@@ -145,9 +146,9 @@
 \clearscrheadfoot
 \ihead{\headmark}
 \ohead[\pagemark]{\pagemark}
-\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{gray}\chaptername\ \thechapter.}\ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{{\numberfont\color{gray}\thesection.}\ #1}}
-\renewcommand{\subsectionmark}[1]{\markright{{\numberfont\color{gray}\thesubsection.}\ #1}}
+\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{gray}\chaptername\ \thechapter}\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{{\numberfont\color{gray}\thesection}\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{{\numberfont\color{gray}\thesubsection}\ #1}}
 \fboxrule=\myrulewidth
 %\ohead[\vspace{-0.6pt}\fcolorbox{gray}{gray!30}{\parbox[c][][c]{0.6cm}{\pagemark}}]{\vspace{-0.6pt}\fcolorbox{gray}{gray!30}{\parbox[c][][c]{0.6cm}{\pagemark}}}
 
@@ -204,17 +205,18 @@
         %\parbox[c][2cm][c]{0.15\textwidth}{\centering\textls*[130]{\LARGE\textsf{\chaptername}}}\\
             %\\[0.35cm]
         
-        \hspace{0.03\textwidth}\parbox[c][2.cm][c]{0.169\textwidth}{
+        \hspace{0.03\textwidth}\parbox[c][2.cm][c]{0.129\textwidth}{
             %\color{gray}
-            \centering\textls*[130]{\LARGE\textsf{\chaptername}}
-            \vfill
-            \fontsize{40}{0}\numberfont{\thechapter}
+            %\centering\textls*[130]{\LARGE\textsf{\chaptername}}
+            %\vfill
+            \fontsize{40}{0}\numberfont{\thechapter.}
         }
-        \hspace{0.05\textwidth}\parbox[c][][c]{5.\myrulewidth}{
-            %\color{gray}
-            \rule{1.5\myrulewidth}{2.5cm}
+        \hspace{0.02\textwidth}\parbox[c][][c]{5.\myrulewidth}{
+            \color{gray}
+            %\rule{2\myrulewidth}{2.5cm}
+            \rule{3\myrulewidth}{1.1cm}
         }
-        \hspace{0.08\textwidth}\parbox[c][][c]{0.66\textwidth}{\begin{flushleft}\usekomafont{chapter} #1\end{flushleft}}
+        \hspace{0.12\textwidth}\parbox[c][][c]{0.68\textwidth}{\begin{flushleft}\usekomafont{chapter} #1\end{flushleft}}
         %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
         %\\[0.3cm]
         %{\color{gray}\rule{\textwidth}{\myrulewidth}}
@@ -226,13 +228,8 @@
 \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace*{0.7cm}}
 
-\renewcommand*{\sectionformat}{\numberfont\thesection.\ }
 \setkomafont{section}{\normalfont\LARGE\selectfont\numberfont}
-
-\renewcommand*{\subsectionformat}{\numberfont\thesubsection.\ }
 \setkomafont{subsection}{\normalfont\LARGE\selectfont\numberfont}
-
-\renewcommand*{\subsubsectionformat}{\numberfont\thesubsubsection.\ }
 \setkomafont{subsubsection}{\normalfont\LARGE\selectfont\numberfont}
 
 \RedeclareSectionCommands[
@@ -240,6 +237,8 @@
   afterskip=0.01\baselineskip
 ]{section,subsection,subsubsection}
 
+
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\quad} %dot after the(sub)section
 
 %strecke zeilenabstände im table
 \renewcommand{\arraystretch}{1.4}
@@ -249,12 +248,12 @@
 \usepackage[format=plain,indention=0.0cm]{caption} %use same as for parindent
 \newlength{\letterheight}
 \settoheight{\letterheight}{T}
-\DeclareCaptionLabelSeparator{vline}{\hspace{1.ex}{\color{gray}\rule{\myrulewidth}{\letterheight}}\hspace{1.2ex}}
+\DeclareCaptionLabelSeparator{vline}{.\hspace{1.ex}{\color{gray}\rule{2\myrulewidth}{\letterheight}}\hspace{1.6ex}}
 %\usepackage{subcaption}
 \usepackage{subfig}
 %\captionsetup{width=0.93\textwidth}
 
-\setkomafont{captionlabel}{\numberfont\small}
+\setkomafont{captionlabel}{\bfseries\numberfont\small}
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\thesubfigure}{\alph{subfigure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}

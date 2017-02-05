@@ -16,21 +16,21 @@ Additional about 3'800 single aperture and 1'000 twin aperture magnets are insta
 \beta(x)\approx\beta^\star+\frac{x^2}{\beta^\star}.
 \end{equation}
 
-In design, the beams can be squeezed to $\beta^\star=0.55~\mathrm{m}$ at the two high luminosity \glspl{ip}. The transverse beam size is given as $\sigma^{\star}=\sqrt{\epsilon_\mathrm{n}\cdot\beta^\star/\gamma}\approx17\upmu\mathrm{m}$ for $\gamma=E_\mathrm{p}/m_\mathrm{p}=7000$ where $\epsilon_\mathrm{n}$ denotes the normalized beam emittance. It is a measure of the phase space area occupied by the particles within the beam which is constant following Liouville's theorem. The emittance cannot be larger than $\epsilon_\mathrm{n}>3.75~\upmu\mathrm{m}\cdot\mathrm{rad}$ in order to not loose significant amounts of the beam in the \gls{lhc} arcs where $\beta(x)$ is the largest.
+In design, the beams can be squeezed to $\beta^\star=0.55~\mathrm{m}$ at the two high luminosity \glspl{ip}. The transverse beam size is given as $d^{\star}=\sqrt{\epsilon_\mathrm{n}\cdot\beta^\star/\gamma}\approx17\upmu\mathrm{m}$ for $\gamma=E_\mathrm{p}/m_\mathrm{p}=7000$ where $\epsilon_\mathrm{n}$ denotes the normalized beam emittance. It is a measure of the phase space area occupied by the particles within the beam which is constant following Liouville's theorem. The emittance cannot be larger than $\epsilon_\mathrm{n}>3.75~\upmu\mathrm{m}\cdot\mathrm{rad}$ in order to not loose significant amounts of the beam in the \gls{lhc} arcs where $\beta(x)$ is the largest.
 
 For acceleration and longitudinal focusing, a system of eight superconducting cavity per beam with a resonance frequency of $400.8~\mathrm{MHz}$ are installed. This matches the 35640~harmonic mode of the beam revolution frequency of $f_\mathrm{rev}=11'245~\mathrm{Hz}$. The cavity system yields an energy gain per turn of 485~keV which results in an acceleration time of about 20~min from injection to the maximum beam energy.
 
 The expected luminosity at the \glspl{ip} can be calculated from the introduced machine and beam parameters as
 
 \begin{equation}
-L=\frac{N_\mathrm{p}^{2}n_\mathrm{b}f_\mathrm{rev}}{4\pi\sigma^{2}}\cdot F,\qquad F=1\Bigg/\sqrt{1+\Big(\frac{\theta\cdot\sigma_{z}}{2\sigma^\star}\Big)^2}
+L=\frac{N_\mathrm{p}^{2}n_\mathrm{b}f_\mathrm{rev}}{4\pi\,d^{\star 2}}\cdot F,\qquad F=1\Bigg/\sqrt{1+\Big(\frac{\theta\cdot d_{z}}{2\,d^\star}\Big)^2}
 \end{equation}
 
 where $N_\mathrm{p}$ denotes the number of protons per bunch and $n_\mathrm{b}$ the number of colliding bunches. The factor $F$ accounts for a reduction in luminosity due to the slightly tilted beams by the crossing angle $\theta$.
 
 In 2016, the design luminosity of $10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$ was surpassed through various new developments~\cite{Team:2229040}. In detail these were a decrease of the transverse emittance, a smaller longitudinal bunch size, a better focusing at the \glspl{ip} down to $\beta^\star=0.4~\mathrm{cm}$, and a smaller crossing angle compared to the design values. This resulted in a peak luminosity of $1.5\cdot 10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$. An overview of the peak luminosity in recorded pp collisions by the CMS experiment from 2010--2016 is shown in Fig.~\ref{fig:experiment-peaklumi}. More information on the \gls{lhc} and its design parameters can be found in Ref.~\cite{Evans:2008zzb}.
 
-\myfigure{\label{fig:experiment-peaklumi}Peak luminosity in proton-proton collision data recored by the CMS experiment. The figure is taken from the public luminosity result webpage of CMS~\cite{lumipublic}.}{
+\myfigure{\label{fig:experiment-peaklumi}Peak luminosity in proton-proton collision data per day recored by the CMS experiment. The figure is taken from the public luminosity result webpage of CMS~\cite{lumipublic}.}{
 \includegraphics[width=0.95\textwidth]{figures/experiment/peak_lumi_pp.pdf}
 }
 
@@ -60,7 +60,7 @@ The production sequence of proton bunches for the \gls{lhc} is as follows. In th
 \section{CMS experiment}
 %##############################################
 
-\myfigure{The figure is taken in parts from Ref.~\cite{Bayatian:2006zz}.}{
+\myfigure{The figure is taken from Ref.~\cite{Bayatian:2006zz}.}{
 \includegraphics[width=0.99\textwidth]{figures/experiment/CMS_overview.pdf}
 }
 
