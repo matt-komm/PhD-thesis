@@ -45,7 +45,7 @@ During a bunch crossing multiple proton-proton interactions can occur which are 
 An overview of the accelerator complex at \gls{cern} is given in Fig.~\ref{fig:experiment-accelerator-complex} which includes the systems for filling the \gls{lhc} with bunches of protons or lead ions.
 
 \myfigure{\label{fig:experiment-accelerator-complex}The accelerator complex at \gls{cern}. The figure is taken from Ref.~\cite{Mobs:2225847}.}{
-\includegraphics[width=0.99\textwidth]{figures/experiment/CERN_accelerator_complex.jpg}
+%\includegraphics[width=0.99\textwidth]{figures/experiment/CERN_accelerator_complex.jpg}
 }
 
 The production sequence of proton bunches for the \gls{lhc} is as follows. In the linear accelerator ``Linac~2'', hydrogen atoms are stripped of their electron through an electric field. The remaining protons are accelerated to a momentum of 50~\MeV and injected into the \glsreset{psb}\gls{psb}. It consists of four vertically separated beam pipes which allow multi-turn injections to increase the bunch intensity which however also increases the transverse emittance~\cite{doi:10.1142/S0217751X13300196}. After accelerating the protons to 1.4~\GeV, the beams are injected into the \glsreset{ps}\gls{ps}. Here the required bunch spacing of 25~ns is formed. Until recently the standard procedure was to use only six bunches from two \gls{psb} cycles and split them first by three, accelerate them to 25~\GeV, and then split each again by two twice to produce in total 72~bunches with the required spacing~\cite{Benedikt:2001ar}. A new scheme called \gls{bcms} was introduced in 2016. It utilizes all eight bunches from two \gls{psb} cycles which are first narrowed and then combined to four followed by the same splitting and acceleration procedure as before which results in 48~bunches with higher intensity and lower transverse emittance~\cite{bcms}. Finally, the protons are injected and accelerated in the \glsreset{sps}\gls{sps} up to the \gls{lhc} injection energy of 450~GeV.
@@ -63,7 +63,7 @@ Detailed information on the \gls{cms} detector are given in Sec.~\ref{sec:experi
 
 The two other major detectors are the \gls{alice}~\cite{Aamodt:2008zz} and \gls{lhcb}~\cite{Alves:2008zz} experiments which are more specialized. Their luminosity is intentionally leveled down by displacing the beams slightly at their \glspl{ip}~\cite{Follin:1955354}. The lower luminosity is required to reduces the number of pileup interactions and to prevent damage to the detectors through radiation. The \gls{alice} experiment focuses on heavy ion collisions in which the properties of quark-gluon plasma can be studied. The goals of the \gls{lhcb} experiment are precision measurements of \gls{cp}-violation and searches for rare decays of B~hadrons.
 
-Three additional smaller experiments, \gls{lhcf}, \gls{totem}, and \gls{moedal}, have been installed at the \gls{lhc} using parts of the forward scattered particles from the \glspl{ip} of the \gls{atlas}, \gls{cms}, and \gls{lhcb} detectors respectively. 
+Three additional smaller experiments, \gls{lhcf}~\cite{Adriani:2008zz}, \gls{totem}~\cite{Anelli:2008zza}, and \gls{moedal}~\cite{Pinfold:2009oia}, have been installed at the \gls{lhc} using parts of the forward scattered particles from the \glspl{ip} of the \gls{atlas}, \gls{cms}, and \gls{lhcb} detectors respectively. 
 
 
 %##############################################
@@ -71,9 +71,26 @@ Three additional smaller experiments, \gls{lhcf}, \gls{totem}, and \gls{moedal},
 %##############################################
 \label{sec:experiment-cms}
 
-\myfigure{The figure is taken from Ref.~\cite{Bayatian:2006zz}.}{
+The \gls{cms} experiment is a multipurpose particle detector whose goal is to record pp and heavy ion collisions at the highest luminosities the \gls{lhc} can deliver. It consists of a superconducting solenoid and multiple subdetectors shown in Fig.~\ref{fig:experiment-cms} to track, reconstruct, and identify particles which traverse the detector from collisions each bunch crossing.
+
+\myfigure{\label{fig:experiment-cms}Overview of the \gls{cms} subcomponents. The figure is taken from Ref.~\cite{Chatrchyan:2008aa}.}{
 %\includegraphics[width=0.99\textwidth]{figures/experiment/CMS_overview.pdf}
 }
+
+The detector is shaped in cylindrical layers in the barrel region and disks in the forward regions around the beam pipe with an overall length of 21.6~m and a diameter of 14.6~m. A coordinate system has been established whose center is located at the nominal \gls{ip}. It is oriented such that the y-axis points upwards, the x-axis points inwards to the center of the \gls{lhc} ring, and the z-axis points along the beam pipe. The azimuthal angle $\phi$ is defined in the transverse plane, spanned by x and y, which lies perpendicular to the beam pipe. For a particle originating from the center with an energy $E$ and momentum $p_\mathrm{z}$ along the z-axis one defines the rapidity as
+
+\begin{equation}
+y=\frac{1}{2}\ln\left(\frac{E+p_\mathrm{z}}{E-p_\mathrm{z}}\right). \label{eq:experiment-rapidity}
+\end{equation}
+
+The advantage opposed to using the angle $\theta$ of a particle measured from the z-axis is that differences of rapidities are invariant under Lorentz-boosts. In the case of a massless particle~($E=|\vec{p}|$), the pseudorapidity is given as
+
+\begin{equation}
+\eta=\mathrm{artanh}\left(\frac{p_\mathrm{z}}{|\vec{p}|}\right)=-\ln\left[\tan\left(\frac{\theta}{2}\right)\right]. \label{eq:experiment-pseudorapidity}
+\end{equation}
+
+In the following, the subcomponents of \gls{cms} and their purpose are briefly described. More information can be found in Ref.~\cite{Chatrchyan:2008aa}.
+
 
 %##############################################
 \subsection{Magnet}
