@@ -89,6 +89,7 @@
 \usepackage{afterpage}
 \usepackage{graphicx,graphics}
 \usepackage{tocloft}
+\usepackage{mdframed}
 \usepackage{multirow}
 \usepackage{setspace}
 \usepackage[Symbolsmallscale]{upgreek} % for upright greek symbols
@@ -198,6 +199,18 @@
 %    }
 %}
 
+\mdfdefinestyle{chstyle}{%
+    linewidth=2\myrulewidth,
+    leftmargin=0pt,
+    innerleftmargin=0.06\textwidth,
+    rightmargin=0pt,
+    innerrightmargin=0pt,
+    linecolor=gray,
+    topline=false,
+    rightline=false,
+    bottomline=false,
+    leftline=true
+}
 \def\@makechapterhead#1{
      \parbox[t][][t]{0.99\textwidth}{
         \chapterheadstartvskip
@@ -205,18 +218,24 @@
         %\parbox[c][][c]{0.99\textwidth}{\color{gray}\hrulefill\textls*[140]{\LARGE\textsf{\chaptername}}}
         %\\[0.35cm]
         
-        \hspace{0.03\textwidth}\parbox[c][2.cm][c]{0.129\textwidth}{
+        \hspace{0.03\textwidth}\parbox[c][2.cm][c]{0.119\textwidth}{
             %\color{gray}
             %\textls*[130]{\LARGE\textsf{\chaptername}}
             %\vfill
             \fontsize{40}{0}\numberfont{\thechapter.}
         }
-        \hspace{0.04\textwidth}\parbox[c][][c]{5.\myrulewidth}{
-            \color{gray}
-            %\rule{2\myrulewidth}{2.5cm}
-            \rule{2\myrulewidth}{1.6cm}
+        %\hspace{0.04\textwidth}\parbox[c][][c]{5.\myrulewidth}{
+        %    \color{gray}
+        %    %\rule{2\myrulewidth}{2.5cm}
+        %    \rule[0.08cm]{2\myrulewidth}{1.35cm}
+        %}
+        \hspace{0.06\textwidth}\parbox[c][][c]{0.78\textwidth}{
+            \begin{mdframed}[style=chstyle]
+            \begin{flushleft}
+            \textls*[180]{\color{gray}\Large\textsf{\chaptername}}\\[0.2cm] \usekomafont{chapter} #1
+            \end{flushleft}
+            \end{mdframed}
         }
-        \hspace{0.08\textwidth}\parbox[c][][c]{0.71\textwidth}{\begin{flushleft}\textls*[180]{\color{gray}\Large\textsf{\chaptername}}\\ \usekomafont{chapter} #1\end{flushleft}}
         %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
         %\\[0.3cm]
         %{\color{gray}\rule{\textwidth}{\myrulewidth}}
