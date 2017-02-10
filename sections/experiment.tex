@@ -89,7 +89,7 @@ The advantage of the rapidity over the usage of the angle $\theta$ measured from
 \eta=\mathrm{artanh}\left(\frac{p_\mathrm{z}}{|\vec{p}|}\right)=-\ln\left[\tan\left(\frac{\theta}{2}\right)\right]. \label{eq:experiment-pseudorapidity}
 \end{equation}
 
-In the following, the components of \gls{cms} are briefly described and their purpose is motivated. More information can be found in Ref.~\cite{Chatrchyan:2008aa}.
+In the following, the components of \gls{cms} are briefly described and their purpose is motivated. More information can be found in Ref.~\cite{Bayatian:922757,Chatrchyan:2008aa}.
 
 
 %##############################################
@@ -120,18 +120,29 @@ Pixel modules are located next to the beam pipe where the particle flux is parti
 
 Silicon strip modules are installed in the other parts of the inner tracking system. The strip modules allow to measure a local 1D hit position perpendicular to the strip direction. A few layers and disks contain however double-sided strip modules as indicated in Fig.~\ref{fig:experiment-tracker}. The modules are tilted with an angle of 0.1~rad with respect to each other which allows to reconstruct matched 2D hits by combining 1D hits from both sides. The modules are organized in four inner barrel layers~(\gls{tib}) at radii of 20\range50~cm; six outer barrel layers~(\gls{tob}) at radii of 55\range116~cm; three inner endcap disks~(\gls{tid}); and nine outer endcap disks~(\gls{tec}). In the barrel the strip directions on each module are aligned along the z-axis with a strip-to-strip distance that varies between $80\range183~\upmu\mathrm{m}$. In the endcap disks, the modules are wedge-shaped with their strips running along the radial axis whose distance ranges between $100\range184~\upmu\mathrm{m}$.
 
-The pixel and strip sensors are readout by \glspl{asic} which allow to apply programmable signal amplifications and offset corrections. Their analog signal is transmitted via optical links to the \glspl{fed} where it is digitalized. The modules are cooled down and operated below $-10^\circ\mathrm{C}$ to counteract the  heat produced by the electronics and to decrease the noise level through leakage currents. \todo{is this fully correct?}
+The pixel and strip sensors are readout by \glspl{asic} which allow to apply programmable signal amplifications and offset corrections. Their analog signal is transmitted via optical links to the \glspl{fed} where it is digitalized. The modules are cooled down and operated below $-10^\circ\mathrm{C}$ to counteract the heat produced by the electronics and to improve the lifetime. \todo{is this fully correct?}
 %This also improves their lifetime since at lower temperatures defects in the silicon from ionizing particles are less.
 
 %##############################################
 \subsection{Electromagnetic calorimeter}
 %##############################################
 
+The electromagnetic calorimeter~(\gls{ecal}) encloses the inner tracker and covers a pseudorapidity range of $|\eta|<3$. It consists of scintillating lead tungstate $\mathrm{PbWO}_{4}$ crystals to detect electromagnetic showers emitted from charged or neutral particles, especially from photons and electrons, in the crystals. Figure~\ref{fig:experiment-ecal} displays an overview of its layout. In total, 61'200 crystals are installed in the barrel and 7'324 in each of the two endcaps.
 
+\myfigure{\label{fig:experiment-ecal}Overview of the \gls{cms} electromagnetic calorimeter system. The figure is taken from Ref.~\cite{Bayatian:922757}.}{
+\includegraphics[width=0.99\textwidth]{figures/experiment/CMS_ecal.pdf}
+}
+
+The crystals were chosen for their high density of $8.28~\mathrm{g}/\mathrm{cm}^{3}$ and short radiation length of 0.89~cm. Additional the expected spatial extend of an electromagnetic shower within the crystals is given by the Moli\`ere radius and amounts to only 2.2~cm. This allows for a fine granularity and compact calorimeter. The crystals emitted about 4.5 photoelectrons per \MeV with a wavelength of 420\range430~nm. These are collected by \glspl{apd} in the barrel. In the endcaps \glspl{vpt} are deployed instead which are specifically designed to operated also in the axial magnetic field.
 
 %##############################################
 \subsection{Hadronic calorimeter}
 %##############################################
+
+\myfigure{\label{fig:experiment-hcal}Overview of the \gls{cms} hadronic calorimeter system. The figure is taken from Ref.~\cite{Chatrchyan:2008aa}.}{
+\includegraphics[width=0.99\textwidth]{figures/experiment/CMS_hcal.pdf}
+}
+
 
 %##############################################
 \subsection{Muon systems}
