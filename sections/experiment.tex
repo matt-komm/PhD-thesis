@@ -83,13 +83,13 @@ The detector is shaped cylindrically by layers in the barrel region and endcap d
 y=\frac{1}{2}\ln\left(\frac{E+p_\mathrm{z}}{E-p_\mathrm{z}}\right). \label{eq:experiment-rapidity}
 \end{equation}
 
-The advantage of the rapidity over the usage of the angle $\theta$ measured from the z-axis is that differences of rapidities are invariant under Lorentz-boosts. In the case of a massless particle~($E=|\vec{p}|$), the rapidity is equal to the pseudorapidity which is given as
+The advantage of the rapidity over the usage of the angle $\theta$ measured from the z-axis is that differences of rapidities are invariant under Lorentz-boosts. In the case of a massless particle, the rapidity is equal to the pseudorapidity which is given as
 
 \begin{equation}
 \eta=\mathrm{artanh}\left(\frac{p_\mathrm{z}}{|\vec{p}|}\right)=-\ln\left[\tan\left(\frac{\theta}{2}\right)\right]. \label{eq:experiment-pseudorapidity}
 \end{equation}
 
-In the following, the components of \gls{cms} are briefly described and their purpose is motivated. More information can be found in Ref.~\cite{Bayatian:922757,Chatrchyan:2008aa}.
+In the following, the components of \gls{cms} are briefly described and their purpose is motivated. More information can be found in Ref.~\cite{Chatrchyan:2008aa,Bayatian:922757}.
 
 
 %##############################################
@@ -127,13 +127,15 @@ The pixel and strip sensors are readout by \glspl{asic} which allow to apply pro
 \subsection{Electromagnetic calorimeter}
 %##############################################
 
-The electromagnetic calorimeter~(\gls{ecal}) encloses the inner tracker and covers a pseudorapidity range of $|\eta|<3$. It consists of scintillating lead tungstate $\mathrm{PbWO}_{4}$ crystals to detect electromagnetic showers emitted from charged or neutral particles, especially from photons and electrons, in the crystals. Figure~\ref{fig:experiment-ecal} displays an overview of its layout. In total, 61'200 crystals are installed in the barrel and 7'324 in each of the two endcaps.
+The electromagnetic calorimeter~(\gls{ecal}) encloses the inner tracker and covers a pseudorapidity range of $|\eta|<3$. It consists of scintillating lead tungstate $\mathrm{PbWO}_{4}$ crystals to detect electromagnetic showers emitted from charged or neutral particles (especially photons and electrons) in the crystals. Figure~\ref{fig:experiment-ecal} displays an overview of its layout. In total, 61'200 crystals are installed in the barrel and 7'324 in each of the two endcaps.
 
 \myfigure{\label{fig:experiment-ecal}Overview of the \gls{cms} electromagnetic calorimeter system. The figure is taken from Ref.~\cite{Bayatian:922757}.}{
-\includegraphics[width=0.99\textwidth]{figures/experiment/CMS_ecal.pdf}
+\includegraphics[width=0.75\textwidth]{figures/experiment/CMS_ecal.pdf}
 }
 
-The crystals were chosen for their high density of $8.28~\mathrm{g}/\mathrm{cm}^{3}$ and short radiation length of 0.89~cm. Additional the expected spatial extend of an electromagnetic shower within the crystals is given by the Moli\`ere radius and amounts to only 2.2~cm. This allows for a fine granularity and compact calorimeter. The crystals emitted about 4.5 photoelectrons per \MeV with a wavelength of 420\range430~nm. These are collected by \glspl{apd} in the barrel. In the endcaps \glspl{vpt} are deployed instead which are specifically designed to operated also in the axial magnetic field.
+The crystals were chosen for their high density of $8.28~\mathrm{g}/\mathrm{cm}^{3}$ and short radiation length of 0.89~cm. In addition, the expected spatial extend of an electromagnetic shower within the crystals, the so-called Moli\`ere radius, amounts to only 2.2~cm. This allows for a compact calorimeter with a fine granularity, a good position resolution, and a good shower separation. The crystals emitted about 4.5 photoelectrons per \MeV with a wavelength of 420\range430~nm. These are collected by \glspl{apd} in the barrel. In the endcaps \glspl{vpt} are deployed instead which are specifically designed to operated also in the axial magnetic field.
+
+preshower, readout, 
 
 %##############################################
 \subsection{Hadronic calorimeter}
@@ -148,6 +150,10 @@ The crystals were chosen for their high density of $8.28~\mathrm{g}/\mathrm{cm}^
 \subsection{Muon systems}
 %##############################################
 DT/RPC/CSC
+
+\myfigure{\label{fig:experiment-muons}Overview of the \gls{cms} muon system. The figure is taken from Ref.~\cite{Chatrchyan:2013sba}.}{
+\includegraphics[width=0.99\textwidth]{figures/experiment/CMS_muons.pdf}
+}
 
 %##############################################
 \subsection{Data acquisition}
