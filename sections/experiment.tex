@@ -116,21 +116,18 @@ The system consists of various parts with different module types as shown in Fig
 \includegraphics[width=0.99\textwidth]{figures/experiment/CMS_tracker.pdf}
 }
 
-Pixel modules are located next to the beam pipe where the particle flux is particularly high. They are installed in three barrel layers~(\gls{bpx}) at radii of 4.4, 7.3, and 10.3~cm, and in two endcap disks~(\gls{fpx}) per side. A pixel module has a cell size of $100\times150~\upmu\mathrm{m}^{2}$ which allows local 2D hit position measurements. Local positions can be transformed into global 3D positions by accounting for the surface orientation of each module. The channel occupancy of the pixel subdetector which is defined as the fraction of readout channels yielding a signal has been measured in data to range between 0.002\range0.02\% only~\cite{Chatrchyan:2014fea}. This facilitates the overall search for particles trajectories by generating seeds from precise hits on the pixel modules.
+Pixel modules are located next to the beam pipe where the particle flux is particularly high. They are installed in three barrel layers~(\gls{bpx}) at radii of 4.4, 7.3, and 10.3~cm, and in two endcap disks~(\gls{fpx}) per side. A pixel module has a cell size of $100\times150~\upmu\mathrm{m}^{2}$ which allows local 2D hit position measurements. Local positions are transformed into global 3D positions by accounting for the surface orientation of each module. The channel occupancy of the pixel subdetector which is defined as the fraction of active readout channels has been measured in data to range between 0.002\range0.02\% only~\cite{Chatrchyan:2014fea}. This facilitates the overall search for particles trajectories by generating seeds from precise hits on the pixel modules.
 
-In the other parts of the inner tracking system silicon strip modules are installed. The strip modules allow to measure a local 1D hit position perpendicular to the strip direction. However, a few layers and disks contain glued double-sided strip modules with an angle of 0.1~rad which allow to reconstruct matched 2D hits by combining 1D hits from both sides as indicated in Fig.~\ref{fig:experiment-tracker}. The modules are organized in four inner barrel layers~(\gls{tib}) at radii of 20\range50~cm; six outer barrel layers~(\gls{tob}) at radii of 55\range116~cm; three inner endcap disks~(\gls{tid}); nine outer endcap disks~(\gls{tec}). In the barrel the strip directions on each module are aligned along the z-axis with a strip-to-strip distance that varies between $80\range183~\upmu\mathrm{m}$. In the endcap disks, the modules are wedge-shaped with their strips running along the radial axis whose distance ranges between $100\range184~\upmu\mathrm{m}$.  ???.  
+Silicon strip modules are installed in the other parts of the inner tracking system. The strip modules allow to measure a local 1D hit position perpendicular to the strip direction. A few layers and disks contain however double-sided strip modules as indicated in Fig.~\ref{fig:experiment-tracker}. The modules are tilted with an angle of 0.1~rad with respect to each other which allows to reconstruct matched 2D hits by combining 1D hits from both sides. The modules are organized in four inner barrel layers~(\gls{tib}) at radii of 20\range50~cm; six outer barrel layers~(\gls{tob}) at radii of 55\range116~cm; three inner endcap disks~(\gls{tid}); and nine outer endcap disks~(\gls{tec}). In the barrel the strip directions on each module are aligned along the z-axis with a strip-to-strip distance that varies between $80\range183~\upmu\mathrm{m}$. In the endcap disks, the modules are wedge-shaped with their strips running along the radial axis whose distance ranges between $100\range184~\upmu\mathrm{m}$.
 
-The pixel and strip sensors are readout by 
-
-
-cooling, channel readout electronics, de/dx
-
-
-\cite{Chatrchyan:2014fea}
+The pixel and strip sensors are readout by \glspl{asic} which allow to apply programmable signal amplifications and offset corrections. Their analog signal is transmitted via optical links to the \glspl{fed} where it is digitalized. The modules are cooled down and operated below $-10^\circ\mathrm{C}$ to counteract the  heat produced by the electronics and to decrease the noise level through leakage currents. \todo{is this fully correct?}
+%This also improves their lifetime since at lower temperatures defects in the silicon from ionizing particles are less.
 
 %##############################################
 \subsection{Electromagnetic calorimeter}
 %##############################################
+
+
 
 %##############################################
 \subsection{Hadronic calorimeter}
