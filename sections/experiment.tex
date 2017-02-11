@@ -98,7 +98,7 @@ In the following, the components of \gls{cms} are briefly described and their pu
 
 The solenoid magnet is a crucial part of the \gls{cms} detector. It enables momentum measurements of charged particles by analyzing their curved trajectories in the inner barrel by the tracker and in the outer return flux by the muon systems. Its design was particularly motivated to provide a good resolution of muon momenta and invariant masses in searches for new resonances like the at that time undiscovered Higgs boson decaying to four muons~\cite{Acquistapace:1997fm}. \todo{write better}
 
-The magnet consists of four layers of superconducting \gls{nbti} windings. It is placed in a cold mass within a vacuum tank which is cooled down to 4.6~K using liquid helium. In design it is capable of producing a homogeneous magnetic field of up to 4~T in its inner free bore with a length of 12.5~m and a diameter of 6~m. However, the magnet has been operated with a reduced current of 18164~A so far yielding a field of 3.8~T~\cite{Chatrchyan:2009si}. 
+The magnet consists of four layers of superconducting niobium-titanium~(\gls{nbti}) cables. It is placed in a cold mass within a vacuum tank which is cooled down to 4.6~K using liquid helium. In design it is capable of producing a homogeneous magnetic field of up to 4~T in its inner free bore with a length of 12.5~m and a diameter of 6~m. However, the magnet has been operated with a reduced current of 18164~A so far yielding a field of 3.8~T~\cite{Chatrchyan:2009si}. 
 
 To guide the return flux of the magnetic field, a large iron yoke has been installed. It consists of 12-sided barrel wheels in three layers with a length of 11~m and six endcap disks. \todo{total weight?}
 
@@ -127,28 +127,40 @@ The pixel and strip sensors are readout by \glspl{asic} which allow to apply pro
 \subsection{Electromagnetic calorimeter}
 %##############################################
 
-The electromagnetic calorimeter~(\gls{ecal}) encloses the inner tracker and covers a pseudorapidity range of $|\eta|<3$. It consists of scintillating lead tungstate $\mathrm{PbWO}_{4}$ crystals to detect electromagnetic showers emitted from charged or neutral particles (especially photons and electrons) in the crystals. Figure~\ref{fig:experiment-ecal} displays an overview of its layout. In total, 61'200 crystals are installed in the barrel and 7'324 in each of the two endcaps.
+The electromagnetic calorimeter~(\gls{ecal}) encloses the inner tracker and covers a pseudorapidity range of $|\eta|<3$. It consists of scintillating lead tungstate $\mathrm{PbWO}_{4}$ crystals to detect electromagnetic showers emitted from charged or neutral particles (especially photons and electrons) in the crystals. In particular, the capability to reconstruct a Higgs boson which decayed into two photons has been one of its design goals. 
+
+Figure~\ref{fig:experiment-ecal} displays an overview of its layout. In total, 61'200 crystals with the shape of a truncated pyramid are installed in the barrel and 7'324 in each of the two endcaps. The barrel crystals have a length of 2.3~cm and a rectangular front cross section of $22\time22~\mathrm{mm}^{2}$. In the endcaps the crystals have a similar shape with a length of 2.2~cm and a front cross section of $28.62\times28.62~\mathrm{mm}^{2}$. The crystals are slightly tilted such that no particle originating from the nominal \gls{ip} can pass the \gls{ecal} through a crack within its acceptance.
 
 \myfigure{\label{fig:experiment-ecal}Overview of the \gls{cms} electromagnetic calorimeter system. The figure is taken from Ref.~\cite{Bayatian:922757}.}{
 \includegraphics[width=0.75\textwidth]{figures/experiment/CMS_ecal.pdf}
 }
 
-The crystals were chosen for their high density of $8.28~\mathrm{g}/\mathrm{cm}^{3}$ and short radiation length of 0.89~cm. In addition, the expected spatial extend of an electromagnetic shower within the crystals, the so-called Moli\`ere radius, amounts to only 2.2~cm. This allows for a compact calorimeter with a fine granularity, a good position resolution, and a good shower separation. The crystals emitted about 4.5 photoelectrons per \MeV with a wavelength of 420\range430~nm. These are collected by \glspl{apd} in the barrel. In the endcaps \glspl{vpt} are deployed instead which are specifically designed to operated also in the axial magnetic field.
+The crystal material was chosen for its high density of $8.28~\mathrm{g}/\mathrm{cm}^{3}$, short radiation length of 0.89~cm, and radiation hardness. In addition, the spatial extend of an electromagnetic shower, the so-called Moli\`ere radius, amounts to only 2.2~cm. This yields a good position resolution and shower separation. The crystals emit about 4.5 photoelectrons per \MeV with a wavelength of 420\range430~nm. About 80~\% of the light is emitted within 25~ns after an electromagnetic shower occurred. The photons are collected and their signal is amplified by \glspl{apd} in the barrel. In the endcaps \glspl{vpt} are deployed instead which are specifically designed to operated also in the axial magnetic field.
 
-preshower, readout, 
+In front of the two \gls{ecal} endcaps, the preshower detector~(\gls{es}) is located which covers a pseudo rapidity range of $1.652<|\eta|<2.6$. The preshower allows to identify neutral pions and improves the identification and position of electrons and photons. It consists of two layers of lead radiators to initiate electromagnetic showers with a layer of silicon strip sensors after each radiator to measure the transverse profile of a shower.
 
 %##############################################
-\subsection{Hadronic calorimeter}
+\subsection{Hadron calorimeter}
 %##############################################
+
+The hadron calorimeter~(\gls{hcal}) is organized in four parts as shown in Fig.~\ref{fig:experiment-hcal}. In total it covers a pseudorapidity range of $|\eta|<5$. Its goal is to initiate and detect hadronic showers from particles such as protons, neutrons, kaons and pions which allows to measure their position and energy. Furthermore, it helps to determine the net missing transverse energy of an event since the only remaining particles from a collision that are not stopped by the \gls{hcal} are neutrinos and muons where the latter are however identified in the muon systems as discussed later in Sec.~\ref{sec:experiment-muon-systems}.
 
 \myfigure{\label{fig:experiment-hcal}Overview of the \gls{cms} hadronic calorimeter system. The figure is taken from Ref.~\cite{Chatrchyan:2008aa}.}{
 \includegraphics[width=0.99\textwidth]{figures/experiment/CMS_hcal.pdf}
 }
 
+The inner hadron calorimeter, consisting of a barrel~(\gls{hb}) and two endcap~(\gls{he}) regions, is located directly after the \gls{ecal} and extends up to the solenoid. The \gls{hb} and \gls{he} cover a pseudorapidity range of $|\eta|<3$. The \gls{hb} consists of 72 azimuthal wedges of brass absorber plates in 14 layers oriented along the z-axis with a thickness of 50.5~mm~(first eight) and 56.5~mm~(last six) respectively. For structural support two additional layers of 40~mm and 50.5~mm thick steel absorber plates are installed at the inner and outer rim respectively. Between the absorbers 17 plastic scintillators with a thickness of 3.7~mm and 9~mm~(only the most inner and outer ones) are installed where each covers a segment of $\Delta\eta\times\Delta\phi=0.087\times0.087$. Their emitted light is guided through wave-length shifting fibers to \glspl{hpd} located at the end of the \gls{hb} structure. To further contain hadronic showers in the barrel region, an additional calorimeter, the hadron outer calorimeter~(\gls{ho}), is placed directly at the outside of the solenoid utilizing it as an absorber. It consists of one or two layers of scintillators, depending on the pseudorapidity, which match the granularity of the \gls{hb}.
+
+ho, hf, ls fiber,
+
+
+
 
 %##############################################
 \subsection{Muon systems}
 %##############################################
+\label{sec:experiment-muon-systems}
+
 DT/RPC/CSC
 
 \myfigure{\label{fig:experiment-muons}Overview of the \gls{cms} muon system. The figure is taken from Ref.~\cite{Chatrchyan:2013sba}.}{
