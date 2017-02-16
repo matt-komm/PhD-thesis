@@ -118,6 +118,8 @@
 \newlength{\myrulewidth}
 \setlength{\myrulewidth}{0.7pt}
 
+\def\hrulefill{\leavevmode\leaders\hrule height \myrulewidth\hfill\kern\z@}
+
 
 %line numbers
 \usepackage{lineno} 
@@ -200,11 +202,13 @@
 %}
 
 \mdfdefinestyle{chstyle}{%
-    linewidth=5\myrulewidth,
+    linewidth=0\myrulewidth,
     leftmargin=0pt,
-    innerleftmargin=0.12\textwidth,
+    innerleftmargin=0.03\textwidth,
     rightmargin=0pt,
     innerrightmargin=0pt,
+    innertopmargin=0pt,
+    innerbottommargin=0pt,
     linecolor=gray,
     topline=false,
     rightline=false,
@@ -218,24 +222,16 @@
         %\parbox[c][][c]{0.99\textwidth}{\color{gray}\hrulefill\textls*[140]{\LARGE\textsf{\chaptername}}}
         %\\[0.35cm]
         
-        \hspace{0.03\textwidth}\parbox[c][2.cm][c]{0.109\textwidth}{
-            %\color{gray}
-            %\textls*[130]{\LARGE\textsf{\chaptername}}
-            %\vfill
-            \fontsize{40}{0}\numberfont{\thechapter.}
-        }
         %\hspace{0.04\textwidth}\parbox[c][][c]{5.\myrulewidth}{
         %    \color{gray}
-        %    %\rule{2\myrulewidth}{2.5cm}
+        %    %
         %    \rule[0.08cm]{2\myrulewidth}{1.35cm}
         %}
-        \hspace{0.06\textwidth}\parbox[c][][c]{0.79\textwidth}{
-            \begin{mdframed}[style=chstyle]
-            \begin{flushleft}
-            \textls*[180]{\color{gray}\Large\textsf{\chaptername}}\\[0.2cm] \usekomafont{chapter} #1
-            \end{flushleft}
-            \end{mdframed}
-        }
+        %\hspace{0.03\textwidth}\parbox[c][][c]{0.97\textwidth}{
+            {\color{gray}\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}\hspace{1ex}}
+            {\color{gray}\hrulefill}\\[0.3cm] 
+            \usekomafont{chapter} #1
+        %}
         %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
         %\\[0.3cm]
         %{\color{gray}\rule{\textwidth}{\myrulewidth}}
@@ -347,7 +343,7 @@
 }
 
 %%chapter intro
-\newcommand{\intro}[1]{\hspace{0.03\textwidth}\parbox{0.969\textwidth}{#1\\[0.3cm]}}
+\newcommand{\intro}[1]{\textsl{#1}\\}
 
 
 %% footnote
