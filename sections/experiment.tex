@@ -26,7 +26,7 @@ The expected luminosity at the \glspl{ip} can be calculated from the introduced 
 L=\frac{N_\mathrm{p}^{2}\,n_\mathrm{b}\,f_\mathrm{rev}}{4\pi\,d^2_{x,y}}\cdot F,\qquad F=\frac{1}{\sqrt{1+\big(\theta\cdot d_{z}\big)^2\big/\big({2\,d_{x,y}}\big)^2}}
 \end{equation}
 
-where $N_\mathrm{p}$ denotes the number of protons per bunch and $n_\mathrm{b}$ the number of colliding bunches. The design bunch population is $N_\mathrm{p}=1.15\cdot10^{11}$ per bunch. The factor $F$ accounts for a reduction in luminosity due to the slightly tilted beams by the crossing angle $\theta$.
+where $N_\mathrm{p}$ denotes the number of protons per bunch and $n_\mathrm{b}$ the number of colliding bunches. The design proton population is $N_\mathrm{p}=1.15\cdot10^{11}$ per bunch. The factor $F$ accounts for a reduction in luminosity due to the slightly tilted beams by the crossing angle $\theta$.
 
 In 2016, the design luminosity of $10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$ was surpassed through various new developments~\cite{Team:2229040}. In detail these were a decrease of the transverse emittance, a smaller longitudinal bunch size, a better focusing at the \glspl{ip} down to $\beta^\star=0.4~\mathrm{cm}$, and a smaller crossing angle compared to the design values. This resulted in a peak luminosity of $1.5\cdot 10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$. An overview of the peak luminosity in recorded \gls{pp} collisions by the CMS experiment from 2010--2016 is shown in Fig.~\ref{fig:experiment-peaklumi}. More information on the \gls{lhc} and its design parameters can be found in Ref.~\cite{Evans:2008zzb}.
 
@@ -37,6 +37,7 @@ In 2016, the design luminosity of $10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$ was 
 During a bunch crossing multiple proton-proton interactions can occur which are referred to as \gls{pu}. Their number on average is proportional to the luminosity and the total inelastic \gls{pp} cross section. In 2012, an average number of 21 pileup interactions has been observed in 8~\TeV \gls{pp} collisions. This increased in 2016 due to the higher luminosity and cross section at 13~\TeV to ??? interaction per bunch crossing. \todo{no pu number found}
 
 \todo{add short overview of operation and energies and delivered lumis}
+\todo{define runI and runII and energies and years}
 
 %##############################################
 \subsection{Accelerator complex}
@@ -52,6 +53,8 @@ The production sequence of proton bunches for the \gls{lhc} is as follows. In th
 
 \todo{gap? beam life and filling time?}
 
+
+
 %##############################################
 \subsection{Overview of experiments}
 %##############################################
@@ -59,11 +62,11 @@ The production sequence of proton bunches for the \gls{lhc} is as follows. In th
 Various particle detectors are installed at the \gls{lhc} to record the outcome of proton-proton, proton-lead, and lead-lead collisions. Four major detectors are directly located at the \glspl{ip}. 
 
 Two general purpose detectors are located at the two high luminosity \glspl{ip}. These are the \gls{atlas}~\cite{Aad:2008zzm} and \gls{cms}~\cite{Chatrchyan:2008aa} experiments which have both a wide physics program ranging from precision measurements of the \gls{sm} to the search for various kinds of new physics like extra dimensions, dark matter particles or \gls{susy}. Despite similar goals the technical realization of the two experiments is different. The \gls{atlas} detector is of cylindrical shape around the beam pipe with a length of 44~m and a diameter of 25~m. It consists of an inner detector, a liquid argon electromagnetic calorimeter, a hadronic calorimeter, and a muon spectrometer with full $2\uppi$ coverage in the azimuthal angle. %The inner detector is placed within a solenoid producing a magnetic field of 2~T for tracking of charged particles. A toroidal magnetic field with an average strength of 0.5~T allows to determine the momenta of muons in the outer spectrometer. 
-Detailed information on the \gls{cms} detector are given in Sec.~\ref{sec:experiment-cms}.
+A detailed description of the \gls{cms} detector is given in Sec.~\ref{sec:experiment-cms}.
 
 The two other major detectors are the \gls{alice}~\cite{Aamodt:2008zz} and \gls{lhcb}~\cite{Alves:2008zz} experiments which are more specialized. Their luminosity is intentionally leveled down by displacing the beams slightly at their \glspl{ip}~\cite{Follin:1955354}. The lower luminosity is required to reduces the number of pileup interactions and to prevent damage to the detectors through radiation. The \gls{alice} experiment focuses on heavy ion collisions in which the properties of quark-gluon plasma can be studied. The goals of the \gls{lhcb} experiment are precision measurements of \gls{cp}-violation and searches for rare decays of B~hadrons.
 
-Three additional smaller experiments, \gls{lhcf}~\cite{Adriani:2008zz}, \gls{totem}~\cite{Anelli:2008zza}, and \gls{moedal}~\cite{Pinfold:2009oia}, have been installed at the \gls{lhc} using parts of the forward scattered particles from the \glspl{ip} of the \gls{atlas}, \gls{cms}, and \gls{lhcb} detectors respectively. 
+Three additional smaller experiments, \gls{lhcf}~\cite{Adriani:2008zz}, \gls{totem}~\cite{Anelli:2008zza}, and \gls{moedal}~\cite{Pinfold:2009oia}, have been installed at the \gls{lhc} using certain fractions of the forward scattered particles from the \glspl{ip} of the \gls{atlas}, \gls{cms}, and \gls{lhcb} detectors respectively. 
 
 
 %##############################################
@@ -89,7 +92,7 @@ The advantage of the rapidity over the usage of the angle $\theta$ measured from
 \eta=\mathrm{artanh}\left(\frac{p_\mathrm{z}}{|\vec{p}|}\right)=-\ln\left[\tan\left(\frac{\theta}{2}\right)\right]. \label{eq:experiment-pseudorapidity}
 \end{equation}
 
-In the following, the components of \gls{cms} are briefly described and their purpose is motivated. More information can be found in Ref.~\cite{Chatrchyan:2008aa,Bayatian:922757}.
+In the following, the components of \gls{cms} are briefly described and their purpose is motivated. More information can be found in Refs.~\cite{Chatrchyan:2008aa,Bayatian:922757}.
 
 
 %##############################################
@@ -173,23 +176,19 @@ The muon system is located at the outside of the \gls{cms} detector within the g
 \includegraphics[width=0.85\textwidth]{figures/experiment/CMS_muons.pdf}
 }
 
-The \glspl{dt} consist of nearly rectangular cells with a cross section of $42\times 13~\mathrm{mm}^{2}$ in which a $50~\upmu\mathrm{m}$ thick and 2.4~m long gold-plated steel wire is spanned through the middle. The cells are filled with a gas mixture of 85\%~Ar and 15\%~$\mathrm{CO}_{2}$ which yields a gain of $10^{5}$ and a drift time of about 380~ns for a maximum drift length of 21~mm. The \glspl{dt} are organized in four layers which form an independent gas-tight super layer unit. A \gls{dt} chamber consists three (or two) super layers where the wires in the first and last layers are oriented along the z-axis and the wires in the middle layer are oriented orthogonal along the $\phi$ direction. There are four layers of \glspl{dt} chambers placed in the barrel region where 60~chambers are installed in each of the inner three layers and 70 in the outer one which amounts to about 172'000 wires in total. 
+The \glspl{dt} consist of nearly rectangular cells with a cross section of $42\times 13~\mathrm{mm}^{2}$ in which a $50~\upmu\mathrm{m}$ thick and 2.4~m long gold-plated steel wire is spanned through the center. The cells are filled with a gas mixture of 85\%~Ar and 15\%~$\mathrm{CO}_{2}$ which yields a gain of $10^{5}$ and a drift time of about 380~ns for a maximum drift length of 21~mm. The \glspl{dt} are organized in four layers which form an independent gas-tight super layer unit. A \gls{dt} chamber consists three (or two) super layers where the wires in the first and last layers are oriented along the z-axis and the wires in the middle layer are oriented orthogonal along the $\phi$ direction. There are four layers of \glspl{dt} chambers placed in the barrel region where 60~chambers are installed in each of the inner three layers and 70 in the outer one which amounts to about 172'000 wires in total. 
 
-In the endcaps, trapezoidal-shaped \glspl{csc} chambers are installed in three or four layers. They are multiwire proportional chambers where each consists of seven radially-orientated cathode strips glued on 12.7~mm-thick panels. There pitch changes radially from 8.4~mm to 16~mm. Six azimuthally-orientated wires are placed in the gas gaps between the panels with a length of 9.5~mm. A gas mixture of 40\%~Ar, 50\%~$\mathrm{CO_{2}}$, and 10\%~$\mathrm{CF}_{4}$ is used which yields a gain of about $7\times10^{4}$ at a voltage of $3.6~\mathrm{kV}$. Since the first inner \gls{csc} chambers~(labeled ME1/1) are located inside the solenoid a slightly different design with tilted wires by $29^{\circ}$ was chosen to compensate for the drift in the large axial magnetic field.
+In the endcaps, trapezoidal-shaped \glspl{csc} are installed in four layers where each layer consists of 18 or 36 chambers which are slightly overlapping to ensure full azimuthal coverage. They are multiwire proportional chambers where each consists of seven radially-orientated cathode strips glued on 12.7~mm-thick panels. Their pitch changes radially from 8.4~mm to 16~mm at the outside. Six azimuthally-orientated wires are placed in the gas gaps between the panels with a width of 9.5~mm. A gas mixture of 40\%~Ar, 50\%~$\mathrm{CO_{2}}$, and 10\%~$\mathrm{CF}_{4}$ is used which yields a gain of about $7\times10^{4}$ at a voltage of $3.6~\mathrm{kV}$. Since the first inner \gls{csc}~(labeled ME1/1) are located inside the solenoid a slightly different design with tilted wires by $29^{\circ}$ was chosen to compensate for the Lorentz drift in the large magnetic field. The forth \gls{csc} layer labeled ME4/2 (not present in Fig.~\ref{fig:experiment-muons}) has been installed after the \gls{lhc} Run~1 which adds an additional redundancy for muons within $1.2<|\eta|<1.8$~\cite{Wulsin:2015shd}.
 
+The muon system is completed by \glspl{rpc} in the barrel and endcaps. These are gaseous parallel-plate detectors with two gaps of 2~mm width each. They provide a much shorter time resolution than the \glspl{dt} and \glspl{csc} of about 1~ns. Hence they are used to associate a muon signal to the corresponding \gls{lhc} bunch crossing. In the barrel, six layers of \glspl{rpc} are installed with their strips oriented along the z-axis. Their pitch varies per layer such that an azimuthal granularity of $5/16^\circ$ is achieved. In the endcaps, four \gls{rpc} layers are installed with radially oriented strips. The forth layer was added after the \gls{lhc} Run~1~\cite{Tytgat:2012xi}.
 
-
-
-added ME4/2 and extended RPC after RunI
-  
 
 
 %##############################################
 \subsection{Data acquisition}
 %##############################################
+
+
 Trigger/DAQ
 
-%##############################################
-\subsection{Operations}
-%##############################################
-DCS/DSS
+
