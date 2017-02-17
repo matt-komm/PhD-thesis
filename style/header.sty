@@ -79,8 +79,8 @@
 
 \usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
 \usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
-\usepackage{url}
-
+\usepackage[hyphens]{url}
+\Urlmuskip=0mu plus 1mu\relax
 \usepackage{chngcntr} %fuer nummerierung der figures, tables, footnotes
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=nonfrench,factor=1100,stretch=15,shrink=15]{microtype}
 \SetTracking{encoding={*}, shape=sc}{0}
@@ -95,8 +95,7 @@
 \usepackage[Symbolsmallscale]{upgreek} % for upright greek symbols
 \usepackage{xr} %ref over documents
 \usepackage{axodraw4j}
-\usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=true]{hyperref}
-\usepackage{breakurl}
+\usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=true,breaklinks=true]{hyperref}
 \usepackage[color=white,linecolor=red,bordercolor=red,textsize
 =small]{todonotes}
 \setlength{\marginparwidth}{3cm}

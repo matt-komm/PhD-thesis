@@ -810,7 +810,7 @@ FUNCTION {format.url}
 {
   url empty$
     { "" }
-    { "\href{" url * "}{\texttt{" * url * "}}" * }
+    {"\href{" url * "}{\texttt{" * url * "}}" * }
   if$
 }
 
@@ -1214,7 +1214,6 @@ FUNCTION {misc}
   howpublished output
   format.date output
   new.sentence 
-  new.block
   doi empty$ and eprint empty$
   {
       format.url output
@@ -1225,7 +1224,6 @@ FUNCTION {misc}
   }
   if$
   new.sentence
-  new.block
   note output
   new.sentence
   fin.entry
@@ -1315,7 +1313,6 @@ FUNCTION {techreport}
   format.tr.number output.nonnull
   format.date "year" output.check
   new.sentence 
-  new.block
   doi empty$ and eprint empty$
   {
       format.url output
