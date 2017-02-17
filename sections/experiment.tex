@@ -172,7 +172,7 @@ A major design goal of \gls{cms}, is the precise and robust detection of muons t
 
 The muon system is located at the outside of the \gls{cms} detector within the gaps of the iron yoke. It consists of three types of gaseous detectors. An overview is provided in Fig.~\ref{fig:experiment-muons}. \glspl{dt} are installed in the barrel~($|\eta|<1.2$) where the muon flux is low. In the endcaps~($0.9<|\eta|<2.4$), \glspl{csc} are used which can operate in the higher muon flux environment and in the inhomogeneous magnetic field. In addition, \glspl{rpc} are installed in the barrel and endcaps as a complementary system with a coverage of $|\eta|<1.6$.
 
-\myfigure{\label{fig:experiment-muons}Overview of the \gls{cms} muon system. The figure is taken from Ref.~\cite{Chatrchyan:2013sba}.}{
+\myfigure{\label{fig:experiment-muons}Overview of the \gls{cms} muon system by the end of \gls{lhc} Run~1. The figure is taken from Ref.~\cite{Chatrchyan:2013sba}.}{
 \includegraphics[width=0.85\textwidth]{figures/experiment/CMS_muons.pdf}
 }
 
@@ -189,6 +189,12 @@ The muon system is completed by \glspl{rpc} in the barrel and endcaps. These are
 %##############################################
 
 
-Trigger/DAQ
+The \gls{tridas}~\cite{Cittolin:578006,Bawej:2015tmz} allows to readout the various subdetector front-end systems, associate the readout fragments to an event, and finally reconstruct and transmit the event for storage. A two-staged event triggering system is employed which reduces the event rate from the bunch crossing frequency of 40~MHz to about 100~kHz after the first \gls{l1} trigger stage and then to less than 1~kHz after the \gls{hlt} system. Its goal is to select and store only events of certain physics interest. In this thesis, events are analyzed which were recorded because they contain at least a single muon with a sufficient transverse momentum.
 
+\todo{change when electrons are included in the end}
 
+The data acquisition begins at the subdetector systems where the readout is stored continuously in pipelined buffers at 40~MHz. The \gls{l1} trigger analyzes only the data from the calorimeter and muon systems per bunch crossing to take a decision. It consists widely of \glsreset{fpga}\glspl{fpga} which enable a flexible adaptation of the system to the varying conditions of the \gls{lhc} and detector. The regional~(\gls{rct}) and global calorimeter trigger systems~(\gls{gct}) attempt to locate electron, photon, jet, and $\tau$-jet candidates from the \gls{ecal} and \gls{hcal} readouts. Additional information like the missing transverse energy and number of jets are also determined. The global muon trigger system~(\gls{gmt}) attempts to find muon candidates by utilizing local information from the independent \gls{dt}, \gls{csc}, and \gls{rpc} trigger systems. In addition, a muon is considered isolated if the hadronic activity in its vicinity (provided by the \gls{gct}) is below a certain threshold. The final \gls{l1} decision is taken by the \gls{gt} based on the candidates found by the \gls{gct} and \gls{gmt} systems.
+
+Since run~2, the readout fragments with a size of up to 8~kB are transfered via optical links by the \glspl{fed} after a positive \gls{l1} decision is received to readout units~(\glspl{ru}) where multiple fragments are merged. Event builder units~(\glspl{bu}) pick up the fragments via a high speed, Infiniband-based switching network from the \glspl{ru} and assemble the event.
+
+The \gls{hlt} system is part of the standard \gls{cms} software~(\gls{cmssw}) and runs on filter units~(\glspl{fu}) that read the assembled events from the \glspl{bu} via an Ethernet network. 
