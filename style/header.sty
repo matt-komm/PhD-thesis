@@ -202,12 +202,15 @@
     bottomline=false,
     leftline=true
 }
+
+\def\headline#1{ {\color{gray}\hbox to \hsize{\lower.3em\hbox{#1}\hspace{2.5ex}\hrulefill}}}
+
 \def\@makechapterhead#1{
      {
         \chapterheadstartvskip
-        {\color{gray}\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}\hspace{1.5ex}}
-        {\color{gray}\hrulefill}\\[0.4cm] 
-        \usekomafont{chapter} #1\\[0.3cm] 
+        \headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}
+        \vspace{0.35cm} 
+        {\usekomafont{chapter} #1}\\[0.35cm]
         {\color{gray}\rule{\textwidth}{\myrulewidth}}
         \chapterheadendvskip
     }
@@ -318,7 +321,7 @@
 }
 
 %%chapter intro
-\newcommand{\intro}[1]{\textsl{#1}\\}
+\newcommand{\intro}[1]{\textsl{#1}\\[2\parskip]}
 
 
 %% footnote
