@@ -187,24 +187,6 @@
 \newenvironment{clearedpagestyle}{\clearpage\pagestyle{empty}\KOMAoptions{cleardoublepage=empty}}{\clearpage\pagestyle{scrheadings}\KOMAoptions{cleardoublepage=scrheadings}}
 
 
-%\def\@makechapterhead#1{
-%     \parbox[t][][t]{0.99\textwidth}{
-%        \chapterheadstartvskip
-%        \parbox[b][][b]{\widthof{\fontsize{20}{0}\selectfont\sc\substring{\chaptername}{1}{1}}}{\fontsize{20}{0}\selectfont\sc\substring{\chaptername}{1}{1}}\parbox[b][][b]{7cm}{\fontsize{14}{0}\selectfont\sc\substring{\chaptername}{2}{$}}
-%       %\\[0.4cm]
-%       %{\color{gray}\rule{\textwidth}{\myrulewidth}}
-%        \\[0.05cm]
-%        {\color{gray}\rule{\textwidth}{\myrulewidth}}
-%        \\[0.3cm]
-%       %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont\textrm{\thechapter.}}\parbox[c][][c]{0.03\textwidth}{\color{gray}\rule{\myrulewidth}{1.3cm}\hspace{4.\myrulewidth}\rule{\myrulewidth}{1.3cm}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
-%        %\parbox[c][][c]{0.15\textwidth}{\centering\fontsize{30}{0}\numberfont{\thechapter.}}\parbox[c][][c]{0.05\textwidth}{\centering\color{gray}\rule{3.\myrulewidth}{1.3cm}}\hspace{0.05\textwidth}\parbox[c][][c]{0.74\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
-%        \parbox[c][][c]{0.15\textwidth}{\centering\fontsize{35}{0}\numberfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.79\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
-%        %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
-%       \\[0.3cm]
-%        {\color{gray}\rule{\textwidth}{\myrulewidth}}
-%        \chapterheadendvskip
-%    }
-%}
 
 \mdfdefinestyle{chstyle}{%
     linewidth=0\myrulewidth,
@@ -221,32 +203,19 @@
     leftline=true
 }
 \def\@makechapterhead#1{
-     \parbox[t][][t]{0.99\textwidth}{
+     {
         \chapterheadstartvskip
-        
-        %\parbox[c][][c]{0.99\textwidth}{\color{gray}\hrulefill\textls*[140]{\LARGE\textsf{\chaptername}}}
-        %\\[0.35cm]
-        
-        %\hspace{0.04\textwidth}\parbox[c][][c]{5.\myrulewidth}{
-        %    \color{gray}
-        %    %
-        %    \rule[0.08cm]{2\myrulewidth}{1.35cm}
-        %}
-        %\hspace{0.03\textwidth}\parbox[c][][c]{0.97\textwidth}{
-            {\color{gray}\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}\hspace{1.3ex}}
-            {\color{gray}\hrulefill}\\[0.3cm] 
-            \usekomafont{chapter} #1
-        %}
-        %\hspace*{0.05\textwidth}\parbox[c][][c]{0.15\textwidth}{\fontsize{40}{0}\selectfont{\thechapter.}}\hspace{0.05\textwidth}\parbox[c][][c]{0.71\textwidth}{\vspace{0.15cm}\usekomafont{chapter} #1}
-        %\\[0.3cm]
-        %{\color{gray}\rule{\textwidth}{\myrulewidth}}
+        {\color{gray}\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}\hspace{1.5ex}}
+        {\color{gray}\hrulefill}\\[0.4cm] 
+        \usekomafont{chapter} #1\\[0.3cm] 
+        {\color{gray}\rule{\textwidth}{\myrulewidth}}
         \chapterheadendvskip
     }
 }
 
 \setkomafont{chapter}{\normalfont\Huge\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{0.7cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.2cm}}
 
 \setkomafont{section}{\normalfont\LARGE\numberfont}
 \setkomafont{subsection}{\normalfont\LARGE\numberfont}
