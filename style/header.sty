@@ -206,11 +206,11 @@
 \def\headline#1{ {\color{gray}\hbox to \hsize{\lower.3em\hbox{#1}\hspace{2.5ex}\hrulefill}}}
 
 \def\@makechapterhead#1{
-     {
+     \parbox[c][][c]{\textwidth}{
         \chapterheadstartvskip
-        \headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}
-        \vspace{0.35cm} 
-        {\usekomafont{chapter} #1}\\[0.35cm]
+        {\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}
+        \vspace*{0.4cm}
+        {\usekomafont{chapter} #1}\\[0.33cm]
         {\color{gray}\rule{\textwidth}{\myrulewidth}}
         \chapterheadendvskip
     }
@@ -253,7 +253,7 @@
 %abstand zwischen caption und figure,table
 \captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.8\baselineskip,belowskip=0\baselineskip}
 \captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.8\baselineskip}
-\captionsetup[subfloat]{labelsep=vline,font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
+\captionsetup[subfloat]{labelsep=space,font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
 
 \setlength\floatsep{1.\baselineskip plus 3pt minus 2pt}
 \setlength\textfloatsep{1.\baselineskip plus 3pt minus 2pt}
@@ -331,7 +331,7 @@
 \renewcommand{\thefootnote}{\numberfont\fnsymbol{footnote}} %style
 %\counterwithin*{footnote}{page} %reset counter per new page
 \setlength{\footnotesep}{\parskip}
-\addtokomafont{footnote}{\small\setstretch{1.15}}
+\addtokomafont{footnote}{\small\setstretch{1.12}}
 \renewcommand{\footnoterule}{%
   \vspace{-0.5\parskip}
   \vspace{\footskip}
