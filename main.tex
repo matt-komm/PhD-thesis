@@ -28,7 +28,9 @@
 %\input{sections/conclusion}
 
 \glsaddall[types={acronym}] 
-\printglossary[type=\acronymtype,title={Abbreviations},nonumberlist]
+\renewcommand*{\arraystretch}{1.1}
+\printglossary[style=super,nopostdot,type=\acronymtype,title={Abbreviations},nonumberlist]
+\renewcommand*{\arraystretch}{\mytablestrech}
 \cleardoublepage
 
 %\nocite{*}

@@ -132,6 +132,12 @@
 %\renewcommand*{\glstextformat}[1]{\textsf{\textsc{#1}}}
 \renewcommand{\glsnamefont}[1]{\boldmath{\textbf{ #1}}}
 
+\setlength{\glspagelistwidth}{\textwidth}
+\setlength{\tabcolsep}{1ex}
+\setlength{\extrarowheight}{0.0cm}
+\setlength{\glsdescwidth}{0.8\textwidth}
+\renewcommand*{\glsgroupskip}{}
+
 
 %% Setup TOC
 \setcounter{secnumdepth}{3}
@@ -255,7 +261,8 @@
 \renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\hspace{1ex}} %dot after the(sub)section
 
 %strecke zeilenabstände im table
-\renewcommand{\arraystretch}{1.4}
+\newcommand{\mytablestrech}{1.4}
+\renewcommand{\arraystretch}{\mytablestrech}
 
 %Schicke Bild- und Tabellenbeschreibungen
 
