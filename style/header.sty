@@ -209,9 +209,9 @@
      \parbox[c][][c]{\textwidth}{
         \chapterheadstartvskip
         {\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}
-        \vspace*{0.4cm}
-        {\usekomafont{chapter} #1}\\[0.33cm]
-        {\color{gray}\rule{\textwidth}{\myrulewidth}}
+        \vspace*{0.6cm}
+        \parbox{\textwidth}{\usekomafont{chapter} #1}%\\[0.33cm]
+        %{\color{gray}\rule{\textwidth}{\myrulewidth}}
         \chapterheadendvskip
     }
 }
@@ -321,7 +321,7 @@
 }
 
 %%chapter intro
-\newcommand{\intro}[1]{\textsl{#1}\\[2\parskip]}
+\newcommand{\intro}[1]{\parbox{\textwidth}{\textsl{#1}}\\[3\parskip]}
 
 
 %% footnote

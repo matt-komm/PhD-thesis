@@ -125,6 +125,7 @@ Pixel modules are located next to the beam pipe where the particle flux is parti
 
 Silicon strip modules are installed in the other parts of the inner tracking system. The strip modules allow to measure a local 1D hit position perpendicular to the strip direction. A few layers and disks contain however double-sided strip modules as indicated in Fig.~\ref{fig:experiment-tracker}. These modules are tilted with an angle of 0.1~rad with respect to each other which allows to reconstruct matched 2D hits by combining 1D hits from both sides. The modules are organized in four inner barrel layers~(\gls{tib}) at radii of 20\range50~cm; six outer barrel layers~(\gls{tob}) at radii of 55\range116~cm; three inner endcap disks~(\gls{tid}); and nine outer endcap disks~(\gls{tec}). In the barrel the strip directions on each module are aligned along the z-axis with a strip-to-strip distance that varies between $80\range183~\upmu\mathrm{m}$. In the endcap disks, the modules are wedge-shaped with their strips running along the radial axis whose distance ranges between $100\range184~\upmu\mathrm{m}$. The modules are cooled down and operated below $-10^\circ\mathrm{C}$ to counteract the heat produced by the electronics and to improve their lifetime.
 
+
 %##############################################
 \subsection{Electromagnetic calorimeter}
 %##############################################
@@ -139,7 +140,16 @@ Figure~\ref{fig:experiment-ecal} displays an overview of its layout. In total, 6
 
 The crystal material was chosen for its high density of $8.28~\mathrm{g}/\mathrm{cm}^{3}$, short radiation length of 0.89~cm, and radiation hardness. In addition, the spatial extend of an electromagnetic shower inside the crystals, the so-called Moli\`ere radius, amounts to only 2.2~cm which yields a good position resolution and shower separation. The crystals emit about 4.5 photoelectrons per \MeV with a wavelength of 420\range430~nm. About 80~\% of the light is emitted within 25~ns after an electromagnetic shower occurred. The photons are collected and their signal is amplified by \glspl{apd} in the barrel. In the endcaps \glspl{vpt} are deployed instead which are specifically designed to operated also in the axial magnetic field.
 
+The energy resolution of the \gls{ecal} crystals was measured in electron beams for energies $20<E<250~\GeV$~\cite{Adzic:2007mi}. It can be parameterized as
+
+\begin{equation}
+\left(\frac{\sigma}{E}\right)^{2}=\underbrace{\left(\frac{2.8\%}{\sqrt{E/\GeV}}\right)^{2}}_\text{stochastic}+\underbrace{\left(\frac{0.12}{E/\GeV}\right)^{2}}_\text{noise}+\underbrace{\big(0.30\big)^{2}}_\text{constant}
+\end{equation}
+
+which yields exemplary a resolution of $0.43~\GeV$ at an energy of $100~\GeV$.
+
 In front of the two \gls{ecal} endcaps, the preshower detector~(\gls{es}) is located which covers a pseudo rapidity range of $1.652<|\eta|<2.6$. The preshower allows to identify neutral pions and improves the identification and position of electrons and photons. It consists of two layers of lead radiators to initiate electromagnetic showers with a layer of silicon strip sensors after each radiator to measure the transverse profile of a shower.
+
 
 %##############################################
 \subsection{Hadron calorimeter}
@@ -157,10 +167,21 @@ The same design of alternating brass absorbers~(79~mm thick) with 17 scintillato
 
 To further contain hadronic showers in the barrel region, an additional calorimeter, the hadron outer calorimeter~(\gls{ho}), is placed directly at the outside of the solenoid utilizing it as an absorber. It consists of one or two layers of scintillators, depending on the pseudorapidity, which match the granularity of the \gls{hb}. This extends the depths of the combined \gls{hb}+\gls{he}+\gls{ho} system to an overall minimum of 11.8 interaction length with the exception of the \gls{hb}-\gls{he} transition region.
 
-An additional calorimeter system, the hadron forward calorimeter~(\gls{hf}), is located 11.2~m away from the \gls{ip} at both sides where it covers a pseudorapidity range of $3<|\eta|<5.2$. A different detector technology was chosen for the \gls{hf} to withstand the expected higher levels of radiation of about $1~\mathrm{MGy/a}$ in the forward region. The calorimeter utilizes quartz fibers to detect Cherenkov light from the electromagnetic component of a shower. The fibers are oriented along the z-axis and placed grooves within steel plates which act as absorbers. The fibers are arrange to achieve a granularity of $\Delta\eta\times\Delta\phi=0.175\times0.175$. Only half of the fibers extend over the complete \gls{hf} depth of 165~cm which corresponds to 10 interaction lengths. The other half starts at a depths of 22~cm instead. Since the electromagnetic showers are typically shorter than hadronic ones the showers can be disentangled from each other by comparing the separated readouts from the long and short fibers. The produced Cherenkov light is detected by \glspl{pmt} located behind a shield of 40~cm steel and polyethylene slabs which protects them from the high radiation. 
+An additional calorimeter system, the hadron forward calorimeter~(\gls{hf}), is located 11.2~m away from the \gls{ip} at both sides where it covers a pseudorapidity range of $3<|\eta|<5.2$. The \gls{hf} is of particular importance for this thesis since the signature of t-channel single top quark events feature a characteristic forward jet that is often detected within its acceptance. A different detector technology was chosen to withstand the expected higher levels of radiation of about $1~\mathrm{MGy/a}$ in the forward region. The calorimeter utilizes quartz fibers to detect Cherenkov light from the electromagnetic component of a shower. The fibers are oriented along the z-axis and placed grooves within steel plates which act as absorbers. The fibers are arrange to achieve a granularity of $\Delta\eta\times\Delta\phi=0.175\times0.175$. Only half of the fibers extend over the complete \gls{hf} depth of 165~cm which corresponds to 10 interaction lengths. The other half starts at a depths of 22~cm instead. Since the electromagnetic showers are typically shorter than hadronic ones the showers can be disentangled from each other by comparing the separated readouts from the long and short fibers. The produced Cherenkov light is detected by \glspl{pmt} located behind a shield of 40~cm steel and polyethylene slabs which protects them from the high radiation.
 
-The \gls{hf} is of particular importance for this thesis since the signature of t-channel single top quark events feature a characteristic forward jet that is often detected within its acceptance.
+The energy response of the \gls{hcal} modules was measured in pion beams for energies $20<E<300~\GeV$~\cite{Baiatian:1049915}. For the combined \gls{hb}+\gls{he} this results in
 
+\begin{equation}
+\left(\frac{\sigma_\mathrm{\gls{hb}\otimes\gls{he}}}{E}\right)^{2}=\left(\frac{115\%}{\sqrt{E/\GeV}}\right)^{2}+\big(5.5\%\big)^{2}
+\end{equation}
+
+which is found in agreement with simulation. For the \gls{hf}, a resolution of
+
+\begin{equation}
+\left(\frac{\sigma_\mathrm{\gls{hf}}}{E_\mathrm{e}}\right)^{2}=\left(\frac{198\%}{\sqrt{E/\GeV}}\right)^{2}+\big(9\%\big)^{2};\quad \left(\frac{\sigma_\mathrm{\gls{hf}}}{E_{\pi}}\right)^{2}=\left(\frac{280\%}{\sqrt{E/\GeV}}\right)^{2}+\big(11\%\big)^{2}
+\end{equation}
+
+has measured in electron and pion test beams respectively~\cite{Bayatian:2006jz}.
 
 %##############################################
 \subsection{Muon systems}
@@ -193,5 +214,4 @@ The \gls{cms} \gls{tridas}~\cite{Cittolin:578006,Bawej:2015tmz} deals with the i
 The data acquisition begins at the subdetector systems where the readout is stored continuously in pipelined buffers at 40~MHz. The \gls{l1} trigger system analyzes only the readouts from the calorimeter and muon systems per bunch crossing to take a decision within a latency of . It consists widely of \glsreset{fpga}\glspl{fpga} which enable a flexible adaptation of the system to potential varying conditions and needs. The regional~(\gls{rct}) and global calorimeter trigger systems~(\gls{gct}) attempt to locate electron, photon, jet, and $\tau$-jet candidates from the \gls{ecal} and \gls{hcal} readouts. Additional information like the missing transverse energy and number of jets are also determined. The global muon trigger system~(\gls{gmt}) attempts to find muon candidates by utilizing local information from the independent \gls{dt}, \gls{csc}, and \gls{rpc} trigger systems. In addition, a muon is considered isolated if the hadronic activity in its vicinity (provided by the \gls{gct}) is below a certain threshold. The final \gls{l1} decision is taken by the \gls{gt} based on the candidates found by the \gls{gct} and \gls{gmt} systems.
 
 After a positive \gls{l1} decision is received the readout fragments with a size of up to 8~kB are transfered via optical links by the \glspl{fed} to readout units~(\glspl{ru}) where multiple fragments are merged. Event builder units~(\glspl{bu}) pick up the fragments via a high speed, Infiniband-based switching network from the \glspl{ru} and assemble the events.
-
 The \gls{hlt} system is part of the standard \gls{cms} software~(\gls{cmssw}) and runs on filter units~(\glspl{fu}) that read the assembled events from the \glspl{bu} via an Ethernet network. Starting from the \gls{l1} candidates, the complete readout of an event is subjected to a sequence of reconstruction and filtering steps to reach a \gls{hlt} decision. One output file is created per \gls{cmssw} process, \gls{hlt} stream, and luminosity section where the latter corresponds to a period of about 23~s. The files are merged in two steps on the \glspl{fu} and \glspl{bu} before they are transfered to the \gls{cern} computing center.
