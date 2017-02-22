@@ -43,7 +43,7 @@ F&=-T\sum_{i}^\mathrm{tracks}p_{i}\log\left[\sum_{k}^\mathrm{vertices}\rho_{k}\,
 p_{ik}&=\frac{\rho_{k}\,\mathrm{exp}\big(-\Delta_{ik}(T)\big)}{\sum_{k\prime}\rho_{k\prime}\,\mathrm{exp}\big(-\Delta_{ik\prime}(T)\big)},\qquad\Delta_{ik}(T)=\frac{1}{T}\frac{(z_{i}^\mathrm{track}-z_{k}^\mathrm{vertex})^2}{\sigma_{z\,i}^{2}}
 \end{align}
 
-where $\sigma_{z}$ denotes the track resolution and $p_{ik}$ the track-vertex assignment probabilities. The initial compatibility of a track with the beam spot is encoded in the constant weights $p_{i}$. The temperature is decrease iteratively until a certain temperature is reached. New vertices are added if a minimum of $F$ is reached thus turning it into a saddle point instead. The final vertex positions are estimated through a fit.
+where $\sigma_{z}$ denotes the track resolution and $p_{ik}$ the track-vertex assignment probabilities. The initial compatibility of a track with the beam spot is encoded in the constant weights $p_{i}$. The temperature is decrease iteratively until a certain temperature is reached. New vertices are added if a minimum of $F$ is reached thus turning it into a saddle point instead. The final vertex positions are estimated through a fit using the clustered tracks.
 
 
 
