@@ -26,17 +26,24 @@ A trajectory seed is formed from a hit doublet or triplet where only certain com
 
 Each seed contains enough information to commence a first estimate of the track parameters. An algorithm called \gls{ctf} extrapolates the trajectory to find additional hits on subsequent layers which are compatible with the track hypothesis. It is based on the \gls{kf} technique which describes how to update the track parameters and their uncertainties iteratively after adding a hit. If multiple hits are found to be compatible with the track, new trajectories are generated for each of them. In the case no compatible hit is found on a layer a ghost hit is created instead.
 
-The hits per trajectory are then passed to a \gls{kf}-based track fit to estimate the track parameters without utilizing the first estimate from the seed. In addition, the fit accounts for material effects and the inhomogeneous magnetic field.  Each track has to pass a quality selection to reduce the amount of fake tracks before it is considered in physics analyses. The criteria match the seed requirements and depend additionally on e.g. the total number of (3D) hits, the $\chi^2/\mathrm{\gls{ndof}}$ of the fit, the amount of ghost hits, the amount of shared hits with other tracks, amongst others.
+The hits per trajectory are then passed to a \gls{kf}-based track fit to estimate the track parameters without utilizing the initial estimate from the seed. In addition, the fit accounts for material effects and the inhomogeneous magnetic field.  The fitted tracks have to pass a quality selection to reduce the amount of fake tracks before they can be considered in physics analyses. The criteria reflect the seed requirements and depend additionally on e.g. the total number of (3D) hits, the $\chi^2/\mathrm{\gls{ndof}}$ of the fit, the amount of ghost hits, the amount of shared hits with other tracks, amongst others.
 
-The tracking efficiency for isolated muons with $1<\pt<100~\GeV$ is found to be above $99\%$ over the full tracker acceptance since their trajectories is only disturbed by energy loss and Coulomb scattering. The trajectory of charged hadrons, like pions, is additionally affected by nuclear interactions especially at low momenta ($\pt<700~\MeV$) which yields efficiencies between $80\range95\%$~\cite{Chatrchyan:2014fea}. For electrons a special tracking is performed in addition to account for their energy loss via bremsstrahlung as described in Sec.~\ref{sec:reconstruction-electrons}. In parts of the 2016 collision data, the tracking efficiency decreased by about 10\% at high instantaneous luminosities due to a charge saturation effect on the readout chips leading to missing hits~\cite{CMS-DP-2016-043} which however was recovered by changing the drain speed.
+The tracking efficiency for isolated muons with $1<\pt<100~\GeV$ is found to be above $99\%$ over the full tracker acceptance since their trajectories is only disturbed by energy loss and Coulomb scattering. The trajectory of charged hadrons, like pions, is additionally affected by nuclear interactions especially at low momenta ($\pt<700~\MeV$) which yields efficiencies between $80\range95\%$~\cite{Chatrchyan:2014fea}. For electrons a special tracking is performed in addition to account for their energy loss via bremsstrahlung as described in Sec.~\ref{sec:reconstruction-electrons}. In parts of the 2016 collision data, the overall tracking efficiency decreased by about 10\% at high instantaneous luminosities~(\todo{how high}) due to a charge saturation effect on the readout chips leading to missing hits~\cite{CMS-DP-2016-043} which however was recovered by changing the drain speed.
 
 
 %##############################################
-\section{Vertex reconstruction}
+\section{Vertex and beam spot reconstruction}
 %##############################################
 
 
-vertices, primary, secondary, 
+The vertex reconstruction tries to locate points of pp interactions by finding tracks that originate from a common point within uncertainties. For this track are selected that originate closely from the beam spot and have a high reconstruction efficiency. Selected tracks are clustered using deterministic annealing~\cite{726788}. Here the association of a track to a vertex candidate is floating and modeled by a probability. A model similar to statistical mechanics is created where each track reflects a microstate. The free energy of the system is given by
+
+\begin{align}
+F&=-T\sum_{i}^\mathrm{tracks}p_{i}\log\left[\sum_{k}^\mathrm{vertices}\rho_{k}\,\mathrm{exp}\big(-\Delta_{ik}(T)\big)\right]\\
+p_{ik}&=\frac{\rho_{k}\,\mathrm{exp}\big(-\Delta_{ik}(T)\big)}{\sum_{k\prime}\rho_{k\prime}\,\mathrm{exp}\big(-\Delta_{ik\prime}(T)\big)},\qquad\Delta_{ik}(T)=\frac{1}{T}\frac{(z_{i}^\mathrm{track}-z_{k}^\mathrm{vertex})^2}{\sigma_{z\,i}^{2}}
+\end{align}
+
+where $\sigma_{z}$ denotes the track resolution and $p_{ik}$ the track-vertex assignment probabilities. The initial compatibility of a track with the beam spot is encoded in the constant weights $p_{i}$. The temperature is decrease iteratively until a certain temperature is reached. New vertices are added if a minimum of $F$ is reached thus turning it into a saddle point instead. The final vertex positions are estimated through a fit.
 
 
 
