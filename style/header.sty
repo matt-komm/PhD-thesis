@@ -206,19 +206,19 @@
 \def\headline#1{ {\color{gray}\hbox to \hsize{\lower.3em\hbox{#1}\hspace{2.5ex}\hrulefill}}}
 
 \def\@makechapterhead#1{
-     \parbox[c][][c]{\textwidth}{
+     \parbox{\textwidth}{
         \chapterheadstartvskip
-        {\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}
-        \vspace*{0.55cm}
+        \parbox{\textwidth}{\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}\\[0.55cm]
+        %\vspace{0.55cm}
         \parbox{\textwidth}{\usekomafont{chapter} #1}\\[0.45cm]
-        {\color{gray}\rule{\textwidth}{\myrulewidth}}
-        \chapterheadendvskip
+        %\vspace{0.45cm}
+        \parbox{\textwidth}{\color{gray}\rule{\textwidth}{\myrulewidth}}\\[0.0cm]
     }
 }
 
 \setkomafont{chapter}{\normalfont\Huge\selectfont\numberfont}
-\renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{0.1cm}}
+\renewcommand*{\chapterheadstartvskip}{\vspace{0.5cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace{0.8cm}}
 
 \setkomafont{section}{\normalfont\LARGE\numberfont}
 \setkomafont{subsection}{\normalfont\LARGE\numberfont}
