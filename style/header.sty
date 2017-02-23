@@ -145,10 +145,11 @@
 \renewcommand{\cfttoctitlefont}{\Huge\numberfont}
 \renewcommand{\cftchapfont}{\rm\bf}
 \renewcommand{\cftsecfont}{}
-
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
-\newcommand{\appendixchapter}[1]{\tocless\chapter{#1}\addcontentsline{toc}{section}{\protect\numberline{\thechapter.}\rm#1}}
+
+\newcommand{\appendixchapter}[1]{\tocless\chapter{#1}\addcontentsline{toc}{chapter}{\textbf{\chaptername~\thechapter\\#1}}}
+%\newcommand{\appendixchapter}[1]{\chapter{#1}}
 
 %% Setup HEADER/FOOTER
 \clearscrheadfoot

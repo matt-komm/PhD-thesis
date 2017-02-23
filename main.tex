@@ -20,15 +20,23 @@
 %\input{sections/teststyle}
 
 %\input{sections/introduction}
-\input{sections/theory}
-\input{sections/top}
+%\input{sections/theory}
+%\input{sections/top}
 %\input{sections/experiment}
-%\input{sections/reconstruction}
-%\input{sections/simulation}
+\input{sections/reconstruction}
 %\input{sections/methodology}
 %\input{sections/polarization}
 %\input{sections/differential}
 %\input{sections/conclusion}
+
+\cleardoublepage
+\appendix % do not forget - otherwise toc messed up!
+\renewcommand{\chaptername}{Appendix}
+\renewcommand\thechapter{\Alph{chapter}}
+\setcounter{chapter}{0}
+
+\input{appendices/fastsim}
+
 
 \glsaddall[types={acronym}] 
 \renewcommand*{\arraystretch}{1.1}
