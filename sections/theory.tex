@@ -2,16 +2,16 @@
 \chapter{The standard model of particle physics}
 %##############################################
 
-\intro{An introduction to the \gls{sm} is given in the following. First its particle content and foundation as a quantum field theory is discussed. Then the interactions are detailed. An brief overview of some open question concluded the chapter.}
+\intro{In the following an overview of the \gls{sm} is given. First, the fundamental particles and their properties are introduced. Then the electroweak and strong interactions are detailed which includes a brief descriptions of the electroweak symmetry breaking mechanism as well. After sketching the calculation of observables in perturbative theory the chapter is concluded by highlighting some open questions of the \gls{sm}.}
 
-The \gls{sm} describes the interactions between fundamental particles. It is based on \gls{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or decay rates of particles which can be calculated within its framework; even fully automatized. The \gls{sm} validity is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards \gls{bsm} physics.
+The \gls{sm} describes the interactions between fundamental particles. It is based on \gls{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or decay rates of particles which can be calculated within its framework. The \gls{sm} validity is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards \gls{bsm} physics.
 
 
 %############################################## 
 \section{Particle content}
 %##############################################
 
-Fundamental particles are objects for which experiments have not revealed an internal structure. For example, the upper limit on the spatial radius of the electron is measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Such particles are therefore considered as point-like. Fundamental particles can be grouped by their spin into fermions with spin~$\frac{1}{2}$ and bosons with integer spin. The fermions can be further divided into leptons and quarks where only the later can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Atoms which form ordinary matter consist of only particles from the first generation: electrons, protons, and neutrons, where the later two are bound states of uud quarks and udd quarks respectively.
+Fundamental particles are defined as objects for which experiments have not revealed an internal structure. For example, the upper limit on the spatial radius of the electron is measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Hence, such fundamental particles are considered as point-like. They can be grouped by their spin into fermions with half-integer and bosons with integer spin. All fundamental fermions of the \gls{sm} have a spin of $\frac{1}{2}$. They can be further divided into leptons and quarks where only the latter can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Atoms which form ordinary matter consist of only particles from the first generation: electrons, protons, and neutrons, where the latter two are bound states of uud quarks and udd quarks respectively.
 
 \mytable{\label{tab:theory-leptons}Leptons of the \gls{sm}. Particle masses are taken from Ref.~\cite{Olive:2016xmw}. Uncertainties on the measured masses are omitted because the precision is beyond the sub permille level. For the neutrino masses only \glspl{cl} are given.}{
     \begin{tabular}{|r|c c c|}
@@ -37,9 +37,9 @@ Fundamental particles are objects for which experiments have not revealed an int
     \end{tabular}
 }
 
-For the masses of the neutrinos, only upper limits are set. Those are derived by combining measurements of beta decay kinematics with results from neutrino oscillation experiments. In the \gls{sm}, neutrinos are assumed to be massless. However, the observation of neutrino oscillations requires that at least two neutrinos have a non-zero mass~\cite{Fukuda:1998mi}.
+For the masses of the neutrinos, only upper limits are set. Those are derived by combining measurements of beta decay spectra with results from neutrino oscillation experiments. When the \gls{sm} was constructed in the mid 1970s, the neutrinos were assumed to be massless. However, the observation of neutrino oscillations requires that at least two neutrinos have a non-zero mass~\cite{Fukuda:1998mi}.
 
-\mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}. For u,d,s,c,b quarks \gls{msbar} masses are quoted, taken from Ref.~\cite{Olive:2016xmw}. The top quark pole mass is taken from Ref.~\cite{ATLAS:2014wva}.}{
+\mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}. For u,d,s,c,b quarks \gls{msbar} masses are quoted, taken from Ref.~\cite{Olive:2016xmw}. The top quark pole mass is taken from Ref.~\cite{Khachatryan:2015hba}.}{
 \begin{tabular}{|r|c c c|}
     \hline
                         & 1. generation                 & 2. generation                 & 3. generation \\
@@ -47,7 +47,7 @@ For the masses of the neutrinos, only upper limits are set. Those are derived by
     \hline
     name                & up (u)                        & charm (c)                     & top (t) \\
     
-    mass                & $2.2^{+0.6}_{-0.4}~\MeV$      & $1.27\pm0.03~\GeV$            & $173.34\pm0.71~\GeV$ \\
+    mass                & $2.2^{+0.6}_{-0.4}~\MeV$      & $1.27\pm0.03~\GeV$            & $172.44\pm0.49~\GeV$ \\
     
     electric charge     & $\frac{2}{3}$                 & $\frac{2}{3}$                 & $\frac{2}{3}$ \\
     
@@ -62,7 +62,7 @@ For the masses of the neutrinos, only upper limits are set. Those are derived by
 }
 
 
-The bosons are connected to fundamental interactions by requiring invariance under a gauge group transformation as explained later in this chapter. They are listed in Tab.~\ref{tab:theory-bosons}. All bosons, except the Higgs, boson carry a spin of~$1$. The Higgs boson is the only scalar particle~(spin~$0$) of the \gls{sm}. For a long time, it was a purely hypothetical particle of the \gls{sm}. In July 2012, the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations independently reported an observation of a Higgs-like particle. Further investigations whether this new particle exhibits the expected interactions with other particles revealed that it is consistent with the \gls{sm} Higgs boson~\cite{Khachatryan:2016vau}. This discovery completed the \gls{sm} and thus gave further confidence into its theoretical foundation.
+The bosons are connected to fundamental interactions by requiring invariance under a gauge group transformation as explained later in this chapter. They are listed in Tab.~\ref{tab:theory-bosons}. All bosons, except the Higgs boson, carry a spin of~$1$. The Higgs boson is the only scalar fundamental particle~(spin~$0$) of the \gls{sm}. For a long time, it was a purely hypothetical particle. In July 2012, the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations independently reported an observation of a Higgs-like particle. Further investigations whether this new particle exhibits the expected interactions with other particles revealed that it is consistent with the \gls{sm} Higgs boson~\cite{Khachatryan:2016vau}. This discovery completed the \gls{sm} and thus gave further confidence into its theoretical foundation.
 
 
 \mytable{\label{tab:theory-bosons}Bosons of the \gls{sm}. Z and W boson masses are taken from Ref.~\cite{Olive:2016xmw}. The uncertainties on their masses are omitted because the precision is beyond the sub permille level. The Higgs mass is taken from Ref.~\cite{Aad:2015zhl}.}{
@@ -76,7 +76,7 @@ The bosons are connected to fundamental interactions by requiring invariance und
     Z boson (\zboson)   & $91.19~\GeV$         & \multirow{2}{*}{$\Big\}$ weak interaction}  & \multirow{2}{*}{$\mathrm{SU(2)}$}\\
     W boson (\wboson)   & $80.39~\GeV$         &                                    & \\
     
-    Higgs boson (\higgs)& $125.09\pm0.24~\GeV$ & Yukawa interaction                 & $\mathrm{U(1)}$\\
+    Higgs boson (\higgs)& $125.09\pm0.24~\GeV$ & Yukawa interaction                 & $\mathrm{SU(2)}\otimes\mathrm{U(1)}$\\
       
     8 gluons (g)        & $0$                  & strong interaction                 & $\mathrm{SU(3)}$ \\  
     \hline               
@@ -118,15 +118,6 @@ using the definitions $\partial_\mu\equiv\partial/\partial x_\mu$ and $\bar{\psi
 \frac{\partial\mathcal{L}}{\partial\bar{\psi}}-\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)=\big(i\gamma^\mu\partial_\mu-m\big)\psi=0. \\
 \end{equation}
 
-Assuming $\psi\propto e^{-ip^{\mu}x_{\mu}}$ leads directly to the well-known energy-momentum equivalence
-
-\begin{align}
-0&=\big(i\gamma^\mu\partial_\mu-m\big)\cdot \big(-i\gamma^\nu\partial_\nu-m\big)\psi\\
- &=\big(\partial^{\mu}\partial_{\mu}+m^{2}\big)\psi \qquad \mathrm{(``Klein\mbox{-}Gordan''~equation)}  \\
- &\Rightarrow \big(-p^{\mu}p_{\mu}+m^{2}\big) = 0.
-\end{align}
-
-
 In the \gls{sm}, interactions between particles are introduced by requiring local invariance of the Lagrangian density for certain groups of gauge transformations. In the following, this is briefly demonstrated for the case of a $\mathrm{U(1)}$ transformation which leads to electromagnetic interactions.
 
 The transformation of Eq.~\ref{eq:theory-diracL} using 
@@ -155,7 +146,7 @@ This procedure yields a Lagrangian density containing the following terms:
             -&\tfrac{1}{4}\big(\partial_\mu \mathrm{A}_\nu-\partial_\nu \mathrm{A}_\mu\big)^{2} &(\mathrm{boson~propagator})
 \end{align}
 
-The boson propagator describing the dynamics of a free $\mathrm{A}_\mu$ field has been added additionally to the Lagrangian density. It is already invariant under the local gauge transformation. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with electric charge $q$ and a photon described by $\mathrm{A}_\mu$. Furthermore, the photon is predicted to be massless since adding a term of the form $m^{2}_\mathrm{A}\mathrm{A}^\mu \mathrm{A}_\mu$ would violate the invariance.
+In addition, the already gauge-invariant boson propagator describing the dynamics of a free $\mathrm{A}_\mu$ field has been added. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with electric charge $q$ and a photon described by $\mathrm{A}_\mu$. Furthermore, the photon is predicted to be massless since adding a term of the form $m^{2}_\mathrm{A}\mathrm{A}^\mu \mathrm{A}_\mu$ would violate the invariance.
 
 Other interactions of the \gls{sm} are also connected to local gauge transformations which can be introduced through similar procedures. A common property follows from the Noether theorem which states that for each continuous transformation a conserved current exists. Hence the charge associated to each gauge group is conserved. This would however be already the case for a global transformation. The invariance under an even local gauge transformations is a puzzling feature of the theory.
 
