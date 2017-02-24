@@ -157,17 +157,9 @@ Other interactions of the \gls{sm} are also connected to local gauge transformat
 %##############################################
 \label{sec:theory-ewk}
 
-Electromagnetic and weak interactions can be unified using a $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ gauge group. Furthermore, the theory needs to account for the following features found experimentally.
+Electromagnetic and weak interactions can be unified using a $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ gauge group. A complication arises from the fact that the $\mathrm{W}$~and $\mathrm{Z}$~bosons, mediatiors of the weak interaction, are massive. The masses of these particles have to be introduced in a different way if the concept of local gauge invariance should continue to hold. Experimentally, the UA1 and UA2 experiments at the \gls{cern} \gls{sps} proton-antiproton collider measured their masses for the first time~\cite{Arnison:1983rp,Banner:1983jy,Arnison:1983mk,Bagnaia:1983zx} while their existence was already known from bubble chamber experiments\todo{what ???}.
 
-\begin{itemize}
-
-\item Parity is not conserved in weak interactions. Such interactions depend on the spin being aligned towards or against the momentum of a particle. Experimentally, the Wu experiment~\cite{PhysRev.105.1413} discovered this feature in ${}_{27}^{60}\mathrm{Co}\to{}_{28}^{60}\mathrm{Ni}+e^{\rmminus}\bar{\nu}_{e}\gamma\gamma$ decays by analyzing the direction of the escaping electron with respect to the polarization of the cobalt probe through an external magnetic field. 
-
-\item The UA1 and UA2 experiments at the \gls{cern} \gls{sps} proton-antiproton collider discovered that the $\mathrm{W}$~boson~\cite{Arnison:1983rp,Banner:1983jy} and $\mathrm{Z}$~boson~\cite{Arnison:1983mk,Bagnaia:1983zx} (mediators of weak interactions) are massive. The masses of these particles have to be introduced in a different way if the concept of local gauge invariance should continue to hold.
-
-\end{itemize}
-
-To account for the violation of parity, fermion fields are decomposed into chiral eigenstates using the projections
+Another feature of weak interactions is that parity is not conserved but maximally violated. The interaction depends on the spin being aligned towards or against the momentum of a particle. Experimentally, the Wu experiment~\cite{PhysRev.105.1413} discovered this feature in ${}_{27}^{60}\mathrm{Co}\to{}_{28}^{60}\mathrm{Ni}+e^{\rmminus}\bar{\nu}_{e}\gamma\gamma$ decays by analyzing the direction of the escaping electron with respect to the polarization of the cobalt probe through an external magnetic field. To account for the violation of parity, fermion fields are decomposed into chiral eigenstates using the projections
 
 \begin{align}
 \psi_\mathrm{L}&\equiv\mathrm{P}_\mathrm{L}\psi=\tfrac{1}{2}(1-\gamma_{5})\psi \\
@@ -180,9 +172,9 @@ with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties:
 H=\frac{\vec{p}\cdot\vec{s}}{|\vec{p}|}
 \end{equation}
 
-which denotes whether the spin $\vec{s}$ is aligned along~($H=+1$) or against~($H=-1$) the momentum axis. For massive particles however Eq.~\ref{eq:theory-diracL} cannot be decomposed since chirality is not Lorentz invariant. \todo{CP is also violated; add that CPT is considered invariant?}
+which denotes whether the spin $\vec{s}$ is aligned along~($H=+1$) or against~($H=-1$) the momentum axis. For massive particles however Eq.~\ref{eq:theory-diracL} cannot be decomposed since chirality is not Lorentz invariant.
 
-The Glawhow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} splits the fermion fields into ``left-handed'' doublets 
+In the Glashow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} the fermion fields are split into ``left-handed'' doublets 
 
 \begin{align}
 \vec{\mathrm{E}}_\mathrm{L}&=\Bigg\{\colvec{2}{\nu_\mathrm{e,L}}{e^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\mu,\mathrm{L}}}{\mu^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\tau,\mathrm{L}}}{\tau^{\rmminus}_\mathrm{L}}\Bigg\} \label{eq:theory-su2-leptons} \\
@@ -210,7 +202,7 @@ where $\omega_{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\pri
 
 where the summation is implied over the fermion doublets and singlets.
 
-Unfortunately, a fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. A solution is provided by the Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585} which introduce mass terms not only for fermions but also for the $\mathrm{W}$/$\mathrm{Z}$~boson gauge bosons through symmetry breaking. For this, a new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{\rmplus},\phi^{0})$\footnote{$\phi^{\rmplus}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.} (invariant under $\mathrm{U(1)}\otimes\mathrm{SU(2)}$) is added to the Lagrangian density
+A fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. A solution is provided by the Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585} which introduces mass terms not only for fermions but also for the gauge bosons through symmetry breaking. For this, a new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{\rmplus},\phi^{0})$\footnote{$\phi^{\rmplus}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.} (invariant under $\mathrm{U(1)}\otimes\mathrm{SU(2)}$) is added to the Lagrangian density
 
 \begin{align}
 \mathcal{L}_{\phi}&=\big(D_{\mu}\phi^{\dagger}\big)\big(D^{\mu}\phi\big)+\mathrm{V}(\phi) \label{eq:theory-phi-propagator} \\
@@ -223,7 +215,7 @@ which interacts with the gauge bosons. In addition, $\phi$ has a potential
 \mathrm{V}(\phi)=-\mu^2\phi^\dagger\phi+\tfrac{1}{2}\lambda(\phi^\dagger\phi)^2
 \end{equation}
 
-in the form of a ``Mexcian hat'' as shown in Fig.~\ref{fig:theory-higgs-potential} that leads to a \gls{vev} of $\phi_0=\sqrt{\mu^{2}/\lambda}\equiv v/\sqrt{2}$ for $\mu^2>0$.
+in the form of a ``Mexican hat'' as shown in Fig.~\ref{fig:theory-higgs-potential} that leads to a \gls{vev} of $\phi_0=\sqrt{\mu^{2}/\lambda}\equiv v/\sqrt{2}$ for $\mu^2>0$.
 
 \myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field with a non-zero \gls{vev} $\phi_0$ which leads to symmetry breaking.}{
 \includegraphics[width=0.5\textwidth]{figures/theory/higgspot.pdf}
@@ -262,22 +254,22 @@ fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle 
 \colvec{2}{\mathrm{W}_{3}}{\mathrm{B}},\quad \cos\theta_\mathrm{W}=\frac{g}{\sqrt{g^2+g^{\prime 2}}},
 \end{equation}
 
-where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson $\mathrm{Z}$~boson with mass $m_\mathrm{Z}=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $\mathrm{A}_\mu$, the photon, can be identified. The angle is determined as $\sin^2\theta_\mathrm{W} \approx 0.2312$ through the mass ratio $m_\mathrm{W}/m_\mathrm{Z}=\cos\theta_\mathrm{W}$. Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
+where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson $\mathrm{Z}$~boson with mass $m_\mathrm{Z}=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $\mathrm{A}_\mu$, the photon, can be identified. The angle is determined as $\sin^2\theta_\mathrm{W} \approx 0.23$~\cite{Olive:2016xmw} through the mass ratio $m_\mathrm{W}/m_\mathrm{Z}=\cos\theta_\mathrm{W}$.\todo{is the angle determined really this way?} Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
 
 \begin{align}
 D_\mu=&~~~~\partial_\mu+i\frac{g}{\sqrt{2}}\cdot\big(\mathrm{W}^{\rmplus}_\mu T^{\rmplus}+\mathrm{W}^{\rmminus}_\mu T^{\rmminus})\nonumber\\
-&-i\frac{g^2T_3-g^{\prime 2}Y}{\sqrt{g^2+g^{\prime 2}}}\cdot\mathrm{Z}_\mu-i\frac{g^{\prime}g\big(T^3+Y\big)}{\sqrt{g^2+g^{\prime 2}}}\cdot \mathrm{A}_\mu \label{eq:theory-codev-breaking}
+&-i\frac{g^2T_3-g^{\prime 2}Y}{\sqrt{g^2+g^{\prime 2}}}\cdot\mathrm{Z}_\mu-i\frac{g^{\prime}g\big(T_3+Y\big)}{\sqrt{g^2+g^{\prime 2}}}\cdot \mathrm{A}_\mu \label{eq:theory-codev-breaking}
 \end{align}
 
 where $T^{\pm}$ denote the ladder operators, $Y$ the $\mathrm{U(1)}$ so-called ``hyper'' charge and $T_3$ the $\mathrm{SU(2)}$ charge.
 
-From the coupling to the photon one can read of the electric coupling constant to be 
+From the coupling to the photon one can read off the electric coupling constant to be 
 
 \begin{equation}
-e=\frac{g^{\prime} g}{\sqrt{g^2+g^{\prime 2}}}~,\quad \aem=\frac{e^2}{4\pi}=\frac{1}{137}
+e=\frac{g^{\prime} g}{\sqrt{g^2+g^{\prime 2}}}
 \end{equation}
 
-and the corresponding electric charge to be $Q=T_3+Y$ which is invariant under Eq.~\ref{eq:theory-broken-u1-trans}. For the weak coupling constant one finds the relation $e=g\cdot\sin\theta_\mathrm{W}$ which yields $\aw=\aem/\sin^2\theta_\mathrm{W}\approx0.03157$.
+which is measured as $\aem=e^2/(4\pi)=1/137$\todo{cite} and the corresponding electric charge to be $Q=T_3+Y$ which is invariant under Eq.~\ref{eq:theory-broken-u1-trans}. For the weak coupling constant one finds the relation $e=g\cdot\sin\theta_\mathrm{W}$ which yields $\aw=\aem/\sin^2\theta_\mathrm{W}\approx0.032$.
 
 In conclusion, starting from a local gauge invariant theory, the procedure of symmetry breaking through a shifted \gls{vev} leads to three Goldstone bosons which are absorbed into mass terms for the $\mathrm{W}$ and $\mathrm{Z}$~bosons. The value of the \gls{vev} can be determined from the Fermi coupling constant, measured in muon decays, as $v\approx 246~\GeV$~\cite{PhysRevLett.106.041803}. Additionally, the existence of the Higgs boson is predicted as consequence of this procedure. It was finally discovered in July 2012 independently by the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations and thus completed the electroweak theory.
 
@@ -285,8 +277,8 @@ In conclusion, starting from a local gauge invariant theory, the procedure of sy
 The fermion masses can be generated by interacting with the Higgs field as well. One introduces Yukawa interactions as
 
 \begin{align}
-\mathcal{L}_\mathrm{Yukawa\text{-}lepton~int.}=&-\lambda_{e}^{ii}\cdot\bar{\mathrm{E}}^{i}_\mathrm{L}\phi\cdot\mathrm{e}^{i}_\mathrm{R}+\mathrm{\gls{hc}} \label{eq:theory-lepton-yukawa}\\
-\mathcal{L}_\mathrm{Yukawa\text{-}quark~int.}=&-\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi\cdot\mathrm{u}^{k}_\mathrm{R} +\mathrm{\gls{hc}} \label{eq:theory-quark-yukawa}
+\mathcal{L}_\mathrm{Yukawa~lepton~int.}=&-\lambda_{e}^{ii}\cdot\bar{\mathrm{E}}^{i}_\mathrm{L}\phi\cdot\mathrm{e}^{i}_\mathrm{R}+\mathrm{\gls{hc}} \label{eq:theory-lepton-yukawa}\\
+\mathcal{L}_\mathrm{Yukawa~quark~int.}=&-\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi\cdot\mathrm{u}^{k}_\mathrm{R} +\mathrm{\gls{hc}} \label{eq:theory-quark-yukawa}
 \end{align}
 
 where the coupling strengths are denoted by $\lambda$. A mass term for the electron, muon and tau lepton of $m_\ell=-\lambda_\ell v/\sqrt{2}$ can be identified after the symmetry breaking. The quarks can be disentangled from their mixed mass state through a rotation of the fields 
