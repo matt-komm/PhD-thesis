@@ -32,13 +32,15 @@ The tracking efficiency for isolated muons with $1<\pt<100~\GeV$ is found to be 
 
 
 %##############################################
-\section{Vertex and beam spot reconstruction}
+\section{Vertex reconstruction}
 %##############################################
 
 
-The vertex reconstruction tries to locate points of pp interaction from which sets of tracks originated. Clusters of tracks, which are close to the beam spot, are constructed using a deterministic annealing algorithm~\cite{726788}. Here, the association of a track to a vertex candidate is floating and modeled by a probability. A model similar to statistical mechanics is created where each track reflects a microstate. The free energy of the system is monitored while decreasing its temperature. If a minimum of the free energy is reached new vertices are added. 
+The vertex reconstruction tries to locate points of pp interaction from which sets of tracks originate. This allows to separate the tracks of particles belonging to the hard scattering event from additional tracks occurring through pileup interactions. 
 
-The final vertex positions are estimated through a fit using the clustered tracks.
+First, clusters of tracks are constructed using a deterministic annealing algorithm~\cite{726788}. For this only tracks which are close to the beam spot are selected. In the algorithm a statistical mechanics system is setup where each track reflects a microstate. The association of a track to a vertex candidate is floating and controlled by a probability. The free energy of the system is then monitored while decreasing its temperature. If a minimum of the free energy is reached a vertex is split in two nearby ones. The decrease of temperature is stopped when a trade-off between the expected resolution and the probability of falsely splitting two vertices is reached.
+
+Finally, the vertex positions are estimated through an adaptive vertex fit~\cite{0954-3899-34-12-N01} per cluster of tracks. The obtained vertices are referred to as ``primary vertices'' since they mark the point of a pp interaction and are therefore lined up along the z-axis. In 2016 pp collision data the primary vertex resolution is better than $\sigma_{z}=19~\upmu\mathrm{m}$ and $\sigma_{x,y}=14~\upmu\mathrm{m}$ for vertices whose summed \pt of associated tracks exceeds $100~\GeV$~\cite{CMS-DP-2016-041}.
 
 
 
