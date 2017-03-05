@@ -33,6 +33,7 @@ The tracking efficiency for isolated muons with $1<\pt<100~\GeV$ is found to be 
 %##############################################
 \subsection{Muon tracks}
 %##############################################
+\label{sec:reconstruction-muontracks}
 
 The track reconstruction for muons begins with the local reconstruction of hits in the three muon systems~\cite{Bayatian:922757}. The \gls{dt} hit positions are reconstructed by first forming independent segments in $r\text{-}\phi$ and $r\text{-}z$ through a combination of pattern recognition and linear fitting which are then combined. For the \glspl{csc}, independent 2D hits are reconstructed at wire-strip intersections in each of the six layers which are combined through a fit to a track segment. \gls{rpc} hits are build from clusters of fired strips where the positions are taken as the  center of gravity of their area.
 
@@ -68,16 +69,22 @@ Finally, the vertex positions are estimated through an adaptive vertex fit~\cite
 \section{Particle flow}
 %##############################################
 
-A central element of the standard \gls{cms} reconstruction is the particle flow algorithm~\cite{CMS:2009nxa}. It combines the individual subdetector data to reconstruct global particle candidates like electrons, muons, photons, and charged and neutral hadrons in an event. By tracing the flow of particles through the various subdetectors an improved spatial resolution, energy measurement, and type identification of particles is achieved.
+A central element of the standard \gls{cms} reconstruction is the \glshere{pf} algorithm~\cite{CMS:2009nxa}. It combines the individual subdetector data to reconstruct global particle candidates like electrons, muons, photons, and charged and neutral hadrons in an event. By tracing the flow of particles through the various subdetectors an improved spatial resolution, energy measurement, and type identification of particles is achieved.
 
-Its core consists of a linking algorithm which, given a particle hypothesis, links several subdetector information together. The linked elements can be charged-particle tracks from the inner tracker, calorimeter clusters from the \gls{ecal} or \gls{hcal}, and muon tracks. 
+Its core consists of a linking algorithm which, given a particle hypothesis, links several subdetector information together. The linked elements can be charged-particle tracks from the inner tracker, calorimeter clusters from the \gls{ecal} or \gls{hcal}, and muon tracks. The algorithm starts by extrapolating charged-particle tracks into the calorimeter systems. In the \gls{ecal} the trajectory is extend to the expected depth of the shower maximum of an electron candidate. In the \gls{hcal} the trajectory is extrapolated up to one interaction length. A link is created if the trajectory is located inside the boundaries of a compatible \gls{ecal} or \gls{hcal} cell cluster within uncertainties. Photon candidates which could have been emitted tangentially from electron tracks are also created by extrapolating straight tracks from the electron track hits on tracker layers to compatible \gls{ecal} cells. For neutral particle candidates, links between calorimeter clusters are formed instead. Here, the algorithm starts first with the higher resolution clusters on the \gls{ecal} or \gls{ps} and extrapolates them to potential \gls{hcal} or \gls{ecal} clusters respectively which have a coarser granularity. The described reconstruction muon and electron tracks in Secs.~\ref{sec:reconstruction-muontracks} and~\ref{sec:reconstruction-electrontracks} is also considered part of the \gls{pf} algorithm.
 
+Finally, the identification of particles is performed by utilizing the linked blocks. First, global \gls{pf} muons are easily identified through the unambiguous signal in the muon system. Then \gls{pf} electrons are identified through the \gls{gsf} tracking together with potential photons from bremsstrahlung. %For the remaining \gls{pf} candidates, their track quality is tightened to reject fake tracks which would spoil the energy resolution of the calorimeters.
+
+rest pf with tracks are charged hadrons, others are neutral hadrons or photons
+
+\myfigure{\label{fig:reconstruction-pfjets}Comparison of calorimeter jets and particle flow jets: (a)~spatial resolution in $\eta$; (b)~energy resolution. The figures are taken from Ref.~\cite{CMS:2009nxa}.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/pf_jeteta.pdf}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/pf_jetenergy.pdf}}
+}
 
 %##############################################
 \section{Muons}
 %##############################################
-
-
 
 id, trigger
 
@@ -86,9 +93,7 @@ id, trigger
 %##############################################
 \label{sec:reconstruction-electrons}
 
-ecal supercluster
-
-gsf, id
+id
 
 %##############################################
 \section{Jets}
