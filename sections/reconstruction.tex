@@ -1,15 +1,15 @@
 \chapter{Event reconstruction}
 
-\intro{The reconstruction of basic analysis objects within an event is described. A key ingredient in the \gls{cms} reconstruction is the particle flow algorithm which defines particle candidates by combining various subdetector information. The focus is set on the reconstruction and performance of muons, electrons, jets, and the missing transverse energy in 8 and 13~TeV pp~collision data which are the input objects in this thesis to study single top quark production.}
+\intro{The reconstruction of basic analysis objects within an event is described. A key ingredient in the \gls{cms} reconstruction is the particle flow algorithm which forms particle candidates by combining various subdetector information leading to an improved spatial resolution and energy measurement. The focus is set on the reconstruction and performance of muons, electrons, jets, and the missing transverse energy in 8 and 13~TeV pp~collision data which are the input objects in this thesis to study single top quark production.}
 
-The event reconstruction attempts to build and identify basic analysis objects from the raw detector data. In \gls{cms}, basic objects are particle tracks and vertices as well as charged lepton, photon, and jet candidates. During the reconstruction additional information such as the missing transverse energy, $\met$, and the likelihood of jets to originate from the hadronization of b~quarks~(``b-tagging'') is determined. Since $\tau$ leptons have not been utilized and photons are not relevant for the study of $t$-channel single top quark production a description of their reconstruction and performance is omitted here yet details can be found in Refs.~\cite{Khachatryan:2015dfa,Khachatryan:2015iwa}.
+The event reconstruction attempts to build and identify basic analysis objects from the raw detector data. In \gls{cms}, basic objects are particle tracks and vertices as well as charged lepton, photon, and jet candidates. During the reconstruction additional information such as the missing transverse energy, $\met$, and the likelihood of jets to originate from the hadronization of b~quarks~(``b-tagging'') is determined. Since $\tau$ leptons have not been utilized and photons are not relevant in this study of $t$-channel single top quark production a description of their reconstruction and performance is omitted here yet details can be found in Refs.~\cite{Khachatryan:2015dfa,Khachatryan:2015iwa}.
 
 
 %##############################################
 \section{Track reconstruction}
 %##############################################
 
-The track reconstruction is split in two steps. First, in the local reconstruction, hits from charge distributions on the pixel and strip modules of the tracker are formed. Then, in the global reconstruction, trajectory candidates are first seeded and then sequentially build from hits. A curved track is fitted to the hits of trajectory candidates to estimates parameters like the particle's momentum and charge. The individual steps are described briefly in the following. More details can be found in Ref.~\cite{Chatrchyan:2014fea}.
+The track reconstruction from hits in the inner tracking system is split in two steps. First, in the local reconstruction, hits from charge distributions on the pixel and strip modules of the tracker are formed. Then, in the global reconstruction, trajectory candidates are first seeded and then sequentially build from hits. A curved track is fitted to the hits of trajectory candidates to estimates parameters like the particle's momentum and charge. The individual steps are described briefly in the following. More details can be found in Ref.~\cite{Chatrchyan:2014fea}.
 
 Different algorithms are used to determine the local position of two-dimensional (one-dimensional) hits from the distributions of charge deposits on the pixel (strip) modules respectively. A fast estimation of the hit position is performed for pixel hits first whose outcome is utilized in the trajectory seeding and building stage only. Here, the 2D charge distributions are projected onto each axis. Then the positions are estimated from the charge at the edges of the charge distribution clusters while accounting for the Lorentz-drift in the modules. During the track-fit the optimal pixel hit positions are instead estimated by comparing the charge distributions against simulated templates for various incident angles~\cite{Swartz:2007zz}. In the barrel layers, the pixel hit resolution is measured as $9.4~\upmu\mathrm{m}$ in $\mathrm{r}\phi$ and ranges between $21\range45~\upmu\mathrm{m}$ along the z-axis depending on the incident angle~\cite{Chatrchyan:2014fea}. 
 
@@ -28,7 +28,23 @@ Each seed contains enough information to commence a first estimate of the track 
 
 The hits per trajectory are then passed to a \gls{kf}-based track fit to estimate the track parameters without utilizing the initial estimate from the seed. In addition, the fit accounts for material effects and the inhomogeneous magnetic field.  The fitted tracks have to pass a quality selection to reduce the amount of fake tracks before they are considered in physics analyses. The criteria reflect the seed requirements and depend additionally on e.g. the total number of (3D) hits, the $\chi^2/\mathrm{\gls{ndof}}$ of the fit, the amount of ghost hits, and the amount of shared hits with other tracks amongst others.
 
-The tracking efficiency for isolated muons with $1<\pt<100~\GeV$ is found to be above $99\%$ over the full tracker acceptance since their trajectories is only disturbed by energy loss and Coulomb scattering. The trajectory of charged hadrons, like pions, is additionally affected by nuclear interactions especially at low momenta ($\pt<700~\MeV$) which yields efficiencies between $80\range95\%$~\cite{Chatrchyan:2014fea}. For electrons a special tracking is performed in addition to account for their energy loss via bremsstrahlung as described in Sec.~\ref{sec:reconstruction-electrons}. In parts of the 2016 collision data, the overall tracking efficiency decreased by about $2\range6\%$ at high instantaneous luminosities of $(1.0\range1.2)\cdot10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$ due to a charge saturation effect on the readout chips leading to missing hits~\cite{CMS-DP-2016-043} which was however recovered by adjusting the module's charge drain speed.
+The tracking efficiency for isolated muons with $1<\pt<100~\GeV$ is found to be above $99\%$ over the full tracker acceptance since their trajectories is only disturbed by energy loss and Coulomb scattering. The trajectory of charged hadrons, like pions, is additionally affected by nuclear interactions especially at low momenta ($\pt<700~\MeV$) which yields efficiencies between $80\range95\%$~\cite{Chatrchyan:2014fea}. For electrons a special tracking is performed in addition to account for their energy loss via bremsstrahlung as described in Sec.~\ref{sec:reconstruction-electrons}. In parts of the 2016 collision data, the overall tracking efficiency decreased by about $2\range6\%$ at high instantaneous luminosities of $(1.0\range1.2)\cdot10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$ due to a charge saturation effect on the readout chips leading to missing hits which was however recovered by adjusting the module's charge drain speed.
+
+%##############################################
+\subsection{Muon tracks}
+%##############################################
+
+The track reconstruction for muons begins with the local reconstruction of hits in the three muon systems~\cite{Bayatian:922757}. The \gls{dt} hit positions are reconstructed by first forming independent segments in $r\text{-}\phi$ and $r\text{-}z$ through a combination of pattern recognition and linear fitting which are then combined. For the \glspl{csc}, independent 2D hits are reconstructed at wire-strip intersections in each of the six layers which are combined through a fit to a track segment. \gls{rpc} hits are build from clusters of fired strips where the positions are taken as the  center of gravity of their area.
+
+Standalone muon tracks are reconstruct from the information of the muon systems alone without utilizing the inner tracker. The tracking starts by generating seeds from a linear fit through hits in the \gls{dt} and \gls{csc} systems. Then, a \gls{kf}-based track-fit is carried out taking as starting point the seeds while also utilizing the hits in the \glspl{rpc} system. In addition, the track has to be close to the beam spot which improves the momentum resolution. By extrapolating the track to the inner tracker a region of interest is defined. A global muon track can then be estimated which utilizes also compatible hits from the inner tracker inside this region.
+
+
+%##############################################
+\subsection{Electron tracks}
+%##############################################
+
+
+
 
 
 %##############################################
@@ -44,14 +60,20 @@ Finally, the vertex positions are estimated through an adaptive vertex fit~\cite
 
 
 
-
 %##############################################
 \section{Particle flow}
 %##############################################
 
+A central element of the standard \gls{cms} reconstruction is the particle flow algorithm~\cite{CMS:2009nxa}. It combines the individual subdetector data to reconstruct global particle candidates like electrons, muons, photons, and charged and neutral hadrons in an event. By tracing the flow of particles through the various subdetectors an improved spatial resolution, energy measurement, and type identification of particles is achieved.
+
+Its core consists of a linking algorithms which, given a particle hypothesis, links several subdetector information together. The linked elements can be charged-particle tracks from the inner tracker, calorimeter clusters from the \gls{ecal} or \gls{hcal}, and muon tracks. 
+
+
 %##############################################
 \section{Muons}
 %##############################################
+
+
 
 id, trigger
 
@@ -60,11 +82,15 @@ id, trigger
 %##############################################
 \label{sec:reconstruction-electrons}
 
+ecal supercluster
+
 gsf, id
 
 %##############################################
 \section{Jets}
 %##############################################
+
+hcal readout
 
 CHS, JEC, JER
 
