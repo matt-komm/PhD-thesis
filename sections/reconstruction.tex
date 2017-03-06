@@ -28,7 +28,7 @@ Each seed contains enough information to commence a first estimate of the track 
 
 The hits per trajectory are then passed to a \gls{kf}-based track fit to estimate the track parameters without utilizing the initial estimate from the seed. In addition, the fit accounts for material effects and the inhomogeneous magnetic field.  The fitted tracks have to pass a quality selection to reduce the amount of fake tracks before they are considered in physics analyses. The criteria reflect the seed requirements and depend additionally on e.g. the total number of (3D) hits, the $\chi^2/\mathrm{\gls{ndof}}$ of the fit, the amount of ghost hits, and the amount of shared hits with other tracks amongst others.
 
-The tracking efficiency for isolated muons with $1<\pt<100~\GeV$ is found to be above $99\%$ over the full tracker acceptance since their trajectories is only disturbed by energy loss and Coulomb scattering. The trajectory of charged hadrons, like pions, is additionally affected by nuclear interactions especially at low momenta ($\pt<700~\MeV$) which yields efficiencies between $80\range95\%$~\cite{Chatrchyan:2014fea}. For electrons, a special tracking is performed additionally which attempts to recover cases where the electron looses sufficient amounts of energy via bremsstrahlung as described in Sec.~\ref{sec:reconstruction-electrontracks}. In parts of the 2016 collision data, the overall tracking efficiency decreased by about $2\range6\%$ at high instantaneous luminosities of $(1.0\range1.2)\cdot10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$ due to a charge saturation effect on the readout chips leading to missing hits which was however recovered by adjusting the module's charge drain speed.
+The tracking efficiency for isolated muon tracks with $1<\pt<100~\GeV$ is found to be above $99\%$ over the full tracker acceptance since their trajectories are only disturbed by energy loss through ionization and Coulomb scattering. The trajectories of charged hadrons like pions is additionally affected by nuclear interactions especially at low momenta ($\pt<700~\MeV$) which yields efficiencies between $80\range95\%$~\cite{Chatrchyan:2014fea}. For electrons, a special tracking is performed on top of the standard one which attempts to recover cases where the electron looses sufficient amounts of energy via bremsstrahlung as described in Sec.~\ref{sec:reconstruction-electrontracks}. In parts of the 2016 collision data the overall tracking efficiency decreased by about $2\range6\%$ at high instantaneous luminosities of $(1.0\range1.2)\cdot10^{34}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$ due to a charge saturation effect on the readout chips leading to missing hits which was however recovered by adjusting the tracker module's charge drain speed.
 
 %##############################################
 \subsection{Muon tracks}
@@ -47,8 +47,9 @@ Standalone muon tracks are reconstruct from the information of the muon systems 
 
 In \gls{cms}, the primary loss of energy for electrons occurs not via ionization but via bremsstrahlung instead. Typically an electron will radiate more than 70\% of its energy with a probability of 35\% in the tracker before reaching the \gls{ecal} leading to an increasingly curved trajectory in the magnetic field. Such trajectories are suboptimal to be reconstructed with the \gls{kf}-based standard tracking where a Gaussian-shaped energy loss distribution is assumed. Therefore, a different filter algorithm, the so-called \glshere{gsf}~\cite{0954-3899-31-9-N01} is employed instead.
 
-Seeds for the \gls{gsf} tracking are constructed in two ways. The first method starts by forming super clusters of \gls{ecal} crystals with a size of 0.09 in $\eta$ but $\pm0.3~\mathrm{rad}$ azimuthally to detect electrons together with their potentially radiated photons~\cite{CMS:2010aua}. The other method tries to identify electron tracks inside the standard track collection which are typically marked either by a poor fit quality if the energy loss was large or that it is possible to match an \gls{ecal} cluster to the track otherwise. From the two methods compatible trajectory seeds are selected to initiate the \gls{gsf} tracking. In its core it utilizes a set of trajectories which are subjected to the \gls{kf}-based tracking algorithm. For each trajectory a different Gaussian distribution for the energy loss through bremsstrahlung is assumed per layer. The summed distributions reflect an approximation of the Bethe-Heitler formula which describes the energy loss of electrons. After extrapolating the set of trajectories to a new layer, incompatible trajectories are removed or merged with similar ones to limit the exponential growth of trajectories to 12 at a time.
+Seeds for the \gls{gsf} tracking are constructed in two ways. The first method creates \gls{ecal}-driven seeds by forming super clusters of \gls{ecal} crystals with a size of 0.09 in $\eta$ but $\pm0.3~\mathrm{rad}$ azimuthally to detect electrons together with their potentially radiated photons~\cite{CMS:2010aua}. The second method tries to identify electron tracks inside the standard track collection which are typically marked either by a poor fit quality if the energy loss was large or that it is possible to match an \gls{ecal} cluster to the track otherwise. The resulting seeds from the two methods are selected to initiate the \gls{gsf} tracking. In its core it utilizes a set of trajectories which are subjected to the \gls{kf}-based tracking algorithm. For each trajectory a different Gaussian distribution for the energy loss through bremsstrahlung is assumed per layer. The summed distributions reflect an approximation of the Bethe-Heitler formula which describes the energy loss of electrons. After extrapolating the set of trajectories to a new layer, incompatible trajectories are removed or merged with similar ones to limit the exponential growth of trajectories to 12 at a time.
 
+\todo{performance?}
 
 
 
@@ -61,7 +62,7 @@ The vertex reconstruction tries to locate points of pp interaction from which se
 
 First, clusters of tracks are constructed using a deterministic annealing algorithm~\cite{726788}. For this only tracks which are close to the beam spot are selected. In the algorithm a statistical mechanics system is setup where each track reflects a microstate. The association of a track to a vertex candidate is floating and controlled by a probability. The free energy of the system is then monitored while decreasing its temperature. If a minimum of the free energy is reached a vertex is split in two nearby ones. The decrease of temperature is stopped when a trade-off between the expected resolution and the probability of falsely splitting two vertices is reached.
 
-Finally, the vertex positions are estimated through an adaptive vertex fit~\cite{0954-3899-34-12-N01} per cluster of tracks. The obtained vertices are referred to as ``primary vertices'' since they mark the point of a pp interaction and are therefore lined up along the z-axis. In 2016 pp collision data the primary vertex resolution is better than $\sigma_{z}=19~\upmu\mathrm{m}$ and $\sigma_{x,y}=14~\upmu\mathrm{m}$ for vertices whose summed \pt of associated tracks exceeds $100~\GeV$~\cite{CMS-DP-2016-041}.
+Finally, the vertex positions are estimated through an adaptive vertex fit~\cite{0954-3899-34-12-N01} per cluster of tracks. The obtained vertices are referred to as ``primary vertices'' since they mark the point of a pp interaction and are therefore lined up along the z-axis. The vertices are ordered by the summed $\pt^2$ of their associated tracks where the leading vertex is assigned to be the hard interaction of interest while the others are treated as pileup interactions. In 2016 pp collision data the primary vertex resolution is better than $\sigma_{z}=19~\upmu\mathrm{m}$ and $\sigma_{x,y}=14~\upmu\mathrm{m}$ for vertices whose summed \pt of associated tracks exceeds $100~\GeV$~\cite{CMS-DP-2016-041}.
 
 
 
@@ -77,7 +78,7 @@ The identification of particles is performed by utilizing the linked blocks. Fir
 
 The improvement in spatial and energy resolution which is achieved through the \gls{pf} algorithm is demonstrated exemplary for jets in Fig.~\ref{fig:reconstruction-pfjets}. In particular, the energy resolution of \gls{pf} jets at low momenta is significantly better than that of calorimeter jets since here the energy estimation utilizes also the measured momenta of charged-particle tracks from the inner tracker.
 
-\myfigure{\label{fig:reconstruction-pfjets}Comparison of calorimeter jets and particle flow jets: (a)~spatial resolution in $\eta$; (b)~energy resolution. The figures are taken from Ref.~\cite{CMS:2009nxa}.}{
+\myfigure{\label{fig:reconstruction-pfjets}Comparison of simulated calorimeter and particle flow jets performance: (a)~spatial resolution in $\eta$; (b)~energy resolution. The figures are taken from Ref.~\cite{CMS:2009nxa}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/pf_jeteta.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/pf_jetenergy.pdf}}
 }
@@ -86,20 +87,52 @@ The improvement in spatial and energy resolution which is achieved through the \
 \section{Muons}
 %##############################################
 
+Identification of muons for physics analyses is performed by requiring additional selection criteria. The exact criteria differ slightly per data taking period. Here, the details and performance of muon identification and isolation in 2012 pp collision data is briefly discussed. 
+
+Global \gls{pf} muons are selected for analysis with a $\pt$ of at least $26~\GeV$ within a pseudorapidity range of $|\eta|<2.1$. 
+
+see https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId
+
+\myfigure{\label{fig:reconstruction-idmuon}The figures are taken from Ref.~\cite{CMS-DP-2013-009}.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_idpt.png}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_ideta.png}}
+}
+
+
+\begin{equation}
+I_\mathrm{rel.}^{\mu}=\frac{I_\text{ch.-had.}+\max\left(0,~I_{\gamma}+I_\text{neut.-had.}-\beta\cdot I_\text{\gls{pu}}\right)}{\pt^\mu},\qquad \beta=\frac{1}{2}
+\end{equation}
+
+\myfigure{\label{fig:reconstruction-isomuon}The figures are taken from Ref.~\cite{CMS-DP-2013-009}.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_isopt.png}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_isoeta.png}}
+}
+
+
+
+
 id, trigger
+
+The relative 
 
 %##############################################
 \section{Electrons}
 %##############################################
 \label{sec:reconstruction-electrons}
 
-id
+id, scale factors, effective area isolation
+
+\begin{equation}
+I_\mathrm{rel.}^\mathrm{e}=\frac{I_\text{ch.-had.}+\max\left(0,~I_{\gamma}+I_\text{neut.-had.}-\rho\cdot A_\text{eff.}\right)}{\pt^\mathrm{e}}
+\end{equation}
 
 %##############################################
 \section{Jets}
 %##############################################
 
 hcal readout
+
+leptob jet cleaning
 
 CHS, JEC, JER
 
