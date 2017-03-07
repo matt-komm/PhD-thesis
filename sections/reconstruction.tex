@@ -17,7 +17,7 @@ For the strips, charge clusters are formed if the channel readout of adjacent st
 
 Track reconstruction is performed in multiple passes, called iterations, over the reconstructed hits to reduce the combinatorial complexity. Each iteration consists of the same algorithmic steps~(seeding, trajectory finding, track fitting, and selection) but is configured differently. The first iterations attempt to reconstruct only simple tracks which originate close to the interaction region and have a sufficiently large transverse momentum. The hits belonging to successfully reconstructed tracks are masked in subsequent iterations which reduces the combinatorics. Later iterations focus then on displaced or low momentum tracks which may not originate from the interaction region using the remaining hits. Figure~\ref{fig:reconstruction-trackingiter} shows the efficiency and acceptance for successfully reconstructing a track\footnote{Tracks are reconstructed ``successfully'' if at least 75\% of their hits can be associated to a simulated particle.} in simulation, broken down per iteration, as a function of its transverse momentum or displacement.
 
-\myfigure{\label{fig:reconstruction-trackingiter}Efficiency and acceptance of successfully reconstructing a track in simulation per tracking iteration as a function of (a)~the transverse momentum and (b)~the transverse displacement. The figures are taken from the public tracking result web page of CMS~\cite{trackingpublic}.}{
+\myfigure{\label{fig:reconstruction-trackingiter}Efficiency and acceptance of successfully reconstructing a track in simulation per tracking iteration as a function of (a)~the transverse momentum and (b)~the transverse displacement. The figures are taken from Ref.~\cite{trackingpublic}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/tracking_vs_pt.jpg}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/tracking_vs_vertpos.jpg}}
 }
@@ -87,11 +87,15 @@ The improvement in spatial and energy resolution which is achieved through the \
 \section{Muons}
 %##############################################
 
-Identification of muons for physics analyses is performed by requiring additional selection criteria. The exact criteria differ slightly per data taking period. Here, the details and performance of muon identification and isolation in 2012 pp collision data is briefly discussed. 
+Identification of muons for physics analyses is performed by requiring additional selection criteria. Different quality levels of muon identification allow to balance the purity against the efficiency. A description of various muon identification and  with 7~\TeV pp collision data can be found in Ref.~\cite{Chatrchyan:2012xi}.
 
-Global \gls{pf} muons are selected for analysis with a $\pt$ of at least $26~\GeV$ within a pseudorapidity range of $|\eta|<2.1$. 
+Throughout the analyses within this thesis, the ``tight'' muon ID is used which attempts to selects the most genuine muons while rejecting falsely reconstructed one. The exact criteria defining tight muons are adapted slightly from one data taking period to the next. In the following, the details and performance of muon identification criteria utilized in 2012 pp collision data are briefly discussed.
 
-see https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId
+Global \gls{pf} muons are considered for identification if they have a $\pt$ of at least $20~\GeV$ and fall within a pseudorapidity range of $|\eta|<2.1$. The global muon fit is required to included at least one valid hit in the muon chambers where two muon segments have to be present in at least two muon stations. This ensure that 
+
+ To reject fake muons from hadron showers that are not contained by the \gls{hcal}, so-called ``punch-throughs'', 
+
+
 
 \myfigure{\label{fig:reconstruction-idmuon}The figures are taken from Ref.~\cite{CMS-DP-2013-009}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_idpt.png}}\hspace{0.03\textwidth}
@@ -130,7 +134,14 @@ I_\mathrm{rel.}^\mathrm{e}=\frac{I_\text{ch.-had.}+\max\left(0,~I_{\gamma}+I_\te
 \section{Jets}
 %##############################################
 
+\myfigure{\label{fig:reconstruction-jets}The figures are taken from Ref.~\cite{CMS-DP-2013-033}.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/jet_uncpt.pdf}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/jet_unceta.pdf}}
+}
+
 hcal readout
+
+ak clustering
 
 leptob jet cleaning
 
@@ -140,11 +151,22 @@ CHS, JEC, JER
 \section{b-tagging}
 %##############################################
 
+\myfigure{\label{fig:reconstruction-btagging}The figure is taken from Ref.~\cite{CMS-PAS-BTV-15-001}.}{
+\includegraphics[width=0.75\textwidth]{figures/reconstruction/btag_comparison.pdf}
+}
+
 csv, SF, rizzi recipe
 
 %##############################################
 \section{Missing transverse energy}
 %##############################################
+
+for $\pt>50~\GeV$ the parallel $\pvmiss$ component is reconstructed well. At low momenta, unclustered energy degrades the 
+
+\myfigure{\label{fig:reconstruction-met}The average $\pvmiss$ component parallel to the recoiling $\mathrm{Z}/\gamma$ boson as a function of the boson's momentum. The figure is taken from Ref.~\cite{CMS-PAS-JME-12-002}.}{
+\includegraphics[width=0.6\textwidth]{figures/reconstruction/met_recoil.pdf}
+}
+
 
 T0, T1 corrections
 
