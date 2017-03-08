@@ -87,20 +87,18 @@ The improvement in spatial and energy resolution which is achieved through the \
 \section{Muons}
 %##############################################
 
-Identification of muons for physics analyses is performed by requiring additional selection criteria. Different quality levels of muon identification allow to balance the purity against the efficiency. A description of various muon identification and  with 7~\TeV pp collision data can be found in Ref.~\cite{Chatrchyan:2012xi}.
+Identification of muon candidates for physics analyses is performed by requiring additional selection criteria. A detailed study of muon identification with 7~\TeV pp collision data can be found in Ref.~\cite{Chatrchyan:2012xi}. Throughout the analyses within this thesis, the ``tight'' muon ID is used which attempts to selects the most genuine muons while rejecting falsely reconstructed one. In the following, the criteria and performance of muon identification utilized in 2012 pp collision data are briefly discussed~\cite{CMS-DP-2013-009}.
 
-Throughout the analyses within this thesis, the ``tight'' muon ID is used which attempts to selects the most genuine muons while rejecting falsely reconstructed one. The exact criteria defining tight muons are adapted slightly from one data taking period to the next. In the following, the details and performance of muon identification criteria utilized in 2012 pp collision data are briefly discussed.
+The global muon fit is required to included at least one valid hit in the muon chambers for which in addition at least two muon segments in two muon stations are present. Only muon tracks whose fits gave a $\chi^2/\mathrm{\gls{ndof}}<10$ are selected. The motivation behind these criteria is to reject fake muons from hadron showers that are not contained by the \gls{hcal} and reach the muon system~(so-called ``punch-throughs''). To suppress the decay of muons in flight, the muon track needs to consist of at least one pixel hit. Additionally, a minimum number of five hits in the tracker is required. A selection on the minimal distance of the muon track to the primary vertex of $d_{x,y}<2~\mathrm{mm}$ and $d_{z}<5~\mathrm{mm}$ is applied to reject cosmic muons and muons stemming from \gls{pu} interactions. 
 
-Global \gls{pf} muons are considered for identification if they have a $\pt$ of at least $20~\GeV$ and fall within a pseudorapidity range of $|\eta|<2.1$. The global muon fit is required to included at least one valid hit in the muon chambers where two muon segments have to be present in at least two muon stations. This ensure that 
+A comparison of muon identification efficiencies for data and simulation is presented in Fig.~\ref{fig:reconstruction-idmuon}. These have been estimated using the tag-and-probe method for which $\mathrm{Z}\to\mu^{\rmplus}\mu^{\rmminus}$ events are selected where one muon is required to pass the ID selection~(``tag''). It is then measured in how many instances the other muon passes the ID selection as well~(``probe'') to infer the efficiency. The efficiency is found to be between 95\range100\% with the exception of two dips at $0.2<|\eta|<0.3$ which occur due to a crack between \gls{dt} wheels.
 
- To reject fake muons from hadron showers that are not contained by the \gls{hcal}, so-called ``punch-throughs'', 
-
-
-
-\myfigure{\label{fig:reconstruction-idmuon}The figures are taken from Ref.~\cite{CMS-DP-2013-009}.}{
+\myfigure{\label{fig:reconstruction-idmuon}Comparison of muon identification efficiencies of data and simulation as a function of (a)~the transverse momentum and (b)~the pseudorapidity of muons. The figures are taken from Ref.~\cite{CMS-DP-2013-009}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_idpt.png}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_ideta.png}}
 }
+
+
 
 
 \begin{equation}

@@ -212,11 +212,12 @@
 \def\@makechapterhead#1{
      \parbox{\textwidth}{
         \chapterheadstartvskip
-        \parbox{\textwidth}{\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}\\[0.55cm]
+        %\parbox{\textwidth}{\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}\\[0.55cm]
+        {\color{gray}\Large\textsf{\chaptername}\quad\LARGE\numberfont{\thechapter}}\\[0.55cm]
         %\vspace{0.55cm}
         \parbox{\textwidth}{\usekomafont{chapter} #1}\\[0.45cm]
         %\vspace{0.45cm}
-        \parbox{\textwidth}{\color{gray}\rule{\textwidth}{\myrulewidth}}\\[0.0cm]
+        %\parbox{\textwidth}{\color{gray}\rule{\textwidth}{\myrulewidth}}\\[0.0cm]
     }
 }
 

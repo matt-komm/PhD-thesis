@@ -709,7 +709,7 @@ FUNCTION {empty.misc.check}
 FUNCTION {format.tr.number}
 { type empty$
     { "Technical Report" } %---------------- Modified (GA) was: Tech. Rep.
-    'type
+    { type }
   if$
   number empty$
     { "l" change.case$ }
