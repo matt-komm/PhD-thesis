@@ -87,40 +87,43 @@ The improvement in spatial and energy resolution which is achieved through the \
 \section{Muons}
 %##############################################
 
-Identification of muon candidates for physics analyses is performed by requiring additional selection criteria. A detailed study of muon identification with 7~\TeV pp collision data can be found in Ref.~\cite{Chatrchyan:2012xi}. Throughout the analyses within this thesis, the ``tight'' muon ID is used which attempts to selects the most genuine muons while rejecting falsely reconstructed one. In the following, the criteria and performance of muon identification utilized in 2012 pp collision data are briefly discussed~\cite{CMS-DP-2013-009}.
+Identification of muon candidates for physics analyses is performed by requiring additional selection criteria. A detailed study of muon identification with 7~\TeV pp collision data can be found in Ref.~\cite{Chatrchyan:2012xi}. Throughout the analyses within this thesis, the ``tight'' muon ID is used which attempts to selects the most genuine muons while rejecting falsely reconstructed one. In the following, the criteria and performance of muon identification utilized in 8~TeV pp collision data are briefly discussed~\cite{CMS-DP-2013-009}.
 
-The global muon fit is required to included at least one valid hit in the muon chambers for which in addition at least two muon segments in two muon stations are present. Only muon tracks whose fits gave a $\chi^2/\mathrm{\gls{ndof}}<10$ are selected. The motivation behind these criteria is to reject fake muons from hadron showers that are not contained by the \gls{hcal} and reach the muon system~(so-called ``punch-throughs''). To suppress the decay of muons in flight, the muon track needs to consist of at least one pixel hit. Additionally, a minimum number of five hits in the tracker is required. A selection on the minimal distance of the muon track to the primary vertex of $d_{x,y}<2~\mathrm{mm}$ and $d_{z}<5~\mathrm{mm}$ is applied to reject cosmic muons and muons stemming from \gls{pu} interactions. 
-
-A comparison of muon identification efficiencies for data and simulation is presented in Fig.~\ref{fig:reconstruction-idmuon}. These have been estimated using the tag-and-probe method for which $\mathrm{Z}\to\mu^{\rmplus}\mu^{\rmminus}$ events are selected where one muon is required to pass the ID selection~(``tag''). It is then measured in how many instances the other muon passes the ID selection as well~(``probe'') to infer the efficiency. The efficiency is found to be between 95\range100\% with the exception of two dips at $0.2<|\eta|<0.3$ which occur due to a crack between \gls{dt} wheels.
+The global muon fit is required to included at least one valid hit in the muon chambers for which in addition at least two muon segments in two muon stations are present. Only muon tracks whose fits gave a $\chi^2/\mathrm{\gls{ndof}}<10$ are selected. The motivation behind these criteria is to reject fake muons from hadron showers that are not contained by the \gls{hcal} and reach the muon system~(so-called ``punch-throughs''). To suppress the decay of muons in flight, the muon track needs to consist of at least one pixel hit. Additionally, a minimum number of five hits in the tracker is required. A selection on the minimal distance of the muon track to the primary vertex of $d_{x,y}<2~\mathrm{mm}$ and $d_{z}<5~\mathrm{mm}$ is applied to reject cosmic muons and muons stemming from \gls{pu} interactions. A comparison of muon identification efficiencies for data and simulation is presented in Fig.~\ref{fig:reconstruction-idmuon}. These have been estimated using the tag-and-probe method for which $\mathrm{Z}\to\mu^{\rmplus}\mu^{\rmminus}$ events are selected where one muon is required to pass the ID selection~(``tag''). It is then measured in how many instances the other muon passes the ID selection as well~(``probe'') to infer the efficiency. The efficiency is found to be between 95\range100\% with the exception of two dips at $0.2<|\eta|<0.3$ which occur due to a crack between \gls{dt} wheels.
 
 \myfigure{\label{fig:reconstruction-idmuon}Comparison of muon identification efficiencies of data and simulation as a function of (a)~the transverse momentum and (b)~the pseudorapidity of muons. The figures are taken from Ref.~\cite{CMS-DP-2013-009}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_idpt.png}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_ideta.png}}
 }
 
-
-
+Muon candidates in the analyses of single top quark production within this thesis are required to be spatially isolated from electromagnetic and hadronic activity in addition to the tight identification. The relative ``delta-beta'' corrected isolation for muons is defined as
 
 \begin{equation}
 I_\mathrm{rel.}^{\mu}=\frac{I_\text{ch.-had.}+\max\left(0,~I_{\gamma}+I_\text{neut.-had.}-\beta\cdot I_\text{\gls{pu}}\right)}{\pt^\mu},\qquad \beta=\frac{1}{2}
 \end{equation}
 
-\myfigure{\label{fig:reconstruction-isomuon}The figures are taken from Ref.~\cite{CMS-DP-2013-009}.}{
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_isopt.png}}\hspace{0.03\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_isoeta.png}}
-}
+where $I_\text{ch.-had.}$, $I_{\gamma}$, and $I_\text{neut.-had.}$ denote the summed transverse energies of charged hadrons, photons, and neutral hadrons respectively within $\Delta R=\sqrt{\Delta\eta^{2}+\Delta\phi^{2}}<0.4$ around a muon candidate. The term $I_\text{\gls{pu}}$ is used to correct the amount of considered neutral energy. It contains the summed transverse energies of charged-particle tracks within $\Delta R<0.4$ that are associated to pileup vertices. 
 
+%The efficiency to select isolated muons in data or simulation with $I_\mathrm{rel.}^{\mu}<12\%$ is shown in Fig.~\ref{fig:reconstruction-isomuon}. At low momenta~($20\range50~\GeV$) the efficiency depends on the $\pt$ of the muon candidate whereas for transverse momenta above $50~\GeV$ an efficiency of $>95\%$ is observed.
 
+%\myfigure{\label{fig:reconstruction-isomuon}The figures are taken from Ref.~\cite{CMS-DP-2013-009}.}{
+%\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_isopt.png}}\hspace{0.03\textwidth}
+%\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_isoeta.png}}
+%}
 
-
-id, trigger
-
-The relative 
 
 %##############################################
 \section{Electrons}
 %##############################################
 \label{sec:reconstruction-electrons}
+
+Similar to muon candidates, electron candidates are required to pass certain identification criteria as well. A study of the electron reconstruction and identification performance in 8~TeV pp collision data can be found in Ref.~\cite{Khachatryan:2015hwa}. The chosen ``tight'' identification selection utilized in this thesis is elaborated briefly in the following.
+
+A \gls{gsf}-based \gls{pf} electron is required. Candidates within the \gls{ecal} barrel-endcap transition region of $1.4442<|\eta|<1.5660$ are ignored. The electron track has to have a hit on the innermost tracker layer which prevents the selection electrons from potential photon conversions. An explicit photon conversion veto is applied by testing if pairs of electron track are originating from a common displaced vertex. Further selection criteria are combined into a multivariate identification discriminant. It is based on various input observables which denote the \gls{gsf} track quality, \gls{ecal} cluster shapes, their energy distribution and the quality of matching between the cluster and track energy estimates. For 13~TeV data, a simplified cut-based version is utilized instead. A comparison of the efficiency of electron identification in data and simulation, estimated from $\mathrm{Z}\to\mathrm{e}^{\rmplus}\mathrm{e}^{\rmminus}$ events using the tag-and-probe method, is shown in Fig.~\ref{fig:reconstruction-idelectron}.
+
+\myfigure{\label{fig:reconstruction-idelectron}Comparison of the electron identification efficiency in data and simulation as a function of its transverse momentum. The figure is taken from Ref.~\cite{CMS-DP-2013-003}.}{
+\includegraphics[width=0.65\textwidth]{figures/reconstruction/electron_idpt1.pdf}
+}
 
 id, scale factors, effective area isolation
 
