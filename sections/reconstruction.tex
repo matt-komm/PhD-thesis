@@ -149,23 +149,36 @@ are calculated for protojets $i$ and $j$.  If $d_{ij}$ is the smallest distance 
 
 In this thesis a ``loose'' jet identification is utilized. The selection criteria are motivated by the fact that a proper jet stemming from the hadronization of a quark or gluon consists of a multiple of \gls{pf} particle types. The exact criteria are somewhat adapted from one data taking period to the next. A few common requirements are the following. A jet should consists of more than one constituent and the neutral hadron and neutral \gls{em} energy fractions should be both less than $99~\%$. In addition for jets that are within the tracker acceptance~($|\eta|<2.4$) at least one constituent has to be a charged hadron and the charged \gls{em} fraction is required to be less than $99~\%$ amongst others. The efficiencies are found to be very close to 100~\% for both data and simulation\footnote{Already the ``tight'' jet ID (not utilized in this thesis) has an efficiency of the sub-percent order.}.
 
-In data and simulation the energy of reconstructed jets is found to correspond not to the energy of a hadronized true parton due non-linear detector responses and efficiencies. Therefore, a series of \glsplhere{jec} are applied which relate the reconstructed energy to the true jet energy on average. A detailed discussion can be found in Ref.~\cite{Khachatryan:2016kdb}. The \glspl{jec} are multiplicative factors for rescaling the jets' 4-momenta. Multiple levels of corrections are applied to data and simulation sequentially. First, the offset correction removes the dependence of the jet energy response on the additional pileup activity within an event. It utilizes a hybrid of the jet area method~\cite{Cacciari:2007fd}. The correction factors are derived by comparing the jet responses in simulated events with and without pileup events overlaid. The next level of corrections aims to obtain a uniform energy response which is independent of the transverse momentum and pseudorapidity of a jet. The corrections are derived from simulated events by matching reconstructed jets to close-by true particle jets and comparing their momenta. Lastly, residual differences between data and simulation are corrected by comparing the $\pt$ balance in various  event types with additional jets~(multijet, Drell-Yan, single photon) where one jet is fixed to be within the barrel region~($|\eta|<1.3$) to provide a reference. The total and individual uncertainties from the various corrections are shown in Fig.~\ref{fig:reconstruction-jets} for 8~TeV data. Overall the uncertainty is found to be mostly around $1\%$ and only approaches $2\%$ for forwards jets~($|\eta|>3$) with low transverse momenta of $\pt\approx30~\GeV$. The shown optional jet flavor correction have not been employed in the analyses within this thesis.
+In data and simulation the energy of reconstructed jets is found to correspond not to the energy of a hadronized true parton due non-linear detector responses and efficiencies. Therefore, a series of \glsplhere{jec} are applied which relate the reconstructed energy to the true jet energy on average. A detailed discussion can be found in Ref.~\cite{Khachatryan:2016kdb}. The \glspl{jec} are multiplicative factors for rescaling the jets' 4-momenta. Multiple levels of corrections are applied to data and simulation sequentially. First, the offset correction removes the dependence of the jet energy response on the additional pileup activity within an event. It utilizes a hybrid of the jet area method~\cite{Cacciari:2007fd}. The correction factors are derived by comparing the jet responses in simulated events with and without pileup events overlaid. The next level of corrections aims to obtain a uniform energy response which is independent of the transverse momentum and pseudorapidity of a jet. The corrections are derived from simulated events by matching reconstructed jets to close-by true particle jets and comparing their momenta. Lastly, residual differences between data and simulation are corrected by comparing the $\pt$ balance in various  event types with additional jets~(multijet, Drell-Yan, single photon) where one jet is fixed to be within the barrel region~($|\eta|<1.3$) to provide a reference. The total and individual uncertainties from the various corrections are shown in Fig.~\ref{fig:reconstruction-jec} for 8~TeV data. Overall the uncertainty is found to be mostly around $1\%$ and only approaches $2\%$ for forwards jets~($|\eta|>3$) with low transverse momenta of $\pt\approx30~\GeV$. The shown optional jet flavor correction have not been employed in the analyses within this thesis.
 
-\myfigure{\label{fig:reconstruction-jets}The figures are taken from Ref.~\cite{Khachatryan:2016kdb}.}{
+\myfigure{\label{fig:reconstruction-jec}Uncertainty of the jet energy corrections as a function of (a)~the transverse momentum and (b)~the pseudorapidity of a jet. The figures are taken from Ref.~\cite{Khachatryan:2016kdb}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/jet_uncpt.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/jet_unceta.pdf}}
 }
 
+In addition to rescaling the jet energy, the \glshere{jer} is corrected for simulated jets to mimic the spread in $\pt$ as observed in data. Exemplary relative resolutions in terms of $\pt^\mathrm{reco.}/\pt^\mathrm{true}$ in 8~TeV simulation for various pileup scenarios are presented in Fig.~\ref{fig:reconstruction-jer-spread}. Two methods are used to rescale the reconstructed 4-momentum which are chosen whether or not a jet can be matched to a true jet in simulation. The factors are defined as
+
+\begin{align}
+c_\mathrm{matched}&=1+\frac{\pt^\mathrm{reco.}-\pt^\mathrm{true}}{\pt^\mathrm{reco.}}\cdot\big(s_\mathrm{\gls{jer}}-1\big)\\ c_\mathrm{unmatched}&=1+\mathsf{N}(0,\,\sigma_\mathrm{\gls{jer}})\cdot\sqrt{\mathrm{max}\big(s_\mathrm{\gls{jer}}^2-1,\,0\big)}
+\end{align}
+
+where $\sigma_\mathrm{\gls{jer}}$ denotes the relative resolution in simulation and  $s_\mathrm{\gls{jer}}$ data-to-simulation resolution scale factors as functions of the pseudorapidity. The latter is determined from data by analyzing the $\pt$ balance in dijet or $\gamma+\mathrm{jet}$ events. Exemplary scale factors, obtained from 8~TeV data, are shown in Fig.~\ref{fig:reconstruction-jer-sf}. A random smearing of the jet energy is performed in the case a reconstructed jet cannot be matched. Here, $\mathsf{N}(0,\,\sigma_\mathrm{\gls{jer}})$ denotes a sampled value from a centered normal distribution with standard deviation $\sigma_\mathrm{\gls{jer}}$.
+
+\myfigure{\label{fig:reconstruction-jer}Jet $\pt$ resolution correction: (a)~relative  spread in $\pt^\mathrm{reco.}/\pt^\mathrm{true}$ for different pileup scenarios as a function of the true jet momentum in simulation; (b)~resolution scale factors derived from 8~TeV data. The figures are taken from Ref.~\cite{Khachatryan:2016kdb}.}{
+\subfloat[\label{fig:reconstruction-jer-spread}]{\includegraphics[width=0.49\textwidth]{figures/reconstruction/jer_res.pdf}}\hspace{0.03\textwidth}
+\subfloat[\label{fig:reconstruction-jer-sf}]{\includegraphics[width=0.47\textwidth]{figures/reconstruction/jer_sf.pdf}}
+}
 
 
-JEC, JER, ID
 
 %##############################################
 \section{b-tagging}
 %##############################################
 
+
+
 \myfigure{\label{fig:reconstruction-btagging}The figure is taken from Ref.~\cite{CMS-PAS-BTV-15-001}.}{
-\includegraphics[width=0.75\textwidth]{figures/reconstruction/btag_comparison.pdf}
+\includegraphics[width=0.7\textwidth]{figures/reconstruction/btag_comparison.pdf}\hspace{0.1\textwidth}
 }
 
 csv, SF, rizzi recipe
@@ -187,4 +200,4 @@ T0, T1 corrections
 \section{Luminosity and pileup}
 %##############################################
 
-pileup, rho
+pileup, VDM scan, rho, reweighting
