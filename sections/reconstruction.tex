@@ -175,15 +175,27 @@ where $\sigma_\mathrm{\gls{jer}}$ denotes the relative resolution in simulation 
 \section{b-tagging}
 %##############################################
 
-The identification of jets that stem from the hadronization of b~quarks, so-called ``b-tagging'', is a crucial ingredient in studies of top quark production. It provides discrimination power to single out b~jets which can be related to the decay of a top quark. In this thesis, b-tagging is also utilized to determined the light jet from the (u,d,s,c)~spectator quark which is produced in association with a single top quark in $t$~channel by a b-tagging veto.
+The identification of jets that stem from the hadronization of b~quarks, so-called ``b-tagging'', is a crucial ingredient in studies of top quark production. It provides discrimination power to single out jets which can be related to b~quarks from top quark decays.
 
-Multiple algorithms have been developed within \gls{cms} to perform b-tagging~\cite{Chatrchyan:2012jua,CMS-PAS-BTV-15-001}. A common feature of the algorithms is the utilization of secondary vertices which are reconstructed from displaced tracks. The idea behind this is that free b~quarks are encapsulated into  B~mesons after hadronization which can then travel a measurable distance away from the primary vertex before decaying due to their relative long lifetime of $\mathcal{O}(10^{-12}~\mathrm{s})$. For a typical energy of 40~\GeV a B~meson can reach a distance of ??? on average.
+Multiple algorithms have been developed within \gls{cms} to perform b-tagging~\cite{Chatrchyan:2012jua,CMS-PAS-BTV-15-001}. A common feature of the algorithms is the utilization of secondary vertices which are reconstructed from displaced tracks. The idea behind this is that b~quarks are encapsulated into  B~mesons through hadronization which can then travel a measurable distance away from the primary vertex before decaying due to their relative long lifetime. Exemplary, a $\mathrm{B}^{\pm}$~meson, which has a mean lifetime of about $1.6~\mathrm{ps}$~\cite{Olive:2016xmw}, can travel distances of roughly $4\range9~\mathrm{mm}$ for momenta of $40\range100~\GeV$ on average before decaying. Reconstructed secondary vertices are subjected to pass certain quality criteria to enhance the purity for the B~meson hypothesis. These are based on the amount of shared tracks with the primary vertex, the invariant vertex mass to reject kaon decays, and the direction of tracks with respect to the jet axis. In the analyses b-tagging algorithms which are based on multivariate discriminators are employed. These combine multiple observables such as properties of secondary vertices, tracks, and impact parameters into a powerful discriminant. A comparison of their performance to identify true b~jets while rejecting jets from charm and light~(g,u,d,s) quarks is presented in Fig.~\ref{fig:reconstruction-btagging}.
 
 \myfigure{\label{fig:reconstruction-btagging}The figure is taken from Ref.~\cite{CMS-PAS-BTV-15-001}.}{
 \includegraphics[width=0.7\textwidth]{figures/reconstruction/btag_comparison.pdf}\hspace{0.1\textwidth}
 }
 
-csv, SF, rizzi recipe
+For the 8~TeV and first 13~TeV analyses, the \glshere{csv} algorithm was chosen. At its tight working point, an b-tagging efficiency of approximately 50\% with a misidentification probability of only 0.1\% is achieved. An improved algorithm, called \glshere{cmva}, is utilized in the analysis of 13~TeV data recorded in 2016. It combines the output of various other b-tagging algorithms which includes also the \gls{csv}. Additionally, the results of \gls{mva} discriminators trained to identify low-$\pt$ electrons or muons inside a jet are taken as input. The final \gls{cmva} discriminant exhibits an improved rejection of charm and light quark jets compared to the other algorithms.
+
+The 
+
+\begin{align}
+w^\mathrm{jet}=\frac{p_\mathrm{data}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet}<W_{i+1}\big)}{p_\mathrm{sim.}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet}<W_{i+1}\big)}
+=\frac{
+s^\mathrm{jet}_{i}\cdot\epsilon^\mathrm{jet}_{i}-s^\mathrm{jet}_{i+1}\cdot\epsilon^\mathrm{jet}_{i+1}}{\epsilon^\mathrm{jet}_{i}-\epsilon^\mathrm{jet}_{i+1}}
+\end{align}
+
+starting at $i=0$ where $s_{0}=1$, $\epsilon_{0}=1$, $W_0=-\infty$ and $\epsilon_{N+1}=0$.
+
+SF measurement, rizzi recipe
 
 %##############################################
 \section{Missing transverse energy}
