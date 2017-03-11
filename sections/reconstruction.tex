@@ -177,15 +177,15 @@ where $\sigma_\mathrm{\gls{jer}}$ denotes the relative resolution in simulation 
 
 The identification of jets that stem from the hadronization of b~quarks, so-called ``b-tagging'', is a crucial ingredient in studies of top quark production. It provides discrimination power to single out jets which can be related to b~quarks from top quark decays.
 
-Multiple algorithms have been developed within \gls{cms} to perform b-tagging~\cite{Chatrchyan:2012jua,CMS-PAS-BTV-15-001}. A common feature of the algorithms is the utilization of secondary vertices which are reconstructed from displaced tracks. The idea behind this is that b~quarks are encapsulated into  B~mesons through hadronization which can then travel a measurable distance away from the primary vertex before decaying due to their relative long lifetime. Exemplary, a $\mathrm{B}^{\pm}$~meson, which has a mean lifetime of about $1.6~\mathrm{ps}$~\cite{Olive:2016xmw}, can travel distances of roughly $4\range9~\mathrm{mm}$ for momenta of $40\range100~\GeV$ on average before decaying. Reconstructed secondary vertices are subjected to pass certain quality criteria to enhance the purity for the B~meson hypothesis. These are based on the amount of shared tracks with the primary vertex, the invariant vertex mass to reject kaon decays, and the direction of tracks with respect to the jet axis. In the analyses b-tagging algorithms which are based on multivariate discriminators are employed. These combine multiple observables such as properties of secondary vertices, tracks, and impact parameters into a powerful discriminant. A comparison of their performance to identify true b~jets while rejecting jets from charm and light~(g,u,d,s) quarks is presented in Fig.~\ref{fig:reconstruction-btagging}.
+Multiple algorithms have been developed within \gls{cms} to perform b-tagging~\cite{Chatrchyan:2012jua,CMS-PAS-BTV-15-001}. A common feature of most algorithms is the identification of secondary vertices which are reconstructed from displaced tracks within jets. The idea behind this is that final state b~quarks are encapsulated into  B~mesons after hadronization which can then travel a measurable distance away from the primary vertex before decaying due to their relative long lifetime. Exemplary, a $\mathrm{B}^{\pm}$~meson, which has a mean lifetime of about $1.6~\mathrm{ps}$~\cite{Olive:2016xmw}, can travel distances of roughly $4\range9~\mathrm{mm}$ for momenta of $40\range100~\GeV$ on average before decaying. Reconstructed secondary vertices are subjected to pass certain quality criteria to enhance the purity for the B~meson hypothesis. These are based on the amount of shared tracks with the primary vertex, the invariant vertex mass to reject kaon decays, and the direction of tracks with respect to the jet axis. In the analyses b-tagging algorithms which are based on multivariate discriminators are employed. These combine multiple observables such as the properties of secondary vertices, tracks, and impact parameters into a powerful discriminant. The training also covers scenarios where no secondary vertices have been reconstructed. In such cases the compatibility of tracks with the primary vertex is condensed into the discriminant. A comparison of their performance to identify true b~jets while rejecting jets from charm and light~(g,u,d,s) quarks is presented in Fig.~\ref{fig:reconstruction-btagging}.
 
 \myfigure{\label{fig:reconstruction-btagging}The figure is taken from Ref.~\cite{CMS-PAS-BTV-15-001}.}{
 \includegraphics[width=0.7\textwidth]{figures/reconstruction/btag_comparison.pdf}\hspace{0.1\textwidth}
 }
 
-For the 8~TeV and first 13~TeV analyses, the \glshere{csv} algorithm was chosen. At its tight working point, an b-tagging efficiency of approximately 50\% with a misidentification probability of only 0.1\% is achieved. An improved algorithm, called \glshere{cmva}, is utilized in the analysis of 13~TeV data recorded in 2016. It combines the output of various other b-tagging algorithms which includes also the \gls{csv}. Additionally, the results of \gls{mva} discriminators trained to identify low-$\pt$ electrons or muons inside a jet are taken as input. The final \gls{cmva} discriminant exhibits an improved rejection of charm and light quark jets compared to the other algorithms.
+The \glshere{csv} algorithm is employed in the 8~TeV~(Run~1) and first 13~TeV~(\gls{csv}v2) analyses within this thesis.  At their tight working points, a b-tagging efficiency of approximately 50\% with a misidentification probability of only 0.1\% is achieved. A new algorithm, called \glshere{cmva}, is utilized in the analysis of 13~TeV data recorded in 2016 instead. It combines the output of various other b-tagging algorithms which includes also the \gls{csv}. Additionally, the results of \gls{mva} discriminators trained to identify low-$\pt$ electrons or muons inside a jet for b-tagging are taken as inputs as well. The final \gls{cmva} discriminant exhibits an improved rejection of charm and light quark jets compared to the other algorithms~\cite{CMS-PAS-BTV-15-001}.
 
-The 
+The b-tagging efficiency in simulation typically deviates somewhat from the one observed in data. To correct this, efficiency scale factors $\epsilon_\mathrm{b}^\mathrm{data}/\epsilon_\mathrm{b}^\mathrm{sim.}$ are derived from data and applied to simulation. Multiple methods are used to measure the scale factors in either multijet data events which are enriched with heavy-flavored jets by requiring close-by muons or events with two leptons and two jets yielding a $\ttbar$-enriched sample~\cite{CMS-PAS-BTV-13-001}. For each simulated jet a weight is calculated based on the ratio of probabilities in simulation and data that the jet was tagged, i.e. its discriminant is past a working point. It can be expressed for multiple working points as
 
 \begin{align}
 w^\mathrm{jet}=\frac{p_\mathrm{data}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet}<W_{i+1}\big)}{p_\mathrm{sim.}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet}<W_{i+1}\big)}
@@ -193,9 +193,8 @@ w^\mathrm{jet}=\frac{p_\mathrm{data}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet
 s^\mathrm{jet}_{i}\cdot\epsilon^\mathrm{jet}_{i}-s^\mathrm{jet}_{i+1}\cdot\epsilon^\mathrm{jet}_{i+1}}{\epsilon^\mathrm{jet}_{i}-\epsilon^\mathrm{jet}_{i+1}}
 \end{align}
 
-starting at $i=0$ where $s_{0}=1$, $\epsilon_{0}=1$, $W_0=-\infty$ and $\epsilon_{N+1}=0$.
+where $d^\mathrm{jet}$ denotes the value of the b-tagging discriminant, $W_{i}$ the working points, $\epsilon_i$ the efficiency measured in simulation, and $s_i$ the corresponding scale factors. In this equation, the scale factors and efficiencies for untagged jets ($i=0$) are set to $s_{0}=\epsilon_{0}=1$ whereas the efficiency past the highest working point $W_N$ is set to $\epsilon_{N+1}=0$. An event is reweighted by the multiplied weights of all jets in an event.
 
-SF measurement, rizzi recipe
 
 %##############################################
 \section{Missing transverse energy}
@@ -215,3 +214,12 @@ T0, T1 corrections
 %##############################################
 
 pileup, VDM scan, rho, reweighting
+
+
+
+%##############################################
+\section{Summary of corrections}
+%##############################################
+
+trigger, id, iso, jec, jer, b-tagging, unclustered energy, pileup
+
