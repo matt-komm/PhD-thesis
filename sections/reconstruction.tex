@@ -1,6 +1,6 @@
 \chapter{Event reconstruction}
 
-\intro{The reconstruction of basic analysis objects within an event is described. A key ingredient in the \gls{cms} reconstruction is the particle flow algorithm which forms particle candidates by combining various subdetector information leading to an improved spatial resolution and energy measurement. The focus is set on the reconstruction and performance of muons, electrons, jets, and the missing transverse energy in 8 and 13~TeV pp~collision data which are the input objects in this thesis to study single top quark production.}
+\intro{The reconstruction of basic analysis objects within an event is described. A key ingredient in the \gls{cms} reconstruction is the particle flow algorithm which forms particle candidates by combining various subdetector information leading to an improved spatial resolution and energy measurement. The focus is set on the reconstruction and performance of muons, electrons, jets, and the missing transverse energy in 8 and 13~TeV pp~collision data which are the input objects in this thesis to study single top quark production. The chapter is concluded by a summary of applied corrections to enhance the agreement between data and simulation.}
 
 The event reconstruction attempts to build and identify basic analysis objects from the raw detector data. In \gls{cms}, basic objects are particle tracks and vertices as well as charged lepton, photon, and jet candidates. During the reconstruction additional information such as the missing transverse energy, $\met$, and the likelihood of jets to originate from the hadronization of b~quarks~(``b-tagging'') is determined. Since $\tau$ leptons have not been utilized and photons are not relevant in this study of $t$-channel single top quark production a description of their reconstruction and performance is omitted here yet details can be found in Refs.~\cite{Khachatryan:2015dfa,Khachatryan:2015iwa}.
 
@@ -24,7 +24,7 @@ Track reconstruction is performed in multiple passes, called iterations, over th
 
 A trajectory seed is formed from a hit doublet or triplet where only certain combinations of tracker layers depending on the iteration are allowed for the hits. First iterations utilize mostly 3D hits on the pixel layers for seeding since their low channel occupancy results in less ambiguity and a higher efficiency for close-by tracks. Late iterations use hits on the strips instead where the spatial track density is low. Here 3D matched hits are utilized mostly which stem from double-sided strip modules but also mono layers are allowed. A seed candidate has to fulfill certain quality criteria depending on the iteration such as a minimal transverse momentum and compatibility with either the beam spot or a preliminary reconstructed vertex.
 
-Each seed contains enough information to commence a first estimate of the track parameters. An algorithm called \gls{ctf} extrapolates the trajectory to find additional hits on subsequent layers which are compatible with the track hypothesis. It is based on the \gls{kf} technique which describes how to update the track parameters and their uncertainties iteratively after adding a hit. If multiple hits are found to be compatible with the track, new trajectories are generated for each of them. In the case no compatible hit is found on a layer a ghost hit is created instead.
+Each seed contains enough information to commence a first estimate of the track parameters. An algorithm called \glshere{ctf} extrapolates the trajectory to find additional hits on subsequent layers which are compatible with the track hypothesis. It is based on the \glshere{kf} technique which describes how to update the track parameters and their uncertainties iteratively after adding a hit. If multiple hits are found to be compatible with the track, new trajectories are generated for each of them. In the case no compatible hit is found on a layer a ghost hit is created instead.
 
 The hits per trajectory are then passed to a \gls{kf}-based track fit to estimate the track parameters without utilizing the initial estimate from the seed. In addition, the fit accounts for material effects and the inhomogeneous magnetic field.  The fitted tracks have to pass a quality selection to reduce the amount of fake tracks before they are considered in physics analyses. The criteria reflect the seed requirements and depend additionally on e.g. the total number of (3D) hits, the $\chi^2/\mathrm{\gls{ndof}}$ of the fit, the amount of ghost hits, and the amount of shared hits with other tracks amongst others.
 
@@ -185,7 +185,7 @@ Multiple algorithms have been developed within \gls{cms} to perform b-tagging~\c
 
 The \glshere{csv} algorithm is employed in the 8~TeV~(Run~1) and first 13~TeV~(\gls{csv}v2) analyses within this thesis.  At their tight working points, a b-tagging efficiency of approximately 50\% with a misidentification probability of only 0.1\% is achieved. A new algorithm, called \glshere{cmva}, is utilized in the analysis of 13~TeV data recorded in 2016 instead. It combines the output of various other b-tagging algorithms which includes also the \gls{csv}. Additionally, the results of \gls{mva} discriminators trained to identify low-$\pt$ electrons or muons inside a jet for b-tagging are taken as inputs as well. The final \gls{cmva} discriminant exhibits an improved rejection of charm and light quark jets compared to the other algorithms~\cite{CMS-PAS-BTV-15-001}.
 
-The b-tagging efficiency in simulation typically deviates somewhat from the one observed in data. To correct this, efficiency scale factors $\epsilon_\mathrm{b}^\mathrm{data}/\epsilon_\mathrm{b}^\mathrm{sim.}$ are derived from data and applied to simulation. Multiple methods are used to measure the scale factors in either multijet data events which are enriched with heavy-flavored jets by requiring close-by muons or events with two leptons and two jets yielding a $\ttbar$-enriched sample~\cite{CMS-PAS-BTV-13-001}. For each simulated jet a weight is calculated based on the ratio of probabilities in simulation and data that the jet was tagged, i.e. its discriminant is past a working point. It can be expressed for multiple working points as
+The b-tagging efficiency in simulation typically deviates somewhat from the one observed in data. To correct this, efficiency scale factors $\epsilon_\mathrm{b}^\mathrm{data}/\epsilon_\mathrm{b}^\mathrm{sim.}$ are derived from data and applied to simulation. Multiple methods are used to measure the scale factors in either multijet data events which are enriched with heavy-flavored jets by requiring close-by muons or events with two leptons and two jets yielding a $\ttbar$-enriched sample~\cite{CMS-PAS-BTV-13-001}. For each simulated jet a weight is calculated based on the ratio of probabilities between simulation and data that the jet was tagged, i.e. its b-tagging discriminant is past a working point. It can be expressed for multiple working points as
 
 \begin{align}
 w^\mathrm{jet}=\frac{p_\mathrm{data}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet}<W_{i+1}\big)}{p_\mathrm{sim.}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet}<W_{i+1}\big)}
@@ -193,12 +193,21 @@ w^\mathrm{jet}=\frac{p_\mathrm{data}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet
 s^\mathrm{jet}_{i}\cdot\epsilon^\mathrm{jet}_{i}-s^\mathrm{jet}_{i+1}\cdot\epsilon^\mathrm{jet}_{i+1}}{\epsilon^\mathrm{jet}_{i}-\epsilon^\mathrm{jet}_{i+1}}
 \end{align}
 
-where $d^\mathrm{jet}$ denotes the value of the b-tagging discriminant, $W_{i}$ the working points, $\epsilon_i$ the efficiency measured in simulation, and $s_i$ the corresponding scale factors. In this equation, the scale factors and efficiencies for untagged jets ($i=0$) are set to $s_{0}=\epsilon_{0}=1$ whereas the efficiency past the highest working point $W_N$ is set to $\epsilon_{N+1}=0$. An event is reweighted by the multiplied weights of all jets in an event.
+where $d^\mathrm{jet}$ denotes the value of the b-tagging discriminant, $W_{i}$ the working points $i=0\ldots N$, $\epsilon_i$ the efficiency measured in simulation, and $s_i$ the corresponding scale factors. In this equation, the scale factors and efficiencies for untagged jets ($i=0$) are set to $s_{0}=\epsilon_{0}=1$ whereas the efficiency past the highest working point $W_N$ is set to $\epsilon_{N+1}=0$. An event is reweighted by the multiplied weights from all jets passing the selection.
 
 
 %##############################################
 \section{Missing transverse energy}
 %##############################################
+
+The \glshere{met} is calculated from the momentum imbalance of the summed \gls{pf} candidate momenta as
+
+\begin{equation}
+\met=|\pvmiss|,\qquad \pvmiss=\colvec{2}{\pvmissx}{\pvmissy}=-\sum_{i}^\mathrm{\gls{pf}~cand.}\vec{p}_{\mathrm{T},i}~.
+\end{equation}
+
+In analyses, it can be used to infer the summed transverse momenta of produced neutrinos which escape the \gls{cms} detector without being detected due to their very low interaction strength. In this thesis, one neutrino is expected to be produced in signal events stemming from the decay of a single top quark which can lead to a significant \gls{met}. The $\pvmissz$ component cannot be calculated from the momentum imbalance since the boost along the z-axis of an event, determined by the initial parton momentum fractions $x_i$, is not known.
+
 
 for $\pt>50~\GeV$ the parallel $\pvmiss$ component is reconstructed well. At low momenta, unclustered energy degrades the 
 
@@ -208,6 +217,7 @@ for $\pt>50~\GeV$ the parallel $\pvmiss$ component is reconstructed well. At low
 
 
 T0, T1 corrections
+
 
 %##############################################
 \section{Luminosity and pileup}
