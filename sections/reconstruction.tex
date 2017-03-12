@@ -208,22 +208,20 @@ The \glshere{met} is calculated from the momentum imbalance of the summed \gls{p
 
 In analyses, it can be used to infer the summed transverse momenta of produced neutrinos which escape the \gls{cms} detector without being detected due to their very low interaction strength. In this thesis, one neutrino is expected to be produced in signal events stemming from the decay of a single top quark which can lead to a significant \gls{met}. The $\pvmissz$ component cannot be calculated from the momentum imbalance since the boost along the z-axis of an event, determined by the initial parton momentum fractions $x_i$, is not known.
 
-By propagating the corrected energy for \gls{pf} candidates clustered into jets the \gls{met} scale is improved. The correction can be expressed as
+The \gls{met} scale is improved by propagating the corrected energy for \gls{pf} candidates which are clustered into jets to the missing transverse momentum. Only jets with a minimal $\pt$ of at least $10~\GeV$ are considered for which energy calibrations are measured\footnote{This threshold was raised to $15~\GeV$ in 13~TeV data.}. The correction can be expressed as
 
 \begin{align}
-\pvmiss&=-\sum_{i}^\mathrm{clustered}\vec{p}_{\mathrm{T},i}-\sum_{i}^\mathrm{unclustered}\vec{p}_{\mathrm{T},i}\\
-\Rightarrow\pvmiss^\mathrm{corr.}&=\pvmiss-\sum_{i}^\mathrm{jets}\left(\, \vec{p}_{\mathrm{T},i}^\mathrm{\,full~\gls{jec}}-~\vec{p}_{\mathrm{T},i}^\mathrm{\,\gls{pu}\mbox{-}only}\right)
+\pvmiss^\mathrm{corr.}&=-~\sum_{i}^\mathrm{jets}~\vec{p}_{\mathrm{T},i}^\mathrm{\,corr.}~~-\sum_{i}^\mathrm{unclustered}\vec{p}_{\mathrm{T},i}^\mathrm{\,raw}\\
+&=\pvmiss^\mathrm{raw}-~\sum_{i}^\mathrm{jets}\left(\, \vec{p}_{\mathrm{T},i}^\mathrm{\,full~\gls{jec}}~-~\vec{p}_{\mathrm{T},i}^\mathrm{\,\gls{pu}\mbox{-}only}\right)
 \end{align}
 
-
-for $\pt>50~\GeV$ the parallel $\pvmiss$ component is reconstructed well. At low momenta, unclustered energy degrades the 
+where $\vec{p}_{\mathrm{T},i}^\mathrm{\,\gls{pu}\mbox{-}only}$ denotes the transverse jet momentum after applying only the first level of energy corrections which deals with the contribution from pileup. The resulting improvement is demonstrated in Fig.~\ref{fig:reconstruction-met}. The parallel component of the missing momentum vector $u_{\parallel}$ along the direction of a reconstructed $\mathrm{Z}$~boson or photon $\vec{q}_\mathrm{T}$ is shown in a ratio over the recoil momentum. For momenta above $50~\GeV$ then parallel component is reconstructed well within 3\% or better after propagating the energy corrections to the \gls{met}. At low momenta, the contribution from unclustered \gls{pf} candidates dominates leading to a degradation.
 
 \myfigure{\label{fig:reconstruction-met}The average $\pvmiss$ component parallel to the recoiling $\mathrm{Z}/\gamma$ boson as a function of the boson's momentum. The figure is taken from Ref.~\cite{CMS-PAS-JME-12-002}.}{
 \includegraphics[width=0.6\textwidth]{figures/reconstruction/met_recoil.pdf}
 }
 
-
-T0, T1 corrections
+An additional correction can be applied to decrease the influence of pileup on the \gls{met}. Typical multijet inelastic pp interactions do not produce any prompt neutrinos and will thus only lead to a smearing of the \gls{met} due to the finite detector response for measuring neutral particle momenta. A correction can be derived by estimating the amount neutral particles from the charged hadron component associated to pileup vertices.
 
 
 %##############################################
