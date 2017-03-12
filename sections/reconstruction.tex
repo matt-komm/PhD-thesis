@@ -225,10 +225,20 @@ An additional correction can be applied to decrease the influence of pileup on t
 
 
 %##############################################
-\section{Luminosity and pileup}
+\section{Luminosity}
 %##############################################
 
-pileup, VDM scan, rho, reweighting
+The luminosity delivered by the \gls{lhc} during pp collisions is determined at \gls{cms} by measuring certain process rates with so-called luminometers. These are the pixel detector, the \gls{dt} system, the \gls{hf} calorimeter, and the pixel luminosity telescope~\cite{Kornmayer:2039978} amongst others where the latter was installed during the \gls{ls1}. The luminosity can then be calculated from the recorded rate $R$ as
+
+\begin{equation}
+L=\frac{R}{\sigma_\mathrm{fid.}}
+\end{equation}
+
+where $\sigma_\mathrm{fid.}=\sigma\cdot A$ is the fiducial cross section observed within the luminometer acceptance $A$. Van der Meer~(\gls{vdm}) scans are performed during which the proton beams are first separated and then gradually crossed with each other. The fiducial cross section is estimated from such scans by fitting the beam profiles as a function of their separation providing an absolute calibration of the luminometers. The most precise luminosity estimations for the analyzed data in this thesis are obtained with the pixel cluster counting method~\cite{CMS-PAS-LUM-13-001} \todo{cite LUM-17-001 when approved}. Here, the rate is defined as the number of pixel clusters reconstructed in the second and third pixel barrel layers. The pixel cluster counting method profits from the low channel occupancy of the pixel detector which results in a very linear dependency between the cluster rate and the instantaneous luminosity even in high pileup collisions.
+
+Simulated samples of collision events are typically overlaid with a certain distribution of pileup interactions. A reweighting is performed to match the amount of additional interactions in data. For this the true number of pileup interactions is estimated from data using ???. The event weight is then ???
+
+pileup, rho, reweighting
 
 
 
