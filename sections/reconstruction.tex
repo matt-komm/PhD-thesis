@@ -179,7 +179,7 @@ The identification of jets that stem from the hadronization of b~quarks, so-call
 
 Multiple algorithms have been developed within \gls{cms} to perform b-tagging~\cite{Chatrchyan:2012jua,CMS-PAS-BTV-15-001}. A common feature of most algorithms is the identification of secondary vertices which are reconstructed from displaced tracks within jets. The idea behind this is that final state b~quarks are encapsulated into  B~mesons after hadronization which can then travel a measurable distance away from the primary vertex before decaying due to their relative long lifetime. Exemplary, a $\mathrm{B}^{\pm}$~meson, which has a mean lifetime of about $1.6~\mathrm{ps}$~\cite{Olive:2016xmw}, can travel distances of roughly $4\range9~\mathrm{mm}$ for momenta of $40\range100~\GeV$ on average before decaying. Reconstructed secondary vertices are subjected to pass certain quality criteria to enhance the purity for the B~meson hypothesis. These are based on the amount of shared tracks with the primary vertex, the invariant vertex mass to reject kaon decays, and the direction of tracks with respect to the jet axis. In the analyses b-tagging algorithms which are based on multivariate discriminators are employed. These combine multiple observables such as the properties of secondary vertices, tracks, and impact parameters into a powerful discriminant. The training also covers scenarios where no secondary vertices have been reconstructed. In such cases the compatibility of tracks with the primary vertex is condensed into the discriminant. A comparison of their performance to identify true b~jets while rejecting jets from charm and light~(g,u,d,s) quarks is presented in Fig.~\ref{fig:reconstruction-btagging}.
 
-\myfigure{\label{fig:reconstruction-btagging}The figure is taken from Ref.~\cite{CMS-PAS-BTV-15-001}.}{
+\myfigure{\label{fig:reconstruction-btagging}Comparison of various b-tagging algorithms. The figure is taken from Ref.~\cite{CMS-PAS-BTV-15-001}.}{
 \includegraphics[width=0.7\textwidth]{figures/reconstruction/btag_comparison.pdf}\hspace{0.1\textwidth}
 }
 
@@ -207,6 +207,13 @@ The \glshere{met} is calculated from the momentum imbalance of the summed \gls{p
 \end{equation}
 
 In analyses, it can be used to infer the summed transverse momenta of produced neutrinos which escape the \gls{cms} detector without being detected due to their very low interaction strength. In this thesis, one neutrino is expected to be produced in signal events stemming from the decay of a single top quark which can lead to a significant \gls{met}. The $\pvmissz$ component cannot be calculated from the momentum imbalance since the boost along the z-axis of an event, determined by the initial parton momentum fractions $x_i$, is not known.
+
+By propagating the corrected energy for \gls{pf} candidates clustered into jets the \gls{met} scale is improved. The correction can be expressed as
+
+\begin{align}
+\pvmiss&=-\sum_{i}^\mathrm{clustered}\vec{p}_{\mathrm{T},i}-\sum_{i}^\mathrm{unclustered}\vec{p}_{\mathrm{T},i}\\
+\Rightarrow\pvmiss^\mathrm{corr.}&=\pvmiss-\sum_{i}^\mathrm{jets}\left(\, \vec{p}_{\mathrm{T},i}^\mathrm{\,full~\gls{jec}}-~\vec{p}_{\mathrm{T},i}^\mathrm{\,\gls{pu}\mbox{-}only}\right)
+\end{align}
 
 
 for $\pt>50~\GeV$ the parallel $\pvmiss$ component is reconstructed well. At low momenta, unclustered energy degrades the 
