@@ -243,13 +243,13 @@ Simulated samples of collision events are typically overlaid with a predefined d
 \section{Summary of corrections}
 %##############################################
 
-Several corrections have been introduced throughout this chapter to improve the agreement between data and simulation. In the presented analyses within this thesis, the corrections are also considered sources of systematic uncertainties. A summary of corrections and uncertainties is provided in the following.
+Several corrections have been introduced throughout this chapter to improve the agreement between data and simulation. The corrections are also considered sources of systematic uncertainties in the presented analyses within this thesis. A summary of corrections and uncertainties is provided in the following.
 
 \begin{description}
-\item[Lepton selection] trigger, id, iso,
-\item[Jet energy scale and resolution]
-\item[Unclustered energy]
-\item[B-tagging]
-\item[Pileup]
+\item[Lepton selection] The efficiencies for selecting isolated muons or electrons which pass dedicated tight identification criteria are corrected through data-to-simulation scale factors. In addition, the analyzed data events have been recorded using single muon or electron triggers whose efficiency in simulation is also corrected to match the ones observed in data. The applied lepton scale factors are varied independently within one standard deviation of their measured uncertainties to assess the systematic impact on the measurements.
+\item[Jet energy scale and resolution] The momenta of reconstructed jets in data and simulation is corrected to relate to the expected true jet energy derived from simulation. Residual corrections and a smearing procedure are applied to match the overall scale and resolution of the jet energy in data. The corrections are also propagated to the \gls{met} which improves its energy response as well. The systematic uncertainties arising from the measured energy and resolutions scale factors are estimated by varying them within their uncertainties and repeating the measurements with recalibrated jets and \gls{met}.
+\item[Unclustered energy] The momentum of \gls{pf} candidates which are not clustered into jets with a $\pt$ of at least 10~GeV or 15~GeV at 8~TeV or 13~TeV respectively is varied to estimated the uncertainty due their uncalibrated contribution to the \gls{met}.
+\item[B-tagging] The scale factors are applied to simulation to match the performance of the b-tagging algorithm. The systematic uncertainties are assessed for b and c~jets by varying their scale factors simultaneously while the scale factor for the mistagging rate for g,u,d,s~jets is varied independently in simulation.
+\item[Pileup] The impact of pileup is estimated by varying the inelastic pp cross section which changes the estimated distribution of true pileup interactions in data. The corresponding scale factors are rederived and applied to simulation.
 \end{description}
 
