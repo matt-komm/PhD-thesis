@@ -2,7 +2,9 @@
 
 \intro{This chapter introduces the necessary toolset to perform the analyses within this thesis.}
 
+%##############################################
 \section{Event generation}
+%##############################################
 
 To compare reconstructed data with theoretical predictions, samples of simulated events are generated from theory and passed through a simulation of the \gls{cms} detector and emulation of its readout. The standard detector simulation is based on the Geant4 toolkit~\cite{Agostinelli2003250}. A fast alternative, the so-called ``FastSimulation'' package, exists within \gls{cms} as well~\cite{fsimRahmat}.
 
@@ -15,37 +17,47 @@ After obtaining events from the hard interaction, a \glshere{ps} program simulat
 \includegraphics[scale=0.75]{figures/technique/shower.pdf}
 }
 
-An overview of the programs used for event generation and subsequent hadronization employed in this thesis is given in the following.
+A brief overview of the event generation and subsequent hadronization programs employed in this thesis is given in the following.
+
+\begin{description}
+\item[MadGraph and aMC{@}NLO] fxfx, mlm
+
+\item[Powheg]
+
+\item[Comphep]
+
+\item[Pythia] lund-string model
+
+\item[Herwig] clusters
+
+\end{description}
 
 
-\subsection{MadGraph and aMC{@}NLO}
-
-\subsection{Powheg}
-
-\subsection{Comphep}
-
-\subsection{Pythia}
-
-lund-string model
-
-\subsection{Herwig}
-
+%##############################################
 \section{Top quark reconstruction}
+%##############################################
 
 neutrino solution, matching performance
 
+%##############################################
 \section{Boosted Decision Trees}
+%##############################################
 \cite{Hocker:2007ht}
 
-
+%##############################################
 \section{Template-based fitting}
+%##############################################
 
 likelihood, barlow-beeston method
 
+%##############################################
 \section{Fiducial objects}
+%##############################################
 
 dressed leptons, jet clustering, b-tagging
 
+%##############################################
 \section{Unfolding}
+%##############################################
 
 problems, regularization scheme, correlations, subway plot, alternative FBU
