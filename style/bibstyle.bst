@@ -337,9 +337,9 @@ FUNCTION {format.eprint}
      { ""}
      { archive empty$
           {"\href{http://www.arXiv.org/abs/" eprint * "}" *
-             "{\texttt{arXiv:" * eprint * "}}" *}
+             "{\texttt{\small arXiv:" * eprint * "}}" *}
           {"\href{" archive *  "/" * eprint * "}" *
-             "{\texttt{" * eprint * "}}" *}
+             "{\texttt{\small " * eprint * "}}" *}
        if$
      }
      if$
@@ -348,7 +348,7 @@ FUNCTION {format.eprint}
 FUNCTION {format.doi}
 { doi empty$
      { ""}
-     {"\href{http://dx.doi.org/" doi * "}{\doi{" * doi * "}}" *}
+     {"\href{http://dx.doi.org/" doi * "}{\small\doi{" * doi * "}}" *}
      if$
 }
 
@@ -810,7 +810,7 @@ FUNCTION {format.url}
 {
   url empty$
     { "" }
-    {"\href{" url * "}{\texttt{" * url * "}}" * }
+    {"\href{" url * "}{\texttt{\small" * url * "}}" * }
   if$
 }
 
