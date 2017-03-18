@@ -1,6 +1,6 @@
 \chapter{Analysis techniques}
 
-\intro{This chapter introduces the necessary toolset to perform the analyses within this thesis. It is organized to resemble the common analysis steps. First the generation of simulated events is introduced. Then details of the top quark reconstruction, employed multivariate analysis, and template fit is given. Lastly, the utilized definitions of partonic and fiducial objects is provided to which the observed data is unfolded.}
+\intro{This chapter introduces the necessary toolset to perform the analyses within this thesis. It follows the common analyses steps. First, the generation of simulated events is introduced. Then, details of the top quark reconstruction, the employed multivariate analysis technique, and the template fit is given which are used to estimate the amount of single top quark events within the recorded data. Lastly, the partonic and fiducial objects are defined to which the observed data is unfolded to for comparison with theoretical predictions.}
 
 %##############################################
 \section{Event generation}
@@ -17,7 +17,7 @@ After obtaining events from the hard interaction, a \glshere{ps} program simulat
 \includegraphics[scale=0.75]{figures/technique/shower.pdf}
 }
 
-A brief overview of the programs used for event generation and subsequent hadronization, that are utilized in this thesis, is given in the following.
+A brief overview of the programs used for generation and subsequent hadronization of $t$-channel single top quark production is given in the following.
 
 \begin{description}
 \item[MadGraph5\_aMC{@}NLO] The \MGAMC program~\cite{Alwall:2014hca} is a merge of the \gls{lo} \MG generator~\cite{Alwall:2011uj} and \AMC into a common framework. It supports the generation of \gls{lo} or \gls{nlo} samples which can be matched to parton showers using the MLM~\cite{Mangano:2006rw} or MC{@}NLO~\cite{Frixione:2002ik} schemes respectively. The latter method produces a certain fraction of events with negative weights (depending on the process) which stem from a subtraction of additional emissions from the \gls{nlo} matrix element to prevent double-counting. 
@@ -27,14 +27,12 @@ Multiple samples of events with additional final state partons at matrix element
 
 \item[CompHEP] The \COMPHEP program (versions~4.5)~\cite{Boos:2004kh} can perform calculations of cross sections from Lagrangians at \gls{lo}. In addition, generation of events is also possible such as single top quark production~\cite{Boos:2006af}. Here, an approximation is used by combining events from the $2\to2$ and $2\to3$ processes which reproduces effectively \gls{nlo} corrections.
 
-\item[Pythia] The \PYTHIA program (version~6,8)~\cite{Sjostrand:2006za,Sjostrand:2014zea} can generate events of various processes at \gls{lo}. It is however famous for its \gls{ps} simulation which can be interfaced with other \gls{lo} and \gls{nlo} event generators to perform subsequent parton showering, hadronization, and the simulation of the underlying event. For hadronization, a phenomenological model is utilized in which one-dimensional strings\footnote{The string model is motivated by the fact that the spatial form of a dipole color field does not extend radially like an \gls{em} field but is instead squeezed to a tube-like form.} connected to partons reflect the color field leading to the creation of additional partons through string branching and finally to the formation of color-neutral singlets.
+\item[Pythia] The \PYTHIA program (versions~6,8)~\cite{Sjostrand:2006za,Sjostrand:2014zea} can generate events of various processes at \gls{lo}. It is however famous for its \gls{ps} simulation which can be interfaced with other \gls{lo} and \gls{nlo} event generators to perform subsequent parton showering, hadronization, and the simulation of the underlying event. For hadronization, a phenomenological model is utilized in which one-dimensional strings\footnote{The string model is motivated by the fact that the spatial form of a dipole color field does not extend radially like an \gls{em} field but is instead squeezed to a tube-like form.} connected to partons reflect the color field leading to the creation of additional partons through string branching and finally to the formation of color-neutral singlets.
 
-\item[Herwig++] The \HERWIG program (version~7)~\cite{Bellm:2015jjp}
-
-clusters \HERWIG
-
-
+\item[Herwig++] The \HERWIG program (version~7)~\cite{Bellm:2015jjp} is an \gls{nlo} event generator which is also capable of simulating the showering of partons similar to \PYTHIA. Its hadronization algorithm utilizes a model in which color-connected quarks are spatially kept together in clusters~\cite{Webber:1983if} which is motivated by the ``preconfinement'' of color~\cite{Amati:1979fg}. If the mass of a cluster is sufficiently high it can decay into lighter clusters with a certain probability. In its final step, a cluster decays then into a pair of hadrons.
 \end{description}
+
+
 
 
 %##############################################
