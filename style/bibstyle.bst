@@ -337,9 +337,9 @@ FUNCTION {format.eprint}
      { ""}
      { archive empty$
           {"\href{http://www.arXiv.org/abs/" eprint * "}" *
-             "{\texttt{\small arXiv:" * eprint * "}}" *}
+             "{\small\texttt{ arXiv:" * eprint * "}}" *}
           {"\href{" archive *  "/" * eprint * "}" *
-             "{\texttt{\small " * eprint * "}}" *}
+             "{\small\texttt{" * eprint * "}}" *}
        if$
      }
      if$
@@ -810,7 +810,7 @@ FUNCTION {format.url}
 {
   url empty$
     { "" }
-    {"\href{" url * "}{\texttt{\small" * url * "}}" * }
+    {"\href{" url * "}{\small\texttt{ " * url * "}}" * }
   if$
 }
 
@@ -1175,6 +1175,9 @@ FUNCTION {mastersthesis}
   "Master's thesis" format.thesis.type output.nonnull
   school "school" output.check
   address output
+  journal emphasize "journal" output.check
+  blank.sep
+  number "number" output.check
   format.date "year" output.check
   new.sentence 
   new.block
@@ -1234,12 +1237,15 @@ FUNCTION {phdthesis}
 { output.bibitem
   format.authors "author" output.check
   link.open
-  format.btitle "title" output.check
+  format.title "title" output.check
   link.shut
-  new.block
+  blank.sep
   "PhD thesis" format.thesis.type output.nonnull
   school "school" output.check
   address output
+  journal emphasize "journal" output.check
+  blank.sep
+  number "number" output.check
   format.date "year" output.check
   new.sentence 
   new.block

@@ -200,9 +200,9 @@ w^\mathrm{jet}=\frac{p_\mathrm{data}\big(\mathrm{jet}\,\big|~W_{i}<d^\mathrm{jet
 s^\mathrm{jet}_{i}\cdot\epsilon^\mathrm{jet}_{i}-s^\mathrm{jet}_{i+1}\cdot\epsilon^\mathrm{jet}_{i+1}}{\epsilon^\mathrm{jet}_{i}-\epsilon^\mathrm{jet}_{i+1}}
 \end{align}
 
-where $d^\mathrm{jet}$ denotes the value of the b-tagging discriminant, $W_{i}$ the working points $i=0\ldots N$, $\epsilon_i$ the efficiency measured in simulation, and $s_i$ the corresponding scale factors. In this equation, the scale factors and efficiencies for untagged jets ($i=0$) are set to $s_{0}=\epsilon_{0}=1$ whereas the efficiency past the highest working point $W_N$ is set to $\epsilon_{N+1}=0$. An event is reweighted by the multiplied weights from all jets passing the selection.
+where $d^\mathrm{jet}$ denotes the value of the b-tagging discriminant, $W_{i}$ the working points $i=0\ldots N$, $\epsilon_i$ the efficiency measured in simulation, and $s_i$ the corresponding scale factors. In this equation, the scale factors and efficiencies for untagged jets ($i=0$) are set to $s_{0}=\epsilon_{0}=1$ whereas the efficiency past the highest working point $W_N$ is set to $\epsilon_{N+1}=0$. An event is reweighted by the multiplied weights from all jets passing the selection. The efficiencies and scale factors themselves depend on the reconstructed jet's $\pt$, $\eta$ and flavor where the latter is determined from the history of a matched true jet. In the case no true jet can be matched (e.g. the reconstructed jet is driven by \gls{pf} candidates from pileup) a light flavor~(g,u,d,s) is assumed.
 
-
+ 
 %##############################################
 \section{Missing transverse energy}
 %##############################################
