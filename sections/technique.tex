@@ -42,11 +42,11 @@ Multiple samples of events with additional final state partons at matrix element
 After the reconstruction and selection of analysis objects, a top quark candidate is reconstructed in the presented analyses. Assuming that the top quark decayed leptonically as $\mathrm{t}\to\mathrm{b}\mathrm{W}\to\mathrm{b}\ell\nu$ its energy and momentum is reconstructed by summing the measured 4-momenta of a selected lepton (muon or electron), b-tagged jet, and neutrino candidate. The neutrino candidate itself is reconstructed from the missing transverse energy and the lepton momentum by requiring a W~boson mass constraint of $m_\mathrm{W}=80.4~\GeV$~\cite{Olive:2016xmw} on their invariant mass as
 
 \begin{align}
-m_\mathrm{W}^2&=\colvec{2}{E_\mathrm{W}}{\vec{p}_\mathrm{W}}^{2}=\left[\colvec{2}{E_{\ell}}{\vec{p}_{\ell}}+\colvec{2}{E_{\nu}}{\vec{p}_{\nu}}\right]^{2}\nonumber\\
+m_\mathrm{W}^2=\colvec{2}{E_\mathrm{W}}{\vec{p}_\mathrm{W}}^{2}&=\left[\colvec{2}{E_{\ell}}{\vec{p}_{\ell}}+\colvec{2}{E_{\nu}}{\vec{p}_{\nu}}\right]^{2}\nonumber\\
 &=\underbrace{m_{\ell}^2+m_{\nu}^2}_{\approx 0}+2\cdot E_{\ell}E_{\nu}-2\cdot\colvec{3}{p_{\ell,x}}{p_{\ell,y}}{p_{\ell,z}}\cdot\colvec{3}{p_{\nu,\mathrm{T}}\cdot\cos\phi_{\nu}}{p_{\nu,\mathrm{T}}\cdot\sin\phi_{\nu}}{p_{\nu,z}}. \label{eq:technique-neutrino-pz-eq}
 \end{align}
 
-When taking $p_{\nu,\mathrm{T}}$ and $\phi_{\nu}$ from the missing transverse momentum vector, this allows to solve for the unknown $p_{\nu,z}$-component of the neutrino candidate momentum. After rearranging one obtains from Eq.~\ref{eq:technique-neutrino-pz-eq} the quadratic equation
+When taking $p_{\nu,\mathrm{T}}$ and $\phi_{\nu}$ from the missing transverse momentum vector $\pvmiss$, this allows to solve for the unknown $p_{\nu,z}$-component of the neutrino candidate momentum. After rearranging, one obtains from Eq.~\ref{eq:technique-neutrino-pz-eq} the quadratic equation
 
 \begin{equation}
 0=p_{\nu,z}^2-\frac{2\,\xi\,p_{\ell,z}}{E_{\ell}^{2}-p_{\ell,z}^2}\cdot p_{\nu,z}-\frac{\xi^{2}-E_{\ell}^{2}\,p_{\nu,\mathrm{T}}^2}{E_{\ell}^{2}-p_{\ell,z}^2},\end{equation}
@@ -63,20 +63,21 @@ which possesses the solutions
 p_{\nu,z}^{1,2}=\frac{1}{E_{\ell}^{2}-p_{\ell,z}^{2}}\left[\xi\cdot p_{\ell,z}\pm E_{\ell} \sqrt{\xi^2-p_{\nu,\mathrm{T}}^2\big(E_{\ell}^2-p_{\ell,z}^2\big)}~\right]. \label{eq:technique-neutrino-pz}
 \end{align}
 
-A detailed derivation and discussion of this result can be found in Ref.~\cite{Chwalek:1416031}. In simulated single top quark events this procedure leads to two real solutions for the neutrino $p_{\nu,z}$-component in about 65\% of all events that passed the selection. Here, the solution with the smallest absolute $|p_{\nu,z}|$ is chosen which is found to be closest to the true neutrino $p_{z}$ in 63\% of events with real solutions. In the remaining events, both solutions are found to be close together \todo{how close} such that the mistake here by picking the smallest solution is acceptable. If the discriminant in Eq.~\ref{eq:technique-neutrino-pz} becomes negative the solutions become complex. This happens in about 35\% of events and occurs mostly due to the finite \met resolution whereas the negligence of the W~boson mass width and resolution of the lepton momentum are minor effects. The problem of imaginary solutions is overcome by setting
+A detailed derivation and discussion of this result can be found in Ref.~\cite{Chwalek:1416031}. In simulated $t$-channel single-top-quark events this procedure leads to two real solutions for the neutrino $p_{\nu,z}$-component in about 65\% of all events that passed the selection. From the two solutions the one with the smallest absolute $|p_{\nu,z}|$ is chosen which is found to be closest to the true neutrino $p_{z}$ in 63\% of events with real solutions. In the remaining 37\% of events, both real solutions are found to be close together \todo{how close} such that the mistake here by picking the smallest solution is acceptable. If the discriminant in Eq.~\ref{eq:technique-neutrino-pz} becomes negative the solutions are complex. This happens in about 35\% of events and occurs mostly due to the finite \met resolution whereas the negligence of the W~boson mass width and resolution of the lepton momentum are minor effects. The imaginary part of the solutions is removed by requiring that the discriminant vanishes
 
 \begin{equation}
-0\overset{!}{=}\xi^2-p_{\nu,\mathrm{T}}^2\big(E_{\ell}^2-p_{\ell,z}^2\big) 
+0\overset{!}{=}\xi^2-p_{\nu,\mathrm{T}}^2\big(E_{\ell}^2-p_{\ell,z}^2\big)~
+\Rightarrow~ p_{\nu,z}=\frac{\xi\cdot p_{\ell,z}}{E_{\ell}^{2}-p_{\ell,z}^{2}}
 \end{equation}
 
-which is equal to 
+which is equal to setting the transverse W~boson mass $\mtw$ to the W~boson mass itself
 
 \begin{align}
 m_\mathrm{W}^2\overset{!}{=}m_\mathrm{T,W}^2&=(p_{\ell,\mathrm{T}}+p_{\nu,\mathrm{T}})^2-(p_{\ell,x}+p_{\nu,x})^{2}-(p_{\ell,y}+p_{\nu,y})^{2}\\
-&=2\,p_{\ell,\mathrm{T}}^2\,p_{\nu,\mathrm{T}}^2\cdot\Big[1-\cos\big(\phi_\ell-\phi_\nu\big)\Big]
+&=2\,p_{\ell,\mathrm{T}}^2\,p_{\nu,\mathrm{T}}^2\cdot\Big[1-\cos\big(\phi_\ell-\phi_\nu\big)\Big].
 \end{align}
 
-and finding the ($p_{\nu,x}^\prime,p_{\nu,x}^\prime$) solution pair which is closest to the measured transverse momentum vector. 
+Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse momentum which minimizes the distance $|\vec{p}_{\nu,\mathrm{T}}-\pvmiss|$ with respect to the measured missing momentum vector is taken as the result. 
 
 \todo{show improvement of MET res in case of complex solutions}
 
@@ -86,6 +87,9 @@ and finding the ($p_{\nu,x}^\prime,p_{\nu,x}^\prime$) solution pair which is clo
 %##############################################
 \section{Boosted Decision Trees}
 %##############################################
+
+
+
 \cite{Hocker:2007ht}
 
 %##############################################
