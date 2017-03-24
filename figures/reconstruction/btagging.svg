@@ -299,7 +299,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="111.40419"
+     inkscape:cx="16.582761"
      inkscape:cy="128.79337"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -508,7 +508,7 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:110.00000238%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:110.00000238%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#004887;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        x="-229.70609"
        y="242.09436"
        id="text6640-9-5-0-9-1-6-0-4-7-0-6-8-1-9-3"
@@ -516,15 +516,15 @@
          sodipodi:role="line"
          x="-229.70609"
          y="242.09436"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:110.00000238%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#003399"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:110.00000238%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#004887;fill-opacity:1;"
          id="tspan4406-7-8">impact</tspan><tspan
          sodipodi:role="line"
          x="-229.70609"
          y="255.84436"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:110.00000238%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#003399"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:110.00000238%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#004887;fill-opacity:1;"
          id="tspan6711">parameter  </tspan></text>
     <path
-       style="fill:#003399;fill-rule:evenodd;stroke:#003399;stroke-width:2.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#005a85;fill-rule:evenodd;stroke:#004887;stroke-width:2.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="m -137.0856,277.76664 -20.31687,-20.59119"
        id="path6713"
        inkscape:connector-curvature="0"

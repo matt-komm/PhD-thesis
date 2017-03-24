@@ -42,8 +42,8 @@ Multiple samples of events with additional final state partons at matrix element
 After the reconstruction and selection of analysis objects, a top quark candidate is reconstructed in the presented analyses. Assuming that the top quark decayed leptonically as $\mathrm{t}\to\mathrm{b}\mathrm{W}\to\mathrm{b}\ell\nu$ its energy and momentum is reconstructed by summing the measured 4-momenta of a selected lepton (muon or electron), b-tagged jet, and neutrino candidate. The neutrino candidate itself is reconstructed from the missing transverse energy and the lepton momentum by requiring a W~boson mass constraint of $m_\mathrm{W}=80.4~\GeV$~\cite{Olive:2016xmw} on their invariant mass as
 
 \begin{align}
-m_\mathrm{W}^2=\colvec{2}{E_\mathrm{W}}{\vec{p}_\mathrm{W}}^{2}&=\left[\colvec{2}{E_{\ell}}{\vec{p}_{\ell}}+\colvec{2}{E_{\nu}}{\vec{p}_{\nu}}\right]^{2}\nonumber\\
-&=\underbrace{m_{\ell}^2+m_{\nu}^2}_{\approx 0}+2\cdot E_{\ell}E_{\nu}-2\cdot\colvec{3}{p_{\ell,x}}{p_{\ell,y}}{p_{\ell,z}}\cdot\colvec{3}{p_{\nu,\mathrm{T}}\cdot\cos\phi_{\nu}}{p_{\nu,\mathrm{T}}\cdot\sin\phi_{\nu}}{p_{\nu,z}}. \label{eq:technique-neutrino-pz-eq}
+m_\mathrm{W}^2=\colvec{2}{E_\mathrm{W}}{\vec{p}_\mathrm{W}}^{2}&\overset{!}{=}\left[\colvec{2}{E_{\ell}}{\vec{p}_{\ell}}+\colvec{2}{E_{\nu}}{\vec{p}_{\nu}}\right]^{2}\nonumber\\
+&=\underbrace{m_{\ell}^2+m_{\nu}^2}_{\approx 0}+\,2\cdot E_{\ell}\,E_{\nu}-\,2\cdot\colvec{3}{p_{\ell,x}}{p_{\ell,y}}{p_{\ell,z}}\cdot\colvec{3}{p_{\nu,\mathrm{T}}\cdot\cos\phi_{\nu}}{p_{\nu,\mathrm{T}}\cdot\sin\phi_{\nu}}{p_{\nu,z}}. \label{eq:technique-neutrino-pz-eq}
 \end{align}
 
 When taking $p_{\nu,\mathrm{T}}$ and $\phi_{\nu}$ from the missing transverse momentum vector $\pvmiss$, this allows to solve for the unknown $p_{\nu,z}$-component of the neutrino candidate momentum. After rearranging, one obtains from Eq.~\ref{eq:technique-neutrino-pz-eq} the quadratic equation
@@ -73,7 +73,7 @@ A detailed derivation and discussion of this result can be found in Ref.~\cite{C
 which is equal to setting the transverse W~boson mass $\mtw$ to the W~boson mass itself
 
 \begin{align}
-m_\mathrm{W}^2\overset{!}{=}m_\mathrm{T,W}^2&=(p_{\ell,\mathrm{T}}+p_{\nu,\mathrm{T}})^2-(p_{\ell,x}+p_{\nu,x})^{2}-(p_{\ell,y}+p_{\nu,y})^{2}\\
+m_\mathrm{W}^2\overset{!}{=}\mtw^2&=(p_{\ell,\mathrm{T}}+p_{\nu,\mathrm{T}})^2-(p_{\ell,x}+p_{\nu,x})^{2}-(p_{\ell,y}+p_{\nu,y})^{2}\\
 &=2\,p_{\ell,\mathrm{T}}^2\,p_{\nu,\mathrm{T}}^2\cdot\Big[1-\cos\big(\phi_\ell-\phi_\nu\big)\Big].
 \end{align}
 
@@ -88,8 +88,12 @@ Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse m
 \section{Boosted Decision Trees}
 %##############################################
 
+Typically, the $t$-channel single-top-quark signal region, defined by one isolated lepton, 2~jets (where one is b-tagged), and significant \met, is found to be still largely contaminated by events from background processes after the event selection. In measurements of the production cross section at 8~and 13~TeV, the ratios of the signal yield over the total background yield are about 13\% and 14\%  respectively~\cite{Khachatryan:2014iya,Sirunyan:2016cdg}\todo{update TOP-16-003 when accepted by PRL}. The majority of background events stem from \wjets and \ttbar production.
+
+An observable to separate signal from background events is given by the pseudorapidity of the spectator jet, $\eta(\jprime)$, which 
 
 
+ can be obtained from \glshere{mva} techniques such as \glsplhere{nn} or \glsplhere{bdt}. In this thesis, \glspl{bdt} have been employed to extract the amount of signal events.
 \cite{Hocker:2007ht}
 
 %##############################################
