@@ -105,7 +105,8 @@
 \usepackage[perpage]{footmisc}
 \usepackage{xspace} %intelligent spacing e.g. after inline equations
 \usepackage[nottoc]{tocbibind} %puts references into toc
-\usepackage[nopostdot,toc,acronym,style=super]{glossaries} %list of abbreviations
+%\usepackage[nopostdot,toc,acronym,style=super]{glossaries} %list of abbreviations
+\usepackage[nopostdot,toc,acronym,style=super]{glossaries-extra}
 \usepackage{stringstrings} %substrings
 \usepackage{anyfontsize}
 
@@ -135,14 +136,23 @@
 %\renewcommand*{\glstextformat}[1]{\textsf{\textsc{#1}}}
 \renewcommand{\glsnamefont}[1]{\boldmath{\textbf{ #1}}}
 
+\let\glsold\gls
+\let\glsplold\glspl
+\let\Glsold\Gls
+\let\Glsplold\Glspl
+\renewcommand{\gls}[1]{\glsold[noindex]{#1}}
+\renewcommand{\glspl}[1]{\glsplold[noindex]{#1}}
+\renewcommand{\Gls}[1]{\Glsold[noindex]{#1}}
+\renewcommand{\Glspl}[1]{\Glsplold[noindex]{#1}}
+
 \setlength{\glspagelistwidth}{\textwidth}
 \setlength{\tabcolsep}{1ex}
 \setlength{\extrarowheight}{0.0cm}
 \setlength{\glsdescwidth}{0.8\textwidth}
 \renewcommand*{\glsgroupskip}{}
 
-\newcommand{\glshere}[1]{\glsreset{#1}\gls{#1}}
-\newcommand{\glsplhere}[1]{\glsreset{#1}\glspl{#1}}
+\newcommand{\glshere}[1]{\glsreset{#1}\glsold{#1}}
+\newcommand{\glsplhere}[1]{\glsreset{#1}\glsplold{#1}}
 
 
 %% Setup TOC
