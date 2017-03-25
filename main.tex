@@ -38,10 +38,18 @@
 %\input{appendices/fastsim}
 
 
-\glsaddall[types={acronym}] 
+%\glsaddall
 \renewcommand*{\arraystretch}{1.1}
 %\printglossary[style=super,nopostdot,type=\acronymtype,title={Abbreviations},nonumberlist]
-\printglossary[style=super,nopostdot,type=\acronymtype,title={Abbreviations}]
+%\glsxtraddallcrossrefs
+%\forglsentries{\thislabel}{\xifinlist{\thislabel}{\indexedlist}{}{blub \thislabel}}
+\glsaddall
+
+\printglossary[style=myglstyle,nopostdot,type=\acronymtype,title={Abbreviations}]
+
+
+%\glsxtraddallcrossrefs
+
 \renewcommand*{\arraystretch}{\mytablestrech}
 \cleardoublepage
 

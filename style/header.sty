@@ -92,6 +92,7 @@
 \usepackage{afterpage}
 \usepackage{graphicx,graphics}
 \usepackage{tocloft}
+\usepackage{etoolbox}
 \usepackage{mdframed}
 \usepackage{multirow}
 \usepackage{setspace}
@@ -107,6 +108,7 @@
 \usepackage[nottoc]{tocbibind} %puts references into toc
 %\usepackage[nopostdot,toc,acronym,style=super]{glossaries} %list of abbreviations
 \usepackage[nopostdot,toc,acronym,style=super]{glossaries-extra}
+\usepackage{glossary-mcols}
 \usepackage{stringstrings} %substrings
 \usepackage{anyfontsize}
 
@@ -131,7 +133,7 @@
 
 %abbreviations
 \makeglossaries
-\glossarystyle{list}
+
 \renewcommand{\glstextformat}[1]{#1}
 %\renewcommand*{\glstextformat}[1]{\textsf{\textsc{#1}}}
 \renewcommand{\glsnamefont}[1]{\boldmath{\textbf{ #1}}}
@@ -151,8 +153,53 @@
 \setlength{\glsdescwidth}{0.8\textwidth}
 \renewcommand*{\glsgroupskip}{}
 
-\newcommand{\glshere}[1]{\glsreset{#1}\glsold{#1}}
-\newcommand{\glsplhere}[1]{\glsreset{#1}\glsplold{#1}}
+\newcommand{\glshere}[1]{\glsreset{#1}\acrfull{#1}}
+\newcommand{\glsplhere}[1]{\glsreset{#1}\acrfullpl{#1}}
+\newcommand{\Glshere}[1]{\glsreset{#1}\Acrfull{#1}}
+\newcommand{\Glsplhere}[1]{\glsreset{#1}\Acrfullpl{#1}}
+
+\newcommand*{\indexedlist}{}
+\renewcommand*{\glsxtrdowrglossaryhook}[1]{%
+  \xifinlist{#1}{\indexedlist}{}{\listxadd{\indexedlist}{#1}}%
+}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newglossarystyle{tabx3col}{%
+ % put the glossary in a longtable environment:
+ \renewenvironment{theglossary}%
+  {\begin{longtable}{L{0.13\textwidth}L{0.77\textwidth}R{0.1\textwidth}}}%
+  {\end{longtable}}%
+ % Set the table's header:
+ \renewcommand*{\glossaryheader}{}%
+ % No heading between groups:
+  \renewcommand*{\glsgroupheading}[1]{\\[0.3\parskip]}%
+ % Main (level 0) entries displayed in a row:
+  \renewcommand*{\glossaryentryfield}[5]{%
+    \glstarget{##1}{\textbf{##2}}% Name
+    & ##3% Description
+    & ##5% Page list
+    \\% end of row
+  }%
+}
+
+\newglossarystyle{myglstyle}{%
+ % put the glossary in a longtable environment:
+ \renewenvironment{theglossary}%
+  {\setlength{\columnsep}{0.05\textwidth}\begin{multicols}{2}\begin{description}}%begin
+  {\end{description}\end{multicols}}%end
+ % Set the table's header:
+ \renewcommand*{\glossaryheader}{}%
+ % No heading between groups:
+  \renewcommand*{\glsgroupheading}[1]{}%
+ % Main (level 0) entries displayed in a row:
+  \renewcommand*{\glossaryentryfield}[5]{%
+    \item[\glstarget{##1}{\textbf{##2}}] ##3,\hspace{1em}##5
+}
+}
+
 
 
 %% Setup TOC
