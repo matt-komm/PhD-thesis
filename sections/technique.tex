@@ -90,9 +90,27 @@ Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse m
 
 Typically, the $t$-channel single-top-quark signal region, defined by one isolated lepton, 2~jets (where one is b-tagged), and significant \met, is found to be still largely contaminated by events from background processes after the event selection. The \glshere{sb} yield ratios are about 13\% and 14\% at 8~and 13~TeV, respectively~\cite{Khachatryan:2014iya,Sirunyan:2016cdg}\todo{update TOP-16-003 when accepted by PRL}. The majority of background events stems from \wjets, \ttbar, and multijet production whereas the contributions from single top tW and $s$-channel, Drell-Yan, and diboson production are minor.
 
-The small \gls{sb} ratio motivates the usages \glshere{mva} techniques.
+The small \gls{sb} ratio motivates the usages \glshere{mva} techniques. In this thesis, \glsplhere{bdt} are employed for event classification. They are based on a set of decision trees where each yields a binary output depending on whether an event is signal- or background-like. An exemplary decision tree is presented in Fig.~\ref{fig:technique-decisiontree} where sequential selections on observables $x_{i}$ are applied such that the leaf nodes contain either a majority of signal or background events. It is constructed using samples of simulated events for which the desired classification is a priori known. This is commonly referred to as supervised learning.
 
-of An observable to separate signal from background events can be obtained from such as \glsplhere{nn} or \glsplhere{bdt}. In this thesis, \glspl{bdt} have been employed to extract the amount of signal events.
+\myfigure{\label{fig:technique-decisiontree} A sketch of a decision tree.}{
+\includegraphics[scale=0.75]{figures/technique/decision_tree.pdf}
+}
+
+The optimal selection values $C_{i}$ per node can be determined in various ways. In the analyses, the cross entropy 
+
+\begin{equation}
+H=-p\cdot\ln(p)-(1-p)\cdot\ln(1-p),\qquad p=N_\mathrm{signal}/N_\mathrm{total}
+\end{equation}
+
+where $p$ denotes the purity of a node is utilized. A node is not split further if it contains less than a predefined minimum number of events to ensure that the decision is statistically significant. This parameter is optimized to mitigate potential ``overtraining'' of a decision tree where statistical fluctuations are learned. 
+
+
+
+
+
+
+To test for overtraining, the decision tree performance is compared to a statistical independent test sample of simulated events.
+
 
 
 \cite{Hocker:2007ht}
