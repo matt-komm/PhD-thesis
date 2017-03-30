@@ -5,6 +5,7 @@
 %##############################################
 \section{Event generation}
 %##############################################
+\label{sec:technique-event-gen}
 
 To compare reconstructed data with theoretical predictions, samples of simulated events are generated from theory and passed through a simulation of the \gls{cms} detector and emulation of its readout. The standard so-called ``FullSimulation'' package~\cite{1742-6596-396-2-022003,1742-6596-664-7-072022} is based on the Geant4 toolkit~\cite{Agostinelli2003250} which provides a detailed simulation of particle trajectories and interactions with the detector material. A fast alternative, the so-called ``FastSimulation'' package, exists within \gls{cms} as well~\cite{fsimRahmat} but has not been used for simulating the detector response in the analyses within this thesis.
 
@@ -88,32 +89,48 @@ Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse m
 \section{Boosted Decision Trees}
 %##############################################
 
-Typically, the $t$-channel single-top-quark signal region, defined by one isolated lepton, 2~jets (where one is b-tagged), and significant \met, is found to be still largely contaminated by events from background processes after the event selection. The \glshere{sb} yield ratios are about 13\% and 14\% at 8~and 13~TeV, respectively~\cite{Khachatryan:2014iya,Sirunyan:2016cdg}\todo{update TOP-16-003 when accepted by PRL}. The majority of background events stems from \wjets, \ttbar, and multijet production whereas the contributions from single top tW and $s$-channel, Drell-Yan, and diboson production are minor.
+Typically, the $t$-channel single-top-quark signal region, defined by one isolated lepton, 2~jets (where one is b-tagged), and significant \met, is found to be still largely contaminated by events from background processes after the event selection. The \glshere{sb} yield ratios are about 13\% and 14\% at 8~and 13~TeV, respectively~\cite{Khachatryan:2014iya,Sirunyan:2016cdg}\todo{update TOP-16-003 when accepted by PRL}. The majority of background events stems from \wjets, \ttbar, and multijet production whereas the contributions from single top tW and $s$-channel, Drell-Yan, and diboson production are minor. The small \gls{sb} ratio motivates the usages \glshere{mva} techniques. In this thesis, \glsplhere{bdt} are employed for event classification as provided by the \gls[]{tmva} framework~\cite{Hocker:2007ht}. They are based on a set of decision trees where each yields a binary output depending on whether an event is signal- or background-like. Their training and how the single decision tree outputs are combined into a one-dimensional discriminant are detailed in the following.
 
-The small \gls{sb} ratio motivates the usages \glshere{mva} techniques. In this thesis, \glsplhere{bdt} are employed for event classification. They are based on a set of decision trees where each yields a binary output depending on whether an event is signal- or background-like. An exemplary decision tree is presented in Fig.~\ref{fig:technique-decisiontree} where sequential selections on observables $x_{i}$ are applied such that the leaf nodes contain either a majority of signal or background events. It is constructed using samples of simulated events for which the desired classification is a priori known. This is commonly referred to as supervised learning.
+An exemplary decision tree is presented in Fig.~\ref{fig:technique-decisiontree} where sequential selections on observables $x_{i}$ are applied such that the leaf nodes contain either a majority of signal or background events. It is constructed using samples of simulated events for which the desired classification is a priori known~(``superivsed learning'').
 
 \myfigure{\label{fig:technique-decisiontree} A sketch of a decision tree.}{
 \includegraphics[scale=0.75]{figures/technique/decision_tree.pdf}
 }
 
-The optimal selection values $C_{i}$ per node can be determined in various ways. In the analyses, the cross entropy 
+The optimal observable and working point $C_{i}$ per node are determined by analyzing which set of $(x_{i},C_{i})$ yields the maximal separation between the signal and background distributions. In the analyses, the separation is calculated using the cross entropy 
 
 \begin{equation}
 H=-p\cdot\ln(p)-(1-p)\cdot\ln(1-p),\qquad p=N_\mathrm{signal}/N_\mathrm{total}
 \end{equation}
 
-where $p$ denotes the purity of a node is utilized. A node is not split further if it contains less than a predefined minimum number of events to ensure that the decision is statistically significant. This parameter is optimized to mitigate potential ``overtraining'' of a decision tree where statistical fluctuations are learned. 
+where $p$ denotes the achieved purity of a selection. A node is not split further if it contains less than a predefined minimum number of events to ensure that the decisions per node and the binary outputs per leaf are statistically significant. The minimum number of events can be optimized to mitigate potential ``overtraining'' of a decision tree. This occurs when statistical fluctuations are learned instead of the physical distributions due to the finite statistics of the training sample. Furthermore, special caution is required when using a sample which contains also negatively weighted events~(e.g. \MGAMC). If a tree has selected a majority of negatively weighted events in a leaf, any decision would be incorrect since distributions of the selected events are unphysical if they are not countered by sufficient amounts of positively weighted ones. The cancellation of negatively weighted events can be tweaked by increasing the minimum number of events per node beyond the statistical motivated threshold one would choose when training only on a sample of purely positively weighted events.
+
+A single decision tree trained this way can still be perceptible to statistical fluctuation leading to misclassification errors when given a statistically-independent test sample which was not used in the training. This can be mitigated by training multiply decision trees with outputs $h_{i}$ that are then combined using a majority vote as
+
+\begin{equation}
+M(\vec{x})=\sum_{i}^{N_\mathrm{trees}}~w_{i}\cdot h_{i}\,(\vec{x};\,\vec{C}_{i})\label{eq:technique-majority-vote}
+\end{equation}
+
+where $\vec{x}$ denotes the values of the observables per event and $w_{i}$ are the so-called boosting weights. Another advantage is that the single decision trees only need to be ``weak learners''. This means that they are usually very shallow, e.g. 2 or 3 layers of selections, and provide only a moderate accuracy over random guessing which increases also their robustness against overtraining. By adjusting the weights through a boosting procedure, the accuracy per tree is accounted for in the majority vote. Thus a strong learner is created by combining several weak ones~\cite{Schapire1990,FREUND1995256}. The two boosting procedures employed in this thesis are the adaptive boosting, \ADABOOST~\cite{FREUND1997119}, and \GRADIENTBOOST~\cite{Friedman00greedyfunction} algorithms. In the \ADABOOST algorithm, decision trees are trained iteratively. At each step, a single decision tree is trained and the misclassified events are identified. Their weight is increased in the training of subsequent tree by the boosting weight
+
+\begin{equation}
+\alpha_{n+1}=\left(\frac{1-\epsilon_{i}}{\epsilon_{i}}\right)^\beta
+\end{equation}
+
+where $\epsilon_{i}$ denotes the misclassification rate of the current tree $i$ and $\beta$ a configurable learning rate. The corresponding weight in Eq.~\ref{eq:technique-majority-vote} is then given by $w_{i}=\ln\alpha_{i}$. Typically a slow learning rate of $\beta\leq0.5$ is chosen to allow for more boosting steps. It can be shown that the \ADABOOST algorithm is equivalent to the minimization of the exponential loss function $L(M,y)=\exp(-M(\vec{x})\,y)$ where $y$ denotes the true classification of the event~\cite{Hocker:2007ht}. If the loss function is changed to 
+
+\begin{equation}
+L(M,y)=\ln\left(1+e^{-2\,M(\vec{x})\,y}\right)
+\end{equation}
+
+the \GRADIENTBOOST procedure is obtained. This loss function is more robust in the presence of outliers and noise events for which the \ADABOOST algorithm may degrade.
+
+The performance of a trained \gls{bdt} can be assessed using the \glshere{roc} curve.
 
 
-boosting, ada, gradient
 
+\todo{roc etaj' vs. bdt}
 
-
-To test for overtraining, the decision tree performance is compared to a statistical independent test sample of simulated events.
-
-
-
-\cite{Hocker:2007ht}
 
 %##############################################
 \section{Template-based fitting}

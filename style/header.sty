@@ -142,10 +142,10 @@
 \let\glsplold\glspl
 \let\Glsold\Gls
 \let\Glsplold\Glspl
-\renewcommand{\gls}[1]{\glsold[noindex]{#1}}
-\renewcommand{\glspl}[1]{\glsplold[noindex]{#1}}
-\renewcommand{\Gls}[1]{\Glsold[noindex]{#1}}
-\renewcommand{\Glspl}[1]{\Glsplold[noindex]{#1}}
+\renewcommand{\gls}[2][noindex]{\glsold[#1]{#2}}
+\renewcommand{\glspl}[2][noindex]{\glsplold[#1]{#2}}
+\renewcommand{\Gls}[2][noindex]{\Glsold[#1]{#2}}
+\renewcommand{\Glspl}[2][noindex]{\Glsplold[#1]{#2}}
 
 \setlength{\glspagelistwidth}{\textwidth}
 \setlength{\tabcolsep}{1ex}
@@ -431,9 +431,9 @@
 
 
     %formel abstände 
-    \setlength{\abovedisplayskip}{-1.\parskip plus 0.2\parskip minus 0.2\parskip}
-    \setlength{\abovedisplayshortskip}{-1.\parskip plus 0.2\parskip minus 0.2\parskip}
-    \setlength{\belowdisplayskip}{0.5\parskip plus 0.2\parskip minus 0.2\parskip}
-    \setlength{\belowdisplayshortskip}{0.5\parskip plus 0.2\parskip minus 0.2\parskip}
+    \setlength{\abovedisplayskip}{-1.\parskip plus 0.2\parskip minus 0.1\parskip}
+    \setlength{\abovedisplayshortskip}{-1.\parskip plus 0.2\parskip minus 0.1\parskip}
+    \setlength{\belowdisplayskip}{0.6\parskip plus 0.2\parskip minus 0.1\parskip}
+    \setlength{\belowdisplayshortskip}{0.6\parskip plus 0.2\parskip minus 0.1\parskip}
 }
 
