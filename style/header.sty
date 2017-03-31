@@ -92,7 +92,9 @@
 \usepackage{afterpage}
 \usepackage{graphicx,graphics}
 \usepackage{tocloft}
+\usepackage{supertabular}
 \usepackage{etoolbox}
+\usepackage{hanging}
 \usepackage{mdframed}
 \usepackage{multirow}
 \usepackage{setspace}
@@ -134,9 +136,9 @@
 %abbreviations
 \makeglossaries
 
-\renewcommand{\glstextformat}[1]{#1}
+%\renewcommand{\glstextformat}[1]{#1}
 %\renewcommand*{\glstextformat}[1]{\textsf{\textsc{#1}}}
-\renewcommand{\glsnamefont}[1]{\boldmath{\textbf{ #1}}}
+%\renewcommand{\glsnamefont}[1]{\boldmath{\textbf{#1}}}
 
 \let\glsold\gls
 \let\glsplold\glspl
@@ -150,8 +152,11 @@
 \setlength{\glspagelistwidth}{\textwidth}
 \setlength{\tabcolsep}{1ex}
 \setlength{\extrarowheight}{0.0cm}
-\setlength{\glsdescwidth}{0.8\textwidth}
+\setlength{\glsdescwidth}{1.\textwidth}
+\setlength{\glstreeindent}{0pt}
+
 \renewcommand*{\glsgroupskip}{}
+
 
 \newcommand{\glshere}[1]{\glsreset{#1}\acrfull{#1}}
 \newcommand{\glsplhere}[1]{\glsreset{#1}\acrfullpl{#1}}
@@ -159,40 +164,25 @@
 \newcommand{\Glsplhere}[1]{\glsreset{#1}\Acrfullpl{#1}}
 
 
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
-\newglossarystyle{tabx3col}{%
- % put the glossary in a longtable environment:
- \renewenvironment{theglossary}%
-  {\begin{longtable}{L{0.13\textwidth}L{0.77\textwidth}R{0.1\textwidth}}}%
-  {\end{longtable}}%
- % Set the table's header:
- \renewcommand*{\glossaryheader}{}%
- % No heading between groups:
-  \renewcommand*{\glsgroupheading}[1]{\\[0.3\parskip]}%
- % Main (level 0) entries displayed in a row:
-  \renewcommand*{\glossaryentryfield}[5]{%
-    \glstarget{##1}{\textbf{##2}}% Name
-    & ##3% Description
-    & ##5% Page list
-    \\% end of row
-  }%
-}
+\setlength{\columnsep}{0.05\textwidth}
 
 \newglossarystyle{myglstyle}{%
  % put the glossary in a longtable environment:
  \renewenvironment{theglossary}%
-  {\setlength{\columnsep}{0.05\textwidth}\begin{multicols}{2}\begin{description}}%begin
-  {\end{description}\end{multicols}}%end
+  {\begin{multicols}{2}}%begin
+  {\end{multicols}}%end
  % Set the table's header:
  \renewcommand*{\glossaryheader}{}%
  % No heading between groups:
-  \renewcommand*{\glsgroupheading}[1]{\item[]}%
+  \renewcommand*{\glsgroupheading}[1]{
+  
+  
+  %\boldmath{\textbf{\glsgetgrouptitle{##1}}\\}
+  }%
  % Main (level 0) entries displayed in a row:
   \renewcommand*{\glossaryentryfield}[5]{%
-    \item[\glstarget{##1}{\textbf{##2}}] ##3 \hspace{0.5em} ##5
+    %\item[\glstarget{##1}{\textbf{##2}}] ##3 \hspace{0.5em} ##5
+    {\hangpara{0.6em}{1}\glstarget{##1}\boldmath{\textbf{##2}} \hspace{0.3em} ##3 \hspace{0.5em} ##5\\[0.2\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip]}
 }
 }
 
