@@ -123,13 +123,15 @@ where $\epsilon_{i}$ denotes the misclassification rate of the current tree $i$ 
 L(M,y)=\ln\left(1+e^{-2\,M(\vec{x})\,y}\right)
 \end{equation}
 
-the \GRADIENTBOOST procedure is obtained. This loss function is more robust in the presence of outliers and noise events for which the \ADABOOST algorithm may degrade.
+the \GRADIENTBOOST procedure is obtained. This loss function is more robust in the presence of outliers and noise events for which the \ADABOOST algorithm may degrade. \todo{shrinkage} In the analyses, both boosting algorithms have been tested but only negligible differences in performance have been found. This however also validates the obtained performance of \todo{???}
 
-The performance of a trained \gls{bdt} can be assessed using the \glshere{roc} curve.
+The discrimination power of a trained \gls{bdt} can be assessed using the \glshere{roc} curve. In Fig.~\ref{fig:technique-bdt-rocs} various \gls{roc} curves are presented. The \gls{auc} values denote the area under the \gls{roc} curve with respect to random guessing. Here, the trained \gls{bdt} with an \gls{auc} of $31\%$ outperforms the single most-discriminating observables; the pseudorapidity of the untagged light jet and the reconstructed top quark mass.
 
 
 
-\todo{roc etaj' vs. bdt}
+\myfigure{\label{fig:technique-bdt-rocs}Comparison of \gls{roc} curves for separating $t$-channel single-top-quark events from background events (\wjets, \ttbar) using: random guessing; a trained \gls{bdt} discriminant; the pseudorapidity of the untagged light jet ($\jprime$); the difference of the reconstructed top quark mass with respect to the nominal mass, $\Delta m_\mathrm{top}=m_\mathrm{top}-172.5~\GeV$.}{
+\includegraphics[width=0.6\textwidth]{figures/technique/rocs.pdf}
+}
 
 
 %##############################################
