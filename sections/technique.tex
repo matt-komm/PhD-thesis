@@ -89,41 +89,44 @@ Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse m
 \section{Boosted Decision Trees}
 %##############################################
 
-Typically, the $t$-channel single-top-quark signal region, defined by one isolated lepton, 2~jets (where one is b-tagged), and significant \met, is found to be still largely contaminated by events from background processes after the event selection. The \glshere{sb} yield ratios are about 13\% and 14\% at 8~and 13~TeV, respectively~\cite{Khachatryan:2014iya,Sirunyan:2016cdg}\todo{update TOP-16-003 when accepted by PRL}. The majority of background events stems from \wjets, \ttbar, and multijet production whereas the contributions from single top tW and $s$-channel, Drell-Yan, and diboson production are minor. The small \gls{sb} ratio motivates the usages \glshere{mva} techniques. In this thesis, \glsplhere{bdt} are employed for event classification as provided by the \gls[]{tmva} framework~\cite{Hocker:2007ht}. They are based on a set of decision trees where each yields a binary output depending on whether an event is signal- or background-like. Their training and how the single decision tree outputs are combined into a one-dimensional discriminant are detailed in the following.
+The $t$-channel single-top-quark signal region, defined by one isolated lepton, 2~jets (where one is b-tagged), and significant \met, is found to be still largely contaminated by events from background processes after the event selection. The \glshere{sb} yield ratios are about 13\% and 14\% in analyses at 8~and 13~TeV, respectively~\cite{Khachatryan:2014iya,Sirunyan:2016cdg}\todo{update TOP-16-003 when accepted by PRL}. The majority of background events stems from \wjets, \ttbar, and multijet production whereas contributions from single top quark tW and $s$-channel, Drell-Yan, and diboson production are minor. The small \gls{sb} ratio motivates the usages \glshere{mva} techniques. In this thesis, \glsplhere{bdt} are employed for event classification as implemented in the \gls[]{tmva} framework~\cite{Hocker:2007ht}. They are based on a set of decision trees where each yields a binary output depending on whether an event is signal- or background-like. Their training and how the single decision tree outputs are combined into a one-dimensional discriminant are detailed in the following.
 
-An exemplary decision tree is presented in Fig.~\ref{fig:technique-decisiontree} where sequential selections on observables $x_{i}$ are applied such that the leaf nodes contain either a majority of signal or background events. It is constructed using samples of simulated events for which the desired classification is a priori known~(``superivsed learning'').
+An exemplary decision tree is presented in Fig.~\ref{fig:technique-decisiontree} where sequential selections on observables $x_{i}$ are applied such that the leaf nodes contain either a majority of signal or background events. Such a tree is build from samples of simulated events for which the desired classification is a priori known~(``superivsed learning'').
 
 \myfigure{\label{fig:technique-decisiontree} A sketch of a decision tree.}{
 \includegraphics[scale=0.75]{figures/technique/decision_tree.pdf}
 }
 
-The optimal observable and working point $C_{i}$ per node are determined by analyzing which set of $(x_{i},C_{i})$ yields the maximal separation between the signal and background distributions. In the analyses, the separation is calculated using the cross entropy 
+By maximizing the separation between the signal and background distributions per node the optimal observable $x_{i}$ and working point $C_{i}$  are found. In the analyses, the separation is calculated as the cross entropy 
+
+\begin{align}
+H&=-p\cdot\ln(p)-(1-p)\cdot\ln(1-p)\\ p_{i}&=\frac{\int_{C_{i}}^{\infty} N_\mathrm{sig.}(x_{i})\,\mathrm{d}x_{i}}{\int_{C_{i}}^{\infty} N_\mathrm{sig.}(x_{i})+N_\mathrm{bkg.}(x_{i})\,\mathrm{d}x_{i}}\\
+\Rightarrow &~\{x_{i},\,C_{i}\}=\max\Big(H\,\big|~x_{i},\,C_{i}\Big)
+\end{align}
+
+where $p$ denotes the achieved purity of a selection $x_{i}>C_{i}$. Other common measures of separation are the misclassification error or the so-called ``Gini'' index~\cite{Gini}. The separation measures are constructed to be symmetric when swapping the signal and background classes since obtaining a background leaf with high purity is of equal importance. A node is not split if it contains less than a predefined minimum number of events to ensure that the decisions per node and the binary outputs per leaf are statistically significant. This also mitigates a potential ``overtraining'' of a decision tree which occurs when statistical fluctuations are learned instead of the underlying physical distributions due to the finite statistics of the training sample. Additional caution is required when using a sample which contains a portion of negatively weighted events~(e.g. generated with \MGAMC). A decision may be trained incorrectly if a tree has selected a large fraction of negatively weighted events since distributions of the selected events can contain unphysical regions where a negative event yield is predicted. To tweak the cancellation of negatively weighted events the minimum number of events can be increased further beyond the statistical motivated threshold one would choose when training only on a sample of purely positively weighted events. In addition, the values of possible working points per observable which are analyzed to find the optimal node splitting can be restricted which prevents that a decision becomes sensitive to single events close to the selection borders.
+
+Single decision trees can still be perceptible to statistical fluctuation leading to misclassification errors when given a statistically-independent test sample. This is mitigated by training multiply decision trees with binary outputs $h_{i}\in\{-1,1\}$ that are then combined into a pseudo-continuous discriminant using a majority vote as
 
 \begin{equation}
-H=-p\cdot\ln(p)-(1-p)\cdot\ln(1-p),\qquad p=N_\mathrm{signal}/N_\mathrm{total}
+M(\vec{x})=\sum_{i}^{N_\mathrm{trees}}~w_{i}\cdot h_{i}\,(\vec{x};\,\vec{C}_{i}).\label{eq:technique-majority-vote}
 \end{equation}
 
-where $p$ denotes the achieved purity of a selection. A node is not split further if it contains less than a predefined minimum number of events to ensure that the decisions per node and the binary outputs per leaf are statistically significant. The minimum number of events can be optimized to mitigate potential ``overtraining'' of a decision tree. This occurs when statistical fluctuations are learned instead of the physical distributions due to the finite statistics of the training sample. Furthermore, special caution is required when using a sample which contains also negatively weighted events~(e.g. \MGAMC). If a tree has selected a majority of negatively weighted events in a leaf, any decision would be incorrect since distributions of the selected events are unphysical if they are not countered by sufficient amounts of positively weighted ones. The cancellation of negatively weighted events can be tweaked by increasing the minimum number of events per node beyond the statistical motivated threshold one would choose when training only on a sample of purely positively weighted events.
+Here, each decision tree output is multiplied by a so-called boosting weight $w_{i}$. This way of combining multiple decision trees has another advantage. It has been shown that the majority vote can yield a classifier with high accuracy by applying a ``boosting'' procedure for which it is however only necessary that the individual decision trees are ``weak learners''~\cite{Schapire1990,FREUND1995256}. This means that they need to have a classification accuracy which is only slightly better than random guessing. The decision trees can therefore be kept very shallow, e.g. only two or three layers of selections, which also improves their robustness against overtraining. The boosting procedure accounts then for the individual accuracy per tree by adjusting its weight in the majority vote which results then into a ``strong learner''.
 
-A single decision tree trained this way can still be perceptible to statistical fluctuation leading to misclassification errors when given a statistically-independent test sample which was not used in the training. This can be mitigated by training multiply decision trees with outputs $h_{i}$ that are then combined using a majority vote as
-
-\begin{equation}
-M(\vec{x})=\sum_{i}^{N_\mathrm{trees}}~w_{i}\cdot h_{i}\,(\vec{x};\,\vec{C}_{i})\label{eq:technique-majority-vote}
-\end{equation}
-
-where $\vec{x}$ denotes the values of the observables per event and $w_{i}$ are the so-called boosting weights. Another advantage is that the single decision trees only need to be ``weak learners''. This means that they are usually very shallow, e.g. 2 or 3 layers of selections, and provide only a moderate accuracy over random guessing which increases also their robustness against overtraining. By adjusting the weights through a boosting procedure, the accuracy per tree is accounted for in the majority vote. Thus a strong learner is created by combining several weak ones~\cite{Schapire1990,FREUND1995256}. The two boosting procedures employed in this thesis are the adaptive boosting, \ADABOOST~\cite{FREUND1997119}, and \GRADIENTBOOST~\cite{Friedman00greedyfunction} algorithms. In the \ADABOOST algorithm, decision trees are trained iteratively. At each step, a single decision tree is trained and the misclassified events are identified. Their weight is increased in the training of subsequent tree by the boosting weight
+The two boosting procedures employed in this thesis are the adaptive boosting, \ADABOOST~\cite{FREUND1997119}, and \GRADIENTBOOST~\cite{Friedman00greedyfunction} algorithms. In the \ADABOOST algorithm, decision trees are trained iteratively. At each step, a single decision tree is trained and the misclassified events are identified. Their weight is then increased in the training of subsequent trees by the boosting weight
 
 \begin{equation}
 \alpha_{n+1}=\left(\frac{1-\epsilon_{i}}{\epsilon_{i}}\right)^\beta
 \end{equation}
 
-where $\epsilon_{i}$ denotes the misclassification rate of the current tree $i$ and $\beta$ a configurable learning rate. The corresponding weight in Eq.~\ref{eq:technique-majority-vote} is then given by $w_{i}=\ln\alpha_{i}$. Typically a slow learning rate of $\beta\leq0.5$ is chosen to allow for more boosting steps. It can be shown that the \ADABOOST algorithm is equivalent to the minimization of the exponential loss function $L(M,y)=\exp(-M(\vec{x})\,y)$ where $y$ denotes the true classification of the event~\cite{Hocker:2007ht}. If the loss function is changed to 
+where $\epsilon_{i}$ denotes the misclassification rate of the current tree $i$ and $\beta$ a configurable learning rate. The corresponding weight in Eq.~\ref{eq:technique-majority-vote} is then given by $w_{i}=\ln\alpha_{i}$. Typically, a slow learning rate of $\beta\leq0.5$ is chosen to allow for more boosting steps. It can be shown that the \ADABOOST algorithm is equivalent to the minimization of the exponential loss function $L(M,y)=\exp(-M(\vec{x})\,y)$ where $y$ denotes the true classification of events~\cite{Hocker:2007ht}. If instead the loss function is changed to 
 
 \begin{equation}
 L(M,y)=\ln\left(1+e^{-2\,M(\vec{x})\,y}\right)
 \end{equation}
 
-the \GRADIENTBOOST procedure is obtained. This loss function is more robust in the presence of outliers and noise events for which the \ADABOOST algorithm may degrade. In the \GRADIENTBOOST procedure the loss function is iteratively minimized with respect to the weights and decision tree parameters in $M$ using the method of gradient decent. During the minimization, the output of the majority vote gradually tends towards $y$ because misclassified events result in large gradients of the loss function. Similar to the \ADABOOST algorithm, an increased performance is obtained when decreasing the learning rate which is called ``shrinkage'' here. It decreases the parameter updates during the gradient decent minimization. In the analyses, both boosting algorithms have been tested to validate their performances with respect to each other. Only negligible differences in their discrimination power have been found.  \todo{write better?}
+the \GRADIENTBOOST procedure is obtained. Its loss function is more robust in the presence of outliers and noise events for which the \ADABOOST algorithm may degrade. The procedure commences by iteratively minimizing the loss function with respect to the weights and decision tree parameters in $M$ using the method of gradient decent. During the minimization steps, the output of the majority vote will gradually tend towards $y$ because misclassified events result in large gradients of the loss function. Similar to the \ADABOOST algorithm, an increased performance is obtained when decreasing the learning rate which is called ``shrinkage'' here. It controls the update amount which the parameters receive during the minimization. In the analyses, both boosting algorithms have been tested to validate their performances with respect to each other. Only negligible differences in their discrimination power have been found.
 
 The discrimination power of a trained \gls{bdt} is assessed by analyzing the \glshere{roc} curve. Exemplary \gls{roc} curves are presented in Fig.~\ref{fig:technique-bdt-rocs}. The \gls[]{auc} values denote the area under the \gls{roc} curve with respect to random guessing. Here, the \gls{roc} curves of a \gls{bdt} trained to discriminate $t$-channel single-top-quark events against \wjets and \ttbar background events is compared to the pseudorapidity of the untagged light jet and to the reconstructed top quark mass difference. An \gls{auc} of $31\%$ is achieved with the trained \gls{bdt} which outperforms the other two $t$-channel typical observables.\todo{write better?}
 
@@ -137,9 +140,35 @@ The discrimination power of a trained \gls{bdt} is assessed by analyzing the \gl
 \section{Template-based fitting}
 %##############################################
 
-In the analyses, the amount of signal and background events is estimated from data using template-based \glshere{ml} fits. The templates are obtained from simulated events 
+In the analyses, the amount of signal and background events is estimated from data using template-based \glshere{ml} fits. For an observable to be fitted, histograms of simulated events act as templates which reflect the expected distributions of events per process. The likelihood that the observed distribution in data is a realization of the expectation from simulation can then be expressed as
 
-likelihood, barlow-beeston method, sys
+\begin{equation}
+L=\prod_{i}^\mathrm{bins}~\frac{p_{i}^{\,d_{i}}\cdot e^{-p_{i}}}{d_{i}!},\qquad p_{i}=\beta^{\mathrm{(sig.)}}\cdot t^{\mathrm{(sig.)}}_{i}+\sum_{j}^\mathrm{bkgs.}~\beta^{(j)}\cdot t^{(j)}_{i}. \label{eq:technique-likelihood}
+\end{equation}
+
+Here, the amount of observed data events $d_{i}$ per bin $i$ follows a Poisson distribution assuming an expected event yield $p_{i}$ as mean. These are obtained by summing the respective contributions of the signal and background templates $t^\scriptn{(X)}_{i}$ per process $X$. The normalization per process is controlled through scale factors $\beta^\scriptn{\mathrm{(X)}}$. These are then estimated through the fit from data by maximizing the likelihood. The signal scale factor is also reffered to as signal ``strength'' whereas the background scale factors are reffered to as nuciance parameters because their fit result is of lesser importance. Technically, the \THETA framework~\cite{} is employed in which the negative logarithm of the likelihood
+
+\begin{equation}
+-\ln\Big[L\big(\vec{\beta}\big)\Big]=-\sum_{i}^\mathrm{bins}~\Big[\,d_{i}\ln p_{i}\big(\vec{\beta}\big)-p_{i}\big(\vec{\beta}\big)\Big]+\mathrm{const.}
+\end{equation}
+
+is minimized in the fit with respect to the scale factors. Since the templates are normalized to the expected \gls{sm} cross sections times luminosity, an estimated scale factor can be directly translated into a total cross section as
+
+\begin{equation}
+\sigma_\mathrm{meas.}=\frac{N_\mathrm{obs.}}{A\cdot\epsilon\cdot L}=\beta\cdot\underbrace{\frac{N_\mathrm{exp.}}{A\cdot\epsilon\cdot L}}_\mathrm{template}=\beta\cdot\sigma_\mathrm{\gls{sm}}
+\end{equation}
+
+where $A$ denotes the acceptance and $\epsilon$ the efficiency of the event selection which are estimated through the simulated templates. For the background scale factors additional constraints are added to the likelihood using log-normal priors as
+
+\begin{equation}
+-\ln(L^\prime)=-\ln(L)+\sum_{j}^\mathrm{bkgs.}~\frac{1}{2}\cdot\left(\frac{\ln\,\beta^{(j)}}{\sigma^{(j)}}\right)^{2}
+\end{equation}
+
+because the analysis phase space is usually only optimized to measure the signal process. Thus these constraints reflect the 
+
+The log-normal distribution is preferred over e.g. Gaussian distribution because in the case of large prior widths the distributions are not truncated. Truncation can result in a modified mean which then biases the result.
+
+barlow-beeston method, sys
 
 %##############################################
 \section{Partonic and fiducial objects}

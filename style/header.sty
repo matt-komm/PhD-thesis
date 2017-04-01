@@ -96,6 +96,7 @@
 \usepackage{etoolbox}
 \usepackage{hanging}
 \usepackage{mdframed}
+\usepackage{verse}
 \usepackage{multirow}
 \usepackage{setspace}
 \usepackage[Symbolsmallscale]{upgreek} % for upright greek symbols
@@ -166,23 +167,25 @@
 
 \setlength{\columnsep}{0.05\textwidth}
 
+
+
 \newglossarystyle{myglstyle}{%
  % put the glossary in a longtable environment:
  \renewenvironment{theglossary}%
-  {\begin{multicols}{2}}%begin
-  {\end{multicols}}%end
+  {\begin{multicols}{2}\begin{description}}%begin
+  {\end{description}\end{multicols}}%end
  % Set the table's header:
  \renewcommand*{\glossaryheader}{}%
  % No heading between groups:
   \renewcommand*{\glsgroupheading}[1]{
-  
-  
   %\boldmath{\textbf{\glsgetgrouptitle{##1}}\\}
   }%
  % Main (level 0) entries displayed in a row:
   \renewcommand*{\glossaryentryfield}[5]{%
-    %\item[\glstarget{##1}{\textbf{##2}}] ##3 \hspace{0.5em} ##5
-    {\hangpara{0.6em}{1}\glstarget{##1}\boldmath{\textbf{##2}} \hspace{0.3em} ##3 \hspace{0.5em} ##5\\[0.2\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip]}
+    \begin{nobreak}
+    \item[\glstarget{##1}{\textbf{##2}}] ##3 \hspace{0.5em} ##5
+    \end{nobreak}
+    %\glstarget{##1}\boldmath{\textbf{##2}} \hspace{0.3em} ##3 \hspace{0.5em} ##5%\\[0.0\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip]
 }
 }
 
