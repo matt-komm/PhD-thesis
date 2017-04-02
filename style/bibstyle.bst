@@ -810,7 +810,7 @@ FUNCTION {format.url}
 {
   url empty$
     { "" }
-    {"\href{" url * "}{\small\texttt{ " * url * "}}" * }
+    {"\href{" url * "}{\small\texttt{\detokenize{ " * url * "}}}" * }
   if$
 }
 
