@@ -126,7 +126,7 @@ where $\epsilon_{i}$ denotes the misclassification rate of the current tree $n$ 
 L(M,y)=\ln\left(1+e^{-2\,M(\vec{x})\,y}\right)
 \end{equation}
 
-the \GRADIENTBOOST algorithm is obtained. Its loss function is more robust in the presence of outliers and noise events for which the \ADABOOST algorithm may degrade. The algorithm commences by iteratively minimizing the loss function with respect to the weights and decision tree parameters in $M$ using the method of gradient decent. During the minimization steps, the output of the majority vote will gradually tend towards $y$ because misclassified events result in large gradients of the loss function. Similar to the \ADABOOST algorithm, an increased performance is obtained when decreasing the learning rate which is called ``shrinkage'' here. It controls the update amount which the parameters receive during the minimization. In this thesis, both boosting algorithms have been tested to validate their performances with respect to each other. Only negligible differences in their discrimination power have been found after optimizing their training parameters.
+the \GRADIENTBOOST algorithm is obtained. Its loss function is more robust in the presence of outliers and noise events for which the \ADABOOST algorithm may degrade. The algorithm commences by iteratively minimizing the loss function with respect to the weights and decision tree parameters in $M$ using the method of gradient decent. During the minimization steps, the output of the majority vote will gradually tend towards $y$ because misclassified events result in large gradients of the loss function. Similar to the \ADABOOST algorithm, an increased performance is obtained when decreasing the learning rate controlling the boosting weights which is called ``shrinkage'' here. In this thesis, both boosting algorithms have been tested to validate their performances with respect to each other. Only negligible differences in their discrimination power have been found after optimizing their training parameters.
 
 The discrimination power of a trained \gls{bdt} is assessed by analyzing the \glshere{roc} curve. Exemplary \gls{roc} curves are presented in Fig.~\ref{fig:technique-bdt-rocs}. The \gls[]{auc} values denote the area under the \gls{roc} curve with respect to random guessing. Here, the \gls{roc} curves of a \gls{bdt} trained to discriminate $t$-channel single-top-quark events against \wjets and \ttbar background events is compared to the pseudorapidity of the untagged light jet and to the reconstructed top quark mass difference. An \gls{auc} of about $32\%$ is achieved with the trained \gls{bdt} which outperforms the other two typical event observables for separating $t$-channel events from background processes. The exact setup of the \gls{bdt} shown here will be discussed in Sec.~\ref{sec:diff13-bdt} together with the corresponding analysis.
 
@@ -142,36 +142,39 @@ The discrimination power of a trained \gls{bdt} is assessed by analyzing the \gl
 In the analyses, the amount of signal and background events is estimated from data using template-based \glshere{ml} fits. For an observable to be fitted, histograms of simulated events act as templates which reflect the expected distributions of events per process. The likelihood that the observed distribution in data is a realization of the expectation from simulation can then be expressed as
 
 \begin{equation}
-L=\prod_{i}^\mathrm{bins}~\frac{p_{i}^{\,d_{i}}\cdot e^{-p_{i}}}{d_{i}!},\qquad p_{i}=\beta^{\mathrm{(sig.)}}\cdot t^{\mathrm{(sig.)}}_{i}+\sum_{j}^\mathrm{bkgs.}~\beta^{(j)}\cdot t^{(j)}_{i}. \label{eq:technique-likelihood}
+\mathsf{L}_\mathrm{Poi.}=\prod_{i}^\mathrm{bins}~\frac{p_{i}^{\,d_{i}}\cdot e^{-p_{i}}}{d_{i}!},\qquad p_{i}=\beta^{\mathrm{(sig.)}}\cdot t^{\mathrm{(sig.)}}_{i}+\sum_{j}^\mathrm{bkgs.}~\beta^{(j)}\cdot t^{(j)}_{i}. \label{eq:technique-likelihood}
 \end{equation}
 
-The amount of observed data events $d_{i}$ per bin $i$ is modeled to follow a Poisson distribution with an expected event yield $p_{i}$. The expected yields are obtained by summing the respective contributions of the signal and background templates $t^\scriptn{(X)}_{i}$ per process $X$. The normalization per process is controlled through scale factors $\beta^\scriptn{\mathrm{(X)}}$. These are then estimated through the fit from data by maximizing the likelihood. The signal scale factor is also referred to as signal ``strength'' whereas the background scale factors are sometimes called nuisance parameters because their estimation is of less importance. Technically, the \THETA framework~\cite{theta} is employed for template-based fitting where due to numerical stability the negative logarithm of the likelihood
+The amount of observed data events $d_{i}$ per bin $i$ is modeled to follow a Poisson distribution with an expected event yield $p_{i}$. The expected yields are obtained by summing the respective contributions of the signal and background templates $t^\scriptn{(X)}_{i}$ per process $X$. The normalization per process is controlled through scale factors $\beta^\scriptn{\mathrm{(X)}}$. These are then estimated through the fit from data by maximizing the likelihood. The signal scale factor is also referred to as signal ``strength'' whereas the background scale factors are sometimes called nuisance parameters because their estimation is of less importance. Technically, the \THETA framework~\cite{theta} is employed for template-based fitting where for convenience and numerical stability reasons the negative logarithm of the likelihood
 
 \begin{equation}
--\ln\Big[L\big(\vec{\beta}\big)\Big]=-\sum_{i}^\mathrm{bins}~\Big[\,d_{i}\ln p_{i}\big(\vec{\beta}\big)-p_{i}\big(\vec{\beta}\big)\Big]+\mathrm{const.}
+-\ln\Big(\mathsf{L}_\mathrm{Poi.}\big(\vec{\beta}\big)\Big)=-\sum_{i}^\mathrm{bins}~\Big[\,d_{i}\ln p_{i}\big(\vec{\beta}\big)-p_{i}\big(\vec{\beta}\big)\Big]+\mathrm{const.}
 \end{equation}
 
-is minimized in the fit instead which is however equivalent to maximizing Eq.~\ref{eq:technique-likelihood} with respect to the scale factors. Since the templates are normalized to the expected \gls{sm} cross sections times integrated luminosity, an estimated scale factor can be directly translated into a total cross section as
+is minimized which is however equivalent to maximizing Eq.~\ref{eq:technique-likelihood} with respect to the scale factors. Since the templates are normalized to their corresponding \gls{sm} cross sections times the integrated luminosity, an estimated scale factor can be directly translated into a corresponding cross section as
+
+\begin{align}
+\sigma_\mathrm{meas.}&=\frac{N_\mathrm{obs.}}{A\cdot\epsilon\cdot{\textstyle{\int}L} }~,\quad N_\mathrm{obs.}=\beta\cdot N_\mathrm{exp.}=\beta\cdot\underbrace{\sigma_\mathrm{\gls{sm}}\cdot\textstyle{\int}L}_\mathrm{normalization}\cdot \overbrace{A \cdot \epsilon}^\mathrm{selection}\nonumber\\
+&=\beta\cdot\sigma_\mathrm{\gls{sm}}
+\end{align}
+
+where $A$ denotes the acceptance and $\epsilon$ the efficiency of the event selection which are intrinsically estimated through the simulated samples. For the background scale factors additional constraints are applied by adding log-normal priors to the likelihood as
 
 \begin{equation}
-\sigma_\mathrm{meas.}=\frac{N_\mathrm{obs.}}{A\cdot\epsilon\cdot{\textstyle{\int}L} }\equiv\beta\cdot\underbrace{\frac{N_\mathrm{exp.}}{A\cdot\epsilon\cdot{\textstyle{\int}L} }}_\mathrm{template}=\beta\cdot\sigma_\mathrm{\gls{sm}}
+-\ln\Big(\mathsf{L}_\mathrm{bkgs.}\Big)=\sum_{j}^\mathrm{bkgs.}~\frac{1}{2}\cdot\left(\frac{\ln\,\beta^{(j)}}{\delta^{(j)}}\right)^{2}.
 \end{equation}
 
-where $A$ denotes the acceptance and $\epsilon$ the efficiency of the event selection which are estimated through the simulated templates. For the background scale factors additional constraints are added to the likelihood using log-normal priors as
+These additional constraints with uncertainties $\delta$ reflect a priori believes of the background contributions in the signal phase space where the fit is carried out. They are motivated by the fact that the selected analysis phase space is usually only optimized to measure the signal process accurately but not the background contributions. Here, log-normal distributions are explicitly preferred to model the constraints over Gaussian distributions because in the case of large uncertainties log-normal distributions will not be biased when requiring that the scale factors are always positive. For Gaussian distributions with large widths, such a truncation shifts the mean of the distribution which then biases the fit result.
 
-\begin{equation}
--\ln(L^\prime)=-\ln(L)+\sum_{j}^\mathrm{bkgs.}~\frac{1}{2}\cdot\left(\frac{\ln\,\beta^{(j)}}{\sigma^{(j)}}\right)^{2}
-\end{equation}
-
-because the analysis phase space is usually only optimized to measure the signal process. Thus these constraints with uncertainties $\sigma^{(j)}$ reflect the a priori believes of the background contributions in the signal phase space where the fit is carried out. The log-normal distribution is explicitly preferred as prior constraint over e.g. Gaussian distributions because in the case of large uncertainties log-normal distributions will not be truncated when requiring that the scale factors are always positive. Such a truncation can lead to a modified mean which then biases the fit result.
+In the fit, an extra uncertainty is considered to account for the limited accuracy of the predicted event yields per bin due to the finite statistics of the simulated event samples. A method proposed by R. Barlow and C. Beeston~(\gls[]{bb})~\cite{Barlow:1993dm} is to model this uncertainty by adding additional nuisance parameters $\nu_{ij}$ for each bin $i$ and process $j$ which modifies the predicted yields as $p_{i}^\prime=\sum_{j}\nu_{ij}\cdot p_{ij}$. These so-called \gls{bb} parameters are constrained in the likelihood to reflect the uncertainties of the sample statistics. This approach however increases the complexity of the fit since many more parameters have to be estimated in addition to the signal and background scale factors. The number of free parameters is reduced in the Barlow-Beeston lite method~\cite{Conway:2011in} where the uncertainties per bins are grouped and describe by only a single nuisance parameter. A further, technical simplification can be achieved when using numerical minimization algorithms for fitting. Here, it is computationally advantageous to only maximize the likelihood with respect to the scale factors while adjusting the \gls{bb} parameters adaptively to cover the remaining difference between prediction and data per bin. This approach is also implemented in the employed \THETA framework.
 
 
-
-barlow-beeston method, sys
 
 %##############################################
 \section{Partonic and fiducial objects}
 %##############################################
+
+
 
 dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), jet clustering (no neutrinos/leptons), b-tagging
 
