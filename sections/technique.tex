@@ -171,17 +171,33 @@ In the fit, an extra uncertainty is considered to account for the limited accura
 
 
 %##############################################
-\section{Partonic and fiducial objects}
+\section{Parton and particle level observables}
 %##############################################
 
-\myfigure{\label{fig:technique-fiducial}}{
+Cross sections can be measured not only inclusively but also differentially in intervals of an observable. Differential cross sections offer the means to perform in-deep comparisons of data with theoretical predictions. The result of such measurements allows to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be used to infer properties of the coupling structure of a process or can be interpreted in potential \gls{bsm} scenarios.
+
+A proper comparison of differential cross sections inferred from data, the prediction by generators, and analytical calculations can only be achieved if the corresponding observable is well-defined and identical. There are two ``levels'' at which physics objects of a process and related observables are typically defined. These are presented in Fig~\ref{fig:technique-parton-particle}. The parton level corresponds to the intermediate and final state particles within a Feynman diagram in analytical calculations. In event generators, these particles are typically produced as part of the hard interaction before the event is handed to a parton shower where soft emissions and the result of the hadronization is added.
+
+ambigous at NLO, 4/5FS because of 2nd b-quark
+
+\myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production.}{
 \includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
 }
 
 dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), jet clustering (no neutrinos/leptons), b-tagging
 
+
+
 %##############################################
 \section{Unfolding}
 %##############################################
+
+Unfolding in \gls{hep} is a procedure which attempts to infer a distribution of an observable of interest at particle or parton level from data. The idea behind this is to revert the effects of the detector. Therefore unfolded distributions can be easily compared to each other (even across experiments) and with the expectations from theory. The problem can be modeled as a Fredholm equation of the first kind
+
+\begin{equation}
+f(x)=\int \epsilon(x)\cdot R(x,y)\cdot g(y)\, \mathrm{d}y
+\end{equation}
+
+where $f(x)$ denotes the reconstructed distribution which is obtained by folding the true distribution $g(y)$ with the detector response $R(x,y)$ times the efficiency $\epsilon(x)$.
 
 problems, regularization scheme (thinkovo), correlations, subway plot, alternative FBU

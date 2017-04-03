@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "" > temp/warnings.log
 pdflatex \
 -output-directory temp \
 -file-line-error \
@@ -17,5 +18,6 @@ pdflatex \
 -output-directory temp \
 -file-line-error \
 -halt-on-error \
-main.tex
+main.tex | tee /dev/stdout | grep "LaTeX Warning" >> temp/warnings.log
+cat temp/warnings.log
 
