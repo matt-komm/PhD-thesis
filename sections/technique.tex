@@ -131,7 +131,7 @@ the \GRADIENTBOOST algorithm is obtained. Its loss function is more robust in th
 The discrimination power of a trained \gls{bdt} is assessed by analyzing the \glshere{roc} curve. Exemplary \gls{roc} curves are presented in Fig.~\ref{fig:technique-bdt-rocs}. The \gls[]{auc} values denote the area under the \gls{roc} curve with respect to random guessing. Here, the \gls{roc} curves of a \gls{bdt} trained to discriminate $t$-channel single-top-quark events against \wjets and \ttbar background events is compared to the pseudorapidity of the untagged light jet and to the reconstructed top quark mass difference. An \gls{auc} of about $32\%$ is achieved with the trained \gls{bdt} which outperforms the other two typical event observables for separating $t$-channel events from background processes. The exact setup of the \gls{bdt} shown here will be discussed in Sec.~\ref{sec:diff13-bdt} together with the corresponding analysis.
 
 \myfigure{\label{fig:technique-bdt-rocs}Comparison of \gls{roc} curves for separating $t$-channel single-top-quark events from background events (\wjets, \ttbar) using: random guessing; a trained \gls{bdt} discriminant; the pseudorapidity of the untagged light jet ($\jprime$); the difference of the reconstructed top quark mass with respect to the nominal mass, $\Delta m_\mathrm{top}=m_\mathrm{top}-172.5~\GeV$.}{
-\includegraphics[width=0.6\textwidth]{figures/technique/rocs.pdf}
+\includegraphics[width=0.55\textwidth]{figures/technique/rocs.pdf}
 }
 
 
@@ -174,9 +174,12 @@ In the fit, an extra uncertainty is considered to account for the limited accura
 \section{Parton and particle level observables}
 %##############################################
 
-Cross sections can be measured not only inclusively but also differentially in intervals of an observable. Differential cross sections offer the means to perform in-deep comparisons of data with theoretical predictions. The result of such measurements allows to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be used to infer properties of the coupling structure of a process or can be interpreted in potential \gls{bsm} scenarios.
+Cross sections can be measured not only inclusively but also differentially in intervals of an observable. Differential cross sections offer the means to perform in-deep comparisons of data with theoretical predictions. The result of such measurements allows to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be sensitive to the coupling structure of a process and can thus be interpreted in potential \gls{bsm} scenarios as well.
 
-A proper comparison of differential cross sections inferred from data, the prediction by generators, and analytical calculations can only be achieved if the corresponding observable is well-defined and identical. There are two ``levels'' at which physics objects of a process and related observables are typically defined. These are presented in Fig~\ref{fig:technique-parton-particle}. The parton level corresponds to the intermediate and final state particles within a Feynman diagram in analytical calculations. In event generators, these particles are typically produced as part of the hard interaction before the event is handed to a parton shower where soft emissions and the result of the hadronization is added.
+A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined. These are presented in Fig~\ref{fig:technique-parton-particle}. The parton level corresponds to the intermediate and final state particles within a Feynman diagram. In event generators, these particles are produced as the hard interaction before the event is handed to a parton shower program where result of the hadronization and various other effects~(see Fig.~\ref{fig:technique-mcevent}) are simulated. The partonic top quark is defined to be on-shell while accounting for \gls{qcd}/\gls{qed} radiations and the intrinsic $k_\mathrm{T}$ of initial state partons which may boost the event. Prompt leptons which originate from the W~boson decay are defined in the same manner. Since about \todo{how much? make plot of lepton pT/cosTheta with muon, muon from taus} of the reconstructed electrons or muons originate from a leptonically decaying tau lepton, these leptons are included into the definition as well.
+
+
+The spectator quark may radiate a gluon as shown exemplary. At \gls{nlo}, this can lead to an ambiguity if it is accounted
 
 ambigous at NLO, 4/5FS because of 2nd b-quark
 
@@ -184,7 +187,7 @@ ambigous at NLO, 4/5FS because of 2nd b-quark
 \includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
 }
 
-dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), jet clustering (no neutrinos/leptons), b-tagging
+dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging
 
 
 
