@@ -28,6 +28,8 @@ Multiple samples of events with additional final state partons at matrix element
 
 \item[CompHEP] The \COMPHEP program (version~4.5)~\cite{Boos:2004kh} can perform calculations of cross sections from Lagrangians at \gls{lo}. In addition, generation of events is also possible such as single top quark production~\cite{Boos:2006af}. Here, an approximation is used by combining events from the $2\to2$ and $2\to3$ processes which reproduces effectively \gls{nlo} corrections.
 
+\item[Tauola] \todo{?}
+
 \item[Pythia] The \PYTHIA program (versions~6,8)~\cite{Sjostrand:2006za,Sjostrand:2014zea} can generate events of various processes at \gls{lo}. It is however famous for its \gls{ps} simulation which can be interfaced with other \gls{lo} and \gls{nlo} event generators to perform subsequent parton showering, hadronization, and the simulation of the underlying event. For hadronization, a phenomenological model is utilized in which one-dimensional strings\footnote{The string model is motivated by the fact that the spatial form of a dipole color field does not extend radially like an \gls{em} field but is instead squeezed to a tube-like form.} connected to partons reflect the color field leading to the creation of additional partons through string branching and finally to the formation of color-neutral singlets.
 
 \item[Herwig++] The \HERWIG program (version~7)~\cite{Bellm:2015jjp} is an \gls{nlo} event generator which is also capable of simulating the showering of partons similar to \PYTHIA. Its hadronization algorithm utilizes a model in which color-connected quarks are spatially kept together in clusters~\cite{Webber:1983if} which is motivated by the ``preconfinement'' of color~\cite{Amati:1979fg}. If the mass of a cluster is sufficiently high it can decay into lighter clusters with a certain probability. In its final step, a cluster decays then into a pair of hadrons.
@@ -131,7 +133,7 @@ the \GRADIENTBOOST algorithm is obtained. Its loss function is more robust in th
 The discrimination power of a trained \gls{bdt} is assessed by analyzing the \glshere{roc} curve. Exemplary \gls{roc} curves are presented in Fig.~\ref{fig:technique-bdt-rocs}. The \gls[]{auc} values denote the area under the \gls{roc} curve with respect to random guessing. Here, the \gls{roc} curves of a \gls{bdt} trained to discriminate $t$-channel single-top-quark events against \wjets and \ttbar background events is compared to the pseudorapidity of the untagged light jet and to the reconstructed top quark mass difference. An \gls{auc} of about $32\%$ is achieved with the trained \gls{bdt} which outperforms the other two typical event observables for separating $t$-channel events from background processes. The exact setup of the \gls{bdt} shown here will be discussed in Sec.~\ref{sec:diff13-bdt} together with the corresponding analysis.
 
 \myfigure{\label{fig:technique-bdt-rocs}Comparison of \gls{roc} curves for separating $t$-channel single-top-quark events from background events (\wjets, \ttbar) using: random guessing; a trained \gls{bdt} discriminant; the pseudorapidity of the untagged light jet ($\jprime$); the difference of the reconstructed top quark mass with respect to the nominal mass, $\Delta m_\mathrm{top}=m_\mathrm{top}-172.5~\GeV$.}{
-\includegraphics[width=0.55\textwidth]{figures/technique/rocs.pdf}
+\includegraphics[width=0.5\textwidth]{figures/technique/rocs.pdf}
 }
 
 
@@ -176,7 +178,7 @@ In the fit, an extra uncertainty is considered to account for the limited accura
 
 Cross sections can be measured not only inclusively but also differentially in intervals of an observable. Differential cross sections offer the means to perform in-deep comparisons of data with theoretical predictions. The result of such measurements allows to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be sensitive to the coupling structure of a process and can thus be interpreted in potential \gls{bsm} scenarios as well.
 
-A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined. These are presented in Fig~\ref{fig:technique-parton-particle}. The parton level corresponds to the intermediate and final state particles within a Feynman diagram. In event generators, these particles are produced as the hard interaction before the event is handed to a parton shower program where result of the hadronization and various other effects~(see Fig.~\ref{fig:technique-mcevent}) are simulated. The partonic top quark is defined to be on-shell while accounting for \gls{qcd}/\gls{qed} radiations and the intrinsic $k_\mathrm{T}$ of initial state partons which may boost the event. Prompt leptons which originate from the W~boson decay are defined in the same manner. Since about \todo{how much? make plot of lepton pT/cosTheta with muon, muon from taus} of the reconstructed electrons or muons originate from a leptonically decaying tau lepton, these leptons are included into the definition as well.
+A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined. These are presented in Fig~\ref{fig:technique-parton-particle}. The parton level corresponds to the intermediate and final state particles within a Feynman diagram. In event generators, these particles are produced as the hard interaction before the event is handed to a parton shower program where result of the hadronization and various other effects~(see Fig.~\ref{fig:technique-mcevent}) are simulated. The partonic top quark is defined to be on-shell while accounting for \gls{qcd}/\gls{qed} radiations and the intrinsic $k_\mathrm{T}$ of initial state partons which may boost the event. Prompt leptons which originate from the W~boson decay are defined in the same manner. About 15\% of the final state electrons or muons originate from a leptonically decaying tau lepton, these leptons are included into the definition as well. The fraction depends on the \pt threshold of the muon or electron as depicted in Fig.~??. When selection electron or muons with a $\pt$ of at least $20~\GeV$ this the fraction of leptonically decaying tau leptons entering the selected phase space reduces to 6\%.
 
 
 The spectator quark may radiate a gluon as shown exemplary. At \gls{nlo}, this can lead to an ambiguity if it is accounted
@@ -185,6 +187,15 @@ ambigous at NLO, 4/5FS because of 2nd b-quark
 
 \myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production.}{
 \includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
+}
+
+\myfigure{\label{fig:technique-parton-muon} Distributions of the muon transverse momentum, pseudorapidity for $t$-channel single top quark production at $13~\TeV$. The distributions have been generated using \MGAMC interfaced with \TAUOLA and \PYTHIA8.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_pt.pdf}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_eta.pdf}}
+}
+\myfigure{\label{fig:technique-parton-cosTheta}Distributions of the polarization angle for $t$-channel single top quark production at $13~\TeV$. The distributions have been generated using \MGAMC interfaced with \TAUOLA and \PYTHIA8.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta.pdf}}\hspace{0.03\textwidth}
+\subfloat[selecting $\pt(\mu)>20~\GeV$]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_lpt20.pdf}}
 }
 
 dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging
