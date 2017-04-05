@@ -93,6 +93,8 @@
 \usepackage{graphicx,graphics}
 \usepackage{tocloft}
 \usepackage{supertabular}
+\usepackage{stackengine}
+\usepackage{scalerel}
 \usepackage{etoolbox}
 \usepackage{hanging}
 \usepackage{mdframed}
@@ -354,6 +356,15 @@
 % define prime with better vertical alignment and no vertical space to fix line spreading
 \let\oldprime\prime
 \def\prime{\mathalpha{\raisebox{-0.5pt}[0pt][0pt]{$\scriptstyle\oldprime$}}}
+
+%better hat
+\let\oldhat\hat
+\def\stacktype{L}
+\stackMath
+\def\dyhat{.067ex}
+\renewcommand\hat[1]{\ThisStyle{%
+              \stackon[\dyhat]{\SavedStyle#1}
+                              {\SavedStyle\oldhat{\phantom{#1}}}}}
 
 
 %no linebreaks for inline equations

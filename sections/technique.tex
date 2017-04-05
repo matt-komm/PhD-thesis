@@ -84,6 +84,11 @@ Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse m
 
 \todo{show improvement of MET res in case of complex solutions}
 
+\myfigure{\label{fig:technique-top-reco}}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/neutrino_match_dpz.pdf}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_match_mass.pdf}}
+}
+
 \todo{top quark matching performance
 (top pT/eta as function of b-tag in acceptance after selection, b-quark within dR, top within dR)}
 
@@ -156,8 +161,9 @@ The amount of observed data events $d_{i}$ per bin $i$ is modeled to follow a Po
 is minimized which is however equivalent to maximizing Eq.~\ref{eq:technique-likelihood} with respect to the scale factors. Since the templates are normalized to their corresponding \gls{sm} cross sections times the integrated luminosity, an estimated scale factor can be directly translated into a corresponding cross section as
 
 \begin{align}
-\sigma_\mathrm{meas.}&=\frac{N_\mathrm{obs.}}{A\cdot\epsilon\cdot{\textstyle{\int}L} }~,\quad N_\mathrm{obs.}=\beta\cdot N_\mathrm{exp.}=\beta\cdot\underbrace{\sigma_\mathrm{\gls{sm}}\cdot\textstyle{\int}L}_\mathrm{normalization}\cdot \overbrace{A \cdot \epsilon}^\mathrm{selection}\nonumber\\
-&=\beta\cdot\sigma_\mathrm{\gls{sm}}
+\hat{\sigma}_\mathrm{sig.}&=\frac{\hat{N}_\mathrm{sig.}}{A\cdot\epsilon\cdot{\textstyle{\int}L}}~,\quad
+\hat{N}_\mathrm{sig.}=\hat{\beta}_\mathrm{sig.}\cdot N_\mathrm{exp.}=\hat{\beta}_\mathrm{sig.}\cdot\underbrace{\sigma_\mathrm{\gls{sm}}\cdot\textstyle{\int}L}_\mathrm{normalization}\cdot \overbrace{A \cdot \epsilon}^\mathrm{selection}\nonumber\\
+&=\hat{\beta}_\mathrm{sig.}\cdot\sigma_\mathrm{\gls{sm}}
 \end{align}
 
 where $A$ denotes the acceptance and $\epsilon$ the efficiency of the event selection which are intrinsically estimated through the simulated samples. For the background scale factors additional constraints are applied by adding log-normal priors to the likelihood as
@@ -185,6 +191,9 @@ The spectator quark may radiate a gluon as shown exemplary. At \gls{nlo}, this c
 
 ambigous at NLO, 4/5FS because of 2nd b-quark
 
+\textit{''The unfortunate truth is that most of the event record is intended
+for generator debugging rather than physics interpretation''}~\cite{Buckley:2010ar}.
+
 \myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production.}{
 \includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
 }
@@ -198,7 +207,7 @@ ambigous at NLO, 4/5FS because of 2nd b-quark
 \subfloat[selecting $\pt(\mu)>20~\GeV$]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_lpt20.pdf}}
 }
 
-dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging
+dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging, rivet
 
 
 
