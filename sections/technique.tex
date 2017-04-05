@@ -66,7 +66,13 @@ which possesses the solutions
 p_{\nu,z}^{1,2}=\frac{1}{E_{\ell}^{2}-p_{\ell,z}^{2}}\left[\xi\cdot p_{\ell,z}\pm E_{\ell} \sqrt{\xi^2-p_{\nu,\mathrm{T}}^2\big(E_{\ell}^2-p_{\ell,z}^2\big)}~\right]. \label{eq:technique-neutrino-pz}
 \end{align}
 
-A detailed derivation and discussion of this result can be found in Ref.~\cite{Chwalek:1416031}. In simulated $t$-channel single-top-quark events this procedure leads to two real solutions for the neutrino $p_{\nu,z}$-component in about 65\% of all events that passed the selection. From the two solutions the one with the smallest absolute $|p_{\nu,z}|$ is chosen which is found to be closest to the true neutrino $p_{z}$ in 63\% of events with real solutions. In the remaining 37\% of events, both real solutions are found to be close together \todo{how close} such that the mistake here by picking the smallest solution is acceptable. If the discriminant in Eq.~\ref{eq:technique-neutrino-pz} becomes negative the solutions are complex. This happens in about 35\% of events and occurs mostly due to the finite \met resolution whereas the negligence of the W~boson mass width and resolution of the lepton momentum are minor effects. The imaginary part of the solutions is removed by requiring that the discriminant vanishes
+A detailed derivation and discussion of this result can be found in Ref.~\cite{Chwalek:1416031}. In simulated $t$-channel single-top-quark events this procedure leads to two real solutions for the neutrino $p_{\nu,z}$-component in about 65\% of all events that passed the selection. The difference of the two real solutions with respect to the true neutrino $p_{z}$ at parton level is displayed in Fig.~\ref{fig:technique-neutrino-reco}. 
+
+\myfigure{\label{fig:technique-neutrino-reco}Differences of the reconstructed neutrino $p_{z}$ with respect to the neutrino $p_{z}$ at parton level in cases of real and complex solutions. The distributions have been generated using \POWHEG interfaced with \TAUOLA and \PYTHIA8.}{
+\includegraphics[width=0.52\textwidth]{figures/technique/neutrino_match_dpz.pdf}
+}
+
+The plot demonstrates that choosing the solution which has the smallest absolute $|p_{\nu,z}|$ yields on average a neutrino $p_{z}$ which is closest to the true neutrino $p_{z}$. If the discriminant in Eq.~\ref{eq:technique-neutrino-pz} becomes negative the solutions are complex. This happens in about 35\% of events and occurs mostly due to the finite \met resolution whereas the negligence of the W~boson mass width and resolution of the lepton momentum are minor effects. The imaginary part of the solutions is removed by requiring that the discriminant vanishes
 
 \begin{equation}
 0\overset{!}{=}\xi^2-p_{\nu,\mathrm{T}}^2\big(E_{\ell}^2-p_{\ell,z}^2\big)~
@@ -82,11 +88,11 @@ m_\mathrm{W}^2\overset{!}{=}\mtw^2&=(p_{\ell,\mathrm{T}}+p_{\nu,\mathrm{T}})^2-(
 
 Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse momentum which minimizes the distance $|\vec{p}_{\nu,\mathrm{T}}-\pvmiss|$ with respect to the measured missing momentum vector is taken as the result. 
 
-\todo{show improvement of MET res in case of complex solutions}
+After finding a solution for the unknown neutrino $p_{z}$ component, a top quark candidate can be constructed from the 4-momenta of the lepton, b-tagged jet, and neutrino candidate. Shape comparisons of the top quark mass and pseudorapidity for the two neutrino solution cases are presented in Fig~\ref{fig:technique-top-reco}. In the case that only a complex solution has been found an improved reconstructed top quark mass resolution is achieved. Similarly, the pseudorapidity of the top quark candidate demonstrates an improved reproduction of the corresponding observable at parton level as well.
 
-\myfigure{\label{fig:technique-top-reco}}{
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/neutrino_match_dpz.pdf}}\hspace{0.03\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_match_mass.pdf}}
+\myfigure{\label{fig:technique-top-reco} Shape differences in the reconstructed top quark (a)~mass and (b)~pseudorapidity for cases with real neutrino $p_{z}$ solutions where the one with the smallest $|p_{z}|$ is picked or only a complex solution. The distributions have been generated using \POWHEG interfaced with \TAUOLA and \PYTHIA8.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_match_mass.pdf}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_match_eta.pdf}}
 }
 
 \todo{top quark matching performance
@@ -198,11 +204,11 @@ for generator debugging rather than physics interpretation''}~\cite{Buckley:2010
 \includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
 }
 
-\myfigure{\label{fig:technique-parton-muon} Distributions of the muon transverse momentum, pseudorapidity for $t$-channel single top quark production at $13~\TeV$. The distributions have been generated using \MGAMC interfaced with \TAUOLA and \PYTHIA8.}{
+\myfigure{\label{fig:technique-parton-muon} Distributions of the muon transverse momentum, pseudorapidity for $t$-channel single top quark production at $13~\TeV$. The distributions have been generated using \POWHEG interfaced with \TAUOLA and \PYTHIA8.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_pt.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_eta.pdf}}
 }
-\myfigure{\label{fig:technique-parton-cosTheta}Distributions of the polarization angle for $t$-channel single top quark production at $13~\TeV$. The distributions have been generated using \MGAMC interfaced with \TAUOLA and \PYTHIA8.}{
+\myfigure{\label{fig:technique-parton-cosTheta}Distributions of the polarization angle for $t$-channel single top quark production at $13~\TeV$. The distributions have been generated using \POWHEG interfaced with \TAUOLA and \PYTHIA8.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta.pdf}}\hspace{0.03\textwidth}
 \subfloat[selecting $\pt(\mu)>20~\GeV$]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_lpt20.pdf}}
 }
@@ -215,12 +221,40 @@ dressed leptons (cone algorithms associates photons to leptons but does not clus
 \section{Unfolding}
 %##############################################
 
-Unfolding in \gls{hep} is a procedure which attempts to infer a distribution of an observable of interest at particle or parton level from data. The idea behind this is to revert the effects of the detector. Therefore unfolded distributions can be easily compared to each other (even across experiments) and with the expectations from theory. The problem can be modeled as a Fredholm equation of the first kind
+Unfolding in \gls{hep} is a procedure which attempts to infer a differential cross as a function of an observable of interest at parton or particle level from data. The idea behind this is to revert the effects of the detector which allows to report a distribution in such a way that it can be easily compared to the expectations from theory and to potential similar measurements (even across experiments). The problem of unfolding can be modeled as a Fredholm equation of the first kind
 
 \begin{equation}
-f(x)=\int \epsilon(x)\cdot R(x,y)\cdot g(y)\, \mathrm{d}y
+\underbrace{~f(x)~}_\mathrm{reco.}=\int \underbrace{A(x)\,\epsilon(x)\, R(x,y)}_\mathrm{detector~effects}~~\cdot \underbrace{~g(y)~}_\mathrm{parton/particle}\, \mathrm{d}y \label{eq:technique-fredholm}
 \end{equation}
 
-where $f(x)$ denotes the reconstructed distribution which is obtained by folding the true distribution $g(y)$ with the detector response $R(x,y)$ times the efficiency $\epsilon(x)$.
+where $f(x)$ denotes the reconstructed distribution which is obtained by folding the true distribution $g(y)$ with the detector response $R(x,y)$ times the reconstruction efficiency $\epsilon(x)$ and the acceptance of the event selection $A(x)$. Equation~\ref{eq:technique-fredholm} can be discretized as a matrix equation
 
-problems, regularization scheme (thinkovo), correlations, subway plot, alternative FBU
+\begin{equation}
+\vec{x} = \widetilde{\mathcal{R}}\cdot\vec{y},\qquad \widetilde{\mathcal{R}}=\mathcal{A}\cdot\mathcal{E}\cdot\mathcal{R} \label{eq:technique-folding}
+\end{equation}
+
+where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices\footnote{The acceptance and efficiency are diagonal matrices.}. Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$ instead. A problem occurs when solving Eq.~\ref{eq:technique-folding} for $\vec{y}$ through a simple inversion of the response matrix. Since the ill-?? which leads to solutions with large variance and high anticorrelations which can be observed as oscillations. This problem can be understood by analyzing the unfolding problem using \glshere{svd}. It is a generalization of the eigendecomposition that allows to decompose even non-quadratic matrices into 
+
+\begin{align}
+\vec{y}&=\Big(\widetilde{\mathcal{R}}\Big)^{-1}\cdot\vec{x}\\
+&=\Big(\mathcal{U}\cdot\underbrace{\mathcal{S}}_\mathrm{diagonal}\cdot\mathcal{V}\Big)^{-1}\cdot\vec{x}~=~\mathcal{V}^{-1}\cdot\underbrace{\mathcal{S}^{-1}}_\mathrm{diagonal}\cdot~~\mathcal{U}^{-1}\cdot\vec{x}
+\end{align}
+
+where $\mathcal{U}$, $\mathcal{V}$ are the left- and right-singular vectors respectively and $\mathcal{S}$ is a diagonal matrix whose elements are referred to as singular values. Unfolding becomes instable when the singular values are small but become large through the inversion which amplifies the singular-vectors. A simple example with a response matrix 
+
+\begin{align}
+\widetilde{\mathcal{R}}&=\begin{pmatrix}
+1+\epsilon & 1-\epsilon \\ 1-\epsilon & 1+\epsilon
+\end{pmatrix}\\
+&=\underbrace{\begin{pmatrix}
+1+\epsilon & 1-\epsilon \\ 1-\epsilon & 1+\epsilon
+\end{pmatrix}}_{=\mathcal{U}}\cdot\underbrace{\begin{pmatrix}
+1 & 0 \\ 0 & \epsilon
+\end{pmatrix}}_{=\mathcal{S}}\cdot\underbrace{\begin{pmatrix}
+1+\epsilon & 1-\epsilon \\ 1-\epsilon & 1+\epsilon
+\end{pmatrix}}_{=\mathcal{V}}
+\end{align}
+
+to infer the 
+
+problems, regularization scheme (thinkovo), correlations, subway plot, coverage within 2s, alternative FBU
