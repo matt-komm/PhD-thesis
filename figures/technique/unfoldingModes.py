@@ -317,7 +317,7 @@ TOYS=100000
 ##########################
 
 cvTrue = setupCanvas()
-axisTrue=ROOT.TH2F("axis"+str(random.random()),";Theory;a.u.",50,-1,1,50,0,2.2*TOYS/N)
+axisTrue=ROOT.TH2F("axis"+str(random.random()),";Unfolded;a.u.",50,-1,1,50,0,2.2*TOYS/N)
 axisTrue.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisTrue.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisTrue.Draw("AXIS")
@@ -350,7 +350,7 @@ ROOT.gPad.RedrawAxis()
 
 cvRes = setupCanvas()
 cvRes.SetRightMargin(0.2)
-axisRes=ROOT.TH2F("axis"+str(random.random()),";Theory;Reconstructed",50,-1,1,50,-1,1)
+axisRes=ROOT.TH2F("axis"+str(random.random()),";Unfolded;Reconstructed",50,-1,1,50,-1,1)
 axisRes.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisRes.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisRes.Draw("AXIS")

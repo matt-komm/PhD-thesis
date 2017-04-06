@@ -254,6 +254,11 @@ where $\mathcal{U}$, $\mathcal{V}$ are the called left- and right-singular vecto
 
 The problem can understood as following. Small bin-by-bin fluctuations of the distributions at parton/particle level are smeared out in the reconstructed distribution after folding it with the response matrix. This effect relates to small singular values which damp high order modes in the reconstructed distribution. When however an unfolding is performed of a spectrum containing such high order modes, these will receive an unphysical amplification.
 
+\myfigure{\label{fig:technique-ill-unfolding}.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/recoDist.pdf}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/trueDist.pdf}}
+}
+
 Various unfolding procedures have been proposed to deal with this problem. The most straight forward regularization scheme is utilized in the \gls{svd} unfolding procedure~\cite{Hocker:1995kb} where the response matrix is modified as 
 
 \begin{equation}
@@ -268,3 +273,5 @@ Here, the regularization parameter $\tau$ is introduced which controls a cutoff 
 to infer the 
 
 problems, regularization scheme (thinkovo), correlations, subway plot, coverage within 2s, alternative FBU
+
+
