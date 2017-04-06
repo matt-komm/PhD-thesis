@@ -213,7 +213,7 @@ for generator debugging rather than physics interpretation''}~\cite{Buckley:2010
 \subfloat[selecting $\pt(\mu)>20~\GeV$]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_lpt20.pdf}}
 }
 
-dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging, rivet
+dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging, rivet, drop of cosTheta at 1 through lepton pT cut
 
 
 
@@ -221,39 +221,49 @@ dressed leptons (cone algorithms associates photons to leptons but does not clus
 \section{Unfolding}
 %##############################################
 
-Unfolding in \gls{hep} is a procedure which attempts to infer a differential cross as a function of an observable of interest at parton or particle level from data. The idea behind this is to revert the effects of the detector which allows to report a distribution in such a way that it can be easily compared to the expectations from theory and to potential similar measurements (even across experiments). The problem of unfolding can be modeled as a Fredholm equation of the first kind
+Unfolding in \gls{hep} is a procedure which attempts to infer a differential cross as a function of an observable of interest at parton or particle level from data. The idea behind this is to ``revert'' the smearing effects, finite resolution and acceptance of the detector which allows to report a distribution in such a way that it can be easily compared to the expectations from theory and to potential similar measurements (even across experiments). The unfolding problem can be modeled as a Fredholm equation of the first kind
 
 \begin{equation}
 \underbrace{~f(x)~}_\mathrm{reco.}=\int \underbrace{A(x)\,\epsilon(x)\, R(x,y)}_\mathrm{detector~effects}~~\cdot \underbrace{~g(y)~}_\mathrm{parton/particle}\, \mathrm{d}y \label{eq:technique-fredholm}
 \end{equation}
 
-where $f(x)$ denotes the reconstructed distribution which is obtained by folding the true distribution $g(y)$ with the detector response $R(x,y)$ times the reconstruction efficiency $\epsilon(x)$ and the acceptance of the event selection $A(x)$. Equation~\ref{eq:technique-fredholm} can be discretized as a matrix equation
+where $f(x)$ denotes the reconstructed distribution which is obtained by folding the true distribution $g(y)$ with the detector response $R(x,y)$ times the reconstruction efficiency $\epsilon(x)$ and the acceptance of the event selection $A(x)$. Equation~\ref{eq:technique-fredholm} can be discretized and written as matrix equation
 
 \begin{equation}
 \vec{x} = \widetilde{\mathcal{R}}\cdot\vec{y},\qquad \widetilde{\mathcal{R}}=\mathcal{A}\cdot\mathcal{E}\cdot\mathcal{R} \label{eq:technique-folding}
 \end{equation}
 
-where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices\footnote{The acceptance and efficiency are diagonal matrices.}. Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$ instead. A problem occurs when solving Eq.~\ref{eq:technique-folding} for $\vec{y}$ through a simple inversion of the response matrix. Since the ill-?? which leads to solutions with large variance and high anticorrelations which can be observed as oscillations. This problem can be understood by analyzing the unfolding problem using \glshere{svd}. It is a generalization of the eigendecomposition that allows to decompose even non-quadratic matrices into 
+where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices\footnote{The acceptance and efficiency are diagonal matrices.}. Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. A problem occurs when solving Eq.~\ref{eq:technique-folding} for $\vec{y}$ through a simple inversion of the response matrix. Since the ?? ill-posed which leads to solutions with large variance and high anticorrelations which can be observed as oscillations~\cite{Cowan:2002in}. This problem can be understood by analyzing the unfolding problem using \glshere{svd}. It is a generalization of the eigendecomposition that allows to decompose even non-quadratic matrices into 
 
-\begin{align}
-\vec{y}&=\Big(\widetilde{\mathcal{R}}\Big)^{-1}\cdot\vec{x}\\
-&=\Big(\mathcal{U}\cdot\underbrace{\mathcal{S}}_\mathrm{diagonal}\cdot\mathcal{V}\Big)^{-1}\cdot\vec{x}~=~\mathcal{V}^{-1}\cdot\underbrace{\mathcal{S}^{-1}}_\mathrm{diagonal}\cdot~~\mathcal{U}^{-1}\cdot\vec{x}
-\end{align}
+\begin{equation}
+\vec{y}=\Big(\widetilde{\mathcal{R}}\Big)^{-1}\vec{x}\\
+=\Big(\mathcal{U}~\cdot\underbrace{\mathcal{S}}_\mathrm{diagonal}\cdot~\mathcal{V}\Big)^{-1}\vec{x}~=~\mathcal{V}^{-1}\cdot\Bigg(
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+\matrix (m) [matrix of math nodes,nodes in empty cells,row sep=-1.5mm]{
+\frac{1}{s_{11}} &  & 0  \\
+0 & & \frac{1}{s_{nn}} \\
+} ;
+\draw[dotted,thick] (m-1-1)-- (m-2-3);
+\end{tikzpicture}
+\Bigg)
+\cdot~~\mathcal{U}^{-1}~\vec{x}
+\end{equation}
 
-where $\mathcal{U}$, $\mathcal{V}$ are the left- and right-singular vectors respectively and $\mathcal{S}$ is a diagonal matrix whose elements are referred to as singular values. Unfolding becomes instable when the singular values are small but become large through the inversion which amplifies the singular-vectors. A simple example with a response matrix 
 
-\begin{align}
-\widetilde{\mathcal{R}}&=\begin{pmatrix}
-1+\epsilon & 1-\epsilon \\ 1-\epsilon & 1+\epsilon
-\end{pmatrix}\\
-&=\underbrace{\begin{pmatrix}
-1+\epsilon & 1-\epsilon \\ 1-\epsilon & 1+\epsilon
-\end{pmatrix}}_{=\mathcal{U}}\cdot\underbrace{\begin{pmatrix}
-1 & 0 \\ 0 & \epsilon
-\end{pmatrix}}_{=\mathcal{S}}\cdot\underbrace{\begin{pmatrix}
-1+\epsilon & 1-\epsilon \\ 1-\epsilon & 1+\epsilon
-\end{pmatrix}}_{=\mathcal{V}}
-\end{align}
+where $\mathcal{U}$, $\mathcal{V}$ are the called left- and right-singular vectors respectively and $\mathcal{S}$ is a diagonal matrix whose elements $s_{ii}$ are referred to as singular values. The singular vectors can be interpreted as orthogonal modes of the measured distribution. When the singular values are small, the unfolding becomes unstable since small modes in the reconstructed distribution like statistical fluctuations can be amplified by $1/s_{ii}$ through the inversion. 
+
+The problem can understood as following. Small bin-by-bin fluctuations of the distributions at parton/particle level are smeared out in the reconstructed distribution after folding it with the response matrix. This effect relates to small singular values which damp high order modes in the reconstructed distribution. When however an unfolding is performed of a spectrum containing such high order modes, these will receive an unphysical amplification.
+
+Various unfolding procedures have been proposed to deal with this problem. The most straight forward regularization scheme is utilized in the \gls{svd} unfolding procedure~\cite{Hocker:1995kb} where the response matrix is modified as 
+
+\begin{equation}
+\Big(\mathcal{R}^\mathrm{reg.}[\tau]\Big)^{-1}_{ ij}=\sum_{i}^{n}\,\left(\,\sum_{k}^{\tau}~\mathcal{V}^{-1}_{ik}\cdot\left(\frac{1}{s_{kk}}\right)\cdot~\mathcal{U}^{-1}_{kj}\right).
+\end{equation}
+
+Here, the regularization parameter $\tau$ is introduced which controls a cutoff that keeps only singular values $k\leq\tau<n$ during the inversion.
+
+
+
 
 to infer the 
 

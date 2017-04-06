@@ -99,6 +99,8 @@
 \usepackage{hanging}
 \usepackage{mdframed}
 \usepackage{verse}
+\usepackage{tikz} %for drawing
+\usetikzlibrary{calc,shapes,matrix}
 \usepackage{multirow}
 \usepackage{setspace}
 \usepackage[Symbolsmallscale]{upgreek} % for upright greek symbols
@@ -291,7 +293,7 @@
 
 %strecke zeilenabstände im table
 \newcommand{\mytablestrech}{1.4}
-\renewcommand{\arraystretch}{\mytablestrech}
+%\renewcommand{\arraystretch}{\mytablestrech}
 
 %Schicke Bild- und Tabellenbeschreibungen
 
@@ -365,6 +367,21 @@
 \renewcommand\hat[1]{\ThisStyle{%
               \stackon[\dyhat]{\SavedStyle#1}
                               {\SavedStyle\oldhat{\phantom{#1}}}}}
+
+
+%replace tilde with widetilde
+\let\oldtilde\tilde
+\renewcommand{\tilde}[1]{\widetilde{#1}}
+
+%replace bar with overline
+\DeclareRobustCommand{\coverline}[1]{% clever overline
+  \binrel@{#1}\binrel@@{\overline{#1}}%
+}
+\let\oldbar\bar
+\renewcommand{\bar}[1]{\coverline{#1}}
+
+
+
 
 
 %no linebreaks for inline equations
