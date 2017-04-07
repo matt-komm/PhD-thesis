@@ -51,10 +51,10 @@
 %\usepackage{mathptmx}
 
 %sans serif
-%\usepackage{comfortaa}
+\usepackage{comfortaa}
 %\usepackage{tgheros}
 %\usepackage[default]{gfsneohellenic}
-\usepackage[scale=1.11]{biolinum}
+%\usepackage[scale=1.11]{biolinum}
 %\usepackage{cabin}
 %\usepackage{carlito}
 %\usepackage[sf]{quattrocento}
@@ -199,7 +199,7 @@
 %% Setup TOC
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
-\renewcommand{\cfttoctitlefont}{\Huge\numberfont}
+\renewcommand{\cfttoctitlefont}{\usekomafont{chapter}}
 \renewcommand{\cftchapfont}{\rm\bf}
 \renewcommand{\cftsecfont}{}
 \newcommand{\nocontentsline}[3]{}
@@ -267,25 +267,28 @@
      \parbox{\textwidth}{
         \chapterheadstartvskip
         %\parbox{\textwidth}{\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}\\[0.55cm]
-        {\color{gray}\Large\textsf{\chaptername}\quad\fontsize{30}{30}\numberfont{\raisebox{-0.13em}{\thechapter}}}\\[0.55cm]
-        %\vspace{0.55cm}
-        \parbox{\textwidth}{\usekomafont{chapter} #1}\\[0.45cm]
+        \parbox[c][][c]{0.1\textwidth}{\color{gray}\fontsize{30}{30}\numberfont{\raisebox{-0.13em}{\thechapter}}}
+        \hspace{0.025\textwidth}
+        \parbox[c][][c]{0.02\textwidth}{\color{gray}\rule{\myrulewidth}{2.2cm}}
+        \hspace{0.015\textwidth}
+        \parbox[c][][c]{0.84\textwidth}{\textls*[120]{\color{gray}\LARGE\textsf{\chaptername}}\\[0.5\baselineskip]\usekomafont{chapter} #1}\\[0.45cm]
+
         %\vspace{0.45cm}
         %\parbox{\textwidth}{\color{gray}\rule{\textwidth}{\myrulewidth}}\\[0.0cm]
     }
 }
 
-\setkomafont{chapter}{\normalfont\Huge\selectfont\numberfont}
+\setkomafont{chapter}{\normalfont\fontsize{20}{20}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace{0.5cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace{0.8cm}}
 
-\setkomafont{section}{\normalfont\LARGE\numberfont}
-\setkomafont{subsection}{\normalfont\LARGE\numberfont}
-\setkomafont{subsubsection}{\normalfont\LARGE\numberfont}
+\setkomafont{section}{\normalfont\huge\numberfont}
+\setkomafont{subsection}{\normalfont\huge\numberfont}
+\setkomafont{subsubsection}{\normalfont\huge\numberfont}
 
 \RedeclareSectionCommands[
-  beforeskip=0.9\baselineskip,
-  afterskip=0.01\baselineskip
+  beforeskip=1.1\baselineskip,
+  afterskip=0.1\baselineskip
 ]{section,subsection,subsubsection}
 
 
