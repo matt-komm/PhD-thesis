@@ -270,7 +270,7 @@ def setupCanvas():
     cvxmin=0.145
     cvxmax=0.97
     cvymin=0.14
-    cvymax=0.935
+    cvymax=0.97
                 
                 
     cv.SetBorderMode(0)
@@ -317,7 +317,7 @@ TOYS=100000
 ##########################
 
 cvTrue = setupCanvas()
-axisTrue=ROOT.TH2F("axis"+str(random.random()),";Unfolded;a.u.",50,-1,1,50,0,2.2*TOYS/N)
+axisTrue=ROOT.TH2F("axis"+str(random.random()),";Unfolded;a.u.",50,-1,1,50,0,1.1)
 axisTrue.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisTrue.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisTrue.Draw("AXIS")
@@ -337,6 +337,7 @@ histTrue.SetMarkerStyle(20)
 histTrue.SetMarkerSize(1.2)
 histTrue.SetLineWidth(3)
 #normHist(histTrue)
+histTrue.Scale(1.*N/TOYS/2)
 histTrue.Draw("HISTSame")
 
 ROOT.gPad.RedrawAxis()
@@ -383,7 +384,7 @@ ROOT.gPad.RedrawAxis()
 ##########################
 
 cvReco = setupCanvas()
-axisReco=ROOT.TH2F("axis"+str(random.random()),";Reconstructed;a.u.",50,-1,1,50,0.,2.2*TOYS/N)
+axisReco=ROOT.TH2F("axis"+str(random.random()),";Reconstructed;a.u.",50,-1,1,50,0.,1.)
 axisReco.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisReco.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisReco.Draw("AXIS")
@@ -424,10 +425,10 @@ histRecoPoi.SetLineWidth(2)
 
 for ibin in range(N):
     c = histReco.GetBinContent(ibin+1)
-    err = math.sqrt(c)*5
+    err = math.sqrt(c)*0.03
     histReco.SetBinError(ibin+1,err)
     newVal = c+ROOT.gRandom.Gaus(0,err)
-    newErr = math.sqrt(newVal)*5
+    newErr = math.sqrt(newVal)*0.03
     histRecoPoi.SetBinContent(ibin+1,newVal)
     histRecoPoi.SetBinError(ibin+1,newErr)
 #histRecoPoi.Scale(histRecoPoi.Integral()/histReco.Integral())
