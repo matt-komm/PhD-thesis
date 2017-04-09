@@ -8,7 +8,9 @@ import os
 import re
 from optparse import OptionParser
 
-cvscale = 2.0
+cvscale = 1.0
+
+fontScale = 600./650.
 
 ROOT.gROOT.Reset()
 ROOT.gROOT.SetBatch(True)
@@ -117,7 +119,7 @@ ROOT.gStyle.SetOptTitle(0)
 # For the axis titles:
 ROOT.gStyle.SetTitleColor(1, "XYZ")
 ROOT.gStyle.SetTitleFont(43, "XYZ")
-ROOT.gStyle.SetTitleSize(36*cvscale, "XYZ")
+ROOT.gStyle.SetTitleSize(35*fontScale*cvscale, "XYZ")
 # ROOT.gStyle.SetTitleXSize(Float_t size = 0.02) # Another way to set the size?
 # ROOT.gStyle.SetTitleYSize(Float_t size = 0.02)
 ROOT.gStyle.SetTitleXOffset(1.2)
@@ -129,7 +131,7 @@ ROOT.gStyle.SetTitleOffset(1.2, "YZ") # Another way to set the Offset
 ROOT.gStyle.SetLabelColor(1, "XYZ")
 ROOT.gStyle.SetLabelFont(43, "XYZ")
 ROOT.gStyle.SetLabelOffset(0.0077, "XYZ")
-ROOT.gStyle.SetLabelSize(30*cvscale, "XYZ")
+ROOT.gStyle.SetLabelSize(32*fontScale*cvscale, "XYZ")
 #ROOT.gStyle.SetLabelSize(0.04, "XYZ")
 
 # For the axis:
@@ -268,7 +270,7 @@ legend = ROOT.TLegend(cvxmax+0.01,cvymax,0.99,cvymax-0.075*6)
 legend.SetFillColor(ROOT.kWhite)
 legend.SetBorderSize(0)
 legend.SetTextFont(43)
-legend.SetTextSize(32*cvscale)
+legend.SetTextSize(34*cvscale*fontScale)
 legend.AddEntry(tfL,"left-handed","L")
 legend.AddEntry(tfR,"right-handed","L")
 legend.AddEntry(tf0,"longitudinal","L")

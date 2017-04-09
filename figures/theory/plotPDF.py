@@ -9,7 +9,9 @@ import re
 import lhapdf
 from optparse import OptionParser
 
-cvscale = 2.0
+cvscale = 1.0
+
+fontScale=700./650
 
 ROOT.gROOT.Reset()
 ROOT.gROOT.SetBatch(True)
@@ -118,19 +120,19 @@ ROOT.gStyle.SetOptTitle(0)
 # For the axis titles:
 ROOT.gStyle.SetTitleColor(1, "XYZ")
 ROOT.gStyle.SetTitleFont(43, "XYZ")
-ROOT.gStyle.SetTitleSize(36*cvscale, "XYZ")
+ROOT.gStyle.SetTitleSize(35*fontScale*cvscale, "XYZ")
 # ROOT.gStyle.SetTitleXSize(Float_t size = 0.02) # Another way to set the size?
 # ROOT.gStyle.SetTitleYSize(Float_t size = 0.02)
-ROOT.gStyle.SetTitleXOffset(1.2)
+ROOT.gStyle.SetTitleXOffset(1.25)
 #ROOT.gStyle.SetTitleYOffset(1.2)
-ROOT.gStyle.SetTitleOffset(1.2, "YZ") # Another way to set the Offset
+ROOT.gStyle.SetTitleOffset(1.3, "YZ") # Another way to set the Offset
 
 # For the axis labels:
 
 ROOT.gStyle.SetLabelColor(1, "XYZ")
 ROOT.gStyle.SetLabelFont(43, "XYZ")
 ROOT.gStyle.SetLabelOffset(0.0077, "XYZ")
-ROOT.gStyle.SetLabelSize(30*cvscale, "XYZ")
+ROOT.gStyle.SetLabelSize(32*fontScale*cvscale, "XYZ")
 #ROOT.gStyle.SetLabelSize(0.04, "XYZ")
 
 # For the axis:
@@ -197,12 +199,12 @@ def getDarkerColor(color):
 
 
             
-cv = ROOT.TCanvas("cv"+str(random.random()),"",int(cvscale*800),int(cvscale*600))
+cv = ROOT.TCanvas("cv"+str(random.random()),"",int(cvscale*800),int(cvscale*700))
 cv.SetPad(0.0, 0.0, 1.0, 1.0)
-cv.SetFillStyle(4000)
+cv.SetFillStyle(0)
 
 cvxmin=0.145
-cvxmax=0.71
+cvxmax=0.787
 cvymin=0.14
 cvymax=0.935
             
@@ -241,7 +243,7 @@ cv.SetTopMargin(1-cvymax)
 cv.SetBottomMargin(cvymin)
 
 N=1000
-Q=10
+Q=100
 
 axis=ROOT.TH2F("axis"+str(random.random()),";x;PDF(x,#kern[-0.5]{ }#mu#lower[0.6]{#scale[0.7]{F}}="+str(Q)+"#kern[-0.5]{ }GeV)",50,0.001,1,50,0,1.2)
 axis.GetXaxis().SetTickLength(0.025/(1-cv.GetLeftMargin()-cv.GetRightMargin()))
@@ -256,17 +258,17 @@ yvaluesList=[]
 graphList = []
 
 styles =[
-    [0,ROOT.kBlack,     5,1,10,"g (#times#kern[-0.5]{ }0.1)"],
-    [1,ROOT.kBlue-4,    5,1,1,"d"],
-    [-1,ROOT.kBlue+1,   8,2,1,"#bar{d}"],
-    [2,ROOT.kViolet,    5,1,1,"u"],
-    [-2,ROOT.kPink+4,   8,2,1,"#bar{u}"],
-    [3,ROOT.kTeal+9,    5,1,1,"s"],
-    [-3,ROOT.kTeal+3,   8,2,1,"#bar{s}"],
-    [4,ROOT.kOrange+7,  5,1,1,"c"],
-    [-4,ROOT.kOrange+9, 8,2,1,"#bar{c}"],
-    [5,ROOT.kSpring+9,  5,1,1,"b"],
-    [-5,ROOT.kSpring+4, 8,2,1,"#bar{b}"],
+    [0,ROOT.kBlack,     3,1,10,"g (#times#kern[-0.5]{ }0.1)"],
+    [1,ROOT.kBlue-4,    2,1,1,"d"],
+    [-1,ROOT.kBlue+1,   4,2,1,"#bar{d}"],
+    [2,ROOT.kViolet,    2,1,1,"u"],
+    [-2,ROOT.kPink+4,   4,2,1,"#bar{u}"],
+    [3,ROOT.kTeal+9,    2,1,1,"s"],
+    [-3,ROOT.kTeal+3,   2,2,1,"#bar{s}"],
+    [4,ROOT.kOrange+7,  2,1,1,"c"],
+    [-4,ROOT.kOrange+9, 4,2,1,"#bar{c}"],
+    [5,ROOT.kSpring+9,  2,1,1,"b"],
+    [-5,ROOT.kSpring+4, 4,2,1,"#bar{b}"],
 
 ]
 
@@ -289,7 +291,7 @@ legend = ROOT.TLegend(cvxmax+0.01,cvymax,0.99,cvymax-0.075*len(styles))
 legend.SetFillColor(ROOT.kWhite)
 legend.SetBorderSize(0)
 legend.SetTextFont(43)
-legend.SetTextSize(32*cvscale)
+legend.SetTextSize(34*fontScale*cvscale)
 for f in range(len(styles)):
     legend.AddEntry(graphList[f],styles[f][5],"L")
 

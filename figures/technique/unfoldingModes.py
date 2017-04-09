@@ -10,6 +10,8 @@ from optparse import OptionParser
 
 cvscale = 1.0
 
+fontScale = 700./650.
+
 ROOT.gROOT.Reset()
 ROOT.gROOT.SetBatch(True)
 ROOT.gStyle.SetOptStat(0)
@@ -117,7 +119,7 @@ ROOT.gStyle.SetOptTitle(0)
 # For the axis titles:
 ROOT.gStyle.SetTitleColor(1, "XYZ")
 ROOT.gStyle.SetTitleFont(43, "XYZ")
-ROOT.gStyle.SetTitleSize(37*cvscale, "XYZ")
+ROOT.gStyle.SetTitleSize(35*cvscale*fontScale, "XYZ")
 # ROOT.gStyle.SetTitleXSize(Float_t size = 0.02) # Another way to set the size?
 # ROOT.gStyle.SetTitleYSize(Float_t size = 0.02)
 ROOT.gStyle.SetTitleXOffset(1.2)
@@ -129,7 +131,7 @@ ROOT.gStyle.SetTitleOffset(1.2, "YZ") # Another way to set the Offset
 ROOT.gStyle.SetLabelColor(1, "XYZ")
 ROOT.gStyle.SetLabelFont(43, "XYZ")
 ROOT.gStyle.SetLabelOffset(0.0077, "XYZ")
-ROOT.gStyle.SetLabelSize(32*cvscale, "XYZ")
+ROOT.gStyle.SetLabelSize(32*cvscale*fontScale, "XYZ")
 #ROOT.gStyle.SetLabelSize(0.04, "XYZ")
 
 # For the axis:
@@ -159,7 +161,7 @@ ROOT.gStyle.SetOptLogz(0)
 #ROOT.gStyle.SetPaperSize(ROOT.TStyle.kA4)
 #ROOT.gStyle.SetPaperSize(27., 29.7)
 #ROOT.gStyle.SetPaperSize(27., 29.7)
-ROOT.gStyle.SetPaperSize(8.0*1.6*cvscale,6.0*1.6*cvscale)
+ROOT.gStyle.SetPaperSize(8.0*1.6*cvscale,7.0*1.6*cvscale)
 ROOT.TGaxis.SetMaxDigits(3)
 ROOT.gStyle.SetLineScalePS(2)
 
@@ -317,7 +319,7 @@ TOYS=100000
 ##########################
 
 cvTrue = setupCanvas()
-axisTrue=ROOT.TH2F("axis"+str(random.random()),";Unfolded;a.u.",50,-1,1,50,0,1.1)
+axisTrue=ROOT.TH2F("axis"+str(random.random()),";True / unfolded;a.u.",50,-1,1,50,0,1.25)
 axisTrue.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisTrue.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisTrue.Draw("AXIS")
@@ -342,8 +344,12 @@ histTrue.Draw("HISTSame")
 
 ROOT.gPad.RedrawAxis()
 
-
-
+legendTrue = ROOT.TLegend(cvTrue.GetLeftMargin()+0.03,1-cvTrue.GetTopMargin()-0.02,0.55,1-cvTrue.GetTopMargin()-0.02-3*0.08)
+legendTrue.SetFillStyle(0)
+legendTrue.SetBorderSize(0)
+legendTrue.SetTextFont(43)
+legendTrue.SetTextSize(fontScale*34)
+legendTrue.AddEntry(histTrue,"True distribution","L")
 
 ##########################
 # DRAW response
@@ -351,7 +357,7 @@ ROOT.gPad.RedrawAxis()
 
 cvRes = setupCanvas()
 cvRes.SetRightMargin(0.2)
-axisRes=ROOT.TH2F("axis"+str(random.random()),";Unfolded;Reconstructed",50,-1,1,50,-1,1)
+axisRes=ROOT.TH2F("axis"+str(random.random()),";True;Reconstructed",50,-1,1,50,-1,1)
 axisRes.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisRes.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisRes.Draw("AXIS")
@@ -364,9 +370,9 @@ histResponse = ROOT.TH2F("res","",
 fillResponse(histResponse,distTrue,distSmear)
 normResponse(histResponse)
 
-histResponse.GetZaxis().SetTitle("transisiton probability (%)")
+histResponse.GetZaxis().SetTitle("Transisiton probability (%)")
 histResponse.GetZaxis().SetTitleFont(43)
-histResponse.GetZaxis().SetTitleSize(37)
+histResponse.GetZaxis().SetTitleSize(35*fontScale)
 histResponse.GetZaxis().SetTitleOffset(1.25)
 #histResponse.SetMarkerColor(ROOT.kWhite)
 histResponse.SetMarkerSize(1.4)
@@ -442,8 +448,14 @@ histRecoPoiL.SetLineStyle(2)
 histRecoPoiL.SetLineWidth(3)
 histRecoPoiL.Draw("HISTSame")
 
-
-
+legendReco = ROOT.TLegend(cvTrue.GetLeftMargin()+0.03,1-cvTrue.GetTopMargin()-0.03,0.55,1-cvTrue.GetTopMargin()-0.03-2*0.08)
+legendReco.SetFillStyle(0)
+legendReco.SetBorderSize(0)
+legendReco.SetTextFont(43)
+legendReco.SetTextSize(fontScale*34)
+legendReco.AddEntry(histReco,"Folded true distribution","PEL")
+legendReco.AddEntry(histRecoPoiL,"Statistical fluctuation","L")
+legendReco.Draw("Same")
 
 ##########################
 # DRAW unfolding
@@ -482,7 +494,9 @@ histUnfoldedPoi.SetLineWidth(3)
 histUnfoldedPoi.Draw("SameHISt")
 
 
-
+legendTrue.AddEntry(histUnfolded,"Unfolded true dist.","PE")
+legendTrue.AddEntry(histUnfoldedPoi,"Unfolded stat. fluc.","L")
+legendTrue.Draw("Same")
 
 '''
 

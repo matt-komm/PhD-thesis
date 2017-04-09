@@ -11,7 +11,7 @@ To compare reconstructed data with theoretical predictions, samples of simulated
 
 The event generation starts with the \glshere{me} of a hard scattering process of interest. \glshere{mc} methods are employed to sample the corresponding cross section integral. The advantage of \gls{mc}-based methods is that the variance of their result decreases as $1/n$ independently of the integral's dimensionality leading to an efficient convergence compared to quadrature-based methods~(e.g. Simpson's rule, Newton-Cotes). A common method to integrate cross sections is given by the \gls{vegas} algorithm~\cite{OHL199913}. It is based on importance sampling where the integral is sampled not uniformly but along an adaptive importance function instead. The resulting sample of events reflects the probability distribution of a process over its phase space. Typically a reweighting is performed in addition such that all events contribute the same probability (e.i. they carry the same absolute weight). 
 
-After obtaining events from the hard interaction, a \glshere{ps} program simulates the hadronization of final state partons. In addition, the radiation of gluons or quarks from initial or final state partons is accounted for as well as contributions from soft secondary interactions, the so-called underlying event, and potential color reconnection effects. A sketch of various parts within an exemplary pp collision event after hadronization is shown in Fig.~\ref{fig:technique-mcevent}. The \gls{ps} simulation is based on Altarelli-Parisi splitting functions~\cite{Altarelli:1977zs} which allow to calculate the probability of soft parton emissions, e.g. $\mathrm{q}\to \mathrm{gq}$. It is convenient to calculate the ``surviving'' probability, the so-called Sudakov factor, that a parton does not branch further below a certain energy scale. During the \gls{ps} simulation a complication arises from potential double counting of soft parton emissions since the simulation of the hard interaction may lead to a soft emission as well which is however already accounted for by the \gls{ps}. These are avoided by applying a dedicated \gls{me}-to-\gls{ps} matching scheme, depending on the \gls{ps} program, which yields a criterion to assign additional emissions to either the simulation of the hard interaction or the \gls{ps} exclusively depending on the event kinematics. More information on parton shower simulation and matching can be found in Refs.~\cite{Hoche:2014rga,Alwall:2007fs}.
+After obtaining events from the hard interaction, a \glshere{ps} program simulates the hadronization of final state partons. In addition, the radiation of gluons or quarks from initial or final state partons is accounted for as well as contributions from soft secondary interactions, the so-called underlying event, and potential color reconnection effects. A sketch of various parts within an exemplary pp collision event after hadronization is shown in Fig.~\ref{fig:technique-mcevent}. The \gls{ps} simulation is based on Altarelli-Parisi splitting functions~\cite{Altarelli:1977zs} which allow to calculate the probability of soft parton emissions, e.g. $\mathrm{q}\to \mathrm{gq}$. It is convenient to calculate the ``surviving'' probability, the so-called Sudakov factor, that a parton does not branch further below a certain energy scale. During the \gls{ps} simulation a complication arises from potential double counting of soft parton emissions since the simulation of the hard interaction may lead to a soft emission as well which is however already accounted for by the \gls{ps}. These are avoided by applying a \gls{me}-to-\gls{ps} matching scheme which yields a criterion to assign additional emissions to either the simulation of the hard interaction or the \gls{ps} exclusively depending on the event kinematics. A general introduction to parton shower simulation and matching algorithms can be found in Refs.~\cite{Hoche:2014rga,Alwall:2007fs}.
 
 
 \myfigure{\label{fig:technique-mcevent} A sketch of a generated event from the simulation of the hard interaction and subsequent hadronization through a parton shower. The figure is taken in parts from Ref.~\cite{Hoche:2014rga}.}{
@@ -221,57 +221,90 @@ dressed leptons (cone algorithms associates photons to leptons but does not clus
 \section{Unfolding}
 %##############################################
 
-Unfolding in \gls{hep} is a procedure which attempts to infer a differential cross as a function of an observable of interest at parton or particle level from data. The idea behind this is to ``revert'' the smearing effects, finite resolution and acceptance of the detector which allows to report a distribution in such a way that it can be easily compared to the expectations from theory and to potential similar measurements (even across experiments). The unfolding problem can be modeled as a Fredholm equation of the first kind
+Unfolding in \gls{hep} is a procedure which attempts to infer a distribution at parton or particle level from data. The idea is to ``revert'' smearing effects, finite resolution, acceptance, and reconstruction inefficiencies of the detector which allows to report a distribution in such a way that it can be easily compared to the expectations from theory and to potential similar measurements (even across experiments). 
+
+The problem of unfolding can be understood by modeling a reconstructed distribution as 
 
 \begin{equation}
-\underbrace{~f(x)~}_\mathrm{reco.}=\int \underbrace{A(x)\,\epsilon(x)\, R(x,y)}_\mathrm{detector~effects}~~\cdot \underbrace{~g(y)~}_\mathrm{parton/particle}\, \mathrm{d}y \label{eq:technique-fredholm}
+\underbrace{~f(y)~}_\mathrm{reco.}=\int \underbrace{A(y)\,\epsilon(y)\, R(y,x)}_\mathrm{detector}~~\cdot \underbrace{~g(x)~}_\mathrm{true}\, \mathrm{d}x\,, \label{eq:technique-fredholm}
 \end{equation}
 
-where $f(x)$ denotes the reconstructed distribution which is obtained by folding the true distribution $g(y)$ with the detector response $R(x,y)$ times the reconstruction efficiency $\epsilon(x)$ and the acceptance of the event selection $A(x)$. Equation~\ref{eq:technique-fredholm} can be discretized and written as matrix equation
+where a true distribution $g(x)$ (e.i. at parton or particle level) is folded with the detector response $R(y,x)$ times the acceptance of the event selection $A(y)$ and the reconstruction efficiency $\epsilon(y)$. Mathematically, Eq.~\ref{eq:technique-fredholm} is called a Fredholm equation of first kind. Unfolding is then the process to infer the true distribution given $f(y)$, $A(y)$, $\epsilon(y)$, and $R(y,x)$. 
+%This is however an ill-posed problem which cannot be solved in general without applying a regularization scheme as detailed in the following.
+
+Equation~\ref{eq:technique-fredholm} can be discretized and written as a matrix equation
 
 \begin{equation}
-\vec{x} = \widetilde{\mathcal{R}}\cdot\vec{y},\qquad \widetilde{\mathcal{R}}=\mathcal{A}\cdot\mathcal{E}\cdot\mathcal{R} \label{eq:technique-folding}
+\vec{y} = \widetilde{\mathcal{R}}\cdot\vec{x},\qquad \widetilde{\mathcal{R}}=\mathcal{A}\cdot\mathcal{E}\cdot\mathcal{R}\,, \label{eq:technique-folding}
 \end{equation}
 
-where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices\footnote{The acceptance and efficiency are diagonal matrices.}. Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. A problem occurs when solving Eq.~\ref{eq:technique-folding} for $\vec{y}$ through a simple inversion of the response matrix. Since the ?? ill-posed which leads to solutions with large variance and high anticorrelations which can be observed as oscillations~\cite{Cowan:2002in}. This problem can be understood by analyzing the unfolding problem using \glshere{svd}. It is a generalization of the eigendecomposition that allows to decompose even non-quadratic matrices into 
+where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. An simple attempt to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ with a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. This results into solutions with large variance and high anticorrelations between bins which can be observed as oscillations~\cite{Cowan:2002in}. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model where a exemplary distribution $g(x)=\frac{1}{2}+0.44\cdot x$, similar to the expected distribution of the top-quark polarization angle at parton level, has been folded with a simple Gaussian smearing function using a resolution of $\sigma=0.15$. Small deviations~(dash-orange line) from the folded distribution~(violet markers), which can just be a statistical fluctuation, yields an unphysical, oscillating solution.
+
+\myfigure{\label{fig:technique-ill-unfolding}Exemplary unfolding of a distribution using a simple inversion of the response matrix: (a)~true distribution with overlaid unfolding results; (b)~the true distribution after folding and a sample of a corresponding statistical fluctuation.}{
+\subfloat[\label{fig:technique-ill-unfolding-true}]{\includegraphics[width=0.48\textwidth]{figures/technique/trueDist.pdf}}\hspace{0.03\textwidth}
+\subfloat[\label{fig:technique-ill-unfolding-reco}]{\includegraphics[width=0.48\textwidth]{figures/technique/recoDist.pdf}}
+}
+
+This result can be analyzed by performing a \glshere{svd} of the unfolding problem~(Eq.~\ref{eq:technique-folding}). \Gls{svd} is a generalization of the eigendecomposition that allows to decompose even non-quadratic matrices into 
 
 \begin{equation}
-\vec{y}=\Big(\widetilde{\mathcal{R}}\Big)^{-1}\vec{x}\\
-=\Big(\mathcal{U}~\cdot\underbrace{\mathcal{S}}_\mathrm{diagonal}\cdot~\mathcal{V}\Big)^{-1}\vec{x}~=~\mathcal{V}^{-1}\cdot\Bigg(
-\begin{tikzpicture}[baseline=(current bounding box.center)]
-\matrix (m) [matrix of math nodes,nodes in empty cells,row sep=-1.5mm]{
+\vec{x}=\Big(\widetilde{\mathcal{R}}\Big)^{-1}\vec{y}\\
+=\Big(\mathcal{U}~\cdot\underbrace{\mathcal{S}}_\mathrm{diagonal}\cdot~\mathcal{V}\Big)^{-1}\vec{y}~=~\mathcal{V}^{-1}\cdot
+\begin{tikzpicture}[baseline=(current bounding box.center),every left delimiter/.style={xshift=0.4em},every right delimiter/.style={xshift=-.4em},]
+\matrix (m) [matrix of math nodes,nodes in empty cells,row sep=-1.5mm,left delimiter=(,right delimiter={)},inner sep=0pt,nodes={inner sep=.3333em},]{
 \frac{1}{s_{11}} &  & 0  \\
 0 & & \frac{1}{s_{nn}} \\
 } ;
 \draw[dotted,thick] (m-1-1)-- (m-2-3);
 \end{tikzpicture}
-\Bigg)
-\cdot~~\mathcal{U}^{-1}~\vec{x}
+\cdot~~\mathcal{U}^{-1}~\vec{y}\,,
 \end{equation}
 
 
-where $\mathcal{U}$, $\mathcal{V}$ are the called left- and right-singular vectors respectively and $\mathcal{S}$ is a diagonal matrix whose elements $s_{ii}$ are referred to as singular values. The singular vectors can be interpreted as orthogonal modes of the measured distribution. When the singular values are small, the unfolding becomes unstable since small modes in the reconstructed distribution like statistical fluctuations can be amplified by $1/s_{ii}$ through the inversion. 
+where $\mathcal{U}$ and $\mathcal{V}$ contain the so-called left- and right-singular vectors, respectively. The matrix $\mathcal{S}$ has only non-zero elements $s_{ii}$ on its diagonal which are also referred to as singular values. Typically, they are ordered as $s_{ii}>s_{i+1,i+1}$ while the singular vectors are normalized to $1$. The vectors are orthogonal to each other and can be interpreted as modes of the measured distribution. When a singular value is small, the unfolded distribution becomes unstable since the corresponding mode in the reconstructed distribution is unphysically amplified by $1/s_{ii}$ through the inversion.
 
-The problem can understood as following. Small bin-by-bin fluctuations of the distributions at parton/particle level are smeared out in the reconstructed distribution after folding it with the response matrix. This effect relates to small singular values which damp high order modes in the reconstructed distribution. When however an unfolding is performed of a spectrum containing such high order modes, these will receive an unphysical amplification.
-
-\myfigure{\label{fig:technique-ill-unfolding}.}{
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/recoDist.pdf}}\hspace{0.03\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/trueDist.pdf}}
-}
-
-Various unfolding procedures have been proposed to deal with this problem. The most straight forward regularization scheme is utilized in the \gls{svd} unfolding procedure~\cite{Hocker:1995kb} where the response matrix is modified as 
+Various regularization procedures have been proposed to mitigate this problem. The most straight forward regularization scheme is utilized in the ``\gls{svd} unfolding'' algorithm~\cite{Hocker:1995kb}. It modifies the response matrix as
 
 \begin{equation}
-\Big(\mathcal{R}^\mathrm{reg.}[\tau]\Big)^{-1}_{ ij}=\sum_{i}^{n}\,\left(\,\sum_{k}^{\tau}~\mathcal{V}^{-1}_{ik}\cdot\left(\frac{1}{s_{kk}}\right)\cdot~\mathcal{U}^{-1}_{kj}\right).
+\Big(\mathcal{R}^\mathrm{reg.}[\tau]\Big)^{-1}_{ ij}=\sum_{i}^{n}\,\left(\,\sum_{k}^{\tau}~\mathcal{V}^{-1}_{ik}\cdot\left(\frac{1}{s_{kk}}\right)\cdot~\mathcal{U}^{-1}_{kj}\right)\,,
 \end{equation}
 
-Here, the regularization parameter $\tau$ is introduced which controls a cutoff that keeps only singular values $k\leq\tau<n$ during the inversion.
+where the regularization parameter $\tau$ controls a cutoff that keeps only singular values with indices $k\leq\tau<n$ during the inversion. Thus, higher order modes in the reconstructed distribution leading to oscillating solutions are ignored. A more sophisticated unfolding method is the Tikhonov regularization scheme~\cite{Tikhonov}. It rewrites the unfolding problem as a minimization of the loss function
+
+\begin{align}
+L\big(\vec{x}\big)&=\big|\big|\,\vec{y}-\tilde{\mathcal{R}}\cdot\vec{x} \,\big|\big|^{2}~+~~\big|\big|\,\Gamma\cdot\vec{x}\,\big|\big|^{2}\qquad\Rightarrow~~\frac{\partial L}{\partial x_{i}}=0\,,
+\end{align}
+
+where a suitable matrix $\Gamma$ is added to suppress unphysical solutions. In this thesis, unfolding is performed using the \TUNFOLD package~\cite{1748-0221-7-10-T10003} which employs a similar regularization scheme. Its loss function is given by
+
+\begin{align}
+L_\mathrm{\TUNFOLD}\big(\,\vec{x},\,\lambda\,\big|~\tau\big)&=\sum_{i}\,\sum_{j}~\Big(y_{i}-\big({\mathcal{R}}\cdot\vec{x}\,\big)_{i}\Big)\cdot\mathcal{C}_{ij}^{-1}\cdot\Big(y_{j}-\big({\mathcal{R}}\cdot\vec{x}\,\big)_{j}\Big)\label{eq:technique-tunfold-response}\\
+&+\tau^{2}\cdot\Big(\Gamma\cdot\big(\vec{x}-\vec{x}_{0}\big)\Big)^{2}\label{eq:technique-tunfold-regularization}\\
+&+\lambda\cdot\sum_{i}~\Big(y_{i}-\mathcal{A}_{ii}\mathcal{E}_{ii}x_{i}\Big)\,. \label{eq:technique-tunfold-efficiency}
+\end{align}
+
+The matrix $\mathcal{C}$ in Eq.~\ref{eq:technique-tunfold-response} describes the statistical covariances of the bins in the reconstructed distribution. For uncorrelated data bins it is a diagonal matrix with entries $\mathcal{C}_{ii}=y_{ii}$ assuming Poisson uncertainties. Regularization is applied through the penalty term in Eq.~\ref{eq:technique-tunfold-regularization}. Here, solutions with large fluctuations are suppressed through the matrix $\Gamma$ which approximates numerically the second derivative of the resulting distribution as 
+
+\begin{equation}
+\frac{\mathrm{d}^{2}g(x)}{\mathrm{d}x^2}\approx\frac{x_{i+1}-2\,x_{i}+x_{i-1}}{h^2}\,,\qquad\Rightarrow~~\Gamma=
+\begin{tikzpicture}[baseline=(current bounding box.center),every left delimiter/.style={xshift=0.4em},]
+\matrix (m) [matrix of math nodes,nodes in empty cells,left delimiter=(,right delimiter={)},inner sep=0pt,nodes={inner sep=.3333em},]{
+-2 & \hphantom{-}1 &  & \hphantom{-}0 \\
+\hphantom{-}1 & & &   \\
+ & & & \hphantom{-}1 \\
+\hphantom{-}0 &   & \hphantom{-}1 & -2 \\
+} ;
+\draw[dotted,thick] (m-1-1)-- (m-4-4);
+\draw[dotted,thick] (m-2-1)-- (m-4-3);
+\draw[dotted,thick] (m-1-2)-- (m-3-4);
+\end{tikzpicture}\,.
+\end{equation}
+
+The regularization strength is controlled with the parameter $\tau$ and needs to be optimized as detailed below. The vector $\vec{x}_{0}$ allows to bias the calculation of the second derivatives. It is usually set to the expectation from theory. This way, the regularization vanishes when unfolding the expectation from theory for closure tests since $(\Gamma\,(\vec{x}_\mathrm{exp.}-\vec{x}_{0}))^2=0$. Thus, the result is bias-free even for heavily curved expectations like e.g. $\pt$ spectra of particles. The last part of the loss function, Eq.~\ref{eq:technique-tunfold-efficiency}, attempts to match the overall normalization of the solution by accounting for the acceptance and reconstruction efficiencies per bin. It is minimized independently with respect to the Lagrange parameter $\lambda$.
+
+Various methods are proposed to find the optimal regularization strength $\tau$. 
 
 
-
-
-to infer the 
-
-problems, regularization scheme (thinkovo), correlations, subway plot, coverage within 2s, alternative FBU
+ correlations, subway plot, coverage within 2s, alternative FBU
 
 
