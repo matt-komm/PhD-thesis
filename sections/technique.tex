@@ -290,19 +290,19 @@ L_\mathrm{\TUNFOLD}\big(\,\vec{x},\,\lambda\,\big|~\tau\big)&=\sum_{i}\,\sum_{j}
 The matrix $\mathcal{C}$ in Eq.~\ref{eq:technique-tunfold-response} describes the statistical covariances of the bins in the reconstructed distribution. For uncorrelated data bins it is a diagonal matrix with entries $\mathcal{C}_{ii}=y_{ii}$ assuming Poisson uncertainties. Regularization is applied through the penalty term in Eq.~\ref{eq:technique-tunfold-regularization}. Here, solutions with large fluctuations are suppressed through the matrix $\Gamma$ which approximates numerically the second derivatives per bin of the resulting distribution as 
 
 \begin{equation}
-\frac{\mathrm{d}^{2}g(x)}{\mathrm{d}x^2}\approx\frac{g(x-h)-2\,g(x)+g(x+h)}{h^2}\,,~~\Rightarrow~~\Gamma=
-\begin{tikzpicture}[baseline=(current bounding box.center),every left delimiter/.style={xshift=0.4em},every right delimiter/.style={xshift=-0.55em}]
+\frac{\mathrm{d}^{2}g(x)}{\mathrm{d}x^2}\approx\frac{g(x-h)-2\,g(x)+g(x+h)}{h^2}\,,~~\Rightarrow~\Gamma=
+\begin{tikzpicture}[baseline=(current bounding box.center),every left delimiter/.style={xshift=1.1em},every right delimiter/.style={xshift=-0.3em}]
 \matrix (m) [matrix of math nodes,nodes in empty cells,left delimiter=(,right delimiter={)},inner sep=0pt,nodes={inner sep=.3333em},]{
--1 & \hphantom{-}1 & \hphantom{-}0 & \hphantom{-}0 \\
-\hphantom{-}1 & -2 & \hphantom{-}1 & \hphantom{-}0  \\
-  & & &  \\[0.5em]
-\hphantom{-}0  & \hphantom{-}1  & -2 & \hphantom{-}1 & \\
-\hphantom{-}0  & \hphantom{-}0  & \hphantom{-}1 & -1 \\
+\hphantom{-}1 & -2            & \hphantom{-}1 & \hphantom{-}0 & \hphantom{-}0\\
+\hphantom{-}0 & \hphantom{-}1 & -2            & \hphantom{-}1 & \hphantom{-}0  \\
+              &               &               &               &   \\[0.5em]
+\hphantom{-}0 & \hphantom{-}0 & \hphantom{-}1 & -2            & \hphantom{-}1 \\
 } ;
 \draw[dotted,thick] (m-2-2)-- +(0.65,-0.6);
 \draw[dotted,thick] (m-2-1)-- +(0.65,-0.6);
 \draw[dotted,thick] (m-2-3)-- +(0.65,-0.6);
-\end{tikzpicture}\,.
+\draw[dotted,thick] (m-2-4)-- +(0.65,-0.6);
+\end{tikzpicture}\,.~
 \end{equation}
 
 The regularization strength is controlled with the parameter $\tau$ and needs to be optimized as detailed below. The vector $\vec{x}_{0}$ allows to bias the calculation of the second derivatives. It is usually set to the expectation from theory. This way, the regularization vanishes when unfolding the expectation from theory for closure tests since $(\Gamma\,(\vec{x}_\mathrm{exp.}-\vec{x}_{0}))^2=0$. Thus, the result is bias-free even for heavily curved expectations like e.g. $\pt$ spectra of particles. An alternative procedure to achieve this is to reweight $\vec{x}$ as $x_{i}^\prime=x_{i}/x_{i}^\mathrm{exp.}$ which lets the regularization vanish as well when unfolding the expectation since $\Gamma\,\vec{x}^{\,\prime}_\mathrm{exp.}=0$. The last part of the loss function, Eq.~\ref{eq:technique-tunfold-efficiency}, attempts to match the overall normalization of the solution by accounting for the acceptance and reconstruction efficiencies per bin. It is minimized independently with respect to the Lagrange parameter $\lambda$.
