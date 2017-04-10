@@ -82,11 +82,11 @@ The plot demonstrates that choosing the solution which has the smallest absolute
 which is equal to setting the transverse W~boson mass $\mtw$ to the W~boson mass itself
 
 \begin{align}
-m_\mathrm{W}^2\overset{!}{=}\mtw^2&=(p_{\ell,\mathrm{T}}+p_{\nu,\mathrm{T}})^2-(p_{\ell,x}+p_{\nu,x})^{2}-(p_{\ell,y}+p_{\nu,y})^{2}\\
+m_\mathrm{W}^2\overset{!}{=}\mtw^2&=(p_{\ell,\mathrm{T}}+p_{\nu,\mathrm{T}})^2-(p_{\ell,x}+p_{\nu,x})^{2}-(p_{\ell,y}+p_{\nu,y})^{2}\nonumber\\
 &=2\,p_{\ell,\mathrm{T}}^2\,p_{\nu,\mathrm{T}}^2\cdot\Big[1-\cos\big(\phi_\ell-\phi_\nu\big)\Big].
 \end{align}
 
-Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse momentum which minimizes the distance $|\vec{p}_{\nu,\mathrm{T}}-\pvmiss|$ with respect to the measured missing momentum vector is taken as the result. 
+Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse momentum which minimizes the distance $|\vec{p}_{\nu,\mathrm{T}}-\pvmiss|$ with respect to the measured missing transverse momentum vector is taken as the result. 
 
 After finding a solution for the unknown neutrino $p_{z}$ component, a top quark candidate can be constructed from the 4-momenta of the lepton, b-tagged jet, and neutrino candidate. Shape comparisons of the top quark mass and pseudorapidity for the two neutrino solution cases are presented in Fig~\ref{fig:technique-top-reco}. In the case that only a complex solution has been found an improved reconstructed top quark mass resolution is achieved. Similarly, the pseudorapidity of the top quark candidate demonstrates an improved reproduction of the corresponding observable at parton level as well.
 
@@ -234,7 +234,6 @@ The problem of unfolding can be understood by modeling a reconstructed distribut
 \end{equation}
 
 where a true distribution $g(x)$ (e.i. at parton or particle level) is folded with the detector response $R(y,x)$ times the acceptance of the event selection $A(y)$ and the reconstruction efficiency $\epsilon(y)$. Mathematically, Eq.~\ref{eq:technique-fredholm} is called a Fredholm equation of first kind. Unfolding is then the process to infer the true distribution given $f(y)$, $A(y)$, $\epsilon(y)$, and $R(y,x)$. 
-%This is however an ill-posed problem which cannot be solved in general without applying a regularization scheme as detailed in the following.
 
 Equation~\ref{eq:technique-fredholm} can be discretized and written as a matrix equation
 
@@ -242,7 +241,17 @@ Equation~\ref{eq:technique-fredholm} can be discretized and written as a matrix 
 \vec{y} = \widetilde{\mathcal{R}}\cdot\vec{x},\qquad \widetilde{\mathcal{R}}=\mathcal{A}\cdot\mathcal{E}\cdot\mathcal{R}\,, \label{eq:technique-folding}
 \end{equation}
 
-where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. An simple attempt to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ with a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. This results into solutions with large variance and high anticorrelations between bins which can be observed as oscillations~\cite{Cowan:2002in}. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model where a exemplary distribution $g(x)=\frac{1}{2}+0.44\cdot x$, similar to the expected distribution of the top-quark polarization angle at parton level, has been folded with a simple Gaussian smearing function $R(y,x)\propto(x-y)^2/(2\sigma^2)$ using a resolution of $\sigma=0.15$. Small deviations~(dash-orange line) from the folded distribution~(violet markers), which can just be a statistical fluctuation, yields an unphysical, oscillating solution.
+where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. An simple attempt to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ with a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. This results into solutions with large variance and high anticorrelations between bins which can be observed as oscillations~\cite{Cowan:2002in}. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model defined as
+
+\begin{subequations}
+\begin{align}
+g(x)&=\frac{1}{2}+0.44\cdot x\\
+R(y,x)&\propto\frac{1}{2}\cdot\frac{(x-y)^2}{\sigma^2}\,,
+\end{align}
+\label{eq:technique-unfolding-test-model}
+\end{subequations}
+
+where a exemplary distribution $g$, similar to the expected distribution of the top-quark polarization angle at parton level, has been folded with a simple Gaussian smearing function $R$ using a resolution of $\sigma=0.15$. One can observe that small deviations~(dash-orange line) from the folded distribution~(violet markers) yields an unphysical, oscillating solution. Such small deviations may just reflect e.g. statistical fluctuations when unfolding data.
 
 \myfigure{\label{fig:technique-ill-unfolding}Exemplary unfolding of a distribution using a simple inversion of the response matrix: (a)~true distribution with overlaid unfolding results; (b)~the true distribution after folding and a sample of a corresponding statistical fluctuation.}{
 \subfloat[\label{fig:technique-ill-unfolding-true}]{\includegraphics[width=0.48\textwidth]{figures/technique/trueDist.pdf}}\hspace{0.03\textwidth}
@@ -281,11 +290,14 @@ L\big(\vec{x}\big)&=\big|\big|\,\vec{y}-\tilde{\mathcal{R}}\cdot\vec{x} \,\big|\
 
 where a suitable matrix $\Gamma$ is added to suppress unphysical solutions. In this thesis, unfolding is performed using the \TUNFOLD package~\cite{1748-0221-7-10-T10003} which employs a similar regularization scheme. Its loss function is given by
 
+\begin{subequations}
 \begin{align}
 L_\mathrm{\TUNFOLD}\big(\,\vec{x},\,\lambda\,\big|~\tau\big)&=\sum_{i}\,\sum_{j}~\Big(y_{i}-\big({\mathcal{R}}\cdot\vec{x}\,\big)_{i}\Big)\cdot\mathcal{C}_{y,ij}^{-1}\cdot\Big(y_{j}-\big({\mathcal{R}}\cdot\vec{x}\,\big)_{j}\Big)\label{eq:technique-tunfold-response}\\
 &+\tau^{2}\cdot\Big(\Gamma\cdot\big(\vec{x}-\vec{x}_{0}\big)\Big)^{2}\label{eq:technique-tunfold-regularization}\\
 &+\lambda\cdot\sum_{i}~\Big(y_{i}-\mathcal{A}_{ii}\mathcal{E}_{ii}x_{i}\Big)\,. \label{eq:technique-tunfold-efficiency}
 \end{align}
+\label{eq:technique-tunfold}
+\end{subequations}
 
 The matrix $\mathcal{C}$ in Eq.~\ref{eq:technique-tunfold-response} describes the statistical covariances of the bins in the reconstructed distribution. For uncorrelated data bins it is a diagonal matrix with entries $\mathcal{C}_{ii}=y_{ii}$ assuming Poisson uncertainties. Regularization is applied through the penalty term in Eq.~\ref{eq:technique-tunfold-regularization}. Here, solutions with large fluctuations are suppressed through the matrix $\Gamma$ which approximates numerically the second derivatives per bin of the resulting distribution as 
 
@@ -305,35 +317,37 @@ The matrix $\mathcal{C}$ in Eq.~\ref{eq:technique-tunfold-response} describes th
 \end{tikzpicture}\,.~
 \end{equation}
 
-The regularization strength is controlled with the parameter $\tau$ and needs to be optimized as detailed below. The vector $\vec{x}_{0}$ allows to bias the calculation of the second derivatives. It is usually set to the expectation from theory. This way, the regularization vanishes when unfolding the expectation from theory for closure tests since $(\Gamma\,(\vec{x}_\mathrm{exp.}-\vec{x}_{0}))^2=0$. Thus, the result is bias-free even for heavily curved expectations like e.g. $\pt$ spectra of particles. An alternative procedure to achieve this is to reweight $\vec{x}$ as $x_{i}^\prime=x_{i}/x_{i}^\mathrm{exp.}$ which lets the regularization vanish as well when unfolding the expectation since $\Gamma\,\vec{x}^{\,\prime}_\mathrm{exp.}=0$. The last part of the loss function, Eq.~\ref{eq:technique-tunfold-efficiency}, attempts to match the overall normalization of the solution by accounting for the acceptance and reconstruction efficiencies per bin. It is minimized independently with respect to the Lagrange parameter $\lambda$.
+The regularization strength is controlled with the parameter $\tau$ and needs to be optimized as detailed below. The vector $\vec{x}_{0}$ allows to bias the calculation of the second derivatives. It is usually set to the expectation from theory. This way, the regularization vanishes when unfolding the expectation from theory for closure tests since $(\Gamma\,(\vec{x}_\mathrm{exp.}-\vec{x}_{0}))^2=0$. Thus, the result is bias-free even for heavily curved expectations like e.g. $\pt$ spectra of particles. An alternative procedure to achieve this is to reweight $\vec{y}$ such that $x_{i}^\prime=x_{i}/x_{i}^\scriptn{\mathrm{exp.}}$ which lets the regularization vanish as well when unfolding the expectation since $\Gamma\,\vec{x}^{\,\prime}_\mathrm{exp.}=0$. The last part of the loss function, Eq.~\ref{eq:technique-tunfold-efficiency}, attempts to match the overall normalization of the solution by accounting for the acceptance and reconstruction efficiencies per bin. It is minimized independently with respect to the Lagrange parameter $\lambda$.
 
-Finding the optimal regularization strength is of crucial importance. If the applied regularization is too weak, the unfolding with become unregulated and thus leads to unphysical solutions with oscillating behavior. On the other hand, if the regularization is too strong, the solution will be biased towards the solution of minimum curvature. The solution in this case is often then just the expectation from theory since the bias vector is set to the expectation. A method to analyze the unfolding behavior as a function of the regularization strength has been developed in Ref.~\cite{Komm-thesis}. The idea is based on the calculations of the resulting bin-by-bin correlations as a function of the regularization strength. The covariance matrix is given by propagation of uncertainty
-
-\begin{equation}
-\mathcal{C}_{x}=J\cdot\mathcal{C}_{y}\cdot J^{T}=\tilde{\mathcal{R}}^{-1}\cdot\mathcal{C}_{y}\cdot\big(\tilde{\mathcal{R}}^{-1}\big)^{T}\,
-\end{equation}
-
-where $J$ denotes the Jacobian matrix. This allows to define the average correlation between bins as
+Finding the optimal regularization strength is of crucial importance. If the applied regularization is too weak, the unfolding with become unregulated and thus leads to unphysical solutions with oscillating behavior. On the other hand, if the regularization is too strong, the solution will be biased towards the solution of minimum curvature. Here, the solution might tend towards the expectation from theory since either through the application of a bias vector or the described reweighting, it is one solution with vanishing curvature. A method to analyze the unfolding behavior is to monitor the induced bin-by-bin correlations as a function of the regularization strength. The covariance matrix of the unfolded spectrum is given by propagation of uncertainty as
 
 \begin{equation}
-\bar{\rho}_{j}\equiv\frac{1}{n-j-1}\sum_{i}^{n-j-1}\rho_{i,i+j},\qquad \rho_{i,j}=\frac{\mathcal{C}_{x,ij}}{\sqrt{\mathcal{C}_{x,ii}\cdot\mathcal{C}_{x,jj}}}\,.
+\mathcal{C}_{x}[\tau]=J\cdot\mathcal{C}_{y}\cdot J^{T}=\tilde{\mathcal{R}}^{-1}_\mathrm{reg.}[\tau]\cdot\mathcal{C}_{y}\cdot\big(\tilde{\mathcal{R}}^{-1}_\mathrm{reg.}[\tau]\big)^{T}\,,
 \end{equation}
 
-The global correlation
+where $J$ denotes the Jacobian matrix which is equal to the regularized and inverted response matrix as obtained through the minimization of Eq.~\ref{eq:technique-tunfold}. This allows to define the average correlation between bins as
 
 \begin{equation}
-\rho_{\mathrm{global}, i}=\sqrt{1-\mathcal{C}_{x,ii}\cdot\big(\mathcal{C}_{x}^{-1}\big)_{ii}}
+\bar{\rho}_{j}[\tau]\equiv\frac{1}{n-j-1}\sum_{i}^{n-j-1}\rho_{i,i+j}[\tau],\qquad \rho_{i,j}[\tau]=\frac{\mathcal{C}_{x,ij}[\tau]}{\sqrt{\mathcal{C}_{x,ii}[\tau]\cdot\mathcal{C}_{x,jj}[\tau]}}\,.
 \end{equation}
 
+Figure~\ref{fig:technique-tauscan-scan} presents the averaged correlations as a function of the regularization strength for the model defined in Eq.~\ref{eq:technique-unfolding-test-model}. This so-called ``subway plot''\footnote{Such plots have been developed in my Master's thesis~\cite{Komm-thesis}.} visualizes the three different regions of solution classes. The first regions on the very left contains solutions where $\bar{\rho}_{1}<0$ thus indicating an oscillating behavior. On the right side where $\bar{\rho}_{1}>0$ the solution is found biased towards a solution with minimal curvature. In intermediate region solutions with vanishing the correlations can found which however do not occur at the same  regularization strength. Here, the average global correlation which is calculated as
+
+\begin{equation}
+\rho^\mathrm{global}_{ i}[\tau]=\sqrt{1-\frac{1}{\mathcal{C}_{x,ii}[\tau]\cdot\big(\mathcal{C}_{x}^{-1}[\tau]\big)_{ii}}}\,,
+\end{equation}
+
+provides a suitable trade-off as indicated by the black solid curve for choosing a regularization strength with minimal correlations across the unfolded spectrum. The resulting regularized unfolding result is shown in Fig.~\ref{fig:technique-tauscan-result} which does not exhibit the oscillating behavior as shown in Fig.~\ref{fig:technique-ill-unfolding-true}. Furthermore, regularization has stabilized the result against small deviations as indicated by the reduced variances and the unfolded spectrum a of sample statistical fluctuation.
 
 \myfigure{\label{fig:technique-tauscan}.}{
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/scanTau.pdf}}\hspace{0.03\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/unfoldDist.pdf}}
+\subfloat[\label{fig:technique-tauscan-scan}]{\includegraphics[width=0.48\textwidth]{figures/technique/scanTau.pdf}}\hspace{0.03\textwidth}
+\subfloat[\label{fig:technique-tauscan-result}]{\includegraphics[width=0.48\textwidth]{figures/technique/unfoldDist.pdf}}
 }
 
- Various methods are proposed to find the optimal regularization strength $\tau$. 
+\todo{coverage}
 
 
- correlations, subway plot, coverage within 2s, alternative FBU
+
+In conclusion, unfolding is an ill-posed problem which requires regularization to obtain meaningful results that are stable against statistical fluctuations. The \TUNFOLD package regularizes the unfolding by suppressing solutions with large curvatures. This procedure induces however bin-by-bin correlations. By adjusting the regularization strength to the minimum of the average global correlation coefficient in such a way that the to the minimum of \todo{???}
 
 

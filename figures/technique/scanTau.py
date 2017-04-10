@@ -402,10 +402,10 @@ histRecoPoi = histReco.Clone(histReco.GetName()+"poi")
 
 for ibin in range(N):
     c = histReco.GetBinContent(ibin+1)
-    err = math.sqrt(c)*0.03
+    err = math.sqrt(c)*0.05
     histReco.SetBinError(ibin+1,err)
     newVal = c+ROOT.gRandom.Gaus(0,err)
-    newErr = math.sqrt(newVal)*0.03
+    newErr = math.sqrt(newVal)*0.05
     histRecoPoi.SetBinContent(ibin+1,newVal)
     histRecoPoi.SetBinError(ibin+1,newErr)
 histRecoPoi.SetBinContent(0,0)
@@ -463,7 +463,7 @@ for itau,tau in enumerate(tauScanX):
 
 cvTau = setupCanvas()
 cvTau.SetRightMargin(0.16)
-axisTau=ROOT.TH2F("axis"+str(random.random()),";Regularization strength #tau;Averaged correlations",50,tauScanX[0],tauScanX[-1],50,-1.1,1.1)
+axisTau=ROOT.TH2F("axis"+str(random.random()),";Regularization strength #tau;Averaged correlations",50,tauScanX[0],tauScanX[-1],50,-1.2,1.1)
 axisTau.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisTau.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisTau.Draw("AXIS")
@@ -474,6 +474,37 @@ legendTau.SetFillStyle(0)
 legendTau.SetBorderSize(0)
 legendTau.SetTextFont(43)
 legendTau.SetTextSize(fontScale*34)
+
+
+region1 = ROOT.TBox(tauScanX[0],-1.2,0.3,1.1)
+region1.SetFillStyle(3445)
+region1.SetLineColor(ROOT.kGray)
+region1.SetFillColor(ROOT.kGray)
+region1.Draw("SameF")
+
+region2 = ROOT.TBox(tauScanX[-1],-1.2,5,1.1)
+region2.SetFillStyle(3445)
+region2.SetLineColor(ROOT.kGray)
+region2.SetFillColor(ROOT.kGray)
+region2.Draw("SameF")
+
+pR1 = ROOT.TPaveText(0.025,-0.94,0.12,-1.1)
+pR1.SetFillColor(ROOT.kWhite)
+pR1.SetLineColor(ROOT.kBlack)
+pR1.SetBorderSize(1)
+pR1.SetTextFont(43)
+pR1.SetTextSize(32*fontScale)
+pR1.AddText("#bar{#rho}#lower[0.3]{#scale[0.7]{1}}#kern[-0.5]{ }<#kern[-0.5]{ }0")
+pR1.Draw("Same")
+
+pR2 = ROOT.TPaveText(8.5,-0.94,40,-1.1)
+pR2.SetFillColor(ROOT.kWhite)
+pR2.SetLineColor(ROOT.kBlack)
+pR2.SetBorderSize(1)
+pR2.SetTextFont(43)
+pR2.SetTextSize(32*fontScale)
+pR2.AddText("#bar{#rho}#lower[0.3]{#scale[0.7]{1}}#kern[-0.5]{ }>#kern[-0.5]{ }0")
+pR2.Draw("Same")
 
 graphCor = ROOT.TGraph(len(tauScanX),tauScanX,tauScanY[0])
 graphCor.SetLineWidth(3)
@@ -508,7 +539,7 @@ unfold = ROOT.PyUnfold(histResponse)
 unfold.setData(histReco)
 histUnfoldedReg = histUnfolded.Clone(histUnfolded.GetName()+"reg")
 covUnfoldedReg = histResponse.Clone(histResponse.GetName()+"reg")
-unfold.doUnfolding(3.,histUnfoldedReg,covUnfoldedReg)
+unfold.doUnfolding(2.1,histUnfoldedReg,covUnfoldedReg)
 for i in range(N):
     histUnfoldedReg.SetBinContent(i+1,histTrue.GetBinContent(i+1))
 histUnfoldedReg.SetLineStyle(1)
@@ -522,7 +553,7 @@ histUnfoldedReg.Draw("HISTSamePE")
 unfold.setData(histRecoPoi)
 histUnfoldedPoiReg = histUnfoldedPoi.Clone(histUnfoldedPoi.GetName()+"regPoi")
 covUnfoldedPoiReg = histResponse.Clone(histResponse.GetName()+"regPoi")
-unfold.doUnfolding(3.,histUnfoldedPoiReg,covUnfoldedPoiReg)
+unfold.doUnfolding(2.1,histUnfoldedPoiReg,covUnfoldedPoiReg)
 
 histUnfoldedPoiReg.SetLineStyle(2)
 histUnfoldedPoiReg.SetLineWidth(3)

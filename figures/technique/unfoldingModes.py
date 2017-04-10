@@ -431,10 +431,10 @@ histRecoPoi.SetLineWidth(2)
 
 for ibin in range(N):
     c = histReco.GetBinContent(ibin+1)
-    err = math.sqrt(c)*0.03
+    err = math.sqrt(c)*0.05
     histReco.SetBinError(ibin+1,err)
     newVal = c+ROOT.gRandom.Gaus(0,err)
-    newErr = math.sqrt(newVal)*0.03
+    newErr = math.sqrt(newVal)*0.05
     histRecoPoi.SetBinContent(ibin+1,newVal)
     histRecoPoi.SetBinError(ibin+1,newErr)
 #histRecoPoi.Scale(histRecoPoi.Integral()/histReco.Integral())
