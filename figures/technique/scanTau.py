@@ -6,6 +6,7 @@ import random
 import math
 import os
 import re
+import pyTool
 from optparse import OptionParser
 
 cvscale = 1.0
@@ -187,6 +188,8 @@ red  = numpy.array( [0.00, 0.00, 0.87, 1.00, 0.51] )
 green = numpy.array( [0.00, 0.81, 1.00, 0.20, 0.00] )
 blue = numpy.array( [0.51, 1.00, 0.12, 0.00, 0.00] )
 
+colWheelDark = ROOT.TColor.CreateGradientColorTable(NRGBs, stops, red, green, blue, NCont)
+
 for i in range(NRGBs):
     red[i]=min(1,red[i]*1.1+0.25)
     green[i]=min(1,green[i]*1.1+0.25)
@@ -230,6 +233,14 @@ def smear(arr, sig, limits):
     
 def fillResponse(hist2D,arrX,arrY):
     for i in range(len(arrX)):
+        if arrX[i]<hist2D.GetXaxis().GetXmin():
+            arrX[i]=hist2D.GetXaxis().GetXmin()+0.0001
+        if arrX[i]>hist2D.GetXaxis().GetXmax():
+            arrX[i]=hist2D.GetXaxis().GetXmax()-0.0001
+        if arrY[i]<hist2D.GetYaxis().GetXmin():
+            arrY[i]=hist2D.GetYaxis().GetXmin()+0.0001
+        if arrY[i]>hist2D.GetYaxis().GetXmax():
+            arrY[i]=hist2D.GetYaxis().GetXmax()-0.0001
         hist2D.Fill(arrX[i],arrY[i])
         
 def getMatrix(hist2D,sig):
@@ -351,16 +362,6 @@ legendTrue.SetTextFont(43)
 legendTrue.SetTextSize(fontScale*34)
 legendTrue.AddEntry(histTrue,"True distribution","L")
 
-##########################
-# DRAW response
-##########################
-
-cvRes = setupCanvas()
-cvRes.SetRightMargin(0.2)
-axisRes=ROOT.TH2F("axis"+str(random.random()),";True;Reconstructed",50,-1,1,50,-1,1)
-axisRes.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
-axisRes.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
-axisRes.Draw("AXIS")
 
 distSmear = smear(distTrue,0.15,[-1,1])
 histResponse = ROOT.TH2F("res","",
@@ -370,31 +371,12 @@ histResponse = ROOT.TH2F("res","",
 fillResponse(histResponse,distTrue,distSmear)
 normResponse(histResponse)
 
-histResponse.GetZaxis().SetTitle("Transisiton probability (%)")
-histResponse.GetZaxis().SetTitleFont(43)
-histResponse.GetZaxis().SetTitleSize(35*fontScale)
-histResponse.GetZaxis().SetTitleOffset(1.25)
-#histResponse.SetMarkerColor(ROOT.kWhite)
-histResponse.SetMarkerSize(1.4)
-histResponse.Scale(100.)
-histResponse.GetZaxis().SetRangeUser(0,100)
-histResponse.Draw("Samecolztext")
-
-ROOT.gPad.RedrawAxis()
-
 
 
 
 ##########################
 # DRAW reco
 ##########################
-
-cvReco = setupCanvas()
-axisReco=ROOT.TH2F("axis"+str(random.random()),";Reconstructed;a.u.",50,-1,1,50,0.,1.)
-axisReco.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
-axisReco.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
-axisReco.Draw("AXIS")
-
 
 vecTrue = numpy.zeros(N)
 for ibin in range(N):
@@ -413,21 +395,10 @@ histReco = ROOT.TH1F("recoH","",N,histTrue.GetXaxis().GetXmin(),histTrue.GetXaxi
 histReco.Sumw2()
 for ibin in range(N):
     histReco.SetBinContent(ibin+1,vecReco[ibin])
-
-histReco.SetMarkerStyle(20)
-histReco.SetMarkerSize(1.4)
-histReco.SetMarkerColor(newColor(0.4,0.0,1).GetNumber())
-histReco.SetLineColor(newColor(0.4,0.0,1).GetNumber())
-histReco.SetLineWidth(2)
-#normHist(histReco)
+histReco.SetBinContent(0,0)
+histReco.SetBinContent(N+1,0)
 
 histRecoPoi = histReco.Clone(histReco.GetName()+"poi")
-histRecoPoi.SetMarkerStyle(20)
-histRecoPoi.SetMarkerColor(newColor(1,0.5,0.0).GetNumber())
-histRecoPoi.SetLineColor(newColor(1,0.5,0.0).GetNumber())
-histRecoPoi.SetMarkerSize(1.4)
-histRecoPoi.SetLineWidth(2)
-#histRecoPoi.SetLineStyle(2)
 
 for ibin in range(N):
     c = histReco.GetBinContent(ibin+1)
@@ -437,25 +408,10 @@ for ibin in range(N):
     newErr = math.sqrt(newVal)*0.03
     histRecoPoi.SetBinContent(ibin+1,newVal)
     histRecoPoi.SetBinError(ibin+1,newErr)
+histRecoPoi.SetBinContent(0,0)
+histRecoPoi.SetBinContent(N+1,0)
 #histRecoPoi.Scale(histRecoPoi.Integral()/histReco.Integral())
 
-histReco.Draw("HISTSame")
-histReco.Draw("HISTSamePE")
-
-#histRecoPoi.Draw("HISTSame")
-histRecoPoiL = histRecoPoi.Clone()
-histRecoPoiL.SetLineStyle(2)
-histRecoPoiL.SetLineWidth(3)
-histRecoPoiL.Draw("HISTSame")
-
-legendReco = ROOT.TLegend(cvTrue.GetLeftMargin()+0.03,1-cvTrue.GetTopMargin()-0.03,0.55,1-cvTrue.GetTopMargin()-0.03-2*0.08)
-legendReco.SetFillStyle(0)
-legendReco.SetBorderSize(0)
-legendReco.SetTextFont(43)
-legendReco.SetTextSize(fontScale*34)
-legendReco.AddEntry(histReco,"Folded true distribution","PEL")
-legendReco.AddEntry(histRecoPoiL,"Statistical fluctuation","L")
-legendReco.Draw("Same")
 
 ##########################
 # DRAW unfolding
@@ -486,90 +442,109 @@ for ibin in range(N):
     histUnfoldedPoi.SetBinContent(ibin+1,vecUnfoldedPoi[ibin])
     histUnfoldedPoi.SetBinError(ibin+1,math.sqrt(matUnfoldedPoiErr[ibin,ibin]))
     
-cvTrue.cd()
-histUnfolded.Draw("SamePE")
-
-histUnfoldedPoi.SetLineStyle(2)
-histUnfoldedPoi.SetLineWidth(3)
-histUnfoldedPoi.Draw("SameHISt")
-
-
-legendTrue.AddEntry(histUnfolded,"Unfolded true dist.","PE")
-legendTrue.AddEntry(histUnfoldedPoi,"Unfolded stat. fluc.","L")
-legendTrue.Draw("Same")
-
-'''
-
-matrix = getMatrix(histResponse,0.2)
-matrix_inv = numpy.linalg.inv(matrix)
-#print matrix
-print
-e,v = numpy.linalg.eig(matrix)
-for i in range(len(v)):
-    print i,e[i],numpy.dot(v[i],v[i])
-#print numpy,.dot(v[0],v[1])
-
-vecTrue = numpy.zeros(N)
-vecSmear = numpy.zeros(N)
-vecSmearPoi = numpy.zeros(N)
-
-for i in range(N):
-    vecTrue[i]=histTrue.GetBinContent(i+1)
-    vecSmear[i]=histReco.GetBinContent(i+1)
-    vecSmearPoi[i] = vecSmear[i]+ROOT.gRandom.Gaus(0,0.1*math.sqrt(vecSmear[i]))
-    
-histRecoPoi = histReco.Clone("Poi") 
-histRecoPoi.SetLineWidth(3)
-histRecoPoi.SetLineStyle(2)
-vecUnfolded = numpy.dot(matrix_inv,vecSmearPoi)
-for i in range(len(vecUnfolded)):
-    histRecoPoi.SetBinContent(i+1,vecSmearPoi[i])
-normHist(histRecoPoi)
-
-for i in range(N):
-    magTrue = numpy.dot(vecTrue,v[i])
-    magSmear = numpy.dot(vecSmear,v[i])
-    magPoi = numpy.dot(vecSmearPoi,v[i])
-    print "%2i: %6.3f  %6.3f  %6.3f"%(i,magTrue*magTrue,magSmear*magSmear,magPoi*magPoi)
 
 
 
-'''
+NSCAN = 1000
+tauScanX = numpy.logspace(-2,2,num=NSCAN)
+tauScanY = numpy.zeros((10,NSCAN))
+
+for itau,tau in enumerate(tauScanX):
+    unfold = ROOT.PyUnfold(histResponse)
+    unfold.setData(histReco)
+    histUnfoldedPoiReg = histUnfoldedPoi.Clone(histUnfoldedPoi.GetName()+"reg"+str(itau))
+    covUnfoldedPoiReg = histResponse.Clone(histResponse.GetName()+"reg"+str(itau))
+    unfold.doUnfolding(tau,histUnfoldedPoiReg,covUnfoldedPoiReg)
+    print tau,covUnfoldedPoiReg.GetBinContent(1,2)
+    for icov in range(10):
+        cov = ROOT.PyUtils.getBinByBinCorrelations(covUnfoldedPoiReg)
+        tauScanY[icov][itau] = cov[icov]
 
 
+cvTau = setupCanvas()
+cvTau.SetRightMargin(0.16)
+axisTau=ROOT.TH2F("axis"+str(random.random()),";Regularization strength #tau;Averaged correlations",50,tauScanX[0],tauScanX[-1],50,-1.1,1.1)
+axisTau.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
+axisTau.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
+axisTau.Draw("AXIS")
+cvTau.SetLogx()
 
+legendTau = ROOT.TLegend(1-cvTau.GetRightMargin()+0.005,1-cvTau.GetTopMargin(),0.999,1-cvTau.GetTopMargin()-10*0.08)
+legendTau.SetFillStyle(0)
+legendTau.SetBorderSize(0)
+legendTau.SetTextFont(43)
+legendTau.SetTextSize(fontScale*34)
 
+graphCor = ROOT.TGraph(len(tauScanX),tauScanX,tauScanY[0])
+graphCor.SetLineWidth(3)
+graphCor.SetLineColor(ROOT.kBlack)
+rootObjs.append(graphCor)
+graphCor.Draw("LSameC")
+legendTau.AddEntry(graphCor,"#bar{#rho}#lower[0.3]{#scale[0.7]{global}}","L")
 
-'''
-cvReco.SetLogy()
-
-hists = []
-for i in reversed(range(len(v))):
-    h = ROOT.TH1F("hv"+str(i),"",N,histTrue.GetXaxis().GetXmin(),histTrue.GetXaxis().GetXmax())
-    for ibin in range(N):
-        h.SetBinContent(ibin+1,(v[i][ibin]))
-    normHist(h)
-    h.SetLineWidth(int(4.6-0.3*i))
-    h.SetLineColor(newColor(0.7*i/len(v),0.6*i/len(v),0.4-0.4*i/len(v)).GetNumber())
-    hists.append(h)
-    h.Draw("SameHIST")
-'''
-
+for i in range(1,10):
+    graphCor = ROOT.TGraph(len(tauScanX),tauScanX,tauScanY[i])
+    graphCor.SetLineWidth(4-i%2)
+    graphCor.SetLineColor(newColor(i/10.,(i-5)**2/60.,1.-(i/10.)).GetNumber())
+    graphCor.SetLineStyle(2-i%2)
+    rootObjs.append(graphCor)
+    legendTau.AddEntry(graphCor,"#bar{#rho}#lower[0.3]{#scale[0.7]{"+str(i)+"}}","L")
+    graphCor.Draw("LSame")
 
 
 ROOT.gPad.RedrawAxis()
 
-cvTrue.Update()
-cvTrue.Print("trueDist.pdf")
-cvTrue.Print("trueDist.C")
 
+
+
+legendTau.Draw("Same")
+
+cvTau.Print("scanTau.pdf")
+cvTau.Print("scanTau.C")
+
+cvTrue.cd()
+
+unfold = ROOT.PyUnfold(histResponse)
+unfold.setData(histReco)
+histUnfoldedReg = histUnfolded.Clone(histUnfolded.GetName()+"reg")
+covUnfoldedReg = histResponse.Clone(histResponse.GetName()+"reg")
+unfold.doUnfolding(3.,histUnfoldedReg,covUnfoldedReg)
+for i in range(N):
+    histUnfoldedReg.SetBinContent(i+1,histTrue.GetBinContent(i+1))
+histUnfoldedReg.SetLineStyle(1)
+histUnfoldedReg.SetLineWidth(3)
+histUnfoldedReg.SetMarkerStyle(20)
+histUnfoldedReg.SetMarkerSize(1.4)
+histUnfoldedReg.SetMarkerColor(newColor(0.4,0.0,1).GetNumber())
+histUnfoldedReg.SetLineColor(newColor(0.4,0.0,1).GetNumber())
+histUnfoldedReg.Draw("HISTSamePE")
+
+unfold.setData(histRecoPoi)
+histUnfoldedPoiReg = histUnfoldedPoi.Clone(histUnfoldedPoi.GetName()+"regPoi")
+covUnfoldedPoiReg = histResponse.Clone(histResponse.GetName()+"regPoi")
+unfold.doUnfolding(3.,histUnfoldedPoiReg,covUnfoldedPoiReg)
+
+histUnfoldedPoiReg.SetLineStyle(2)
+histUnfoldedPoiReg.SetLineWidth(3)
+histUnfoldedPoiReg.SetLineColor(newColor(1,0.5,0.0).GetNumber())
+histUnfoldedPoiReg.Draw("HISTSame")
+
+legendTrue.AddEntry(histUnfoldedReg,"Unfolded true dist. (reg.)","PE")
+legendTrue.AddEntry(histUnfoldedPoiReg,"Unfolded stat. fluc. (reg.)","L")
+
+ROOT.gPad.RedrawAxis()
+
+legendTrue.Draw("Same")
+
+cvTrue.Update()
+cvTrue.Print("unfoldDist.pdf")
+cvTrue.Print("unfoldDist.C")
+'''
 cvRes.Update()
 cvRes.Print("response.pdf")
-cvRes.Print("response.C")
 
 cvReco.Update()
 cvReco.Print("recoDist.pdf")
-cvReco.Print("recoDist.C")
-
+'''
 
 

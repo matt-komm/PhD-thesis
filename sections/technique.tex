@@ -190,7 +190,13 @@ In the fit, an extra uncertainty is considered to account for the limited accura
 
 Cross sections can be measured not only inclusively but also differentially in intervals of an observable. Differential cross sections offer the means to perform in-deep comparisons of data with theoretical predictions. The result of such measurements allows to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be sensitive to the coupling structure of a process and can thus be interpreted in potential \gls{bsm} scenarios as well.
 
-A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined. These are presented in Fig~\ref{fig:technique-parton-particle}. The parton level corresponds to the intermediate and final state particles within a Feynman diagram. In event generators, these particles are produced as the hard interaction before the event is handed to a parton shower program where result of the hadronization and various other effects~(see Fig.~\ref{fig:technique-mcevent}) are simulated. The partonic top quark is defined to be on-shell while accounting for \gls{qcd}/\gls{qed} radiations and the intrinsic $k_\mathrm{T}$ of initial state partons which may boost the event. Prompt leptons which originate from the W~boson decay are defined in the same manner. About 15\% of the final state electrons or muons originate from a leptonically decaying tau lepton, these leptons are included into the definition as well. The fraction depends on the \pt threshold of the muon or electron as depicted in Fig.~??. When selection electron or muons with a $\pt$ of at least $20~\GeV$ this the fraction of leptonically decaying tau leptons entering the selected phase space reduces to 6\%.
+A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined. These are presented in Fig~\ref{fig:technique-parton-particle}.
+
+\myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production.}{
+\includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
+}
+
+The parton level corresponds to the intermediate and final state particles within a Feynman diagram. In event generators, these particles are produced as the hard interaction before the event is handed to a parton shower program where result of the hadronization and various other effects~(see Fig.~\ref{fig:technique-mcevent}) are simulated. The partonic top quark is defined to be on-shell while accounting for \gls{qcd}/\gls{qed} radiations and the intrinsic $k_\mathrm{T}$ of initial state partons which may boost the event. Prompt leptons which originate from the W~boson decay are defined in the same manner. About 15\% of the final state electrons or muons originate from a leptonically decaying tau lepton, these leptons are included into the definition as well. The fraction depends on the \pt threshold of the muon or electron as depicted in Fig.~\ref{fig:technique-parton-muon}. When selection electron or muons with a $\pt$ of at least $20~\GeV$ this the fraction of leptonically decaying tau leptons entering the selected phase space reduces to 6\%.
 
 
 The spectator quark may radiate a gluon as shown exemplary. At \gls{nlo}, this can lead to an ambiguity if it is accounted
@@ -200,15 +206,13 @@ ambigous at NLO, 4/5FS because of 2nd b-quark
 \textit{''The unfortunate truth is that most of the event record is intended
 for generator debugging rather than physics interpretation''}~\cite{Buckley:2010ar}.
 
-\myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production.}{
-\includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
-}
 
-\myfigure{\label{fig:technique-parton-muon}Distributions of the muon (a)~transverse momentum and (b)~pseudorapidity for $t$-channel single top quark production at $13~\TeV$ for various W~boson decay chains. The distributions have been generated using \POWHEG interfaced with \TAUOLA and \PYTHIA8.}{
+
+\myfigure{\label{fig:technique-parton-muon}Distributions of the (a)~transverse momentum and (b)~pseudorapidity of the final state lepton produced in $t$-channel single top quark production at $13~\TeV$. The lines represent various decays of W~bosons into either direct muons/taus or into muons via intermediate tau decays. The distributions have been generated using \POWHEG interfaced with \TAUOLA and \PYTHIA8.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_pt.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_eta.pdf}}
 }
-\myfigure{\label{fig:technique-parton-cosTheta}Distributions of the polarization angle for $t$-channel single top quark production at $13~\TeV$: (a)~inclusive distribution; (b)~only events with $\pt(\mu)>20~\GeV$. The distributions have been generated using \POWHEG interfaced with \TAUOLA and \PYTHIA8.}{
+\myfigure{\label{fig:technique-parton-cosTheta}Distributions of the polarization angle for $t$-channel single top quark production at $13~\TeV$: (a)~inclusive distribution; (b)~only events with $\pt(\mu)>20~\GeV$. The lines represent various decays of W~bosons into either direct muons/taus or into muons via intermediate tau decays. The distributions have been generated using \POWHEG interfaced with \TAUOLA and \PYTHIA8.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_lpt20.pdf}}
 }
@@ -238,7 +242,7 @@ Equation~\ref{eq:technique-fredholm} can be discretized and written as a matrix 
 \vec{y} = \widetilde{\mathcal{R}}\cdot\vec{x},\qquad \widetilde{\mathcal{R}}=\mathcal{A}\cdot\mathcal{E}\cdot\mathcal{R}\,, \label{eq:technique-folding}
 \end{equation}
 
-where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. An simple attempt to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ with a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. This results into solutions with large variance and high anticorrelations between bins which can be observed as oscillations~\cite{Cowan:2002in}. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model where a exemplary distribution $g(x)=\frac{1}{2}+0.44\cdot x$, similar to the expected distribution of the top-quark polarization angle at parton level, has been folded with a simple Gaussian smearing function using a resolution of $\sigma=0.15$. Small deviations~(dash-orange line) from the folded distribution~(violet markers), which can just be a statistical fluctuation, yields an unphysical, oscillating solution.
+where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. An simple attempt to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ with a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. This results into solutions with large variance and high anticorrelations between bins which can be observed as oscillations~\cite{Cowan:2002in}. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model where a exemplary distribution $g(x)=\frac{1}{2}+0.44\cdot x$, similar to the expected distribution of the top-quark polarization angle at parton level, has been folded with a simple Gaussian smearing function $R(y,x)\propto(x-y)^2/(2\sigma^2)$ using a resolution of $\sigma=0.15$. Small deviations~(dash-orange line) from the folded distribution~(violet markers), which can just be a statistical fluctuation, yields an unphysical, oscillating solution.
 
 \myfigure{\label{fig:technique-ill-unfolding}Exemplary unfolding of a distribution using a simple inversion of the response matrix: (a)~true distribution with overlaid unfolding results; (b)~the true distribution after folding and a sample of a corresponding statistical fluctuation.}{
 \subfloat[\label{fig:technique-ill-unfolding-true}]{\includegraphics[width=0.48\textwidth]{figures/technique/trueDist.pdf}}\hspace{0.03\textwidth}
@@ -278,31 +282,56 @@ L\big(\vec{x}\big)&=\big|\big|\,\vec{y}-\tilde{\mathcal{R}}\cdot\vec{x} \,\big|\
 where a suitable matrix $\Gamma$ is added to suppress unphysical solutions. In this thesis, unfolding is performed using the \TUNFOLD package~\cite{1748-0221-7-10-T10003} which employs a similar regularization scheme. Its loss function is given by
 
 \begin{align}
-L_\mathrm{\TUNFOLD}\big(\,\vec{x},\,\lambda\,\big|~\tau\big)&=\sum_{i}\,\sum_{j}~\Big(y_{i}-\big({\mathcal{R}}\cdot\vec{x}\,\big)_{i}\Big)\cdot\mathcal{C}_{ij}^{-1}\cdot\Big(y_{j}-\big({\mathcal{R}}\cdot\vec{x}\,\big)_{j}\Big)\label{eq:technique-tunfold-response}\\
+L_\mathrm{\TUNFOLD}\big(\,\vec{x},\,\lambda\,\big|~\tau\big)&=\sum_{i}\,\sum_{j}~\Big(y_{i}-\big({\mathcal{R}}\cdot\vec{x}\,\big)_{i}\Big)\cdot\mathcal{C}_{y,ij}^{-1}\cdot\Big(y_{j}-\big({\mathcal{R}}\cdot\vec{x}\,\big)_{j}\Big)\label{eq:technique-tunfold-response}\\
 &+\tau^{2}\cdot\Big(\Gamma\cdot\big(\vec{x}-\vec{x}_{0}\big)\Big)^{2}\label{eq:technique-tunfold-regularization}\\
 &+\lambda\cdot\sum_{i}~\Big(y_{i}-\mathcal{A}_{ii}\mathcal{E}_{ii}x_{i}\Big)\,. \label{eq:technique-tunfold-efficiency}
 \end{align}
 
-The matrix $\mathcal{C}$ in Eq.~\ref{eq:technique-tunfold-response} describes the statistical covariances of the bins in the reconstructed distribution. For uncorrelated data bins it is a diagonal matrix with entries $\mathcal{C}_{ii}=y_{ii}$ assuming Poisson uncertainties. Regularization is applied through the penalty term in Eq.~\ref{eq:technique-tunfold-regularization}. Here, solutions with large fluctuations are suppressed through the matrix $\Gamma$ which approximates numerically the second derivative of the resulting distribution as 
+The matrix $\mathcal{C}$ in Eq.~\ref{eq:technique-tunfold-response} describes the statistical covariances of the bins in the reconstructed distribution. For uncorrelated data bins it is a diagonal matrix with entries $\mathcal{C}_{ii}=y_{ii}$ assuming Poisson uncertainties. Regularization is applied through the penalty term in Eq.~\ref{eq:technique-tunfold-regularization}. Here, solutions with large fluctuations are suppressed through the matrix $\Gamma$ which approximates numerically the second derivatives per bin of the resulting distribution as 
 
 \begin{equation}
-\frac{\mathrm{d}^{2}g(x)}{\mathrm{d}x^2}\approx\frac{x_{i+1}-2\,x_{i}+x_{i-1}}{h^2}\,,\qquad\Rightarrow~~\Gamma=
-\begin{tikzpicture}[baseline=(current bounding box.center),every left delimiter/.style={xshift=0.4em},]
+\frac{\mathrm{d}^{2}g(x)}{\mathrm{d}x^2}\approx\frac{g(x-h)-2\,g(x)+g(x+h)}{h^2}\,,~~\Rightarrow~~\Gamma=
+\begin{tikzpicture}[baseline=(current bounding box.center),every left delimiter/.style={xshift=0.4em},every right delimiter/.style={xshift=-0.55em}]
 \matrix (m) [matrix of math nodes,nodes in empty cells,left delimiter=(,right delimiter={)},inner sep=0pt,nodes={inner sep=.3333em},]{
--2 & \hphantom{-}1 &  & \hphantom{-}0 \\
-\hphantom{-}1 & & &   \\
- & & & \hphantom{-}1 \\
-\hphantom{-}0 &   & \hphantom{-}1 & -2 \\
+-1 & \hphantom{-}1 & \hphantom{-}0 & \hphantom{-}0 \\
+\hphantom{-}1 & -2 & \hphantom{-}1 & \hphantom{-}0  \\
+  & & &  \\[0.5em]
+\hphantom{-}0  & \hphantom{-}1  & -2 & \hphantom{-}1 & \\
+\hphantom{-}0  & \hphantom{-}0  & \hphantom{-}1 & -1 \\
 } ;
-\draw[dotted,thick] (m-1-1)-- (m-4-4);
-\draw[dotted,thick] (m-2-1)-- (m-4-3);
-\draw[dotted,thick] (m-1-2)-- (m-3-4);
+\draw[dotted,thick] (m-2-2)-- +(0.65,-0.6);
+\draw[dotted,thick] (m-2-1)-- +(0.65,-0.6);
+\draw[dotted,thick] (m-2-3)-- +(0.65,-0.6);
 \end{tikzpicture}\,.
 \end{equation}
 
-The regularization strength is controlled with the parameter $\tau$ and needs to be optimized as detailed below. The vector $\vec{x}_{0}$ allows to bias the calculation of the second derivatives. It is usually set to the expectation from theory. This way, the regularization vanishes when unfolding the expectation from theory for closure tests since $(\Gamma\,(\vec{x}_\mathrm{exp.}-\vec{x}_{0}))^2=0$. Thus, the result is bias-free even for heavily curved expectations like e.g. $\pt$ spectra of particles. The last part of the loss function, Eq.~\ref{eq:technique-tunfold-efficiency}, attempts to match the overall normalization of the solution by accounting for the acceptance and reconstruction efficiencies per bin. It is minimized independently with respect to the Lagrange parameter $\lambda$.
+The regularization strength is controlled with the parameter $\tau$ and needs to be optimized as detailed below. The vector $\vec{x}_{0}$ allows to bias the calculation of the second derivatives. It is usually set to the expectation from theory. This way, the regularization vanishes when unfolding the expectation from theory for closure tests since $(\Gamma\,(\vec{x}_\mathrm{exp.}-\vec{x}_{0}))^2=0$. Thus, the result is bias-free even for heavily curved expectations like e.g. $\pt$ spectra of particles. An alternative procedure to achieve this is to reweight $\vec{x}$ as $x_{i}^\prime=x_{i}/x_{i}^\mathrm{exp.}$ which lets the regularization vanish as well when unfolding the expectation since $\Gamma\,\vec{x}^{\,\prime}_\mathrm{exp.}=0$. The last part of the loss function, Eq.~\ref{eq:technique-tunfold-efficiency}, attempts to match the overall normalization of the solution by accounting for the acceptance and reconstruction efficiencies per bin. It is minimized independently with respect to the Lagrange parameter $\lambda$.
 
-Various methods are proposed to find the optimal regularization strength $\tau$. 
+Finding the optimal regularization strength is of crucial importance. If the applied regularization is too weak, the unfolding with become unregulated and thus leads to unphysical solutions with oscillating behavior. On the other hand, if the regularization is too strong, the solution will be biased towards the solution of minimum curvature. The solution in this case is often then just the expectation from theory since the bias vector is set to the expectation. A method to analyze the unfolding behavior as a function of the regularization strength has been developed in Ref.~\cite{Komm-thesis}. The idea is based on the calculations of the resulting bin-by-bin correlations as a function of the regularization strength. The covariance matrix is given by propagation of uncertainty
+
+\begin{equation}
+\mathcal{C}_{x}=J\cdot\mathcal{C}_{y}\cdot J^{T}=\tilde{\mathcal{R}}^{-1}\cdot\mathcal{C}_{y}\cdot\big(\tilde{\mathcal{R}}^{-1}\big)^{T}\,
+\end{equation}
+
+where $J$ denotes the Jacobian matrix. This allows to define the average correlation between bins as
+
+\begin{equation}
+\bar{\rho}_{j}\equiv\frac{1}{n-j-1}\sum_{i}^{n-j-1}\rho_{i,i+j},\qquad \rho_{i,j}=\frac{\mathcal{C}_{x,ij}}{\sqrt{\mathcal{C}_{x,ii}\cdot\mathcal{C}_{x,jj}}}\,.
+\end{equation}
+
+The global correlation
+
+\begin{equation}
+\rho_{\mathrm{global}, i}=\sqrt{1-\mathcal{C}_{x,ii}\cdot\big(\mathcal{C}_{x}^{-1}\big)_{ii}}
+\end{equation}
+
+
+\myfigure{\label{fig:technique-tauscan}.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/scanTau.pdf}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/unfoldDist.pdf}}
+}
+
+ Various methods are proposed to find the optimal regularization strength $\tau$. 
 
 
  correlations, subway plot, coverage within 2s, alternative FBU
