@@ -168,11 +168,11 @@ is minimized which is however equivalent to maximizing Eq.~\ref{eq:technique-lik
 
 \begin{align}
 \hat{\sigma}_\mathrm{sig.}&=\frac{\hat{N}_\mathrm{sig.}}{A\cdot\epsilon\cdot{\textstyle{\int}L}}~,\quad
-\hat{N}_\mathrm{sig.}=\hat{\beta}_\mathrm{sig.}\cdot N_\mathrm{exp.}=\hat{\beta}_\mathrm{sig.}\cdot\underbrace{\sigma_\mathrm{\gls{sm}}\cdot\textstyle{\int}L}_\mathrm{normalization}\cdot \overbrace{A \cdot \epsilon}^\mathrm{selection}\nonumber\\
+\hat{N}_\mathrm{sig.}=\hat{\beta}_\mathrm{sig.}\cdot N_\mathrm{exp.}=\hat{\beta}_\mathrm{sig.}\cdot\underbrace{\sigma_\mathrm{\gls{sm}}\cdot\textstyle{\int}L}_\mathrm{norm.}\cdot \overbrace{A \cdot \epsilon}^\mathrm{sel./reco.}\nonumber\\
 &=\hat{\beta}_\mathrm{sig.}\cdot\sigma_\mathrm{\gls{sm}}
 \end{align}
 
-where $A$ denotes the acceptance and $\epsilon$ the efficiency of the event selection which are intrinsically estimated through the simulated samples. For the background scale factors additional constraints are applied by adding log-normal priors to the likelihood as
+where $A$ denotes the acceptance and $\epsilon$ the efficiency of the event selection and reconstruction which are intrinsically estimated through the simulated samples. For the background scale factors additional constraints are applied by adding log-normal priors to the likelihood as
 
 \begin{equation}
 -\ln\Big(\mathsf{L}_\mathrm{bkgs.}\Big)=\sum_{j}^\mathrm{bkgs.}~\frac{1}{2}\cdot\left(\frac{\ln\,\beta^{(j)}}{\delta^{(j)}}\right)^{2}.
@@ -192,7 +192,7 @@ Cross sections can be measured not only inclusively but also differentially in i
 
 A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined. These are presented in Fig~\ref{fig:technique-parton-particle}.
 
-\myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production.}{
+\myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production. An additional gluon has been added as a final state radiation.}{
 \includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
 }
 
