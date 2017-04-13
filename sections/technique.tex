@@ -44,61 +44,57 @@ Multiple samples of events with additional final state partons at matrix element
 \section{Top quark reconstruction}
 %##############################################
 
-After the reconstruction and selection of analysis objects, a top quark candidate is reconstructed in the presented analyses. Assuming that the top quark decayed leptonically as $\mathrm{t}\to\mathrm{b}\mathrm{W}\to\mathrm{b}\ell\nu$ its energy and momentum is reconstructed by summing the measured 4-momenta of a selected lepton (muon or electron), b-tagged jet, and neutrino candidate. The neutrino candidate itself is reconstructed from the missing transverse energy and the lepton momentum by requiring a W~boson mass constraint of $m_\mathrm{W}=80.4~\GeV$~\cite{Olive:2016xmw} on their invariant mass as
+After the reconstruction and selection of analysis objects, a top quark candidate is reconstructed in the presented analyses. Assuming that the top quark decayed leptonically as $\mathrm{t}\to\mathrm{b}\mathrm{W}\to\mathrm{b}\ell\nu$, its energy and momentum is reconstructed by summing the measured 4-momenta of a selected lepton (muon or electron), b-tagged jet, and neutrino candidate. The neutrino candidate itself is reconstructed from the missing transverse energy and the lepton momentum. This is performed by requiring a W~boson mass constraint of $m_\mathrm{W}=80.4~\GeV$~\cite{Olive:2016xmw} on their invariant mass as
 
 \begin{align}
 m_\mathrm{W}^2=\colvec{2}{E_\mathrm{W}}{\vec{p}_\mathrm{W}}^{2}&\overset{!}{=}\left[\colvec{2}{E_{\ell}}{\vec{p}_{\ell}}+\colvec{2}{E_{\nu}}{\vec{p}_{\nu}}\right]^{2}\nonumber\\
-&=\underbrace{m_{\ell}^2+m_{\nu}^2}_{\approx 0}+\,2\cdot E_{\ell}\,E_{\nu}-\,2\cdot\colvec{3}{p_{\ell,x}}{p_{\ell,y}}{p_{\ell,z}}\cdot\colvec{3}{p_{\nu,\mathrm{T}}\cdot\cos\phi_{\nu}}{p_{\nu,\mathrm{T}}\cdot\sin\phi_{\nu}}{p_{\nu,z}}. \label{eq:technique-neutrino-pz-eq}
+&=\underbrace{m_{\ell}^2+m_{\nu}^2}_{\approx 0}+\,2\cdot E_{\ell}\,E_{\nu}-\,2\cdot\colvec{3}{p_{\ell,x}}{p_{\ell,y}}{p_{\ell,z}}\cdot\colvec{3}{p_{\nu,\mathrm{T}}\cdot\cos\phi_{\nu}}{p_{\nu,\mathrm{T}}\cdot\sin\phi_{\nu}}{p_{\nu,z}}\,, \label{eq:technique-neutrino-pz-eq}
 \end{align}
 
-When taking $p_{\nu,\mathrm{T}}$ and $\phi_{\nu}$ from the missing transverse momentum vector $\pvmiss$, this allows to solve for the unknown $p_{\nu,z}$-component of the neutrino candidate momentum. After rearranging, one obtains from Eq.~\ref{eq:technique-neutrino-pz-eq} the quadratic equation
+where the lepton and neutrino are approximated to be massless. Then, one can solve for the unknown $p_{\nu,z}$-component of the neutrino candidate momentum by taking $p_{\nu,\mathrm{T}}$ and $\phi_{\nu}$ from the missing transverse momentum vector $\pvmiss$. After rearranging, the quadratic equation 
 
-\begin{equation}
-0=p_{\nu,z}^2-\frac{2\,\xi\,p_{\ell,z}}{E_{\ell}^{2}-p_{\ell,z}^2}\cdot p_{\nu,z}-\frac{\xi^{2}-E_{\ell}^{2}\,p_{\nu,\mathrm{T}}^2}{E_{\ell}^{2}-p_{\ell,z}^2},\end{equation}
+\begin{subequations}
+\begin{align}
+0&=p_{\nu,z}^2-\frac{2\,\xi\,p_{\ell,z}}{E_{\ell}^{2}-p_{\ell,z}^2}\cdot p_{\nu,z}-\frac{\xi^{2}-E_{\ell}^{2}\,p_{\nu,\mathrm{T}}^2}{E_{\ell}^{2}-p_{\ell,z}^2}\\
+\xi&=\frac{m_\mathrm{W}^2}{2}+p_{\nu,\mathrm{T}}\,p_{\ell,\mathrm{T}}\cdot\cos\big(\phi_\ell-\phi_\nu\big)
+\end{align}
+\end{subequations}
 
-with
-
-\begin{equation}
-\xi=\frac{m_\mathrm{W}^2}{2}+p_{\nu,\mathrm{T}}\,p_{\ell,\mathrm{T}}\cdot\cos\big(\phi_\ell-\phi_\nu\big)
-\end{equation}
-
-which possesses the solutions
+is obtained from Eq.~\ref{eq:technique-neutrino-pz-eq} which possesses the solutions
 
 \begin{align}
 p_{\nu,z}^{1,2}=\frac{1}{E_{\ell}^{2}-p_{\ell,z}^{2}}\left[\xi\cdot p_{\ell,z}\pm E_{\ell} \sqrt{\xi^2-p_{\nu,\mathrm{T}}^2\big(E_{\ell}^2-p_{\ell,z}^2\big)}~\right]. \label{eq:technique-neutrino-pz}
 \end{align}
 
-A detailed derivation and discussion of this result can be found in Ref.~\cite{Chwalek:1416031}. In simulated $t$-channel single-top-quark events this procedure leads to two real solutions for the neutrino $p_{\nu,z}$-component in about 65\% of all events that passed the selection. The difference of the two real solutions with respect to the true neutrino $p_{z}$ at parton level is displayed in Fig.~\ref{fig:technique-neutrino-reco}. 
+A detailed derivation and discussion of this result can be found in Ref.~\cite{Chwalek:1416031}. In simulated $t$-channel single-top-quark events this procedure leads to two real solutions in about 65\% of all events that passed the selection. The difference of the two real solutions with respect to the true neutrino $p_{z}$ at parton level is displayed in Fig.~\ref{fig:technique-neutrino-reco}. The plot demonstrates that choosing the solution which has the smallest absolute $|p_{\nu,z}|$ yields on average a neutrino $p_{z}$ which is closest to the true neutrino $p_{z}$ amongst the two real solutions.
 
-\myfigure{\label{fig:technique-neutrino-reco}Differences of the reconstructed neutrino $p_{z}$ with respect to the neutrino $p_{z}$ at parton level in cases of real and complex solutions. The distributions have been generated using \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}.}{
+\myfigure{\label{fig:technique-neutrino-reco}Differences of the reconstructed neutrino $p_{z}$ with respect to the neutrino $p_{z}$ at parton level in cases of real and complex solutions for simulated events of $t$-channel single-top-quark production.}{
 \includegraphics[width=0.52\textwidth]{figures/technique/neutrino_match_dpz.pdf}
 }
 
-The plot demonstrates that choosing the solution which has the smallest absolute $|p_{\nu,z}|$ yields on average a neutrino $p_{z}$ which is closest to the true neutrino $p_{z}$. If the discriminant in Eq.~\ref{eq:technique-neutrino-pz} becomes negative the solutions are complex. This happens in about 35\% of events and occurs mostly due to the finite \met resolution whereas the negligence of the W~boson mass width and resolution of the lepton momentum are minor effects. The imaginary part of the solutions is removed by requiring that the discriminant vanishes
+Complex solutions are obtained if the discriminant in Eq.~\ref{eq:technique-neutrino-pz} becomes negative. This happens for about 35\% of selected signal events. Such solutions occur mostly due to the finite \met resolution whereas the negligence of the W~boson mass width and resolution of the lepton momentum are minor effects. The imaginary part of the solutions is removed by requiring that the discriminant vanishes
 
 \begin{equation}
-0\overset{!}{=}\xi^2-p_{\nu,\mathrm{T}}^2\big(E_{\ell}^2-p_{\ell,z}^2\big)~
-\Rightarrow~ p_{\nu,z}=\frac{\xi\cdot p_{\ell,z}}{E_{\ell}^{2}-p_{\ell,z}^{2}}
+0\overset{!}{=}\xi^2-p_{\nu,\mathrm{T}}^2\big(E_{\ell}^2-p_{\ell,z}^2\big)\quad
+\Rightarrow~ p_{\nu,z}=\frac{\xi\cdot p_{\ell,z}}{E_{\ell}^{2}-p_{\ell,z}^{2}}\,,\label{eq:technique-pz-complex}
 \end{equation}
 
-which is equal to setting the transverse W~boson mass $\mtw$ to the W~boson mass itself
+which is equivalent to setting the transverse mass $m_\mathrm{T}$ to the W~boson mass as
 
 \begin{align}
-m_\mathrm{W}^2\overset{!}{=}\mtw^2&=(p_{\ell,\mathrm{T}}+p_{\nu,\mathrm{T}})^2-(p_{\ell,x}+p_{\nu,x})^{2}-(p_{\ell,y}+p_{\nu,y})^{2}\nonumber\\
-&\approx2\,p_{\ell,\mathrm{T}}^2\,p_{\nu,\mathrm{T}}^2\cdot\Big(1-\cos\big(\phi_\ell-\phi_\nu\big)\Big).
+m_\mathrm{W}^2\overset{!}{=}m_\mathrm{T}^2&=(p_{\ell,\mathrm{T}}+p_{\nu,\mathrm{T}})^2-(p_{\ell,x}+p_{\nu,x})^{2}-(p_{\ell,y}+p_{\nu,y})^{2}\nonumber\\
+&\approx2\,p_{\ell,\mathrm{T}}^2\,p_{\nu,\mathrm{T}}^2\cdot\Big(1-\cos\big(\phi_\ell-\phi_\nu\big)\Big)\,.
 \end{align}
 
-Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the transverse momentum which minimizes the distance $|\vec{p}_{\nu,\mathrm{T}}-\pvmiss|$ with respect to the measured missing transverse momentum vector is taken as the result. 
+Then, the $p_{\nu,x}$ and $p_{\nu,x}$ components are varied and the pair which minimizes the distance $|\vec{p}_{\nu,\mathrm{T}}-\pvmiss|$ with respect to the measured missing transverse momentum vector is taken as the result. Figure~\ref{fig:technique-neutrino-reco} shows that after removing the imaginary part~(Eq.~\ref{eq:technique-pz-complex}) the $p_{\nu,z}$ solution is on average closer to the true neutrino $p_{\nu,z}$ momentum compared to cases with real solutions. This can be explained as follows. Initially $m_\mathrm{T}>m_\mathrm{W}$ is found in cases of complex solutions which is then modified to $m_\mathrm{T}=m_\mathrm{W}$ by ignoring the imaginary part and applying the minimization procedure as described above. One can therefore argue that this represents a correction of the finite \met resolution which resulted into the complex solutions in the first place.
 
-After finding a solution for the unknown neutrino $p_{z}$ component, a top quark candidate can be constructed from the 4-momenta of the lepton, b-tagged jet, and neutrino candidate. Shape comparisons of the top quark mass and pseudorapidity for the two neutrino solution cases are presented in Fig~\ref{fig:technique-top-reco}. In the case that only a complex solution has been found an improved reconstructed top quark mass resolution is achieved. Similarly, the pseudorapidity of the top quark candidate demonstrates an improved reproduction of the corresponding observable at parton level as well.
+Finally, after finding a solution for the unknown neutrino $p_{z}$ component, a top quark candidate can be constructed by summing the 4-momenta of the lepton, b-tagged jet, and neutrino candidate. Shape comparisons of the reconstructed top quark mass and pseudorapidity for the two neutrino solution cases are presented in Fig~\ref{fig:technique-top-reco} for simulated signal events. In the case that the initial solution is complex, the reconstruction yields a top quark candidate with an enhanced mass resolution. Similarly, the pseudorapidity of the top quark candidate demonstrates an improved reproduction of the corresponding observable at parton level as well.
 
-\myfigure{\label{fig:technique-top-reco} Shape differences in the reconstructed top quark (a)~mass and (b)~pseudorapidity for cases with real neutrino $p_{z}$ solutions where the one with the smallest $|p_{z}|$ is picked or only a complex solution. The distributions have been generated using \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}.}{
+\myfigure{\label{fig:technique-top-reco} Shape differences in the reconstructed top quark (a)~mass and (b)~pseudorapidity for cases with real neutrino $p_{z}$ solutions  (where the one with the smallest $|p_{z}|$ is picked) or with initially complex solutions for simulated events of $t$-channel single-top-quark production.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_match_mass.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_match_eta.pdf}}
 }
 
-\todo{top quark matching performance
-(top pT/eta as function of b-tag in acceptance after selection, b-quark within dR, top within dR)}
 
 %##############################################
 \section{Boosted Decision Trees}
