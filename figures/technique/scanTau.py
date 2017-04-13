@@ -95,7 +95,7 @@ ROOT.gStyle.SetStatBorderSize(1)
 ROOT.gStyle.SetStatH(0.1)
 ROOT.gStyle.SetStatW(0.15)
 
-ROOT.gStyle.SetHatchesSpacing(0.8/math.sqrt(cvscale))
+ROOT.gStyle.SetHatchesSpacing(1.3/math.sqrt(cvscale))
 ROOT.gStyle.SetHatchesLineWidth(int(2*cvscale))
 
 # ROOT.gStyle.SetStaROOT.TStyle(Style_t style = 1001)
