@@ -198,13 +198,15 @@ The parton level corresponds to the intermediate and final state particles withi
 
 
 The spectator quark may radiate a gluon as shown exemplary. At \gls{nlo}, this can lead to an ambiguity if it is accounted
-
-ambigous at NLO, 4/5FS because of 2nd b-quark
+10:00
+ambigous at NLO, 4/5FS because of 2nd b-quark, lquark balances pT with top in case of extra quarks, show decay pictures from vispa in appendix
 
 \textit{''The unfortunate truth is that most of the event record is intended
 for generator debugging rather than physics interpretation''}~\cite{Buckley:2010ar}.
 
-
+\myfigure{\label{fig:technique-parton-example}Production and decay chain of an exemplary $t$-channel single-top-quark event at parton level as produced by \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}. Some intermediate state particles have been omitted or are not stored by the generator.}{
+\includegraphics[scale=0.75]{figures/technique/massiveRadiation.pdf}
+}
 
 \myfigure{\label{fig:technique-parton-muon}Distributions of the (a)~transverse momentum and (b)~pseudorapidity of the final state lepton produced in $t$-channel single top quark production at $13~\TeV$. The lines represent various decays of W~bosons into either direct muons/taus or into muons via intermediate tau decays. The distributions have been generated using \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_pt.pdf}}\hspace{0.03\textwidth}
@@ -239,17 +241,17 @@ Equation~\ref{eq:technique-fredholm} can be discretized and written as a matrix 
 \vec{y} = \widetilde{\mathcal{R}}\cdot\vec{x},\qquad \widetilde{\mathcal{R}}=\mathcal{A}\cdot\mathcal{E}\cdot\mathcal{R}\,, \label{eq:technique-folding}
 \end{equation}
 
-where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. An simple attempt to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ with a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. This results into solutions with large variance and high anticorrelations between bins which can be observed as oscillations~\cite{Cowan:2002in}. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model defined as
+where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. An simple attempt to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ through a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. This results into unstable solutions with large variance and high anticorrelations between bins which can be observed as oscillations~\cite{Cowan:2002in}. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model defined as
 
 \begin{subequations}
 \begin{align}
-g(x)&=\frac{1}{2}+0.44\cdot x\\
-R(y,x)&\propto\frac{1}{2}\cdot\frac{(x-y)^2}{\sigma^2}\,,
+g(x)&=\frac{1}{2}+A\cdot x\,,\qquad A=0.44\\
+R(y,x)&\propto\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(x-y)^2}{\sigma^2}\right)\,,\qquad \sigma=0.15\,,
 \end{align}
 \label{eq:technique-unfolding-test-model}
 \end{subequations}
 
-where a exemplary distribution $g$, similar to the expected distribution of the top-quark polarization angle at parton level, has been folded with a simple Gaussian smearing function $R$ using a resolution of $\sigma=0.15$. One can observe that small deviations~(dash-orange line) from the folded distribution~(violet markers) yields an unphysical, oscillating solution. Such small deviations may just reflect e.g. statistical fluctuations when unfolding data.
+where a exemplary distribution $g$, similar to the expected distribution of the top-quark polarization angle at parton level, has been folded with a simple Gaussian smearing function $R$. One can observe that small deviations~(dash-orange line) from the folded distribution~(violet markers) yields an unphysical, oscillating solution. Such small deviations may just reflect e.g. statistical fluctuations when unfolding data.
 
 \myfigure{\label{fig:technique-ill-unfolding}Exemplary unfolding of a distribution using a simple inversion of the response matrix: (a)~true distribution with overlaid unfolding results; (b)~the true distribution after folding and a sample of a corresponding statistical fluctuation.}{
 \subfloat[\label{fig:technique-ill-unfolding-true}]{\includegraphics[width=0.48\textwidth]{figures/technique/trueDist.pdf}}\hspace{0.03\textwidth}
