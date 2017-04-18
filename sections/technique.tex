@@ -45,6 +45,7 @@ Multiple samples of events with additional final state partons at matrix element
 %##############################################
 \section{Top quark reconstruction}
 %##############################################
+\label{sec:technique-topreco}
 
 After the reconstruction and selection of analysis objects, a top quark candidate is reconstructed in the presented analyses. Assuming that the top quark decayed leptonically as $\mathrm{t}\to\mathrm{b}\mathrm{W}\to\mathrm{b}\ell\nu$, its energy and momentum is reconstructed by summing the measured 4-momenta of a selected lepton (muon or electron), b-tagged jet, and neutrino candidate. The neutrino candidate itself is reconstructed from the missing transverse energy and the lepton momentum. This is performed by requiring a W~boson mass constraint of $m_\mathrm{W}=80.4~\GeV$~\cite{Olive:2016xmw} on their invariant mass as
 
@@ -169,7 +170,7 @@ is minimized which is however equivalent to maximizing Eq.~\ref{eq:technique-lik
 \begin{align}
 \hat{\sigma}_\mathrm{sig.}&=\frac{\hat{N}_\mathrm{sig.}}{A\cdot\epsilon\cdot{\textstyle{\int}L}}~,\quad
 \hat{N}_\mathrm{sig.}=\hat{\beta}_\mathrm{sig.}\cdot N_\mathrm{exp.}=\hat{\beta}_\mathrm{sig.}\cdot\underbrace{\sigma_\mathrm{\gls{sm}}\cdot\textstyle{\int}L}_\mathrm{norm.}\cdot \overbrace{A \cdot \epsilon}^\mathrm{sel./reco.}\nonumber\\
-&=\hat{\beta}_\mathrm{sig.}\cdot\sigma_\mathrm{\gls{sm}}
+&=\hat{\beta}_\mathrm{sig.}\cdot\sigma_\mathrm{\gls{sm}} \label{eq:technique-xsec-measurement}
 \end{align}
 
 where $A$ denotes the acceptance and $\epsilon$ the efficiency of the event selection and reconstruction which are intrinsically estimated through the simulated samples. For the background scale factors additional constraints are applied by adding log-normal priors to the likelihood as
@@ -188,9 +189,9 @@ In the fit, an extra uncertainty is considered to account for the limited accura
 \section{Parton and particle level observables}
 %##############################################
 
-Cross sections can be measured not only inclusively but also differentially in intervals of an observable. They offer the means to perform in-deep comparisons of data with theoretical predictions. Such measurements allow to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be sensitive to the coupling structure of a process and can thus be used to extract pseudo observables like the top-quark spin asymmetry which is sensitive to the polarization.
+Cross sections can be measured not only inclusively but also differentially in intervals of an observable. They offer the means to perform in-deep comparisons of data with theoretical predictions. Such measurements allow to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be sensitive to the coupling structure of a process and can thus be used to extract pseudo observables like the top-quark spin asymmetry which is sensitive to the polarization. However, a proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and in analytical calculations. There are two ``levels'', parton and particle level, at which physics objects of a process and related observables are typically defined. 
 
-A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined. The parton level encompasses the intermediate and final state particles within Feynman diagrams of a given process while not distinguishing between different initial states. In event generators, these partonic particles are produced as the hard interaction before hadronization. An exemplary event is shown in Fig~\ref{fig:technique-parton-example}. 
+The ``parton level'' encompasses the intermediate and final state particles within Feynman diagrams of a given process while not distinguishing between different initial states. In event generators, these partonic particles are produced as the hard interaction before hadronization. An exemplary event is shown in Fig~\ref{fig:technique-parton-example}. 
 
 \myfigure{\label{fig:technique-parton-example}Production and decay of an exemplary $t$-channel single-top-quark event in 4~\gls{fs} at parton level as produced by \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}. Some intermediate state particles and vertices are not stored by the generator. Copies of particles reflecting the exclusion or inclusion of boosts induced by \gls{qcd}/\gls{qed} radiations have been omitted.}{
 \includegraphics[scale=0.75]{figures/technique/massiveRadiation.pdf}
@@ -198,7 +199,7 @@ A proper comparison of differential cross sections can only be achieved if the c
 
 Some intermediate particles and vertices are not stored by the generator for simplicity but also due to the quantum nature of a process. Feyman diagrams corresponds to matrix elements while events are generated to follow the probability of the squared sum of various matrix elements which may also interfere which each other. Therefore, an event cannot be associated with absolute certainty to only one specific Feynman diagram. Nonetheless, various particles and observables can be defined unambiguously at parton level as detailed in the following.
 \begin{description}
-\item[Prompt leptons] Leptons which originate from direct decays of a W~boson that is associated to the hard interaction are  ``prompt'' to distinguish them from leptons produced in hadron decays. In $t$-channel single-top-quark production, about 15\% of the prompt muons or electrons originate from the decay of an intermediate tau lepton as exemplary also shown in Fig.~\ref{fig:technique-parton-example}. The fraction depends on the \pt threshold of the muon or electron as depicted in Fig.~\ref{fig:technique-parton-muon}. When selection electron or muons with a $\pt$ of at least $20~\GeV$, this fraction reduces to about 6\%.
+\item[Prompt leptons] Leptons which originate from decays of Z or W~bosons that are associated to the hard interaction are called ``prompt'' to distinguish them from leptons produced in hadron decays. In $t$-channel single-top-quark production, about 15\% of the prompt muons or electrons originate from the decay of an intermediate tau lepton as exemplary also shown in Fig.~\ref{fig:technique-parton-example}. The fraction depends on the \pt threshold of the muon or electron as depicted in Fig.~\ref{fig:technique-parton-muon}. When selection electron or muons with a $\pt$ of at least $20~\GeV$, this fraction reduces to about 6\%.
 \item[Prompt neutrino] Neutrinos are also required to be prompt. In the case of leptonically decaying taus, a prompt ``pseudo'' neutrino is defined by summing the 4-momenta of both neutrinos occurring in the decay.
 \item[Top quark] The partonic top quark is defined to be on-shell while accounting for \gls{qcd}/\gls{qed} radiations and the intrinsic $k_\mathrm{T}$ of the initial state partons which may boost the event in the transverse plane.
 \item[Spectator quark] The spectator quark is required to be produced in association with the single top quark, e.i. they have their ancestors in common as depicted in Fig.~\ref{fig:technique-parton-example}. Furthermore, the spectator quark has be a light flavored quark~(u,d,s,c) to distinguish it from a potential second b~quark occurring in 4~\gls{fs} production. At \gls{nlo}, the production of additional light quarks through \gls{isr} can lead to an ambiguity. In such cases, the quark which balances the transverse top quark momentum is chosen.
@@ -209,20 +210,29 @@ Some intermediate particles and vertices are not stored by the generator for sim
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_eta.pdf}}
 }
 
-Using these definitions, the polarization angle can be calculated. A comparison of its shape at parton level for the various lepton decays is presented in Fig.~\ref{fig:technique-parton-cosTheta}. The polarization is nearly identical for tau leptons compared to muons or electrons despite the larger lepton mass which conflicts with the helicity--chirality approximation. \todo{quote asymmetries} The distributions are distorts when requiring a $\pt$ for the prompt lepton resulting in a drop when the lepton and spectator quark are collinear in the top quark rest frame. This is demonstrated in Fig.~\ref{fig:technique-parton-cosTheta20} where the polarization angle is shown for events with $\pt(\mu)>20~\GeV$.
+Using these definitions, the polarization angle can be calculated. A comparison of its shape at parton level for the various lepton decays is presented in Fig.~\ref{fig:technique-parton-cosTheta}. The polarization is nearly identical for tau leptons compared to muons or electrons despite the larger tau mass. \todo{quote asymmetries} The distributions are distorts when requiring a minimum $\pt$ for the prompt lepton which results into a drop of the distribution at $\cos\theta^{*}_{\mu}\to 1$. This is demonstrated in Fig.~\ref{fig:technique-parton-cosTheta20} where the polarization angle is shown for events with $\pt(\mu)>20~\GeV$ only.
 
 \myfigure{\label{fig:technique-parton-cosTheta}Distributions of the polarization angle for $t$-channel single top quark production at $13~\TeV$: (a)~inclusive distribution; (b)~only events with $\pt(\mu)>20~\GeV$. The lines represent various decays of W~bosons into either muons/taus directly or via intermediate tau decays. The distributions have been generated using \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta.pdf}}\hspace{0.03\textwidth}
 \subfloat[\label{fig:technique-parton-cosTheta20}]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_lpt20.pdf}}
 }
 
-The other level at which observables are typically defined is the ``particle level''. Here, a similar event selection is performed on all generated particles after hadronization which have a mean lifetime of at least $30~\mathrm{ps}$. This allows to be close to the visible phase space of the detector. It is therefore also referred to as ``fiducial'' phase space. The advantage is that results are only quoted where they are valid. The extrapolation into the inclusive phase space is not required. Furthermore, intermediate particles stored by generators may not share the same definition across generator implementations. In the manual of the \RIVET program, where particle level measurements can be archived and compared to predictions by generators, the following statement about common parton-level outputs of generators can be found: \textit{''The unfortunate truth is that most of the event record is intended for generator debugging rather than physics interpretation''}~\cite{Buckley:2010ar}.
+The other level at which observables are can be defined is the ``particle level''. Here, an event selection similar to the one at reconstruction level is applied on the generated particles after hadronization. This allows to measure a distribution close to the visible phase space of the detector. It is therefore also referred to as ``fiducial'' measurement. The advantage is that an extrapolation into the inclusive phase space as it is intrinsically performed for parton level measurements (e.g. inclusive cross sections) is not required. Furthermore, when defining an observable at parton level, the utilized intermediate particles stored by generators may not follow the same rules across the various programs. In the manual of the \RIVET program, where particle-level measurements can be archived and compared to predictions by generators, the following statement about parton-level outputs can be found: ''\textsl{The unfortunate truth is that most of the event record is intended for generator debugging rather than physics interpretation}''~\cite{Buckley:2010ar}. Observables at particle level are on the other hand much less affected by such potential implementation-dependent differences since only stable particle with a mean lifetime of more than $30~\mathrm{ps}$ with a few extra information are used. A comparison of parton and particle level objects is shown in Fig.~\ref{fig:technique-parton-particle}. 
 
 \myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production. An additional gluon has been added as a final state radiation.}{
 \includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
 }
 
-dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging, rivet, 
+After hadronization, quarks and gluons appear as jets consisting of hadrons and non-prompt leptons at particle level. Charged leptons may radiate photons which are accounted for at particle level by clustering close-by photons with charged leptons. These are then referred to as ``dressed'' leptons. The performed clustering enables a universal treatment of \gls{qcd}/\gls{qed} radiations without utilizing information about intermediate particles in the decay chain which is more complicated at parton level (especially in the definition of the spectator quark) and may be generator-dependent as well. Detailed definitions of the analysis objects at particle level are provided in the following.
+
+\begin{description}
+\item[Dressed leptons] Photons which do not stem from hadron decays which are clustered with prompt muons or electrons if they are within $\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}<0.1$. A dressed lepton consists of exactly one charged lepton and any number of potential close-by photons.
+\item[Neutrinos] The 4-momenta of all prompt neutrinos are summed to define the missing transverse energy. To improve the agreement with the reconstructed neutrino candidate, the same algorithm as described in Sec.~\ref{sec:technique-topreco} is applied at particle level using a dressed lepton here to solve for the neutrino $p_{z}$ component.
+\item[Jets] Jet are clustered from stable particles excluding the ones used in the definition of the dressed leptons and neutrino. The anti-$k_\mathrm{T}$ algorithm with a distance of $R=0.4$ is employed at 13~TeV mimicking the jet size at reconstruction level.
+\item[Pseudo top quark]
+\end{description}
+
+dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging,
 
 
 
@@ -243,6 +253,20 @@ particle level overlap: tightMu: >99\%, 2jets: 80\%, 2j1t: 70\%
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_particle_mass.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_particle.pdf}}
 }
+
+
+
+
+
+
+
+The fiducial cross section can obtained from the inclusive cross section by modifying Eq.~\ref{eq:technique-xsec-measurement} as
+
+\begin{equation}
+\sigma_\mathrm{sig.}^\mathrm{fid.}=\frac{N_\mathrm{sig.}\cdot A_\mathrm{fid.}}{A_\mathrm{reco.}\cdot\epsilon_\mathrm{reco.}\cdot{\textstyle{\int}L}} =\sigma_\mathrm{sig.}^\mathrm{inc.}\cdot A_\mathrm{fid.}\,,
+\end{equation}
+
+where $A_\mathrm{fid.}$ denotes the acceptance of events in the fiducial phase space. Similar to the acceptance and efficiency of the event selection after reconstruction, it can be estimated from a sample of simulated signal events as $A_\mathrm{fid.}=N_\mathrm{fid.}/N_\mathrm{total}$. 
 
 %##############################################
 \section{Unfolding}
