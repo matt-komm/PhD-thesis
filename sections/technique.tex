@@ -188,27 +188,22 @@ In the fit, an extra uncertainty is considered to account for the limited accura
 \section{Parton and particle level observables}
 %##############################################
 
-Cross sections can be measured not only inclusively but also differentially in intervals of an observable. They offer the means to perform in-deep comparisons of data with theoretical predictions. The result of such measurements allows to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be sensitive to the coupling structure of a process and can thus be used to extract pseudo observables like the top quark polarization.
+Cross sections can be measured not only inclusively but also differentially in intervals of an observable. They offer the means to perform in-deep comparisons of data with theoretical predictions. Such measurements allow to assess the modeling and validity of event generators and analytical calculations. Furthermore, as detailed in Ch.~\ref{ch:top}, some differential cross sections can be sensitive to the coupling structure of a process and can thus be used to extract pseudo observables like the top-quark spin asymmetry which is sensitive to the polarization.
 
-A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined.
+A proper comparison of differential cross sections can only be achieved if the corresponding observable is well-defined and identical across generators and analytical calculations. There are two ``levels'' at which physics objects of a process and related observables are typically defined. The parton level encompasses the intermediate and final state particles within Feynman diagrams of a given process while not distinguishing between different initial states. In event generators, these partonic particles are produced as the hard interaction before hadronization. An exemplary event is shown in Fig~\ref{fig:technique-parton-example}. 
 
-The parton level corresponds to the intermediate and final state particles within Feynman diagrams of a given process while not distinguishing between different initial states. In event generators, these partonic particles are produced as the hard interaction before hadronization. An exemplary event is shown in Fig~\ref{fig:technique-parton-example}. Various effects can occur...
-
-
-
-The partonic top quark is defined to be on-shell while accounting for \gls{qcd}/\gls{qed} radiations and the intrinsic $k_\mathrm{T}$ of initial state partons which may boost the event in the transverse plane. Leptons which originate from direct decays of a W~boson are called ``prompt'' to distinguish them from additional leptons stemming from the hadronization of partons and their subsequent decays. \todo{check if ok} In about 15\%, the final state electron or muon originate from a leptonically decaying prompt tau lepton. These leptons are included into the definition of prompt leptons as well. For events with such decays, the neutrino object is defined as the 4-momentum sum of the both neutrinos from the W~boson decays. The fraction depends on the \pt threshold of the muon or electron as depicted in Fig.~\ref{fig:technique-parton-muon}. When selection electron or muons with a $\pt$ of at least $20~\GeV$ this the fraction of leptonically decaying tau leptons entering the selected phase space reduces to 6\%.
-
-\myfigure{\label{fig:technique-parton-example}Production and decay chain of an exemplary $t$-channel single-top-quark event at parton level as produced by \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}. Some intermediate state particles and vertices are not stored by the generator. Copies of particles reflecting the exclusion or the inclusion of boosts induced by \gls{isr} or \gls{fsr} have been omitted.}{
+\myfigure{\label{fig:technique-parton-example}Production and decay of an exemplary $t$-channel single-top-quark event in 4~\gls{fs} at parton level as produced by \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}. Some intermediate state particles and vertices are not stored by the generator. Copies of particles reflecting the exclusion or inclusion of boosts induced by \gls{qcd}/\gls{qed} radiations have been omitted.}{
 \includegraphics[scale=0.75]{figures/technique/massiveRadiation.pdf}
 }
 
-The spectator quark may radiate a gluon as shown exemplary. At \gls{nlo}, this can lead to an ambiguity if it is accounted
-
-ambigous at NLO, 4/5FS because of 2nd b-quark, lquark balances pT with top in case of extra quarks, show decay pictures from vispa in appendix
-
-\textit{''The unfortunate truth is that most of the event record is intended
-for generator debugging rather than physics interpretation''}~\cite{Buckley:2010ar}.
-
+Some intermediate particles and vertices are not stored by the generator for simplicity but also due to the quantum nature of a process. Feyman diagrams corresponds to matrix elements while events are generated to follow the probability of the squared sum of various matrix elements which may also interfere which each other. Therefore, an event cannot be associated with absolute certainty to only one specific Feynman diagram. Nonetheless, various particles and observables can be defined unambiguously at parton level as detailed in the following.
+\begin{description}
+\item[Prompt leptons] Leptons which originate from direct decays of a W~boson are called ``prompt'' to distinguish them from leptons produced in hadron decays. In $t$-channel single-top-quark production, about 15\% of the prompt muons or electrons originate from an intermediate prompt tau decay as exemplary also shown in Fig.~\ref{fig:technique-parton-example}. The fraction depends on the \pt threshold of the muon or electron as depicted in Fig.~\ref{fig:technique-parton-muon}. When selection electron or muons with a $\pt$ of at least $20~\GeV$ the fraction of leptonically decaying tau leptons entering the selected phase space reduces to 6\%.
+\item[Prompt neutrino] Neutrinos are selected using the same definition as for the prompt leptons. In the case of leptonically decaying taus, the prompt neutrino is defined as the summed 4-momentum of both neutrinos from the W~boson decays since this gives a better correspondence with the reconstructed \met.
+\item[Spectator quark] The spectator quark may radiate a gluon as shown exemplary. At \gls{nlo}, this can lead to an ambiguity if it is accounted
+lquark balances pT with top in case of extra quarks
+\item[Top quark] The partonic top quark is defined to be on-shell while accounting for \gls{qcd}/\gls{qed} radiations and the intrinsic $k_\mathrm{T}$ of the initial state partons which may boost the event in the transverse plane.
+\end{description}
 
 
 \myfigure{\label{fig:technique-parton-muon}Distributions of the (a)~transverse momentum and (b)~pseudorapidity of the final state lepton produced in $t$-channel single top quark production at $13~\TeV$. The lines represent various decays of W~bosons into either muons/taus directly or via intermediate tau decays. The distributions have been generated using \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}.}{
@@ -216,9 +211,18 @@ for generator debugging rather than physics interpretation''}~\cite{Buckley:2010
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/lepton_eta.pdf}}
 }
 
+A comparison of the polarization angle at parton level for the various lepton decays is presented in Fig.~\ref{fig:technique-parton-cosTheta}. ???cosTheta description, drop at 1!!!
+
 \myfigure{\label{fig:technique-parton-cosTheta}Distributions of the polarization angle for $t$-channel single top quark production at $13~\TeV$: (a)~inclusive distribution; (b)~only events with $\pt(\mu)>20~\GeV$. The lines represent various decays of W~bosons into either muons/taus directly or via intermediate tau decays. The distributions have been generated using \POWHEG{v2} interfaced with \MADSPIN and \PYTHIA{8}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_lpt20.pdf}}
+}
+
+\textit{''The unfortunate truth is that most of the event record is intended
+for generator debugging rather than physics interpretation''}~\cite{Buckley:2010ar}.
+
+\myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production. An additional gluon has been added as a final state radiation.}{
+\includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
 }
 
 dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging, rivet, drop of cosTheta at 1 through lepton pT cut
@@ -226,16 +230,10 @@ dressed leptons (cone algorithms associates photons to leptons but does not clus
 
 
 
-\myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production. An additional gluon has been added as a final state radiation.}{
-\includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
-}
-
-
-
 particle level overlap: tightMu: >99\%, 2jets: 80\%, 2j1t: 70\%
 
 
-\myfigure[phtb]{\label{fig:technique-particle-muon}Comparison of expected event densities for $1~\invfb$ at $13~\TeV$ after applying the event selection at reconstruction, particle, and parton level respectively:  (a)~muon $\pt$, (b)~muon rapidity, and (c)~number of jets after requiring one isolated and tight muon; (d)~number of b-tagged jets, (e)~$\pt$ and (f)~pseudorapidity of the spectator jet after requiring one isolated, tight muon and two jets where in (e,f) one jet is required to be b-tagged at reconstruction level in addition.}{
+\myfigure[phtb]{\label{fig:technique-particle-muon}Comparison of expected event densities for $1~\invfb$ at $13~\TeV$ after applying the event selection at reconstruction, particle, and parton level respectively:  (a)~muon $\pt$, (b)~muon rapidity, and (c)~number of jets after requiring one isolated and tight muon; (d)~number of b-tagged jets, (e)~$\pt$ and (f)~pseudorapidity of the spectator jet after requiring one isolated, tight muon and two jets where in (e,f) one jet is additionally required to be b-tagged at reconstruction level.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/muon_particle_logpt.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/muon_particle_abseta.pdf}}\\
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/njet_particle.pdf}}\hspace{0.03\textwidth}
