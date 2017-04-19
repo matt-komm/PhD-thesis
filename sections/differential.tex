@@ -2,3 +2,43 @@
 
 \section{BDT training}
 \label{sec:diff13-bdt}
+
+
+
+\section{Fiducial studies}
+\label{sec:diff13-fiducial-studies}
+
+\mytable{}{
+\begin{tabular}{|p{0.12\textwidth}|p{0.2\textwidth} p{0.3\textwidth} p{0.3\textwidth}|}
+\hline
+                & parton       & particle & reconstruction \\
+\hline
+muon selection  & prompt muon  & dressed lepton, $\pt>26~\GeV$, $|\eta|<2.4$ with muon core & isolated and tight muon, $\pt>26~\GeV$, $|\eta|<2.4$ \\
+\hline
+\end{tabular}
+}
+
+Figures~\ref{fig:technique-particle-level-muonpt} and~\ref{fig:technique-particle-level-muoneta} show a comparison of the muon $\pt$ and pseudorapidity at reconstruction, particle, and parton level after selecting events with one muon at each level respectively. The top panels demonstrate a high overlap of the events selected at reconstruction level with the ones at particle and parton level. The acceptance rises with the muon momentum from about 40\% to 90\% due to the relative isolation requirement for reconstructed muons. The number of jets is presented in Fig.~\ref{fig:technique-particle-level-njet}. Due to the jet energy scale correction, 
+
+
+dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging,
+
+
+
+
+particle level overlap: tightMu: >99\%, 2jets: 80\%, 2j1t: 70\%
+
+
+\myfigure[phtb]{\label{fig:technique-particle-level}Comparison of expected event densities for $1~\invfb$ at $13~\TeV$ after applying the event selection at reconstruction, particle, and parton level respectively:  (a)~muon $\pt$, (b)~muon rapidity, and (c)~number of jets after requiring one isolated and tight muon; (d)~number of b-tagged jets, (e)~$\pt$ and (f)~pseudorapidity of the spectator jet after requiring one isolated, tight muon and two jets where in (e,f) one jet is additionally required to be b-tagged at reconstruction level. Top panels show the common events selected at reconstruction level while the bottom panels display the acceptance.}{
+\subfloat[\label{fig:technique-particle-level-muonpt}]{\includegraphics[width=0.48\textwidth]{figures/technique/muon_particle_logpt.pdf}}\hspace{0.03\textwidth}
+\subfloat[\label{fig:technique-particle-level-muoneta}]{\includegraphics[width=0.48\textwidth]{figures/technique/muon_particle_abseta.pdf}}\\
+\subfloat[\label{fig:technique-particle-level-njet}]{\includegraphics[width=0.48\textwidth]{figures/technique/njet_particle.pdf}}\hspace{0.03\textwidth}
+\subfloat[\label{fig:technique-particle-level-nbjet}]{\includegraphics[width=0.48\textwidth]{figures/technique/nbjet_particle.pdf}}\\
+\subfloat[\label{fig:technique-particle-level-ljetpt}]{\includegraphics[width=0.48\textwidth]{figures/technique/ljet_particle_logpt.pdf}}\hspace{0.03\textwidth}
+\subfloat[\label{fig:technique-particle-level-ljeteta}]{\includegraphics[width=0.48\textwidth]{figures/technique/ljet_particle_eta.pdf}}
+}
+
+\myfigure[phtb]{\label{fig:technique-particle-top}Comparison of event selection at reconstruction and particle level.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_particle_mass.pdf}}\hspace{0.03\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_particle.pdf}}
+}

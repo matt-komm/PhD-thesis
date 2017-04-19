@@ -217,56 +217,30 @@ Using these definitions, the polarization angle can be calculated. A comparison 
 \subfloat[\label{fig:technique-parton-cosTheta20}]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_lpt20.pdf}}
 }
 
-The other level at which observables are can be defined is the ``particle level''. Here, an event selection similar to the one at reconstruction level is applied on the generated particles after hadronization. This allows to measure a distribution close to the visible phase space of the detector. It is therefore also referred to as ``fiducial'' measurement. The advantage is that an extrapolation into the inclusive phase space as it is intrinsically performed for parton level measurements (e.g. inclusive cross sections) is not required. Furthermore, when defining an observable at parton level, the utilized intermediate particles stored by generators may not follow the same rules across the various programs. In the manual of the \RIVET program, where particle-level measurements can be archived and compared to predictions by generators, the following statement about parton-level outputs can be found: ''\textsl{The unfortunate truth is that most of the event record is intended for generator debugging rather than physics interpretation}''~\cite{Buckley:2010ar}. Observables at particle level are on the other hand much less affected by such potential implementation-dependent differences since only stable particle with a mean lifetime of more than $30~\mathrm{ps}$ with a few extra information are used. A comparison of parton and particle level objects is shown in Fig.~\ref{fig:technique-parton-particle}. 
+The other level at which observables can be defined is the ``particle level''. Here, an event selection similar to the one at reconstruction level is applied on the generated particles after hadronization. This allows to measure a distribution close to the visible phase space of the detector. It is therefore also referred to as ``fiducial'' measurement. The advantage is that an extrapolation into the inclusive phase space as it is intrinsically performed for parton level measurements (e.g. inclusive cross sections) is not required. Furthermore, when defining an observable at parton level, the utilized intermediate particles stored by generators may not follow the same definitions across the various programs. The following statement about the  intermediate particles can be found in the manual of the \RIVET program: ''\textsl{The unfortunate truth is that most of the event record is intended for generator debugging rather than physics interpretation}''~\cite{Buckley:2010ar}. Particle-level observables are on the other hand much less affected by potential implementation-dependent differences. They are defined by utilizing only the final and stable particles produced by event generators and subsequent parton showers with a mean lifetime of more than $30~\mathrm{ps}$.
+
+A comparison of parton and particle level objects for $t$-channel single-top-quark production is shown in Fig.~\ref{fig:technique-parton-particle}. After hadronization, quarks and gluons appear as jets consisting of hadrons and non-prompt leptons at particle level. Charged leptons may radiate photons which are accounted for at particle level by clustering close-by photons with charged leptons. These are referred to as ``dressed'' leptons. The performed clustering enables a universal treatment of \gls{qcd}/\gls{qed} radiations without utilizing information about intermediate particles in the decay chain which is more complicated at parton level (especially in the definition of the spectator quark) and may be generator-dependent as well. Detailed definitions of the analysis objects at particle level used in this thesis are provided in the following.
 
 \myfigure{\label{fig:technique-parton-particle}A sketch of parton and particle level objects in $t$-channel single-top-quark production. An additional gluon has been added as a final state radiation.}{
 \includegraphics[scale=0.75]{figures/technique/fiducial.pdf}
 }
 
-After hadronization, quarks and gluons appear as jets consisting of hadrons and non-prompt leptons at particle level. Charged leptons may radiate photons which are accounted for at particle level by clustering close-by photons with charged leptons. These are then referred to as ``dressed'' leptons. The performed clustering enables a universal treatment of \gls{qcd}/\gls{qed} radiations without utilizing information about intermediate particles in the decay chain which is more complicated at parton level (especially in the definition of the spectator quark) and may be generator-dependent as well. Detailed definitions of the analysis objects at particle level are provided in the following.
-
 \begin{description}
-\item[Dressed leptons] Photons which do not stem from hadron decays which are clustered with prompt muons or electrons if they are within $\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}<0.1$. A dressed lepton consists of exactly one charged lepton and any number of potential close-by photons.
+\item[Dressed leptons] Photons which do not stem from hadron decays are clustered with prompt muons or electrons if they are within $\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}<0.1$. A dressed lepton consists of exactly one charged lepton and any number of potential close-by photons.
 \item[Neutrinos] The 4-momenta of all prompt neutrinos are summed to define the missing transverse energy. To improve the agreement with the reconstructed neutrino candidate, the same algorithm as described in Sec.~\ref{sec:technique-topreco} is applied at particle level using a dressed lepton here to solve for the neutrino $p_{z}$ component.
-\item[Jets] Jet are clustered from stable particles excluding the ones used in the definition of the dressed leptons and neutrino. The anti-$k_\mathrm{T}$ algorithm with a distance of $R=0.4$ is employed at 13~TeV mimicking the jet size at reconstruction level.
-\item[Pseudo top quark]
+\item[Jets] Jet are clustered from stable particles excluding the ones used in the definition of the dressed leptons and all neutrinos. The anti-$k_\mathrm{T}$ algorithm with a distance of $R=0.4$ is employed at 13~TeV mimicking the jet size at reconstruction level. The ``ghost'' b-tagging method~\cite{Cacciari:2008gn} where jet are tagged containing B-hadrons with rescaled momentum will not be used here since its high efficiency disagrees with the performance of the tagging algorithm at reconstruction level~(see Sec.~\ref{sec:diff13-fiducial-studies}).
+\item[Pseudo top quark] A pseudo top quark is reconstructed by combining the 4-momenta of a dressed lepton, a neutrino candidate, and a jet.
 \end{description}
 
-dressed leptons (cone algorithms associates photons to leptons but does not cluster close leptons), tau decays, jet clustering (no neutrinos/leptons), b-tagging,
-
-
-
-
-particle level overlap: tightMu: >99\%, 2jets: 80\%, 2j1t: 70\%
-
-
-\myfigure[phtb]{\label{fig:technique-particle-muon}Comparison of expected event densities for $1~\invfb$ at $13~\TeV$ after applying the event selection at reconstruction, particle, and parton level respectively:  (a)~muon $\pt$, (b)~muon rapidity, and (c)~number of jets after requiring one isolated and tight muon; (d)~number of b-tagged jets, (e)~$\pt$ and (f)~pseudorapidity of the spectator jet after requiring one isolated, tight muon and two jets where in (e,f) one jet is additionally required to be b-tagged at reconstruction level.}{
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/muon_particle_logpt.pdf}}\hspace{0.03\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/muon_particle_abseta.pdf}}\\
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/njet_particle.pdf}}\hspace{0.03\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/nbjet_particle.pdf}}\\
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/ljet_particle_logpt.pdf}}\hspace{0.03\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/ljet_particle_eta.pdf}}
-}
-
-\myfigure[phtb]{\label{fig:technique-particle-top}Comparison of event selection at reconstruction and particle level.}{
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/top_particle_mass.pdf}}\hspace{0.03\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/technique/cosTheta_particle.pdf}}
-}
-
-
-
-
-
-
-
-The fiducial cross section can obtained from the inclusive cross section by modifying Eq.~\ref{eq:technique-xsec-measurement} as
+After applying a suitable selection on the particle level objects, the fiducial cross section can obtained from the inclusive cross section by modifying Eq.~\ref{eq:technique-xsec-measurement} as
 
 \begin{equation}
 \sigma_\mathrm{sig.}^\mathrm{fid.}=\frac{N_\mathrm{sig.}\cdot A_\mathrm{fid.}}{A_\mathrm{reco.}\cdot\epsilon_\mathrm{reco.}\cdot{\textstyle{\int}L}} =\sigma_\mathrm{sig.}^\mathrm{inc.}\cdot A_\mathrm{fid.}\,,
 \end{equation}
 
-where $A_\mathrm{fid.}$ denotes the acceptance of events in the fiducial phase space. Similar to the acceptance and efficiency of the event selection after reconstruction, it can be estimated from a sample of simulated signal events as $A_\mathrm{fid.}=N_\mathrm{fid.}/N_\mathrm{total}$. 
+where $A_\mathrm{fid.}$ denotes the acceptance of events. Similar to the acceptance and efficiency of the event selection at reconstruction level, it can be estimated from a sample of simulated signal events as $A_\mathrm{fid.}=N_\mathrm{fid.}/N_\mathrm{total}$. 
+
+
 
 %##############################################
 \section{Unfolding}
@@ -391,10 +365,6 @@ provides a suitable trade-off as indicated by the black solid curve for choosing
 \subfloat[\label{fig:technique-tauscan-result}]{\includegraphics[width=0.48\textwidth]{figures/technique/unfoldDist.pdf}}
 }
 
-\todo{coverage}
-
-
-
-In conclusion, unfolding is an ill-posed problem which requires regularization to obtain meaningful results that are stable against statistical fluctuations. The \TUNFOLD package regularizes the unfolding by suppressing solutions with large curvatures. This procedure induces however bin-by-bin correlations. By adjusting the regularization strength to the minimum of the average global correlation coefficient in such a way that the to the minimum of \todo{???}
+In conclusion, unfolding is an ill-posed problem which requires regularization to obtain meaningful results that are stable against statistical fluctuations. The \TUNFOLD package regularizes the response matrix by suppressing solutions with large curvatures. The procedure induces bin-by-bin correlations as a function of the amount of regularization. A trade-off between large correlations is achieved by adjusting the regularization strength to the minimum of the average global correlation coefficient.
 
 
