@@ -4,7 +4,27 @@
 
 The strategy to measure the top quark spin asymmetry is as follows. After event selection, two \glspl{bdt} are trained. The first one is optimized to reject events with fake leptons stemming from multijet production. The second \gls{bdt} is then trained to separate signal from \wjets and \ttbar events. 
 
-\myfigure{}{
+
+
+
+
+\section{Simulated samples and event selection}
+
+separating, W+HF, W+LF
+categorization (2j0t,2j1t,...)
+QCD estimation
+
+\myfigure{\label{fig:polarization-categorization}Categorization of events depending on number of selected jets, number of b-tags, and the signal \gls{bdt} discriminant.}{
+\includegraphics[scale=0.75]{figures/polarization/regions.pdf}
+}
+
+all plots scaled to fit result unless stated otherwise
+
+
+\section{Training of Boosted Decision Trees}
+
+
+\myfigure{\label{fig:polarization-qcdbdt-inputs}Distributions of \gls{bdt} input observables, (a)~missing transverse energy, (b)~top quark mass, (c)~transverse W~boson mass, (d)~untagged jet $\pt$, (e)~isotropy; and (f)~the distribution of the final \gls{bdt} discriminant for rejecting multijet events.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_met_qcdnone_nol.pdf}}
 \hspace{0.017\textwidth}
 \subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_top_mass_qcdnone.pdf}}\\
@@ -16,18 +36,17 @@ The strategy to measure the top quark spin asymmetry is as follows. After event 
 \subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_bdt_qcd_qcdnone.pdf}}
 }
 
-
-\section{Simulated samples and event selection}
-
-separating, W+HF, W+LF
-categorization (2j0t,2j1t,...)
-
-\myfigure{\label{fig:polarization-categorization}Categorization of events depending on number of selected jets, number of b-tags, and the signal \gls{bdt} discriminant.}{
-\includegraphics[scale=0.75]{figures/polarization/regions.pdf}
+\myfigure{\label{fig:polarization-signalbdt-inputs}Distributions of input observables used in the training of the \gls{bdt} discriminant for separating signal from \wjets and \ttbar events.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_ljet_abseta_qcdbdt_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_bjet_abseta_qcdbdt.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_bjet_mass_qcdbdt_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_bjet_pt_qcdbdt.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_shat_logmass_qcdbdt_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_hfs_logpt_qcdbdt.pdf}}
 }
-
-\section{Training of Boosted Decision Trees}
-
 
 %choice of variables, correlation tests
 
