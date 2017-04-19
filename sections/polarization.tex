@@ -1,13 +1,33 @@
-\chapter{Polarization of single top quarks in t~channel at 8~TeV}
+\chapter{Polarization of single top quarks in \textsl{t}~channel at 8~TeV}
 
-\intro{A first measurement of the top quark spin asymmetry in t~channel is presented which is related to the top quark polarization.  Proton-proton collision data are analyzed corresponding to about $\mathit{20~fb^{-1}}$. Events with an isolated muon or electron are selected together with two or three jets. A region enriched in single top quark events is selected by employing two \glspl{bdt}. The normalized differential cross section is measured as a function of the polarization angle. For the shape, a spin asymmetry of $\mathit{0.26\pm0.03~(stat)\pm0.10~(syst)}$ is obtained. This is found to be compatible within 2.0 standard deviations with the expected \gls{sm} asymmetry of $\mathit{0.44}$. In a further step, the derivation of limits on anomalous couplings is illustrated by combining this measurement with related ones.}
+\intro{A first measurement of the top quark spin asymmetry in t~channel, related to the top quark polarization, is presented in this chapter. Proton-proton collision data at $\mathit{\sqrt{s}=8}$~TeV have been analyzed corresponding to about $\mathit{20~fb^{-1}}$. Events with an isolated muon are selected together with two or three jets for the final measurement while events containing an isolated electron and jets have been studied as well. The normalized differential cross section is measured as a function of the polarization angle. From its shape, a spin asymmetry of $\mathit{0.26\pm0.03~(stat)\pm0.10~(syst)}$ is obtained. This is found to be compatible within $\mathit{2.0}$ standard deviations with the expected \gls{sm} asymmetry of $\mathit{0.44}$. The result has been published in Ref.~\cite{Khachatryan:2015dzz}. In a further step, the derivation of limits on anomalous couplings is illustrated by combining this measurement with related ones.}
 
-%overview of analysis strategy
+The strategy to measure the top quark spin asymmetry is as follows. After event selection, two \glspl{bdt} are trained. The first one is optimized to reject events with fake leptons stemming from multijet production. The second \gls{bdt} is then trained to separate signal from \wjets and \ttbar events. 
+
+\myfigure{}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_met_qcdnone_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_top_logmass_qcdnone.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_mtw_qcdnone_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_ljet_pt_qcdnone.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_isotropy_qcdnone_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_bdt_qcd_qcdnone.pdf}}
+}
+
 
 \section{Simulated samples and event selection}
 
+separating, W+HF, W+LF
+categorization (2j0t,2j1t,...)
+
+\myfigure{\label{fig:polarization-categorization}Categorization of events depending on number of selected jets, number of b-tags, and the signal \gls{bdt} discriminant.}{
+\includegraphics[scale=0.75]{figures/polarization/regions.pdf}
+}
 
 \section{Training of Boosted Decision Trees}
+
 
 %choice of variables, correlation tests
 
@@ -15,14 +35,27 @@
 
 \section{W+jet modeling}
 
+\section{Validation}
+
+cosTheta, cosWhel, top mass in SR/CR, 2j0t,3j1t
+
 \section{Unfolding}
 
-%bdt cut, neyman construction
+bdt cut, neyman construction
 
 \section{Statistical evaluation}
 
+Q-scale reweighting, chi2 fit
+
 \section{Results}
+
+\myfigure{}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/polarization/result/unfolded_mu_top.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/polarization/result/unfolded_mu_antitop.pdf}}\\
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/polarization/result/unfolded_mu.pdf}}
+}
 
 \section{Limits on anomalous couplings}
 
-%topfit
+topfit
