@@ -11,29 +11,61 @@ An overview of the strategy to measure the top quark spin asymmetry and derive l
 
 Proton-proton collision data at $\sqrt{s}=8~\TeV$ are analyzed corresponding to $19.7~\invfb$ recorded with the \gls{cms} experiment in 2012. Events are triggered on the presence of a single muon or electron candidate. The employed single muon trigger requires isolated muon candidates with $\pt>24~\GeV$ which fall within the pseudorapidity range of $|\eta|<2.1$. The single electron trigger fires when an electron candidate with $\pt>27~\GeV$ within $|\eta|<2.5$ is detected which has to fulfill some quality criteria in addition corresponding to an efficiency of 80\% for prompt electrons. Motivated by the decay mode of the W~boson under the signal hypothesis, the events are categorized into ``channels'' depending if they have been triggered with the muon or electron trigger. In the analysis, events in the muon channel have to contain one muon candidate with $\pt>26~\GeV$ within $|\eta|<2.1$ that passes the tight identification requirements. In the electron channel, events considered for analysis have to contain one electron candidate with $\pt>30~\GeV$ within $|\eta|<2.5$ that fulfills the tight \gls{mva}-based  identification. To suppress fake leptons from multijet production, the muon candidate has to have a relative \gls{deltabeta}-based isolation of $\muiso<12\%$ while the electron candidate has to have a relative \gls{effarea}-based isolation of $\eiso<10\%$. Events containing additional muons~($\pt>10~\GeV$, $|\eta|<2.5$) or electrons~($\pt>20~\GeV$, $|\eta|<2.5$) which pass corresponding loose identification criteria are rejected to suppress contributions from \zjets and dileptonic \ttbar production. 
 
-Jets are clustered from \gls{pf} candidates with the anti-\kt algorithm using a distance parameter of $R=0.5$ while applying the \gls{chs} technique to remove the contamination of pileup tracks. The reconstructed jet energy in data and simulation and the energy resolution in simulation are calibrated through dedicated \gls{jec} and \gls{jer} scale factors. Events containing two or three jets with $\pt>40~\GeV$ that are detected within $|\eta|<4.5$ and pass loss identification criteria are considered for analysis. Tagging of jets which likely originated from the hadronization of a b~quark is performed with the \gls{csv} algorithm. At its tight working point an efficiency of about 50\% for tagging true b~jets is found in simulation with a mistagging rate of 0.1\% for other jets. The b-tagging efficiency is reweighted in simulation through scale factors to match the one measured in data. More details about the employed analysis objects, identification, and corrections are described in Ch.~\ref{ch:reconstruction}.
+Jets are clustered from \gls{pf} candidates with the anti-\kt algorithm using a distance parameter of $R=0.5$ while applying the \gls{chs} technique to remove the contamination of pileup tracks. \gls{pf} candidates belonging to preselected loosely isolated muons are not clustered into the jets to prevent double counting. In addition, jets which are within $\Delta R<0.3$ to the previous selected tight lepton are ignored in the analysis. The reconstructed jet energy in data and simulation and the energy resolution in simulation are calibrated through dedicated \gls{jec} and \gls{jer} scale factors. Events containing two or three jets with $\pt>40~\GeV$ that are detected within $|\eta|<4.5$ and pass loss identification criteria are considered for analysis. Tagging of jets which likely originated from the hadronization of a b~quark is performed with the \gls{csv} algorithm. Such jets are restricted to $|\eta|<2.4$ since the b-tagging algorithm operates only within the acceptance of the inner tracking system. An efficiency of about 50\% for tagging true b~jets with a mistagging rate of 0.1\% for other jets is found in simulation using the tight b-tagging working point. The b-tagging efficiency is reweighted in simulation through scale factors to match the one measured in data. More details about the employed analysis objects, identification, and corrections are described in Ch.~\ref{ch:reconstruction}.
 
-Events are categorized as shown in Fig.~\ref{fig:polarization-categorization}. The different regions are labeled as ``$N\,\mathrm{j}~M\,\mathrm{t}$'' where $N$ denotes the number of selected jets and $M$ the subset of jets which are also b-tagged. The 2j1t region which contains the majority of signal events is additionally split in two parts based on a \gls{bdt} discriminant. It has been trained to separate signal from background events as described later in Sec~\ref{sec:polarization-bdt-training} which allows to define an additional control region for events with $\bdttch<0$. The analysis has been carried out to be blind to the signal region while validating the background modeling and optimizing the strategy by comparing to data in the control regions only. Then, the signal regions has been unblinded and the measurement is carried out while refraining from any further optimizations. This blinding procedure prevents to bias the measurement which could occur when performing a result-driven fine tuning of the analysis strategy.
+Events are categorized as shown in Fig.~\ref{fig:polarization-categorization}. The different regions are labeled as ``$N\,\mathrm{j}~M\,\mathrm{t}$'' where $N$ denotes the number of selected jets and $M$ the subset of jets which are also b-tagged. The 2j1t region, which contains the majority of signal events, is additionally split in two parts based on the value of a \gls{bdt} discriminant. A \gls{bdt} is trained to separate signal from background events as described later in Sec~\ref{sec:polarization-bdt-training} which allows to define an additional background-dominated control region for events with low \gls{bdt} output values. The analysis was developed by validating the background modeling and optimizing the strategy by comparing to data in the control regions only. During this process, data in the signal region has not been used. This procedure is commonly referred to as ``blinding''. After the strategy is fixed the final measurement is conducted by unblinding the signal region while refraining from any further optimizations. The blinding procedure prevents a result-driven tuning of the analysis strategy which could bias the measurement.
 
-\myfigure{\label{fig:polarization-categorization}Categorization of events depending on number of selected jets, number of b-tags, and the signal \gls{bdt} discriminant.}{
+\myfigure{\label{fig:polarization-categorization}Categorization of events depending on number of selected jets, number of b-tags, and the signal \gls{bdt} discriminant. The filled regions are utilized in a \gls{ml} fit to extract the amount of signal~(Sec.~\ref{sec:polarization-fit}).}{
 \includegraphics[scale=0.75]{figures/polarization/regions.pdf}
 }
 
-\myfigure{\label{fig:polarization-topmass-control}Distributions of the reconstructed top quark mass in control regions: .}{
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j0t/muon_2j0t_top_mass_qcdnone_nol.pdf}}
-\hspace{0.017\textwidth}
-\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_top_mass_qcdnone.pdf}}\\
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/3j1t/muon_3j1t_top_mass_qcdnone_nol.pdf}}
-\hspace{0.017\textwidth}
-\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/3j2t/muon_3j2t_top_mass_qcdnone.pdf}}
+Various samples of simulated events for signal and background processes are generated. The default signal sample is generated in 5~\gls{fs} using the \POWHEG\,v1 generator interfaced with \PYTHIA\,6 for parton showering and \TAUOLA for tau decays. For comparisons, two additional, alternative signal samples are generated. One utilizes the \AMC generator interfaced with \PYTHIA\,8 in 4~\gls{fs} while the other employs the \COMPHEP generator interfaced with \PYTHIA\,6. A set of special samples with anomalous Wtb couplings is generated as well using the \COMPHEP generator for testing the analysis strategy. Samples containing single top quark events produced via tW and $s$~channel are generated with \POWHEG\,v1 interfaced with \PYTHIA\,6 and \TAUOLA. The major background processes, \wjets, \zjets, and \ttbar, are generated with the \MG generator interfaced with \PYTHIA\,6 and \TAUOLA as well. Samples with up to three~(\ttbar) or four~(\wjets,\zjets) additional partons at \gls{me} level are merged together using the \gls{mlm} merging procedure. For \wjets production, an alternative sample generated with \SHERPA~\cite{Hoeche:2012ft} is employed for validation purposes. In this thesis, \wjets events are categorized based on their jet flavor content. Events with at least one heavy-quark flavored jet from either c, or b~quarks are referred to as ``\gls[]{whf}'' while events with only light-quark flavored jets~(g,u,d,s) are labeled as ``\gls[]{wlf}'' instead. Diboson production~(WW,WZ,ZZ) is a minor background and simulated with \PYTHIA\,6. The cross sections used to normalize the samples are listed in Tab.~\ref{tab:polarization-theo-xsecs}.
+
+
+\mytable{\label{tab:polarization-theo-xsecs}Theoretical cross sections used to normalize the simulated samples.}{
+\begin{tabular}{|l  r c l |}
+\hline
+process & $\sigma/\pb$ &\hspace{0.1cm} & accuracy \\
+\hline
+$t$~channel & $87.1~\pb$ & & approx. \gls{nnlo}~\cite{Kidonakis:2012db} \\
+$s$~channel & $5.55~\pb$ && approx. \gls{nnlo}~\cite{Kidonakis:2012db}  \\
+tW~channel & $22.2~\pb$ && approx. \gls{nnlo}~\cite{Kidonakis:2012db} \\
+\ttbar & $252.9~\pb$ && \gls{nnlo} (using Top++\,2.0~\cite{Czakon:2011xx}) \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,jets}$ & $37\,509~\pb$ && \gls{nnlo} (using FEWZ~\cite{Gavin:2010az}) \\
+$\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ & $3\,504~\pb$ && \gls{nnlo} (using FEWZ~\cite{Gavin:2010az}) \\
+WW & $54.8~\pb$ && \gls{nlo} (using MCFM\,5.8~\cite{Campbell:2010ff})\\
+WZ & $33.2~\pb$ && \gls{nlo} (using MCFM\,5.8~\cite{Campbell:2010ff})\\
+ZZ & $8.1~\pb$ && \gls{nlo} (using MCFM\,5.8~\cite{Campbell:2010ff})\\
+\hline
+\end{tabular}
+}
+
+The fake muon background stemming from multijet production is estimated from a data sideband region. For this the lepton isolation requirement is inverted. The distribution of data serves as a template of the shape of multijet production after subtracting the remaining contamination by other processes. Figure~\ref{fig:polarization-qcd-template} shows the distribution of the transverse W~boson mass in this sideband region and the resulting multijet template after it has been fitted to data in the 2j1t signal+control region. The extracted template yields a good description of the unknown multijet shape in the signal region after the fit.
+
+\myfigure{\label{fig:polarization-qcd-template}Distributions of the transverse W~boson mass in muon channel: (a)~antiisolated sideband region for extracting the multijet template; (b)~resulting description after fitting the template to data in the 2j1t signal+control region.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_mtw_qcdnone_antiiso_nol.pdf}}\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_mtw_qcdnone.pdf}}
+}
+QCD estimation/fit/result
+all plots scaled to fit result unless stated otherwise
+
+
+Distributions of the reconstructed top quark mass in control regions are shown in Fig.~\ref{fig:polarization-topmass-control-mu}. A fair agreement of between data and simulation is observed. In the control regions containing no or more than one b-tagged jet, the jet with the highest value of the \gls{csv} discriminant decides which jet is associated to the top quark decay.
+
+
+
+\myfiguresideways{}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j0t/muon_2j0t_top_mass_qcdnone_nol.pdf}}\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_top_mass_qcdnone_nol.pdf}}\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/3j1t/muon_3j1t_top_mass_qcdnone.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j0t/muon_2j0t_top_mass_qcdnone_nol.pdf}}\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/2j1t/muon_2j1t_top_mass_qcdnone_nol.pdf}}\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/3j1t/muon_3j1t_top_mass_qcdnone.pdf}}
 }
 
 
-QCD estimation/fit/result
 
 
-all plots scaled to fit result unless stated otherwise
-separating W+HF, W+LF
 
 \todo{make top mass plot in CR wo QCDBDT}
 
@@ -67,13 +99,21 @@ separating W+HF, W+LF
 \subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/2j1t/muon_2j1t_hfs_logpt_qcdbdt.pdf}}
 }
 
-%choice of variables, correlation tests
+choice of variables, correlation tests
+
+\section{Background modeling}
+
+wjets: flavor, cosTheta (sherpa)
+ttbar: top pt -> modifies mass
+
+
 
 \section{Signal extraction}
+\label{sec:polarization-fit}
 
-ml fit
+ml fit 
 
-\section{W+jet modeling}
+
 
 \section{Validation}
 
@@ -104,10 +144,10 @@ combine: t-channel 8TeV~\cite{Khachatryan:2014iya}, Whelicity at 8TeV~\cite{Khac
 
 
 \myfigure{\label{fig:polarization-limits}sdfs dgfsdfg dfgdfg dsfgdfg sdfg sdfg dsfgdsf gsdf gsd fgdsfgsd fgds fg dsfg d sgfg dsfg dsf gdsf gdsf gsdfg sdfgds fg}{
-\subfloat[]{\adjincludegraphics[height=4.55cm,trim={0 0 {0.25\width} 0},clip]{figures/polarization/limits/Ptvl-nol.pdf}}
-\hspace{0.017\textwidth}
-\subfloat[]{\adjincludegraphics[height=4.55cm,trim={0 0 {0.05\width} 0},clip]{figures/polarization/limits/Ptvr.pdf}}\\
-\subfloat[]{\adjincludegraphics[height=4.55cm,trim={0 0 {0.25\width} 0},clip]{figures/polarization/limits/Ptgl-nol.pdf}}
-\hspace{0.017\textwidth}
-\subfloat[]{\adjincludegraphics[height=4.55cm,trim={0 0 {0.05\width} 0},clip]{figures/polarization/limits/Ptgr.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.55cm,trim={0 0 {0.195\width} 0},clip]{figures/polarization/limits/Ptvl-nol.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.55cm,trim={0 0 {0.0\width} 0},clip]{figures/polarization/limits/Ptvr.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.55cm,trim={0 0 {0.195\width} 0},clip]{figures/polarization/limits/Ptgl-nol.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.55cm,trim={0 0 {0.0\width} 0},clip]{figures/polarization/limits/Ptgr.pdf}}
 }

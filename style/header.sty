@@ -101,6 +101,8 @@
 \usepackage[export]{adjustbox} %clip figures
 \usepackage{mdframed}
 \usepackage{verse}
+\usepackage{rotating}
+\usepackage{pdflscape}
 \usepackage{tikz} %for drawing
 \usetikzlibrary{calc,shapes,matrix}
 \usepackage{multirow}
@@ -344,6 +346,18 @@
     \end{minipage}
     \end{figure}
 }
+
+\newcommand{\myfiguresideways}[3][htb]{
+    \begin{sidewaysfigure}[#1]
+    \centering
+    \begin{minipage}[c]{0.93\textwidth}
+    \centering
+    #3
+    \caption{#2}
+    \end{minipage}
+    \end{sidewaysfigure}
+}
+
 
 %references font
 %\renewcommand\theremark{{\itshape\thesection\arabic{remark}}\reset@font}

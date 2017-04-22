@@ -187,6 +187,8 @@ After reconstruction, secondary vertices are subjected to pass certain quality c
 
 The \glshere{csv} algorithm is employed in the 8~TeV~(Run~1) and first 13~TeV~(\gls{csv}v2) analyses within this thesis.  At their tight working points, a b-tagging efficiency of approximately 50\% with a misidentification probability of only 0.1\% is achieved. A new algorithm, called \glshere{cmva}, is utilized in the analysis of 13~TeV data recorded in 2016. It combines the output of various other b-tagging algorithms which includes also the \gls{csv} discriminant. Additionally, the results of \gls{mva} discriminators trained to identify low-$\pt$ electrons or muons inside a jet for b-tagging are taken as inputs as well. The final \gls{cmva} discriminant exhibits an improved rejection of charm and light quark jets compared to the other algorithms as shown in Fig.~\ref{fig:reconstruction-btagging-algo}~\cite{CMS-PAS-BTV-15-001}.
 
+\todo{mention that b-tagging operates only within the acceptance of the inner tracking system}
+
 The b-tagging efficiency in simulation typically deviates somewhat from the one observed in data. To correct this, efficiency scale factors $\epsilon_\mathrm{b}^\mathrm{data}/\epsilon_\mathrm{b}^\mathrm{sim.}$ are derived from data and applied to simulation. Multiple methods are used to measure the scale factors in either multijet data events, which are enriched with heavy-flavored jets by requiring close-by muons, or in events with two leptons and two jets yielding a $\ttbar$-enriched sample~\cite{CMS-PAS-BTV-13-001}. A weight is calculated for each simulated jet based on the ratio of probabilities between simulation and data that the jet was tagged, i.e. its b-tagging discriminant is past a working point. For multiple working points the weight can be expressed as
 
 \begin{align}
@@ -196,6 +198,8 @@ s^\mathrm{jet}_{i}\cdot\epsilon^\mathrm{jet}_{i}-s^\mathrm{jet}_{i+1}\cdot\epsil
 \end{align}
 
 where $d^\mathrm{jet}$ denotes the value of the b-tagging discriminant, $W_{i}$ the working points $i=0\ldots N$, $\epsilon_i$ the efficiency measured in simulation, and $s_i$ the corresponding scale factors. In this equation, the scale factors and efficiencies for untagged jets ($i=0$) are set to $s_{0}=\epsilon_{0}=1$ whereas the efficiency past the highest working point $W_N$ is set to $\epsilon_{N+1}=0$. An event is reweighted by the multiplied weights from all jets passing the selection. The efficiencies and scale factors themselves depend on the reconstructed jet $\pt$, $\eta$ and flavor, where the latter is determined from the decay and hadronization history of a matched true jet. In the case no true jet can be matched (e.g. the reconstructed jet is driven by \gls{pf} candidates from pileup interactions) a light flavor~(g,u,d,s) is assumed.
+
+
 
  
 %##############################################
