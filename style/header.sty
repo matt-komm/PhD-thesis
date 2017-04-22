@@ -1,7 +1,7 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-\usepackage[a4paper,total={12cm,20cm},headsep=12pt,headheight=12pt,footskip=8pt,centering,includehead]{geometry}
+\usepackage[a4paper,total={12cm,20cm},headsep=14pt,headheight=12pt,footskip=8pt,centering,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \usepackage[nouppercase]{scrpage2}
 \usepackage{ifthen}
@@ -190,7 +190,7 @@
  % Main (level 0) entries displayed in a row:
   \renewcommand*{\glossaryentryfield}[5]{%
     \begin{nobreak}
-    \item[\glstarget{##1}{\textbf{##2}}] ##3 \hspace{0.5em} ##5
+    \item[\glstarget{##1}{\boldmath{\textbf{##2}}}] ##3 \hspace{0.5em} ##5
     \end{nobreak}
     %\glstarget{##1}\boldmath{\textbf{##2}} \hspace{0.3em} ##3 \hspace{0.5em} ##5%\\[0.0\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip]
 }
@@ -450,9 +450,9 @@
 
 \newcommand{\setupTextStyle}{
     \setlength{\parindent}{0.cm} %Absatzeinzug
-    \setlength{\parskip}{0.4\baselineskip plus 0.15\baselineskip minus 0.02\baselineskip}
+    \setlength{\parskip}{0.25\baselineskip plus 0.15\baselineskip minus 0.05\baselineskip}
     %\setlength{\parsep}{0cm}
-    \renewcommand{\baselinestretch}{1.095}\normalsize
+    \renewcommand{\baselinestretch}{1.1}\normalsize
 
 
     %formel abstände 

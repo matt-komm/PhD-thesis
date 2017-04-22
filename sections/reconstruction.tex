@@ -98,7 +98,7 @@ The global muon fit is required to included at least one valid hit in the muon c
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/reconstruction/muon_ideta.png}}
 }
 
-Muon candidates in the analyses of single top quark production within this thesis are required to be spatially isolated from \gls{em} and hadronic activity in addition to the tight identification criteria. The relative ``delta-beta'' corrected isolation for muons is defined as
+Muon candidates in the analyses of single top quark production within this thesis are required to be spatially isolated from \gls{em} and hadronic activity in addition to the tight identification criteria. The relative ``delta-beta'' corrected isolation~(\gls[]{deltabeta}) for muons is defined as
 
 \begin{equation}
 I_\mathrm{rel.}^{\mu}=\frac{I_\text{ch.-had.}+\max\left(0,~I_{\gamma}+I_\text{neut.-had.}-\beta\cdot I_\text{\gls{pu}}\right)}{\pt^\mu},\qquad \beta=\frac{1}{2}
@@ -120,7 +120,7 @@ A \gls{pf} electron candidate with a \gls{gsf} track is required. Candidates wit
 \includegraphics[width=0.65\textwidth]{figures/reconstruction/electron_idpt1.pdf}
 }
 
-An electrons candidate is also required to be isolated from other \gls{em}/hadronic activity in its vicinity. The relative ``effective area'' isolation for electrons is defined as
+An electrons candidate is also required to be isolated from other \gls{em}/hadronic activity in its vicinity. The relative ``effective area'' isolation~(\gls[]{effarea}) for electrons is defined as
 
 \begin{equation}
 I_\mathrm{rel.}^\mathrm{e}=\frac{I_\text{ch.-had.}+\max\left(0,~I_{\gamma}+I_\text{neut.-had.}-\rho\cdot A_\text{eff.}\right)}{\pt^\mathrm{e}}
@@ -132,8 +132,9 @@ where the transverse energies $I_{X}$ per particle type $X$ are summed in a cone
 %##############################################
 \section{Jets}
 %##############################################
+\label{sec:reconstruction-jets}
 
-Jets are clustered from \gls{pf} candidates where however charged hadrons that are associated to pileup vertices are ignored. This procedure is referred to as \glshere{chs} technique~\cite{CMS-PAS-JME-14-001}. In addition, preselected isolated muons or electrons can be excluded from the jet clustering as well to prevent double counting of their momenta. For example, when studying the decay $\mathrm{t}\to \mathrm{b}\mu\nu$ it should be prevented that a selected muon candidate is clustered inside the b~quark jet as well. This approach has been chosen in the reconstruction of 8~TeV data while for 13~TeV data a minimal $\Delta R$ distance between the final leptons and jets for analysis is required. Jet are clustered using the iterative anti-$k_\mathrm{T}$ algorithm~\cite{Cacciari:2008gp}. In its initial step all candidates are considered to be so-called ``protojets''. At each iteration step the two distances
+Jets are clustered from \gls{pf} candidates where however charged hadrons that are associated to pileup vertices are ignored. This procedure is referred to as \glshere{chs} technique~\cite{CMS-PAS-JME-14-001}. In addition, preselected isolated muons or electrons can be excluded from the jet clustering as well to prevent double counting of their momenta. For example, when studying the decay $\mathrm{t}\to \mathrm{b}\mu\nu$ it should be prevented that a selected muon candidate is clustered inside the b~quark jet as well. This approach has been chosen in the reconstruction of 8~TeV data while for 13~TeV data a minimal $\Delta R$ distance between the final leptons and jets for analysis is required. Jet are clustered using the iterative anti-\kt algorithm~\cite{Cacciari:2008gp}. In its initial step all candidates are considered to be so-called ``protojets''. At each iteration step the two distances
 
 \begin{equation}
 d_{ij}=\mathrm{min}\left(\frac{1}{p_{\mathrm{T},i}^{2}},\,\frac{1}{p_{\mathrm{T},j}^{2}}\right)\cdot\frac{\sqrt{\Delta\eta_{ij}^{2}+\Delta\phi_{ij}^{2}}}{\mathrm{R}^2},\qquad d_{i}=\frac{1}{p_{\mathrm{T},i}^{2}}
@@ -168,6 +169,7 @@ where $\sigma_\mathrm{\gls{jer}}$ denotes the relative resolution in simulation 
 %##############################################
 \section{b-tagging}
 %##############################################
+\label{sec:reconstruction-btagging}
 
 The identification of jets that stem from the hadronization of b~quarks, so-called ``b-tagging'', is a crucial ingredient in studies of top quark production. It provides discrimination power to single out jets which can be related to b~quarks as expected from top quark decays.
 
