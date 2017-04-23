@@ -186,7 +186,7 @@ FUNCTION {fin.entry}
   if$
   write$
   newline$
-  "}" write$
+  "\\[-0.65\baselineskip]}" write$
   newline$
 }
 
