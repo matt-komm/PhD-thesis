@@ -2,28 +2,27 @@
 \chapter{The standard model of particle physics}
 %##############################################
 
-\intro{In the following an overview of the \gls{sm} is given. First, the fundamental particles and their properties are introduced. Then the electroweak and strong interactions are detailed which includes a brief descriptions of the electroweak symmetry breaking mechanism as well. After sketching the calculation of observables in perturbative theory the chapter is concluded by highlighting some open questions of the \gls{sm}.}
+\intro{An overview of the \glshere{sm} is given in the following. First, the fundamental particles and their properties are introduced. Then, the electroweak and strong interactions are detailed which includes a brief description of the electroweak symmetry breaking mechanism as well. After sketching the calculation of observables in perturbation theory, the chapter is concluded by highlighting some open questions of the \gls{sm}.}
 
-The \gls{sm} describes the interactions between fundamental particles. It is based on \gls{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or decay rates of particles which can be calculated within its framework. The \gls{sm} validity is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards \gls{bsm} physics.
+The \glshere{sm} describes the interactions between fundamental particles. It is based on \glshere{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or decay rates of particles which can be calculated within its framework. Validity of rhe \gls{sm} is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards physics \glshere{bsm}.
 
 
 %############################################## 
 \section{Particle content}
 %##############################################
 
-Fundamental particles are defined as objects for which experiments have not revealed an internal structure. For example, the upper limit on the spatial radius of the electron is measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Hence, such fundamental particles are considered as point-like. They can be grouped by their spin into fermions with half-integer and bosons with integer spin. All fundamental fermions of the \gls{sm} have a spin of $\frac{1}{2}$. They can be further divided into leptons and quarks where only the latter can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Atoms which form ordinary matter consist of only particles from the first generation: electrons, protons, and neutrons, where the latter two are bound states of uud quarks and udd quarks respectively.
+Fundamental particles are defined as objects for which experiments have not revealed an internal structure. For example, the upper limit on the spatial radius of the electron is measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Hence, such fundamental particles are considered as point-like. They can be grouped by their spin into fermions with half-integer and bosons with integer spin. All fundamental fermions of the \gls{sm} have a spin of $\frac{1}{2}$. They can be further divided into leptons and quarks where only the latter can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Atoms which form ordinary matter consist of only particles from the first generation. These are electrons, protons, and neutrons, where the latter two are bound states of uud quarks and udd quarks respectively.
 
-\mytable{\label{tab:theory-leptons}Leptons of the \gls{sm}. Particle masses are taken from Ref.~\cite{Olive:2016xmw}. Uncertainties on the measured masses are omitted because the precision is beyond the sub permille level. For the neutrino masses only \glspl{cl} are given.}{
+\mytable{\label{tab:theory-leptons}The leptons of the \gls{sm}. The particle masses are taken from Ref.~\cite{Olive:2016xmw}. Uncertainties on the measured masses are omitted because the precision is beyond the sub permille level. For the neutrino masses only upper \glsplfull{cl} are given.}{
     \begin{tabular}{|r|c c c|}
     \hline
                         & 1. generation                 & 2. generation                 & 3. generation \\
-    \hline
     \hline
     name                & electron neutrino             & muon neutrino                 & tau neutrino  \\
                         & ($\nu_\mathrm{e}$)            & ($\nu_{\mu}$)                 & ($\nu_{\tau}$) \\
     
     mass                & $<225~\eV$                    & $<0.19~\MeV$                  & $<18.2~\MeV$ \\
-                        & (95\% CL)                     & (90\% CL)                     & (95\%~CL)\\
+                        & (95\% \gls{cl})                     & (90\% \gls{cl})                     & (95\%~\gls{cl})\\
     
     electric charge     & 0                             & 0                             & 0 \\
     \hline
@@ -37,13 +36,12 @@ Fundamental particles are defined as objects for which experiments have not reve
     \end{tabular}
 }
 
-For the masses of the neutrinos, only upper limits are set. Those are derived by combining measurements of beta decay spectra with results from neutrino oscillation experiments. When the \gls{sm} was constructed in the mid 1970s, the neutrinos were assumed to be massless. However, the observation of neutrino oscillations requires that at least two neutrinos have a non-zero mass~\cite{Fukuda:1998mi}.
+For the masses of the neutrinos, only upper \glsplfull{cl} are known. Those are derived by combining measurements of beta decay spectra with results from neutrino oscillation experiments. When the \gls{sm} was constructed in the mid 1970s, neutrinos were assumed to be massless. However, the observation of neutrino oscillations requires that at least two neutrino generations have non-zero masses~\cite{Fukuda:1998mi}.
 
-\mytable{\label{tab:theory-quarks}Quarks of the \gls{sm}. For u,d,s,c,b quarks \gls{msbar} masses are quoted, taken from Ref.~\cite{Olive:2016xmw}. The top quark pole mass is taken from Ref.~\cite{Khachatryan:2015hba}.}{
+\mytable{\label{tab:theory-quarks}The quarks of the \gls{sm}. The u,d,s,c, and b~quark masses are reported in the \gls{msbar} mass scheme~\cite{Olive:2016xmw}. For the top quark the pole mass is quoted instead as measured in Ref.~\cite{Khachatryan:2015hba}.}{
 \begin{tabular}{|r|c c c|}
     \hline
                         & 1. generation                 & 2. generation                 & 3. generation \\
-    \hline
     \hline
     name                & up (u)                        & charm (c)                     & top (t) \\
     
@@ -62,10 +60,10 @@ For the masses of the neutrinos, only upper limits are set. Those are derived by
 }
 
 
-The bosons are connected to fundamental interactions by requiring invariance under a gauge group transformation as explained later in this chapter. They are listed in Tab.~\ref{tab:theory-bosons}. All bosons, except the Higgs boson, carry a spin of~$1$. The Higgs boson is the only scalar fundamental particle~(spin~$0$) of the \gls{sm}. For a long time, it was a purely hypothetical particle. In July 2012, the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations independently reported an observation of a Higgs-like particle. Further investigations whether this new particle exhibits the expected interactions with other particles revealed that it is consistent with the \gls{sm} Higgs boson~\cite{Khachatryan:2016vau}. This discovery completed the \gls{sm} and thus gave further confidence into its theoretical foundation.
+The bosons are connected to fundamental interactions by requiring invariance under a gauge group transformation as demonstrated later in this chapter. They are listed in Tab.~\ref{tab:theory-bosons}. All bosons, except the Higgs boson, carry a spin of~$1$. The Higgs boson is the only scalar fundamental particle~(spin~$0$) of the \gls{sm}. For a long time, it was a purely hypothetical particle. In July 2012, the \gls{atlas}~\cite{Aad:2012tfa} and \gls{cms}~\cite{Chatrchyan:2012xdj} collaborations independently reported the observation of a Higgs-like particle. Further investigations whether this new particle exhibits the expected interactions with other particles revealed that it is consistent with the \gls{sm} Higgs boson~\cite{Khachatryan:2016vau}. This discovery completed the \gls{sm} and thus gave further confidence into its theoretical foundation.
 
 
-\mytable{\label{tab:theory-bosons}Bosons of the \gls{sm}. Z and W boson masses are taken from Ref.~\cite{Olive:2016xmw}. The uncertainties on their masses are omitted because the precision is beyond the sub permille level. The Higgs mass is taken from Ref.~\cite{Aad:2015zhl}.}{
+\mytable{\label{tab:theory-bosons}The bosons of the \gls{sm}. The Z and W~boson masses are taken from Ref.~\cite{Olive:2016xmw}. The uncertainties on their masses are omitted because the precision is beyond the sub permille level. The Higgs boson mass is taken from Ref.~\cite{Aad:2015zhl}.}{
 \begin{tabular}{|r|c c c|}
     \hline
     name                & mass                 & associated interaction             & gauge group \\
@@ -73,10 +71,10 @@ The bosons are connected to fundamental interactions by requiring invariance und
     \hline
     photon (\photon)    & $0$                  & electromagnetism                   & $\mathrm{U(1)}$ \\
     
-    Z boson (\zboson)   & $91.19~\GeV$         & \multirow{2}{*}{$\Big\}$ weak interaction}  & \multirow{2}{*}{$\mathrm{SU(2)}$}\\
-    W boson (\wboson)   & $80.39~\GeV$         &                                    & \\
+    Z boson   & $91.19~\GeV$         & \multirow{2}{*}{$\Big\}$ weak interaction}  & \multirow{2}{*}{$\mathrm{SU(2)}$}\\
+    W boson   & $80.39~\GeV$         &                                    & \\
     
-    Higgs boson (\higgs)& $125.09\pm0.24~\GeV$ & Yukawa interaction                 & $\mathrm{SU(2)}\otimes\mathrm{U(1)}$\\
+    Higgs boson (H)& $125.09\pm0.24~\GeV$ & Yukawa interaction                 & $\mathrm{SU(2)}\otimes\mathrm{U(1)}$\\
       
     8 gluons (g)        & $0$                  & strong interaction                 & $\mathrm{SU(3)}$ \\  
     \hline               
@@ -90,16 +88,13 @@ For each fundamental particle there exists a charge-conjugated partner called an
 \section{Quantum field theory}
 %##############################################
 
-In the framework of \gls{qft}, particles are described as excitation modes of quantized fields. This is also referred to as ``second quantization'' allowing to describe the dynamics of many-particle systems. Field operators can be decomposed as
+In the framework of \gls{qft} particles are described as excitation modes of quantized fields. This is referred to as ``canonical'' or ``second'' quantization which allows to describe the dynamics of many-particle systems\footnote{An alternative quantization can be achieved via path integrals.}. Field operators can be decomposed as
 
-\begin{align}
-    \hat{\psi}(x)&=\sum_{i}^{\mathrm{N}}u_{i}(x)\hat{a}_{i} \\
-    \hat{\psi}^{\dagger}(x)&=\sum_{i}^{\mathrm{N}}u^{\star}_{i}(x)\hat{a}^{\dagger}_{i},
-\end{align}
+\begin{equation}
+\hat{\psi}(x)=\sum_{i}^{\mathrm{N}}u_{i}(x)\hat{a}_{i}\,,\qquad\hat{\psi}^{\dagger}(x)=\sum_{i}^{\mathrm{N}}u^{\star}_{i}(x)\hat{a}^{\dagger}_{i}\,,
+\end{equation}
 
-where $u_{i}(x)$ denotes the ordinary wave function of a single particle and $\hat{a}^{\dagger}_{i}$ ($\hat{a}_{i}$) its creation (annihilation) operator, respectively.
-
-As in classical mechanics, the action of a system can be expressed as
+where $u_{i}(x)$ denotes the ordinary wave function of a single particle and $\hat{a}^{\dagger}_{i}$ ($\hat{a}_{i}$) its creation (annihilation) operator, respectively. As in classical mechanics the action of a system can be expressed as
 
 \begin{equation}
 S=\int\mathrm{L}\,\mathrm{d}t=\iint\mathcal{L}\,\mathrm{d}^{3}\vec{x}\,\mathrm{dt}=\int\mathcal{L}\,\mathrm{d}^{4}x
@@ -112,43 +107,43 @@ with the Lagrangian density $\mathcal{L}$. For example, a system of free fermion
 \mathcal{L}_\mathrm{Dirac}=\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi
 \end{equation}
 
-using the definitions $\partial_\mu\equiv\partial/\partial x_\mu$ and $\bar{\psi}\equiv\psi^\dagger\gamma^{0}$ where $\gamma_\mu$ denote the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=\gamma^\mu\gamma^\nu+\gamma^\nu\gamma^\mu=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
+using the definitions $\partial_\mu\equiv\partial/\partial x_\mu$ ($\mu\in\{0\ldots3\}$) and $\bar{\psi}\equiv\psi^\dagger\gamma^{0}$, where $\gamma_\mu$ denote the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=\gamma^\mu\gamma^\nu+\gamma^\nu\gamma^\mu=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
 
 \begin{equation}
-\frac{\partial\mathcal{L}}{\partial\bar{\psi}}-\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)=\big(i\gamma^\mu\partial_\mu-m\big)\psi=0. \\
+\frac{\partial\mathcal{L}}{\partial\bar{\psi}}-\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)=\big(i\gamma^\mu\partial_\mu-m\big)\psi=0\,. \\
 \end{equation}
 
-In the \gls{sm}, interactions between particles are introduced by requiring local invariance of the Lagrangian density for certain groups of gauge transformations. In the following, this is briefly demonstrated for the case of a $\mathrm{U(1)}$ transformation which leads to \glshere{qed}.
-
-The transformation of Eq.~\ref{eq:theory-diracL} using 
+Interactions between particles are introduced in the \gls{sm} by requiring local invariance of the Lagrangian density for certain groups of gauge transformations. This is briefly demonstrated in the following for the case of a $\mathrm{U(1)}$ transformation which leads to \glshere{qed}. Transformating Eq.~\ref{eq:theory-diracL} using 
 
 \begin{equation}
-\psi(x)\mapsto\psi^{\prime}(x)=\psi\exp^{-iq\alpha(x)}
+\psi(x)\mapsto\psi^{\prime}(x)=\psi\exp^{-iq\alpha(x)}\,, \label{eq:theory-u1-trafo}
 \end{equation}
 
-where the phase $\alpha(x)$ depends on the local coordinates $x$ yields
+yields
 
 \begin{equation}
-\mathcal{L}(\psi,\partial_\mu\psi)\mapsto\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})=\bar{\psi}\big(i\gamma^\mu\partial_\mu+q\gamma^\mu\partial_\mu\alpha(x)-m\big)\psi.
+\mathcal{L}(\psi,\partial_\mu\psi)\mapsto\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})=\bar{\psi}\big(i\gamma^\mu\partial_\mu+q\gamma^\mu\partial_\mu\alpha(x)-m\big)\psi\not=\mathcal{L}(\psi,\partial_\mu\psi)\,,
 \end{equation}
 
-The invariance $\mathcal{L}(\psi,\partial_\mu\psi)=\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})$ is restored by adding a bosonic spin-1 field $\mathrm{A}_{\mu}(x)$ which interacts with $\psi$ while transforming as
+where the arbitrary phase $\alpha(x)$ is a function of the local space-time coordinate $x$. The invariance $\mathcal{L}(\psi,\partial_\mu\psi)=\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})$ is restored by adding a bosonic spin-1 field $\mathrm{A}_{\mu}(x)$ which interacts with $\psi$ while transforming as
 
 \begin{equation}
-\mathrm{A}_{\mu}(x)\mapsto \mathrm{A}^{\prime}_{\mu}(x)=\mathrm{A}_\mu(x)-\partial_\mu\alpha(x).
+\mathrm{A}_{\mu}(x)\mapsto \mathrm{A}^{\prime}_{\mu}(x)=\mathrm{A}_\mu(x)-\partial_\mu\alpha(x)\,.
 \end{equation}
 
 This procedure yields a Lagrangian density containing the following terms:
 
+\begin{subequations}
 \begin{align}
-\mathcal{L}=~~&\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi &(\mathrm{fermion~propagator}) \\
-            +&q\bar{\psi}\gamma^{\mu}\psi \mathrm{A}_{\mu} &(\mathrm{interaction}) \label{eq:theory-EM-int}\\
-            -&\tfrac{1}{4}\big(\partial_\mu \mathrm{A}_\nu-\partial_\nu \mathrm{A}_\mu\big)^{2} &(\mathrm{boson~propagator})
+\mathcal{L}=&\hphantom{+}\bar{\psi}\big(i\gamma^\mu\partial_\mu-m\big)\psi &(\mathrm{fermion~propagator}) \\
+            &+q\bar{\psi}\gamma^{\mu}\psi \mathrm{A}_{\mu} &(\mathrm{interaction}) \label{eq:theory-EM-int}\\
+            &-\tfrac{1}{4}\big(\partial_\mu \mathrm{A}_\nu-\partial_\nu \mathrm{A}_\mu\big)^{2} &(\mathrm{boson~propagator})
 \end{align}
+\end{subequations}
 
-In addition, the already gauge-invariant boson propagator describing the dynamics of a free $\mathrm{A}_\mu$ field has been added. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under $\mathrm{U(1)}$ transformation can be identified as electromagnetic interaction between a fermion described by $\psi$ with electric charge $q$ and a photon described by $\mathrm{A}_\mu$. Furthermore, the photon is predicted to be massless since adding a term of the form $m^{2}_\mathrm{A}\mathrm{A}^\mu \mathrm{A}_\mu$ would violate the invariance.
+In addition, the already gauge-invariant boson propagator describing the dynamics of a free $\mathrm{A}_\mu$ field has been added. The introduced interaction~(Eq.~\ref{eq:theory-EM-int}) which is required to ensure the invariance under the $\mathrm{U(1)}$ transformation~(Eq.~\ref{eq:theory-u1-trafo}) can be identified as electromagnetic interaction between a fermion described by the field $\psi$ with electric charge $q$ and a photon described by the field $\mathrm{A}_\mu$. Furthermore, the photon is predicted to be massless since adding a term of the form $m^{2}_\mathrm{A}\mathrm{A}^\mu \mathrm{A}_\mu$ would violate the invariance.
 
-Other interactions of the \gls{sm} are also connected to local gauge transformations which can be introduced through similar procedures. A common property follows from the Noether theorem which states that for each continuous transformation a conserved current exists. Hence the charge associated to each gauge group is conserved. This would however be already the case for a global transformation. The invariance under an even local gauge transformations is a puzzling feature of the theory.
+Other interactions of the \gls{sm} are also connected to local gauge transformations~(see Tab.~\ref{tab:theory-bosons}) and can thus be introduced through similar procedures. A common property follows from the Noether theorem which states that a conserved current exists for each differentiable symmetry of the action. Hence the charge associated to each gauge group is conserved. This would however be already the case for a global transformation. The invariance under an even local gauge transformations is a puzzling feature of the theory.
 
 
 
@@ -157,31 +152,30 @@ Other interactions of the \gls{sm} are also connected to local gauge transformat
 %##############################################
 \label{sec:theory-ewk}
 
-Electromagnetic and weak interactions can be unified using a $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ gauge group. A complication arises from the fact that the $\mathrm{W}$~and $\mathrm{Z}$~bosons, mediatiors of the weak interaction, are massive. The masses of these particles have to be introduced in a different way if the concept of local gauge invariance should continue to hold. Experimentally, the UA1 and UA2 experiments at the \gls{cern} \gls{sps} proton-antiproton collider measured their masses for the first time~\cite{Arnison:1983rp,Banner:1983jy,Arnison:1983mk,Bagnaia:1983zx} while their existence was already known from bubble chamber experiments\todo{what ???}.
+Electromagnetic and weak interactions can be unified using a $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ gauge group. A complication arises from the fact that the $\mathrm{W}$~and $\mathrm{Z}$~bosons, mediatiors of the weak interaction, are massive. The masses of these particles have to be introduced in a different way if the concept of local gauge invariance should continue to hold. Experimentally, the UA1 and UA2 experiments at the \gls{cern} \gls{sps} proton-antiproton collider measured their masses for the first time~\cite{Arnison:1983rp,Banner:1983jy,Arnison:1983mk,Bagnaia:1983zx} while the existence of weakly-interacting charged and neutral currents was already known from bubble chamber experiments. \todo{ref? garamelle}
 
-Another feature of weak interactions is that parity is not conserved but maximally violated. The interaction depends on the spin being aligned towards or against the momentum of a particle. Experimentally, the Wu experiment~\cite{PhysRev.105.1413} discovered this feature in ${}_{27}^{60}\mathrm{Co}\to{}_{28}^{60}\mathrm{Ni}+e^{\rmminus}\bar{\nu}_{e}\gamma\gamma$ decays by analyzing the direction of the escaping electron with respect to the polarization of the cobalt probe through an external magnetic field. To account for the violation of parity, fermion fields are decomposed into chiral eigenstates using the projections
+Another feature of weak interactions is that parity is not conserved but instead maximally violated. The interaction depends on the spin being aligned towards or against the momentum of a particle. Experimentally, the Wu experiment~\cite{PhysRev.105.1413} discovered this feature in ${}_{27}^{60}\mathrm{Co}\to{}_{28}^{60}\mathrm{Ni}+e^{\rmminus}\bar{\nu}_{e}\gamma\gamma$ decays by analyzing the direction of the escaping electron with respect to the polarization of the cobalt probe through an external magnetic field. To account for the violation of parity, fermion fields are decomposed into chiral eigenstates using the projections
 
 \begin{align}
-\psi_\mathrm{L}&\equiv\mathrm{P}_\mathrm{L}\psi=\tfrac{1}{2}(1-\gamma_{5})\psi \\
-\psi_\mathrm{R}&\equiv\mathrm{P}_\mathrm{R}\psi=\tfrac{1}{2}(1+\gamma_{5})\psi
+\psi_\mathrm{L}\equiv\mathrm{P}_\mathrm{L}\psi=\tfrac{1}{2}(1-\gamma_{5})\psi\,,\qquad \psi_\mathrm{R}\equiv\mathrm{P}_\mathrm{R}\psi=\tfrac{1}{2}(1+\gamma_{5})\psi
 \end{align}
 
-with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties: $(\gamma_{5})^{\dagger}=\gamma_{5}$; ~~$(\gamma_{5})^2=\mathrm{I}_\mathrm{4x4}$; ~~ $\{\gamma_{5},\gamma_{\mu}\}=\gamma_{5}\gamma_{\mu}+\gamma_{\mu}\gamma_{5}=0$.} where $\psi_\mathrm{L}$ ($\psi_\mathrm{R}$) is called a ``left-handed'' (``right-handed'') fermion respectively. In the case of massless particles, Eq.~\ref{eq:theory-diracL} decouples into two independent equations for $\psi_\mathrm{L}$ and $\psi_\mathrm{R}$. In such a case, the chirality would be equal to the Lorentz-invariant helicity
+with $\gamma_{5}=i\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$\footnote{Properties: $(\gamma_{5})^{\dagger}=\gamma_{5}$; ~~$(\gamma_{5})^2=\mathrm{I}_\mathrm{4x4}$; ~~ $\{\gamma_{5},\gamma_{\mu}\}=\gamma_{5}\gamma_{\mu}+\gamma_{\mu}\gamma_{5}=0$.} where $\psi_\mathrm{L}$ ($\psi_\mathrm{R}$) is called a ``left-handed'' (``right-handed'') fermion respectively. For massless particles Eq.~\ref{eq:theory-diracL} decouples into two independent equations for $\psi_\mathrm{L}$ and $\psi_\mathrm{R}$. The chirality is then equal to the Lorentz-invariant helicity
 
 \begin{equation}
 H=\frac{\vec{p}\cdot\vec{s}}{|\vec{p}|}
 \end{equation}
 
-which denotes whether the spin $\vec{s}$ is aligned along~($H=+1$) or against~($H=-1$) the momentum axis. For massive particles however Eq.~\ref{eq:theory-diracL} cannot be decomposed since chirality is not Lorentz invariant.
+which denotes whether the spin $\vec{s}$ is aligned along~($H=+1$) or against~($H=-1$) the momentum. For massive particles however Eq.~\ref{eq:theory-diracL} cannot be decomposed since chirality is not Lorentz-invariant.
 
-In the Glashow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} the fermion fields are split into ``left-handed'' doublets 
+In the Glashow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} the fermion fields are split into left-handed doublet fields
 
 \begin{align}
-\vec{\mathrm{E}}_\mathrm{L}&=\Bigg\{\colvec{2}{\nu_\mathrm{e,L}}{e^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\mu,\mathrm{L}}}{\mu^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\tau,\mathrm{L}}}{\tau^{\rmminus}_\mathrm{L}}\Bigg\} \label{eq:theory-su2-leptons} \\
-\vec{\mathrm{Q}}_\mathrm{L}&=\Bigg\{\colvec{2}{\mathrm{u}_\mathrm{L}}{\mathrm{d}_\mathrm{L}},\colvec{2}{\mathrm{c}_\mathrm{L}}{\mathrm{s}_\mathrm{L}},\colvec{2}{\mathrm{t}_\mathrm{L}}{\mathrm{b}_\mathrm{L}}\Bigg\} \label{eq:theory-su2-quarks}
+\vec{\mathrm{E}}_\mathrm{L}=\Bigg\{\colvec{2}{\nu_\mathrm{e,L}}{e^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\mu,\mathrm{L}}}{\mu^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\tau,\mathrm{L}}}{\tau^{\rmminus}_\mathrm{L}}\Bigg\} \label{eq:theory-su2-doublets}\,,\quad
+\vec{\mathrm{Q}}_\mathrm{L}=\Bigg\{\colvec{2}{\mathrm{u}_\mathrm{L}}{\mathrm{d}_\mathrm{L}},\colvec{2}{\mathrm{c}_\mathrm{L}}{\mathrm{s}_\mathrm{L}},\colvec{2}{\mathrm{t}_\mathrm{L}}{\mathrm{b}_\mathrm{L}}\Bigg\} 
 \end{align}
 
-and ``right-handed'' singlets 
+and right-handed singlet fields
 
 \begin{align}
 \vec{\mathrm{e}}_\mathrm{R}=\big\{\mathrm{e}^{\rmminus}_\mathrm{R},\mu^{\rmminus}_\mathrm{R},\tau^{\rmminus}_\mathrm{R}\big\},\quad\vec{\mathrm{u}}_\mathrm{R}=\big\{\mathrm{u}_\mathrm{R},\mathrm{c}_\mathrm{R},\mathrm{t}_\mathrm{R}\big\},\quad\vec{\mathrm{d}}_\mathrm{R}=\big\{\mathrm{d}_\mathrm{R},\mathrm{s}_\mathrm{R},\mathrm{b}_\mathrm{R}\big\} \label{eq:theory-su2-singlets}
@@ -200,9 +194,9 @@ where $\omega_{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\pri
 +\sum_{\psi^{i}_\mathrm{R}}^\mathrm{singlets}&\bar{\psi}^{i}_\mathrm{R}~\gamma^{\mu}\tfrac{1}{2}g^{\prime}\mathrm{B}_{\mu}\psi^{i}_\mathrm{R} + \mathrm{\gls{hc}} \label{eq:theory-codev-su2-interaction}
 \end{align}
 
-where the summation is implied over the fermion doublets and singlets.
+where the summation is implied over the fermion doublet and singlet components.
 
-A fermion mass term $\propto m_\mathrm{f}\bar{\psi}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. A solution is provided by the Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585} which introduces mass terms not only for fermions but also for the gauge bosons through symmetry breaking. For this, a new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{\rmplus},\phi^{0})$\footnote{$\phi^{\rmplus}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.} (invariant under $\mathrm{U(1)}\otimes\mathrm{SU(2)}$) is added to the Lagrangian density
+A fermion mass term $ m_\mathrm{f}\bar{\psi}{}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}(\bar{\psi}{}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it is not invariant under $\mathrm{SU(2)}$ transformation. This is solved by Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585} which introduces mass terms not only for fermions but also for the gauge bosons through symmetry breaking. For this, a new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{\rmplus},\phi^{0})$\footnote{$\phi^{\rmplus}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.}, invariant under $\mathrm{U(1)}\otimes\mathrm{SU(2)}$ transformation, is added to the Lagrangian density
 
 \begin{align}
 \mathcal{L}_{\phi}&=\big(D_{\mu}\phi^{\dagger}\big)\big(D^{\mu}\phi\big)+\mathrm{V}(\phi) \label{eq:theory-phi-propagator} \\
@@ -215,89 +209,104 @@ which interacts with the gauge bosons. In addition, $\phi$ has a potential
 \mathrm{V}(\phi)=-\mu^2\phi^\dagger\phi+\tfrac{1}{2}\lambda(\phi^\dagger\phi)^2
 \end{equation}
 
-in the form of a ``Mexican hat'' as shown in Fig.~\ref{fig:theory-higgs-potential} that leads to a \gls{vev} of $\phi_0=\sqrt{\mu^{2}/\lambda}\equiv v/\sqrt{2}$ for $\mu^2>0$.
+in the form of a ``Mexican hat'' as shown in Fig.~\ref{fig:theory-higgs-potential} that leads to a non-zero \glshere{vev} for $\mu^2>0$ of 
 
-\myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field with a non-zero \gls{vev} $\phi_0$ which leads to symmetry breaking.}{
+\begin{equation}
+\phi_0=\sqrt{\frac{\mu^{2}}{2\lambda}}\equiv \frac{v}{\sqrt{2}}\,.
+\end{equation}
+
+\myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field with a non-zero \glshere{vev} $\phi_0$ which leads to symmetry breaking.}{
 \includegraphics[width=0.5\textwidth]{figures/theory/higgspot.pdf}
 }
 
-One says that this shifted \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry when parameterizing $\phi$ around the minimum as
+One says that this shifted \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry when parameterizing $\phi$ around the minimum of $V(\phi)$ as
 
 \begin{equation}
-\phi(x) \big|_{\phi_0} = \colvec{2}{0}{\frac{1}{\sqrt{2}}\big(v+\mathrm{H}(x)\big)}\cdot \mathrm{e}^{-i\vec{\theta}(x)\cdot\vec{\omega}/(2v)} \label{eq:theory-phi-dev}
+\phi(x) \Bigg|_{\phi_0} =~\frac{1}{\sqrt{2}}\colvec{2}{0}{v+\mathrm{H}(x)}\cdot \exp\left(-i\,\frac{\vec{\theta}(x)\cdot\vec{\omega}}{2v}\right)\,, \label{eq:theory-phi-dev}
 \end{equation}
 
-where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $\mathrm{H}$ the Higgs boson. In fact, the symmetry still exists but is ``hidden''. A $\mathrm{SU(2)}$ transformation (called ``unitary gauge'') can be performed such that $\vec{\theta}$ vanishes. One says that these three Goldstone bosons and their degrees of freedom are ``eaten'' by the $\mathrm{W}$ and $\mathrm{Z}$~bosons to become massive. Hence, they can also have a longitudinal polarization now through the extra degree of freedom. 
-
-After the gauge transformation, only the Higgs boson remains. The parametrization~(Eq.~\ref{eq:theory-phi-dev}) is chosen such that it leaves the minimum of $\phi$ invariant under the $\mathrm{U(1)}$ subgroup transformation
+where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $\mathrm{H}$ the Higgs boson. In fact, the symmetry still exists but is ``hidden''. A $\mathrm{SU(2)}$ transformation called ``unitary gauge'' can be performed such that $\vec{\theta}$ vanishes. One says that these three Goldstone bosons and their degrees of freedom are ``eaten'' by the $\mathrm{W}$ and $\mathrm{Z}$~bosons to become massive. Hence, through the extra degree of freedom they can also have a longitudinal polarization after symmetry breaking. The parametrization is chosen such that it leaves the minimum invariant under the $\mathrm{U(1)}$ subgroup transformation
 
 \begin{equation}
 \phi\mapsto\phi\cdot\mathrm{e}^{-ig\alpha_{3}(x)\omega_{3}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2}. \label{eq:theory-broken-u1-trans}
 \end{equation}
 
-Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields the following non-interaction terms
+Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields amongst others the following Lagrangian densities capturing the non-interacting terms:
 
+\begin{subequations}
 \begin{align}
 \mathcal{L}_\mathrm{Higgs}=&~~~~\tfrac{1}{2}(\partial_{\mu}\mathrm{H}^{\dagger})(\partial^{\mu}\mathrm{H})-\lambda^2 v^2 \mathrm{H}^2 \label{eq:theory-higgs} \\
 \mathcal{L}_\mathrm{W_1,W_2~bosons}=&-\tfrac{1}{4}\big(\mathrm{W}_{1,\mu\nu}\mathrm{W}^{\mu\nu}_{1}+\mathrm{W}_{2,\mu\nu}\mathrm{W}^{\mu\nu}_{2}\big)\nonumber\\&+\tfrac{1}{8}g^2 v^2 \big(\mathrm{W}_{1,\mu} \mathrm{W}_{1}^{\mu}+\mathrm{W}_{2,\mu} \mathrm{W}_{2}^{\mu}\big) \label{eq:theory-a1a2} \\
 \mathcal{L}_\mathrm{W_3,B~bosons}=&-\tfrac{1}{4}\big(\mathrm{B}_{\mu\nu}\mathrm{B}^{\mu\nu}+\mathrm{W}_{3,\mu\nu}\mathrm{W}^{\mu\nu}_{3}\big)\nonumber\\&+\tfrac{1}{8}v^2 \big(g\mathrm{W}_{3,\mu}-g^{\prime}\mathrm{B}_\mu\big)\big(g\mathrm{W}_{3}^{\mu}-g^{\prime}\mathrm{B}^\mu\big) \label{eq:theory-a3b}.
 \end{align}
+\end{subequations}
 
 The first term (Eq.~\ref{eq:theory-higgs}) describes the free scalar Higgs boson with mass $m_\mathrm{H}=\lambda v$. Next, the $\mathrm{W}_{1}$ and $\mathrm{W}_{2}$
-fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle pair $\mathrm{W}^{\pm}=1/\sqrt{2}(\mathrm{W}_1\mp i\mathrm{W}_2)$ with mass $m_\mathrm{W}=\frac{1}{2}gv$. Lastly, the fields $\mathrm{W}_3$ and $\mathrm{B}$ appear to be in a mixed mass state~(Eq.~\ref{eq:theory-a3b}). By performing a rotation of the couplings
+fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle pair $\mathrm{W}^{\pm}=1/\sqrt{2}(\mathrm{W}_1\mp i\mathrm{W}_2)$ with mass $m_\mathrm{W}=\frac{1}{2}gv$. Lastly, the fields $\mathrm{W}_3$ and $\mathrm{B}$ appear to be in a mixed mass state in Eq.~\ref{eq:theory-a3b}. By performing a rotation of the couplings
 
 \begin{equation}
 \colvec{2}{\mathrm{Z}}{\mathrm{A}}=\begin{pmatrix}
 \cos\theta_\mathrm{W} & -\sin\theta_\mathrm{W} \\
 \sin\theta_\mathrm{W} & \cos\theta_\mathrm{W}
 \end{pmatrix}
-\colvec{2}{\mathrm{W}_{3}}{\mathrm{B}},\quad \cos\theta_\mathrm{W}=\frac{g}{\sqrt{g^2+g^{\prime 2}}},
+\colvec{2}{\mathrm{W}_{3}}{\mathrm{B}}\,,\qquad \cos\theta_\mathrm{W}=\frac{g}{\sqrt{g^2+g^{\prime 2}}}\,,
 \end{equation}
 
-where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson $\mathrm{Z}$~boson with mass $m_\mathrm{Z}=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $\mathrm{A}_\mu$, the photon, can be identified. The angle is determined as $\sin^2\theta_\mathrm{W} \approx 0.23$~\cite{Olive:2016xmw} through the mass ratio $m_\mathrm{W}/m_\mathrm{Z}=\cos\theta_\mathrm{W}$.\todo{is the angle determined really this way?} Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
+where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson, the $\mathrm{Z}$~boson, with mass $m_\mathrm{Z}=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $\mathrm{A}_\mu$, the photon, can be identified. The angle is determined as $\sin^2\theta_\mathrm{W} \approx 0.23$~\cite{Olive:2016xmw} through the couplings $g$ and $g^\prime$. The angle also yields the relation $\rho=m_\mathrm{W}^{2}/(m_\mathrm{Z}^{2}\cdot\cos\theta_\mathrm{W}^{2})=1$ which is called ``custodial symmetry''. Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
 
 \begin{align}
-D_\mu=&~~~~\partial_\mu+i\frac{g}{\sqrt{2}}\cdot\big(\mathrm{W}^{\rmplus}_\mu T^{\rmplus}+\mathrm{W}^{\rmminus}_\mu T^{\rmminus})\nonumber\\
-&-i\frac{g^2T_3-g^{\prime 2}Y}{\sqrt{g^2+g^{\prime 2}}}\cdot\mathrm{Z}_\mu-i\frac{g^{\prime}g\big(T_3+Y\big)}{\sqrt{g^2+g^{\prime 2}}}\cdot \mathrm{A}_\mu \label{eq:theory-codev-breaking}
+D_\mu=&\hphantom{-}\partial_\mu~+~i\frac{g}{\sqrt{2}}\cdot\big(\mathrm{W}^{\rmplus}_\mu T^{\rmplus}+\mathrm{W}^{\rmminus}_\mu T^{\rmminus})\nonumber\\
+&-i\,\frac{g^2T_3-g^{\prime 2}Y}{\sqrt{g^2+g^{\prime 2}}}\cdot\mathrm{Z}_\mu~-~i\,\frac{g^{\prime}g\big(T_3+Y\big)}{\sqrt{g^2+g^{\prime 2}}}\cdot \mathrm{A}_\mu \label{eq:theory-codev-breaking}
 \end{align}
 
-where $T^{\pm}$ denote the ladder operators, $Y$ the $\mathrm{U(1)}$ so-called ``hyper'' charge and $T_3$ the $\mathrm{SU(2)}$ charge.
-
-From the coupling to the photon one can read off the electric coupling constant to be 
+where $T^{\pm}$ denote the ladder operators, $Y$ the $\mathrm{U(1)}$ so-called ``hyper'' charge, and $T_3$ the $\mathrm{SU(2)}$ charge. From the coupling to the photon one can read off the electric coupling constant to be 
 
 \begin{equation}
 e=\frac{g^{\prime} g}{\sqrt{g^2+g^{\prime 2}}}
 \end{equation}
 
-which is measured as $\aem=e^2/(4\pi)=1/137$\todo{cite} and the corresponding electric charge to be $Q=T_3+Y$ which is invariant under Eq.~\ref{eq:theory-broken-u1-trans}. For the weak coupling constant one finds the relation $e=g\cdot\sin\theta_\mathrm{W}$ which yields $\aw=\aem/\sin^2\theta_\mathrm{W}\approx0.032$.
-
-In conclusion, starting from a local gauge invariant theory, the procedure of symmetry breaking through a shifted \gls{vev} leads to three Goldstone bosons which are absorbed into mass terms for the $\mathrm{W}$ and $\mathrm{Z}$~bosons. The value of the \gls{vev} can be determined from the Fermi coupling constant, measured in muon decays, as $v\approx 246~\GeV$~\cite{PhysRevLett.106.041803}. Additionally, the existence of the Higgs boson is predicted as consequence of this procedure. It was finally discovered in July 2012 independently by the ATLAS~\cite{Aad:2012tfa} and CMS~\cite{Chatrchyan:2012xdj} collaborations and thus completed the electroweak theory.
+which is measured as $\aem=e^2/(4\pi)\approx1/137$~\cite{Olive:2016xmw} and the corresponding electric charge to be $Q=T_3+Y$ which is invariant under Eq.~\ref{eq:theory-broken-u1-trans}. For the weak coupling constant one finds the relation $e=g\cdot\sin\theta_\mathrm{W}$ which yields $\aw=\aem/\sin^2\theta_\mathrm{W}\approx0.032$. The value of the \gls{vev} can be estimated from muon lifetime measurements through the Fermi coupling constant as $v=(\sqrt{2}\,\mathrm{G}_\mathrm{F})^{-1/2}\approx 246~\GeV$~\cite{PhysRevLett.106.041803}. A consequence of electroweak symmetry breaking is the prediction of the Higgs boson which was finally discovered in July 2012 independently by the \gls{atlas}~\cite{Aad:2012tfa} and \gls{cms}~\cite{Chatrchyan:2012xdj} collaborations and thus completed the electroweak theory.
 
 
-The fermion masses can be generated by interacting with the Higgs field as well. One introduces Yukawa interactions as
+Fermion masses can be generated as well by interacting with the Higgs field. One introduces Yukawa interactions as
 
 \begin{align}
 \mathcal{L}_\mathrm{Yukawa~lepton~int.}=&-\lambda_{e}^{ii}\cdot\bar{\mathrm{E}}^{i}_\mathrm{L}\phi\cdot\mathrm{e}^{i}_\mathrm{R}+\mathrm{\gls{hc}} \label{eq:theory-lepton-yukawa}\\
 \mathcal{L}_\mathrm{Yukawa~quark~int.}=&-\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi\cdot\mathrm{u}^{k}_\mathrm{R} +\mathrm{\gls{hc}} \label{eq:theory-quark-yukawa}
 \end{align}
 
-where the coupling strengths are denoted by $\lambda$. A mass term for the electron, muon and tau lepton of $m_\ell=-\lambda_\ell v/\sqrt{2}$ can be identified after the symmetry breaking. The quarks can be disentangled from their mixed mass state through a rotation of the fields 
+where the coupling strengths are denoted by $\lambda$. After the symmetry breaking a mass term for the electron, muon and tau lepton of $m_\ell=-\lambda_\ell v/\sqrt{2}$ is introduced. The quarks can be disentangled from their mixed mass state through a rotation of the fields 
 
 \begin{equation}
-\mathrm{u}^{i}_\mathrm{L}\mapsto U^{ij}_\mathrm{u}\mathrm{u}^{j}_\mathrm{L},\quad \mathrm{d}^{i}_\mathrm{L}\mapsto U^{ij}_\mathrm{d}\mathrm{d}^{j}_\mathrm{L}
+\mathrm{u}^{i}_\mathrm{L}\mapsto U^{ij}_\mathrm{u}\mathrm{u}^{j}_\mathrm{L},\qquad \mathrm{d}^{i}_\mathrm{L}\mapsto U^{ij}_\mathrm{d}\mathrm{d}^{j}_\mathrm{L}
 \end{equation}
 
-which allows to write the Lagrangian density in the quark mass eigenstates. In particular, using Eqs.~\ref{eq:theory-codev-su2-interaction} and~\ref{eq:theory-codev-breaking} this leads to an interaction between $\mathrm{W}$~bosons and fermions of
+which allows to write the Lagrangian density in the quark mass eigenstates. In particular, using Eqs.~\ref{eq:theory-codev-su2-interaction} and~\ref{eq:theory-codev-breaking} this yields the interactions
 
-
-
+\begin{subequations}
 \begin{align}
 \mathcal{L}_{\mathrm{W}\bar{\mathrm{f}}\mathrm{f}~\mathrm{int.}}&=i\frac{g}{2\sqrt{2}}\,\Big[\bar{\nu}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\ell^{\rmminus}_{i}~+~{\ell}^{\rmplus}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\nu_{i}\Big]\\
 &~~+i\frac{g}{2\sqrt{2}}\Big[\mathrm{V}_{ij}\,\bar{\mathrm{u}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\mathrm{d}_{j}~+~\mathrm{V}_{ij}^\dagger\,\bar{\mathrm{d}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\mathrm{u}_{j}\Big] \label{eq:theory-qqW-int}
 \end{align}
+\end{subequations}
 
-where $\mathrm{V}_{ij}=(U^\dagger_\mathrm{u}U_\mathrm{d})_{ij}$ is the \gls{ckm} matrix. \todo{add matrix from pdg?} 
-The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}$, between $\mathrm{W}$~bosons and the fermions is referred to as a \gls{va} structure because of its spatial transformation properties. Axial vectors do not switch sign under parity transformation  unlike normal spatial vectors\footnote{A typical example of an axial vector (also known as pseudovector) is the angular momentum $\vec{L}=\vec{r}\times \vec{p}$.}. It allows only left-handed fermions or right-handed antifermions to couple to $\mathrm{W}$~bosons as observed by the Wu experiment.
+between the $\mathrm{W}$~bosons and fermions where $\mathrm{V}_{ij}=(U^\dagger_\mathrm{u}U_\mathrm{d})_{ij}$ denotes the \glshere{ckm} matrix. Its elements are free parameters of the \gls{sm} and have to be measured experimentally. A global fit using a multitude of measurements~\cite{Olive:2016xmw} while assuming unitarity for the three quark generations yields
+
+\begin{equation}
+\begin{pmatrix}
+\ckm{ud} & \ckm{us} & \ckm{ub} \\
+\ckm{cd} & \ckm{cs} & \ckm{cb} \\
+\ckm{td} & \ckm{ts} & \ckm{tb} 
+\end{pmatrix}
+~=~
+\begin{pmatrix}
+0.974 & 0.225 & 0.004 \\
+0.225 & 0.974 & 0.041 \\
+0.009 & 0.040 & 0.999 
+\end{pmatrix}\,.
+\end{equation}
+
+The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}$, between $\mathrm{W}$~bosons and the fermions is referred to as a \glshere{va} structure because of its spatial transformation properties. Axial vectors do not switch sign under parity transformation  unlike normal spatial vectors\footnote{A typical example of an axial vector (also known as pseudovector) is the angular momentum $\vec{L}=\vec{r}\times \vec{p}$.}. This allows only left-handed fermions or right-handed antifermions to couple to $\mathrm{W}$~bosons as observed by the Wu experiment.
 
 
 
@@ -306,16 +315,16 @@ The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}$, between $\mathrm{
 %##############################################
 \label{sec:theory-qcd}
 
-The theory of \gls{qcd} describes the strong interaction occurring between quarks and gluons. It is connected to a $\mathrm{SU(3)}$ gauge group resulting into the Lagrangian density of
+The theory of \glshere{qcd} describes the strong interactions between quarks mediated by gluons. It is connected to a $\mathrm{SU(3)}$ gauge group resulting into the Lagrangian density of
 
 \begin{align}
-\mathcal{L}_\mathrm{\gls{qcd}}=\bar{\psi}i\gamma^{\mu}\big(\partial_{\mu}-ig\vec{\mathrm{G}}_\mu\vec{\lambda}\big)\psi-\tfrac{1}{4}\vec{\mathrm{G}}_{\mu\nu}\vec{\mathrm{G}}^{\mu\nu},\quad \psi=\colvec{3}{\psi_\mathrm{red}}{\psi_\mathrm{green}}{\psi_\mathrm{blue}}
+\mathcal{L}_\mathrm{\gls{qcd}}=\bar{\psi}i\gamma^{\mu}\big(\partial_{\mu}-ig\vec{\mathrm{G}}_\mu\vec{\lambda}\big)\psi-\tfrac{1}{4}\vec{\mathrm{G}}_{\mu\nu}\vec{\mathrm{G}}^{\mu\nu},\qquad \psi=\colvec{3}{\psi_\mathrm{red}}{\psi_\mathrm{green}}{\psi_\mathrm{blue}}
 \end{align}
 
 which is invariant under the transformation
 
 \begin{equation}
-\psi\mapsto\psi\mathrm{e}^{-ig\vec{\alpha}(x)\vec{\lambda}}.
+\psi\mapsto\psi\mathrm{e}^{-ig\vec{\alpha}(x)\vec{\lambda}}\,.
 \end{equation}
 
 The fields $\vec{\mathrm{G}}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The conserved charge of the group is called ``color'' (red, green, blue) which is however equal in strength for all charges. The generators $\lambda_a$~($a\in{1\ldots8}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure leads to gluon self-interactions through the gluon field strength tensor
@@ -335,7 +344,7 @@ where at large distances $r$ or equivalently small exchanged energies a linear t
 Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\pi^{\rmplus}$~($\mathrm{u}\bar{\mathrm{d}}$), $\pi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$), kaons $\mathrm{K}^{\rmplus}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$) and $\mathrm{J}/\Psi$~($\mathrm{c}\bar{\mathrm{c}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). The baryon number, $\mathrm{B}\equiv N\text{(baryons)}-N\text{(antibaryons)}$, is conserved in scattering or decay processes. In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates~\cite{Aaij:2014jqa,Aaij:2016iza} and even ``pentaquarks'' forming a bound state of five quarks~\cite{Aaij:2015tga}.
 
 Besides valence quarks and gluons, virtual quarks, so-called ``sea quarks'', are considered constituents of a hadron as well. This whole group of particles is commonly referred to as partons. In hadron collision experiments at a sufficiently high momentum transfer, one can approximate all partons as free which allows to treat hadron-hadron scattering as a single parton-parton interaction instead~\cite{Feynman:1969wa}. The momentum of a parton is expressed as a fraction of the hadron momentum $\vec{p}_\mathrm{parton}=x\cdot \vec{p}_\mathrm{hadron}$. Then, the probability of 
-finding two parton flavors $f_{i}$ with momentum fraction $x_{i}$ interacting at an energy scale $\mu_\mathrm{F}$ is given by the \gls{pdf} as $\mathrm{PDF}(x_{1},f_{1},\mu_\mathrm{F})\cdot\mathrm{PDF}(x_{2},f_{2},\mu_\mathrm{F})$. The \glspl{pdf} are normalized such that
+finding two parton flavors $f_{i}$ with momentum fraction $x_{i}$ interacting at an energy scale $\mu_\mathrm{F}$ is given by the \glshere{pdf} as $\mathrm{PDF}(x_{1},f_{1},\mu_\mathrm{F})\cdot\mathrm{PDF}(x_{2},f_{2},\mu_\mathrm{F})$. The \glspl{pdf} are normalized such that
 
 \begin{equation}
 \sum_{f}^\mathrm{partons}\int_{0}^{1}\mathrm{d}x~x\cdot \mathrm{PDF}(x,\mu_\mathrm{F},f)=1
@@ -389,12 +398,12 @@ where additional summations and integrations over the \glspl{pdf} are required t
 Cross sections can be written in terms of the number of interaction vertices contributing to $\mathcal{M}$ originating from the perturbative series~(Eq.~\ref{eq:theory-dyson-series}). This allows to the expand them as a power series in terms of the coupling constant $\alpha$ as
 
 \begin{equation}
-\sigma=\sigma_\mathrm{\glsunset{lo}\gls{lo}}\Big(1+\frac{\alpha}{2\pi}\cdot\sigma_\mathrm{1}+\big(\frac{\alpha}{2\pi}\big)^2\cdot\sigma_{2}+\big(\frac{\alpha}{2\pi}\big)^{3}\cdot\sigma_{3}+\ldots\Big).
+\sigma=\sigma_\mathrm{\gls{lo}}\Big(1+\frac{\alpha}{2\pi}\cdot\sigma_\mathrm{1}+\big(\frac{\alpha}{2\pi}\big)^2\cdot\sigma_{2}+\big(\frac{\alpha}{2\pi}\big)^{3}\cdot\sigma_{3}+\ldots\Big).
 \end{equation}
 
-Depending at which term the series is cut off one speaks of \glsreset{lo}\gls{lo}, \gls{nlo}, or \gls{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{Partonic \gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
+Depending at which term the series is cut off one speaks of \glshere{lo}, \glshere{nlo}, or \glshere{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{Partonic \gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$. Hence, an uncertainty due to a scale variation can be even considered meaningless.}.
 
-The optical theorem, which can be derived from the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix}, states that the imaginary part of a forward scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the total scattering amplitude of producing all possible intermediate particles $\sum_{X}\mathcal{M}^\dagger(i/f\to X)$ from the inital or final state. Since a total cross section is at least as big as a single forward scattering cross section one finds that the matrix elements are bound and cannot be arbitrary large. Nonetheless, a theory may describe experimental data well but violates the unitarity bound at higher energies. Such a case would hint towards a new physics model which restores unitarity by introducing new particles or interactions above the experimentally probable energy regime. This is called \gls{uv} completion. Hence, a unitarity-violating theory may just reflect the low energy limit of an unknown \gls{uv}-complete theory. Exemplary, the $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\to\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}$ scattering amplitude would grow as $\mathcal{M}\sim s/m_\mathrm{W}^2$ if there is no Higgs boson and eventually violate unitarity at $\sqrt{s}\approx1~\TeV$.
+The optical theorem, which can be derived from the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix}, states that the imaginary part of a forward scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the total scattering amplitude of producing all possible intermediate particles $\sum_{X}\mathcal{M}^\dagger(i/f\to X)$ from the inital or final state. Since a total cross section is at least as big as a single forward scattering cross section one finds that the matrix elements are bound and cannot be arbitrary large. Nonetheless, a theory may describe experimental data well but violates the unitarity bound at higher energies. Such a case would hint towards a new physics model which restores unitarity by introducing new particles or interactions above the experimentally probable energy regime. This is called \glshere{uv} completion. Hence, a unitarity-violating theory may just reflect the low energy limit of an unknown \gls{uv}-complete theory. Exemplary, the $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\to\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}$ scattering amplitude would grow as $\mathcal{M}\sim s/m_\mathrm{W}^2$ if there is no Higgs boson and eventually violate unitarity at $\sqrt{s}\approx1~\TeV$.
 
 
 %##############################################

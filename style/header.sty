@@ -110,8 +110,8 @@
 \usepackage[Symbolsmallscale]{upgreek} % for upright greek symbols
 \usepackage{xr} %ref over documents
 \usepackage{axodraw4j}
-\usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=false,breaklinks=true,linkcolor=gray]{hyperref}
-%\usepackage[hyperfootnotes=false,breaklinks=true,colorlinks=false,pdfborder={20 20 0.5},citebordercolor=green]{hyperref}
+%\usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=false,breaklinks=true,linkcolor=gray]{hyperref}
+\usepackage[hyperfootnotes=false,breaklinks=true,colorlinks=false,pdfborder={20 20 0.5},citebordercolor=green]{hyperref}
 \usepackage[color=white,linecolor=red,bordercolor=red,textsize
 =small]{todonotes}
 \setlength{\marginparwidth}{3cm}
@@ -154,10 +154,26 @@
 \let\glsplold\glspl
 \let\Glsold\Gls
 \let\Glsplold\Glspl
-\renewcommand{\gls}[2][noindex]{\glsold[#1]{#2}}
-\renewcommand{\glspl}[2][noindex]{\glsplold[#1]{#2}}
-\renewcommand{\Gls}[2][noindex]{\Glsold[#1]{#2}}
-\renewcommand{\Glspl}[2][noindex]{\Glsplold[#1]{#2}}
+
+\renewcommand{\gls}[2][]{\acrshort[#1]{#2}}
+\renewcommand{\glspl}[2][]{\acrshort[#1]{#2}}
+\renewcommand{\Gls}[2][]{\acrshort[#1]{#2}}
+\renewcommand{\Glspl}[2][]{\acrshort[#1]{#2}}
+
+\newcommand{\glshere}[1]{\acrfull[format=hyperbf]{#1}}
+\newcommand{\glsplhere}[1]{\acrfullpl[format=hyperbf]{#1}}
+\newcommand{\Glshere}[1]{\Acrfull[format=hyperbf]{#1}}
+\newcommand{\Glsplhere}[1]{\Acrfullpl[format=hyperbf]{#1}}
+
+\newcommand{\glsmark}[1]{\acrshort[format=hyperbf]{#1}}
+\newcommand{\glsplmark}[1]{\acrplshort[format=hyperbf]{#1}}
+\newcommand{\Glsmark}[1]{\Acrshort[format=hyperbf]{#1}}
+\newcommand{\Glsplmark}[1]{\Acrplshort[format=hyperbf]{#1}}
+
+\newcommand{\glsfull}[1]{\acrfull[format=hyperrm]{#1}}
+\newcommand{\glsplfull}[1]{\acrfullpl[format=hyperrm]{#1}}
+\newcommand{\Glsfull}[1]{\Acrfull[format=hyperrm]{#1}}
+\newcommand{\Glsplfull}[1]{\Acrfullpl[format=hyperrm]{#1}}
 
 \setlength{\glspagelistwidth}{\textwidth}
 \setlength{\tabcolsep}{1ex}
@@ -168,13 +184,10 @@
 \renewcommand*{\glsgroupskip}{}
 
 
-\newcommand{\glshere}[1]{\glsreset{#1}\acrfull{#1}}
-\newcommand{\glsplhere}[1]{\glsreset{#1}\acrfullpl{#1}}
-\newcommand{\Glshere}[1]{\glsreset{#1}\Acrfull{#1}}
-\newcommand{\Glsplhere}[1]{\glsreset{#1}\Acrfullpl{#1}}
 
 
-\setlength{\columnsep}{0.05\textwidth}
+
+\setlength{\columnsep}{0.07\textwidth}
 
 
 
@@ -191,9 +204,7 @@
   }%
  % Main (level 0) entries displayed in a row:
   \renewcommand*{\glossaryentryfield}[5]{%
-    \begin{nobreak}
     \item[\glstarget{##1}{\boldmath{\textbf{##2}}}] ##3 \hspace{0.5em} ##5
-    \end{nobreak}
     %\glstarget{##1}\boldmath{\textbf{##2}} \hspace{0.3em} ##3 \hspace{0.5em} ##5%\\[0.0\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip]
 }
 }
@@ -290,12 +301,12 @@
 \setkomafont{subsubsection}{\normalfont\huge\numberfont}
 
 \RedeclareSectionCommands[
-  beforeskip=1.1\baselineskip,
+  beforeskip=1.\baselineskip,
   afterskip=0.1\baselineskip
 ]{section,subsection,subsubsection}
 
-
 \renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\hspace{1ex}} %dot after the(sub)section
+
 
 %strecke zeilenabstände im table
 \newcommand{\mytablestrech}{1.4}
@@ -316,7 +327,7 @@
 \renewcommand{\thesubfigure}{\alph{subfigure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
-\captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.8\baselineskip,belowskip=0\baselineskip}
+\captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.8\baselineskip,belowskip=0.0\baselineskip}
 \captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.8\baselineskip}
 \captionsetup[subfloat]{labelsep=space,font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
 
@@ -469,9 +480,9 @@
 
 
     %formel abstände 
-    \setlength{\abovedisplayskip}{-1.5\parskip plus 0.2\parskip minus 0.1\parskip}
-    \setlength{\abovedisplayshortskip}{-1.5\parskip plus 0.2\parskip minus 0.1\parskip}
-    \setlength{\belowdisplayskip}{1.\parskip plus 0.2\parskip minus 0.1\parskip}
-    \setlength{\belowdisplayshortskip}{1.\parskip plus 0.2\parskip minus 0.1\parskip}
+    \setlength{\abovedisplayskip}{-0.5\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
+    \setlength{\abovedisplayshortskip}{-0.5\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
+    \setlength{\belowdisplayskip}{0.4\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
+    \setlength{\belowdisplayshortskip}{0.4\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
 }
 
