@@ -15,9 +15,9 @@ Proton-proton collision data at $\sqrt{s}=8~\TeV$ are analyzed corresponding to 
 
 Jets are clustered from \gls{pf} candidates with the anti-\kt algorithm using a distance parameter of $R=0.5$ while applying the \gls{chs} technique to remove the contamination of pileup tracks. \gls{pf} candidates belonging to preselected loosely isolated muons are not clustered into the jets to prevent double counting. In addition, jets which are within $\Delta R<0.3$ to the previous selected tight lepton are ignored in the analysis. The reconstructed jet energy in data and simulation and the energy resolution in simulation are calibrated through dedicated \gls{jec} and \gls{jer} scale factors. Events containing two or three jets with $\pt>40~\GeV$ that are detected within $|\eta|<4.5$ and pass loss identification criteria are considered for analysis. Tagging of jets which likely originated from the hadronization of a b~quark is performed with the \gls{csv} algorithm. Such jets are restricted to $|\eta|<2.4$ since the b-tagging algorithm operates only within the acceptance of the inner tracking system. An efficiency of about 50\% for tagging true b~jets with a mistagging rate of 0.1\% for other jets is found in simulation using the tight b-tagging working point. The b-tagging efficiency is reweighted in simulation through scale factors to match the one measured in data. More details about the employed analysis objects, identification, and corrections are described in Ch.~\ref{ch:reconstruction}.
 
-Events are categorized as shown in Fig.~\ref{fig:polarization-categorization}. The different regions are labeled as ``$N\,\mathrm{j}~M\,\mathrm{t}$'' where $N$ denotes the number of selected jets and $M$ the subset of jets which are also b-tagged. The 2j1t region, which contains the majority of signal events, is additionally split in two parts based on the value of a \gls{bdt} discriminant. A \gls{bdt} is trained to separate signal from background events as described later in Sec~\ref{sec:polarization-bdt-training} which allows to define an additional background-dominated control region for events with low \gls{bdt} output values. The analysis was developed by validating the background modeling and optimizing the strategy by comparing to data in the control regions only. During this process, data in the signal region has not been used. This procedure is commonly referred to as ``blinding''. After the strategy is fixed the final measurement is conducted by unblinding the signal region while refraining from any further optimizations. The blinding procedure prevents a result-driven tuning of the analysis strategy which could bias the measurement.
+Events are categorized as shown in Fig.~\ref{fig:polarization-categorization}. The different regions are labeled as ``$N\,\mathrm{j}~M\,\mathrm{t}$'' where $N$ denotes the number of selected jets and $M$ the subset of jets which are also b-tagged. Control regions dominated by either \wjets~(2j0t) or \ttbar~(3j1t, 3j2t) production are defined besides the signal region~(2j1t). The analysis was developed by validating the background modeling and optimizing the strategy by comparing to data in the control regions only. During this process, data in the signal region has not been used. This procedure is commonly referred to as ``blinding''. After the strategy is fixed the final measurement is conducted by unblinding the signal region while refraining from any further optimizations. The blinding procedure prevents a result-driven tuning of the analysis strategy which could bias the measurement.
 
-\myfigure{\label{fig:polarization-categorization}Categorization of events depending on number of selected jets, number of b-tags, and the signal \gls{bdt} discriminant. The filled regions are utilized in a template-based \gls{ml} fit as described in Sec.~\ref{sec:polarization-fit}.}{
+\myfigure{\label{fig:polarization-categorization}Categorization of events depending on number of selected jets, number of b-tags, and the signal \gls{bdt} discriminant. The shaded regions are utilized in a template-based \gls{ml} fit as described in Sec.~\ref{sec:polarization-fit} for estimating the signal and background yields.}{
 \includegraphics[scale=0.75]{figures/polarization/regions.pdf}
 }
 
@@ -60,8 +60,8 @@ Distributions of the reconstructed top quark mass in muon and electron channel a
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/muon_2j0t_top_mass_qcdnone.pdf}}\\
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/beforeBgCorr/2j1t/electron_2j1t_top_mass_qcdnone_nol.pdf}}\hspace{0.017\textwidth}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/beforeBgCorr/2j1t/muon_2j1t_top_mass_qcdnone.pdf}}\\
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/beforeBgCorr/3j1t/electron_3j1t_top_mass_qcdnone_nol.pdf}}\hspace{0.017\textwidth}
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/beforeBgCorr/3j1t/muon_3j1t_top_mass_qcdnone.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/beforeBgCorr/3j2t/electron_3j2t_top_mass_qcdnone_nol.pdf}}\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/beforeBgCorr/3j2t/muon_3j2t_top_mass_qcdnone.pdf}}
 }
 
 
@@ -71,7 +71,6 @@ Distributions of the reconstructed top quark mass in muon and electron channel a
 \section{Training of Boosted Decision Trees}
 %##############################################
 \label{sec:polarization-bdt-training}
-
 
 Two \glspl{bdt} are trained to obtain a signal enhanced phase space. The first \gls{bdt}, labeled \bdtqcd, is trained to reject background events stemming from multijet production. 
 
@@ -128,18 +127,48 @@ choice of variables, correlation tests
 wjets: flavor, cosTheta (sherpa)
 ttbar: top pt -> modifies mass
 
+\myfigure{\label{fig:polarization-wjets-reweighting}Distributions of ???.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/muon_2j0t_cosTheta_lj_qcdbdt_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/muon_2j0t_cosTheta_lj_qcdbdt.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/muon_2j0t_wboson_pt_qcdbdt_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/muon_2j0t_wboson_pt_qcdbdt.pdf}}
+}
+
+\myfigure{\label{fig:polarization-toppt-reweighting}Distributions of the transverse momentum of the reconstructed top quark in 3j1t control region (a)~before and (b)~after applying the top quark $\pt$ reweighting.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/beforeBgCorr/3j2t/muon_3j2t_top_logpt_qcdbdt_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/afterBgCorr/3j2t/muon_3j2t_top_logpt_qcdbdt.pdf}}
+}
 
 %##############################################
 \section{Signal extraction}
 %##############################################
 \label{sec:polarization-fit}
 
-ml fit 
+ml fit;
+
+2j0t excluded from fit since it contains only W+LF
+3j2t best for ttbar handle since no multijet
 
 
 %##############################################
 \section{Validation}
 %##############################################
+
+\myfigure{\label{fig:polarization-cosTheta-CR}.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_cosTheta_lj_CR_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/afterBgCorr/3j2t/muon_3j2t_cosTheta_lj_qcdbdt.pdf}}
+}
+
+\myfigure{\label{fig:polarization-cosTheta-SR}.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.23\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_cosTheta_lj_SR_nol.pdf}}
+\hspace{0.017\textwidth}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_cosTheta_whel_SR.pdf}}
+}
+
 
 cosTheta, cosWhel, top mass in SR/CR, 2j0t,3j1t
 

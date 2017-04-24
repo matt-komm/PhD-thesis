@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="143.36861mm"
-   height="44.51173mm"
-   viewBox="0 0 507.99899 157.71873"
+   width="120.42992mm"
+   height="37.824425mm"
+   viewBox="0 0 426.72017 134.02355"
    id="svg4372"
    version="1.1"
    inkscape:version="0.92.1 unknown"
@@ -184,10 +184,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="277.10418"
-     inkscape:cy="-9.0194923"
+     inkscape:cx="236.07577"
+     inkscape:cy="6.2290862"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1016"
@@ -201,79 +201,69 @@
      fit-margin-bottom="0.1"
      fit-margin-right="0.1">
     <sodipodi:guide
-       position="0.60348218,188.41723"
+       position="0.59410493,188.41723"
        orientation="1,0"
        id="guide5177"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="44.527782,103.84833"
+       position="44.518405,103.84833"
        orientation="0,1"
        id="guide5256"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="50.083622,147.78997"
-       orientation="0,1"
-       id="guide5258"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="72.306982,87.685885"
+       position="72.297605,87.68588"
        orientation="0,1"
        id="guide5260"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="134.43136,119.5057"
+       position="327.18534,124.53287"
        orientation="0,1"
        id="guide5262"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="54.119794,169.60536"
+       position="54.110417,169.60536"
        orientation="1,0"
        id="guide5268"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="167.76638,119.5057"
+       position="167.757,119.5057"
        orientation="1,0"
        id="guide5270"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="183.42375,103.84833"
+       position="183.41437,103.84833"
        orientation="1,0"
        id="guide5272"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="271.8121,103.84833"
+       position="296.88077,172.35728"
        orientation="1,0"
        id="guide5274"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="288.98471,103.84833"
+       position="312.37901,87.68588"
        orientation="1,0"
        id="guide5276"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="376.86797,103.84833"
+       position="425.88348,163.72768"
        orientation="1,0"
        id="guide5278"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="43.012552,61.117966"
+       position="43.003175,61.117961"
        orientation="0,1"
        id="guide5349"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="43.012552,45.403677"
+       position="43.003175,45.403672"
        orientation="0,1"
        id="guide5351"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="65.311612,28.975107"
+       position="65.302235,28.975102"
        orientation="0,1"
        id="guide5436"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="392.54267,147.78997"
-       orientation="1,0"
-       id="guide5551"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
@@ -292,13 +282,13 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Layer 3"
-     transform="translate(0.03750024,-1.8149996)"
+     transform="translate(0.02812299,-25.510177)"
      sodipodi:insensitive="true" />
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 2"
-     transform="translate(0.03750024,-1.8149996)">
+     transform="translate(0.02812299,-25.510177)">
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4932"
@@ -309,38 +299,11 @@
        rx="5"
        ry="5.0058012" />
     <rect
-       style="opacity:1;fill:#69b3ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4932-3"
-       width="87.855202"
-       height="43.547989"
-       x="184.6637"
-       y="55.62439"
-       rx="5"
-       ry="5" />
-    <rect
-       style="opacity:1;fill:#69b3ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4932-3-9"
-       width="87.855202"
-       height="43.547989"
-       x="289.03488"
-       y="55.519836"
-       rx="5"
-       ry="5" />
-    <rect
-       style="opacity:1;fill:#69b3ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4932-3-0"
-       width="191.58133"
-       height="42.988396"
-       x="184.8515"
-       y="114.36725"
-       rx="5.0186534"
-       ry="4.9997435" />
-    <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#919191;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4932-6"
        width="113.48684"
        height="43.465343"
-       x="393.62033"
+       x="312.35089"
        y="55.749756"
        rx="5"
        ry="5.0058012" />
@@ -349,7 +312,7 @@
        id="rect4932-6-7"
        width="113.48684"
        height="43.465343"
-       x="393.29794"
+       x="312.0285"
        y="114.44995"
        rx="5"
        ry="5.0058012" />
@@ -362,12 +325,30 @@
        y="115.21405"
        rx="5"
        ry="5.0058012" />
+    <rect
+       style="opacity:1;fill:#69b3ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4932-18"
+       width="113.48685"
+       height="43.465343"
+       x="183.38625"
+       y="55.685398"
+       rx="5"
+       ry="5.0058012" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4932-0"
+       width="113.48685"
+       height="43.465343"
+       x="183.38625"
+       y="114.13005"
+       rx="5"
+       ry="5.0058012" />
   </g>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-218.61695,-513.61858)">
+     transform="translate(-218.62633,-537.31376)">
     <text
        id="text6640-9-5-0-9-1-6-05-8-3"
        y="584.03943"
@@ -386,24 +367,24 @@
          id="tspan5266">region</tspan></text>
     <text
        id="text6640-9-5-0-9-1-6-05-8-3-9"
-       y="523.13037"
+       y="547.2793"
        x="296.9071"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1"
-         y="523.13037"
+         y="547.2793"
          x="296.9071"
          id="tspan6642-4-35-6-9-4-39-3-2-6-7"
          sodipodi:role="line">0 b-tags</tspan></text>
     <text
        id="text6640-9-5-0-9-1-6-05-8-3-9-1"
-       y="523.04791"
-       x="472.69336"
+       y="547.19684"
+       x="435.75967"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1"
-         y="523.04791"
-         x="472.69336"
+         y="547.19684"
+         x="435.75967"
          id="tspan6642-4-35-6-9-4-39-3-2-6-7-0"
          sodipodi:role="line">1 b-tag</tspan></text>
     <text
@@ -418,106 +399,46 @@
          id="tspan6642-4-35-6-9-4-39-3-2-6-7-9"
          sodipodi:role="line">2 jets</tspan></text>
     <text
-       id="text6640-9-5-0-9-1-6-05-8-3-98"
-       y="583.97186"
-       x="447.53198"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
-         y="583.97186"
-         x="447.53198"
-         sodipodi:role="line"
-         id="tspan5006-7">control</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
-         y="600.37811"
-         x="447.53198"
-         sodipodi:role="line"
-         id="tspan5061">region</tspan></text>
-    <text
-       id="text6640-9-5-0-9-1-6-05-8-3-9-1-0"
-       y="551.75616"
-       x="412.67688"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1"
-         y="551.75616"
-         x="412.67688"
-         id="tspan6642-4-35-6-9-4-39-3-2-6-7-0-4"
-         sodipodi:role="line">BDT      &lt; 0</tspan></text>
-    <text
        id="text6640-9-5-0-9-1-6-05-8-3-98-8"
        y="583.87738"
-       x="552.5332"
+       x="455.93735"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
          y="583.87738"
-         x="552.5332"
+         x="455.93735"
          sodipodi:role="line"
          id="tspan5006-7-1">signal</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
          y="600.28363"
-         x="552.5332"
+         x="455.93735"
          sodipodi:role="line"
          id="tspan5061-6">region</tspan></text>
     <text
-       id="text6640-9-5-0-9-1-6-05-8-3-98-9"
-       y="554.61017"
-       x="438.72327"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:3.56376863px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11.25px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1"
-         y="554.61017"
-         x="438.72327"
-         sodipodi:role="line"
-         id="tspan5061-60">t-ch.</tspan></text>
-    <text
-       id="text6640-9-5-0-9-1-6-05-8-3-9-1-0-4"
-       y="551.73254"
-       x="511.14825"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1"
-         y="551.73254"
-         x="511.14825"
-         id="tspan6642-4-35-6-9-4-39-3-2-6-7-0-4-9"
-         sodipodi:role="line">BDT      &gt; 0.45</tspan></text>
-    <text
-       id="text6640-9-5-0-9-1-6-05-8-3-98-9-9"
-       y="554.58655"
-       x="537.19464"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:3.56376863px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11.25px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1"
-         y="554.58655"
-         x="537.19464"
-         sodipodi:role="line"
-         id="tspan5061-60-0">t-ch.</tspan></text>
-    <text
        id="text6640-9-5-0-9-1-6-05-8-3-1"
        y="584.17926"
-       x="670.34796"
+       x="589.07849"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#919191;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#919191;fill-opacity:1"
          y="584.17926"
-         x="670.34796"
+         x="589.07849"
          sodipodi:role="line"
          id="tspan5266-8">not</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#919191;fill-opacity:1"
          y="600.58551"
-         x="670.34796"
+         x="589.07849"
          sodipodi:role="line"
          id="tspan5430">used</tspan></text>
     <text
        id="text6640-9-5-0-9-1-6-05-8-3-9-6"
-       y="523.2702"
-       x="641.77789"
+       y="547.41913"
+       x="566.31592"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1"
-         y="523.2702"
-         x="641.77789"
+         y="547.41913"
+         x="566.31592"
          id="tspan6642-4-35-6-9-4-39-3-2-6-7-7"
          sodipodi:role="line">2 b-tags</tspan></text>
     <text
@@ -550,43 +471,43 @@
     <text
        id="text6640-9-5-0-9-1-6-05-8-3-7-7"
        y="642.49475"
-       x="501.17886"
+       x="457.61603"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
          y="642.49475"
-         x="501.17886"
+         x="457.61603"
          sodipodi:role="line"
          id="tspan5266-2-5">tt control</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
          y="658.901"
-         x="501.17886"
+         x="457.61603"
          sodipodi:role="line"
          id="tspan5434-6">region</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 479.00488,632.53786 3.7001,0"
+       d="m 435.44205,632.53786 h 3.7001"
        id="path5459"
        inkscape:connector-curvature="0" />
     <text
        id="text6640-9-5-0-9-1-6-05-8-3-7-7-5"
        y="642.66351"
-       x="669.75684"
+       x="588.48737"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:5px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
          y="642.66351"
-         x="669.75684"
+         x="588.48737"
          sodipodi:role="line"
          id="tspan5266-2-5-4">tt control</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:13.125px;line-height:125%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1"
          y="659.06976"
-         x="669.75684"
+         x="588.48737"
          sodipodi:role="line"
          id="tspan5434-6-2">region</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 647.58288,632.70658 3.7001,0"
+       d="m 566.31344,632.70658 h 3.7001"
        id="path5459-2"
        inkscape:connector-curvature="0" />
   </g>
