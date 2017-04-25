@@ -156,9 +156,9 @@
 \let\Glsplold\Glspl
 
 \renewcommand{\gls}[2][]{\acrshort[#1]{#2}}
-\renewcommand{\glspl}[2][]{\acrshort[#1]{#2}}
-\renewcommand{\Gls}[2][]{\acrshort[#1]{#2}}
-\renewcommand{\Glspl}[2][]{\acrshort[#1]{#2}}
+\renewcommand{\glspl}[2][]{\acrshortpl[#1]{#2}}
+\renewcommand{\Gls}[2][]{\Acrshort[#1]{#2}}
+\renewcommand{\Glspl}[2][]{\Acrshortpl[#1]{#2}}
 
 \newcommand{\glshere}[1]{\acrfull[format=hyperbf]{#1}}
 \newcommand{\glsplhere}[1]{\acrfullpl[format=hyperbf]{#1}}
@@ -166,9 +166,9 @@
 \newcommand{\Glsplhere}[1]{\Acrfullpl[format=hyperbf]{#1}}
 
 \newcommand{\glsmark}[1]{\acrshort[format=hyperbf]{#1}}
-\newcommand{\glsplmark}[1]{\acrplshort[format=hyperbf]{#1}}
+\newcommand{\glsplmark}[1]{\acrshortpl[format=hyperbf]{#1}}
 \newcommand{\Glsmark}[1]{\Acrshort[format=hyperbf]{#1}}
-\newcommand{\Glsplmark}[1]{\Acrplshort[format=hyperbf]{#1}}
+\newcommand{\Glsplmark}[1]{\Acrshortpl[format=hyperbf]{#1}}
 
 \newcommand{\glsfull}[1]{\acrfull[format=hyperrm]{#1}}
 \newcommand{\glsplfull}[1]{\acrfullpl[format=hyperrm]{#1}}
