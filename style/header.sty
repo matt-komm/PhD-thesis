@@ -112,8 +112,8 @@
 \usepackage[Symbolsmallscale]{upgreek} % for upright greek symbols
 \usepackage{xr} %ref over documents
 \usepackage{axodraw4j}
-%\usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=false,breaklinks=true,linkcolor=gray]{hyperref}
-\usepackage[hyperfootnotes=false,breaklinks=true,colorlinks=false,pdfborder={20 20 0.5},citebordercolor=green]{hyperref}
+\usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=false,breaklinks=true,linkcolor=gray]{hyperref}
+%\usepackage[hyperfootnotes=false,breaklinks=true,colorlinks=false,pdfborder={20 20 0.5},citebordercolor=green]{hyperref}
 \usepackage[color=white,linecolor=red,bordercolor=red,textsize
 =small]{todonotes}
 \setlength{\marginparwidth}{3cm}
@@ -306,11 +306,13 @@
 \setkomafont{subsubsection}{\normalfont\huge\numberfont}
 
 \RedeclareSectionCommands[
-  beforeskip=1.\baselineskip,
+  beforeskip=0.01\baselineskip plus 0.3\baselineskip,
   afterskip=0.1\baselineskip
 ]{section,subsection,subsubsection}
 
-\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\hspace{1ex}} %dot after the(sub)section
+\renewcommand{\@seccntformat}[1]{{\parbox[b][1\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
+
+
 
 
 %strecke zeilenabstände im table
@@ -479,7 +481,7 @@
 
 \newcommand{\setupTextStyle}{
     \setlength{\parindent}{0.cm} %Absatzeinzug
-    \setlength{\parskip}{0.25\baselineskip plus 0.15\baselineskip minus 0.05\baselineskip}
+    \setlength{\parskip}{0.2\baselineskip plus 0.1\baselineskip minus 0.02\baselineskip}
     %\setlength{\parsep}{0cm}
     \renewcommand{\baselinestretch}{1.09}\normalsize
 
