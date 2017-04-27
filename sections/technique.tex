@@ -264,12 +264,11 @@ Equation~\ref{eq:technique-fredholm} can be discretized and written as a matrix 
 
 where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an event at parton or particle level occurring in bin $i$ is measured in bin $j$. An simple attempt to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ through a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. This results into unstable solutions with large variance and high anticorrelations between bins which can be observed as oscillations~\cite{Cowan:2002in}. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model defined as
 
-\begin{subequations}
+\begin{subequations}\label{eq:technique-unfolding-test-model}
 \begin{align}
 g(x)&=\frac{1}{2}+A\cdot x\,,\qquad A=0.44\\
 R(y,x)&\propto\mathrm{exp}\left(\frac{1}{2}\cdot\frac{(x-y)^2}{\sigma^2}\right)\,,\qquad \sigma=0.15\,,
 \end{align}
-\label{eq:technique-unfolding-test-model}
 \end{subequations}
 
 where a exemplary distribution $g$, similar to the expected distribution of the top-quark polarization angle at parton level, has been folded with a simple Gaussian smearing function $R$. One can observe that small deviations~(dash-orange line) from the folded distribution~(violet markers) yields an unphysical, oscillating solution. Such small deviations may just reflect e.g. statistical fluctuations when unfolding data.
@@ -311,13 +310,12 @@ L\big(\vec{x}\big)&=\big|\big|\,\vec{y}-\tilde{\mathcal{R}}\cdot\vec{x} \,\big|\
 
 where a suitable matrix $\Gamma$ is added to suppress unphysical solutions. In this thesis, unfolding is performed using the \TUNFOLD[] package~\cite{1748-0221-7-10-T10003} which employs a similar regularization scheme. Its loss function is given by
 
-\begin{subequations}
+\begin{subequations}\label{eq:technique-tunfold}
 \begin{align}
 L_\mathrm{\TUNFOLD}\big(\,\vec{x},\,\lambda\,\big|~\tau\big)&=\sum_{i}\,\sum_{j}~\Big(y_{i}-\big(\tilde{\mathcal{R}}\cdot\vec{x}\,\big)_{i}\Big)\cdot\mathcal{C}_{y,ij}^{-1}\cdot\Big(y_{j}-\big(\tilde{\mathcal{R}}\cdot\vec{x}\,\big)_{j}\Big)\label{eq:technique-tunfold-response}\\
 &+\tau^{2}\cdot\Big(\Gamma\cdot\big(\vec{x}-\vec{x}_{0}\big)\Big)^{2}\label{eq:technique-tunfold-regularization}\\
 &+\lambda\cdot\sum_{i}~\Big(y_{i}-\mathcal{A}_{ii}\mathcal{E}_{ii}x_{i}\Big)\,. \label{eq:technique-tunfold-efficiency}
 \end{align}
-\label{eq:technique-tunfold}
 \end{subequations}
 
 The matrix $\mathcal{C}$ in Eq.~\ref{eq:technique-tunfold-response} describes the statistical covariances of the bins in the reconstructed distribution. For uncorrelated data bins it is a diagonal matrix with entries $\mathcal{C}_{ii}=y_{ii}$ assuming Poisson uncertainties. Regularization is applied through the penalty term in Eq.~\ref{eq:technique-tunfold-regularization}. Here, solutions with large fluctuations are suppressed through the matrix $\Gamma$ which approximates numerically the second derivatives per bin of the resulting distribution as 

@@ -99,6 +99,7 @@
 \usepackage{stackengine}
 \usepackage{scalerel}
 \usepackage{etoolbox}
+\usepackage{flafter} %prevent float to appear to early
 \usepackage{hanging}
 \usepackage[export]{adjustbox} %clip figures
 \usepackage{mdframed}
@@ -334,8 +335,8 @@
 \renewcommand{\thesubfigure}{\alph{subfigure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
-\captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.8\baselineskip,belowskip=0.0\baselineskip}
-\captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.8\baselineskip}
+\captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.6\baselineskip,belowskip=0.0\baselineskip}
+\captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.6\baselineskip}
 \captionsetup[subfloat]{labelsep=space,font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
 
 \setlength\floatsep{1.\baselineskip plus 3pt minus 2pt}
@@ -487,9 +488,9 @@
 
 
     %formel abstände 
-    \setlength{\abovedisplayskip}{-0.5\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
-    \setlength{\abovedisplayshortskip}{-0.5\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
-    \setlength{\belowdisplayskip}{0.4\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
-    \setlength{\belowdisplayshortskip}{0.4\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
+    \setlength{\abovedisplayskip}{-0.4\baselineskip plus 0.1\baselineskip minus 0.2\baselineskip}
+    \setlength{\abovedisplayshortskip}{-0.4\baselineskip plus 0.1\baselineskip minus 0.2\baselineskip}
+    \setlength{\belowdisplayskip}{0.4\baselineskip plus 0.1\baselineskip minus 0.05\baselineskip}
+    \setlength{\belowdisplayshortskip}{0.4\baselineskip plus 0.1\baselineskip minus 0.05\baselineskip}
 }
 
