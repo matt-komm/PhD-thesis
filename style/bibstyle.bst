@@ -1329,7 +1329,6 @@ FUNCTION {techreport}
   }
   if$
   new.sentence
-  new.block
   note output
   new.sentence
   fin.entry
