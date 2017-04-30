@@ -1,7 +1,7 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-\usepackage[a4paper,total={12cm,20cm},headsep=14pt,headheight=12pt,footskip=8pt,centering,includehead]{geometry}
+\usepackage[a4paper,total={12cm,20cm},headsep=12pt,headheight=12pt,footskip=8pt,centering,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \usepackage[nouppercase]{scrpage2}
 \usepackage{ifthen}
@@ -81,6 +81,7 @@
 \usepackage{xcolor} %more advance color usage
 \definecolor{ucl}{rgb}{0.05,0.15,0.45}
 \definecolor{gray}{rgb}{0.6,0.6,0.6}
+\definecolor{lightgray}{rgb}{0.85,0.85,0.85}
 %\definecolor{gray}{rgb}{0.15,0.2,0.5}
 
 \usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
@@ -98,6 +99,8 @@
 \usepackage{supertabular}
 \usepackage{stackengine}
 \usepackage{scalerel}
+\usepackage{showframe} % shows page margins
+\renewcommand*\ShowFrameColor{\color{lightgray}}
 \usepackage{etoolbox}
 \usepackage{flafter} %prevent float to appear to early
 \usepackage{hanging}
