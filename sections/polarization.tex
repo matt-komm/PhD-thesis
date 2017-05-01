@@ -3,7 +3,7 @@
 \intro{A first measurement of the top quark spin asymmetry in t~channel, related to the top quark polarization, is presented in this chapter. Proton-proton collision data at $\mathit{\sqrt{s}=8}$~TeV have been analyzed corresponding to about $\mathit{20~fb^{-1}}$. Events with an isolated muon are selected together with two or three jets for the final measurement while events containing an isolated electron and jets have been studied as well. The normalized differential cross section is measured as a function of the polarization angle. From its shape, a spin asymmetry of $\mathit{0.26\pm0.03~(stat)\pm0.10~(syst)}$ is obtained. This is found to be compatible within $\mathit{2.0}$ standard deviations with the expected \gls{sm} asymmetry of $\mathit{0.44}$. The result has been published in Ref.~\cite{Khachatryan:2015dzz}. In a further step, the derivation of limits on anomalous couplings is illustrated by combining this measurement with related ones.}
 
 
-An overview of the strategy to measure the top quark spin asymmetry and derive limits on anomalous couplings is given in the following. After selecting events with an isolated muon or electron and two or three jets, two \glspl{bdt} are employed. The first one, \bdtqcd, is trained to reject events with fake leptons stemming from multijet production. The amount of multijet contamination after the event selection is estimated through a two-component \gls{ml} fit to the \bdtqcd discriminant. The multijet background is modeled by a template obtained from data in a sideband region for which the lepton isolation is inverted. The second \gls{bdt}, \bdttch, is optimized to separate signal from \wjets and \ttbar events. The amount of signal and background fractions is estimate through a second \gls{ml} fit to its discriminant. A signal-enhanced phase space is obtained by applying an optimized selection on each of the \glspl{bdt} discriminants resulting in a \gls{sb} ratio of about 90\%. The shape of the polarization angle, $\cos\theta^\star_{\mu}$, in data is unfolded to parton level after subtracting the remaining background contributions. This is repeated for each considered source of systematic uncertainty to estimate their impact on the measurement. The final measurement is performed in the muon channel only since in the electron channel, shortcomings in the modeling of the data-driven multijet template and an overall larger impact of systematic uncertainties are observed rendering its standalone result much less significant. The main focus is therefore set on the muon channel in the description of this analysis. From the differential cross section the asymmetry is obtained by a linear fit while accounting for the induced bin-by-bin correlations from the unfolding. The \TOPFIT program is utilized in a further step to derive limits on anomalous Wtb couplings by combining the measured asymmetry with an inclusive cross section measurement in $t$~channel and a measurement of the W~boson helicity fractions in \ttbar production.
+An overview of the strategy to measure the top quark spin asymmetry and derive limits on anomalous couplings is given in the following. After selecting events with an isolated muon or electron and two or three jets, two \glspl{bdt} are employed. The first one, \bdtqcd, is trained to reject events with fake leptons stemming from multijet production. The amount of multijet contamination after the event selection is estimated through a two-component \gls{ml} fit to the \bdtqcd discriminant. The multijet background is modeled by a template obtained from data in a sideband region for which the lepton isolation is inverted. The second \gls{bdt}, \bdttch, is optimized to separate signal from \wjets and \ttbar events. The amount of signal and background fractions is estimate through a second \gls{ml} fit to its discriminant. A signal-enriched phase space is obtained by applying an optimized selection on each of the \glspl{bdt} discriminants resulting in a \gls{sb} ratio of about 90\%. The shape of the polarization angle, $\cos\theta^\star_{\mu}$, in data is unfolded to parton level after subtracting the remaining background contributions. This is repeated for each considered source of systematic uncertainty to estimate their impact on the measurement. The final measurement is performed in the muon channel only since in the electron channel, shortcomings in the modeling of the data-driven multijet template and an overall larger impact of systematic uncertainties are observed rendering its standalone result much less significant. The main focus is therefore set on the muon channel in the description of this analysis. From the differential cross section the asymmetry is obtained by a linear fit while accounting for the induced bin-by-bin correlations from the unfolding. The \TOPFIT program is utilized in a further step to derive limits on anomalous Wtb couplings by combining the measured asymmetry with an inclusive cross section measurement in $t$~channel and a measurement of the W~boson helicity fractions in \ttbar production.
 
 
 
@@ -52,7 +52,7 @@ The fake lepton background stemming from multijet production is estimated from d
 
 Distributions of the reconstructed top quark mass in muon and electron channel after the event selection are shown in Fig.~\ref{fig:polarization-topmass}. In control regions containing no or more than one b-tagged jet, the jet with the highest value of the \gls{csv} discriminant is associated to the top quark decay to calculate the top quark mass.  The presented distributions show that data is well described by the simulated events and the multijet templates in control and signal regions in electron and muon channel.
 
-The distributions display a peak for the single top quark signal in 2j1t for a top quark mass range of about $150\range190~\GeV$ as expected. For \ttbar production, the selected b-tagged jet may not be always associated with the corresponding lepton from a top quark decay. Hence, its distributions shows a peak with a wider tail. Unfortunately, the event selection also leads to a similar shape for the \wjets background although it exhibits an even longer tail. In conclusion, it can be seen that a simple selection on the top quark mass is insufficient to select a signal enhanced phase space. Therefore, two \glspl{bdt} are trained for separating signal from background events as detailed in the next section.
+The distributions display a peak for the single top quark signal in 2j1t for a top quark mass range of about $150\range190~\GeV$ as expected. For \ttbar production, the selected b-tagged jet may not be always associated with the corresponding lepton from a top quark decay. Hence, its distributions shows a peak with a wider tail. Unfortunately, the event selection also leads to a similar shape for the \wjets background although it exhibits an even longer tail. In conclusion, it can be seen that a simple selection on the top quark mass is insufficient to select a signal-enriched phase space. Therefore, two \glspl{bdt} are trained for separating signal from background events as detailed in the next section.
 
 \myfigure[p]{\label{fig:polarization-topmass} Distributions of the reconstructed top quark mass in (left column)~electron and (right column)~muon channel. Top row: 2j0t \wjets control region; middle row: 2j1t region; bottom row: 3j1t \ttbar control region. The top quark \pt reweighting~(Sec.~\ref{sec:polarization-modeling}) is exceptionally not applied here.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/electron_2j0t_top_mass_qcdnone_nol.pdf}}
@@ -70,7 +70,7 @@ The distributions display a peak for the single top quark signal in 2j1t for a t
 %##############################################
 \label{sec:polarization-bdt-training}
 
-Two \glspl{bdt} are trained to obtain a signal enhanced phase space. The first \gls{bdt}, labeled \bdtqcd, is trained to reject background events stemming from multijet production. Simulated $t$-channel single top quark events are set as signal class and data events from the sideband region where the multijet template is extracted are set as background class. The gradient boosting procedure is chosen for the training with a relatively low shrinkage of 10\%. The number of single decision trees is restricted to 50 while each tree is kept shallow with a maximum depth of two. The minimum node size is set to 250 events. These settings are not optimized to yield the best discrimination power but instead are motivated to protect well against overtraining. This a particular concern here since the usage of data events for training may not reflect the distribution of multijet events in the signal region to the extend as it would be with simulated events. Multiple \gls{bdt} candidates are trained to assess which set of discriminating input observables yields the best rejection of multijet events with the final discriminant. Correlated observables are excluded from the training by testing individually that the discrimination power does not diminish when removed. This resulted in the following list of five input observables:
+Two \glspl{bdt} are trained to obtain a signal-enriched phase space. The first \gls{bdt}, labeled \bdtqcd, is trained to reject background events stemming from multijet production. Simulated $t$-channel single top quark events are set as signal class and data events from the sideband region where the multijet template is extracted are set as background class. The gradient boosting procedure is chosen for the training with a relatively low shrinkage of 10\%. The number of single decision trees is restricted to 50 while each tree is kept shallow with a maximum depth of two. The minimum node size is set to 250 events. These settings are not optimized to yield the best discrimination power but instead are motivated to protect well against overtraining. This a particular concern here since the usage of data events for training may not reflect the distribution of multijet events in the signal region to the extend as it would be with simulated events. Multiple \gls{bdt} candidates are trained to assess which set of discriminating input observables yields the best rejection of multijet events with the final discriminant. Correlated observables are excluded from the training by testing individually that the discrimination power does not diminish when removed. This resulted in the following list of five input observables:
 
 \begin{itemize}
 \item the reconstructed invariant mass of the top quark candidate;
@@ -194,9 +194,9 @@ An explanation of the initial deviation was found through new differential \gls{
 %##############################################
 \label{sec:polarization-fit}
 
-The precise determination of the amount of background contributions in the signal region is a crucial ingredient for measuring the differential cross section since those need to be subtracted from data prior to unfolding. The estimation is performed through two template-based \gls{ml} fits.
+The precise determination of the amount of background contributions in the signal region is a crucial ingredient for measuring the differential cross section since those need to be subtracted from data prior to unfolding. They are estimated through two template-based \gls{ml} fits.
 
-The first one utilizes the distribution of the \bdtqcd discriminant to estimate the contamination of multijet events through a two-component fit. As described in Sec.~\ref{sec:polarization-selection}, the shape of multijet events is modeled by a template obtained from data in a sideband region with inverted lepton isolation. To assess the stability of the estimated amount of multijet events, the fit is repeated while extracting the multijet template from different isolation regions. In the fit, the multijet template is kept unconstrained. The remaining signal and background templates are summed and taken as the second component while applying a log-normal constraint of 20\% on their total yield. The fits per channel are performed in the regions below the individual working points of the \bdtqcd for multijet rejection. The resulting event yields, extrapolated into the regions above the working points, are listed in Tabs.~\ref{tab:polarization-qcdmu-fitresult} and~\ref{tab:polarization-qcde-fitresult} for the 2j1t region. Similar fits are performed for the \wjets and \ttbar control regions as well.
+The first one utilizes the distribution of the \bdtqcd discriminant to estimate only the contamination of multijet events through a two-component fit. As described in Sec.~\ref{sec:polarization-selection}, the shape of multijet events is modeled by a template obtained from data in a sideband region with inverted lepton isolation. To assess the stability of the estimated amount of multijet events, the fit is repeated while extracting the template from different isolation regions. In the fit, the multijet template is kept unconstrained while the remaining signal and background templates are summed and taken as the second component with a log-normal constraint of $\pm20\%$ on their total yield. The fits are performed per channel in the regions below the individual working points of the \bdtqcd for multijet rejection. The resulting event yields in muon and electron channel, extrapolated into the regions above the working points, are listed in Tabs.~\ref{tab:polarization-qcdmu-fitresult} and~\ref{tab:polarization-qcde-fitresult} for the 2j1t region respectively. Similar fits are performed in the \wjets and \ttbar control regions to estimate the multijet yield as well.
 
 \mytable{\label{tab:polarization-qcdmu-fitresult}Multijet event yields for $\bdtqcd>-0.15$ in 2j1t muon channel.}{
 \begin{tabular}{|r@{$\,<\muiso<\,$}l| r@{$\pm$}l r@{$\pm$}l|}
@@ -224,19 +224,32 @@ $0.25$&$0.5$ & $1512$&$36$ & $44916$&$598$ \\
 \end{tabular}
 }
 
-The estimated amount of multijet events is fixed in the remaining analysis while considering a conservative systematic uncertainty of 50\% on the yield to cover residual differences. An additional systematic uncertainty accounts for the shape of the multijet template when derived from the isolation subregions. The estimated yield of the other component is not used further. Instead, a second fit is performed to estimate the yields of individual processes which were kept together in the first fit.
+The estimated amount of multijet events is fixed in the remaining analysis while considering a conservative systematic uncertainty of 50\% on the yield to cover residual differences. An additional systematic uncertainty accounts for the shape of the multijet template when derived from the isolation subregions. The estimated yield of the second component is not used further. 
+
+A second fit is performed to the distribution of the \bdttch discriminant for estimating the individual yields of the signal and background processes which are treated as a single component in the first fit. Here, similar background processes are grouped together and the fit is setup as follows:
+
+\begin{description}
+\item[Signal] The $t$-channel single top quark template is taken as unconstrained.
+\item[Top quark background] The backgrounds containing genuine top quarks (\ttbar, tW, $s$~channel) have been grouped together. Their summed yield is constraint by $\pm20\%$ though a log-normal prior.
+\item[Electroweak background] The electroweak processes~(\wjets, \zjets, diboson) are summed together. A log-normal constraint of $\pm50\%$ on the yield is applied. The relatively larger prior compared to the top quark background is chosen because the production rates of W+heavy-quark flavored jets are less known in the analysis phase space.
+\item[Multijet] The multijet background is kept fixed to the result of the previous fit.
+\end{description}
+
+A comparison of the shapes of these four components is presented in Fig.~\ref{fig:polarization-fit-shapes}. Additional systematic uncertainties are considered in the measurement to account for the relative fractions of the individual subprocesses within the grouped components. Since the \bdttch shape of top quark and  electroweak backgrounds are fairly similar, a large anticorrelation of about $-90\%$ between their estimated yields has been obtained in initial fits. By fitting simultaneously the \bdttch distribution in the 3j2t control region, an independent handle on the \ttbar production rate is included in the fit which reduces the anticorrelation to about $-75\%$.
+
+\myfigure{\label{fig:polarization-fit-shapes}Shape comparison of the components considered in the fit to the \bdttch discriminant in 2j1t for (a)~electron and (b)~muon channel.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/fit/electron_2j1t_bdt_tch_qcdbdt_nol.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/fit/muon_2j1t_bdt_tch_qcdbdt.pdf}}
+}
+
+The fit results are listed in Tab.~\ref{tab:polarization-yields}. The estimated yields have been extrapolated into a signal-enriched region as well which is defined in Sec.~\ref{sec:polarization-unfolding}. After the event selection, a \gls{sb} of about $13\%$ ($11\%$) is obtained in the muon (electron) channel which is increased to $90\%$ ($88\%$) respectively after applying an additional selection that utilizes both \gls{bdt} discriminants.
 
 
-
-2j0t excluded from fit since it contains only W+LF
-3j2t best for ttbar handle since no multijet
-
-
-\mytable{Event yields in 2j1t after the event selection and in the signal-enhanced phase space defined by $\bdtqcd>-0.15$ in the muon channel, $\bdtqcd>0.15$ in the electron channel, and additionally $\bdttch>0.45$ in both channels. The uncertainties reflect the limited \gls{mc} statistics and the \gls{ml} fit uncertainties.}{
+\mytable{\label{tab:polarization-yields}Event yields in 2j1t after the event selection and in the signal-enriched phase space defined by $\bdtqcd>-0.15$ in the muon channel, $\bdtqcd>0.15$ in the electron channel, and additionally $\bdttch>0.45$ in both channels. The uncertainties reflect the limited \gls{mc} statistics and the \gls{ml} fit uncertainties.}{
 \begin{tabular}{|c| r@{$\pm$}l r@{$\pm$}l | r@{$\pm$}l r@{$\pm$}l|}
 \hline
  & \multicolumn{4}{c|}{Muon channel} & \multicolumn{4}{c|}{Electron channel} \\
-Process & \multicolumn{2}{c}{Selection} & \multicolumn{2}{c |}{Signal-enhanced} & \multicolumn{2}{c}{Selection} & \multicolumn{2}{c|}{Signal-enhanced} \\
+Process & \multicolumn{2}{c}{Selection} & \multicolumn{2}{c |}{Signal-enriched} & \multicolumn{2}{c}{Selection} & \multicolumn{2}{c|}{Signal-enriched} \\
 \hline
 
 \ttbar          & 58539&629     & \hspace{0.4cm} 3118&34       & 48208&518     &  \hspace{0.4cm} 2182&26 \\
@@ -254,6 +267,8 @@ Data            & 147749&384    & 12504&112     & 134472&367    & 7322&86 \\
 \hline
 \end{tabular}
 }
+
+
 
 %##############################################
 \section{Validation}
@@ -281,6 +296,7 @@ cosTheta, cosWhel, top mass in SR/CR, 2j0t,3j1t
 %##############################################
 \section{Unfolding}
 %##############################################
+\label{sec:polarization-unfolding}
 
 bdt cut, neyman construction, 2bin cross check
 
