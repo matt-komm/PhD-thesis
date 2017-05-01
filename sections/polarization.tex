@@ -63,7 +63,6 @@ The distributions display a peak for the single top quark signal in 2j1t for a t
 }
 
 
-\clearpage
 
 %##############################################
 \section{Training of Boosted Decision Trees}
@@ -135,24 +134,39 @@ These observables have been chosen because they exhibit a low correlation with t
 }
 
 
-\clearpage
 
 
 
 %##############################################
 \section{Background modeling}
 %##############################################
-wjets: flavor, cosTheta (sherpa)
-ttbar: top pt -> modifies mass
 
-\myfigure{\label{fig:polarization-wjets-reweighting}Distributions of (top row)~the polarization angle and (bottom row)~the reconstructed W~boson \pt in 2j0t control region: (left column)~before and (right column)~after applying the reweighting.}{
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/muon_2j0t_cosTheta_lj_qcdbdt_nol.pdf}}
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/muon_2j0t_cosTheta_lj_qcdbdt.pdf}}\\
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/muon_2j0t_wboson_pt_qcdbdt_nol.pdf}}
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/muon_2j0t_wboson_pt_qcdbdt.pdf}}\\
+The modeling of the \wjets and \ttbar backgrounds is studied in control regions before performing the measurement. In the 2j0t control region, two mismodeled observables are found, after applying the \bdtqcd selection to reject the multijet background, which can be attributed to the \wjets background. 
+
+The transverse momentum of the W~boson shown in Fig.~\ref{fig:polarization-wjets-reweighting-wpt} displays a softer spectrum in data compared to simulation. This effect can be explained as an insufficient modeling of the hadronic recoil in such events. It is typically defined for \zjets and \wjets events as the momentum which balances the vector boson momentum in the transverse plane. The recoil consists of hard jets but has also a soft component stemming from contributions by the underlying event and pileup. A simple reweighting of simulated events in bins of the W~boson \pt is applied to correct for this deviation. In the statistical evaluation, the difference between applying and not applying this reweighting is considered as a dedicated systematic uncertainty.
+
+\myfigure{\label{fig:polarization-wjets-pt}Distributions of the reconstructed W~boson \pt in 2j0t control region: (a)~before and (b)~after applying the \wjets corrections.}{
+\subfloat[\label{fig:polarization-wjets-reweighting-wpt}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/muon_2j0t_wboson_pt_qcdbdt_nol.pdf}}
+\subfloat[\label{fig:polarization-wjets-reweighting-wpt-rew}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/muon_2j0t_wboson_pt_qcdbdt.pdf}}
 }
 
-\myfigure{\label{fig:polarization-wjets-reweighting-met}Distribution of \met in mon channel 2j0t control region for (a)~before and (b)~after applying the \wjets reweighting.}{
+Another mismodeling of the \wjets background is observed for the polarization angle itself which is presented in Fig.~\ref{fig:polarization-wjets-reweighting-cosTheta}. This is a percuiliar mismodeling since $\cos\theta_\mu^\star$ does not reflect a physically meaningful observable for \wjets events. A similar deviation has been observed at 7~TeV as well~\cite{Komm-thesis}. The modeling is cross checked using an alternative \wjets sample simulated with the \SHERPA generator. This sample was however simulated with only massless quarks. Hence the ratio of light, charm, and bottom flavored jets is predicted wrongly. The flavor ratios are therefore reweighted to the ones predicted by the default \MG sample. The distributions before and after the reweighting are shown in Fig.~\ref{fig:polarization-sherpa-cosTheta}. A better modeling of $\cos\theta_{\mu}^\star$ but with a somewhat opposite trend compared to Fig.~\ref{fig:polarization-wjets-cosTheta} is obtained. For the measurement, the shape of $\cos\theta_{\mu}^\star$ is reweighted using \MG-to-\SHERPA scale factors. The resulting distribution is shown in Fig.~\ref{fig:polarization-wjets-reweighting-cosTheta-rew} where a fair description of data is achieved. An additional systematic uncertainty accounts for the  ????
+
+In the measurements at 13~\TeV~(Ch.~\ref{ch:diff13}), the \wjets background is simulated at \gls{nlo} using the \MGAMC generator which yields an improved modeling of data. The observed mismodeling here may retroactively be judged as a consequence of the \gls{lo} accuracy of the \MG \wjets sample.
+
+\myfigure{\label{fig:polarization-wjets-cosTheta}Distributions of the polarization angle in 2j0t control region: (a)~before and (b)~after applying the \wjets corrections.}{
+\subfloat[\label{fig:polarization-wjets-reweighting-cosTheta}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/muon_2j0t_cosTheta_lj_qcdbdt_nol.pdf}}
+\subfloat[\label{fig:polarization-wjets-reweighting-cosTheta-rew}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/muon_2j0t_cosTheta_lj_qcdbdt.pdf}}
+}
+
+\myfigure{\label{fig:polarization-sherpa-cosTheta}Distributions of the polarization angle in 2j0t control region using an alternative \wjets sample simulated with \SHERPA: (a)~before and (b)~after reweighting the flavor ratio to \MG.}{
+\subfloat[\label{fig:polarization-sherpa-reweighting-cosTheta}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/sherpa_nofl/muon_2j0t_cosTheta_lj_qcdbdt_nol.pdf}}
+\subfloat[\label{fig:polarization-sherpa-reweighting-cosTheta-rew}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/sherpa_fl/muon_2j0t_cosTheta_lj_qcdbdt.pdf}}
+}
+
+
+
+\myfigure{\label{fig:polarization-wjets-reweighting-met}Distribution of \met in mon channel 2j0t control region for (a)~before and (b)~after applying the \wjets corrections.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/beforeBgCorr/2j0t/muon_2j0t_met_qcdnone_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/muon_2j0t_met_qcdnone.pdf}}
 }
