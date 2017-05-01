@@ -47,7 +47,7 @@ The fake lepton background stemming from multijet production is estimated from d
 
 \myfigure{\label{fig:polarization-qcd-template}Distributions of the transverse W~boson mass in muon channel: (a)~antiisolated sideband region for extracting the multijet template; (b)~resulting distribution in the 2j1t region after scaling the extracted template to data through a \gls{ml} fit.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/beforeBgCorr/2j1t/muon_2j1t_mtw_qcdnone_antiiso_nol.pdf}}
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/beforeBgCorr/2j1t/muon_2j1t_mtw_qcdnone.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_mtw_qcdnone.pdf}}
 }
 
 Distributions of the reconstructed top quark mass in muon and electron channel after the event selection are shown in Fig.~\ref{fig:polarization-topmass}. In control regions containing no or more than one b-tagged jet, the jet with the highest value of the \gls{csv} discriminant is associated to the top quark decay to calculate the top quark mass.  The presented distributions show that data is well described by the simulated events and the multijet templates in control and signal regions in electron and muon channel.
@@ -273,6 +273,15 @@ Data            & 147749&384    & 12504&112     & 134472&367    & 7322&86 \\
 %##############################################
 \section{Validation}
 %##############################################
+
+Before the unfolding is performed, the final distributions are validated after applying the additional corrections to the \wjets and \ttbar events~(Sec.~\ref{sec:polarization-modeling}) and scaling the signal and background templates to the result of the \gls{ml} fits~(Sec.~\ref{sec:polarization-fit}). 
+
+problems with electrons:
+- sideband region not suitable enough (fit in bins of bdttch yields different scale factors)
+- BDT biased, trained on wrong events (e.g. when excluding met -> difference performance observed)
+- QCD estimation biased, lack of events in certain phase space, assuming wrong performance of BDT
+- electron channel not very significant in blind analysis
+=> electron channel is dropped from result
 
 \myfigure{\label{fig:polarization-dphi-lepton-met}Distributions of the angle in the transverse plane between the missing transverse momentum and the (a)~muon, (b)~electron after applying the described corrections.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/electron_2j0t_lepton_met_dphi_qcdnone_nol.pdf}}
