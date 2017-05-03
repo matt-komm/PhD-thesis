@@ -1,53 +1,53 @@
 void recoDist()
 {
-//=========Macro generated from canvas: cv0.603966168892/
-//=========  (Mon Apr 10 23:20:27 2017) by ROOT version6.04/16
-   TCanvas *cv0.603966168892 = new TCanvas("cv0.603966168892", "",0,0,800,700);
+//=========Macro generated from canvas: cv0.339273030641/
+//=========  (Wed May  3 00:41:05 2017) by ROOT version6.04/16
+   TCanvas *cv0.339273030641 = new TCanvas("cv0.339273030641", "",0,0,800,700);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.603966168892->SetHighLightColor(2);
-   cv0.603966168892->Range(-1.351515,-0.1686747,1.072727,1.036145);
-   cv0.603966168892->SetFillColor(0);
-   cv0.603966168892->SetFillStyle(4000);
-   cv0.603966168892->SetBorderMode(0);
-   cv0.603966168892->SetBorderSize(2);
-   cv0.603966168892->SetTickx(1);
-   cv0.603966168892->SetTicky(1);
-   cv0.603966168892->SetLeftMargin(0.145);
-   cv0.603966168892->SetRightMargin(0.03);
-   cv0.603966168892->SetTopMargin(0.03);
-   cv0.603966168892->SetBottomMargin(0.14);
-   cv0.603966168892->SetFrameFillStyle(0);
-   cv0.603966168892->SetFrameBorderMode(0);
-   cv0.603966168892->SetFrameFillStyle(0);
-   cv0.603966168892->SetFrameBorderMode(0);
+   cv0.339273030641->SetHighLightColor(2);
+   cv0.339273030641->Range(-1.351515,-0.1686747,1.072727,1.036145);
+   cv0.339273030641->SetFillColor(0);
+   cv0.339273030641->SetFillStyle(4000);
+   cv0.339273030641->SetBorderMode(0);
+   cv0.339273030641->SetBorderSize(2);
+   cv0.339273030641->SetTickx(1);
+   cv0.339273030641->SetTicky(1);
+   cv0.339273030641->SetLeftMargin(0.145);
+   cv0.339273030641->SetRightMargin(0.03);
+   cv0.339273030641->SetTopMargin(0.03);
+   cv0.339273030641->SetBottomMargin(0.14);
+   cv0.339273030641->SetFrameFillStyle(0);
+   cv0.339273030641->SetFrameBorderMode(0);
+   cv0.339273030641->SetFrameFillStyle(0);
+   cv0.339273030641->SetFrameBorderMode(0);
    
-   TH2F *axis0.538044952591__9 = new TH2F("axis0.538044952591__9","",50,-1,1,50,0,1);
-   axis0.538044952591__9->SetMarkerStyle(20);
-   axis0.538044952591__9->GetXaxis()->SetTitle("Reconstructed");
-   axis0.538044952591__9->GetXaxis()->SetNdivisions(1005);
-   axis0.538044952591__9->GetXaxis()->SetLabelFont(43);
-   axis0.538044952591__9->GetXaxis()->SetLabelOffset(0.0077);
-   axis0.538044952591__9->GetXaxis()->SetLabelSize(34.46154);
-   axis0.538044952591__9->GetXaxis()->SetTitleSize(37.69231);
-   axis0.538044952591__9->GetXaxis()->SetTitleOffset(1.2);
-   axis0.538044952591__9->GetXaxis()->SetTitleFont(43);
-   axis0.538044952591__9->GetYaxis()->SetTitle("a.u.");
-   axis0.538044952591__9->GetYaxis()->SetNdivisions(506);
-   axis0.538044952591__9->GetYaxis()->SetLabelFont(43);
-   axis0.538044952591__9->GetYaxis()->SetLabelOffset(0.0077);
-   axis0.538044952591__9->GetYaxis()->SetLabelSize(34.46154);
-   axis0.538044952591__9->GetYaxis()->SetTitleSize(37.69231);
-   axis0.538044952591__9->GetYaxis()->SetTitleOffset(1.2);
-   axis0.538044952591__9->GetYaxis()->SetTitleFont(43);
-   axis0.538044952591__9->GetZaxis()->SetLabelFont(43);
-   axis0.538044952591__9->GetZaxis()->SetLabelOffset(0.0077);
-   axis0.538044952591__9->GetZaxis()->SetLabelSize(34.46154);
-   axis0.538044952591__9->GetZaxis()->SetTitleSize(37.69231);
-   axis0.538044952591__9->GetZaxis()->SetTitleOffset(1.2);
-   axis0.538044952591__9->GetZaxis()->SetTitleFont(43);
-   axis0.538044952591__9->Draw("AXIS");
+   TH2F *axis0.565650630066__9 = new TH2F("axis0.565650630066__9","",50,-1,1,50,0,1);
+   axis0.565650630066__9->SetMarkerStyle(20);
+   axis0.565650630066__9->GetXaxis()->SetTitle("Reconstructed");
+   axis0.565650630066__9->GetXaxis()->SetNdivisions(1005);
+   axis0.565650630066__9->GetXaxis()->SetLabelFont(43);
+   axis0.565650630066__9->GetXaxis()->SetLabelOffset(0.0077);
+   axis0.565650630066__9->GetXaxis()->SetLabelSize(34.46154);
+   axis0.565650630066__9->GetXaxis()->SetTitleSize(37.69231);
+   axis0.565650630066__9->GetXaxis()->SetTitleOffset(1.2);
+   axis0.565650630066__9->GetXaxis()->SetTitleFont(43);
+   axis0.565650630066__9->GetYaxis()->SetTitle("a.u.");
+   axis0.565650630066__9->GetYaxis()->SetNdivisions(506);
+   axis0.565650630066__9->GetYaxis()->SetLabelFont(43);
+   axis0.565650630066__9->GetYaxis()->SetLabelOffset(0.0077);
+   axis0.565650630066__9->GetYaxis()->SetLabelSize(34.46154);
+   axis0.565650630066__9->GetYaxis()->SetTitleSize(37.69231);
+   axis0.565650630066__9->GetYaxis()->SetTitleOffset(1.2);
+   axis0.565650630066__9->GetYaxis()->SetTitleFont(43);
+   axis0.565650630066__9->GetZaxis()->SetLabelFont(43);
+   axis0.565650630066__9->GetZaxis()->SetLabelOffset(0.0077);
+   axis0.565650630066__9->GetZaxis()->SetLabelSize(34.46154);
+   axis0.565650630066__9->GetZaxis()->SetTitleSize(37.69231);
+   axis0.565650630066__9->GetZaxis()->SetTitleOffset(1.2);
+   axis0.565650630066__9->GetZaxis()->SetTitleFont(43);
+   axis0.565650630066__9->Draw("AXIS");
    
    TH1F *recoH__10 = new TH1F("recoH__10","",10,-1,1);
    recoH__10->SetBinContent(1,0.1249311);
@@ -74,14 +74,14 @@ void recoDist()
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
-   ci = TColor::GetColor("#6600ff");
+   ci = TColor::GetColor("#7200ff");
    recoH__10->SetLineColor(ci);
-   recoH__10->SetLineWidth(2);
+   recoH__10->SetLineWidth(3);
 
-   ci = TColor::GetColor("#6600ff");
+   ci = TColor::GetColor("#7200ff");
    recoH__10->SetMarkerColor(ci);
    recoH__10->SetMarkerStyle(20);
-   recoH__10->SetMarkerSize(1.4);
+   recoH__10->SetMarkerSize(1.5);
    recoH__10->GetXaxis()->SetNdivisions(1005);
    recoH__10->GetXaxis()->SetLabelFont(43);
    recoH__10->GetXaxis()->SetLabelOffset(0.0077);
@@ -128,14 +128,14 @@ void recoDist()
    recoH__11->SetBinError(10,0.04652007);
    recoH__11->SetEntries(10);
 
-   ci = TColor::GetColor("#6600ff");
+   ci = TColor::GetColor("#7200ff");
    recoH__11->SetLineColor(ci);
-   recoH__11->SetLineWidth(2);
+   recoH__11->SetLineWidth(3);
 
-   ci = TColor::GetColor("#6600ff");
+   ci = TColor::GetColor("#7200ff");
    recoH__11->SetMarkerColor(ci);
    recoH__11->SetMarkerStyle(20);
-   recoH__11->SetMarkerSize(1.4);
+   recoH__11->SetMarkerSize(1.5);
    recoH__11->GetXaxis()->SetNdivisions(1005);
    recoH__11->GetXaxis()->SetLabelFont(43);
    recoH__11->GetXaxis()->SetLabelOffset(0.0077);
@@ -182,15 +182,15 @@ void recoDist()
    recoHpoi__12->SetBinError(10,0.04529338);
    recoHpoi__12->SetEntries(20);
 
-   ci = TColor::GetColor("#ff7f00");
+   ci = TColor::GetColor("#ff6600");
    recoHpoi__12->SetLineColor(ci);
    recoHpoi__12->SetLineStyle(2);
-   recoHpoi__12->SetLineWidth(3);
+   recoHpoi__12->SetLineWidth(4);
 
-   ci = TColor::GetColor("#ff7f00");
+   ci = TColor::GetColor("#ff6600");
    recoHpoi__12->SetMarkerColor(ci);
    recoHpoi__12->SetMarkerStyle(20);
-   recoHpoi__12->SetMarkerSize(1.4);
+   recoHpoi__12->SetMarkerSize(1.5);
    recoHpoi__12->GetXaxis()->SetNdivisions(1005);
    recoHpoi__12->GetXaxis()->SetLabelFont(43);
    recoHpoi__12->GetXaxis()->SetLabelOffset(0.0077);
@@ -225,28 +225,28 @@ void recoDist()
    leg->SetFillStyle(0);
    TLegendEntry *entry=leg->AddEntry("recoH","Folded true distribution","PEL");
 
-   ci = TColor::GetColor("#6600ff");
+   ci = TColor::GetColor("#7200ff");
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
-   entry->SetLineWidth(2);
+   entry->SetLineWidth(3);
 
-   ci = TColor::GetColor("#6600ff");
+   ci = TColor::GetColor("#7200ff");
    entry->SetMarkerColor(ci);
    entry->SetMarkerStyle(20);
-   entry->SetMarkerSize(1.4);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(43);
    entry=leg->AddEntry("recoHpoi","Statistical fluctuation","L");
 
-   ci = TColor::GetColor("#ff7f00");
+   ci = TColor::GetColor("#ff6600");
    entry->SetLineColor(ci);
    entry->SetLineStyle(2);
-   entry->SetLineWidth(3);
+   entry->SetLineWidth(4);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(43);
    leg->Draw();
-   cv0.603966168892->Modified();
-   cv0.603966168892->cd();
-   cv0.603966168892->SetSelected(cv0.603966168892);
+   cv0.339273030641->Modified();
+   cv0.339273030641->cd();
+   cv0.339273030641->SetSelected(cv0.339273030641);
 }

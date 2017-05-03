@@ -545,9 +545,9 @@ for i in range(N):
 histUnfoldedReg.SetLineStyle(1)
 histUnfoldedReg.SetLineWidth(3)
 histUnfoldedReg.SetMarkerStyle(20)
-histUnfoldedReg.SetMarkerSize(1.4)
-histUnfoldedReg.SetMarkerColor(newColor(0.4,0.0,1).GetNumber())
-histUnfoldedReg.SetLineColor(newColor(0.4,0.0,1).GetNumber())
+histUnfoldedReg.SetMarkerSize(1.5)
+histUnfoldedReg.SetMarkerColor(newColor(0.45,0.0,1).GetNumber())
+histUnfoldedReg.SetLineColor(newColor(0.45,0.0,1).GetNumber())
 histUnfoldedReg.Draw("HISTSamePE")
 
 unfold.setData(histRecoPoi)
@@ -556,8 +556,8 @@ covUnfoldedPoiReg = histResponse.Clone(histResponse.GetName()+"regPoi")
 unfold.doUnfolding(2.1,histUnfoldedPoiReg,covUnfoldedPoiReg)
 
 histUnfoldedPoiReg.SetLineStyle(2)
-histUnfoldedPoiReg.SetLineWidth(3)
-histUnfoldedPoiReg.SetLineColor(newColor(1,0.5,0.0).GetNumber())
+histUnfoldedPoiReg.SetLineWidth(4)
+histUnfoldedPoiReg.SetLineColor(newColor(1,0.4,0.0).GetNumber())
 histUnfoldedPoiReg.Draw("HISTSame")
 
 legendTrue.AddEntry(histUnfoldedReg,"Unfolded true dist. (reg.)","PE")
