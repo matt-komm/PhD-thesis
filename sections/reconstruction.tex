@@ -206,28 +206,28 @@ where $d^\mathrm{jet}$ denotes the value of the b-tagging discriminant, $W_{i}$ 
 \section{Missing transverse energy}
 %##############################################
 
-The \glshere{met} is calculated from the momentum imbalance of the summed \gls{pf} candidate momenta as
+The missing transverse momentum, \pvmiss, and energy, \met, is calculated from the momentum imbalance of the summed \gls{pf} candidate momenta as
 
 \begin{equation}
 \met=|\pvmiss|,\qquad \pvmiss=\colvec{2}{\pvmissx}{\pvmissy}=-\sum_{i}^\mathrm{\gls{pf}~cand.}\vec{p}_{\mathrm{T},i}~.
 \end{equation}
 
-In analyses, it can be used to infer the summed transverse momenta of produced neutrinos which escape the \gls{cms} detector without being detected due to their very low interaction probability. In this thesis, one neutrino is expected to be produced in signal events stemming from the decay of a single top quark which can lead to a significant \gls{met}~($\langle\met\rangle\approx50~\GeV$). The $\pvmissz$ component cannot be calculated from the momentum imbalance since the boost along the z-axis of an event, determined by the initial parton momentum fractions $x_i$, cannot be reconstructed.
+In analyses, it can be used to infer the summed transverse momenta of produced neutrinos which escape the \gls{cms} detector without being detected due to their very low interaction probability. In this thesis, one neutrino is expected to be produced in signal events stemming from the decay of a single top quark which can lead to a significant \met~($\langle\met\rangle\approx50~\GeV$). The $\pvmissz$ component cannot be calculated from the momentum imbalance since the boost along the z-axis of an event, determined by the initial parton momentum fractions $x_i$, cannot be reconstructed.
 
-The \gls{met} scale is improved by propagating the corrected energy for \gls{pf} candidates which are clustered into jets to the missing transverse momentum. Only jets with a minimal $\pt$ of at least $10~\GeV$ are considered for which energy calibrations are measured\footnote{This threshold was raised to $15~\GeV$ in 13~TeV data.}. The correction can be expressed as
+The \met scale is improved by propagating the corrected energy for \gls{pf} candidates which are clustered into jets to the missing transverse momentum. Only jets with a minimal $\pt$ of at least $10~\GeV$ are considered for which energy calibrations are measured\footnote{This threshold was raised to $15~\GeV$ in 13~TeV data.}. The correction can be expressed as
 
 \begin{align}
 \pvmiss^\mathrm{corr.}&=-~\sum_{i}^\mathrm{jets}~\vec{p}_{\mathrm{T},i}^\mathrm{\,corr.}~~-\sum_{i}^\mathrm{unclustered}\vec{p}_{\mathrm{T},i}^\mathrm{\,raw}\\
 &=\pvmiss^\mathrm{raw}-~\sum_{i}^\mathrm{jets}\left(\, \vec{p}_{\mathrm{T},i}^\mathrm{\,full~\gls{jec}}~-~\vec{p}_{\mathrm{T},i}^\mathrm{\,\gls{pu}\mbox{-}only}\right)
 \end{align}
 
-where $\vec{p}_{\mathrm{T},i}^\mathrm{\,\gls{pu}\mbox{-}only}$ denotes the transverse jet momentum after applying only the first level of energy corrections which deals with the contribution from pileup. The resulting improvement is demonstrated in Fig.~\ref{fig:reconstruction-met}. The parallel component of the missing momentum vector $u_{\parallel}$ along the direction of a reconstructed $\mathrm{Z}$~boson or photon $\vec{q}_\mathrm{T}$ is shown in a ratio over the recoil momentum. The energy scale of the parallel \gls{met} component is reconstructed well within 3\% or better for momenta above $50~\GeV$ after propagating the applied jet energy corrections. At low momenta, the contribution from unclustered \gls{pf} candidates dominates which results in a degradation of energy scale.
+where $\vec{p}_{\mathrm{T},i}^\mathrm{\,\gls{pu}\mbox{-}only}$ denotes the transverse jet momentum after applying only the first level of energy corrections which deals with the contribution from pileup. The resulting improvement is demonstrated in Fig.~\ref{fig:reconstruction-met}. The parallel component of the missing momentum vector $u_{\parallel}$ along the direction of a reconstructed $\mathrm{Z}$~boson or photon $\vec{q}_\mathrm{T}$ is shown in a ratio over the recoil momentum. The energy scale of the parallel \pvmiss component is reconstructed well within 3\% or better for momenta above $50~\GeV$ after propagating the applied jet energy corrections. At low momenta, the contribution from unclustered \gls{pf} candidates dominates which results in a degradation of energy scale.
 
 \myfigure{\label{fig:reconstruction-met}The average $\pvmiss$ component parallel to the recoiling $\mathrm{Z}/\gamma$ boson as a function of the boson's momentum. The figure is taken from Ref.~\cite{CMS-PAS-JME-12-002}.}{
 \includegraphics[width=0.6\textwidth]{figures/reconstruction/met_recoil.pdf}
 }
 
-An additional correction can be applied to decrease the influence of pileup on the \gls{met}. Since typical inelastic pp interactions do not produce any prompt neutrinos, pileup events will only lead to a smearing of the \gls{met} due to the finite detector response for measuring neutral particle momenta. This can be mitigated by subtracting the amount of charged and neutral energy associated to pileup vertices where the latter is estimated from the amount of charged hadron activity.
+An additional correction can be applied to decrease the influence of pileup on the \met. Since typical inelastic pp interactions do not produce any prompt neutrinos, pileup events will only lead to a smearing of the \met due to the finite detector response for measuring neutral particle momenta. This can be mitigated by subtracting the amount of charged and neutral energy associated to pileup vertices where the latter is estimated from the amount of charged hadron activity.
 
 
 %##############################################
@@ -253,8 +253,8 @@ Several corrections have been introduced throughout this chapter to improve the 
 
 \begin{description}
 \item[Lepton selection] The efficiencies for selecting isolated muons or electrons which pass dedicated tight identification criteria are corrected through data-to-simulation scale factors. In addition, the analyzed data events have been recorded using single muon or electron triggers whose efficiency in simulation is also corrected to match the ones observed in data. The applied lepton scale factors are varied independently within one standard deviation of their measured uncertainties to assess the systematic impact on the measurements.
-\item[Jet energy scale and resolution] The momenta of reconstructed jets in data and simulation is corrected to relate to the expected true jet energy derived from simulation. Residual corrections and a smearing procedure are applied to match the overall scale and resolution of the jet energy in data. The corrections are also propagated to the \gls{met} which improves its energy response as well. The systematic uncertainties arising from the measured energy and resolutions scale factors are estimated by varying them within their uncertainties and repeating the measurements with recalibrated jets and \gls{met}.
-\item[Unclustered energy] The momentum of \gls{pf} candidates which are not clustered into jets is varied to estimated the uncertainty due their uncalibrated contributions to the \gls{met}.
+\item[Jet energy scale and resolution] The momenta of reconstructed jets in data and simulation is corrected to relate to the expected true jet energy derived from simulation. Residual corrections and a smearing procedure are applied to match the overall scale and resolution of the jet energy in data. The corrections are also propagated to the \met which improves its energy response as well. The systematic uncertainties arising from the measured energy and resolutions scale factors are estimated by varying them within their uncertainties and repeating the measurements with recalibrated jets and \met.
+\item[Unclustered energy] The momentum of \gls{pf} candidates which are not clustered into jets is varied to estimated the uncertainty due their uncalibrated contributions to the \met.
 \item[B-tagging] Scale factors are applied to simulation to match the performance of the b-tagging algorithm in data. The systematic uncertainties are assessed for b and c~jets by varying their scale factors simultaneously while the scale factor for the mistagging rate for g,u,d,s~jets is varied independently.
 \item[Pileup] The impact of pileup is estimated by varying the inelastic pp cross section by $\pm5\%$ which changes the estimated distribution of true pileup interactions in data. The corresponding reweighting factors are rederived and applied to simulation.
 \end{description}
