@@ -255,30 +255,39 @@ rootObj=[]
 
 def drawMeasurement(index,mean,stat,tot,statColor,sysColor):
     space = 0.25
+    
+    statDark = getDarkerColor(statColor)
+    sysDark = getDarkerColor(sysColor)
 
     boxSys1 = ROOT.TBox(mean-tot,index+space,mean-stat,index+itemSpace-space)
     #tf.SetLineColor(color.GetNumber())
     boxSys1.SetFillColor(sysColor.GetNumber())
-    boxSys1.SetLineWidth(0)
+    boxSys1.SetLineColor(0)
+    boxSys1.SetLineWidth(3)
     boxSys1.SetFillStyle(1001)
     rootObj.append(boxSys1)
     boxSys1.Draw("SameF")
+    boxSys1.Draw("SameL")
     
     boxSys2 = ROOT.TBox(mean+tot,index+space,mean+stat,index+itemSpace-space)
     #tf.SetLineColor(color.GetNumber())
     boxSys2.SetFillColor(sysColor.GetNumber())
-    boxSys2.SetLineWidth(0)
+    boxSys2.SetLineColor(0)
+    boxSys2.SetLineWidth(3)
     boxSys2.SetFillStyle(1001)
     rootObj.append(boxSys2)
     boxSys2.Draw("SameF")
+    boxSys2.Draw("SameL")
     
     boxStat = ROOT.TBox(mean-stat,index+space*0.9,mean+stat,index+itemSpace-space*0.9)
     #tf.SetLineColor(color.GetNumber())
     boxStat.SetFillColor(statColor.GetNumber())
-    boxStat.SetLineWidth(0)
+    boxStat.SetLineColor(0)
+    boxStat.SetLineWidth(2)
     boxStat.SetFillStyle(1001)
     rootObj.append(boxStat)
     boxStat.Draw("SameF")
+    boxStat.Draw("SameL")
     
     line = ROOT.TBox(mean,index+space*0.5,mean,index+itemSpace-space*0.5)
     line.SetLineColor(1)
@@ -296,19 +305,21 @@ def drawLine(index):
     tf.Draw("Same")
     return tf
     
+
+    
 heightMax = 1
 
     
 resultList = [
-    ["t+#bar{t}","2 bin",27.6,3.1,11.5],
+    ["t+#bar{t}","2-bin",27.6,3.1,11.5],
     ["t+#bar{t}","TUnfold",26.0,2.6,10.5],
     ["top quark#kern[-0.5]{ }+#kern[-0.5]{ }antiquark"],
     [""],
-    ["#bar{t}","2 bin",20.3,5.7,16.0],
+    ["#bar{t}","2-bin",20.3,5.7,16.0],
     ["#bar{t}","TUnfold",21.1,4.6,13.8],
     ["top antiquark"],
     [""],
-    ["t","2 bin",31.7,3.7,11.2],
+    ["t","2-bin",31.7,3.7,11.2],
     ["t","TUnfold",29.0,3.2,10.5],
     ["top quark"],
 ]
@@ -318,6 +329,25 @@ for i,res in enumerate(resultList):
         heightMax+=itemSpace
     else:
         heightMax+=skipSpace
+        
+def addVLine(value,color,width,style):
+    tfSM = ROOT.TBox(value,0,value,heightMax)
+    tfSM.SetLineColor(color)
+    tfSM.SetLineWidth(width)
+    tfSM.SetLineStyle(style)
+    rootObj.append(tfSM)
+    tfSM.Draw("SameL")
+    return tfSM
+    
+def drawBox(start,stop,color):
+
+    boxSys1 = ROOT.TBox(start,0,stop,heightMax)
+    #tf.SetLineColor(color.GetNumber())
+    boxSys1.SetFillColor(color.GetNumber())
+    boxSys1.SetLineWidth(0)
+    boxSys1.SetFillStyle(3445)
+    rootObj.append(boxSys1)
+    boxSys1.Draw("SameF")
         
 
 axis=ROOT.TH2F("axis"+str(random.random()),";Top quark spin asymmetry;",50,-0.2,0.5, 50,0,heightMax)
@@ -334,6 +364,20 @@ legend.SetFillStyle(0)
             
 statColor = newColor(0.5,0.25,1)
 sysColor = newColor(0.8,0.8,0.8)
+
+statColorBright = newColor(0.6,0.4,1)
+sysColorBright = newColor(0.8,0.8,0.8)
+
+#addVLine((resultList[1][2]+resultList[1][3])*0.01,statColor.GetNumber(),2,2)
+#addVLine((resultList[1][2]-resultList[1][3])*0.01,statColor.GetNumber(),2,2)
+
+#addVLine((resultList[1][2]+resultList[1][4])*0.01,sysColor.GetNumber(),2,2)
+#addVLine((resultList[1][2]-resultList[1][4])*0.01,sysColor.GetNumber(),2,2)
+
+drawBox((resultList[1][2]-resultList[1][3])*0.01,(resultList[1][2]+resultList[1][3])*0.01,statColorBright)
+
+drawBox((resultList[1][2]-resultList[1][3])*0.01,(resultList[1][2]-resultList[1][4])*0.01,sysColorBright)
+drawBox((resultList[1][2]+resultList[1][3])*0.01,(resultList[1][2]+resultList[1][4])*0.01,sysColorBright)
 
 currentHeight = 0.5
 for res in resultList:
@@ -371,14 +415,11 @@ legend.AddEntry("","uncertainty","")
 legend.AddEntry(tot,"total","F")
 legend.AddEntry("","uncertainty","")
 
-tfSM = ROOT.TBox(0.44,0,0.44,heightMax)
-tfSM.SetLineColor(1)
-tfSM.SetLineWidth(3)
-tfSM.SetLineStyle(2)
-rootObj.append(tfSM)
-tfSM.Draw("SameL")
+tfSM = addVLine(0.44,1,3,2)
 legend.AddEntry(tfSM,"SM","L")
 legend.AddEntry("","prediction","")
+
+
 
 pCMS=ROOT.TPaveText(cvxmin+0.0,0.94,cvxmin+0.,0.94,"NDC")
 pCMS.SetFillColor(ROOT.kWhite)

@@ -278,7 +278,7 @@ Data            & 147749&384    & 12504&112     & 134472&367    & 7322&86 \\
 \section{Validation}
 %##############################################
 
-The final distributions are validated after applying the additional corrections to the \wjets and \ttbar events~(Sec.~\ref{sec:polarization-modeling}) and scaling the signal and background templates to the result of the \gls{ml} fits~(Sec.~\ref{sec:polarization-fit}). This revealed an insufficient modeling of multijet events through the data-driven template in the electron channel. The actual problem is multi-layered and outlined in the following. A stability test of the data-driven multijet shape has been conducted where separate fits to the \bdtqcd discriminant in bins of the \bdttch discriminant are performed. The resulting scale factors in muon and electron channel are compared in Fig.~\ref{fig:polarization-qcdsf}. In the muon channel, the estimated scale factor appears to be stable and in agreement with the inclusive fit within uncertainties. The estimated scale factors in the electron channel however display an instability. The result shows that the extracted multijet template is scaled differently depending on the interval of the \bdttch discriminant in which the template is extracted and the fit is carried out.
+The final distributions are validated after applying the additional corrections to the \wjets and \ttbar events~(Sec.~\ref{sec:polarization-modeling}) and scaling the signal and background templates to the result of the \gls{ml} fits~(Sec.~\ref{sec:polarization-fit}) before unblinding the analysis. Here, an insufficient modeling of multijet events through the data-driven template in the electron channel is discovered. The actual problem is multi-layered and outlined in the following. A stability test of the data-driven multijet shape has been conducted where separate fits to the \bdtqcd discriminant in bins of the \bdttch discriminant are performed. The resulting scale factors in muon and electron channel are compared in Fig.~\ref{fig:polarization-qcdsf}. In the muon channel, the estimated scale factor appears to be stable and in agreement with the inclusive fit within uncertainties. The estimated scale factors in the electron channel however display an instability. The result shows that the extracted multijet template is scaled differently depending on the interval of the \bdttch discriminant in which the template is extracted and the fit is carried out. 
 
 \myfigure{\label{fig:polarization-qcdsf} Resulting scale factors for the multijet template by fitting the \bdtqcd discriminant inclusively and separately in bins of \bdttch.}{
 \includegraphics[width=0.55\textwidth]{figures/polarization/qcdStability.pdf}
@@ -286,44 +286,68 @@ The final distributions are validated after applying the additional corrections 
 
 Further investigations of the modeling of multijet events in the electron channel revealed that the distribution of the difference between the $\phi$ angles of the lepton and the missing transverse momentum is mismodeled. Figure~\ref{fig:polarization-dphi-lepton-met} shows the corresponding distributions in electron and muon channel. The $\Delta\phi$ distribution in the muon channel is instead well modeled by the multijet template.
 
-\myfigure{\label{fig:polarization-dphi-lepton-met}Distributions of the angle in the transverse plane between the missing transverse momentum and the (a)~muon, (b)~electron after applying the described corrections.}{
+\myfigure[h!]{\label{fig:polarization-dphi-lepton-met}Distributions of the angle in the transverse plane between the missing transverse momentum and the (a)~muon, (b)~electron after applying the described corrections.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/afterBgCorr/2j0t/electron_2j0t_lepton_met_dphi_qcdnone_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/afterBgCorr/2j0t/muon_2j0t_lepton_met_dphi_qcdnone.pdf}}
 }
 
-From these findings it is concluded that events from the sideband region provide an insufficient modeling of multijet events in the electron channel. The measurement of the top quark spin asymmetry is therefore only continued with data in the muon channel. This decision is further motivated by the result of a blind measurement on pseudo-data which showed that a combination of both channel will only result in an improvement of less than 5\% since the measurement is mainly limited by systematic uncertainties.
+From these findings it is concluded that in the electron channel events from the sideband region provide an insufficient modeling of multijet events. The measurement of the top quark spin asymmetry is therefore only continued with the muon channel. This decision is further motivated by the result of a blind measurement on pseudo-data which showed that a combination of both channel will only result in an improvement of less than 5\% since the measurement is mainly limited by systematic uncertainties.
 
-Further checks do not reveal any \todo{???} The analysis is unblinded in the muon channel. The distribution of the polarization angle in the muon channel is shown in Fig.~\ref{fig:polarization-cosTheta-SR-CR} in a signal-depleted and a signal-enriched region defined by $\bdttch<0$ and $\bdttch>0.45$ respectively. In the signal-depleted region, the distribution of data appears to be well modeled whereas in the signal-enhanced region a slight slope is observed.
+Since the muon channel is validated successfully the analysis is unblinded. In Fig.~\ref{fig:polarization-cosTheta-SR} the distribution of the polarization angle is shown in a signal-enriched region. A slight slope is observed between the expected distribution and data. The background modeling is shown in a signal-depleted region in Fig.~\ref{fig:polarization-cosTheta-CR} where the distribution of data is well modeled.
 
-\myfigure{\label{fig:polarization-cosTheta-SR-CR} Distributions of the polarization angle in (a)~signal-depleted and (b)~signal-enriched region in 2j1t muon channel.}{
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_cosTheta_lj_CR_nol.pdf}}
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_cosTheta_lj_SR_nol.pdf}}
+\myfigure{Distributions of the polarization angle in (a)~signal-enriched and (b)~signal-depleted region in 2j1t muon channel.}{
+\subfloat[\label{fig:polarization-cosTheta-SR}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_cosTheta_lj_SR_nol.pdf}}
+\subfloat[\label{fig:polarization-cosTheta-CR}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_cosTheta_lj_CR.pdf}}
 }
-
 
 %##############################################
 \section{Unfolding}
 %##############################################
 \label{sec:polarization-unfolding}
 
-After subtracting the remaining background contributions from data in the signal-enriched region, the reconstructed $\cos\theta_{\mu}^\star$ shape is unfolded to parton level and the spin asymmetry is extract from the differential cross section. The working point of the \bdttch discriminant which defines the signal-enriched region can be optimized such that .
+After subtracting the remaining background contributions from data in Fig.~\ref{fig:polarization-cosTheta-SR}, the reconstructed $\cos\theta_{\mu}^\star$ shape is unfolded to parton level and the spin asymmetry is extract from the differential cross section. The working point of the \bdttch discriminant which defines the signal-enriched region can be optimized such that the spin asymmetry measurement has a minimum of uncertainty. A scan of the expected uncertainty using pseudo-data as a function of the working point is shown in Fig.~\ref{fig:polarization-bdtscan}. Here, only some representative systematic uncertainties are evaluated which have a major impact on the result. If the working point is chosen too low the larger background contamination leads to an increased impact of systematic uncertainties. On the other hand, the final uncertainty increases as well towards higher working points due to the decreasing signal selection efficiency which influences the statistical uncertainty. Between both extremes a broad region is observed where a measurement with minimal uncertainty can be achieved. From this scan a working point of $\bdttch>0.45$ is chosen. 
 
-
-is found by scanning the expected uncertainty of the measurement using pseudo-data as a function of the working point. The result is shown in Fig.~\ref{fig:polarization-bdtscan}. 
-
-\myfigure{\label{fig:polarization-bdtscan}.}{
+\myfigure{\label{fig:polarization-bdtscan} Scan of the total uncertainty on the measuremed spin asymmetry as a function of the \bdttch working point using pseudo-data. Only some representative systematic uncertainties have been evaluated here.}{
 \adjincludegraphics[height=4.8cm]{figures/polarization/unfolding/scan_mu.pdf}
 }
 
+Unfolding to parton level is performed with the \TUNFOLD method. To stabilize the $\chi^2$ minimization inside the method, twice as many bins are considered at reconstruction level compared to parton level. Since also a fraction of about 6\% of muons that stem from intermediate tau decays are selected at reconstruction level, the parton level is extended to include also $\mathrm{t}\to\mathrm{b}\tau\nu$ decays. In such events the polarization angle at parton level is defined between the spectator quark and the tau lepton. The resulting response matrix is presented in Fig.~\ref{fig:polarization-response}. It is smeared through manifold effects such as imperfections in the top quark reconstruction and b-tagging where the latter also influences how the spectator jet is chosen. 
+ 
+\myfigure{\label{fig:polarization-response}Response matrix from simulated $t$-channel single top quark events in 2j1t muon channel after requiring events with $\bdtqcd>-0.15$ and $\bdttch>0.45$.}{
+\adjincludegraphics[height=4.8cm]{figures/polarization/response.pdf}
+}
 
+After unfolding, the top quark spin asymmetry is extracted from the normalized $\cos\theta_\mu^\star$ spectrum through a linear $\chi^2$-fit as
 
-bdt cut, neyman construction, 2bin cross check, define angle for taus and not for tau decay products
+\begin{equation}
+\chi^{2}=\sum_{i}\sum_{j}\,\Big(w\cdot\tfrac{1}{2}\big(1+2\cdot A \cos\theta_{i}\big)-u_{i}\Big)\,\mathcal{V}_{ij}^{-1}\,\Big(w\cdot\tfrac{1}{2}\big(1+2\cdot A \cos\theta_{j}\big)-u_{j}\Big)\,,
+\end{equation}
 
+where $w$ denotes the bin width, $u_{i}$ the measured cross section in bin $i$, and $V_{ij}$ the covariance between bins $i$ and $j$. This allows to properly account for the induced bin-by-bin correlations through the regularization. To cross check the estimated asymmetry, an alternative unfolding is performed based on pure analytical expressions. For this, only 2~bins are considered which does not allow to apply a curvature-based regularization scheme. Therefore, only an inversion of the response matrix $\mathcal{R}$ is performed and the asymmetry is calculated as
+
+\begin{align}
+A&=\frac{u_2-u_1}{u_1+u_2}\,,\qquad \vec{u}=\mathcal{R}^{-1}\cdot\vec{d}\\
+\sigma^2_{A}&=\frac{4}{|\vec{u}|^4}\Big(u_1^2\,\mathcal{V}^{(u)}_{22}+u_2^2\,\mathcal{V}^{(u)}_{11}-2\cdot u_1\,u_{2}\,\mathcal{V}^{(u)}_{12}\Big)\,,\quad\mathcal{V}^{(u)}=\mathcal{R}^{-1}\,\mathcal{V}^{(d)}\,\big(\mathcal{R}^{-1}\big)^{T}\,,
+\end{align}
+
+where $\vec{d}$ denote the data distribution after the remaining background contribution have been subtracted and $\mathcal{V}^{(d)}$ its corresponding covariance matrix.
+
+To validate the overall analysis strategy, a closure test is conducted. For this, simulated $t$-channel single top quark events with anomalous Wtb couplings are injected into the analysis as pseudo data. Various couplings scenarios can be obtained through a reweighting technique as used in Ref.~\ref{Khachatryan:2016sib}. It is based on the idea that if only one anomalous couplings is real and non-zero the single top quark cross section can be decomposed as
+
+\begin{subequations}
+\begin{align}
+\sigma_{t\mathrm{\mbox{-}ch.}}=\hphantom{+}&\mathrm{V}_\mathrm{L}^4\cdot A_{\mathrm{Wb}\to\mathrm{t}}\,A_{\mathrm{t}\to\mathrm{Wb}}\label{eq:polarization-wtb-rew-vl}\\+&\mathrm{V}_\mathrm{L}^2\,\mathrm{V}_\mathrm{R}^2\cdot \Big(A_{\mathrm{Wb}\to\mathrm{t}}\,B_{\mathrm{t}\to\mathrm{Wb}}+B_{\mathrm{Wb}\to\mathrm{t}}\,A_{\mathrm{t}\to\mathrm{Wb}}\Big)\label{eq:polarization-wtb-rew-vlvr}\\+&\mathrm{V}_\mathrm{R}^4\cdot B_{\mathrm{Wb}\to\mathrm{t}}\,B_{\mathrm{t}\to\mathrm{Wb}}\label{eq:polarization-wtb-rew-vr}\,,
+\end{align}
+\end{subequations}
+
+where $A$ and $B$ denote some kinematic function for the production and decay. Here, the vector-like right-handed coupling $\mathrm{V}_\mathrm{R}$ is taken to be non-zero while the tensor-like left- and right-handed couplings are assumed to vanish. An explanation of these couplings is given in Sec.~\ref{sec:theory-anomalous-couplings}. Three samples are generated which correspond to the individual contributions from Eqs.~\ref{eq:polarization-wtb-rew-vl}, \ref{eq:polarization-wtb-rew-vlvr}, and~\ref{eq:polarization-wtb-rew-vr} to the total cross section. By multiplying each sample with a coupling-dependent weight, arbitrary coupling scenarios in the $(\mathrm{V}_\mathrm{L},\mathrm{V}_\mathrm{R})$ plane can be realized. These samples allow to generate various top quark spin asymmetries by adjusting the couplings accordingly. The analysis strategy is tested by performing the event selection, the \gls{ml} fits, the evaluation of the two \glspl{bdt}, the unfolding, and the estimation of the asymmetry from the differential cross section with pseudo data generated from the \gls{sm} background and these anomalous coupling samples. A Neyman construction is shown in Fig.~\ref{fig:polarization-neyman} where the asymmetry is scanned by varying the right-handed coupling.
 
 
 \myfigure{\label{fig:polarization-neyman}.}{
 \adjincludegraphics[height=4.8cm]{figures/polarization/unfolding/neyman_t_tbar.pdf}
 }
+
+A bias on the order of the expected statistical uncertainty is observed for some coupling cases. In the statistical evaluation, a conservative systematic uncertainty is added to the measured asymmetry to cover for this.
 
 
 
@@ -331,7 +355,7 @@ bdt cut, neyman construction, 2bin cross check, define angle for taus and not fo
 \section{Statistical evaluation}
 %##############################################
 
-Q-scale reweighting, chi2 fit, symmetrizing  uncertainties
+Q-scale reweighting, symmetrizing  uncertainties
 
 \mytable{}{
 \begin{tabular}[htc]{|r | r  r  r |}
