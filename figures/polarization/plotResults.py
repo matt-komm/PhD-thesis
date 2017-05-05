@@ -311,16 +311,16 @@ heightMax = 1
 
     
 resultList = [
-    ["t+#bar{t}","2-bin",27.6,3.1,11.5],
-    ["t+#bar{t}","TUnfold",26.0,2.6,10.5],
+    ["t+#bar{t}","two bins",27.6,3.1,11.5],
+    ["t+#bar{t}","shape",26.0,2.6,10.5],
     ["top quark#kern[-0.5]{ }+#kern[-0.5]{ }antiquark"],
     [""],
-    ["#bar{t}","2-bin",20.3,5.7,16.0],
-    ["#bar{t}","TUnfold",21.1,4.6,13.8],
+    ["#bar{t}","two bins",20.3,5.7,16.0],
+    ["#bar{t}","shape",21.1,4.6,13.8],
     ["top antiquark"],
     [""],
-    ["t","2-bin",31.7,3.7,11.2],
-    ["t","TUnfold",29.0,3.2,10.5],
+    ["t","two bins",31.7,3.7,11.2],
+    ["t","shape",29.0,3.2,10.5],
     ["top quark"],
 ]
 
