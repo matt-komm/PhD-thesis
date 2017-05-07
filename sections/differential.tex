@@ -29,6 +29,7 @@ Processes with $\mu\mu\mathrm{\mbox{+}jets}$ or $\mu\mathrm{e}\mathrm{\mbox{+}je
 
 \Gls{pf} candidates are clustered into jets using the anti-\kt algorithm with a distance parameter of $R=0.4$. The influence by pileup is mitigated through the \gls{chs} technique~\cite{CMS-PAS-JME-14-001}. The jet energy scale is corrected in data and simulation using dedicated (\pt,$\eta$)-dependent scale factors. Additionally, the jet energy resolution is corrected in simulation to match the one observed in data. After these corrections are applied, jets with a transverse momentum of at least $40~\GeV$ that fall within $|\eta|<4.7$ and fulfill loose identification requirements are selected for analysis. A potential overlap between selected jets and the tight muon is removed by ignoring jets that fall within a cone of $\Delta R<0.3$ around the selected muon candidate. The \acrfull{csv} algorithm (version~2) is employed to perform b-tagging. At its tight working point an efficiency for tagging true b~jets of about 50\% is achieved whereas the misidentification rate amounts to only 0.1\%~\cite{CMS-PAS-BTV-15-001}. Simulated events are reweighted to match the observed b-tagging efficiency in data using dedicated scale factors.
 
+The following samples of simulated events are employed in the measurement. The \MGAMC generator interfaced with \PYTHIA8 for hadronization is used to generate the default signal sample of $t$-channel single-top-quark production in 4~\gls{fs}. For comparison, alternative samples are generated using the \MGAMC generator interfaced with \PYTHIA8 in 5~\gls{fs}, \MGAMC interfaced with \HERWIG in 4~\gls{fs}, and the \POWHEG generator interfaced with \PYTHIA in 4~\gls{fs}. Single-top-quark production in tW-channel and \ttbar production are simulated using the \POWHEG generator interfaced with \PYTHIA8. The samples of \wjets and \zjets production are generated using \MGAMC interfaced with \PYTHIA8 as well. The theoretical cross sections for normalizing these samples are listed in Tab.~\ref{tab:diff13-theo-xsecs}. Special care needs to be taken for normalizing the samples produced with the \MGAMC generator because the \gls{mcatnlo} matching scheme has been employed here which leads to a certain fraction of negatively weighted events.
 
 \mytable{\label{tab:diff13-theo-xsecs}Theoretical cross sections used to normalize the simulated samples.}{
 \begin{tabular}{|l  r c l |}
@@ -45,7 +46,7 @@ $\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ 
 \end{tabular}
 }
 
-The shape of multijet events is modeled using a template \ref{sec:diff13-fit}
+The shape of multijet events is modeled using a template \ref{sec:diff13-fit} ???
 
 \myfigure{\label{fig:diff13-mtw-antiiso} Distributions of the transverse W boson mass: (a)~sideband region with inverted muon isolation; (b)~signal region.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/antiiso/2j1t_mtw_qcdnone_nol.pdf}}
