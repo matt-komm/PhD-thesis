@@ -1,7 +1,7 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-\usepackage[a4paper,total={12cm,20cm},headsep=12pt,headheight=12pt,footskip=8pt,centering,includehead]{geometry}
+\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \usepackage[nouppercase]{scrpage2}
 \usepackage{ifthen}
@@ -100,8 +100,9 @@
 \usepackage{supertabular}
 \usepackage{stackengine}
 \usepackage{scalerel}
-%\usepackage{showframe} % shows page margins
-%\renewcommand*\ShowFrameColor{\color{lightgray}}
+\usepackage{showframe} % shows page margins
+\renewcommand*\ShowFrameColor{\color{lightgray}}
+%\overfullrule=1mm %marks overfull boxes
 \usepackage{etoolbox}
 \usepackage{flafter} %prevent float to appear to early
 \usepackage{hanging}
@@ -295,7 +296,7 @@
         %\parbox{\textwidth}{\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}\\[0.55cm]
         \parbox[c][][c]{0.08\textwidth}{\bf\color{gray}\fontsize{35}{35}\numberfont{\raisebox{-0.13em}{\thechapter}}}
         \hspace{0.04\textwidth}
-        \parbox[c][][c]{0.87\textwidth}{\begin{mdframed}[style=chstyle]\textls*[120]{\color{textgray}\LARGE\textsf{{\chaptername}}}\\[0.3\baselineskip]\usekomafont{chapter} #1\end{mdframed}}\\[0.65cm]
+        \parbox[c][][c]{0.86\textwidth}{\begin{mdframed}[style=chstyle]\textls*[120]{\color{textgray}\LARGE\textsf{{\chaptername}}}\\[0.3\baselineskip]\usekomafont{chapter} #1\end{mdframed}}\\[0.65cm]
 
         %\vspace{0.45cm}
         %\parbox{\textwidth}{\color{gray}\rule{\textwidth}{\myrulewidth}}\\[0.0cm]
