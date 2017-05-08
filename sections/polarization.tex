@@ -32,10 +32,10 @@ After the selection, events are categorized per lepton channel as visualized in 
 Various samples of simulated events of signal and background processes are generated. The default $t$-channel single-top-quark sample is generated in 5~\gls{fs} using the \POWHEG generator interfaced with \PYTHIA6 for parton showering and \TAUOLA to simulate the decay of tau leptons. For comparison, two additional, alternative signal samples are generated. One utilizes the \AMC generator interfaced with \PYTHIA8 in 4~\gls{fs} while the other employs the \COMPHEP generator interfaced with \PYTHIA6. A set of special samples with anomalous Wtb couplings is generated as well using the \COMPHEP generator for cross checking the analysis strategy. Samples containing single-top-quark events produced via tW and $s$~channel are generated with \POWHEG interfaced with \PYTHIA6 and \TAUOLA. The major background processes, \wjets, \zjets, and \ttbar, are generated with the \MG generator interfaced with \PYTHIA6 and \TAUOLA as well. Samples with up to three~(\ttbar) or four~(\wjets,\zjets) additional partons at \gls{me} level are merged together using the \gls{mlm} procedure. For \wjets production, an alternative sample generated with the \SHERPA[format=hyperbf] generator~\cite{Hoeche:2012ft} is employed for validation purposes. In this thesis, \wjets events are categorized based on their jet flavor content. Events with at least one heavy-quark flavored jet from either c, or b~quarks are abbreviated as ``\glsmark{whf}'' while events with only light-quark flavored jets~(g,u,d,s) are labeled ``\glsmark{wlf}'' instead. Diboson production~(WW, WZ, ZZ) is found to be only a minor background and simulated with \PYTHIA6. \todo{mention MC tune?}\todo{mention briefly geant4 simulation and overlay with pileup} The theoretical \gls{sm} cross sections used to normalize these samples are listed in Tab.~\ref{tab:polarization-theo-xsecs}. Throughout this chapter signal and background templates are presented after they have been scaled to the result of a binned \gls{ml} fit to data~(Sec.~\ref{sec:polarization-fit}) and additional corrections to the simulated \wjets and \ttbar events~(Sec.~\ref{sec:polarization-modeling}) have been applied to improve their modeling unless explicitly stated otherwise.
 
 \mytable{\label{tab:polarization-theo-xsecs}Theoretical cross sections used to normalize the simulated samples.}{
-\begin{tabular}{|l  r c l |}
-\hline
-process & cross section &\hspace{0.05cm} & accuracy \\
-\hline
+\begin{tabular}{@{}l  r c l@{}}
+\toprule
+Process & Cross section &\hspace{0.05cm} & Accuracy \\
+\midrule
 $t$~channel & $87.2^{+2.6}_{-1.8}~\pb$ & & approx. \gls{nnlo}~\cite{Kidonakis:2012db} \\
 $s$~channel & $5.55\pm0.22~\pb$ && approx. \gls{nnlo}~\cite{Kidonakis:2012db}  \\
 tW~channel & $22.2\pm1.5~\pb$ && approx. \gls{nnlo}~\cite{Kidonakis:2012db} \\
@@ -45,7 +45,7 @@ $\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ 
 $\mathrm{W}^{\rmplus}~\mathrm{W}^{\rmminus}$ & $54.8\pm3.0~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
 $\mathrm{W}^{\pm}~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>12~\GeV$  & $33.2\pm2.7~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
 $\mathrm{Z}/\gamma^\star~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>40~\GeV$ & $8.1\pm0.4~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
-\hline
+\bottomrule
 \end{tabular}
 }
 
@@ -96,14 +96,16 @@ The \gls{bdt} is trained on events in the 2j1t region only whereas the resulting
 In a preliminary version of this analysis~\cite{CMS-PAS-TOP-13-001}, events with $\mtw>50~\GeV$ ($\met>45~\GeV$) are selected in muon (electron) channel respectively to reject multijet events. Here, the working points of the \bdtqcd discriminant have been chosen such that a similar signal selection efficiency is obtained per channel.  The chosen working points, their performance, and a comparison with the preliminary analysis are presented in Tab.~\ref{tab:polarization-qcdeff}. The \bdtqcd discriminant allows to reject about twice as much multijet events with respect to \mtw, \met for the chosen working points while retaining approximately the same amount of signal events.
 
 \mytable{\label{tab:polarization-qcdeff}Selection efficiencies of multijet and signal events using \bdtqcd, \mtw, and \met working points where the latter two were used in a preliminary version of the analysis.}{
-\begin{tabular}{|r | c c | c c |}
-\hline
-& \multicolumn{2}{c|}{Muon channel} & \multicolumn{2}{c|}{Electron channel}\\
-Process    & $\mtw>50~\GeV$ & $\bdtqcd>-0.15$ & $\met>45~\GeV$ & $\bdtqcd>0.15$ \\
-\hline
-Multijet  & 15\% & 7.7\%  & 7.6\% & 4.4\% \\
-Signal   & 70\% & 71\%   & 51\%  & 52\% \\
-\hline
+\begin{tabular}{@{}l  c c c c c@{}}
+\toprule
+Process\hspace{0.4cm} & \multicolumn{2}{c}{Muon channel} && \multicolumn{2}{c}{Electron channel}\\
+\cmidrule{2-3} 
+\cmidrule{5-6}
+    & $\mtw>50~\GeV$ & $\bdtqcd>-0.15$ && $\met>45~\GeV$ & $\bdtqcd>0.15$ \\
+\midrule
+Multijet  & 15\% & 7.7\%  && 7.6\% & 4.4\% \\
+Signal   & 70\% & 71\%   && 51\%  & 52\% \\
+\bottomrule
 \end{tabular}
 }
 
@@ -206,28 +208,30 @@ A precise determination of the amount of background contributions in the signal 
 The first fit utilizes the distribution of the \bdtqcd discriminant where only the contamination of multijet events in signal and control regions are estimated through a two-component fit. As described in Sec.~\ref{sec:polarization-selection}, the shape of multijet events is modeled by a template obtained from data in a sideband region with inverted lepton isolation. To assess the stability of the estimated amount of multijet events, the fit is repeated while extracting the template from different isolation regions. The multijet template is taken to be unconstrained in the fit. The other signal and background templates are summed and fitted as a second component with a log-normal constraint of $\pm20\%$ on their total yield. The fits are performed per channel using data in the regions below the individual working points of the \bdtqcd discriminant for multijet rejection. The resulting event yields in muon and electron channel, extrapolated into the regions above the working points, are listed in Tabs.~\ref{tab:polarization-qcdmu-fitresult} and~\ref{tab:polarization-qcde-fitresult} for the 2j1t region respectively. Similar fits for estimating the contamination by multijet events are performed in the \wjets and \ttbar control regions as well.
 
 \mytable{\label{tab:polarization-qcdmu-fitresult}Multijet event yields for $\bdtqcd>-0.15$ in 2j1t muon channel.}{
-\begin{tabular}{|r@{$\,<\muiso<\,$}l| r@{$\pm$}l r@{$\pm$}l|}
-\hline
-\multicolumn{2}{|c|}{} & \multicolumn{4}{c|}{Event yields} \\
-\multicolumn{2}{|c|}{Sideband} & \multicolumn{2}{c}{Multijet} & \multicolumn{2}{c|}{Others} \\
-\hline
+\begin{tabular}{@{}r@{$\,<\muiso<\,$}l r@{$\pm$}l r@{$\pm$}l@{}}
+\toprule
+\multicolumn{2}{@{}l}{Sideband}\hspace{0.7cm} & \multicolumn{4}{c}{Event yields} \\
+\cmidrule{3-6}
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Multijet} & \multicolumn{2}{c}{Others} \\
+\midrule
 $0.2$&$0.5$ & \hspace{0.1cm}$1607$&$31$ & \hspace{0.3cm}$90028$&$811$ \\
 $0.2$&$0.3$ & $1761$&$40$ & $91374$&$985$ \\
 $0.3$&$0.5$ & $1765$&$41$ & $88854$&$1007$ \\
-\hline
+\bottomrule
 \end{tabular}
 }
 
 \mytable{\label{tab:polarization-qcde-fitresult}Multijet event yields for $\bdtqcd>0.15$ in 2j1t electron channel.}{
-\begin{tabular}{|r@{$\,<\eiso<\,$}l| r@{$\pm$}l r@{$\pm$}l|}
-\hline
-\multicolumn{2}{|c|}{} & \multicolumn{4}{c|}{Event yields} \\
-\multicolumn{2}{|c|}{Sideband} & \multicolumn{2}{c}{Multijet} & \multicolumn{2}{c|}{Others} \\
-\hline
+\begin{tabular}{@{}r@{$\,<\eiso<\,$}l r@{$\pm$}l r@{$\pm$}l@{}}
+\toprule
+\multicolumn{2}{@{}l}{Sideband}\hspace{0.7cm} & \multicolumn{4}{c}{Event yields} \\
+\cmidrule{3-6}
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Multijet} & \multicolumn{2}{c}{Others} \\
+\midrule
 $0.15$&$0.5$ & \hspace{0.1cm}$1467$&$27$ & \hspace{0.3cm}$45620$&$470$ \\
 $0.15$&$0.25$ & $1506$&$28$ & $46283$&$464$ \\
 $0.25$&$0.5$ & $1512$&$36$ & $44916$&$598$ \\
-\hline
+\bottomrule
 \end{tabular}
 }
 
@@ -254,25 +258,27 @@ Additional systematic uncertainties are considered in the measurement to account
 The obtained fit results per channel are listed in Tab.~\ref{tab:polarization-yields}. After the event selection, a \gls{sb} of about $13\%$ ($11\%$) is obtained in the muon (electron) channel which increases to $90\%$ ($88\%$) in a signal-enriched region respectively that is defined by applying an additional selection which utilizes both \gls{bdt} discriminants.
 
 \mytable{\label{tab:polarization-yields}Event yields in 2j1t after the event selection and in a signal-enriched phase space defined by $\bdtqcd>-0.15$ in the muon channel, $\bdtqcd>0.15$ in the electron channel, and additionally $\bdttch>0.45$ in both channels. The uncertainties reflect the limited \gls{mc} statistics and the \gls{ml} fit uncertainties.}{
-\begin{tabular}{|c| r@{$\pm$}l r@{$\pm$}l | r@{$\pm$}l r@{$\pm$}l|}
-\hline
- & \multicolumn{4}{c|}{Muon channel} & \multicolumn{4}{c|}{Electron channel} \\
-Process & \multicolumn{2}{c}{Selection} & \multicolumn{2}{c |}{Signal-enriched} & \multicolumn{2}{c}{Selection} & \multicolumn{2}{c|}{Signal-enriched} \\
-\hline
+\begin{tabular}{@{}l r@{$\pm$}l r@{$\pm$}l c  r@{$\pm$}l r@{$\pm$}l@{}}
+\toprule
+Process & \multicolumn{4}{c}{Muon channel} & & \multicolumn{4}{c}{Electron channel} \\
+\cmidrule{2-5}
+\cmidrule{7-10}
+ & \multicolumn{2}{c}{Selection}\hspace{0.1cm} & \multicolumn{2}{c }{Signal-enriched} && \multicolumn{2}{c}{Selection}\hspace{0.1cm} & \multicolumn{2}{c}{Signal-enriched} \\
+\midrule
 
-\ttbar          & 58539&629     & \hspace{0.4cm} 3118&34       & 48208&518     &  \hspace{0.4cm} 2182&26 \\
-tW              & 6518&76       & 311&12        & 5370&64       & 215&6 \\
-$s$-channel     & 1059&20       & 72&4          & 808&17        & 44&3 \\
-W+heavy flavor  & 30472&1520    & 2101&113      & 20707&1034    & 836&48 \\ 
-W+light flavor  & 3824&202      & 252&21        & 2720&145      & 94&11 \\
-\zjets          & 10284&561     & 371&32        & 10696&572     & 175&27 \\
-Diboson         & 1108&56       & 33&2          & 792&40        & 16&1 \\
-Multijet        & 21416&10707   & 427&214       & 33961&16979   & 423&212 \\
-Signal          & 17796&604     & 6049&136      & 13313&452     & 3502&119 \\
-\hline
-Total expected  & 151015&3126   & 12733&271     & 136576&2826   & 7488&173 \\
-Data            & 147749&384    & 12504&112     & 134472&367    & 7322&86 \\
-\hline
+\ttbar          & 58539&629     & \hspace{0.4cm} 3118&34       && 48208&518     &  \hspace{0.4cm} 2182&26 \\
+tW              & 6518&76       & 311&12        && 5370&64       & 215&6 \\
+$s$-channel     & 1059&20       & 72&4          && 808&17        & 44&3 \\
+W+heavy flavor  & 30472&1520    & 2101&113      && 20707&1034    & 836&48 \\ 
+W+light flavor  & 3824&202      & 252&21        && 2720&145      & 94&11 \\
+\zjets          & 10284&561     & 371&32        && 10696&572     & 175&27 \\
+Diboson         & 1108&56       & 33&2          && 792&40        & 16&1 \\
+Multijet        & 21416&10707   & 427&214       && 33961&16979   & 423&212 \\
+Signal          & 17796&604     & 6049&136      && 13313&452     & 3502&119 \\
+\midrule
+Total expected  & 151015&3126   & 12733&271     && 136576&2826   & 7488&173 \\
+Data            & 147749&384    & 12504&112     && 134472&367    & 7322&86 \\
+\bottomrule
 \end{tabular}
 }
  
@@ -310,7 +316,7 @@ Since the muon channel is validated successfully the analysis is unblinded. In F
 
 After subtracting the remaining background contributions from data in Fig.~\ref{fig:polarization-cosTheta-SR}, the reconstructed $\cos\theta_{\mu}^\star$ shape is unfolded to parton level and the spin asymmetry is extract from the differential cross section. The working point of the \bdttch discriminant which defines the signal-enriched region can be optimized such that the spin asymmetry measurement has a minimum of uncertainty. A scan of the expected uncertainty using pseudo-data as a function of the \bdttch working point is shown in Fig.~\ref{fig:polarization-bdtscan}. Here, only some representative systematic uncertainties are evaluated which have a major impact on the result. If the working point is chosen too low the larger background contamination leads to an increased uncertainty through the impact of systematic uncertainties associated with the backgrounds. On the other hand, the final uncertainty increases as well towards higher working points due to the decreasing signal selection efficiency which influences the statistical uncertainty. Between both extremes a broad region is observed where a measurement with minimal uncertainty can be achieved. For the measurement, a working point of $\bdttch>0.45$ is chosen. 
 
-\myfigure{\label{fig:polarization-bdtscan} Scan of the total uncertainty on the measuremed spin asymmetry as a function of the \bdttch working point using pseudo-data. Only some representative systematic uncertainties have been evaluated here.}{
+\myfigure{\label{fig:polarization-bdtscan} Scan of the total uncertainty on the measured spin asymmetry as a function of the \bdttch working point using pseudo-data. Only some representative systematic uncertainties have been evaluated here.}{
 \adjincludegraphics[height=4.8cm]{figures/polarization/unfolding/scan_mu.pdf}
 }
 
@@ -361,53 +367,54 @@ A bias on the order of the expected statistical uncertainty is observed for some
 The differential cross section and the related extraction of the top quark spin asymmetry from its shape are affected by several sources of systematic uncertainties. Many of them have already been introduced throughout this chapter and in Ch.~\ref{ch:reconstruction}. They are evaluated by using modified templates and response matrices during the \gls{ml} fits and in the unfolding. The maximal induced shift per source with respect to the nominal asymmetry is listed in Tab.~\ref{tab:polarization-systable}. In the following, details about sources of systematic uncertainties which have not yet been discussed are given, while for others a reference to their description is provided.
 
 \mytable[p]{\label{tab:polarization-systable} The considered sources of systematic uncertainties and their impact on the measured asymmetry for events with top quarks, top antiquarks and their combination.}{
-\begin{tabular}[htc]{|r| r | r  r  r |}
-\hline 
-        &
+\begin{tabular}[htc]{@{}l  l  r  r  r@{}}
+\toprule 
+          \hspace{0.5cm}
+        & 
         & $\delta \AmuT\cdot 10^{2}$
         & $\delta \AmuTbar\cdot 10^{2}$
         & $\delta \AmuTplusTbar\cdot 10^{2}$
          \\
 
-\hline 
-\multirow{9}{*}{\rotatebox[origin=c]{90}{Signal/background estimation}}& Statistical & $3.2$ \hspace{0.1cm}  & $4.6$ \hspace{0.1cm}  & $2.6$ \hspace{0.1cm}  \\
-& Limited \gls{mc} statistics & $2.1$ \hspace{0.1cm}  & $3.2$ \hspace{0.1cm}  & $1.8$ \hspace{0.1cm}  \\  
-& \gls{ml}-fit uncertainty & $0.7$ \hspace{0.1cm}  & $1.2$ \hspace{0.1cm}  & $0.6$ \hspace{0.1cm}  \\ 
-& Diboson fraction & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  \\ 
-& \zjets fraction & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  \\ 
-& $s$~channel fraction & $0.3$ \hspace{0.1cm}  & $0.2$ \hspace{0.1cm}  & $0.2$ \hspace{0.1cm}  \\ 
-& tW fraction & $0.1$ \hspace{0.1cm}  & $0.7$ \hspace{0.1cm}  & $0.2$ \hspace{0.1cm}  \\ 
-& Multijet shape & $0.5$ \hspace{0.1cm}  & $0.7$ \hspace{0.1cm}  & $0.5$ \hspace{0.1cm}  \\ 
-& Multijet yield & $1.9$ \hspace{0.1cm}  & $1.2$ \hspace{0.1cm}  & $1.7$ \hspace{0.1cm}  \\ 
-\hline
-\multirow{9}{*}{\rotatebox[origin=c]{90}{Analysis objects\vphantom{g}}} & b-tagging & $0.7$ \hspace{0.1cm}  & $1.2$ \hspace{0.1cm}  & $0.9$ \hspace{0.1cm}  \\ 
-& Mistagging & $<0.1$ \hspace{0.1cm}  & $0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  \\ 
- & \Acrlong{jer} & $2.7$ \hspace{0.1cm}  & $1.8$ \hspace{0.1cm}  & $2.0$ \hspace{0.1cm}  \\ 
-& \Acrlong{jec} & $1.3$ \hspace{0.1cm}  & $2.6$ \hspace{0.1cm}  & $1.1$ \hspace{0.1cm}  \\ 
-& Unclustered \met & $1.1$ \hspace{0.1cm}  & $3.3$ \hspace{0.1cm}  & $1.3$ \hspace{0.1cm}  \\ 
-& Pileup & $0.3$ \hspace{0.1cm}  & $0.2$ \hspace{0.1cm}  & $0.2$ \hspace{0.1cm}  \\ 
-& Muon identification efficiency & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  \\ 
-& Muon isolation efficiency & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  \\ 
-& Trigger efficiency & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  \\ 
-\hline
-\multirow{6}{*}{\rotatebox[origin=c]{90}{Modeling}} & \ttbar top quark \pt reweighting & $0.3$ \hspace{0.1cm}  & $0.3$ \hspace{0.1cm}  & $0.3$ \hspace{0.1cm}  \\ 
-& \wjets W~boson \pt reweighting & $0.1$ \hspace{0.1cm}  & $0.1$ \hspace{0.1cm}  & $0.1$ \hspace{0.1cm}  \\ 
-& \wjets heavy flavor fraction & $4.7$ \hspace{0.1cm}  & $6.2$ \hspace{0.1cm}  & $5.3$ \hspace{0.1cm}  \\ 
-& \wjets light flavor fraction & $<0.1$ \hspace{0.1cm}  & $<0.1$ \hspace{0.1cm}  & $0.1$ \hspace{0.1cm}  \\ 
-& \wjets shape reweighting & $2.9$ \hspace{0.1cm}  & $3.4$ \hspace{0.1cm}  & $3.1$ \hspace{0.1cm}  \\ 
-& Unfolding bias & $2.5$ \hspace{0.1cm}  & $4.2$ \hspace{0.1cm}  & $3.1$ \hspace{0.1cm}  \\ 
-\hline
-\multirow{8}{*}{\rotatebox[origin=c]{90}{Theoretical\vphantom{g}}} & Generator model & $1.6$ \hspace{0.1cm}  & $3.5$ \hspace{0.1cm}  & $0.3$ \hspace{0.1cm}  \\ 
-& Top quark mass & $1.9$ \hspace{0.1cm}  & $2.9$ \hspace{0.1cm}  & $1.8$ \hspace{0.1cm}  \\ 
-& $t$~channel fact./renorm. scale  & $0.2$ \hspace{0.1cm}  & $0.2$ \hspace{0.1cm}  & $0.2$ \hspace{0.1cm}  \\ 
-& \ttbar fact./renorm. scale & $2.2$ \hspace{0.1cm}  & $3.4$ \hspace{0.1cm}  & $2.7$ \hspace{0.1cm}  \\ 
-& \ttbar matching & $2.2$ \hspace{0.1cm}  & $0.5$ \hspace{0.1cm}  & $1.6$ \hspace{0.1cm}  \\ 
-& \wjets fact./renorm. scale & $3.7$ \hspace{0.1cm}  & $4.6$ \hspace{0.1cm}  & $4.0$ \hspace{0.1cm}  \\ 
-& \wjets matching & $3.8$ \hspace{0.1cm}  & $3.0$ \hspace{0.1cm}  & $3.4$ \hspace{0.1cm}  \\ 
-& \Acrlong{pdf} & $0.9$ \hspace{0.1cm}  & $1.6$ \hspace{0.1cm}  & $1.2$ \hspace{0.1cm}  \\ 
-\hline 
-& Total uncertainty & $10.5$ \hspace{0.1cm}  & $13.8$ \hspace{0.1cm}  & $10.5$ \hspace{0.1cm}  \\ 
-\hline 
+\midrule 
+\multirow{9}{*}{\rotatebox[origin=c]{90}{Signal/background estimation}}& Statistical & $3.2$ \hspace{0.3cm}  & $4.6$ \hspace{0.3cm}  & $2.6$ \hspace{0.3cm}  \\
+& Limited \gls{mc} statistics & $2.1$ \hspace{0.3cm}  & $3.2$ \hspace{0.3cm}  & $1.8$ \hspace{0.3cm}  \\  
+& \gls{ml}-fit uncertainty & $0.7$ \hspace{0.3cm}  & $1.2$ \hspace{0.3cm}  & $0.6$ \hspace{0.3cm}  \\ 
+& Diboson fraction & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  \\ 
+& \zjets fraction & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  \\ 
+& $s$~channel fraction & $0.3$ \hspace{0.3cm}  & $0.2$ \hspace{0.3cm}  & $0.2$ \hspace{0.3cm}  \\ 
+& tW fraction & $0.1$ \hspace{0.3cm}  & $0.7$ \hspace{0.3cm}  & $0.2$ \hspace{0.3cm}  \\ 
+& Multijet shape & $0.5$ \hspace{0.3cm}  & $0.7$ \hspace{0.3cm}  & $0.5$ \hspace{0.3cm}  \\ 
+& Multijet yield & $1.9$ \hspace{0.3cm}  & $1.2$ \hspace{0.3cm}  & $1.7$ \hspace{0.3cm}  \\ 
+\midrule
+\multirow{9}{*}{\rotatebox[origin=c]{90}{Analysis objects\vphantom{g}}} & b-tagging & $0.7$ \hspace{0.3cm}  & $1.2$ \hspace{0.3cm}  & $0.9$ \hspace{0.3cm}  \\ 
+& Mistagging & $<0.1$ \hspace{0.3cm}  & $0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  \\ 
+ & \Acrlong{jer} & $2.7$ \hspace{0.3cm}  & $1.8$ \hspace{0.3cm}  & $2.0$ \hspace{0.3cm}  \\ 
+& \Acrlong{jec} & $1.3$ \hspace{0.3cm}  & $2.6$ \hspace{0.3cm}  & $1.1$ \hspace{0.3cm}  \\ 
+& Unclustered \met & $1.1$ \hspace{0.3cm}  & $3.3$ \hspace{0.3cm}  & $1.3$ \hspace{0.3cm}  \\ 
+& Pileup & $0.3$ \hspace{0.3cm}  & $0.2$ \hspace{0.3cm}  & $0.2$ \hspace{0.3cm}  \\ 
+& Muon identification efficiency & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  \\ 
+& Muon isolation efficiency & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  \\ 
+& Trigger efficiency & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  \\ 
+\midrule
+\multirow{6}{*}{\rotatebox[origin=c]{90}{Modeling}} & \ttbar top quark \pt reweighting & $0.3$ \hspace{0.3cm}  & $0.3$ \hspace{0.3cm}  & $0.3$ \hspace{0.3cm}  \\ 
+& \wjets W~boson \pt reweighting & $0.1$ \hspace{0.3cm}  & $0.1$ \hspace{0.3cm}  & $0.1$ \hspace{0.3cm}  \\ 
+& \wjets heavy flavor fraction & $4.7$ \hspace{0.3cm}  & $6.2$ \hspace{0.3cm}  & $5.3$ \hspace{0.3cm}  \\ 
+& \wjets light flavor fraction & $<0.1$ \hspace{0.3cm}  & $<0.1$ \hspace{0.3cm}  & $0.1$ \hspace{0.3cm}  \\ 
+& \wjets shape reweighting & $2.9$ \hspace{0.3cm}  & $3.4$ \hspace{0.3cm}  & $3.1$ \hspace{0.3cm}  \\ 
+& Unfolding bias & $2.5$ \hspace{0.3cm}  & $4.2$ \hspace{0.3cm}  & $3.1$ \hspace{0.3cm}  \\ 
+\midrule
+\multirow{8}{*}{\rotatebox[origin=c]{90}{Theoretical\vphantom{g}}} & Generator model & $1.6$ \hspace{0.3cm}  & $3.5$ \hspace{0.3cm}  & $0.3$ \hspace{0.3cm}  \\ 
+& Top quark mass & $1.9$ \hspace{0.3cm}  & $2.9$ \hspace{0.3cm}  & $1.8$ \hspace{0.3cm}  \\ 
+& $t$~channel fact./renorm. scale  & $0.2$ \hspace{0.3cm}  & $0.2$ \hspace{0.3cm}  & $0.2$ \hspace{0.3cm}  \\ 
+& \ttbar fact./renorm. scale & $2.2$ \hspace{0.3cm}  & $3.4$ \hspace{0.3cm}  & $2.7$ \hspace{0.3cm}  \\ 
+& \ttbar matching & $2.2$ \hspace{0.3cm}  & $0.5$ \hspace{0.3cm}  & $1.6$ \hspace{0.3cm}  \\ 
+& \wjets fact./renorm. scale & $3.7$ \hspace{0.3cm}  & $4.6$ \hspace{0.3cm}  & $4.0$ \hspace{0.3cm}  \\ 
+& \wjets matching & $3.8$ \hspace{0.3cm}  & $3.0$ \hspace{0.3cm}  & $3.4$ \hspace{0.3cm}  \\ 
+& \Acrlong{pdf} & $0.9$ \hspace{0.3cm}  & $1.6$ \hspace{0.3cm}  & $1.2$ \hspace{0.3cm}  \\ 
+\midrule 
+& Total uncertainty & $10.5$ \hspace{0.3cm}  & $13.8$ \hspace{0.3cm}  & $10.5$ \hspace{0.3cm}  \\ 
+\bottomrule 
 \end{tabular}
 }
 

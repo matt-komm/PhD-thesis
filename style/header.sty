@@ -97,7 +97,10 @@
 \usepackage{afterpage}
 \usepackage{graphicx,graphics}
 \usepackage{tocloft}
+\usepackage{xfrac}
 \usepackage{supertabular}
+\usepackage{booktabs} %toprule stuff
+\setlength{\heavyrulewidth}{1.pt}
 \usepackage{stackengine}
 \usepackage{scalerel}
 \usepackage{showframe} % shows page margins
@@ -341,12 +344,12 @@
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
 \captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.6\baselineskip,belowskip=0.0\baselineskip}
-\captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.6\baselineskip}
+\captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
 \captionsetup[subfloat]{labelsep=space,font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
 
-\setlength\floatsep{1.\baselineskip plus 3pt minus 2pt}
-\setlength\textfloatsep{1.\baselineskip plus 3pt minus 2pt}
-\setlength\intextsep{1.\baselineskip plus 3pt minus 2pt}
+\setlength\floatsep{1.2\baselineskip plus 3pt minus 1pt}
+\setlength\textfloatsep{0.7\baselineskip plus 5pt minus 5pt}
+\setlength\intextsep{0.7\baselineskip plus 5pt minus 5pt}
 
 %placements
 \newcommand{\mytable}[3][htb]{
@@ -358,6 +361,15 @@
     \small #3
     \end{minipage}
     \end{table}
+}
+
+\newcommand{\mytablesideways}[3][htb]{
+    \begin{sidewaystable}[#1]
+    \centering
+    \caption{#2}
+    \centering
+    \small #3
+    \end{sidewaystable}
 }
 
 \newcommand{\myfigure}[3][htb]{
@@ -374,11 +386,9 @@
 \newcommand{\myfiguresideways}[3][htb]{
     \begin{sidewaysfigure}[#1]
     \centering
-    \begin{minipage}[c]{0.93\textwidth}
-    \centering
     #3
+    \centering
     \caption{#2}
-    \end{minipage}
     \end{sidewaysfigure}
 }
 

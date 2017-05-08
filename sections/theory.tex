@@ -4,7 +4,7 @@
 
 \intro{An overview of the \glshere{sm} is given in the following. First, the fundamental particles and their properties are introduced. Then, the electroweak and strong interactions are detailed which includes also a brief description of the electroweak symmetry breaking mechanism. After sketching the calculation of observables in perturbation theory, the chapter is concluded by highlighting some open questions of the \gls{sm}.}
 
-The \glshere{sm} describes the interactions between fundamental particles. It is based on \glshere{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or decay rates of particles which can be calculated within its framework. Validity of rhe \gls{sm} is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards physics \glshere{bsm}.
+The \glshere{sm} describes the interactions between fundamental particles. It is based on \glshere{qft} which allows to predict observables of particle interactions. Exemplary observables are production cross sections or decay rates of particles which can be calculated within its framework. Validity of the \gls{sm} is constantly challenged by comparing predictions to experimental data. No significant deviations have been found so far that would hint towards physics \glshere{bsm}.
 
 
 %############################################## 
@@ -14,48 +14,47 @@ The \glshere{sm} describes the interactions between fundamental particles. It is
 Fundamental particles are defined as objects for which experiments have not revealed an internal structure. For example, the upper limit on the spatial radius of the electron is measured to be $<10^{-18}~\mathrm{m}$~\cite{PhysRevLett.97.030801}. Hence, such fundamental particles are considered as point-like. They can be grouped by their spin into fermions with half-integer and bosons with integer spin. All fundamental fermions of the \gls{sm} have a spin of $\frac{1}{2}$. They can be further divided into leptons and quarks where only the latter can participate in strong interactions. Tables~\ref{tab:theory-leptons} and~\ref{tab:theory-quarks} list the leptons and quarks respectively. Each column is called a generation. It encapsulates an isospin pair whose components are therefore also referred to as up- or down-type respectively. It is unknown why there are exactly three lepton and three quark generations. Atoms which form ordinary matter consist of only particles from the first generation. These are electrons, protons, and neutrons, where the latter two are bound states of uud quarks and udd quarks respectively.
 
 \mytable{\label{tab:theory-leptons}The leptons of the \gls{sm}. The particle masses are taken from Ref.~\cite{Olive:2016xmw}. Uncertainties on the measured masses are omitted because the precision is beyond the sub permille level. For the neutrino masses only upper \glsplfull{cl} are given.}{
-    \begin{tabular}{|r|c c c|}
-    \hline
+    \begin{tabular}{@{}l c c c@{}}
+    \toprule
                         & 1. generation                 & 2. generation                 & 3. generation \\
-    \hline
-    name                & electron neutrino             & muon neutrino                 & tau neutrino  \\
+    \midrule
+    Name                & electron neutrino             & muon neutrino                 & tau neutrino  \\
                         & ($\nu_\mathrm{e}$)            & ($\nu_{\mu}$)                 & ($\nu_{\tau}$) \\
     
-    mass                & $<225~\eV$                    & $<0.19~\MeV$                  & $<18.2~\MeV$ \\
+    Mass                & $<225~\eV$                    & $<0.19~\MeV$                  & $<18.2~\MeV$ \\
                         & (95\% \gls{cl})                     & (90\% \gls{cl})                     & (95\%~\gls{cl})\\
     
-    electric charge     & 0                             & 0                             & 0 \\
-    \hline
-    name                & electron                      & muon                          & tau  \\
+    Electric charge     & 0                             & 0                             & 0 \\
+    \midrule
+    Name                & electron                      & muon                          & tau  \\
                         & ($\mathrm{e}^{\rmminus}$)     & ($\mu^{\rmminus}$)            & ($\tau^{\rmminus}$) \\
     
-    mass                & $511.0~\keV$                  & $105.66~\MeV$                 & $1.776~\GeV$ \\
+    Mass                & $511.0~\keV$                  & $105.66~\MeV$                 & $1.776~\GeV$ \\
                         &                               &                               &  \\
-    electric charge     & $-1$                          & $-1$                          & $-1$ \\
-    \hline
+    Electric charge     & $-1$                          & $-1$                          & $-1$ \\
+    \bottomrule
     \end{tabular}
 }
 
 For the masses of the neutrinos, only upper \glsplfull{cl} are known. Those are derived by combining measurements of beta decay spectra with results from neutrino oscillation experiments. When the \gls{sm} was constructed in the mid 1970s, neutrinos were assumed to be massless. However, the observation of neutrino oscillations requires that at least two neutrino generations have non-zero masses~\cite{Fukuda:1998mi}.
 
 \mytable{\label{tab:theory-quarks}The quarks of the \gls{sm}. The u,d,s,c, and b~quark masses are reported in the \gls{msbar} mass scheme~\cite{Olive:2016xmw}. For the top quark the pole mass is quoted instead as measured in Ref.~\cite{Khachatryan:2015hba}.}{
-\begin{tabular}{|r|c c c|}
-    \hline
+\begin{tabular}{@{}l c c c@{}}
+    \toprule
                         & 1. generation                 & 2. generation                 & 3. generation \\
-    \hline
-    name                & up (u)                        & charm (c)                     & top (t) \\
+    \midrule
+    Name                & up (u)                        & charm (c)                     & top (t) \\
+    Mass                & $2.2^{+0.6}_{-0.4}~\MeV$      & $1.27\pm0.03~\GeV$            & $172.44\pm0.49~\GeV$ \\
     
-    mass                & $2.2^{+0.6}_{-0.4}~\MeV$      & $1.27\pm0.03~\GeV$            & $172.44\pm0.49~\GeV$ \\
+    Electric charge     & $\sfrac{2}{3}$                 & $\sfrac{2}{3}$                 & $\sfrac{2}{3}$ \\
     
-    electric charge     & $\frac{2}{3}$                 & $\frac{2}{3}$                 & $\frac{2}{3}$ \\
+    \midrule
+    Name                & down (d)                      & strange (s)                   & bottom (b)  \\
     
-    \hline
-    name                & down (d)                      & strange (s)                   & bottom (b)  \\
+    Mass                & $4.7^{+0.5}_{-0.4}~\MeV$      & $96^{+8}_{-4}~\MeV$           & $4.18^{+0.04}_{-0.03}~\GeV$ \\
     
-    mass                & $4.7^{+0.5}_{-0.4}~\MeV$      & $96^{+8}_{-4}~\MeV$           & $4.18^{+0.04}_{-0.03}~\GeV$ \\
-    
-    electric charge     & $-\frac{1}{3}$                & $-\frac{1}{3}$                & $-\frac{1}{3}$ \\
-    \hline
+    Electric charge     & $-\sfrac{1}{3}$                & $-\sfrac{1}{3}$                & $-\sfrac{1}{3}$ \\
+    \bottomrule
     \end{tabular}
 }
 
@@ -64,20 +63,19 @@ The bosons are connected to fundamental interactions by requiring invariance und
 
 
 \mytable{\label{tab:theory-bosons}The bosons of the \gls{sm}. The Z and W~boson masses are taken from Ref.~\cite{Olive:2016xmw}. The uncertainties on their masses are omitted because the precision is beyond the sub permille level. The Higgs boson mass is taken from Ref.~\cite{Aad:2015zhl}.}{
-\begin{tabular}{|r|c c c|}
-    \hline
-    name                & mass                 & associated interaction             & gauge group \\
-    \hline
-    \hline
-    photon (\photon)    & $0$                  & electromagnetism                   & $\mathrm{U(1)}$ \\
+\begin{tabular}{@{}l c c c@{}}
+    \toprule
+    Name     \hspace{1.6cm}           & \hspace{0.5cm}Mass\hspace{0.5cm}            & \hspace{0.5cm}Associated interaction\hspace{0.5cm}             & Gauge group \\
+    \midrule
+    Photon (\photon)    & $0$                  & Electromagnetism                   & $\mathrm{U(1)}$ \\
     
-    Z boson   & $91.19~\GeV$         & \multirow{2}{*}{$\Big\}$ weak interaction}  & \multirow{2}{*}{$\mathrm{SU(2)}$}\\
+    Z boson   & $91.19~\GeV$         & \multirow{2}{*}{$\Bigg\}$ Weak interaction\hspace{0.3cm}}  & \multirow{2}{*}{$\mathrm{SU(2)}$}\\
     W boson   & $80.39~\GeV$         &                                    & \\
     
     Higgs boson (H)& $125.09\pm0.24~\GeV$ & Yukawa interaction                 & $\mathrm{SU(2)}\otimes\mathrm{U(1)}$\\
       
-    8 gluons (g)        & $0$                  & strong interaction                 & $\mathrm{SU(3)}$ \\  
-    \hline               
+    8 gluons (g)        & $0$                  & Strong interaction                 & $\mathrm{SU(3)}$ \\  
+    \bottomrule               
     \end{tabular}
 }
 

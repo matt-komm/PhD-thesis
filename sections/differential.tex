@@ -1,57 +1,67 @@
 \chapter{Measurement of differential single-top-quark cross sections at 13~TeV}
 \label{ch:diff13}
 
-\intro{A first measurement of normalized differential single-top-quark cross sections in $t$~channel as a function of the top quark transverse momentum and rapidity at 13~\TeV is presented. \Acrlong{pp} collision data corresponding to an integrated luminosity of 2.3~\invfb are analyzed which were recorded in 2015 with the \gls{cms} experiment. Events containing one isolated muon and two or three jets are selected and a \acrlong{bdt} is trained for separating signal from background events further. The amount of signal events as a function of the top quark transverse momentum and rapidity is estimated by multiple fits. The results are unfolded to parton level and compared to predictions by various \acrlong{mc} generators. No significant deviations are observed. The measurement has been published in Ref.~\cite{CMS-PAS-TOP-16-004}.
+\intro{A first measurement of normalized differential single-top-quark cross sections in $t$~channel as a function of the top quark transverse momentum and rapidity at 13~\TeV is presented. \Acrlong{pp} collision data corresponding to an integrated luminosity of 2.3~\invfb are analyzed which were recorded in 2015 with the \gls{cms} experiment. Events containing one isolated muon and two or three jets are selected and a \acrlong{bdt} is trained for separating signal from background events further. The amount of signal events as a function of the top quark transverse momentum and rapidity is estimated by performing multiple fits. The results are unfolded to parton level and compared to predictions by various \acrlong{mc} generators. No significant deviations are observed. The measurement has been published in Ref.~\cite{CMS-PAS-TOP-16-004}.
 }
 
 %##############################################
 \section{Analysis strategy}
 %##############################################
 
-In the following, the strategy for measuring normalized differential single-top-quark cross sections in $t$~channel as a function of the top quark \pt and rapidity is outlined. Events containing one isolated muon and two or three jets are selected. Then, a \gls{bdt} is trained to obtain a powerful discriminant for separating signal from background events. The amount of signal and background events in data are estimated by fitting the distributions of the transverse W~boson mass and the \gls{bdt} discriminant in the signal and in two \ttbar-dominated control regions simultaneously. Additionally, the contamination by multijet events is also estimated using a data-driven template of its shape obtained from a sideband region, for which the muon isolation during the event selection is inverted. Multiple fits are performed in intervals of the top quark transverse momentum and rapidity. The differential cross sections are inferred by passing the fit results directly to the unfolding. The impact of systematic uncertainties on the differential cross section is evaluated by repeating the measurement with modified templates.
+In the following, the strategy for measuring normalized differential single-top-quark cross sections in $t$~channel as a function of the top quark \pt and rapidity is outlined. Events containing one isolated muon and two or three jets are selected. A \gls{bdt} is trained to obtain a powerful discriminant for separating signal from background events. The amount of signal and background events in data are estimated by performing template-based \gls{ml} fits to the distributions of the transverse W~boson mass and the \gls{bdt} discriminant in the signal and in two \ttbar-dominated control regions simultaneously. Additionally, the contamination by multijet events is also estimated using a data-driven template of its shape. The template is obtained from a sideband region for which the muon isolation during the event selection is inverted. Multiple \gls{ml} fits are performed in intervals of the top quark transverse momentum and rapidity. The differential cross sections are inferred by passing the fit results directly to the unfolding. The impact of systematic uncertainties on the differential cross sections is evaluated by repeating the measurement with shifted templates. The measured normalized cross sections are compared to predictions by various event generators.
 
-\todo{not good here}
-The strategy has multiple benefits compared to the one chosen for the polarization measurement~(Ch.~\ref{ch:polarization}). First, it is not necessary to define a signal-enriched region where the remaining backgrounds are subtracted from data prior to unfolding. Instead, the signal yields in intervals of the top quark \pt and rapidity are taken from the fits directly. Secondly, since no signal-enriched region is defined also optimization of its selection is required. No explicit selection to reject multijet events or on the \gls{bdt} discriminant is necessary to carry out the measurement. Only for validation purposes, events with $\mtw>50~\GeV$ are selected to verify the modeling of background processes in a multijet-depleted region. Lastly, residual differences in the estimated backgrounds yields between unfolding bins are profiled which reduces the impact by potential shortcomings in their modeling or a bias occurring through correlations of \gls{bdt} input observables with the top quark \pt and rapidity.
+This strategy has multiple benefits compared to the one chosen for the polarization measurement~(Ch.~\ref{ch:polarization}). First, it is not necessary to define a signal-enriched region where the remaining backgrounds are subtracted from data prior to unfolding. Instead, the signal yields in intervals of the top quark \pt and rapidity are taken from the fit results directly. Secondly, since no signal-enriched region is defined an optimization of its selection is also not required. The measurement is carried out with no explicit selection to reject multijet events or on the \gls{bdt} discriminant to reject \wjets/\ttbar events except for validation purposes. Lastly, residual differences in the estimated backgrounds yields between unfolding bins are profiled in orthogonal fits in bins of the top quark \pt or rapidity. This reduces the impact by potential shortcomings in their modeling and can also prevent a bias occurring through potential correlations of the \gls{bdt} discriminant with the top quark \pt and rapidity.
 
-The measured normalized cross sections are compared to the predictions by various event generators.
+
 
 %##############################################
 \section{Event selection and simulated samples}
 %##############################################
 
-The measurement is based on \gls{pp} collision events corresponding to 2.3~\invfb which were recorded by the \gls{cms} experiment in 2015 at a \acrlong{cm} energy of 13~\TeV. An isolated muon trigger is employed for recording data events which requires the presence of an isolated muon candidate with a transverse momentum of at least $20~\GeV$ within $|\eta|<2.4$. In the analysis, the muon candidate has to have a momentum of $\pt>22$ within $|\eta|<2.4$ and fulfill tight identification requirements. The muon candidate is required to be isolated with a relative \gls{deltabeta}-based isolation of $\muiso<6\%$, calculated from the transverse energy deposits of charged and neutral hadrons, photons, and tracks associated to pileup within a cone of $\Delta R<0.4$. The isolation is explicitly chosen tighter here compared to corresponding analyses at 8~\TeV (e.g. Ch.~\ref{ch:polarization}) in which $\muiso<12\%$ was required instead. The distribution of the relative muon isolation after applying the complete event selection with the exception of the isolation is presented in Fig.~\ref{fig:diff13-reliso}. Here, the multijet template is taken exceptionally from simulation and scaled such that it fits to the bulk of the data distribution. The deviation at high isolation values can be attributed to differences in the trigger turn-on efficiencies between simulation and data. The distribution motivate to choose a tighter isolation here to counter observed the larger contamination by multijet events at 13~\TeV.
+The measurement is based on \gls{pp} collision events corresponding to 2.3~\invfb which were recorded by the \gls{cms} experiment in 2015 at a \acrlong{cm} energy of 13~\TeV. An isolated muon trigger is employed for recording data events which requires the presence of an isolated muon candidate with a transverse momentum of at least $20~\GeV$ within $|\eta|<2.4$. In the analysis, the muon candidate has to have a momentum of $\pt>22$ within $|\eta|<2.4$ and fulfill tight identification requirements. Furthermore, the muon candidate is required to be isolated with a relative \gls{deltabeta}-based isolation of $\muiso<6\%$, calculated from the transverse energy deposits of charged and neutral hadrons, photons, and tracks associated to pileup within a cone of $\Delta R<0.4$. The isolation is explicitly chosen tighter here compared to corresponding analyses at 8~\TeV (e.g. Ch.~\ref{ch:polarization}) in which $\muiso<12\%$ is required instead. The distribution of the relative muon isolation after applying the complete event selection with the exception of the isolation requirement is presented in Fig.~\ref{fig:diff13-reliso}. Here, the multijet template is taken exceptionally from simulation and scaled such that it fits approximately to the bulk of the data distribution. The deviation at high isolation values can be attributed to differences in the trigger isolation efficiencies between data and its emulation in simulation. The observed larger contamination by multijet events at 13~\TeV compared to 8~\TeV motivates the choice of a tighter isolation working point here.
 
 \myfigure{\label{fig:diff13-reliso} Distribution of the relative \gls{deltabeta}-based muon isolation in 2j1t. The multijet template is taken from simulation.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j1t/2j1t_relIso_qcdnone.pdf}}
 }
 
-Processes with $\mu\mu\mathrm{\mbox{+}jets}$ or $\mu\mathrm{e}\mathrm{\mbox{+}jets}$ final states such as dileptonic \ttbar or \zjets production are suppressed by vetoing events containing additional muon candidates with $\pt>10~\GeV$ within $|\eta|<2.5$ or electron candidates with $\pt>20$ within $|\eta|<2.5$ that also corresponding fulfill loose identification criteria.
+\mytable{}{
+\begin{tabular}{@{}l c c@{}}
+\toprule
+Process \hspace{0.5cm}        & \multicolumn{2}{c}{Selection efficiency} \\
+\cmidrule{2-3}
+                & \hspace{0.2cm}$\muiso<12\%$\hspace{0.2cm}     & \hspace{0.2cm}$\muiso<6\%$\hspace{0.2cm} \\
+\midrule
+$t$-channel       & 94\%               & 83\% \\
+Multijet          & 33\%               & 16\% \\
+Other backgrounds & 93\%               & 82\% \\
+\bottomrule     
 
-\Gls{pf} candidates are clustered into jets using the anti-\kt algorithm with a distance parameter of $R=0.4$. The influence by pileup is mitigated through the \gls{chs} technique~\cite{CMS-PAS-JME-14-001}. The jet energy scale is corrected in data and simulation using dedicated (\pt,$\eta$)-dependent scale factors. Additionally, the jet energy resolution is corrected in simulation to match the one observed in data. After these corrections are applied, jets with a transverse momentum of at least $40~\GeV$ that fall within $|\eta|<4.7$ and fulfill loose identification requirements are selected for analysis. A potential overlap between selected jets and the tight muon is removed by ignoring jets that fall within a cone of $\Delta R<0.3$ around the selected muon candidate. The \acrfull{csv} algorithm (version~2) is employed to perform b-tagging. At its tight working point an efficiency for tagging true b~jets of about 50\% is achieved whereas the misidentification rate amounts to only 0.1\%~\cite{CMS-PAS-BTV-15-001}. Simulated events are reweighted to match the observed b-tagging efficiency in data using dedicated scale factors.
+\end{tabular}
+}
 
-The following samples of simulated events are employed in the measurement. The \MGAMC generator interfaced with \PYTHIA8 for hadronization is used to generate the default signal sample of $t$-channel single-top-quark production in 4~\gls{fs}. For comparison, alternative samples are generated using the \MGAMC generator interfaced with \PYTHIA8 in 5~\gls{fs}, \MGAMC interfaced with \HERWIG in 4~\gls{fs}, and the \POWHEG generator interfaced with \PYTHIA in 4~\gls{fs}. Single-top-quark production in tW-channel and \ttbar production are simulated using the \POWHEG generator interfaced with \PYTHIA8. The samples of \wjets and \zjets production are generated using \MGAMC interfaced with \PYTHIA8 as well. The contributions by single-top-quark production in $s$~channel and diboson production have been found negligible at 13~\TeV and corresponding samples are thus not utilized. The theoretical cross sections for normalizing these samples are listed in Tab.~\ref{tab:diff13-theo-xsecs}. Special care needs to be taken for normalizing the samples produced with the \MGAMC generator because the \gls{mcatnlo} matching scheme has been employed here which leads to a certain fraction of negatively weighted events.
+Processes with $\mu\mu\mathrm{\mbox{+}jets}$ or $\mu\mathrm{e}\mathrm{\mbox{+}jets}$ final states such as dileptonic \ttbar or \zjets production are suppressed by vetoing events containing additional loose muon ($\pt>10~\GeV$, $|\eta|<2.5$) or electron candidates ($\pt>20~\GeV$, $|\eta|<2.5$). Loose muons are required to be isolated with $\muiso<20\%$ also fulfill loose identification criteria whereas electrons have to pass special identification criteria designed for vetoing electrons.
+
+\Gls{pf} candidates are clustered into jets using the anti-\kt algorithm with a distance parameter of $R=0.4$. The influence by pileup is mitigated through the \gls{chs} technique~\cite{CMS-PAS-JME-14-001}. The jet energy scale is corrected in data and simulation using dedicated (\pt,$\eta$)-dependent scale factors. Additionally, the jet energy resolution is corrected in simulation to match the one observed in data. After these corrections are applied, jets with a transverse momentum of at least $40~\GeV$ that fall within $|\eta|<4.7$ and fulfill loose identification requirements are selected for analysis. Potential overlaps between selected jets and the tight muon are mitigated by ignoring jets that fall within a cone of $\Delta R<0.3$ around the selected muon candidate. The \acrfull{csv} algorithm (version~2) is employed for b-tagging~\cite{CMS-PAS-BTV-15-001}. At its tight working point an efficiency of about 50\% is achieved for true b~jets whereas the fraction of mistagged jets amounts to only 0.1\%. Simulated events are reweighted to match the observed b-tagging efficiency in data using dedicated scale factors.
+
+The following samples of simulated events are employed in the measurement. The \MGAMC generator interfaced with \PYTHIA8 for hadronization is used to generate the default signal sample of $t$-channel single-top-quark production in 4~\gls{fs}. For comparison, alternative samples are generated using the \MGAMC generator interfaced with \PYTHIA8 in 5~\gls{fs}, \MGAMC interfaced with \HERWIG in 4~\gls{fs}, and the \POWHEG generator interfaced with \PYTHIA in 4~\gls{fs}. Single-top-quark production in tW-channel and \ttbar production are simulated using the \POWHEG generator interfaced with \PYTHIA8. The samples of \wjets and \zjets production are generated using \MGAMC interfaced with \PYTHIA8 as well. The theoretical cross sections for normalizing these samples are listed in Tab.~\ref{tab:diff13-theo-xsecs}. The contributions by single-top-quark production in $s$~channel and diboson production have been found negligible at 13~\TeV. Thus corresponding samples are not utilized. Special care needs to be taken for normalizing the samples produced with the \MGAMC generator because the \gls{mcatnlo} matching scheme has been employed here which leads to a certain fraction of negatively weighted events.
 
 \mytable{\label{tab:diff13-theo-xsecs}Theoretical cross sections used to normalize the simulated samples.}{
-\begin{tabular}{|l  r c l |}
-\hline
-process & cross section &\hspace{0.05cm} & accuracy \\
-\hline
+\begin{tabular}{@{}l  r c l}
+\toprule
+Process & \hspace{0.1cm}Cross section &\hspace{0.05cm} & Accuracy \\
+\midrule
 $t$~channel top quark & $136.0^{+5.4}_{-4.6}~\pb$ && \gls{nlo} (using \HATHOR\,2.1~\cite{Aliev:2010zk})   \\
 $t$~channel top antiquark & $81.0^{+4.1}_{-3.6}~\pb$ && \gls{nlo} (using \HATHOR\, 2.1~\cite{Aliev:2010zk})   \\
 tW~channel & $71.7\pm3.8~\pb$ && \gls{nlo} (using \HATHOR\,2.1~\cite{Aliev:2010zk})  \\
 \ttbar & $832^{+20}_{-29}~\pb$ && \gls{nnlo} (using \TOPPP\,2.0~\cite{Czakon:2011xx}) \\
 $\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,jets}$ & $20\,509^{+788}_{-776}~\pb$ && \gls{nnlo} (using \FEWZ\,3.1~\cite{Li:2012wna}) \\
 $\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ & $2\,008^{+76}_{-75}~\pb$ && \gls{nnlo} (using \FEWZ\,3.1~\cite{Li:2012wna}) \\
-\hline
+\bottomrule
 \end{tabular}
 }
 
 The shape of multijet events is modeled using a template \ref{sec:diff13-fit} ???
 
-\myfigure{\label{fig:diff13-mtw-antiiso} Distributions of the transverse W boson mass: (a)~sideband region with inverted muon isolation; (b)~signal region.}{
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/antiiso/2j1t_mtw_qcdnone_nol.pdf}}
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j1t/2j1t_mtw_qcdnone.pdf}}
-}
 
 Similar to the polarization measurement, signal and control regions are defined based on the number of selected jets and the subset of jets which are also b-tagged. Distributions of the reconstructed top quark mass in signal and control regions after applying the event selection are presented in Fig.~\ref{fig:diff13-topmass}. Since the 3j2t region contains a relatively low number of events, the 3j1t region is considered as an additional \ttbar control region in this analysis.
 
@@ -76,6 +86,42 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 \section{BDT training}
 %##############################################
 \label{sec:diff13-bdt}
+
+\mytablesideways{\label{tab:diff13-aucs}Discrimination power for various event observables and the trained \glspl{bdt} in 2j1t region.}{
+\begin{tabular}{@{}l l rr rr rr rr@{}}
+\toprule
+& Observable \hspace{0.3cm}&  \multicolumn{8}{c }{Area under \gls{roc} curve (\gls{auc})} \\
+\cmidrule{3-10}
+&  & \multicolumn{2}{c}{\hspace{0.1cm}\ttbar vs. $t$-ch.\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}\wjets vs. $t$-ch.\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}multijet vs. $t$-ch.\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}\ttbar vs. \wjets\hspace{0.5cm}}  \\
+\midrule
+\multirow{5}{*}{\rotatebox[origin=c]{90}{\gls{bdt} inputs}} 
+& Spectator jet $|\eta|$                        &\hspace{0.5cm} \textbf{26\%}&   &\hspace{0.7cm} 21\%&   & \hspace{0.7cm}10\%& &\hspace{0.7cm} 6\%& \\
+& $|m_\mathrm{top}-172.5~\GeV|$                 & 13\%&   & \textbf{24\%}&   & 14\%& & 11\%& \\
+& $\Delta R(\jprime,\,\mathrm{b~jet})$          & \textbf{26\%}&   & 13\%&   & 5\%& & \textbf{15\%}& \\
+& $|\Delta\eta(\mathrm{muon},\,\mathrm{b~jet})|$& 5\%&   & \textbf{20\%}&   & 5\%& & \textbf{16\%}& \\
+& \mtw                                          & 4\%&   & 2\%&   & \textbf{36\%}& & 3\%& \\
+\midrule 
+\multirow{11}{*}{\rotatebox[origin=c]{90}{others}} 
+& \met                                          & 9\%&   & 4\%&   & \textbf{28\%}& & 12\%& \\
+& Muon \pt                                      & 11\%&   & 10\%&   & \textbf{27\%}& & 1\%& \\
+& Spectator jet \pt                             & 1\%&   & 4\%&   & 9\%& & 4\%& \\
+& $|\Delta\phi(\mathrm{muon},\,\met)|$          & 6\%&   & 3\%&   & 19\%& & 4\%& \\
+& b~jet mass                                    & 5\%&   & 3\%&   & 8\%& & 5\%& \\
+& Dijet \pt                                     & 12\%&   & 4\%&   & 6\%& & 8\%& \\
+& Dijet mass                                    & 23\%&   & 14\%&   & 11\%& & 10\%& \\
+& $\sqrt{\hat{s}}=|\vec{p}_\mathrm{top}+\vec{p}_{\jprime}|$                                     
+                                                & 15\%&   & 7\%&   & 11\%& & 8\%& \\
+& $|\vec{p}_\mathrm{top}+\vec{p}_{\jprime}|_\mathrm{T}$                                 
+                                                & 16\%&   & 1\%&   & 1\%& & \textbf{17\%}& \\
+& Isotropy                                      & 2\%&   & 4\%&   & 8\%& & 6\%& \\
+& Sphericity                                    & \textbf{25\%}&   & 18\%&   & 7\%& & 10\%& \\
+& Event shape C                                 & \textbf{25\%}&   & 17\%&   & 7\%& & 10\%& \\
+\midrule
+& \gls{bdt} (\ADABOOST)                         & 31\%&   & 32\%&   & 27\%& & 3\%& \\
+& \gls{bdt} (\GRADIENTBOOST)                    & 31\%&   & 31\%&   & 29\%& & 2\%& \\
+\bottomrule
+\end{tabular}
+}
 
 %##############################################
 \section{Signal extraction}

@@ -51,17 +51,19 @@ Potential scenarios of spin orientations at the $\mathrm{Wtb}$~vertex are presen
 For a general analysis of the top quark spin one introduces the so-called ``spin-analyzing power'', $\alpha_{X}\in[-1;\,1]$, of the decay product $X=\ell,\nu,\mathrm{W},\mathrm{b}$. It denotes the fraction of instances when the top quark spin is aligned along the momentum of the spin analyzer in the top quark rest frame. The calculated spin-analyzing powers at \gls{lo} and \gls{nlo} in the \gls{sm} are listed in Tab.~\ref{tab:theory-spin-powers}. Additionally, the spin-analyzing powers for $X=\mathrm{q},\mathrm{q}^\prime$ for $\mathrm{W}\to \mathrm{q}\,\mathrm{q}^\prime$ decays are provided where $\mathrm{q}$ ($\mathrm{q}^\prime$) denotes all up-type (down-type) quarks respectively. However, studying the top quark spin in those decays is experimentally very challenging since the original quark flavor of a jet and its origin in case of additional final state radiation are difficult to infer. The spin-analyzing powers flip their sign $\alpha_{X}=-\alpha_{\bar{X}}$ in the case of top antiquark decays for the corresponding particle or antiparticle. This holds also in \gls{bsm} scenarios inducing \gls{cp}-violation in the top quark sector~\cite{AguilarSaavedra:2010nx}.
 
 \mytable{\label{tab:theory-spin-powers}Spin-analyzing power of the decay particles of the top quark. The values are taken from Ref.~\cite{AguilarSaavedra:2010nx} and references therein.}{
-\begin{tabular}{|c| r@{.}l r@{.}l |}
-\hline
-decay product $X$           & \multicolumn{2}{c}{$\alpha_{X}^\mathrm{LO}$}      & \multicolumn{2}{c |}{$\alpha_{X}^\mathrm{NLO}$} \\
-\hline
-$\ell^{\rmplus}$            & \hspace{0.5cm}1&00\hspace{0.5cm}                  & \hspace{0.5cm}0&998\hspace{0.5cm} \\
-$\nu$                       & -0&32                     & -0&33 \\
-$\bar{\mathrm{q}}^\prime$ (down-type)   & 1&00          & 0&93 \\
-$\mathrm{q}$~(up-type)      & -0&32                     & -0&31 \\
-$\mathrm{b}$                & -0&41                     & -0&39 \\
-$\mathrm{W}^{\rmplus}$      & 0&41                      & 0&39 \\
-\hline
+\begin{tabular}{@{}l  r@{.}l c r@{.}l@{} }
+\toprule
+Decay product \hspace{0.4cm}          &  \multicolumn{5}{c@{}}{spin-analyzing power} \\
+\cmidrule{2-6}
+& \multicolumn{2}{c}{\gls{lo}}      && \multicolumn{2}{c}{\gls{nlo}} \\
+\midrule
+$\ell^{\rmplus}$            & \hspace{0.2cm}1&00\hspace{0.2cm}                  && \hspace{0.3cm}0&998 \\
+$\nu$                       & -0&32                     && -0&33 \\
+$\bar{\mathrm{q}}^\prime$ (down-type)   & 1&00          && 0&93 \\
+$\mathrm{q}$~(up-type)      & -0&32                     && -0&31 \\
+$\mathrm{b}$                & -0&41                     && -0&39 \\
+$\mathrm{W}^{\rmplus}$      & 0&41                      && 0&39 \\
+\bottomrule
 \end{tabular}
 }
 
@@ -88,13 +90,13 @@ The dominant mechanism producing top quarks at hadron colliders is top quark pai
 }
 
 \mytable{\label{tab:theory-ttbar-xsecs}Top quark pair production cross sections in per \acrlong{cm} energy.}{
-\begin{tabular}{|c| r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l |}
-\hline
-\gls{cm}~energy       & \multicolumn{5}{c |}{cross section}     \\
-\hline
+\begin{tabular}{@{}l r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l@{} }
+\toprule
+\gls{cm}~energy \hspace{0.3cm}      & \multicolumn{5}{c }{cross section}     \\
+\midrule
 $8~\TeV$     & $252$ & $9$ & ${}^{+6.4}_{-8.6}$ & $\pm11.7$ & \\
 $13~\TeV$    & $831$ & $8$ & ${}^{+19.8}_{-29.2}$ & $\pm35.6$ & \\
-\hline
+\bottomrule
 \end{tabular}
 }
 
@@ -122,14 +124,14 @@ Besides the production in pairs, top quarks can be produced singly through elect
 The theoretical cross sections of the three single-top-quark production modes in pp collisions for center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-singletop-xsecs}. These have been calculated at \gls{nlo} in \gls{qcd} with the \HATHOR\,$2.1$ program~\cite{Aliev:2010zk,Kant:2014oha} using a top quark mass of $m_\mathrm{t}=172.5~\GeV$ while setting the factorization and renormalization scales to $\mu_\mathrm{R}=\mu_\mathrm{F}=m_\mathrm{t}$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
 
 \mytable{\label{tab:theory-singletop-xsecs}Single top quark cross sections per production mode and per \acrlong{cm} energy.}{
-\begin{tabular}{|c| r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l  r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l |}
-\hline
-mode            & \multicolumn{5}{c }{$\sigma^{8~\TeV}$} & \multicolumn{5}{c |}{$\sigma^{13~\TeV}$}     \\
-\hline
-$t$ channel     & $84$ & $7$ & ${}^{+2.6}_{-1.7}$ & $\pm2.8$ &   \hspace{0.5cm}   & $217$ & $0$ & ${}^{+6.6}_{-4.6}$ & $\pm6.2$ & \\
+\begin{tabular}{@{}l r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l  r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l@{}}
+\toprule
+Mode & \multicolumn{5}{c }{$\sigma^{8~\TeV}$} & \multicolumn{5}{c }{$\sigma^{13~\TeV}$}     \\
+\midrule
+$t$ channel     & $84$ & $7$ & ${}^{+2.6}_{-1.7}$ & $\pm2.8$ &   \hspace{0.15cm}   & $217$ & $0$ & ${}^{+6.6}_{-4.6}$ & $\pm6.2$ & \\
 tW channel      & $22$ & $4$ & $\pm0.6$ & $\pm1.4$ &      & $71$  & $7$ & $\pm1.8$ & $\pm3.4$ & \\
 $s$ channel     & $5$  & $24$ & ${}^{+0.15}_{-0.12}$ & $\pm0.16$ &      & $10$  & $32$ & ${}^{+0.29}_{-0.24}$ & $\pm0.27$ & \\
-\hline
+\bottomrule
 \end{tabular}
 }
 
@@ -177,14 +179,13 @@ A crucial ingredient which is still missing in this argumentation is the fact th
 The expect top quark polarizations have been calculated at $7~\TeV$ and are listed in Tab.~\ref{tab:theory-singletop-sm-polarization} at \gls{lo} and \gls{nlo}. The combined polarization for top quark and antiquark is calculated using a weighted sum with the corresponding cross sections as weights\footnote{The expected single-top-quark cross sections at $7~\TeV$ are $\sigma(\mathrm{t})=41.8^{+1.8}_{-1.5}~\pb$ and $\sigma(\bar{\mathrm{t}})=22.0^{+1.3}_{-1.2}~\pb$. These are calculated with the same setup as used for Tab.~\ref{tab:theory-singletop-xsecs}}. At $8~\TeV$, a similar polarization of $|\mathrm{P}_{\mathrm{t}+\bar{\mathrm{t}}}^\mathrm{8~\TeV}|=0.88$ is expected using simulated events from the \gls{nlo} generator \textsc{Powheg}~\cite{Khachatryan:2015dzz}.
 
 \mytable{\label{tab:theory-singletop-sm-polarization}Expected polarizations of top quarks and top antiquarks in $t$-channel single-top-quark production at $7~\TeV$. The values are taken from Ref.~\cite{Schwienhorst:2010je}.}{
-\begin{tabular}{|c| r@{.}l r@{.}l r@{.}l|}
-\hline
-            & \multicolumn{2}{c}{$\mathrm{P}_\mathrm{t}^\mathrm{\,7\,\TeV}$} & \multicolumn{2}{c}{$\mathrm{P}_{\bar{\mathrm{t}}}^\mathrm{\,7\,\TeV}$} & \multicolumn{2}{c|}{$|\mathrm{P}_{\mathrm{t}+\bar{\mathrm{t}}}^\mathrm{\,7\,\TeV}|$}     \\
-\hline
-\hline
+\begin{tabular}{@{}l r@{.}l r@{.}l r@{.}l@{}}
+\toprule
+            & \multicolumn{2}{c}{$\mathrm{P}_\mathrm{t}^\mathrm{\,7\,\TeV}$} & \multicolumn{2}{c}{$\mathrm{P}_{\bar{\mathrm{t}}}^\mathrm{\,7\,\TeV}$} & \multicolumn{2}{c}{$|\mathrm{P}_{\mathrm{t}+\bar{\mathrm{t}}}^\mathrm{\,7\,\TeV}|$}     \\
+\midrule
 \gls{lo}    & \hspace{0.5cm}0&99\hspace{0.5cm} & \hspace{0.5cm}-0&93\hspace{0.5cm}       & \hspace{0.5cm}0&95\hspace{0.5cm}          \\
 \gls{nlo}   & 0&91                             & -0&86                                   & 0&88          \\
-\hline
+\bottomrule
 \end{tabular}
 }
 
