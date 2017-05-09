@@ -25,15 +25,18 @@ The measurement is based on \gls{pp} collision events corresponding to 2.3~\invf
 }
 
 \mytable{}{
-\begin{tabular}{@{}l c c@{}}
+\begin{tabular}{@{}l c c c c@{}}
 \toprule
-Process \hspace{0.5cm}        & \multicolumn{2}{c}{Selection efficiency} \\
-\cmidrule{2-3}
-                & \hspace{0.2cm}$\muiso<12\%$\hspace{0.2cm}     & \hspace{0.2cm}$\muiso<6\%$\hspace{0.2cm} \\
+Process \hspace{1.7cm}        & \multicolumn{4}{c}{Selection efficiency} \\
+\cmidrule{2-5}
+& \hspace{0.2cm}$\muiso<12\%$\hspace{0.2cm}
+& \hspace{0.2cm}$\muiso<8\%$\hspace{0.2cm}
+& \hspace{0.2cm}$\muiso<6\%$\hspace{0.2cm}
+& \hspace{0.2cm}$\muiso<4\%$\hspace{0.2cm} \\
 \midrule
-$t$-channel       & 94\%               & 83\% \\
-Multijet          & 33\%               & 16\% \\
-Other backgrounds & 93\%               & 82\% \\
+$t$-channel       & 94\% & 88\% & 83\% & 73\% \\
+Multijet          & 33\% & 21\% & 16\% & 10\% \\
+Other backgrounds & 93\% & 87\% & 82\% & 72\% \\
 \bottomrule     
 
 \end{tabular}
@@ -87,12 +90,12 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 %##############################################
 \label{sec:diff13-bdt}
 
-\mytablesideways{\label{tab:diff13-aucs}Discrimination power for various event observables and the trained \glspl{bdt} in 2j1t region.}{
+\mytable{\label{tab:diff13-aucs}Discrimination power for various event observables and the trained \glspl{bdt} in 2j1t region.}{
 \begin{tabular}{@{}l l rr rr rr rr@{}}
 \toprule
-& Observable \hspace{0.3cm}&  \multicolumn{8}{c }{Area under \gls{roc} curve (\gls{auc})} \\
+\hspace{0.4cm} & Observable  &  \multicolumn{8}{c }{Area under \gls{roc} curve (\gls{auc})} \\
 \cmidrule{3-10}
-&  & \multicolumn{2}{c}{\hspace{0.1cm}\ttbar vs. $t$-ch.\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}\wjets vs. $t$-ch.\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}multijet vs. $t$-ch.\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}\ttbar vs. \wjets\hspace{0.5cm}}  \\
+&  & \multicolumn{2}{c}{\hspace{0.1cm}\ttbar/signal\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}\wjets/signal\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}Multijet/signal\hspace{0.2cm}} & \multicolumn{2}{c@{}}{\hspace{0.1cm}\ttbar/\wjets}  \\
 \midrule
 \multirow{5}{*}{\rotatebox[origin=c]{90}{\gls{bdt} inputs}} 
 & Spectator jet $|\eta|$                        &\hspace{0.5cm} \textbf{26\%}&   &\hspace{0.7cm} 21\%&   & \hspace{0.7cm}10\%& &\hspace{0.7cm} 6\%& \\
@@ -111,7 +114,7 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 & Dijet mass                                    & 23\%&   & 14\%&   & 11\%& & 10\%& \\
 & $\sqrt{\hat{s}}=|\vec{p}_\mathrm{top}+\vec{p}_{\jprime}|$                                     
                                                 & 15\%&   & 7\%&   & 11\%& & 8\%& \\
-& $|\vec{p}_\mathrm{top}+\vec{p}_{\jprime}|_\mathrm{T}$                                 
+& $(\vec{p}_\mathrm{top}+\vec{p}_{\jprime})_\mathrm{T}$                                 
                                                 & 16\%&   & 1\%&   & 1\%& & \textbf{17\%}& \\
 & Isotropy                                      & 2\%&   & 4\%&   & 8\%& & 6\%& \\
 & Sphericity                                    & \textbf{25\%}&   & 18\%&   & 7\%& & 10\%& \\
