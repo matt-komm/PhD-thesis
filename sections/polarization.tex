@@ -34,17 +34,17 @@ Various samples of simulated events of signal and background processes are gener
 \mytable{\label{tab:polarization-theo-xsecs}Theoretical cross sections used to normalize the simulated samples.}{
 \begin{tabular}{@{}l  r c l@{}}
 \toprule
-Process & Cross section &\hspace{0.05cm} & Accuracy \\
+Process\hspace{3cm} & Cross section &\hspace{0.1cm} & Accuracy \\
 \midrule
 $t$~channel & $87.2^{+2.6}_{-1.8}~\pb$ & & approx. \gls{nnlo}~\cite{Kidonakis:2012db} \\
 $s$~channel & $5.55\pm0.22~\pb$ && approx. \gls{nnlo}~\cite{Kidonakis:2012db}  \\
 tW~channel & $22.2\pm1.5~\pb$ && approx. \gls{nnlo}~\cite{Kidonakis:2012db} \\
-\ttbar & $253^{+15}_{-16}~\pb$ && \gls{nnlo} (using \TOPPP\,2.0~\cite{Czakon:2011xx}) \\
-$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,jets}$ & $12\,234^{+422}_{-416}~\pb$ && \gls{nnlo} (using \FEWZ~\cite{Gavin:2010az}) \\
-$\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ & $1\,177\pm39~\pb$ && \gls{nnlo} (using \FEWZ~\cite{Gavin:2010az}) \\
-$\mathrm{W}^{\rmplus}~\mathrm{W}^{\rmminus}$ & $54.8\pm3.0~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
-$\mathrm{W}^{\pm}~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>12~\GeV$  & $33.2\pm2.7~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
-$\mathrm{Z}/\gamma^\star~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>40~\GeV$ & $8.1\pm0.4~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
+\ttbar & $253^{+15}_{-16}~\pb$ && \gls{nnlo} \hfill (using \TOPPP\,2.0~\cite{Czakon:2011xx}) \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,jets}$ & $12\,234^{+422}_{-416}~\pb$ && \gls{nnlo} \hfill (using \FEWZ~\cite{Gavin:2010az}) \\
+$\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ & $1\,177\pm39~\pb$ && \gls{nnlo} \hfill (using \FEWZ~\cite{Gavin:2010az}) \\
+$\mathrm{W}^{\rmplus}~\mathrm{W}^{\rmminus}$ & $54.8\pm3.0~\pb$ && \gls{nlo} \hfill (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
+$\mathrm{W}^{\pm}~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>12~\GeV$  & $33.2\pm2.7~\pb$ && \gls{nlo} \hfill (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
+$\mathrm{Z}/\gamma^\star~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>40~\GeV$ & $8.1\pm0.4~\pb$ && \gls{nlo} \hfill (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
 \bottomrule
 \end{tabular}
 }
@@ -257,7 +257,7 @@ Additional systematic uncertainties are considered in the measurement to account
 
 The obtained fit results per channel are listed in Tab.~\ref{tab:polarization-yields}. After the event selection, a \gls{sb} of about $13\%$ ($11\%$) is obtained in the muon (electron) channel which increases to $90\%$ ($88\%$) in a signal-enriched region respectively that is defined by applying an additional selection which utilizes both \gls{bdt} discriminants.
 
-\mytable{\label{tab:polarization-yields}Event yields in 2j1t after the event selection and in a signal-enriched phase space defined by $\bdtqcd>-0.15$ in the muon channel, $\bdtqcd>0.15$ in the electron channel, and additionally $\bdttch>0.45$ in both channels. The uncertainties reflect the limited \gls{mc} statistics and the \gls{ml} fit uncertainties.}{
+\mytable{\label{tab:polarization-yields}Estimated event yields in 2j1t after the event selection and in a signal-enriched phase space defined by $\bdtqcd>-0.15$ in the muon channel, $\bdtqcd>0.15$ in the electron channel, and additionally $\bdttch>0.45$ in both channels. The uncertainties reflect the limited \gls{mc} statistics and the \gls{ml} fit uncertainties.}{
 \begin{tabular}{@{}l r@{$\pm$}l r@{$\pm$}l c  r@{$\pm$}l r@{$\pm$}l@{}}
 \toprule
 Process & \multicolumn{4}{c}{Muon channel} & & \multicolumn{4}{c}{Electron channel} \\
@@ -268,7 +268,7 @@ Process & \multicolumn{4}{c}{Muon channel} & & \multicolumn{4}{c}{Electron chann
 
 \ttbar          & 58539&629     & \hspace{0.4cm} 3118&34       && 48208&518     &  \hspace{0.4cm} 2182&26 \\
 tW              & 6518&76       & 311&12        && 5370&64       & 215&6 \\
-$s$-channel     & 1059&20       & 72&4          && 808&17        & 44&3 \\
+$s$~channel     & 1059&20       & 72&4          && 808&17        & 44&3 \\
 W+heavy flavor  & 30472&1520    & 2101&113      && 20707&1034    & 836&48 \\ 
 W+light flavor  & 3824&202      & 252&21        && 2720&145      & 94&11 \\
 \zjets          & 10284&561     & 371&32        && 10696&572     & 175&27 \\

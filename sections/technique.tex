@@ -367,5 +367,7 @@ which results into a suitable trade-off with minimal correlation across the unfo
 \subfloat[\label{fig:technique-tauscan-result}]{\includegraphics[width=0.48\textwidth]{figures/technique/unfoldDist.pdf}}
 }
 
+\todo{show pulls for 1 bin in case of underregulariztion, overrgularization, optimal regularization}
+
 In conclusion, unfolding is an ill-posed problem which requires regularization to obtain meaningful results that are stable against statistical fluctuations. The \TUNFOLD package regularizes the response matrix by suppressing solutions with large curvatures. However, this procedure induces bin-by-bin correlations as a function of the regularization strength. The correlations are kept small by adjusting the regularization strength to the minimum of the average global correlation coefficient.
 

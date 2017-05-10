@@ -31,8 +31,8 @@ Process \hspace{1.7cm}        & \multicolumn{4}{c}{Selection efficiency} \\
 \cmidrule{2-5}
 & \hspace{0.2cm}$\muiso<12\%$\hspace{0.2cm}
 & \hspace{0.2cm}$\muiso<8\%$\hspace{0.2cm}
-& \hspace{0.2cm}$\muiso<6\%$\hspace{0.2cm}
-& \hspace{0.2cm}$\muiso<4\%$\hspace{0.2cm} \\
+& \hspace{0.2cm}$\muiso<6\%$\hspace{0.4cm}
+& $\muiso<4\%$ \\
 \midrule
 $t$-channel       & 94\% & 88\% & 83\% & 73\% \\
 Multijet          & 33\% & 21\% & 16\% & 10\% \\
@@ -49,16 +49,16 @@ Processes with $\mu\mu\mathrm{\mbox{+}jets}$ or $\mu\mathrm{e}\mathrm{\mbox{+}je
 The following samples of simulated events are employed in the measurement. The \MGAMC generator interfaced with \PYTHIA8 for hadronization is used to generate the default signal sample of $t$-channel single-top-quark production in 4~\gls{fs}. For comparison, alternative samples are generated using the \MGAMC generator interfaced with \PYTHIA8 in 5~\gls{fs}, \MGAMC interfaced with \HERWIG in 4~\gls{fs}, and the \POWHEG generator interfaced with \PYTHIA in 4~\gls{fs}. Single-top-quark production in tW-channel and \ttbar production are simulated using the \POWHEG generator interfaced with \PYTHIA8. The samples of \wjets and \zjets production are generated using \MGAMC interfaced with \PYTHIA8 as well. The theoretical cross sections for normalizing these samples are listed in Tab.~\ref{tab:diff13-theo-xsecs}. The contributions by single-top-quark production in $s$~channel and diboson production have been found negligible at 13~\TeV. Thus corresponding samples are not utilized. Special care needs to be taken for normalizing the samples produced with the \MGAMC generator because the \gls{mcatnlo} matching scheme has been employed here which leads to a certain fraction of negatively weighted events.
 
 \mytable{\label{tab:diff13-theo-xsecs}Theoretical cross sections used to normalize the simulated samples.}{
-\begin{tabular}{@{}l  r c l}
+\begin{tabular}{@{}l  r c l@{}}
 \toprule
-Process & \hspace{0.1cm}Cross section &\hspace{0.05cm} & Accuracy \\
+Process & \hspace{0.5cm}Cross section & & Accuracy \\
 \midrule
-$t$~channel top quark & $136.0^{+5.4}_{-4.6}~\pb$ && \gls{nlo} (using \HATHOR\,2.1~\cite{Aliev:2010zk})   \\
-$t$~channel top antiquark & $81.0^{+4.1}_{-3.6}~\pb$ && \gls{nlo} (using \HATHOR\, 2.1~\cite{Aliev:2010zk})   \\
-tW~channel & $71.7\pm3.8~\pb$ && \gls{nlo} (using \HATHOR\,2.1~\cite{Aliev:2010zk})  \\
-\ttbar & $832^{+20}_{-29}~\pb$ && \gls{nnlo} (using \TOPPP\,2.0~\cite{Czakon:2011xx}) \\
-$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,jets}$ & $20\,509^{+788}_{-776}~\pb$ && \gls{nnlo} (using \FEWZ\,3.1~\cite{Li:2012wna}) \\
-$\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ & $2\,008^{+76}_{-75}~\pb$ && \gls{nnlo} (using \FEWZ\,3.1~\cite{Li:2012wna}) \\
+$t$-channel top quark & $136.0^{+5.4}_{-4.6}~\pb$ && \gls{nlo} \hfill (using \HATHOR\,2.1~\cite{Aliev:2010zk})   \\
+$t$-channel top antiquark & $81.0^{+4.1}_{-3.6}~\pb$ && \gls{nlo} \hfill (using \HATHOR\, 2.1~\cite{Aliev:2010zk})   \\
+tW~channel & $71.7\pm3.8~\pb$ && \gls{nlo} \hfill (using \HATHOR\,2.1~\cite{Aliev:2010zk})  \\
+\ttbar & $832^{+20}_{-29}~\pb$ && \gls{nnlo} \hfill (using \TOPPP\,2.0~\cite{Czakon:2011xx}) \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,jets}$ & $20\,509^{+788}_{-776}~\pb$ && \gls{nnlo} \hfill (using \FEWZ\,3.1~\cite{Li:2012wna}) \\
+$\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ & $2\,008^{+76}_{-75}~\pb$ && \gls{nnlo} \hfill (using \FEWZ\,3.1~\cite{Li:2012wna}) \\
 \bottomrule
 \end{tabular}
 }
@@ -93,18 +93,18 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 \mytable{\label{tab:diff13-aucs}Discrimination power for various event observables and the trained \glspl{bdt} in 2j1t region.}{
 \begin{tabular}{@{}l l rr rr rr rr@{}}
 \toprule
-\hspace{0.4cm} & Observable  &  \multicolumn{8}{c }{Area under \gls{roc} curve (\gls{auc})} \\
+\hspace{0.3cm} & Observable  &  \multicolumn{8}{c }{Area under \gls{roc} curve (\gls{auc})} \\
 \cmidrule{3-10}
-&  & \multicolumn{2}{c}{\hspace{0.1cm}\ttbar/signal\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}\wjets/signal\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}Multijet/signal\hspace{0.2cm}} & \multicolumn{2}{c@{}}{\hspace{0.1cm}\ttbar/\wjets}  \\
+&  & \multicolumn{2}{c}{\ttbar/signal\hspace{0.1cm}} & \multicolumn{2}{c}{\hspace{0.1cm}\wjets/signal\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}Multijet/signal\hspace{0.2cm}} & \multicolumn{2}{c@{}}{\hspace{0.1cm}\ttbar/\wjets}  \\
 \midrule
 \multirow{5}{*}{\rotatebox[origin=c]{90}{\gls{bdt} inputs}} 
-& Spectator jet $|\eta|$                        &\hspace{0.5cm} \textbf{26\%}&   &\hspace{0.7cm} 21\%&   & \hspace{0.7cm}10\%& &\hspace{0.7cm} 6\%& \\
+& Spectator jet $|\eta|$                        &\hspace{0.4cm} \textbf{26\%}&   &\hspace{0.6cm} 21\%&   & \hspace{0.7cm}10\%& &\hspace{0.7cm} 6\%& \\
 & $|m_\mathrm{top}-172.5~\GeV|$                 & 13\%&   & \textbf{24\%}&   & 14\%& & 11\%& \\
 & $\Delta R(\jprime,\,\mathrm{b~jet})$          & \textbf{26\%}&   & 13\%&   & 5\%& & \textbf{15\%}& \\
 & $|\Delta\eta(\mathrm{muon},\,\mathrm{b~jet})|$& 5\%&   & \textbf{20\%}&   & 5\%& & \textbf{16\%}& \\
 & \mtw                                          & 4\%&   & 2\%&   & \textbf{36\%}& & 3\%& \\
 \midrule 
-\multirow{11}{*}{\rotatebox[origin=c]{90}{others}} 
+\multirow{11}{*}{\rotatebox[origin=c]{90}{Others}} 
 & \met                                          & 9\%&   & 4\%&   & \textbf{28\%}& & 12\%& \\
 & Muon \pt                                      & 11\%&   & 10\%&   & \textbf{27\%}& & 1\%& \\
 & Spectator jet \pt                             & 1\%&   & 4\%&   & 9\%& & 4\%& \\
@@ -126,15 +126,57 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 \end{tabular}
 }
 
+
+bdt reshaping
+
 %##############################################
 \section{Signal extraction}
 %##############################################
 \label{sec:diff13-fit}
 
+\mytable{Estimated event yields in 2j1t after the event selection, for events with $\mtw>50~\GeV$, and in a signal-enriched phase space defined by $\mtw>50~\GeV$ and $\bdt>0.6$\,.}{
+\begin{tabular}{@{}l l r@{$\pm$}l c r@{$\pm$}l c r@{$\pm$}l@{}}
+\toprule
+Process &\hspace*{0.3cm}&\multicolumn{8}{c@{}}{Event yields}  \\
+\cmidrule{3-10}
+&&\multicolumn{2}{c}{Selection} &\hspace*{0.2cm}& \multicolumn{2}{c}{$\mtw>50~\GeV$} &\hspace*{0.2cm}& \multicolumn{2}{c@{}}{Signal-enriched}\\
+\midrule
+tW              &&\hspace*{0.1cm} 2001&14      &&\hspace*{0.5cm} 1343&12       &&\hspace*{0.6cm} 32&2\\
+\ttbar          && 19037&22     && 12960&18      && 353&3\\
+W+heavy flavor  && 6825&57      && 4807&49       && 189&11 \\
+W+light flavor  && 2395&40      && 1684&34       && 71&7 \\
+\zjets          && 1534&24      && 664&16        && 23&3 \\
+Multijet        && 4881&18      && 561&3         && 38&1\\
+Signal          && 3385&5       && 2351&4        && 700&2\\
+\midrule
+Total expected  && 40057&80     && 24369&66      && 1407&13\\
+Data            && 40432&201    && 24417&156     && 1482&38 \\
+\bottomrule
+\end{tabular}
+}
+
+\myfigure{Correlations between fitted scale factors.}{
+\includegraphics[width=0.5\textwidth]{figures/differential/fitCorrelations.pdf}
+}
+
 
 %##############################################
 \section{Unfolding}
 %##############################################
+
+\myfigure{Response matrices for the top-quark (a)~transverse momentum and (b)~rapidity.}{
+\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/responsePt.pdf}
+\hspace{0.02\textwidth}
+\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/responseY.pdf}
+}
+
+\myfigure{Selection efficiencies for the top-quark (a)~transverse momentum and (b)~rapidity.}{
+\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effPt.pdf}
+\hspace{0.02\textwidth}
+\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effY.pdf}
+}
+
+pulls, how is rapidity defined
 
 %##############################################
 \section{Results}
@@ -146,7 +188,7 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 %##############################################
 
 %##############################################
-\subsection{Extended samples}
+%\subsection{Extended samples}
 %##############################################
 
 %##############################################
