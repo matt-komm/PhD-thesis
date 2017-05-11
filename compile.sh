@@ -18,6 +18,7 @@ pdflatex \
 -output-directory temp \
 -file-line-error \
 -halt-on-error \
-main.tex | tee /dev/stdout | grep "LaTeX Warning" >> temp/warnings.log
+main.tex | tee /dev/stdout | grep -E "LaTeX Warning" >> temp/warnings.log
+#main.tex | tee /dev/stdout | grep -E "LaTeX Warning|Overfull" >> temp/warnings.log
 cat temp/warnings.log
 

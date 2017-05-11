@@ -81,16 +81,31 @@ Similar to the polarization measurement, signal and control regions are defined 
 \section{Modeling}
 %##############################################
 \label{sec:diff13-modeling}
-Njets, Nbjets, tune studies
+mtw cut for qcd studies
+Njets, Nbjets, tune studies, hdamp
 show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 
+\myfigure{\label{fig:diff13-njet-validation} Distributions of the number of selected jets and b-tagged jets for events with at least two selected jets.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/Xj/Xj_njets_qcdmtw_nol.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/Xj/Xj_nbjets_qcdmtw.pdf}}
+}
+
+\myfigure{\label{fig:diff13-2j0t-qcd-validation} Validation of the multijet modeling by the extracted template from a sideband region in 2j0t control region: (a)~distribution of the missing transverse energy; (b)~distribution of the difference of the $\phi$ angles of the muon and missing transverse momentum.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/2j0t/2j0t_met_qcdnone_nol.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j0t/2j0t_muon_met_deltaPhi_qcdnone.pdf}}
+}
+
+\myfigure{\label{fig:diff13-2j0t-wjet-validation} Validation of the \wjets modeling by the \MGAMC sample in 2j0t control region: (a)~distribution of the \pt of the reconstructed W~boson candidate; (b)~distribution of the polarization angle.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/2j0t/2j0t_wboson_pt_qcdmtw_nol.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j0t/2j0t_cosTheta_tPL_qcdmtw.pdf}}
+}
 
 %##############################################
 \section{BDT training}
 %##############################################
 \label{sec:diff13-bdt}
 
-\mytable{\label{tab:diff13-aucs}Discrimination power for various event observables and the trained \glspl{bdt} in 2j1t region.}{
+\mytable{\label{tab:diff13-aucs}Discrimination power of event observables and the trained \glspl{bdt} in 2j1t region for various pairs of signal and background processes. Highlighted are a few of the most discriminating observables per process pair.}{
 \begin{tabular}{@{}l l rr rr rr rr@{}}
 \toprule
 \hspace{0.3cm} & Observable  &  \multicolumn{8}{c }{Area under \gls{roc} curve (\gls{auc})} \\
@@ -127,7 +142,26 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 }
 
 
+\myfigure{\label{fig:diff13-training-obs} Distributions of some input observables for the \gls{bdt} training in 2j1t signal region: (a)~the transverse W~boson mass; (b)~pseudorapidity of the spectator jet~(\jprime); (c)~$\Delta R$ difference between the two jets; (d)~difference in pseudorapidities between the muon and b-tagged jet. The hatched band reflects the total systematic uncertainties. The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
+%\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/2j1t/2j1t_mtw_qcdnone_nol.pdf}}
+%\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j1t/2j1t_ljet_abseta_qcdnone.pdf}}\\
+%\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/2j1t/2j1t_dijet_dR_qcdnone_nol.pdf}}
+%\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j1t/2j1t_bjet_muon_dEta_qcdnone.pdf}}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_mtw.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_etaj.pdf}}\\
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_dR.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_dEta.pdf}}
+}
+
+balance multijet weight in training
+
 bdt reshaping
+
+\myfigure{\label{fig:diff13-bdt}Distribution of the \gls{bdt} discriminant after selecting events with $\mtw>50~\GeV$. The hatched band reflects the total systematic uncertainties. The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
+\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_BDT.pdf}
+}
 
 %##############################################
 \section{Signal extraction}
@@ -160,28 +194,54 @@ Data            && 40432&201    && 24417&156     && 1482&38 \\
 }
 
 
+
 %##############################################
 \section{Unfolding}
 %##############################################
 
 \myfigure{Response matrices for the top-quark (a)~transverse momentum and (b)~rapidity.}{
-\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/responsePt.pdf}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/responsePt.pdf}}
 \hspace{0.02\textwidth}
-\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/responseY.pdf}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/responseY.pdf}}
 }
 
 \myfigure{Selection efficiencies for the top-quark (a)~transverse momentum and (b)~rapidity.}{
-\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effPt.pdf}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effPt.pdf}}
 \hspace{0.02\textwidth}
-\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effY.pdf}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effY.pdf}}
 }
 
-pulls, how is rapidity defined
+\myfigure{\label{fig:diff13-top-reco} The hatched band reflects the total systematic uncertainties. The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_toppt_bdtinv.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_toppt_bdt.pdf}}\\
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_topy_bdtinv.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_topy_bdt.pdf}}
+}
+
+
+pulls, how is rapidity defined, tau scan
+
+%##############################################
+\section{Statistical evaluation}
+%##############################################
+
+show impact of uncertainties on shape
 
 %##############################################
 \section{Results}
 %##############################################
 
+\myfigure{\label{fig:diff13-top-unfolded} The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/unfolded_top_pt.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/unfolded_top_y.pdf}}
+}
+
+\myfigure{\label{fig:diff13-top-unfolded-xcheck}Cross check of the top quark \pt differential cross section result by fitting the pseudorapidity distribution of the spectator jet instead of the \gls{bdt} discriminant.}{
+\includegraphics[width=0.48\textwidth]{figures/differential/pas/unfolded_top_pt_jeta.pdf}
+}
 
 %##############################################
 \section{Prospects}
