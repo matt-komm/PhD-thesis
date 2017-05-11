@@ -208,17 +208,23 @@
  \renewenvironment{theglossary}%
   %{\begin{multicols}{2}\begin{description}}%begin
   %{\end{description}\end{multicols}}%end
-   {\begin{multicols}{2}\begin{list}{}{\leftmargin=0.7em \itemindent=-0.7em \parsep=0.1\baselineskip}}%begin
-   {\end{list}\end{multicols}}%end
+   {\begin{multicols*}{2}}%begin
+   {\end{multicols*}}%end
  % Set the table's header:
  \renewcommand*{\glossaryheader}{}%
  % No heading between groups:
   \renewcommand*{\glsgroupheading}[1]{
-  %\boldmath{\textbf{\glsgetgrouptitle{##1}}\\}
+  %\item\boldmath{\textbf{\glsgetgrouptitle{##1}}}
   }%
  % Main (level 0) entries displayed in a row:
   \renewcommand*{\glossaryentryfield}[5]{%
-    \item \glstarget{##1}{\boldmath{\textbf{##2}}} \hspace{0.3em} ##3 \hspace{0.5em} ##5
+    \begin{minipage}[t]{\columnwidth}
+    %\begin{list}{}{\leftmargin=1em \itemindent=-1em}
+    %\item %
+    \hangindent=1em
+    \glstarget{##1}{\boldmath{\textbf{##2}}} \hspace{0.2em} ##3 \hspace{0.3em} ##5\\[-0.4\baselineskip]
+    %\end{list}
+    \end{minipage}
     %\glstarget{##1}{\boldmath{\textbf{##2}}} \hspace{0.3em} ##3 \hspace{0.5em} ##5\par
     %\glstarget{##1}\boldmath{\textbf{##2}} \hspace{0.3em} ##3 \hspace{0.5em} ##5%\\[0.0\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip]
 }
