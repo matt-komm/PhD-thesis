@@ -4,7 +4,7 @@
 \intro{A first measurement of the top quark spin asymmetry in t~channel, sensitive to the top quark polarization, is presented in this chapter. Proton-proton collision data at $\mathit{\sqrt{s}=8}$~TeV have been analyzed corresponding to about $\mathit{20~fb^{-1}}$. Events with an isolated muon are selected together with two or three jets for the final measurement. Events containing an isolated electron and jets have been studied as well. The normalized differential cross section is measured as a function of the angle between the lepton and the spectator quark in the top quark rest frame. From its shape, a spin asymmetry of $\mathit{0.26\pm0.03~(stat)\pm0.10~(syst)}$ is obtained. The result is found to be compatible within $\mathit{2.0}$ standard deviations with the expected \gls{sm} spin asymmetry of $\mathit{0.44}$. The measurement has been published in Ref.~\cite{Khachatryan:2015dzz}. In a further step, the derivation of limits on anomalous couplings is illustrated by combining the measured spin asymmetry with other measurements, sensitive to the coupling structure.}
 
 %##############################################
-\section{Analysis strategy}
+\section{Outline of analysis strategy}
 %##############################################
 
 An overview of the strategy to measure the top quark spin asymmetry and derive limits on anomalous couplings is given in the following. After selecting events with an isolated muon or electron and two or three jets, two \glspl{bdt} are employed. The first one, \bdtqcd, is trained to reject events with fake leptons stemming from multijet production. The shape of multijet events is modeled by a template obtained from data in a sideband region for which the lepton isolation is inverted. Then, a two-component \gls{ml} fit to the \bdtqcd discriminant is performed to estimate the amount of multijet contamination after the event selection. The second \gls{bdt}, \bdttch, is optimized to separate signal from \wjets and \ttbar events. The amount of signal and background contributions is estimated through a second \gls{ml} fit to data using the distribution of its discriminant. A signal-enriched phase space is obtained by applying an optimized selection on each of the \gls{bdt} discriminants resulting into a \gls{sb} ratio of about 90\%. The shape of the polarization angle, $\cos\theta^\star_{\mu}$, in data is unfolded to parton level after subtracting the remaining background contributions. This is repeated for each considered source of systematic uncertainty to estimate their impact on the measurement. The final measurement is performed for muon channel only since in the electron channel, shortcomings in the modeling of the data-driven multijet template and an overall larger impact of systematic uncertainties are observed rendering its standalone result much less significant. The following description of the analysis in this chapter is therefore primarily focused on the muon channel. 
@@ -39,12 +39,12 @@ Process\hspace{3cm} & Cross section &\hspace{0.1cm} & Accuracy \\
 $t$~channel & $87.2^{+2.6}_{-1.8}~\pb$ & & approx. \gls{nnlo}~\cite{Kidonakis:2012db} \\
 $s$~channel & $5.55\pm0.22~\pb$ && approx. \gls{nnlo}~\cite{Kidonakis:2012db}  \\
 tW~channel & $22.2\pm1.5~\pb$ && approx. \gls{nnlo}~\cite{Kidonakis:2012db} \\
-\ttbar & $253^{+15}_{-16}~\pb$ && \gls{nnlo} \hfill (using \TOPPP\,2.0~\cite{Czakon:2011xx}) \\
-$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,jets}$ & $12\,234^{+422}_{-416}~\pb$ && \gls{nnlo} \hfill (using \FEWZ~\cite{Gavin:2010az}) \\
-$\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ & $1\,177\pm39~\pb$ && \gls{nnlo} \hfill (using \FEWZ~\cite{Gavin:2010az}) \\
-$\mathrm{W}^{\rmplus}~\mathrm{W}^{\rmminus}$ & $54.8\pm3.0~\pb$ && \gls{nlo} \hfill (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
-$\mathrm{W}^{\pm}~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>12~\GeV$  & $33.2\pm2.7~\pb$ && \gls{nlo} \hfill (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
-$\mathrm{Z}/\gamma^\star~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>40~\GeV$ & $8.1\pm0.4~\pb$ && \gls{nlo} \hfill (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
+\ttbar & $253^{+15}_{-16}~\pb$ && \gls{nnlo}  (using \TOPPP\,2.0~\cite{Czakon:2011xx}) \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,jets}$ & $12\,234^{+422}_{-416}~\pb$ && \gls{nnlo}  (using \FEWZ~\cite{Gavin:2010az}) \\
+$\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ & $1\,177\pm39~\pb$ && \gls{nnlo}  (using \FEWZ~\cite{Gavin:2010az}) \\
+$\mathrm{W}^{\rmplus}~\mathrm{W}^{\rmminus}$ & $54.8\pm3.0~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
+$\mathrm{W}^{\pm}~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>12~\GeV$  & $33.2\pm2.7~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
+$\mathrm{Z}/\gamma^\star~\mathrm{Z}/\gamma^\star$, $m_{\ell\ell}>40~\GeV$ & $8.1\pm0.4~\pb$ && \gls{nlo} (using \MCFM\,5.8~\cite{Campbell:2010ff})\\
 \bottomrule
 \end{tabular}
 }
@@ -101,7 +101,7 @@ In a preliminary version of this analysis~\cite{CMS-PAS-TOP-13-001}, events with
 Process\hspace{0.4cm} & \multicolumn{2}{c}{Muon channel} && \multicolumn{2}{c}{Electron channel}\\
 \cmidrule{2-3} 
 \cmidrule{5-6}
-    & $\mtw>50~\GeV$ & $\bdtqcd>-0.15$ && $\met>45~\GeV$ & $\bdtqcd>0.15$ \\
+    & $\mtw>50~\GeV$\hspace{0.1cm} & \hspace{0.1cm}$\bdtqcd>-0.15$ &&  $\met>45~\GeV$\hspace{0.1cm} & \hspace{0.1cm}$\bdtqcd>0.15$ \\
 \midrule
 Multijet  & 15\% & 7.7\%  && 7.6\% & 4.4\% \\
 Signal   & 70\% & 71\%   && 51\%  & 52\% \\
@@ -212,7 +212,7 @@ The first fit utilizes the distribution of the \bdtqcd discriminant where only t
 \toprule
 \multicolumn{2}{@{}l}{Sideband}\hspace{0.7cm} & \multicolumn{4}{c}{Event yields} \\
 \cmidrule{3-6}
-\multicolumn{2}{c}{} & \multicolumn{2}{c}{Multijet} & \multicolumn{2}{c}{Others} \\
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Multijet} & \multicolumn{2}{c}{\hspace{0.3cm}Others} \\
 \midrule
 $0.2$&$0.5$ & \hspace{0.1cm}$1607$&$31$ & \hspace{0.3cm}$90028$&$811$ \\
 $0.2$&$0.3$ & $1761$&$40$ & $91374$&$985$ \\
@@ -226,7 +226,7 @@ $0.3$&$0.5$ & $1765$&$41$ & $88854$&$1007$ \\
 \toprule
 \multicolumn{2}{@{}l}{Sideband}\hspace{0.7cm} & \multicolumn{4}{c}{Event yields} \\
 \cmidrule{3-6}
-\multicolumn{2}{c}{} & \multicolumn{2}{c}{Multijet} & \multicolumn{2}{c}{Others} \\
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Multijet} & \multicolumn{2}{c}{\hspace{0.3cm}Others} \\
 \midrule
 $0.15$&$0.5$ & \hspace{0.1cm}$1467$&$27$ & \hspace{0.3cm}$45620$&$470$ \\
 $0.15$&$0.25$ & $1506$&$28$ & $46283$&$464$ \\
@@ -263,7 +263,7 @@ The obtained fit results per channel are listed in Tab.~\ref{tab:polarization-yi
 Process & \multicolumn{4}{c}{Muon channel} & & \multicolumn{4}{c}{Electron channel} \\
 \cmidrule{2-5}
 \cmidrule{7-10}
- & \multicolumn{2}{c}{Selection}\hspace{0.1cm} & \multicolumn{2}{c }{Signal-enriched} && \multicolumn{2}{c}{Selection}\hspace{0.1cm} & \multicolumn{2}{c}{Signal-enriched} \\
+ & \multicolumn{2}{c}{Selection}\hspace{0.1cm} & \multicolumn{2}{c }{Signal-enriched} && \multicolumn{2}{c}{Selection}\hspace{0.1cm} & \multicolumn{2}{c@{}}{Signal-enriched} \\
 \midrule
 
 \ttbar          & 58539&629     & \hspace{0.4cm} 3118&34       && 48208&518     &  \hspace{0.4cm} 2182&26 \\
