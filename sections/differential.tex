@@ -48,6 +48,8 @@ Processes with $\mu\mu\mathrm{\mbox{+}jets}$ or $\mu\mathrm{e}\mathrm{\mbox{+}je
 
 \Gls{pf} candidates are clustered into jets using the anti-\kt algorithm with a distance parameter of $R=0.4$. The influence by pileup is mitigated through the \gls{chs} technique~\cite{CMS-PAS-JME-14-001}. The reconstructed jet energy is corrected in data and simulation using dedicated scale factors. Additionally, the energy resolution is corrected in simulation to match the one observed in data. Jets with a corrected transverse momentum of at least $40~\GeV$ that fall within $|\eta|<4.7$ and fulfill loose identification requirements are selected for analysis. Potential overlaps between selected jets and the tight muon are avoided by ignoring jets that fall within a cone of $\Delta R<0.3$ around the selected muon candidate. The \acrfull{csv} algorithm (version~2) is employed for b-tagging~\cite{CMS-PAS-BTV-15-001}. At its tight working point an efficiency of about 50\% is achieved for true b~jets whereas the fraction of mistagged jets amounts to only 0.1\%. To match the observed b-tagging efficiency in data simulated events are reweighted using dedicated scale factors.
 
+An additional selection on the transverse W~boson mass of $\mtw>50~\GeV$ is applied to reject multijet events for validation purposes only. As detailed in Sec.~\ref{sec:diff13-fit}, the region $\mtw<50~\GeV$ is kept in the measurement since it provides sensitivity to estimate the amount of multijet events.
+
 The following samples of simulated events are employed in the measurement. The \MGAMC generator interfaced with \PYTHIA8 for hadronization is used to generate the default signal sample of $t$-channel single-top-quark production in 4~\gls{fs}. For comparison, alternative samples are generated using the \MGAMC generator interfaced with \PYTHIA8 in 5~\gls{fs}, \MGAMC interfaced with \HERWIG in 4~\gls{fs}, and the \POWHEG generator interfaced with \PYTHIA in 4~\gls{fs}. Single-top-quark production in tW-channel and \ttbar production are simulated using the \POWHEG generator interfaced with \PYTHIA8. Samples of \wjets and \zjets events are generated using \MGAMC interfaced with \PYTHIA8 as well. The theoretical cross sections for normalizing these samples are listed in Tab.~\ref{tab:diff13-theo-xsecs}. The contributions by single-top-quark production in $s$~channel and diboson production have been found negligible at 13~\TeV after the event selection. Thus corresponding samples are not utilized. Special care is taken for normalizing the samples produced with the \MGAMC generator because the employed \gls{mcatnlo} matching scheme leads to a certain fraction of negatively weighted events. The fractions of negatively weighted events amount to about 40\% for $t$-channel, 25\% for \zjets, and 15\% for \wjets, respectively.
 
 \mytable{\label{tab:diff13-theo-xsecs}Theoretical cross sections used to normalize the simulated samples.}{
@@ -65,7 +67,7 @@ $\mathrm{Z}/\gamma^{*}\to\ell^{\rmplus}\ell^{\rmminus}$, $m_{\ell\ell}>50~\GeV$ 
 \end{tabular}
 }
 
-Following a similar procedure as in the top-quark polarization measurement~(Ch.~\ref{ch:polarization}) the shape of multijet events is modeled using a template obtained from a sideband region by inverting the muon isolation as $\muiso>20\%$ in the event selection. In the distributions throughout this chapter, the extracted multijet template as well as other background and signal templates are scaled to the result of a \gls{ml} fit to data as described in Sec.~\ref{sec:diff13-fit} unless stated otherwise. A systematic uncertainty on the shape of the multijet template is taken into account by extracting the template from an isolation range of either $20\%<\muiso<40\%$ or $40\%<\muiso$ instead. The resulting shape variations after scaling each template to its fit result is shown in Fig.~\ref{fig:diff13-qcd-sys-mtw} as a function of the transverse W~boson mass. In Fig.~\ref{fig:diff13-qcd-sys-bdt} the shape uncertainty as a function of a trained \gls{bdt} discriminant is shown~(Sec.~\ref{sec:diff13-bdt}) after extrapolating it into a multijet-depleted region defined by $\mtw>50~\GeV$. The average uncertainty on the multijet yield amounts to about $\pm20\%$ on average.
+Following a similar procedure as in the top-quark polarization measurement~(Ch.~\ref{ch:polarization}), the shape of multijet events is modeled using a data-driven template from a sideband region for which the muon isolation is inverted as $\muiso>20\%$ in the event selection. In the distributions throughout this chapter, the extracted multijet template as well as other background and signal templates are scaled to the result of a \gls{ml} fit to data as described in Sec.~\ref{sec:diff13-fit} unless stated otherwise. A systematic uncertainty on the shape of the multijet template is taken into account by extracting the template from an isolation subrange of either $\muiso\in[20\%,40\%]$ or $\muiso\in[40\%,\infty]$ instead. The resulting shape variations after scaling each template to its individual fit result is shown in Fig.~\ref{fig:diff13-qcd-sys-mtw} as a function of the transverse W~boson mass. In Fig.~\ref{fig:diff13-qcd-sys-bdt} the shape uncertainty as a function of a trained \gls{bdt} discriminant is shown~(Sec.~\ref{sec:diff13-bdt}) in a multijet-depleted region defined by $\mtw>50~\GeV$. In this region the average uncertainty on the multijet yield amounts to about $\pm20\%$ on average.
 
 \myfigure{\label{fig:diff13-qcd-sys}Extracted multijet templates from three sideband regions with different muon isolation ranges in 2j1t: (a)~distribution of the transverse W~boson mass; (b)~distribution of a \gls{bdt} discriminant for events with $\mtw>50~\GeV$. The individual templates are scaled to the results of corresponding \gls{ml} fits to data~(Sec.~\ref{sec:diff13-fit}).}{
 \subfloat[\label{fig:diff13-qcd-sys-mtw}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.18\width} 0},clip]{figures/differential/qcdshapes/reco_mtw_QCD_2j1t__Iso_nol.pdf}}
@@ -73,10 +75,12 @@ Following a similar procedure as in the top-quark polarization measurement~(Ch.~
 }
 
 
-Similar to the polarization measurement, signal and control regions are defined based on the number of selected jets and the subset of jets which are also b-tagged. Distributions of the reconstructed top quark mass in signal and control regions after applying the event selection are presented in Fig.~\ref{fig:diff13-topmass}. Since the 3j2t region contains a relatively low number of events, the 3j1t region is considered as an additional \ttbar control region in this analysis.
+After the event selection signal and control regions are defined based on the number of selected jets and the subset of jets which are also b-tagged following the same notation as in the top-quark polarization measurement which is described in Sec.~\ref{sec:polarization-selection}. In the control regions the assignment of jets to the top quark decay and the spectator quark is performed as follows. First, b-tagged jets are sorted by \pt and non-tagged jets by $|\eta|$. Then, the most forward jet is taken as the spectator jets because it is expected to be scattered into the forward detector region when recoiling against the W~boson in $t$-channel single-top-quark production. In 2j0t, the remaining, central jet is then associated to the top quark decay. In other regions the top quark is reconstructed using the hardest b-tagged jet. This is motivated by the fact that an additional b-tagged jet in $t$-channel single-top-quark production originates from inital state gluon splitting for which a softer spectrum is expected.
+
+Distributions of the reconstructed top quark mass in signal and control regions are presented in Fig.~\ref{fig:diff13-topmass}. Since the 3j2t region contains a relatively low number of events, the 3j1t region is considered as an additional \ttbar control region in this analysis. The distributions of data are well described by the simulated signal and background samples, and the multijet template.
 
  
-\myfigure{\label{fig:diff13-topmass} Distributions of the reconstructed top quark mass in signal and control regions.}{
+\myfigure{\label{fig:diff13-topmass} Distributions of the reconstructed top quark mass: (a)~\wjets control region; (b)~signal region; (c+d)~\ttbar control regions.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/2j0t/2j0t_top_mass_qcdnone_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j1t/2j1t_top_mass_qcdnone.pdf}}\\
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/3j1t/3j1t_top_mass_qcdnone_nol.pdf}}
@@ -85,32 +89,52 @@ Similar to the polarization measurement, signal and control regions are defined 
 
 
 %##############################################
-\section{Modeling}
+\section{Background modeling}
 %##############################################
 \label{sec:diff13-modeling}
-mtw cut for qcd studies
-Njets, Nbjets, tune studies, hdamp
-show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 
-\myfigure{\label{fig:diff13-njet-validation} Distributions of the number of selected jets and b-tagged jets for events with at least two selected jets.}{
+The modeling of the simulated samples and the applied corrections is assessed. In Fig.~\ref{fig:diff13-njet-validation} the distributions of the number of jets and number of b-tagged jets are presented. These allow to validate whether if the applied jet energy corrections and the b-tagging efficiency scale factors correct properly residual differences between data and simulation. Good agreement is observed for the number of b-tagged jets and also for the number of jets at low multiplicities~($N\leq4$) relevant for this analysis. At high jet multiplicities, where the contribution by \ttbar production is dominant, the number of jets is overestimated by simulation. Dedicated \ttbar measurements revealed that a refining of generator parameters controlling the radiation of addition partons provides a better description of data~\cite{CMS-PAS-TOP-16-021}. \todo{say that it is not necessary to switch}
+
+\myfigure{\label{fig:diff13-njet-validation} Distributions of the number of selected jets and b-tagged jets for events with at least two selected jets and $\mtw>50~\GeV$.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/Xj/Xj_njets_qcdmtw_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/Xj/Xj_nbjets_qcdmtw.pdf}}
 }
 
-\myfigure{\label{fig:diff13-2j0t-qcd-validation} Validation of the multijet modeling by the extracted template from a sideband region in 2j0t control region: (a)~distribution of the missing transverse energy; (b)~distribution of the difference of the $\phi$ angles of the muon and missing transverse momentum.}{
+The modeling of the data-driven multijet template is validated in Fig.~\ref{fig:diff13-2j0t-qcd-validation} where the distributions of the missing transverse energy and the difference in $\phi$ angles between the muon and the transverse momentum is presented in the 2j0t region. Both distributions demonstrate a good description of data by the multijet templates and the simulated samples. Especially, a mismodeling in the $\Delta\phi$ distribution by the multijet template in the electron channel which was discovered in the polarization measurement ~(Sec.~\ref{sec:polarization-validation}) is not observed here which gives further confidence.
+
+\myfigure{\label{fig:diff13-2j0t-qcd-validation} Validation of the data-driven multijet template in 2j0t control region: (a)~distribution of the missing transverse energy; (b)~distribution of the difference of the $\phi$ angles of the muon and missing transverse momentum.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/2j0t/2j0t_met_qcdnone_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j0t/2j0t_muon_met_deltaPhi_qcdnone.pdf}}
 }
 
-\myfigure{\label{fig:diff13-2j0t-wjet-validation} Validation of the \wjets modeling by the \MGAMC sample in 2j0t control region: (a)~distribution of the \pt of the reconstructed W~boson candidate; (b)~distribution of the polarization angle.}{
+Lastly, the \wjets modeling is assessed. Figure~\ref{fig:diff13-2j0t-wjet-validation} shows the distributions of the transverse W~boson mass and the polarization angle using the default \wjets sample generated with \MGAMC at \gls{nlo}. For comparison, the predicted shape by an alternative \wjets sample generated \MG at \gls{lo} is also presented. The sample produced with the new \MGAMC generator displays a superior modeling of both variables whereas the \MG \wjets sample exhibits deviations in both observables. The trend in the ratios is somewhat different at 13~\TeV compared to the observations in the top-quark polarization measurement at 8~\TeV~(Sec.~\ref{sec:polarization-modeling}). This may be related to differences in the \PYTHIA tunes\footnote{8~\TeV: \PYTHIA6 $\mathrm{Z2}^\star$ tune~\cite{Chatrchyan:2011id}; 13~\TeV: \PYTHIA8 CUETP8M1 tune~\cite{Khachatryan:2015pea}.} which is however not studied further.
+
+\myfigure{\label{fig:diff13-2j0t-wjet-validation} \wjets modeling in 2j0t control region by (top row)~\MGAMC or (bottom row)~\MG: (left column)~distribution of the \pt of the reconstructed W~boson candidate; (right column)~distribution of the polarization angle.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/2j0t/2j0t_wboson_pt_qcdmtw_nol.pdf}}
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j0t/2j0t_cosTheta_tPL_qcdmtw.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j0t/2j0t_cosTheta_tPL_qcdmtw.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/plots/2j0t/2j0t_wboson_pt_qcdmtw_MG_nol.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/plots/2j0t/2j0t_cosTheta_tPL_qcdmtw_MG.pdf}}
 }
+
 
 %##############################################
 \section{BDT training}
 %##############################################
 \label{sec:diff13-bdt}
+
+A \bdt is trained for separating signal from \wjets and \ttbar background events. It is configured as follows. The \ADABOOST algorithm with a learning rate of 40\% is chosen. In total, 1000 shallow decision trees with a maximum depth of three are trained. The number of tested working points per observables is set to 40. Negatively weighted events generated by \MGAMC are also included in the training for which the boosting weight is internally inverted. A potential overtraining through the large fraction of negatively weighted events is further mitigated by adding alternative signal (\wjets) events generated with \POWHEG (\MG) to the training which do not possess a negative weight. For validation purposes an alternative \gls{bdt} is trained as well using the \GRADIENTBOOST algorithm with a shrinkage of 40\%.
+
+In addition to the \wjets and \ttbar background events, a sample of simulated multijet events is added to the training as well. The motivation for this is to prevent that multijet events become accidentally clustered at high values of the final \gls{bdt} discriminant. The exact amount of additional multijet events has however to be carefully chosen since if it is too large, the \gls{bdt} may try to separate multijet events predominantly from signal events while mostly ignoring \wjets and \ttbar events.
+
+Various input observables have been investigated for their individual discrimination power per process pair as listed in Tab.~\ref{tab:diff13-aucs}. The following five observables have been chosen which provide a high discrimination power while exhibiting low correlations with the top quark \pt and rapidity:
+
+\begin{itemize}
+\item the absolute value of the pseudorapidity of the untagged spectator jet~(\jprime);
+\item the invariant mass of the reconstructed top quark candidate;
+\item the $\Delta R$ distance between the two selected jets;
+\item the difference in pseudorapidity between the muon and the selected b-tagged jet;
+\item the transverse W~boson mass, \mtw.
+\end{itemize}
 
 \mytable{\label{tab:diff13-aucs}Discrimination power of event observables and the trained \glspl{bdt} in 2j1t region for various pairs of signal and background processes. Highlighted are a few of the most discriminating observables per process pair.}{
 \begin{tabular}{@{}l l rr rr rr rr@{}}
@@ -120,7 +144,7 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 &  & \multicolumn{2}{c}{\ttbar/signal\hspace{0.1cm}} & \multicolumn{2}{c}{\hspace{0.1cm}\wjets/signal\hspace{0.2cm}} & \multicolumn{2}{c}{\hspace{0.1cm}Multijet/signal\hspace{0.2cm}} & \multicolumn{2}{c@{}}{\hspace{0.1cm}\ttbar/\wjets}  \\
 \midrule
 \multirow{5}{*}{\rotatebox[origin=c]{90}{\gls{bdt} inputs}} 
-& Spectator jet $|\eta|$                        &\hspace{0.4cm} \textbf{26\%}&   &\hspace{0.6cm} 21\%&   & \hspace{0.7cm}10\%& &\hspace{0.7cm} 6\%& \\
+& Spectator jet $|\eta(\jprime)|$                        &\hspace{0.4cm} \textbf{26\%}&   &\hspace{0.6cm} 21\%&   & \hspace{0.7cm}10\%& &\hspace{0.7cm} 6\%& \\
 & $|m_\mathrm{top}-172.5~\GeV|$                 & 13\%&   & \textbf{24\%}&   & 14\%& & 11\%& \\
 & $\Delta R(\jprime,\,\mathrm{b~jet})$          & \textbf{26\%}&   & 13\%&   & 5\%& & \textbf{15\%}& \\
 & $|\Delta\eta(\mathrm{muon},\,\mathrm{b~jet})|$& 5\%&   & \textbf{20\%}&   & 5\%& & \textbf{16\%}& \\
@@ -149,6 +173,11 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 }
 
 
+Although the transverse W~boson mass provides little discrimination power for signal against \wjets and \ttbar events it is included for its discriminating power against multijet production. An \gls{auc} of 31\% (32\%) is achieved with the final \gls{bdt} discriminant for separating signal against \ttbar (\wjets) events, respectively. The resulting performance is confirmed by the alternative \gls{bdt} using the \GRADIENTBOOST method. The discrimination power against multijet events of the  \gls{bdt} is not as high as for the transverse W~boson mass which is a result of the finetuning of the exact amount of multijet events in the training such that the \gls{bdt} does not discriminates against them predominantly.
+
+Distributions of the input observables in 2j1t are shown in Fig.~\ref{fig:diff13-training-obs} which the exception of the top quark mass which has already been presented in Fig.~\ref{fig:diff13-topmass}. 
+
+
 \myfigure{\label{fig:diff13-training-obs} Distributions of some input observables for the \gls{bdt} training in 2j1t signal region: (a)~the transverse W~boson mass; (b)~pseudorapidity of the spectator jet~(\jprime); (c)~$\Delta R$ difference between the two jets; (d)~difference in pseudorapidities between the muon and b-tagged jet. The hatched band reflects the total systematic uncertainties. The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_mtw.pdf}}
 \hspace{0.02\textwidth}
@@ -158,13 +187,11 @@ show cosTheta in 2j0t for wjet modeling for amc and mg samples if possible, qcd
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_dEta.pdf}}
 }
 
-balance multijet weight in training
-
-bdt reshaping
-
 \myfigure{\label{fig:diff13-bdt}Distribution of the \gls{bdt} discriminant after selecting events with $\mtw>50~\GeV$. The hatched band reflects the total systematic uncertainties. The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
 \includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_BDT.pdf}
 }
+
+ bdt reshaping by multiplying factors and tanh, correlation with top pt and y
 
 %##############################################
 \section{Signal extraction}
