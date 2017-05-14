@@ -242,9 +242,12 @@ with $d_{i}$ as the amount of data events per bin $i$. The predictions $p_{i}$ c
 
 where $\vec{T}_{j}$ denotes an individual template per process whose normalization is modified by a corresponding scale factor $\beta_{j}$. Background processes containing genuine top quarks~(\ttbar, tW) have been grouped together as well as the electroweak processes~(\wjets, \zjets). A log-normal prior with an uncertainty of $\pm10\%$ is used to constrain the normalization of the top quark background. For the W/Z+jet background a conservative larger prior with a width of $\pm30\%$ is assumed. The normalization of the multijet template is kept almost unconstrained by using an uncertainty of $\pm100\%$ on the yield as obtained from the sideband region. The signal yield is fitted fully unconstrained.
 
-A compound distribution is utilized in the fit using the transverse W~boson mass for events with $\mtw<50~\GeV$ and the \gls{bdt} discriminant otherwise. 
+A compound distribution is utilized for fitting using the transverse W~boson mass distribution for events with $\mtw<50~\GeV$ and the distribution of the \gls{bdt} discriminant otherwise. A comparison of the template shapes is presented in Fig.~\ref{fig:diff13-fittemplates}. To reduce the impact by multijet events only five bins are used for the \mtw distribution and 15 for the \gls{bdt} distribution. This allows to perform only a single fit for estimating the components using the distributions shown here. \todo{better!}
 
-
+\myfigure{\label{fig:diff13-fittemplates} .}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/fitshape/comp_2j1t_2j1t_mtw_qcdmtwinv_nol.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/fitshape/comp_2j1t_2j1t_BDT_adaboost04_minnode001_maxvar3_ntree1000_invboost_binned_qcdmtw.pdf}}
+}
 
 
 \mytable{Estimated event yields in 2j1t after the event selection, for events with $\mtw>50~\GeV$, and in a signal-enriched phase space defined by $\mtw>50~\GeV$ and $\bdt>0.6$\,.}{
@@ -277,6 +280,30 @@ Data            && 40432&201    && 24417&156     && 1482&38 \\
 %##############################################
 \section{Unfolding}
 %##############################################
+
+\mytable{}{
+\begin{tabular}{@{}l c c c c c@{}}
+
+\toprule
+Top quark \pt range     &  \hspace{0.3cm}   & \hspace{0.1cm}$0\range50~\GeV$\hspace{0.1cm} & \hspace{0.1cm}$50\range85~\GeV$\hspace{0.1cm} & \hspace{0.1cm}$85\range140~\GeV$\hspace{0.1cm} & \hspace{0.1cm}$140\range300~\GeV$ \\
+\midrule
+Stability &  &   59\% &     61\% &     64\% &     75\% \\
+Purity &  &   84\% &     57\% &     51\% &     41\% \\
+\bottomrule
+\end{tabular}
+}
+
+\mytable{}{
+\begin{tabular}{@{}l c c c c c@{}}
+
+\toprule
+Top quark $|y|$ range  &  \hspace{0.3cm}     & \hspace{0.1cm}$0\range0.45$\hspace{0.1cm} & \hspace{0.1cm}$0.45\range0.95$\hspace{0.1cm} & \hspace{0.1cm}$0.95\range1.50$\hspace{0.1cm} & \hspace{0.1cm}$1.50\range2.40$ \\
+\midrule
+Stability & &    63\% &     54\% &     61\% &     86\% \\
+Purity &    & 84\% &     57\% &     51\% &     41\% \\
+\bottomrule
+\end{tabular}
+}
 
 \myfigure{Response matrices for the top-quark (a)~transverse momentum and (b)~rapidity.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/responsePt.pdf}}
