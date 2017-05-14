@@ -97,6 +97,7 @@
 \usepackage{afterpage}
 \usepackage{graphicx,graphics}
 \usepackage{tocloft}
+\usepackage{relsize} %defines mathlarger
 \usepackage{xfrac}
 \usepackage{supertabular}
 \usepackage{booktabs} %toprule stuff
@@ -350,9 +351,9 @@
 \renewcommand{\thesubfigure}{\alph{subfigure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
-\captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.6\baselineskip,belowskip=0.0\baselineskip}
+\captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},farskip=3pt,aboveskip=0.6\baselineskip,belowskip=0.0\baselineskip}
 \captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
-\captionsetup[subfloat]{labelsep=space,font={small,stretch=1.12},captionskip=0.5\baselineskip} %distance between fig & subcaption
+\captionsetup[subfloat]{labelsep=space,font={small,stretch=1.12},farskip=5pt,captionskip=3pt} %distance between fig & subcaption
 
 \setlength\floatsep{1.2\baselineskip plus 3pt minus 1pt}
 \setlength\textfloatsep{1\baselineskip plus 7pt minus 7pt}
