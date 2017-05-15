@@ -215,9 +215,9 @@ The correlations between the top quark \pt/rapidity and the \gls{bdt} input obse
 %##############################################
 \label{sec:diff13-fit}
 
-In past single-top-quark measurements (e.g. Refs.~\cite{Khachatryan:2015dzz,Khachatryan:2014iya,Sirunyan:2016cdg}), the contamination by multijet events has usually been estimated through a fit of the \mtw or \met distribution to data while keeping all other contributions grouped together. The individual signal and background components are then estimated through a second fit to a discriminating observables such as the pseudorapidity of the spectator jet or an \gls{mva} discriminant. The reason behind this two-staged fitting procedure is that the \mtw/\met shape is very sensitive to the multijet yield whereas another observable is required to provide sensitivity for estimating the other background and signal contributions as well~(see also Tab.~\ref{tab:diff13-aucs}). For this measurement, a novel fitting strategy has been developed and employed which allows to simultaneously estimated the amount of signal, the contamination by multijet events, and the contributions by the other backgrounds processes through only a single fit as detailed in the following.
+In past single-top-quark measurements (e.g. Refs.~\cite{Khachatryan:2015dzz,Khachatryan:2014iya,Sirunyan:2016cdg}), the contamination by multijet events has usually been estimated by fitting the \mtw or \met distribution to data using a data-driven template for multijet events while keeping all other processes grouped together. The amount of signal events has then been estimated by performing a second \gls{ml} fit using a discriminating observables such as the pseudorapidity of the spectator jet or an \gls{mva} discriminant. The reason behind this two-staged fitting procedure is that the \mtw/\met shape is very sensitive to the multijet yield whereas another observable is required to provide sensitivity for estimating the other background and signal contributions~(see also Tab.~\ref{tab:diff13-aucs}). For this measurement a novel fitting strategy, outlined in the following, has been developed which allows to simultaneously estimated the amount of signal, the contamination by multijet events, and the contributions by the other backgrounds processes by performing only a single \gls{ml} fit.
 
-The fit is performed in the signal and the two \ttbar control regions~(3j1t, 3j2t) simultaneously to reduce the correlations between the estimated \wjets and \ttbar yields. The total log-likelihood can be written as
+The total log-likelihood can be written as
 
 \begin{equation}
 \ln\big(\mathsf{L}_\mathrm{total}\big)=\ln\big(\mathsf{L}^\mathrm{2j1t}_\mathrm{Poi.}\big)+\ln\big(\mathsf{L}_\mathrm{Poi.}^\mathrm{3j1t}\big)+\ln\big(\mathsf{L}_\mathrm{Poi.}^\mathrm{3j2t}\big)+\mathrm{constraints}\,,
@@ -226,7 +226,7 @@ The fit is performed in the signal and the two \ttbar control regions~(3j1t, 3j2
 where the Poisson part per region $X=(\mathrm{2j1t, 3j1t, 3j2t})$ is given by
 
 \begin{equation}
-\ln\Big(\mathsf{L}^{X}_\mathrm{Poi.}\big(\vec{d}^{\,X}|\,\vec{p}^{\,X}\big)\Big)=\sum_{i}^\mathrm{bins}\Big(d_{i}^{X}\ln p_{i}^{X}-p_{i}^{X}\Big)\,,
+\ln\Big(\mathsf{L}^{X}_\mathrm{Poi.}\big(\vec{d}^{\,X}|\,\vec{p}^{\,X}\big)\Big)=\sum_{i}^\mathrm{bins}\Big(d_{i}^{X}\ln p_{i}^{X}-p_{i}^{X}\Big)+\mathrm{const.}\,,
 \end{equation}
 
 with $d_{i}$ as the amount of data events per bin $i$. The predictions $p_{i}$ can be expressed as
@@ -240,17 +240,20 @@ with $d_{i}$ as the amount of data events per bin $i$. The predictions $p_{i}$ c
 \end{align}
 \end{subequations}
 
-where $\vec{T}_{j}$ denotes an individual template per process whose normalization is modified by a corresponding scale factor $\beta_{j}$. Background processes containing genuine top quarks~(\ttbar, tW) have been grouped together as well as the electroweak processes~(\wjets, \zjets). A log-normal prior with an uncertainty of $\pm10\%$ is used to constrain the normalization of the top quark background. For the W/Z+jet background a conservative larger prior with a width of $\pm30\%$ is assumed. The normalization of the multijet template is kept almost unconstrained by using an uncertainty of $\pm100\%$ on the yield as obtained from the sideband region. The signal yield is fitted fully unconstrained.
+where $\vec{T}_{j}$ denotes an individual template whose normalization is modified by a corresponding scale factor $\beta_{j}$. Background processes containing genuine top quarks~(\ttbar, tW) have been grouped together as well as the electroweak processes~(\wjets, \zjets). A log-normal prior with an uncertainty of $\pm10\%$ is used to constrain the normalization of the top quark background. For the W/Z+jet background a conservative larger prior with a width of $\pm30\%$ is assumed. The normalization of the multijet templates are kept almost unconstrained using independent scale factors per region with an uncertainty of $\pm100\%$ on the yield. No constraint on the signal scale factor is applied.
 
-A compound distribution is utilized for fitting using the transverse W~boson mass distribution for events with $\mtw<50~\GeV$ and the distribution of the \gls{bdt} discriminant otherwise. A comparison of the template shapes is presented in Fig.~\ref{fig:diff13-fittemplates}. To reduce the impact by multijet events only five bins are used for the \mtw distribution and 15 for the \gls{bdt} distribution. This allows to perform only a single fit for estimating the components using the distributions shown here. \todo{better!}
+A compound distribution is utilized for fitting using the transverse W~boson mass distribution for events with $\mtw<50~\GeV$ and the distribution of the trained \gls{bdt} discriminant otherwise. A comparison of the template shapes for both distributions in 2j1t is presented in Fig.~\ref{fig:diff13-fittemplates}. In the \gls{ml} fit five bins are used for the \mtw distribution and 15 for the \gls{bdt} distribution (as shown in the plots) to reduce the impact by the limited template statistics on the result. Since the \ttbar and \wjets shapes appear to be very similar, the two \ttbar control regions~(3j1t, 3j2t) are fitted simultaneously as well providing an additional handle on the \ttbar yield. 
 
-\myfigure{\label{fig:diff13-fittemplates} .}{
+In conclusion, only a single \gls{ml} fit is necessary with the new strategy since the usage of the compound distribution together with the inclusion of the \ttbar control regions provides sufficient sensitivity to the individual fit templates.
+
+\myfigure{\label{fig:diff13-fittemplates}Shapes of the \gls{ml} fit templates in 2j1t region.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/fitshape/comp_2j1t_2j1t_mtw_qcdmtwinv_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/fitshape/comp_2j1t_2j1t_BDT_adaboost04_minnode001_maxvar3_ntree1000_invboost_binned_qcdmtw.pdf}}
 }
 
+The estimated yields per process in 2j1t after the event selection are listed in Tab.~\ref{tab:diff13-fit-result}. Extrapolated yields are also given in the multijet-depleted region ($\mtw>50~\GeV$) and in a signal-enriched region ($\mtw>50~\GeV$, $\bdt>0.6$) for reference, where in the latter a \gls{sb} of about one is obtained. The correlations between the estimated scale factors are presented in Fig.~\ref{fig:diff13-fit-correlation}. Overall the absolute value of the correlation does not exceed 34\% with the exception of the 3j2t multijet scale factor for which the corresponding template contributes however only 2\% of events compared to the other processes in the 3j2t region. In particular the anticorrelation between the \wjets and \ttbar yields amounts to only -33\% through the new fitting strategy which marks a great reduction compared to the top-quark polarization measurement where the anticorrelation is $-75\%$ instead~(Sec.~\ref{sec:polarization-fit}).
 
-\mytable{Estimated event yields in 2j1t after the event selection, for events with $\mtw>50~\GeV$, and in a signal-enriched phase space defined by $\mtw>50~\GeV$ and $\bdt>0.6$\,.}{
+\mytable{\label{tab:diff13-fit-result}Estimated event yields in 2j1t after the event selection, for events with $\mtw>50~\GeV$, and in a signal-enriched phase space defined by $\mtw>50~\GeV$ and $\bdt>0.6$\,.}{
 \begin{tabular}{@{}l l r@{$\pm$}l c r@{$\pm$}l c r@{$\pm$}l@{}}
 \toprule
 Process &\hspace*{0.3cm}&\multicolumn{8}{c@{}}{Event yields}  \\
@@ -271,15 +274,32 @@ Data            && 40432&201    && 24417&156     && 1482&38 \\
 \end{tabular}
 }
 
-\myfigure{Correlations between fitted scale factors.}{
-\includegraphics[width=0.5\textwidth]{figures/differential/fitCorrelations.pdf}
+\myfigure{\label{fig:diff13-fit-correlation}Correlations between the estimated scale factors.}{
+\includegraphics[width=0.6\textwidth]{figures/differential/fitCorrelations.pdf}
 }
 
 
+The \gls{ml} fit is additionally performed in separate bins of the measurement. This approach has several advantages.
+
+\begin{itemize}
+\item It is not necessary to define a signal-enriched region for obtaining the amount of signal as a function of the top quark \pt and rapidity from data through background subtraction. In the top-quark polarization measurement a lengthy procedure was employed to find the optimal \gls{bdt} working point for selecting such a region which is not required in this new approach.
+\item Contributions from background do not have to be explicitly subtracted since the estimated scale factors allow to calculate the yield of signal events per top quark \pt and rapidity bin directly. This also mitigates the impact by the limited simulation statistics on the signal yield since this uncertainty is simultaneously profiled through the \gls{bb} method in the fit.
+\item Residual differences between bins are profiled.
+\end{itemize}
+
+
+The result of the individual \gls{ml} fits is presented in Fig.~\ref{fig:diff13-individual-fits}. The shown binning scheme for both observables is discussed in Sec.~\ref{sec:diff13-unfolding} below. Overall, the estimated scale factors per process agree with each other within the depicted statistical uncertainties. The only exception is the first top quark \pt bin where an undershoot of signal is observed.
+
+\myfigure{\label{fig:diff13-individual-fits}Scale factors of the process yields with respect to the \gls{sm} expectations as a function of the top quark (a)~transverse momentum and (b)~rapidity. The indicated uncertainties denote only the statistical ones. For multijet events only the scale factors with respect to the normalization from the sideband region in the 2j1t region are shown. The dashed vertical lines mark the bin edges.}{
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/differential/fitshape/multi_top_pt_nol.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/differential/fitshape/multi_top_y.pdf}}
+}
 
 %##############################################
 \section{Unfolding}
 %##############################################
+\label{sec:diff13-unfolding}
+
 
 \mytable{}{
 \begin{tabular}{@{}l c c c c c@{}}
