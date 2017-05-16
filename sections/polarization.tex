@@ -310,16 +310,24 @@ Since the muon channel is validated successfully the analysis is unblinded. In F
 \subfloat[\label{fig:polarization-cosTheta-CR}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_cosTheta_lj_CR.pdf}}
 }
 
+
 %##############################################
-\section{Unfolding}
+\section{Signal-enriched region}
 %##############################################
-\label{sec:polarization-unfolding}
+\label{sec:polarization-optimization}
 
 After subtracting the remaining background contributions from data in Fig.~\ref{fig:polarization-cosTheta-SR}, the reconstructed $\cos\theta_{\mu}^\star$ shape is unfolded to parton level and the spin asymmetry is extract from the differential cross section. The working point of the \bdttch discriminant which defines the signal-enriched region can be optimized such that the spin asymmetry measurement has a minimum of uncertainty. A scan of the expected uncertainty using pseudo-data as a function of the \bdttch working point is shown in Fig.~\ref{fig:polarization-bdtscan}. Here, only some representative systematic uncertainties are evaluated which have a major impact on the result. If the working point is chosen too low the larger background contamination leads to an increased uncertainty through the impact of systematic uncertainties associated with the backgrounds. On the other hand, the final uncertainty increases as well towards higher working points due to the decreasing signal selection efficiency which influences the statistical uncertainty. Between both extremes a broad region is observed where a measurement with minimal uncertainty can be achieved. For the measurement, a working point of $\bdttch>0.45$ is chosen. 
 
 \myfigure{\label{fig:polarization-bdtscan} Scan of the total uncertainty on the measured spin asymmetry as a function of the \bdttch working point using pseudo-data. Only some representative systematic uncertainties have been evaluated here.}{
 \adjincludegraphics[height=4.8cm]{figures/polarization/unfolding/scan_mu.pdf}
 }
+
+
+%##############################################
+\section{Unfolding}
+%##############################################
+\label{sec:polarization-unfolding}
+
 
 The unfolding to parton level is performed with the \TUNFOLD method. To stabilize the $\chi^\scriptn{2}$ minimization inside the method, twice as many bins are considered at reconstruction level compared to parton level. Since about 6\% of the selected muons stem from intermediate tau decays in simulation, the parton level is extended to include also $\mathrm{t}\to\mathrm{b}\tau\nu$ decays. In such events the polarization angle at parton level is defined between the spectator quark and the tau lepton instead which yields a similar shape compared to events where the W~boson decays directly into muons. The resulting response matrix is presented in Fig.~\ref{fig:polarization-response}. The angle is smeared through manifold effects such as imperfections in the top quark reconstruction and b-tagging where the latter also influences how the spectator jet is chosen. 
  
