@@ -324,12 +324,10 @@
 
 \RedeclareSectionCommands[
   beforeskip=0.01\baselineskip plus 0.3\baselineskip,
-  afterskip=0.1\baselineskip
+  afterskip=0.01\baselineskip
 ]{section,subsection,subsubsection}
 
 \renewcommand{\@seccntformat}[1]{{\parbox[b][1\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
-
-
 
 
 %strecke zeilenabstände im table
@@ -492,7 +490,7 @@
       
 %% Lists
 \setlist[itemize,enumerate]{leftmargin=0.05\textwidth,itemsep=0.5\parskip,parsep=0pt,partopsep=0pt, topsep=0.0\parskip}
-\setlist[description]{leftmargin=0.05\textwidth,font=\normalfont\rmfamily\bfseries,itemsep=0.5\parskip,parsep=0pt,partopsep=0pt, topsep=0.0\parskip}
+\setlist[description]{leftmargin=0.05\textwidth,font=\normalfont\rmfamily\bfseries\boldmath,itemsep=0.5\parskip,parsep=0pt,partopsep=0pt, topsep=0.0\parskip}
 \renewcommand*{\descriptionlabel}[1]{\hspace{\labelsep}\descfont #1\hspace{0.3em}}
 
 %Sonst================================================
@@ -505,7 +503,7 @@
 
 \newcommand{\setupTextStyle}{
     \setlength{\parindent}{0.cm} %Absatzeinzug
-    \setlength{\parskip}{0.28\baselineskip plus 0.06\baselineskip minus 0.06\baselineskip}
+    \setlength{\parskip}{0.28\baselineskip plus 0.06\baselineskip minus 0.04\baselineskip}
     %\setlength{\parsep}{0cm}
     \renewcommand{\baselinestretch}{1.09}\normalsize
 

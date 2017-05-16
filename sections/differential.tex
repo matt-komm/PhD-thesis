@@ -17,6 +17,7 @@ This strategy has multiple benefits compared to the one chosen for the polarizat
 %##############################################
 \section{Event selection and simulated samples}
 %##############################################
+\label{sec:diff13-selection}
 
 The measurement is based on \gls{pp} collision events corresponding to 2.3~\invfb which were recorded by the \gls{cms} experiment in 2015 at a \acrlong{cm} energy of 13~\TeV. During this data taking period the instantaneous luminosity was kept relatively low with a maximum of about $5.1~\mathrm{Hz}/\mathrm{nb}$ leading to only 12 pileup interactions on average. 
 
@@ -194,7 +195,7 @@ is applied to the \gls{bdt} value per event such that the distribution has an im
 \myfigure[p]{\label{fig:diff13-training-obs} Distributions of some input observables for the \gls{bdt} training in 2j1t signal region and the final discriminant: (a)~the transverse W~boson mass; (b)~pseudorapidity of the spectator jet~(\jprime); (c)~$\Delta R$ difference between the two jets; (d)~difference in pseudorapidities between the muon and b-tagged jet; (e+f)~the raw and transformed discriminant. The hatched band reflects the total systematic uncertainties. The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_mtw.pdf}}
 \hspace{0.02\textwidth}
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_etaj.pdf}}\\
+\subfloat[\label{fig:diff13-training-obs-etaj}]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_etaj.pdf}}\\
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_dR.pdf}}
 \hspace{0.02\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/reco_dEta.pdf}}\\
@@ -336,9 +337,9 @@ S_{i}=\frac{\mathcal{R}_{ii}}{\sum\limits_{j}\,\mathcal{R}_{ij}}\,,\qquad P_{j}=
 
 are calculated for various test-schemes. The stability denotes the amount of events generated in bin $i$ which do not migrate into other bins at reconstruction level. Purity on the other hand denotes the amount of events which have been reconstructed in bin $j$ but do not migrate into other bins at parton level. By choosing a suitable binning scheme for which both quantities are large (i.e. the migrations are low), less regularization has to be applied in the unfolding procedure. Hence, the procedure of finding such an optimized binning scheme is considered as the first step to regularized the ill-posed unfolding problem. 
 
-The final schemes chosen for the measurement of the differential cross section as a function of the top quark \pt and rapidity are presented in Tabs.~\ref{tab:diff13-ps-top-pt} and~\ref{tab:diff13-ps-top-y} together with the calculated stabilities and purities per parton-level bin. Overall, both quantities are found to be above 50\% with the exception of the purity in the last rapidity bin which amounts to only 41\%.
+The final schemes chosen for the measurement of the differential cross section as a function of the top quark \pt and rapidity are presented in Tab.~\ref{tab:diff13-ps-top} together with the calculated stabilities and purities per bin at parton-level. Overall, both quantities are found to be above 50\% with the exception of the purity in the last rapidity bin which amounts to only 41\%.
 
-\mytable{\label{tab:diff13-ps-top-pt}Stabilities and purities per bin of the top quark \pt distribution at parton level.}{
+\mytable{\label{tab:diff13-ps-top}Stabilities and purities per bin of the top quark \pt and rapidity distribution at parton level.}{
 \begin{tabular}{@{}l c c c c c@{}}
 
 \toprule
@@ -346,14 +347,8 @@ Top quark \pt range     &  \hspace{0.3cm}   & \hspace{0.1cm}$0\range50~\GeV$\hsp
 \midrule
 Stability &  &   59\% &     61\% &     64\% &     75\% \\
 Purity &  &     63\% &     62\% &     63\% &     64\% \\
-\bottomrule
-\end{tabular}
-}
-
-\mytable{\label{tab:diff13-ps-top-y}Stabilities and purities per bin of the top quark rapidity distribution at parton level.}{
-\begin{tabular}{@{}l c c c c c@{}}
-
-\toprule
+\midrule
+\midrule
 Top quark $|y|$ range  &  \hspace{0.3cm}     & \hspace{0.1cm}$0\range0.45$\hspace{0.1cm} & \hspace{0.1cm}$0.45\range0.95$\hspace{0.1cm} & \hspace{0.1cm}$0.95\range1.50$\hspace{0.1cm} & \hspace{0.1cm}$1.50\range2.40$ \\
 \midrule
 Stability & &    63\% &     54\% &     61\% &     86\% \\
@@ -370,10 +365,10 @@ The resulting response matrices for the chosen binning schemes are presented in 
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/responseY.pdf}}
 }
 
-Selection efficiencies for $t$-channel single top quark events at various levels are shown in Fig.~\ref{fig:diff13-sel-efficiencies} for the considered top quark \pt and rapidity bins. In particular the efficiencies in the first top quark \pt bin and in the last rapidity bin amount to about 1\% only for events passing the 2j1t and $\mtw>50~\GeV$ selection which is relatively small compared to the .
+Selection efficiencies for $t$-channel single top quark events at various levels are shown in Fig.~\ref{fig:diff13-sel-efficiencies} for the considered top quark \pt and rapidity bins. In particular the efficiencies in the first top quark \pt bin and in the last rapidity bin amount to about 1\% only for events passing the 2j1t and $\mtw>50~\GeV$ selection which is relatively small compared to all other bins.
 
 \myfigure{\label{fig:diff13-sel-efficiencies}Selection efficiencies for the top-quark (a)~transverse momentum and (b)~rapidity.}{
-\subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effPt.pdf}}
+\subfloat[\label{fig:diff13-sel-efficiencies-pt}]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effPt.pdf}}
 \hspace{0.02\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/unfolding/effY.pdf}}
 }
@@ -383,30 +378,41 @@ Selection efficiencies for $t$-channel single top quark events at various levels
 \section{Statistical evaluation}
 %##############################################
 
-The measurement is affected by various sources of systematic uncertainties. For each source new templates are derived which reflect a systematic variation by one standard deviation. Those are then subjected to the ML-fits, the \gls{bdt}, and the unfolding. Special care is taken in the unfolding step since not only the templates can change under a systematic variation but also the response matrices themselves. The resulting differences in yield with respect to the differential cross section using the nominal templates are quoted as individual uncertainties. 
-
-To calculated the 
+The measurement is affected by various sources of systematic uncertainties. For each source new templates are derived which reflect a systematic variation by one standard deviation. Those are then propagated through the ML-fits, the \gls{bdt} evaluation, and the unfolding. Special care is taken in the unfolding step since not only the templates can change under a systematic variation but also the response matrices themselves. To calculate the resulting differential cross section, pseudo experiments are performed by dicing normal distributions per uncertainty source around the nominal unfolded template. The resulting yield $y_{i}^\mathrm{total}$ per bin $i$ can be express as
 
 \begin{equation}
-y_{i}^\mathrm{total}=y_{i}^\mathrm{nom.}+\sum_{j}^\mathrm{syst.}\,\mathsf{N}\Big(0,\,\Delta\big(y_{i}^\mathrm{nom.},\,y_{i}^{\mathrm{\pm syst.\,}j}\big)\Big)\,,
+y_{i}^\mathrm{total}=y_{i}^\mathrm{nominal}+\mathsf{N}\Big(0,\mathcal{V}^\mathrm{stat.}\Big)_{i}+\sum_{j}^\mathrm{sources}\,\mathsf{N}\Big(0,\,\Delta^{\mathrm{\pm syst.\,}j}_{i}\Big)\,,
 \end{equation}
 
+where $\mathsf{N}$ denotes the normal distribution, $\mathcal{V}^\mathrm{stat.}$ the covariance matrix of the statistical uncertainty, and $\Delta^\scriptn{\mathrm{\pm syst.\,}j}_{i}$ the differences in yield between the shifted and nominal templates per systematic source $j$. From the distribution of the yields over many pseudo experiments, the central differential cross section is taken to be the median and its uncertainty is quoted as the quantile corresponding to one standard deviation.
+
+In the following the considered sources of systematic uncertainties are listed and briefly described.
+
 \begin{description}
-\item[Background composition] \zjets tW varied by $\pm20\%$ keeping 
-\item[Multijet template shape] Isolation region
-\item[Experimental uncertainties] btagging, jes,jer,pileup,trigger,id,iso
-\item[Generator and hadronization model] \MGAMC to \POWHEG; \PYTHIA to \HERWIG
-\item[top quark mass] $172.5\pm1~\GeV$
-\item[\acrlong{pdf}] 102 variation of NNPDF3.0 set~\cite{}
-\item[Renormalization and factorization scales]
-\item[\ttbar \pt reweighting]
+\item[Background composition] The contributions by \zjets and tW, which are grouped together with the larger \wjets and \ttbar processes respectively in the \gls{ml} fit, are varied by $\pm20\%$ to assess the impact of the assumed ratios in the fitting templates.
+ 
+\item[Multijet template] Two alternative multijet templates are derived by using only a subregion in the muon isolation of either $[20\%; 40\%]$ or $[40\%; \infty]$ as detailed in Sec.~\ref{sec:diff13-selection}.
+
+\item[Analysis objects] A summary of the considered sources of systematic uncertainties related to the reconstruction and selection of analysis objects is provided in Sec.~\ref{sec:reconstruction-summary}. This includes uncertainties on the jet energy scale and resolution, b-tagging and mistagging efficiencies, muon trigger, identification, and isolation efficiencies, and the pileup reweighting.
+
+\item[Signal and hadronization modeling] The modeling of signal events generated with \MGAMC interfaced with \PYTHIA is assessed by comparing to the result obtained when using a sample generated with \POWHEG interfaced with \PYTHIA instead. Additionally, a sample generated with \MGAMC interfaced with \HERWIG is used to assess the dependence of the result on the hadronization model.
+
+\item[Top quark mass] Dedicated samples of $t$-channel, tW, and \ttbar events are generated to propagate an uncertainty of $172.5\pm1~\GeV$ on the top quark mass specified in the generator setting.
+
+\item[\Acrlong{pdf}] The uncertainty on the \gls{pdf} is assessed by reweighting the simulated samples according to the 102 variations of the NNPDF3.0 set~\cite{Ball:2014uwa}.
+
+\item[Renormalization and factorization scales] The uncertainty on the renormalization scale is propagated to the result by performing a reweighting procedure of simulated \ttbar, tW, \wjets, and $t$-channel events according to the scale dependence of the corresponding \acrlongpl{me}. Additionally, the factorization scale is varied by using dedicated samples. The final uncertainty taken to be the envelope of varying both scales independently by a factor of two or one-half with respect to the nominal scale choice with the exception of the extreme up/down combinations.
+
+\item[\ttbar \pt reweighting] The \ttbar reweighting has been applied by default in this measurement. The applied correction is less than in the top-quark polarization measurement since the default \gls{nlo} \ttbar sample yields an improved agreement with data~\cite{}. A corresponding uncertainty is assessed by rederiving the result without applying the reweighting.
 \end{description}
 
+Sources of systematic uncertainties with a relative large impact on the measurement are shown in Figs.~\ref{fig:diff13-top-sys-pt} and~\ref{fig:diff13-top-sys-y} per top quark \pt and rapidity bin respectively. Some of the largest ones are the data statistics ($\approx10\range25\%$), the renormalization and factorization scale choice ($\approx10\range15\%$), the top quark mass ($\approx5\range20\%$), and the jet energy scale and resolution ($\approx5\range15\%$). Especially the first top quark \pt bin is affected fairly heavily by most uncertainties which is also related to the low acceptance of signal events in this particular bin as presented in Fig.~\ref{fig:diff13-sel-efficiencies-pt}. Additionally, a large uncertainty is also expected from the theory side originating from differences between the predictions in the 4~or 5~\gls{fs} as discussed in Sec.~\ref{sec:theory-flavor-schemes}.
 
-show impact of uncertainties on shape
+\myfigure{\label{fig:diff13-top-sys-pt} Relative impact on the yield for some of the largest systematic uncertainties on the measured top quark rapidity spectrum. The dashed vertical lines mark the bin edges.}{
+\includegraphics[width=0.9\textwidth]{figures/differential/unfolding/unfolded_top_pt_unc.pdf}
+}
 
-\myfigure{\label{fig:diff13-top-pt-sys} .}{
-\subfloat[]{\includegraphics[width=0.9\textwidth]{figures/differential/unfolding/unfolded_top_pt_unc.pdf}}\\
+\myfigure{\label{fig:diff13-top-sys-y} Relative impact on the yield for some of the largest systematic uncertainties on the measured top quark \pt spectrum. The dashed vertical lines mark the bin edges.}{
 \subfloat[]{\includegraphics[width=0.9\textwidth]{figures/differential/unfolding/unfolded_top_y_unc.pdf}}
 }
 
@@ -414,13 +420,17 @@ show impact of uncertainties on shape
 \section{Results}
 %##############################################
 
-\myfigure{\label{fig:diff13-top-unfolded} The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
+The measured normalized differential cross section as a function of the top quark \pt and rapidity is presented in Fig.~\ref{fig:diff13-top-unfolded}. The result is compared to the \gls{sm} predictions by \MGAMC interfaced with \PYTHIA in 4~\gls{fs}, \POWHEG interfaced with \PYTHIA in 4~\gls{fs}, \MGAMC interfaced with \PYTHIA in 5~\gls{fs}, and \MGAMC interfaced with \HERWIG in 4~\gls{fs}. Overall the results agree with the predictions within the relatively large uncertainties. In particular, the first top quark \pt bin is found to be affected by large uncertainties leading to a total relative uncertainty of about $\pm50\%$.
+
+\myfigure{\label{fig:diff13-top-unfolded}The measured normalized differential cross section of $t$-channel single-top-quark production as a function of the top quark (a)~\pt and (b)~rapidity. The statistical uncertainties are indicated by horizontal ticks on the error bars. The figures are taken from Ref.~\cite{CMS-PAS-TOP-16-004}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/unfolded_top_pt.pdf}}
 \hspace{0.02\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/differential/pas/unfolded_top_y.pdf}}
 }
 
-\myfigure{\label{fig:diff13-top-unfolded-xcheck}Cross check of the top quark \pt differential cross section result by fitting the pseudorapidity distribution of the spectator jet instead of the \gls{bdt} discriminant.}{
+To cross check the result of the top quark \pt spectrum, the measurement has been repeated by fitting the distribution of the pseudorapidity of the spectator jet~(Fig.~\ref{fig:diff13-training-obs-etaj}) instead of the \gls{bdt} distribution. The resulting differential cross section is presented in Fig.~\ref{fig:diff13-top-unfolded-xcheck}. It confirms the obtained result within however larger uncertainties.
+
+\myfigure{\label{fig:diff13-top-unfolded-xcheck}Cross check of the top quark \pt differential cross section result by fitting the pseudorapidity distribution of the spectator jet instead of the \gls{bdt} discriminant. The statistical uncertainties are indicated by horizontal ticks on the error bars.}{
 \includegraphics[width=0.48\textwidth]{figures/differential/pas/unfolded_top_pt_jeta.pdf}
 }
 
