@@ -1,14 +1,68 @@
 \appendixchapter{Track reconstruction in the CMS FastSimulation package}
 
-\intro{The FastSimulation (\FSIM{}) package of \gls{cms} is presented. It consists of various algorithms to provide a fast alternative for simulating the \gls{cms} detector response through various approximations along the standard \GEANT{}4-based simulation workflow. In particular, the standard track reconstruction is sidestepped for 
-The presented work will be publish in Ref.~\cite{fastsim-mkomm}.}
+\intro{An introduction to the FastSimulation (\FSIM{}) package of \gls{cms} is given. Opposed to the standard \GEANT{}4-based simulation workflow, it provide a fast alternative for emulating the \gls{cms} detector response for simulated events through various approximations. In particular, an own track reconstruction is performed which sidesteps the computing-intense standard algorithms by relying on truth information. The utilized algorithms in the track reconstruction of \FSIM are detailed in the following. The presented work is publish in Ref.~\cite{fastsim-mkomm}.}
 
-\todo{update ref to proceedings}
+\todo{update ref when proceedings accepted}
+
+\section{Introduction}
+
+The simulation of the detector response for arbitrary physics events is of crucial importance for understanding recorded collision data and to infer properties of the underlying physics. The typical steps to obtain simulated events---comparable to data---are outlined in the following. First, a collection of particles is generated. This can be performed for example with the help of \acrfull{mc} generators which are configured to produce events according to some physics process of interest. Then, starting from the interaction point, the trajectories of the generated particles are propagated through a geometrical model of the detector. As the particles traverse the the detector, their interaction with the encountered material is simulated. This can also lead to the creation of secondary particles. After the simulation, an emulation of the detector readout systems is performed. At this stage, the simulated events contain similar information as the recorded data. In a last step simulated events are subjected to the event reconstruction which results in similar analysis objects as obtained after the reconstruction of data events. \todo{bad!}
+
+Various frameworks exist for organizing such workflows. Experiment-independent frameworks are for example \texttt{Delphes}~\cite{deFavereau:2013fsa} or \texttt{PSG}~\cite{psg}. In this chapter the ``FastSimulation'' (\FSIM[format=hyperbf]) package of the \gls{cms} is presented with an emphasis on its special track reconstruction which yields one of the major speedup compared to the standard simulation workflow.
+
+\section{Simulation workflow}
+\mytable[p]{}{
+\begin{tabular}{@{}c c p{0.42\textwidth} p{0.42\textwidth}@{}}
+\toprule
+Step & & Standard & \FSIM \\
+\midrule
+\centering\rotatebox[origin=c]{90}{Generator} &&
+use standard import & use standard import\\
+
+\centering\rotatebox[origin=c]{90}{Track simulation} &&
+\GEANT{}4, accurate geometry, magnetic field & simplified geometry, const. mag field\\
+
+\centering\rotatebox[origin=c]{90}{Calorimeter simulation} &&
+\GEANT{}4, gflash, accurate geometry, magnetic field & parametrized functions\\
+
+\centering\rotatebox[origin=c]{90}{Digitalization} &&
+emulation of detector readout electronics & for tracking, simple smearing; standard digi modules for calorimetry\\
+
+\centering\rotatebox[origin=c]{90}{Track reconstruction} && standard track reconstruction (\gls{kf}-based,pattern recognition,\gls{ctf}) & solve combinatorial problem using \gls{mc}-truth\\
+
+\centering\rotatebox[origin=c]{90}{Calorimeter reconstruction} && standard clustering & standard clustering\\
+\bottomrule
+\end{tabular}
+}
+
+\section{Emulation of track reconstruction}
+
+\subsection{Hit reconstruction}
+
+\subsection{Iterative tracking}
+
+\subsection{Seeding}
+
+\myfigure{}{
+\includegraphics[width=0.55\textwidth]{figures/fastsim/seedingtree.pdf}
+}
+
+\subsection{Track fit}
+
+\section{Validation}
+
+\section{Conclusion}
+
+%############################################################
+\vspace{\baselineskip}
+\hrule
+\newpage
+%############################################################
 
 \section{Introduction}
 Tracking of charged particles is one of the crucial ingredients to understand the physics behind LHC collisions. In the CMS experiment~\cite{Chatrchyan:2008aa}, tracks of charged particles are reconstructed and matched to information gathered by other subdetectors which improves the overall event reconstruction and resolution~\cite{CMS:2009nxa}. From reconstructed tracks higher analysis level objects like jets and the missing transverse energy are derived. 
 
-Sophisticated tracking algorithms are required to reconstruct tracks from the large amount of charged particles transversing the CMS detector at each bunch crossing. A typical instantaneous luminosity of $10^{34}\,\mathrm{cm}^{-2}\mathrm{s}^{-1}$, which was reached in 2016, can lead to more than 500 reconstructed tracks originating from 20--30 proton-proton interactions per crossing.
+Sophisticated tracking algorithms are required to reconstruct tracks from the large amount of charged particles transversing the CMS detector at each bunch crossing. At typical instantaneous luminosities of about $10^{34}\,\mathrm{cm}^{-2}\mathrm{s}^{-1}$, which was reached in 2016, more than 500 reconstructed tracks can originate from 20--30 proton-proton interactions per crossing.
 
 The complex, multistep algorithms which reconstruct tracks from energy depositions left by traversing charged particles in the CMS tracker are very computing-intense. The standard track reconstruction procedure for data is applied to simulated events as well after they have passed the emulation of the electronic response of the detector. However, at this point in the simulation chain, it can be beneficial to sidestep the standard reconstruction by utilizing truth-information about the simulated events instead. In the CMS simulation framework this idea together with others has led to a fast alternative for simulating physics events called ``FastSimualtion'' (\FSIM[format=hyperbf]{})~\cite{fsimRahmat,fsimAndrea}. Such a fast alternative is further motivated in the light of the planned increase of luminosity for which larger samples of simulated events with higher pileup conditions have to be produced.
 
@@ -19,9 +73,13 @@ Nowadays, the \FSIM package is successfully employed within CMS analyses. Typica
 This article is organized as follows: First, the steps involved in the standard track reconstruction are described briefly. Then, their alternative implementation within the \FSIM package is detailed with an emphasis on new developments in its tracking emulation. After the validation where the tracking performance of the standard simulation and reconstruction is compared to \FSIM this article is summarized and an outlook on planned developments is provided.
 
 
+
+
+
+
+
 \section{Standard track reconstruction within CMS}
 
-\todo{describe the complete standard workflow}
 
 The standard track reconstruction is applied to real data and to simulated events from the standard Geant4-based simulation. It begins with the forming of hits on the pixel and strip modules of the tracker. Dedicated templates of charge depositions from simulation are compared to data to infer the position of a hit on a pixel module~\cite{Swartz:2007zz}. On the strip modules, hits are seeded from strips and subsequently combined with adjacent ones if their readout is sufficiently above their noise level.
 
@@ -34,23 +92,17 @@ More information on the standard track reconstruction can be found in Ref.~\cite
 
 \todo{draw some image where fastsim is speeding things up}
 
-In \FSIM, the simulation of energy loss of particles as they traverse the detector is performed using parameterized probability functions for emulating energy loss through ionization, nuclear scattering, and bremsstrahlung. No detailed information of charge deposition on the pixel and strip modules is generated. To mimic the resolutions of the standard hit reconstruction the true hit positions are smeared. A new \FSIM module for position smearing was recently developed which allows to manage various algorithms for position smearing side-by-side. It can be flexibly configured for any topology of the tracker. Additionally, each algorithm can be restricted to certain tracker modules only. Currently, a simple Gaussian smearing of the position is deployed for all strip modules where the configured resolution depends on the specific tracker subdetector and its layer. A more detailed emulation of hit reconstruction is employed for the pixel modules where parametrized distributions from the standard template-based hit reconstruction are utilized for the smearing. Furthermore, the new module allows the emulation of merging of two hits which occurs when the distributions of the deposited charge from two transversing particle overlap. Figure~\ref{fig:merge} shows a recent study of the probability of hit merging on the pixel modules. Such probability maps are expected to be used for the emulation of hit merging in the future.
+In \FSIM, the simulation of energy loss of particles as they traverse the detector is performed using parameterized probability functions for emulating energy loss through ionization, nuclear scattering, and bremsstrahlung. No detailed information of charge deposition on the pixel and strip modules is generated. To mimic the resolutions of the standard hit reconstruction the true hit positions are smeared. A new \FSIM module for position smearing was recently developed which allows to manage various algorithms for position smearing side-by-side. It can be flexibly configured for any topology of the tracker. Additionally, each algorithm can be restricted to certain tracker modules only. Currently, a simple Gaussian smearing of the position is deployed for all strip modules where the configured resolution depends on the specific tracker subdetector and its layer. A more detailed emulation of hit reconstruction is employed for the pixel modules where parametrized distributions from the standard template-based hit reconstruction are utilized for the smearing. Furthermore, the new module allows the emulation of merging of two hits which occurs when the distributions of the deposited charge from two transversing particle overlap. Figure~\ref{fig:fsim-merge} shows a recent study of the probability of hit merging on the pixel modules. Such probability maps are expected to be used for the emulation of hit merging in the future.
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.4\textwidth]{figures/fastsim/merge.pdf}
-\caption{\label{fig:merge}Probability of two hits merging on the pixel barrel modules as a function of their distance and local incident angle of a track expressed in pseudorapidity.}
-\end{center}
-\end{figure}
+\myfigure{\label{fig:fsim-merge}Probability of two hits merging on the pixel barrel modules as a function of their distance and local incident angle of a track expressed in pseudorapidity.}{
+\includegraphics[width=0.48\textwidth]{figures/fastsim/merge.pdf}
+}
 
-By default, the seeding and trajectory building modules of the standard iterative tracking sequence are replaced completely within \FSIM. An overview is provided in Fig.~\ref{fig:tracking}. The ability to produce merged hits originating from close particle tracks necessitated a recent refactoring of the \FSIM{}-specific data objects within the iterative tracking sequence. As motivated in the introduction, the main idea of sidestepping the reconstruction by using truth information about the origin of each hit remains, but had to be extended. Instead of a one-to-one mapping of reconstructed hits to true particle tracks, close simulated hits can now result into a single reconstructed ``merged'' hit that can be shared between the final tracks within an iteration. A further benefit is that the mapping itself can be generated independently from the truth information which will allow the mix-in of wrong hit combinations leading to ``fake'' tracks in the future which are currently not emulated.
+By default, the seeding and trajectory building modules of the standard iterative tracking sequence are replaced completely within \FSIM. An overview is provided in Fig.~\ref{fig:fsim-tracking}. The ability to produce merged hits originating from close particle tracks necessitated a recent refactoring of the \FSIM{}-specific data objects within the iterative tracking sequence. As motivated in the introduction, the main idea of sidestepping the reconstruction by using truth information about the origin of each hit remains, but had to be extended. Instead of a one-to-one mapping of reconstructed hits to true particle tracks, close simulated hits can now result into a single reconstructed ``merged'' hit that can be shared between the final tracks within an iteration. A further benefit is that the mapping itself can be generated independently from the truth information which will allow the mix-in of wrong hit combinations leading to ``fake'' tracks in the future which are currently not emulated.
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.95\textwidth]{figures/fastsim/tracking.pdf}
-\caption{\label{fig:tracking}Track reconstruction in \textsc{FastSimulation}. Details are given in the text.}
-\end{center}
-\end{figure}
+\myfigure{\label{fig:fsim-tracking}The track reconstruction workflow in \FSIM. Details are given in the text.}{
+\includegraphics[width=0.99\textwidth]{figures/fastsim/tracking.pdf}
+}
 
 The seeding and trajectory building are restricted to the hits within a mapped subset. This removes completely any combinatorial problem from the iterative tracking in \FSIM resulting in a large reduction of computing time compared to the standard reconstruction. In the seeding step, the acceptance requirements are enforced by interfacing directly with the implemented criteria in the standard seeding step per iteration. The trajectory building process is trivial since the complete set of hits per track has already been defined. Finally, the track is fitted using the standard fit algorithm and the used hits are masked in next iterations.
 
@@ -59,35 +111,23 @@ For the simulation of pileup interactions, additional minimum bias events are fi
 
 \section{Validation}
 
-Track reconstruction within \FSIM is validated by comparing the tracks from the fast emulation with those obtained from the Geant4-based simulation and standard reconstruction. Figure~\ref{fig:eff-tracks} presents the tracking efficiency as a function of the transverse momentum and pseudorapidity. Here, the tracking efficiency is defined as the ratio of reconstructed tracks matched to simulated charged particles over the total number of charged particles within the tracker volume. Furthermore, the obtained resolution of the transverse momentum for reconstructed tracks is shown in Fig.~\ref{fig:res-track}. Overall, the plots demonstrate a good agreement of the \FSIM tracking performance with the one observed in the Geant4-based simulation and standard reconstruction.
+Track reconstruction within \FSIM is validated by comparing the tracks from the fast emulation with those obtained from the Geant4-based simulation and standard reconstruction. Figure~\ref{fig:fsim-eff-tracks} presents the tracking efficiency as a function of the transverse momentum and pseudorapidity. Here, the tracking efficiency is defined as the ratio of reconstructed tracks matched to simulated charged particles over the total number of charged particles within the tracker volume. Furthermore, the obtained resolution of the transverse momentum for reconstructed tracks is shown in Fig.~\ref{fig:fsim-res-track}. Overall, the plots demonstrate a good agreement of the \FSIM tracking performance with the one observed in the Geant4-based simulation and standard reconstruction.
 
-\begin{figure}[htbp]
-\begin{center}
-\parbox{0.46\textwidth}{\centering\includegraphics[width=0.45\textwidth]{figures/fastsim/eff_pt.pdf}\\(a)}
-\hspace{0.05\textwidth}
-\parbox{0.46\textwidth}{\centering\includegraphics[width=0.45\textwidth]{figures/fastsim/eff_eta.pdf}\\(b)}
-\caption{\label{fig:eff-tracks}Comparison of the reconstruction efficiencies of tracks as a function of (a)~the transverse momentum and (b)~the pseudorapidity measured in the simulation of top quark pair production at 13~TeV.}
-\end{center}
-\end{figure}
+\myfigure{\label{fig:fsim-eff-tracks}Comparison of the reconstruction efficiencies of tracks as a function of (a)~the transverse momentum and (b)~the pseudorapidity measured in the simulation of top quark pair production at 13~TeV.}{
+\subfloat[]{\centering\includegraphics[width=0.48\textwidth]{figures/fastsim/eff_pt.pdf}}
+\hspace{0.02\textwidth}
+\subfloat[]{\centering\includegraphics[width=0.48\textwidth]{figures/fastsim/eff_eta.pdf}}
+}
 
+A profile of the average CPU-time consumption per event within \FSIM is given in Fig.~\ref{fig:fsim-cpu} as a function of the average number of pileup interactions. Less than 10~s are required to simulated an event of top quark pair production for current pileup scenarios with $\approx30$ interactions on average. The emulation of tracking is not amongst the top CPU consumers.
 
+\myfigure{\label{fig:fsim-res-track}Comparison of the resolution of reconstructed tracks as a function of the transverse momentum measured in the simulation of top quark pair production at 13~TeV.}{
+\includegraphics[width=0.48\textwidth]{figures/fastsim/res_pt.pdf}
+}
 
-A profile of the average CPU-time consumption per event within \FSIM is given in Fig.~\ref{fig:cpu} as a function of the average number of pileup interactions. Less than 10~s are required to simulated an event of top quark pair production for current pileup scenarios with $\approx30$ interactions on average. The emulation of tracking is not amongst the top CPU consumers.
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{figures/fastsim/res_pt.pdf}
-\caption{\label{fig:res-track}Comparison of the resolution of reconstructed tracks as a function of the transverse momentum measured in the simulation of top quark pair production at 13~TeV.}
-\end{center}
-\end{figure}
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.55\textwidth]{figures/fastsim/cpu_profile.pdf}
-\caption{\label{fig:cpu}Average CPU-time per event spent on the detector simulation and the reconstruction of analysis objects as a function of the average number of pileup interactions measured in the simulation of top quark pair production at 13~TeV.}
-\end{center}
-\end{figure}
+\myfigure{\label{fig:fsim-cpu}Average CPU-time per event spent on the detector simulation and the reconstruction of analysis objects as a function of the average number of pileup interactions measured in the simulation of top quark pair production at 13~TeV.}{
+\includegraphics[width=0.6\textwidth]{figures/fastsim/cpu_profile.pdf}
+}
 
 \section{Conclusion and outlook}
 
