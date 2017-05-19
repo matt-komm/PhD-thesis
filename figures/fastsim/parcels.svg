@@ -1618,9 +1618,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="70.532567"
-     inkscape:cy="126.32032"
+     inkscape:zoom="5.6"
+     inkscape:cx="35.715733"
+     inkscape:cy="122.25205"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2001,8 +2001,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker10399)"
-       d="m -21.216562,88.853181 c 6.710638,-14.51972 9.439715,-16.349461 11.8377274,-18.96911 3.6643455,-4.003021 3.8009009,-6.976416 11.4622476,-7.110982"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker10399)"
+       d="m -21.216562,88.853181 c 5.718451,-3.180434 4.765942,-11.466342 8.530436,-19.205345 1.930886,-3.969494 7.1081923,-6.740181 14.769539,-6.874747"
        id="path5183"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csc" />
