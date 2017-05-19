@@ -1,47 +1,33 @@
 \appendixchapter{Track reconstruction in the CMS FastSimulation package}
 
-\intro{Simulated event samples of various physics processes are a key ingredient within analyses for understanding the detector and the physics behind \gls{lhc} collision data. An introduction to the FastSimulation (\FSIM{}) package of \gls{cms} is given in the following. Compared to the standard \GEANT{}4-based simulation workflow, it provides a fast alternative for simulating the \gls{cms} detector response and emulating the reconstruction of events. It is tightly integrated into
-the standard workflow but sidesteps some of the computing-intense standard algorithms by using various approximations. In particular, a fast emulation of the track reconstruction is performed by relying on truth information which is detailed in the following. The presented work is publish in Ref.~\cite{fastsim-mkomm}
-.}
-
+\intro{Simulated samples of events are a key ingredient within analyses for understanding the detector and the physics behind \gls{lhc} collision data. An introduction to the FastSimulation (\gls{fsim}) package of \gls{cms} is given in this chapter. It provides a fast alternative for simulating the detector response and emulating the reconstruction of events compared to the standard simulation and reconstruction workflow of \gls{cms}. This is achieved by replacing some computing-intense standard parts with various approximations. This chapter focuses in particular on an employed fast emulation of the track reconstruction. Here, details about the generation of reconstructed hits in the inner tracking system, the trajectory seeding and other performance are given. Before the conclusion the result of the emulated  track reconstruction is validated. The presented work on the track reconstruction is publish in Ref.~\cite{fastsim-mkomm}.}
+\todo{make better}
 \todo{update ref when proceedings accepted}
 
 \section{Introduction}
 
-The simulation of the detector response for arbitrary physics events is of crucial importance for understanding recorded collision data and to infer properties of the underlying physics. The typical steps to obtain simulated events---comparable to data---are outlined in the following. The simulation of events commences by generating a collection of particles with the help of \acrfull{mc} generators that are configured to produce events according to some physics process of interest. Then, starting from the interaction point, the trajectories of the generated particles are propagated through a geometrical model of the detector. As the particles traverse the detector, their interaction with the encountered material is simulated. After the simulation, an emulation of the detector readout systems is performed based on the outcome of the material interactions. After this stage, the simulated events contain similar information as recorded raw data. In a last step, simulated events are subjected to the event reconstruction which produces similar analysis objects as obtained after the reconstruction of data events. \todo{bad!} 
+The ability to simulate the detector response for arbitrary events is of crucial importance for understanding recorded collision data and to infer properties of the underlying physics in analyses. In this chapter the ``FastSimulation'' (\FSIM[format=hyperbf]) package of \gls{cms} is presented. It provides a fast alternative to the standard \GEANT{}4-based simulation~\cite{Agostinelli2003250} and reconstruction workflow while delivering high-level analysis objects with sufficient accuracy. This is achieved by sidestepping certain parts in the production chain to achieve a significant speed up. The two major CPU-intense parts which are replaced are the \GEANT{}4-based simulation of particle interactions with the detector material and the track reconstruction. The final analysis objects are indistinguishable from the ones produced by the standard simulation and reconstruction work flow of \gls{cms}. This allows an easy integration of \FSIM samples in analyses along samples from the standard simulation and data.
 
-In this chapter the ``FastSimulation'' (\FSIM[format=hyperbf]) package of \gls{cms} is presented. The goal of the \FSIM package, which is tightly integrated into the \gls{cms} software~\cite{Bayatian:922757}, is to provide a fast alternative to the standard simulation and reconstruction workflow while delivering high-level analysis objects with sufficient accuracy. This is achieved by sidestepping certain parts in the production of simulated event samples to achieve a significant speed up. The two major CPU-intense parts which are replaced are the Geant4-based~\cite{Agostinelli2003250} simulation of particle interactions with the detector material and the track reconstruction. The final analysis objects are indistinguishable from the ones produced by the standard simulation work flow. This enables an easy integration of \FSIM samples in analyses along samples from the standard simulation and data.
+Nowadays, the \FSIM package is successfully employed within \gls{cms} analyses. Typical use cases are searches for \acrfull{bsm} physics like \acrfull{susy}. These analyses require usually multiple signal samples which reflect various realizations of a new physics model. Other use cases are the evaluation of the impact of systematic uncertainties on a measurement like a variation of the renormalization and factorization scales or the top quark mass. A more general use case is to increase the statistics of existing samples for training \acrfull{mva} methods.
 
-Nowadays, the \FSIM package is successfully employed within CMS analyses. Typical use cases are searches for beyond the standard model physics such as SUSY. Such analyses require usually multiple signal samples which reflect various realizations of a new physics model. Other use cases are the evaluations of the impact of systematic uncertainties on a measurement like a variation of the renormalization and factorization scales or the top quark mass. A more general use case is to enhance the statistics of existing samples for training multivariate analysis methods.
-
+The chapter is organized as follows. First an overview of the standard simulation and the specialized \FSIM workflows are given. Then, the emulation of the track reconstruction is detailed. 
 
 An emphasis on its special track reconstruction is given which yields one of the major speedup compared to the standard simulation workflow within \gls{cms}.
 
 
 \section{Simulation workflow}
-\mytable[p]{}{
-\begin{tabular}{@{}c c p{0.42\textwidth} p{0.42\textwidth}@{}}
-\toprule
-Step & & Standard & \FSIM \\
-\midrule
-\centering\rotatebox[origin=c]{90}{Generator} &&
-use standard import & use standard import\\
 
-\centering\rotatebox[origin=c]{90}{Track simulation} &&
-\GEANT{}4, accurate geometry, magnetic field & simplified geometry, const. mag field\\
+The typical steps to obtain simulated events for comparison with data are sketched in the following. The simulation commences by generating collections of particles with the help of \acrfull{mc} generators that are configured to produce events according to some physics process of interest. Then, the trajectories of the generated particles are propagated through a geometrical model of the detector starting from the interaction point. As the particles traverse the detector, their interaction with the encountered material is simulated. After the simulation, an emulation of the detector readout systems is performed. After this stage, the simulation produced similar information as found in recorded raw data events. Finally, analysis objects for comparison with reconstructed data are obtained through the event reconstruction. Optionally, an emulation of the event trigger system can be performed in a separate step.
 
-\centering\rotatebox[origin=c]{90}{Calorimeter simulation} &&
-\GEANT{}4, gflash, accurate geometry, magnetic field & parametrized functions\\
+\begin{description}
+\item[Generator] use standard import
+\item[Simulation] tracking: \GEANT{}4, accurate geometry, magnetic field / simplified geometry, const. mag field
+calo: gflash?, accurate geometry, magnetic field / parametrized functions
+\item[Digitalization] emulation of detector readout electronics / for tracking, simple smearing; standard digi modules for calorimetry
+\item[Track reconstruction] standard track reconstruction (\gls{kf}-based,pattern recognition,\gls{ctf}) / solve combinatorial problem using \gls{mc}-truth
+\item[Calorimeter reconstruction] standard clustering / standard clustering
+\end{description}
 
-\centering\rotatebox[origin=c]{90}{Digitalization} &&
-emulation of detector readout electronics & for tracking, simple smearing; standard digi modules for calorimetry\\
-
-\centering\rotatebox[origin=c]{90}{Track reconstruction} && standard track reconstruction (\gls{kf}-based,pattern recognition,\gls{ctf}) & solve combinatorial problem using \gls{mc}-truth\\
-
-\centering\rotatebox[origin=c]{90}{Calorimeter reconstruction} && standard clustering & standard clustering\\
-\bottomrule
-\end{tabular}
-}
 
 \section{Emulation of track reconstruction}
 
@@ -52,6 +38,12 @@ emulation of detector readout electronics & for tracking, simple smearing; stand
 }
 
 \subsection{Iterative tracking}
+
+\myfigure{\label{fig:fsim-tracking}The track reconstruction workflow in \FSIM. Details are given in the text.}{
+\includegraphics[scale=0.75]{figures/fastsim/tracking.pdf}
+}
+
+masking
 
 \subsection{Seeding}
 
