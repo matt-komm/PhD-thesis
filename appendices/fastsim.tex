@@ -28,11 +28,10 @@ The typical steps in the \gls{cms} software to obtain simulated events for compa
 
 \paragraph{Generation} The sample generation commences by creating collections of particles with the help of \acrfull{mc} generators that are configured to produce events according to some physics process of interest. This step can be performed independently of the core \gls{cms} software. Common interfaces with generator programs are provided through the \HEPMC[format=hyperbf]~\cite{Dobbs:2001ck,hepmc} or \LHEF[format=hyperbf]~\cite{Alwall:2006yp} event formats.
 
-\paragraph{Simulation} The trajectories of the generated particles are propagated through a geometrical model of the detector starting from the interaction point. As the particles traverse the detector, their interaction with the encountered material is simulated. In the standard simulation, the \GEANT{}4 package is utilized which provides a precise propagation of the trajectories in the magnetic field and simulation of the various interactions. A simplification is performed in the simulation of electromagnetic and hadronic showers in the calorimeter systems where \GFLASH---a parameterized shower library---is utilized instead~\cite{1742-6596-293-1-012023,RAHMAT2012340}. In \FSIM a simplified detector geometry is utilized. For the inner tracking system only interactions on infinitely thin cylindrical layers and endcap disks are emulated using parameterized models for energy loss, nuclear interactions, and bremsstrahlung. Since only a constant magnetic field is assumed as well the propagation of particles between layers can be performed analytically. In a final step the simulated hits are projected onto the actual geometry of the tracking system. The simulation of showers in the calorimetry systems is performed by sampling energy deposits from parameterized functions of the expected longitudinal and transverse shower profiles per particle type and energy.
-%tracking: , accurate geometry, magnetic field / simplified geometry, const. mag field
-%calo: gflash?, accurate geometry, magnetic field / parametrized functions
-\paragraph{Digitalization} An emulation of the detector readout systems is performed. After this stage, the simulation produced similar information as found in recorded raw data events.
-%emulation of detector readout electronics / for tracking, simple smearing; standard digi modules for calorimetry
+\paragraph{Simulation} The trajectories of the generated particles are propagated through a geometrical model of the detector starting from the interaction point. As the particles traverse the detector, their interaction with the encountered material is simulated. In the standard simulation, the \GEANT{}4 package is utilized which provides precise propagation of the trajectories in the magnetic field and simulation of the various interactions. A simplification is performed in the simulation of electromagnetic and hadronic showers in the calorimeter systems where \GFLASH---a parameterized shower library---is utilized instead~\cite{1742-6596-293-1-012023,RAHMAT2012340}. In \FSIM a simplified detector geometry is utilized for the inner tracking system. Interactions are only simulated on infinitely thin cylindrical layers and endcap disks using parameterized models for energy loss, nuclear interactions, and bremsstrahlung. Since a constant magnetic field is assumed as well the propagation of particles between the layers can be performed analytically. In a final step the simulated tracker hits are projected onto the actual geometry of the tracking system. For the simulation of showers in the calorimetry systems, energy deposits are sampled from parameterized functions of the expected longitudinal and transverse shower profiles per particle type and energy.
+
+\paragraph{Digitalization} An emulation of the detector readout systems is performed. After this stage, the simulation produced similar information as found in recorded raw data events in the standard simulation. In \FSIM the same algorithms are utilized for the calorimeters. For the  tracker hits no detailed charge deposition is simulated. Instead, the reconstructed hits are created by smearing the simulated hits which is detailed in Sec.~\ref{sec:fsim-hits}.
+
 \paragraph{Reconstruction} for comparison with reconstructed data are obtained through the event reconstruction
 %standard track reconstruction (\gls{kf}-based,pattern recognition,\gls{ctf}) / solve combinatorial problem using \gls{mc}-truth
 %Calorimeter reconstruction standard clustering / standard clustering
@@ -54,6 +53,7 @@ iterative tracking, hit masking
 %##############################################
 \subsection{Hit reconstruction}
 %##############################################
+\label{sec:fsim-hits}
 
 \myfigure{}{
 \includegraphics[scale=0.75]{figures/fastsim/parcels.pdf}
@@ -83,7 +83,7 @@ iterative tracking, hit masking
 %##############################################
 \label{sec:fsim-validation}
 
-Track reconstruction within \FSIM is validated by comparing the tracks from the fast emulation with those obtained from the Geant4-based simulation and standard reconstruction. Figure~\ref{fig:fsim-eff-tracks} presents the tracking efficiency as a function of the transverse momentum and pseudorapidity. Here, the tracking efficiency is defined as the ratio of reconstructed tracks matched to simulated charged particles over the total number of charged particles within the tracker volume. Furthermore, the obtained resolution of the transverse momentum for reconstructed tracks is shown in Fig.~\ref{fig:fsim-res-track}. Overall, the plots demonstrate a good agreement of the \FSIM tracking performance with the one observed in the Geant4-based simulation and standard reconstruction.
+Track reconstruction within \FSIM is validated by comparing the tracks from the fast emulation with those obtained from the standard simulation and reconstruction. Figure~\ref{fig:fsim-eff-tracks} presents the tracking efficiency as a function of the transverse momentum and pseudorapidity. Here, the tracking efficiency is defined as the ratio of reconstructed tracks matched to simulated charged particles over the total number of charged particles within the tracker volume. Furthermore, the obtained resolution of the transverse momentum for reconstructed tracks is shown in Fig.~\ref{fig:fsim-res-track}. Overall, the plots demonstrate a good agreement of the \FSIM tracking performance with the one observed in the Geant4-based simulation and standard reconstruction.
 
 \myfigure{\label{fig:fsim-eff-tracks}Comparison of the reconstruction efficiencies of tracks as a function of (a)~the transverse momentum and (b)~the pseudorapidity measured in the simulation of top quark pair production at 13~TeV.}{
 \subfloat[]{\centering\includegraphics[width=0.48\textwidth]{figures/fastsim/eff_pt.pdf}}
@@ -97,8 +97,8 @@ A profile of the average CPU-time consumption per event within \FSIM is given in
 \includegraphics[width=0.48\textwidth]{figures/fastsim/res_pt.pdf}
 }
 
-\myfigure{\label{fig:fsim-cpu}Average CPU-time per event spent on the detector simulation and the reconstruction of analysis objects as a function of the average number of pileup interactions measured in the simulation of top quark pair production at 13~TeV.}{
-\includegraphics[width=0.6\textwidth]{figures/fastsim/cpu_profile.pdf}
+\myfigure{\label{fig:fsim-cpu}Average CPU-time per event spent on the detector simulation and the reconstruction of analysis objects as a function of the average number of pileup interactions measured in the simulation of \ttbar production at 13~TeV using the \texttt{IgProf}~\cite{Eulisse:865673} profiler.}{
+\includegraphics[width=0.65\textwidth]{figures/fastsim/cpu_profile.pdf}
 }
 
 %##############################################
