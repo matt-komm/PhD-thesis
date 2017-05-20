@@ -11,8 +11,7 @@
 
 Simulating the detector response for arbitrary events is of crucial importance for understanding recorded collision data and to infer properties of the underlying physics in analyses. In \gls{cms} the standard package for simulation collision events is called ``FullSimulation''~\cite{1742-6596-396-2-022003,1742-6596-664-7-072022}. It is based on the \GEANT{}4 toolkit~\cite{Agostinelli2003250} and provides a detailed simulation of the detector response and an emulation of its readout systems. Produced events are reconstructed utilizing the same event reconstruction algorithms as applied on data.
 
-
-A fast alternative to the standard simulation and reconstruction workflow is provided by the ``FastSimulation'' (\FSIM[format=hyperbf]) package of \gls{cms}. It delivers high-level analysis objects with sufficient accuracy for analyses while being tightly integrated into the \gls{cms} software framework~\cite{Bayatian:922757} along the standard simulation workflow. Its fast simulation speed of less than 10~s per event\footnote{For events with up to 60 pileup interactions.} is achieved by sidestepping certain parts in the standard simulation chain and utilizing various approximations instead. The two major CPU-intense parts which are replaced are the Geant4-based~\cite{Agostinelli2003250} simulation of particle interactions with the detector material and the track reconstruction. In particular, the complex, multistep algorithms which reconstruct tracks from energy depositions left by traversing charged particles in the \gls{cms} inner tracking system are exchanged with simpler versions that rely on truth-information about the simulated events. More details about the individual steps in the emulation of the track reconstruction are given in this chapter. The final analysis objects produced by \FSIM are indistinguishable from the ones produced by the standard simulation work flow. This enables an easy integration of \FSIM samples in analyses along event samples from the standard simulation and data.
+A fast alternative to the standard simulation and reconstruction workflow is provided by the ``FastSimulation'' (\FSIM[format=hyperbf]) package of \gls{cms}. It delivers high-level analysis objects with sufficient accuracy for analyses while being tightly integrated into the \gls{cms} software framework~\cite{Bayatian:922757} along the standard simulation and reconstruction workflow. Its fast simulation speed of less than 10~s per event\footnote{For events with up to 60 pileup interactions.} is achieved by sidestepping certain parts in the standard simulation chain and utilizing various approximations instead. The two major CPU-intense parts which are replaced are the Geant4-based~\cite{Agostinelli2003250} simulation of particle interactions with the detector material and the track reconstruction. In particular, the complex, multistep algorithms which reconstruct tracks from energy depositions left by traversing charged particles in the \gls{cms} inner tracking system are exchanged with simpler versions that rely on truth-information about the simulated events. More details about the individual steps in the emulation of the track reconstruction are given in this chapter. The final analysis objects produced by \FSIM are indistinguishable from the ones produced by the standard simulation work flow. This enables an easy integration of \FSIM samples in analyses along event samples from the standard simulation and data.
 
 Nowadays, the \FSIM package is successfully employed within \gls{cms} analyses. Typical use cases are searches for \acrfull{bsm} physics like \acrfull{susy}. These analyses require usually multiple signal samples which reflect various realizations of a new physics model. Other use cases are the evaluation of the impact of systematic uncertainties on a measurement like a variation of the renormalization and factorization scales or the top quark mass. A more general use case is to increase the statistics of existing samples for training \acrfull{mva} methods. Such a fast alternative is further motivated in the light of the planned increase of luminosity for which larger samples of simulated events with higher pileup conditions have to be produced.
 
@@ -24,18 +23,45 @@ The \FSIM package is introduced in this chapter with an emphasis on the employed
 %##############################################
 \label{sec:fsim-workflow}
 
-The typical steps in the \gls{cms} software to obtain simulated events for comparison with data are sketched in the following.
+The individual steps within the \gls{cms} software to obtain simulated events for comparison with data are sketched in the following with an emphasis on the differences between the standard and \FSIM workflows.
 
-\paragraph{Generation} The sample generation commences by creating collections of particles with the help of \acrfull{mc} generators that are configured to produce events according to some physics process of interest. This step can be performed independently of the core \gls{cms} software. Common interfaces with generator programs are provided through the \HEPMC[format=hyperbf]~\cite{Dobbs:2001ck,hepmc} or \LHEF[format=hyperbf]~\cite{Alwall:2006yp} event formats.
+\begin{description}
+\item[Generation] The sample generation commences by creating collections of particles with the help of \acrfull{mc} generators that are configured to produce events according to some physics process of interest. This step can also be performed independently of the core \gls{cms} software. Common interfaces with generator programs are provided through the \HEPMC[format=hyperbf]~\cite{Dobbs:2001ck,hepmc} or \LHEF[format=hyperbf]~\cite{Alwall:2006yp} event formats.
 
-\paragraph{Simulation} The trajectories of the generated particles are propagated through a geometrical model of the detector starting from the interaction point. As the particles traverse the detector, their interaction with the encountered material is simulated. In the standard simulation, the \GEANT{}4 package is utilized which provides precise propagation of the trajectories in the magnetic field and simulation of the various interactions. A simplification is performed in the simulation of electromagnetic and hadronic showers in the calorimeter systems where \GFLASH---a parameterized shower library---is utilized instead~\cite{1742-6596-293-1-012023,RAHMAT2012340}. In \FSIM a simplified detector geometry is utilized for the inner tracking system. Interactions are only simulated on infinitely thin cylindrical layers and endcap disks using parameterized models for energy loss, nuclear interactions, and bremsstrahlung. Since a constant magnetic field is assumed as well the propagation of particles between the layers can be performed analytically. In a final step the simulated tracker hits are projected onto the actual geometry of the tracking system. For the simulation of showers in the calorimetry systems, energy deposits are sampled from parameterized functions of the expected longitudinal and transverse shower profiles per particle type and energy.
+\item[Simulation] The trajectories of the generated particles are propagated through a geometrical model of the detector starting from the interaction point. As the particles traverse the detector, their interaction with the encountered material is simulated. In the standard simulation, the \GEANT{}4 package is utilized which provides a detailed propagation of particles in the magnetic field and a sophisticated simulation of the various interactions. 
+%A simplification is performed in the simulation of electromagnetic and hadronic showers in the calorimeter systems where \GFLASH---a parameterized shower library---is utilized instead~\cite{1742-6596-293-1-012023,RAHMAT2012340}. 
+In \FSIM a simplified detector geometry is utilized for the inner tracking system. Interactions are only simulated on infinitely thin cylindrical layers and endcap disks using parameterized models for energy loss through ionization, bremsstrahlung, photon conversion, and multiple scattering. Since a constant magnetic field is assumed as well the propagation of particles between the layers is performed analytically. In a final step the intersection points of the trajectories with the simplified geometry are projected onto the real geometry of the tracking system to create simulated hits associated to actual tracker pixel or strip modules. In the calorimetry systems the simulation of \gls{em} or hadronic showers is performed by sampling energy deposits from parameterized model of the expected longitudinal and transverse shower profiles per particle type and energy.
 
-\paragraph{Digitalization} An emulation of the detector readout systems is performed. After this stage, the simulation produced similar information as found in recorded raw data events in the standard simulation. In \FSIM the same algorithms are utilized for the calorimeters. For the  tracker hits no detailed charge deposition is simulated. Instead, the reconstructed hits are created by smearing the simulated hits which is detailed in Sec.~\ref{sec:fsim-hits}.
+\item[Digitalization] In the digitalization step, an emulation of the detector readout systems is performed. After this stage, the event record in the standard simulation contains similar information as found in recorded raw data events. In \FSIM the digitalization algorithms of the standard simulation workflow are also utilized for the calorimeter systems. For the tracker hits no detailed simulation of the charge deposition is performed. Instead, the reconstruction of hits from charge clusters is only emulated by performing a smearing of the simulated hit positions. More details are given in Sec.~\ref{sec:fsim-hits} below.
 
-\paragraph{Reconstruction} for comparison with reconstructed data are obtained through the event reconstruction
-%standard track reconstruction (\gls{kf}-based,pattern recognition,\gls{ctf}) / solve combinatorial problem using \gls{mc}-truth
-%Calorimeter reconstruction standard clustering / standard clustering
-\paragraph{Trigger} An emulation of the event trigger system is (optionally) performed in additonal, separate steps.
+\item[Reconstruction] In \FSIM the standard event reconstruction is applied to simulated events as well with the exception of the track reconstruction. Here, the computing-intense tracking algorithm with includes amongst others the \acrfull{ctf} algorithm~\cite{Chatrchyan:2014fea} are bypassed by utilizing truth-information about the simulated events instead to solve the combinatorial problem.
+\end{description}
+
+The tight integration of the \FSIM package within the \gls{cms} software allows to utilize most of the standard objects within its workflow so that simulated \FSIM samples can easily be used by analysts along samples generated with the standard event simulation and reconstructed data. 
+
+
+%##############################################
+\section{Emulation of hit reconstruction}
+%##############################################
+\label{sec:fsim-hits}
+
+An emulation of the local hit reconstruction for the tracker modules has to be performed since no detailed information of charge deposition is generated in the simulation step of \FSIM. To mimic the resolutions of the standard hit reconstruction the true hit positions are smeared. A new \FSIM module for position smearing has been developed which allows to manage various algorithms for position smearing side-by-side. It can be flexibly configured for any topology of the tracker. Additionally, each algorithm can be restricted to certain tracker modules only. A sketch of the inner workings of the new module is shown in Fig.~\ref{fig:fsim-hitsmearing}.
+
+\myfigure{\label{fig:fsim-hitsmearing}Emulation of local hit reconstruction in \FSIM.  Various algorithm can be configured side-by-side. A flexible selection syntax allows to specify on a per module basis which hits to process.}{
+\includegraphics[scale=0.75]{figures/fastsim/parcels.pdf}
+}
+
+First, the simulated hits are sorted according the associated tracker module. Then, algorithms for hit position smearing are loaded dynamically based on a configuration that is supplied by the user. Each instance of an algorithm can be configured to select and process only sorted hits belonging to certain tracker modules. The selection is achieved through a special syntax parser for evaluating the user configuration dynamically against the module properties. Technically, the \texttt{Boost.Spirit} framework~\cite{boostspirit} is utilized to implement the parser based on grammar rules written in \glshere{ebnf}. This allows to extended the syntax easily in case of future requirements that are currently uncovered.
+
+Currently, a simple Gaussian smearing of the position is deployed for all strip modules where the configured resolution depends on the specific tracker subdetector (\gls{tib},\gls{tid},\gls{tob},\gls{tec}) and its layer. A more detailed emulation of hit reconstruction is employed for the pixel modules where parametrized distributions from the standard template-based hit reconstruction are utilized for the smearing. Furthermore, the new module allows the emulation of merging of two hits which occurs in data when the distributions of the deposited charges from two transversing particle overlap. Figure~\ref{fig:fsim-merge} shows a recent study of the probability of hit merging on the pixel modules. Such probability maps are expected to be used for the emulation of hit merging in the future.
+
+
+\myfigure{\label{fig:fsim-merge}Probability of two hits merging on the pixel barrel modules as a function of their distance and local incident angle of a track expressed in pseudorapidity.}{
+\includegraphics[width=0.48\textwidth]{figures/fastsim/merge.pdf}
+}
+
+
+
 
 
 
@@ -44,26 +70,21 @@ The typical steps in the \gls{cms} software to obtain simulated events for compa
 %##############################################
 \label{sec:fsim-tracking}
 
+The 
+
+
+The seeding and trajectory building modules of the standard iterative tracking sequence are replaced completely within \FSIM. An overview is provided in Fig.~\ref{fig:fsim-tracking}. 
+
 \myfigure{\label{fig:fsim-tracking}The track reconstruction workflow in \FSIM. Details are given in the text.}{
 \includegraphics[scale=0.75]{figures/fastsim/tracking.pdf}
 }
 
+The ability to produce merged hits originating from close particle tracks necessitated a refactoring of the \FSIM{}-specific data objects within the iterative tracking sequence. The main idea of sidestepping the reconstruction by using truth information about the origin of each hit remains, but had to be extended. Instead of a one-to-one mapping of reconstructed hits to true particle tracks, close simulated hits can now result into a single reconstructed ``merged'' hit that can be shared between the final tracks within an iteration. A further benefit is that the mapping itself can be generated independently from the truth information which will allow the mix-in of wrong hit combinations leading to ``fake'' tracks in the future which are currently not emulated.
+
+
 iterative tracking, hit masking
 
-%##############################################
-\subsection{Hit reconstruction}
-%##############################################
-\label{sec:fsim-hits}
 
-\myfigure{}{
-\includegraphics[scale=0.75]{figures/fastsim/parcels.pdf}
-}
-
-\myfigure{\label{fig:fsim-merge}Probability of two hits merging on the pixel barrel modules as a function of their distance and local incident angle of a track expressed in pseudorapidity.}{
-\includegraphics[width=0.48\textwidth]{figures/fastsim/merge.pdf}
-}
-
-\glshere{ebnf}
 
 %##############################################
 \subsection{Seeding}
