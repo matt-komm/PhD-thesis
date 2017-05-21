@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="106.2144mm"
+   width="117.69974mm"
    height="48.258434mm"
-   viewBox="0 0 106.2144 48.258434"
+   viewBox="0 0 117.69974 48.258434"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 unknown"
@@ -19,13 +19,29 @@
   <defs
      id="defs2">
     <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4648"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4646"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+    <marker
        inkscape:isstock="true"
        style="overflow:visible"
        id="marker7427"
        refX="0"
        refY="0"
        orient="auto"
-       inkscape:stockid="Arrow1Mend">
+       inkscape:stockid="Arrow1Mend"
+       inkscape:collect="always">
       <path
          transform="matrix(-0.4,0,0,-0.4,-4,0)"
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
@@ -322,11 +338,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="410.21005"
-     inkscape:cy="273.83475"
+     inkscape:zoom="1.979899"
+     inkscape:cx="179.10465"
+     inkscape:cy="56.502277"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
@@ -341,37 +357,37 @@
      fit-margin-bottom="0.1"
      fit-margin-right="0.1">
     <sodipodi:guide
-       position="9.7720704,47.999684"
+       position="21.257401,47.999686"
        orientation="0,1"
        id="guide4502"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="41.144093,28.533914"
+       position="52.629425,28.533915"
        orientation="0,1"
        id="guide6629"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="66.279508,90.144043"
+       position="77.764842,90.144047"
        orientation="1,0"
        id="guide6733"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="36.166113,9.0681442"
+       position="47.651445,9.0681444"
        orientation="0,1"
        id="guide6797"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="61.936629,28.533914"
+       position="73.421963,28.533915"
        orientation="1,0"
        id="guide6820"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="88.289018,28.533914"
+       position="99.774353,28.533915"
        orientation="1,0"
        id="guide6960"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="39.927114,9.0681542"
+       position="51.412446,9.0681544"
        orientation="1,0"
        id="guide7084"
        inkscape:locked="false" />
@@ -389,10 +405,162 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline"
+     transform="translate(11.48533)">
+    <path
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#737373;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 2.2127351,24.413451 H 0.37555302 V 3.962919 H 2.2127351"
+       id="rect4980"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#737373;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -5.5290949,44.645149 h -1.876696 V 3.943288 h 1.876696"
+       id="rect4980-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777863px;line-height:100%;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#737373;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-20.729313"
+       y="-1.077275"
+       id="text5000"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan4998"
+         x="-20.729313"
+         y="-1.077275"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777863px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#737373;fill-opacity:1;stroke-width:0.26458332px">doublet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777863px;line-height:100%;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#737373;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-29.736292"
+       y="-8.7050447"
+       id="text5000-9"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan4998-6"
+         x="-29.736292"
+         y="-8.7050447"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777863px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#737373;fill-opacity:1;stroke-width:0.26458332px">triplet</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#737373;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05833326, 1.05833326;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 2.2127351,3.962919 H 44.799167"
+       id="path5020"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#737373;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05833326, 1.05833326;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 2.2127351,24.413451 H 93.161072"
+       id="path5022"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#737373;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05833332, 1.05833332;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -5.5290949,3.943288 H 0.30777648"
+       id="path5020-0"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#737373;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05833332, 1.05833332;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -5.5290949,44.645149 H 88.289018"
+       id="path5022-6"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3"
+     style="display:inline"
+     transform="translate(11.48533)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52"
+       width="17.666632"
+       height="7.7510567"
+       x="44.269997"
+       y="0.25875095"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52-9"
+       width="17.666632"
+       height="7.7510567"
+       x="88.289001"
+       y="20.253687"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52-9-7"
+       width="17.666632"
+       height="7.7510567"
+       x="66.279495"
+       y="20.253687"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52-9-7-7"
+       width="17.666632"
+       height="7.7510567"
+       x="22.260481"
+       y="20.253687"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52-9-7-8"
+       width="17.666632"
+       height="7.7510567"
+       x="22.260481"
+       y="40.248619"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52-9-7-8-9"
+       width="17.666632"
+       height="7.7510567"
+       x="44.269997"
+       y="40.248619"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52-9-7-7-7"
+       width="17.666632"
+       height="7.7510567"
+       x="0.2587468"
+       y="40.248627"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52-9-7-8-7"
+       width="17.666632"
+       height="7.7510567"
+       x="66.279518"
+       y="40.248619"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4294-7-2-52-9-7-8-9-9"
+       width="17.666632"
+       height="7.7510567"
+       x="88.289024"
+       y="40.248619"
+       rx="1.3229166"
+       ry="1.3229166" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(19.977428,-21.007621)">
+     transform="translate(31.462758,-21.007622)"
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:1.41111112px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -448,42 +616,6 @@
          y="46.389359"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;stroke-width:0.28222224px"
          id="tspan6604-6-2-0">FPX- 1</tspan></text>
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52"
-       width="17.666632"
-       height="7.7510567"
-       x="24.29257"
-       y="21.266371"
-       rx="1.3229166"
-       ry="1.3229166" />
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52-9"
-       width="17.666632"
-       height="7.7510567"
-       x="68.311569"
-       y="41.261307"
-       rx="1.3229166"
-       ry="1.3229166" />
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52-9-7"
-       width="17.666632"
-       height="7.7510567"
-       x="46.302059"
-       y="41.261307"
-       rx="1.3229166"
-       ry="1.3229166" />
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52-9-7-7"
-       width="17.666632"
-       height="7.7510567"
-       x="2.2830553"
-       y="41.261307"
-       rx="1.3229166"
-       ry="1.3229166" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:1.41111112px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -495,15 +627,6 @@
          y="66.37339"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;stroke-width:0.28222224px"
          id="tspan6604-6-2-3">FPX+ 1</tspan></text>
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52-9-7-8"
-       width="17.666632"
-       height="7.7510567"
-       x="2.2830555"
-       y="61.256245"
-       rx="1.3229166"
-       ry="1.3229166" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:1.41111112px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -515,15 +638,6 @@
          y="66.37339"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;stroke-width:0.28222224px"
          id="tspan6604-6-2-3-4">FPX- 1</tspan></text>
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52-9-7-8-9"
-       width="17.666632"
-       height="7.7510567"
-       x="24.29257"
-       y="61.256245"
-       rx="1.3229166"
-       ry="1.3229166" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:1.41111112px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -535,15 +649,6 @@
          y="66.37339"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;stroke-width:0.28222224px"
          id="tspan6604-6-9">BPX 3</tspan></text>
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52-9-7-7-7"
-       width="17.666632"
-       height="7.7510567"
-       x="-19.718678"
-       y="61.256248"
-       rx="1.3229166"
-       ry="1.3229166" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:1.41111112px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -555,15 +660,6 @@
          y="66.373398"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;stroke-width:0.28222224px"
          id="tspan6604-6-2-3-3">FPX+ 2</tspan></text>
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52-9-7-8-7"
-       width="17.666632"
-       height="7.7510567"
-       x="46.302082"
-       y="61.256245"
-       rx="1.3229166"
-       ry="1.3229166" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:0%;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:1.41111112px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -575,15 +671,6 @@
          y="66.373398"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'URW Palladio L';-inkscape-font-specification:'URW Palladio L, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;stroke-width:0.28222224px"
          id="tspan6604-6-2-3-4-0">FPX- 2</tspan></text>
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4294-7-2-52-9-7-8-9-9"
-       width="17.666632"
-       height="7.7510567"
-       x="68.311592"
-       y="61.256245"
-       rx="1.3229166"
-       ry="1.3229166" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.35274819;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7369)"
        d="M 32.694642,29.091209 10.960429,40.732141"

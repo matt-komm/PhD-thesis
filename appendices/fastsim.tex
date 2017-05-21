@@ -53,7 +53,7 @@ An emulation of the local hit reconstruction for the tracker modules has to be p
 
 First, the simulated hits are sorted according the associated tracker module. Then, algorithms for hit position smearing are loaded dynamically based on a configuration that is supplied by the user. Each instance of an algorithm can be configured to select and process only sorted hits belonging to certain tracker modules. The selection is achieved through a special syntax parser for evaluating the user configuration dynamically against the module properties. Technically, the \texttt{Boost.Spirit} framework~\cite{boostspirit} is utilized to implement the parser based on grammar rules written in \glshere{ebnf}. This allows to extended the syntax easily in case of future requirements that are currently uncovered.
 
-Currently, a simple Gaussian smearing of the position is deployed for all strip modules where the configured resolution depends on the specific tracker subdetector (\gls{tib},\gls{tid},\gls{tob},\gls{tec}) and its layer. A more detailed emulation of hit reconstruction is employed for the pixel modules where parametrized distributions from the standard template-based hit reconstruction are utilized for the smearing. Furthermore, the new module allows the emulation of merging of two hits which occurs in data when the distributions of the deposited charges from two transversing particle overlap. Figure~\ref{fig:fsim-merge} shows a recent study of the probability of hit merging on the pixel modules. Such probability maps are expected to be used for the emulation of hit merging in the future.
+Currently, a simple Gaussian smearing of the position is deployed for all strip modules where the configured resolution depends on the specific tracker subdetector (\gls{tib},\gls{tid},\gls{tob},\gls{tec}) and its layer. A more detailed emulation of hit reconstruction is employed for the pixel modules where parametrized distributions from the standard template-based hit reconstruction are utilized for the smearing. Furthermore, the new module allows the emulation of producing merged hits which occur in data when the distributions of the deposited charges from two particle transversing a tracker module overlap. Figure~\ref{fig:fsim-merge} shows a recent study of the probability of hit merging on the pixel modules. Such probability maps are expected to be used for the emulation of hit merging in the future.
 
 
 \myfigure{\label{fig:fsim-merge}Probability of two hits merging on the pixel barrel modules as a function of their distance and local incident angle of a track expressed in pseudorapidity.}{
@@ -63,40 +63,31 @@ Currently, a simple Gaussian smearing of the position is deployed for all strip 
 
 
 
-
-
 %##############################################
 \section{Emulation of track reconstruction}
 %##############################################
 \label{sec:fsim-tracking}
 
-The 
-
-
-The seeding and trajectory building modules of the standard iterative tracking sequence are replaced completely within \FSIM. An overview is provided in Fig.~\ref{fig:fsim-tracking}. 
+In \FSIM an emulation of the iterative track reconstruction is performed. The sequence of seeding, trajectory building and fitting and the iterative steps are kept similar to the standard track reconstruction but all algorithms are replaced with \FSIM-specific versions. A central idea to speedup the track reconstruction in \FSIM is to solve the combinatorial problem of associating reconstructed hits to particle trajectories by using \gls{mc}-truth information. An overview of the idea is provided in Fig.~\ref{fig:fsim-tracking}. Starting from a collection containing all reconstructed hits, each hit is mapped back to the simulated track from which it originated in the simulation. Then, the iterative tracking is carried out where each step is performed multiple times per subset of hits that belongs to a single simulated track. This approach circumvents entirely any combinatorial confusion of hits. Thus, no fake tracks from a combination of spurious hits are emulated and the resulting tracking efficiency would in principle be 100\%. However, by accounting for dedicated selection criteria that are specified for each iteration in the standard reconstruction, the efficiency is decreased and becomes comparable to the one obtained in with the standard track reconstruction as discussed in Sec.~\ref{sec:fsim-validation} below.
 
 \myfigure{\label{fig:fsim-tracking}The track reconstruction workflow in \FSIM. Details are given in the text.}{
 \includegraphics[scale=0.75]{figures/fastsim/tracking.pdf}
 }
 
-The ability to produce merged hits originating from close particle tracks necessitated a refactoring of the \FSIM{}-specific data objects within the iterative tracking sequence. The main idea of sidestepping the reconstruction by using truth information about the origin of each hit remains, but had to be extended. Instead of a one-to-one mapping of reconstructed hits to true particle tracks, close simulated hits can now result into a single reconstructed ``merged'' hit that can be shared between the final tracks within an iteration. A further benefit is that the mapping itself can be generated independently from the truth information which will allow the mix-in of wrong hit combinations leading to ``fake'' tracks in the future which are currently not emulated.
-
-
-iterative tracking, hit masking
-
+The ability to produce merged hits originating from close particle tracks necessitated a recent extension of the \FSIM{}-specific data objects within the iterative tracking sequence. Instead of a one-to-one mapping of reconstructed hits to simulated tracks, close simulated hits can now result into a single reconstructed ``merged'' hit that can be shared between the final tracks within an iteration as indicated in Fig.~\ref{fig:fsim-tracking}. A further benefit of the extension is that the mapping itself can now be generated independently from the simulated track information which will allow the mix-in of wrong hit combinations leading to ``fake'' tracks in the future that are currently not emulated.
 
 
 %##############################################
-\subsection{Seeding}
+\subsection{New seeding algorithm}
 %##############################################
+\label{sec:fsim-seeding}
 
-\myfigure{}{
+An algorithm has been developed to identify potential trajectory seed candidates while operating on an arbitrary number of seeding layers efficiently. In the original implementation, only doublets or triplets of hits could act as seeds. However, after the upgrade of the \gls{cms} detector a mixture of doublets, triplets, and quartets are envisaged for seeding. This is solved by organizing layer configurations in a tree-like structure as shown in Fig.~\ref{fig:fsim-seedingtree}. The new algorithm commences by iterating over a list of hits and linking them to a corresponding node in the tree if it is found on the desired layer. While the tree is being built, standard seed selection criteria are tested on the already found hit subsets. These are iteration-dependent and consists of various criteria such as the compatibility of the extrapolated trajectory with the beam spot or the minimum transverse momentum of a corresponding particle. A final seed candidate is found if hits at each node between the root and one of the leafs are found that are also compatible with any corresponding selection criteria. \todo{make better}
+
+\myfigure{\label{fig:fsim-seedingtree}Exemplary configuration of pixel barrel (\gls{bpx}) and pixel forward (\gls{fpx}) layers considered to generated trajectory seed candidates. A seed has to contain corresponding hits at each node between the root and one of the leafs.}{
 \includegraphics[scale=0.75]{figures/fastsim/seedingtree.pdf}
 }
 
-%##############################################
-\subsection{Track fit}
-%##############################################
 
 
 %##############################################
@@ -126,6 +117,10 @@ A profile of the average CPU-time consumption per event within \FSIM is given in
 \section{Conclusion}
 %##############################################
 \label{sec:fsim-conclusion}
+
+The CMS \FSIM package provides a fast alternative to the standard simulation and reconstruction workflow. One of its major speedups is the use of truth information in the track reconstruction. Recent developments in the framework led to further flexibility in the emulation of hit reconstruction and to the usage of truth information in the iterative tracking sequence. In the short term, these developments will enable the emulation of merged hits originating from close particle tracks. In the long term, the increased flexibility will allow to adapt the emulation of track reconstruction to the planned upgrades of the CMS detector.
+
+
 
 
 %\section{Introduction}
