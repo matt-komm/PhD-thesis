@@ -11,7 +11,7 @@ from optparse import OptionParser
 
 cvscale = 1.0
 
-fontScale = 700./650.
+fontScale = 750./650.
 
 ROOT.gROOT.Reset()
 ROOT.gROOT.SetBatch(True)
@@ -331,7 +331,7 @@ TOYS=100000
 
 cvTrue = setupCanvas()
 axisTrue=ROOT.TH2F("axis"+str(random.random()),";True / unfolded;a.u.",50,-1,1,50,0,1.25)
-axisTrue.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
+axisTrue.GetXaxis().SetTickLength(0.035/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisTrue.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisTrue.Draw("AXIS")
 
@@ -355,7 +355,7 @@ histTrue.Draw("HISTSame")
 
 ROOT.gPad.RedrawAxis()
 
-legendTrue = ROOT.TLegend(cvTrue.GetLeftMargin()+0.03,1-cvTrue.GetTopMargin()-0.02,0.55,1-cvTrue.GetTopMargin()-0.02-3*0.08)
+legendTrue = ROOT.TLegend(cvTrue.GetLeftMargin()+0.03,1-cvTrue.GetTopMargin()-0.03,0.55,1-cvTrue.GetTopMargin()-0.03-3*0.08)
 legendTrue.SetFillStyle(0)
 legendTrue.SetBorderSize(0)
 legendTrue.SetTextFont(43)
@@ -464,7 +464,7 @@ for itau,tau in enumerate(tauScanX):
 cvTau = setupCanvas()
 cvTau.SetRightMargin(0.16)
 axisTau=ROOT.TH2F("axis"+str(random.random()),";Regularization strength #tau;Averaged correlations",50,tauScanX[0],tauScanX[-1],50,-1.2,1.1)
-axisTau.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
+axisTau.GetXaxis().SetTickLength(0.035/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisTau.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisTau.Draw("AXIS")
 cvTau.SetLogx()
@@ -473,7 +473,7 @@ legendTau = ROOT.TLegend(1-cvTau.GetRightMargin()+0.005,1-cvTau.GetTopMargin(),0
 legendTau.SetFillStyle(0)
 legendTau.SetBorderSize(0)
 legendTau.SetTextFont(43)
-legendTau.SetTextSize(fontScale*34)
+legendTau.SetTextSize(fontScale*37)
 
 
 region1 = ROOT.TBox(tauScanX[0],-1.2,0.3,1.1)
@@ -488,7 +488,7 @@ region2.SetLineColor(ROOT.kGray)
 region2.SetFillColor(ROOT.kGray)
 region2.Draw("SameF")
 
-pR1 = ROOT.TPaveText(0.025,-0.94,0.12,-1.1)
+pR1 = ROOT.TPaveText(0.025,-0.93,0.12,-1.1)
 pR1.SetFillColor(ROOT.kWhite)
 pR1.SetLineColor(ROOT.kBlack)
 pR1.SetBorderSize(1)
@@ -497,7 +497,7 @@ pR1.SetTextSize(32*fontScale)
 pR1.AddText("#bar{#rho}#lower[0.3]{#scale[0.7]{1}}#kern[-0.5]{ }<#kern[-0.5]{ }0")
 pR1.Draw("Same")
 
-pR2 = ROOT.TPaveText(8.5,-0.94,40,-1.1)
+pR2 = ROOT.TPaveText(8.5,-0.93,40,-1.1)
 pR2.SetFillColor(ROOT.kWhite)
 pR2.SetLineColor(ROOT.kBlack)
 pR2.SetBorderSize(1)

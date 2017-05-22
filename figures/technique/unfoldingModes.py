@@ -10,7 +10,7 @@ from optparse import OptionParser
 
 cvscale = 1.0
 
-fontScale = 700./650.
+fontScale = 750./650.
 
 ROOT.gROOT.Reset()
 ROOT.gROOT.SetBatch(True)
@@ -320,7 +320,7 @@ TOYS=100000
 
 cvTrue = setupCanvas()
 axisTrue=ROOT.TH2F("axis"+str(random.random()),";True / unfolded;a.u.",50,-1,1,50,0,1.25)
-axisTrue.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
+axisTrue.GetXaxis().SetTickLength(0.035/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisTrue.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisTrue.Draw("AXIS")
 
@@ -344,7 +344,7 @@ histTrue.Draw("HISTSame")
 
 ROOT.gPad.RedrawAxis()
 
-legendTrue = ROOT.TLegend(cvTrue.GetLeftMargin()+0.03,1-cvTrue.GetTopMargin()-0.02,0.55,1-cvTrue.GetTopMargin()-0.02-3*0.08)
+legendTrue = ROOT.TLegend(cvTrue.GetLeftMargin()+0.015,1-cvTrue.GetTopMargin()-0.03,0.55,1-cvTrue.GetTopMargin()-0.03-3*0.079)
 legendTrue.SetFillStyle(0)
 legendTrue.SetBorderSize(0)
 legendTrue.SetTextFont(43)
@@ -358,7 +358,7 @@ legendTrue.AddEntry(histTrue,"True distribution","L")
 cvRes = setupCanvas()
 cvRes.SetRightMargin(0.2)
 axisRes=ROOT.TH2F("axis"+str(random.random()),";True;Reconstructed",50,-1,1,50,-1,1)
-axisRes.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
+axisRes.GetXaxis().SetTickLength(0.035/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisRes.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisRes.Draw("AXIS")
 
@@ -391,7 +391,7 @@ ROOT.gPad.RedrawAxis()
 
 cvReco = setupCanvas()
 axisReco=ROOT.TH2F("axis"+str(random.random()),";Reconstructed;a.u.",50,-1,1,50,0.,1.)
-axisReco.GetXaxis().SetTickLength(0.025/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
+axisReco.GetXaxis().SetTickLength(0.035/(1-cvTrue.GetLeftMargin()-cvTrue.GetRightMargin()))
 axisReco.GetYaxis().SetTickLength(0.025/(1-cvTrue.GetTopMargin()-cvTrue.GetBottomMargin()))
 axisReco.Draw("AXIS")
 
