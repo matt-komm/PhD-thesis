@@ -238,27 +238,29 @@ $0.25$&$0.5$ & $1512$&$36$ & $44916$&$598$ \\
 \end{tabular}
 }
 
-In the remainder of the analysis, the multijet event yield is fixed to the fit result with a conservative systematic uncertainty of 50\% to account for residual differences after the extrapolation into the signal region. An additional systematic uncertainty is considered to account for shape differences in the data-driven multijet template when the lepton isolation in the sideband region is varied.
+The stability of the estimated amount of multijet events after extrapolating it into the signal region has also been studied when varying the \acrlongpl{jec} and \acrlong{jer} within uncertainties. To account for the induced residual differences in the estimated yield, a conservative systematic uncertainty of 50\% is assumed on the fit result. An additional systematic uncertainty is considered to account for shape differences in the data-driven multijet template when the lepton isolation in the sideband region is varied.
 
 The individual yields of the signal and background processes which are treated as a single component in the first fit are estimated in a second \gls{ml} fit to the distribution of the \bdttch discriminant. In this fit, similar background processes are grouped together and the following constraints are applied:
 
 \begin{description}
 \item[Signal] The $t$-channel single-top-quark template is taken as unconstrained.
-\item[Top quark background] The background processes which contain genuine top quarks (\ttbar, tW, $s$~channel) are grouped together. Their summed yield is constraint to the \gls{sm} prediction though a log-normal prior with an uncertainty of $\pm20\%$.
+\item[Top quark background] The background processes which contain genuine top quarks (\ttbar, tW, $s$~channel) are grouped together. Their summed yield is constrained to the \gls{sm} prediction though a log-normal prior with an uncertainty of $\pm20\%$.
 \item[Electroweak background] The electroweak processes~(\wjets, \zjets, diboson) are summed together. A log-normal constraint with an uncertainty of $\pm50\%$ on their \gls{sm} prediction is applied. The relatively larger uncertainty compared to the top quark background is chosen here because the production rates of W+heavy-quark flavored jets are predicted less precisely in the analysis phase space by the employed \wjets \gls{lo} \MG sample.
 \item[Multijet] The multijet background yield is kept fixed to the result of the previous fit.
 \end{description}
 
-Additional systematic uncertainties are considered in the measurement to account for the relative fractions of the individual subprocesses within the components. A comparison of the shapes of these four components is presented in Fig.~\ref{fig:polarization-fit-shapes}. Since the \bdttch shape of the top quark and electroweak backgrounds are fairly similar, a large anticorrelation of about $-90\%$ between their estimated yields is obtained in test fits to pseudo-data. To reduce the large anticorrelation the \bdttch distribution is simultaneously fitted in the 3j2t control region as well. By including this region the likelihood is supplied with independent information on the \ttbar production rate. In such extended fits, the anticorrelation is reduced to about $-75\%$.
+To account for the relative fractions of the individual subprocesses within the components, additional systematic uncertainties are considered in the measurement. 
 
-\todo{mention that 2j0t cannot be included since 2j0t is dominated by light but 2j1t by heavy flavor}
+In test fits to pseudo-data using the \bdttch distribution in the 2j1t region only, a large anticorrelation of about $-90\%$ between the estimated yields of the top quark and electroweak backgrounds has been obtained. This is due to the fact that their shapes are fairly similar compared to the other fit-components as presented in Fig.~\ref{fig:polarization-fit-shapes}. To reduce the large anticorrelation, the \bdttch distribution is simultaneously fitted in the 3j2t control region as well for the measurement. By including this region the likelihood is supplied with independent information on the \ttbar production rate which reduces the anticorrelation to about $-75\%$. 
+
+It has also been studied if it is beneficial to add the 2j0t control region to the fit for constraining the \wjets yield further. Including the 2j0t region does however not provide significant information on the W+heavy flavored jet production rate, which is the dominant \wjets fraction in the 2j1t signal region, since this control region is mostly enriched by W+light flavored jets instead (see e.g. Fig.~\ref{fig:polarization-topmass} for comparison). The \gls{ml} fit is therefore performed simultaneously in the 2j1t and 3j2t region only without utilizing the 2j0t region.
 
 \myfigure{\label{fig:polarization-fit-shapes}Shape comparison of the components considered in the fit to the \bdttch discriminant in 2j1t for (a)~electron and (b)~muon channel.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/polarization/fit/electron_2j1t_bdt_tch_qcdbdt_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm]{figures/polarization/fit/muon_2j1t_bdt_tch_qcdbdt.pdf}}
 }
 
-The obtained fit results per channel are listed in Tab.~\ref{tab:polarization-yields}. After the event selection, a \gls{sb} of about $13\%$ ($11\%$) is obtained in the muon (electron) channel which increases to $90\%$ ($88\%$) in a signal-enriched region respectively that is defined by applying an additional selection which utilizes both \gls{bdt} discriminants.
+The obtained fit results per channel are listed in Tab.~\ref{tab:polarization-yields}. After the event selection, a \gls{sb} of about $13\%$ ($11\%$) is obtained in the muon (electron) channel which increases to $90\%$ ($88\%$) in a signal-enriched region, defined by applying an additional selection which utilizes both \gls{bdt} discriminants as detailed in Sec.~\ref{sec:polarization-optimization} below.
 
 \mytable{\label{tab:polarization-yields}Estimated event yields in 2j1t after the event selection and in a signal-enriched phase space defined by $\bdtqcd>-0.15$ in the muon channel, $\bdtqcd>0.15$ in the electron channel, and additionally $\bdttch>0.45$ in both channels. The uncertainties reflect the limited \gls{mc} statistics and the \gls{ml} fit uncertainties.}{
 \begin{tabular}{@{}l r@{$\pm$}l r@{$\pm$}l c  r@{$\pm$}l r@{$\pm$}l@{}}
@@ -319,7 +321,7 @@ Since the muon channel is validated successfully the analysis is unblinded. In F
 %##############################################
 \label{sec:polarization-optimization}
 
-After subtracting the remaining background contributions from data in Fig.~\ref{fig:polarization-cosTheta-SR}, the reconstructed $\cos\theta_{\mu}^\star$ shape is unfolded to parton level and the spin asymmetry is extract from the differential cross section. The working point of the \bdttch discriminant which defines the signal-enriched region can be optimized such that the spin asymmetry measurement has a minimum of uncertainty. A scan of the expected uncertainty using pseudo-data as a function of the \bdttch working point is shown in Fig.~\ref{fig:polarization-bdtscan}. Here, only some representative systematic uncertainties are evaluated which have a major impact on the result. If the working point is chosen too low the larger background contamination leads to an increased uncertainty through the impact of systematic uncertainties associated with the backgrounds. On the other hand, the final uncertainty increases as well towards higher working points due to the decreasing signal selection efficiency which influences the statistical uncertainty. Between both extremes a broad region is observed where a measurement with minimal uncertainty can be achieved. For the measurement, a working point of $\bdttch>0.45$ is chosen. 
+After subtracting the remaining background contributions from data in Fig.~\ref{fig:polarization-cosTheta-SR}, the reconstructed $\cos\theta_{\mu}^\star$ shape is unfolded to parton level and the spin asymmetry is extracted from the differential cross section. The working point of the \bdttch discriminant which defines the signal-enriched region can be optimized such that the spin asymmetry measurement has a minimum of uncertainty. A scan of the expected uncertainty using pseudo-data as a function of the \bdttch working point is shown in Fig.~\ref{fig:polarization-bdtscan}. Here, only some representative systematic uncertainties are evaluated which have a major impact on the result. If the working point is chosen too low the larger background contamination leads to an increased uncertainty through the impact of systematic uncertainties associated with the backgrounds. On the other hand, the final uncertainty increases as well towards higher working points due to the decreasing signal selection efficiency which influences the statistical uncertainty. Between both extremes a broad region is observed where a measurement with minimal uncertainty can be achieved. For the measurement a working point of $\bdttch>0.45$ is chosen. 
 
 \myfigure{\label{fig:polarization-bdtscan} Scan of the total uncertainty on the measured spin asymmetry as a function of the \bdttch working point using pseudo-data. Only some representative systematic uncertainties have been evaluated here.}{
 \adjincludegraphics[height=4.8cm]{figures/polarization/unfolding/scan_mu.pdf}
@@ -332,7 +334,7 @@ After subtracting the remaining background contributions from data in Fig.~\ref{
 \label{sec:polarization-unfolding}
 
 
-The unfolding to parton level is performed with the \TUNFOLD method. To stabilize the $\chi^\scriptn{2}$ minimization inside the method, twice as many bins are considered at reconstruction level compared to parton level. Since about 6\% of the selected muons stem from intermediate tau decays in simulation, the parton level is extended to include also $\mathrm{t}\to\mathrm{b}\tau\nu$ decays. In such events the polarization angle at parton level is defined between the spectator quark and the tau lepton instead which yields a similar shape compared to events where the W~boson decays directly into muons. The resulting response matrix is presented in Fig.~\ref{fig:polarization-response}. The angle is smeared through manifold effects such as imperfections in the top quark reconstruction and b-tagging where the latter also influences how the spectator jet is chosen. 
+Unfolding to parton level is performed with the \TUNFOLD method~\cite{1748-0221-7-10-T10003}. To stabilize the $\chi^\scriptn{2}$ minimization inside the method, twice as many bins are considered at reconstruction level compared to parton level. Since about 6\% of the selected muons stem from intermediate tau decays in simulation, the parton level is extended to include also $\mathrm{t}\to\mathrm{b}\tau\nu$ decays. In such events the polarization angle at parton level is defined between the spectator quark and the tau lepton instead which yields a similar shape compared to events where the W~boson decays directly into muons. The resulting response matrix is presented in Fig.~\ref{fig:polarization-response}. The angle is smeared through manifold effects such as imperfections in the top quark reconstruction and b-tagging where the latter also influences how the spectator jet is chosen. 
  
 \myfigure{\label{fig:polarization-response}Response matrix from simulated $t$-channel single-top-quark events in 2j1t muon channel after requiring events with $\bdtqcd>-0.15$ and $\bdttch>0.45$.}{
 \adjincludegraphics[height=4.8cm]{figures/polarization/response.pdf}
@@ -347,13 +349,13 @@ After unfolding, the top quark spin asymmetry is extracted from the normalized $
 where $w$ denotes the bin width, $u_{i}$ the measured cross section in bin $i$, and $V_{ij}$ the covariance between bins $i$ and $j$. The fit allows to properly account for the induced bin-by-bin correlations through the regularized unfolding. To cross check the estimated asymmetry, an alternative unfolding is performed based on pure analytical expressions. For this, only two bins are considered which does not allow to apply a curvature-based regularization scheme. Therefore, only an inversion of the response matrix $\mathcal{R}$ is performed and the asymmetry is obtained as
 
 \begin{align}
-A&=\frac{u_2-u_1}{u_1+u_2}\,,\qquad \vec{u}=\mathcal{R}^{-1}\cdot\vec{d}\\
-\sigma^2_{A}&=\frac{4}{|\vec{u}|^4}\Big(u_1^2\,\mathcal{V}^{(u)}_{22}+u_2^2\,\mathcal{V}^{(u)}_{11}-2\cdot u_1\,u_{2}\,\mathcal{V}^{(u)}_{12}\Big)\,,\quad\mathcal{V}^{(u)}=\mathcal{R}^{-1}\,\mathcal{V}^{(d)}\,\big(\mathcal{R}^{-1}\big)^{T}\,,
+A&=\frac{u_2-u_1}{u_1+u_2}\,,\qquad \vec{u}=\mathcal{R}^{-1}\cdot\vec{d}\,,\\
+\sigma^2_{A}&=4~\frac{u_1^2\,\mathcal{V}^{(u)}_{22}+u_2^2\,\mathcal{V}^{(u)}_{11}-2 \cdot u_1\,u_{2}\,\mathcal{V}^{(u)}_{12}}{\big(u_1+u_2\big)^4}\,, \quad\mathcal{V}^{(u)}=\mathcal{R}^{-1}\,\mathcal{V}^{(d)}\,\big(\mathcal{R}^{-1}\big)^{T}\,,
 \end{align}
 
 where $\vec{d}$ denote the distribution of data after the remaining background contributions have been subtracted and $\mathcal{V}^{(d)}$ its corresponding covariance matrix.
 
-To validate the overall analysis strategy, a closure test is conducted. For this, simulated $t$-channel single-top-quark events with anomalous Wtb couplings are injected into the analysis as pseudo data. Various couplings scenarios can be realized by applying a special reweighting technique as used in Ref.~\cite{Khachatryan:2016sib}. It is based on the idea that the single-top-quark cross section can be decomposed as
+To validate the overall analysis strategy, a closure test is conducted. For this, simulated $t$-channel single-top-quark events with anomalous Wtb couplings are injected into the analysis as pseudo-data. Various couplings scenarios can be realized by applying a special reweighting technique as used in Ref.~\cite{Khachatryan:2016sib} and explained in the following. It is based on the idea that the single-top-quark cross section can be decomposed as
 
 \begin{subequations}
 \begin{align}
@@ -361,14 +363,14 @@ To validate the overall analysis strategy, a closure test is conducted. For this
 \end{align}
 \end{subequations}
 
-if only one anomalous couplings is present while the others vanish, where $A$ and $B$ denote some kinematic function for the production and decay. Here, the vector-like right-handed coupling $\mathrm{V}_\mathrm{R}$ is taken to be non-zero while the tensor-like left- and right-handed couplings are assumed to vanish. An explanation of these couplings is given in Sec.~\ref{sec:theory-anomalous-couplings}. Three samples are generated which correspond to the individual contributions from Eqs.~\ref{eq:polarization-wtb-rew-vl}, \ref{eq:polarization-wtb-rew-vlvr}, and~\ref{eq:polarization-wtb-rew-vr} to the total cross section. By multiplying each sample with a coupling-dependent weight, arbitrary coupling scenarios in the $(\mathrm{V}_\mathrm{L},\mathrm{V}_\mathrm{R})$ plane can be realized. These samples allow to generate various top quark spin asymmetries by adjusting the couplings accordingly. The analysis strategy is tested by performing the event selection, the \gls{ml} fits, the evaluation of the two \glspl{bdt}, the unfolding, and the estimation of the asymmetry from the differential cross section with pseudo data generated from the \gls{sm} background and these anomalous coupling samples. A Neyman construction is shown in Fig.~\ref{fig:polarization-neyman} where the asymmetry is scanned by varying the right-handed coupling.
+if only one anomalous couplings is present while the others vanish, where $A$ and $B$ denote some kinematic function for the production and decay. The vector-like right-handed coupling $\mathrm{V}_\mathrm{R}$ is taken to be non-zero while the tensor-like left- and right-handed couplings are assumed to vanish. An explanation of these couplings is given in Sec.~\ref{sec:theory-anomalous-couplings}. Three individual signal samples have been generated using the \COMPHEP program which correspond to the individual contributions of Eqs.~\ref{eq:polarization-wtb-rew-vl}, \ref{eq:polarization-wtb-rew-vlvr}, and~\ref{eq:polarization-wtb-rew-vr} to the total cross section. By multiplying each sample with a coupling-dependent weight, arbitrary coupling scenarios in the $(\mathrm{V}_\mathrm{L},\mathrm{V}_\mathrm{R})$ plane can be realized. These samples allow to generate various top quark spin asymmetries by adjusting the couplings accordingly. The analysis strategy is tested by performing the event selection, the \gls{ml} fits, the evaluation of the two \glspl{bdt}, the unfolding, and the estimation of the asymmetry from the differential cross section with pseudo-data generated from the \gls{sm} background and these anomalous coupling samples. Various spin asymmetries are generated by varying the right-handed coupling. The result of this scan is presented in Fig.~\ref{fig:polarization-neyman} in the form of a Neyman construction~\cite{neyman1935}.
 
 
-\myfigure{\label{fig:polarization-neyman}Neyman construction by injecting samples with anomalous Wtb couplings as pseudo data into the measurement to scan the top quark spin asymmetry.}{
+\myfigure{\label{fig:polarization-neyman}Neyman construction generated by injecting samples with anomalous Wtb couplings as pseudo-data into the measurement for scanning the top quark spin asymmetry.}{
 \adjincludegraphics[height=4.8cm]{figures/polarization/unfolding/neyman_t_tbar.pdf}
 }
 
-A bias on the order of the expected statistical uncertainty is observed for some coupling cases. In the statistical evaluation, a conservative systematic uncertainty is added to the measured asymmetry to cover for this. It should be noted that the bias cannot be corrected through an ad-hoc transformation of the asymmetry since only a very specific coupling scenarios has been tested here. In the \gls{eft} framework the general asymmetry depends however on multiple anomalous couplings in a complex way.
+A bias on the order of the expected statistical uncertainty is observed for some coupling cases. In the statistical evaluation a conservative systematic uncertainty is assumed on the measured asymmetry to cover for such biases. It should be noted that the observed bias cannot be corrected through an ad-hoc transformation of the asymmetry since only a very specific coupling scenarios has been tested here. In the \gls{eft} framework the spin asymmetry depends however on multiple anomalous couplings in a complex way.
 
 
 
@@ -376,7 +378,7 @@ A bias on the order of the expected statistical uncertainty is observed for some
 \section{Statistical evaluation}
 %##############################################
 
-The differential cross section and the related extraction of the top quark spin asymmetry from its shape are affected by several sources of systematic uncertainties. Many of them have already been introduced throughout this chapter and in Ch.~\ref{ch:reconstruction}. They are evaluated by using modified templates and response matrices during the \gls{ml} fits and in the unfolding. The maximal induced shift per source with respect to the nominal asymmetry is listed in Tab.~\ref{tab:polarization-systable}. In the following, details about sources of systematic uncertainties which have not yet been discussed are given, while for others a reference to their description is provided.
+The differential cross section and the related extraction of the top quark spin asymmetry from its shape are affected by several sources of systematic uncertainties. Many of them have already been introduced throughout this chapter and in Ch.~\ref{ch:reconstruction}. They are evaluated by using modified templates and response matrices during the \gls{ml} fits and in the unfolding. The maximal induced shift per source with respect to the nominal asymmetry is listed in Tab.~\ref{tab:polarization-systable}. Details about sources of systematic uncertainties which have not yet been discussed are given in the following, while for others a reference to their description is provided.
 
 \mytable[p]{\label{tab:polarization-systable} The considered sources of systematic uncertainties and their impact on the measured asymmetry for events with top quarks, top antiquarks and their combination.}{
 \begin{tabular}[htc]{@{}l  l  r  r  r@{}}
@@ -431,7 +433,7 @@ The differential cross section and the related extraction of the top quark spin 
 }
 
 \begin{description}
-\item[Limited \gls{mc} statistics]  The uncertainty is taken into account when subtracting the remaining background contributions from data prior to unfolding and in the unfolding itself since it can influence the transition probabilities within the response matrices. Additionally, this uncertainty is also account for when estimating the impact by other sources of systematic uncertainties and thus may result into an overestimation in some cases.
+\item[Limited \gls{mc} statistics] The uncertainty is taken into account when subtracting the remaining background contributions from data prior to unfolding and in the unfolding itself since it can influence the transition probabilities within the response matrices. Additionally, this uncertainty is also account for when estimating the impact by other sources of systematic uncertainties and thus may result into an overestimation in some cases.
 
 \item[\Gls{ml} fit uncertainty] This uncertainty accounts for the estimated normalization of the backgrounds through the fit~(Sec.~\ref{sec:polarization-fit}).
 
@@ -443,7 +445,7 @@ The differential cross section and the related extraction of the top quark spin 
 
 \item[\wjets and \ttbar reweighting] The applied reweighting of \ttbar and \wjets events and its associated uncertainties are motivated in Sec.~\ref{sec:polarization-modeling}. 
 
-\item[Unfolding bias] The unfolding bias covers for a potential shift in the measured asymmetry which has been observed when injecting pseudo data with anomalous Wtb couplings~(Sec.~\ref{sec:polarization-unfolding}).
+\item[Unfolding bias] The unfolding bias covers for a potential shift in the measured asymmetry which has been observed when injecting pseudo-data with anomalous Wtb couplings~(Sec.~\ref{sec:polarization-unfolding}).
 
 \item[Generator model] The default $t$-channel single-top-quark sample which is generated with \POWHEG and interfaced with \PYTHIA6 is exchanged by a signal sample generated with \AMC and interfaced with \PYTHIA8 to assess the dependence of the generator and \gls{ps} on the measurement.
 
@@ -458,7 +460,7 @@ w_{\mu\to \mu^\prime}(x_1,f_1,x_2,f_2)=\frac{\mathrm{PDF}(x_{1},f_{1},\mu^\prime
 where $x_{i}$ denotes the momentum fraction of the incoming parton and $f_{i}$ its flavor. It should be noted here, that the weight does not dependent on the renormalization scale via $\as(\mu)$ since $t$-channel single-top-quark production in 5~\gls{fs} occurs only through electroweak interactions at \gls{lo}. The performed reweighting yields however only an approximation of a proper scale variation because the scale dependence of the \gls{ps} simulation is neglected. The validity of the approximation is verified through dedicated scale-varied samples. These samples are however limited in their statistics after selecting events in the signal-enriched phase space which is why the approximation is preferred over their usage.
 \item[\gls{me}-to-\gls{ps} matching threshold] The impact of the \gls{mlm} matching threshold on the measurement is investigated for \ttbar and \wjets events by producing dedicated samples for which the nominally chosen threshold is either doubled or halved.
  
-\item[\Acrlongpl{pdf}] The \LHAPDF library is used to reweight simulated events to each of the 52 eigenvectors of the CT10 \gls{pdf} set~\cite{Lai:2010vv} and to additional eigenvectors which are associated to a variation of $\as$. Additionally, the differences with respect to the central \glspl{pdf} of the MSTW2008CPdeut~\cite{Martin:2012da} and NNPDF23~\cite{Ball:2012cx} sets are taken into account.
+\item[\Acrlongpl{pdf}] The \LHAPDF library~\cite{Buckley:2014ana} is used to reweight simulated events to each of the 52~eigenvectors of the CT10 \gls{pdf} set~\cite{Lai:2010vv} and to additional eigenvectors which are associated to a variation of $\as$. Additionally, the differences with respect to the central \glspl{pdf} of the MSTW2008CPdeut~\cite{Martin:2012da} and NNPDF23~\cite{Ball:2012cx} sets are taken into account.
 \end{description}
 
 
@@ -526,7 +528,7 @@ A=\frac{1}{2}\cdot\mathrm{P}_\mathrm{t}\cdot\alpha_{\ell}(\mathrm{V}_\mathrm{L},
 
 where $\alpha_{\ell}$ denotes the spin-analyzing power of the lepton. For the second version of limits, potential extra couplings in $t$-channel production are ignored. Thus, the polarization is a fixed function of the anomalous couplings. 
 
-The resulting limits are presented in Fig.~\ref{fig:polarization-limits} where two-dimensional projections of the five-dimensional anomalous coupling-polarization hyperspace are shown.
+The resulting limits are presented in Fig.~\ref{fig:polarization-limits} where two-dimensional projections of the five-dimensional anomalous coupling-polarization hyperspace are shown. For the first version of limits, where the polarization is kept free, the presented spin asymmetry measurement is not yet precise enough to constrain the polarization at an \acrfull{cl} of 95\%. If the polarization is on the other hand fixed to the anomalous couplings, the derived limits become more stringent. In particular, a large region in the ($\mathrm{P}_\mathrm{t}$,$\mathrm{V}_\mathrm{R}$) can be excluded.
 
 \myfigure{\label{fig:polarization-limits}Projections of limits on anomalous couplings and the top quark polarization for cases with free floating polarization~(violet) or when fixing the polarization to the anomalous couplings~(orange): (a)~left-handed vector couplings against polarization; (b)~right-handed vector coupling against polarization; (c)~left-handed tensor coupling against polarization; (d)~right-handed tensor coupling against polarization.}{
 \subfloat[]{\adjincludegraphics[height=4.65cm,trim={0 0 {0.15\width} 0},clip]{figures/polarization/limits/Ptvl-nol.pdf}}
@@ -534,3 +536,4 @@ The resulting limits are presented in Fig.~\ref{fig:polarization-limits} where t
 \subfloat[]{\adjincludegraphics[height=4.65cm,trim={0 0 {0.15\width} 0},clip]{figures/polarization/limits/Ptgl-nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.65cm,trim={0 0 {0.0\width} 0},clip]{figures/polarization/limits/Ptgr.pdf}}
 }
+
