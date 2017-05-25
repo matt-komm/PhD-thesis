@@ -1,4 +1,5 @@
 \appendixchapter{Track reconstruction in the CMS FastSimulation package}
+\label{ch:fsim}
 
 \intro{Simulated samples of events are a key ingredient within analyses for understanding the detector and the physics behind \gls{lhc} collision data. An introduction to the FastSimulation (\gls{fsim}) package of \gls{cms} is given in this chapter. It provides a fast alternative for simulating the detector response and emulating the reconstruction of events compared to the standard simulation and reconstruction workflow of \gls{cms}. This is achieved by replacing some computing-intense parts in the standard simulation and reconstruction chain with various approximations. One particular speedup is obtained by using an own track reconstruction which relies on truth information to solve the combinatorial problem of associating reconstructed hits to trajectories. In addition, details about the generation of reconstructed hits in the inner tracking system and the seeding of trajectory in \gls{fsim} are given. Before the chapter is concluded the performance of the emulated track reconstruction is validated. This chapter is mostly based on Ref.~\cite{fastsim-mkomm}.}
 
