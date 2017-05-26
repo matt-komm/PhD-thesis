@@ -1,7 +1,7 @@
 \appendixchapter{Track reconstruction in the CMS FastSimulation package}
 \label{ch:fsim}
 
-\intro{Simulated samples of events are a key ingredient within analyses for understanding the detector and the physics behind \gls{lhc} collision data. An introduction to the FastSimulation (\gls{fsim}) package of \gls{cms} is given in this chapter. It provides a fast alternative for simulating the detector response and emulating the reconstruction of events compared to the standard simulation and reconstruction workflow of \gls{cms}. This is achieved by replacing some computing-intense parts in the standard simulation and reconstruction chain with various approximations. One particular speedup is obtained by using an own track reconstruction which relies on truth information to solve the combinatorial problem of associating reconstructed hits to trajectories. In addition, details about the generation of reconstructed hits in the inner tracking system and the seeding of trajectory in \gls{fsim} are given. Before the chapter is concluded the performance of the emulated track reconstruction is validated. The presented work on the track reconstruction within \gls{fsim} is published in Ref.~\cite{fastsim-mkomm}.}
+\intro{Simulated samples of events are a key ingredient within analyses for understanding the detectors and the physics behind \gls{lhc} collision data. An introduction to the FastSimulation (\gls{fsim}) package of \gls{cms} is given in this chapter. It provides a fast alternative for simulating the detector response and emulating the reconstruction of events compared to the standard simulation and reconstruction workflow of \gls{cms}. This is achieved by replacing some computing-intense parts in the standard simulation and reconstruction chain with various approximations. One particular speedup is obtained by using an own track reconstruction which relies on truth information to solve the combinatorial problem of associating reconstructed hits to trajectories. In addition, details about the generation of reconstructed hits in the inner tracking system and the seeding of trajectory in \gls{fsim} are given. Before the chapter is concluded the performance of the emulated track reconstruction is validated. The presented work on the track reconstruction within \gls{fsim} is also published in Ref.~\cite{fastsim-mkomm}.}
 
 \todo{update ref when proceedings accepted}
 
@@ -114,13 +114,13 @@ The track reconstruction within \FSIM is validated by comparing the produced tra
 \subfloat[]{\centering\includegraphics[width=0.48\textwidth]{figures/fastsim/eff_eta.pdf}}
 }
 
-A profile of the average CPU-time consumption per event within \FSIM is given in Fig.~\ref{fig:fsim-cpu} as a function of the average number of pileup interactions. Less than 10~s are required to simulated an event of top quark pair production for current pileup scenarios with $\approx30$ interactions on average. The presented emulation of tracking in this chapter is not amongst the top CPU consumers.
+A profile of the average CPU-time consumption per event within \FSIM is given in Fig.~\ref{fig:fsim-cpu} as a function of the average number of pileup interactions. It have been obtained by running \FSIM on a single core of a 64~bit Intel Haswell processor running at 2.4~GHz with the \texttt{IgProf}~\cite{Eulisse:865673} profiling tool. Less than 10~s are required to simulated an event of top quark pair production for current pileup scenarios with $\approx30$ interactions on average. The presented emulation of tracking in this chapter is not amongst the top CPU consumers.
 
 \myfigure{\label{fig:fsim-res-track}Comparison of the resolution of reconstructed tracks as a function of the transverse momentum measured in the simulation of top quark pair production at 13~TeV.}{
 \includegraphics[width=0.48\textwidth]{figures/fastsim/res_pt.pdf}
 }
 
-\myfigure{\label{fig:fsim-cpu}Average CPU-time per event spent on the detector simulation and the reconstruction of analysis objects as a function of the average number of pileup interactions measured in the simulation of \ttbar production at 13~TeV using the \texttt{IgProf}~\cite{Eulisse:865673} profiler.}{
+\myfigure{\label{fig:fsim-cpu}Average CPU-time per event spent on the detector simulation and the reconstruction of analysis objects as a function of the average number of pileup interactions measured in the simulation of \ttbar production at 13~TeV using the \texttt{IgProf}~\cite{Eulisse:865673} profiling tool.}{
 \includegraphics[width=0.65\textwidth]{figures/fastsim/cpu_profile.pdf}
 }
 
