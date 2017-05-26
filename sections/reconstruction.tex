@@ -9,6 +9,7 @@ The event reconstruction attempts to build and identify basic analysis objects f
 %##############################################
 \section{Track reconstruction}
 %##############################################
+\label{sec:reconstruction-track}
 
 The reconstruction of tracks from the readout of the inner tracking system is split in two steps. First, in the local reconstruction, hits from charge distributions on the pixel and strip modules are formed. Then, in the global reconstruction, trajectory candidates are first seeded and then sequentially build from the inside out. Finally, a helix track is fitted through the associated hits per trajectory candidate to estimate the particle's momentum and charge through its curvature in the magnetic solenoid field. The individual steps are described briefly in the following. More details can be found in Ref.~\cite{Chatrchyan:2014fea}.
 
