@@ -105,9 +105,9 @@
 \setlength{\heavyrulewidth}{1pt}
 \usepackage{stackengine}
 \usepackage{scalerel}
-%\usepackage{showframe} % shows page margins
-%\renewcommand*\ShowFrameColor{\color{lightgray}}
-%\overfullrule=1mm %marks overfull boxes
+\usepackage{showframe} % shows page margins
+\renewcommand*\ShowFrameColor{\color{lightgray}}
+\overfullrule=1mm %marks overfull boxes
 \usepackage{etoolbox}
 \usepackage{flafter} %prevent float to appear to early
 \usepackage{hanging}
@@ -124,10 +124,10 @@
 \usepackage[Symbolsmallscale]{upgreek} % for upright greek symbols
 \usepackage{xr} %ref over documents
 \usepackage{axodraw4j}
-\usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=false,breaklinks=true,linkcolor=gray]{hyperref}
-%\usepackage[hyperfootnotes=false,breaklinks=true,colorlinks=false,pdfborder={20 20 0.5},citebordercolor=green]{hyperref}
+%\usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=false,breaklinks=true,linkcolor=gray]{hyperref}
+\usepackage[hyperfootnotes=false,breaklinks=true,colorlinks=false,pdfborder={20 20 0.5},citebordercolor=green]{hyperref}
 %\usepackage[hyperfootnotes=false,colorlinks=true,breaklinks=true,allcolors=darkblue,citecolor=darkgreen]{hyperref}
-\usepackage[color=white,linecolor=red,bordercolor=red,textsize
+\usepackage[disable,color=white,linecolor=red,bordercolor=red,textsize
 =small]{todonotes}
 \setlength{\marginparwidth}{3cm}
 \usepackage[perpage]{footmisc}
@@ -155,8 +155,8 @@
 
 %line numbers
 \usepackage{lineno} 
-\renewcommand\linenumberfont{\color{gray}\normalfont\small\ttfamily}
-%\linenumbers
+\renewcommand\linenumberfont{\normalsize\color{textgray}\normalfont\ttfamily}
+\linenumbers
 
 %abbreviations
 \makeglossaries
