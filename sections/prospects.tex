@@ -1,15 +1,15 @@
 \chapter{Prospects on differential \textsl{t}-channel measurements at 13~TeV}
 \label{ch:prospects}
 
-\intro{Prospects on extending the presented measurement in Ch.~\ref{ch:diff13} are discussed. This study uses \gls{pp} collision data corresponding to 36~\invfb which were recored with the \gls{cms} experiment in 2016. Potential improvements in the training of \acrlongpl{bdt}, the fitting procedure, and in the unfolding are demonstrated. In particular, the measurement of differential cross sections at particle level is envisaged. The presented technical study of object definition and event selection at particle level for $t$-channel single-top-quark events has been published in Ref.~\cite{particleStudies}.}
+\intro{Prospects on extending the differential cross section measurement at 13~TeV presented in Ch.~\ref{ch:diff13} are discussed. This study uses \gls{pp} collision data corresponding to 36~\invfb which were recored with the \gls{cms} experiment in 2016. Potential improvements in the training of \acrlongpl{bdt}, the fitting procedure, and in the unfolding are outlined. In particular, the benefits of measuring differential cross sections at particle level are highlighted. For this, a technical study concerning the definition of particle level object and an event selection at particle level for $t$-channel single-top-quark events is detailed which has also been published in Ref.~\cite{particleStudies}.}
 
 \todo{update note ref}
 
 %##############################################
-\section{Setup}
+\section{Setup of study}
 %##############################################
 
-A measurement of the differential single-top-quark cross section as a function of the top quark \pt, rapidity, and polarization angle at parton and particle level is envisaged. For this, the analysis strategy which has been developed in the context of the first measurement of differential cross section of $t$-channel single-top-quark-production (Ch.~\ref{ch:diff13}) is extended as follows.
+Prospects for measuring differential single-top-quark cross sections as a function of the top quark \pt, rapidity, and the polarization angle at parton and particle level are studied in the following. The chosen analysis strategy is largely based on the one developed in the context of the first measurement of differential cross section of $t$-channel single-top-quark-production at 13~\TeV (Ch.~\ref{ch:diff13}). The setup of the study is outlined in the following.
 
 The data statistics is increased by using \gls{pp} collision data recored in 2016 with the \gls{cms} detector at a \acrlong{cm} energy of 13~\TeV corresponding to 36~\invfb. Events containing an isolated muon candidate and two or three jets are selected using mostly the criteria detailed in Sec.~\ref{sec:diff13-selection} with a few exceptions as outlined in the following. Due to the higher instantaneous luminosity in the 2016 data-taking period compared to 2015 which peaked at $15.3~\mathrm{Hz}/\mathrm{nb}$~\cite{lumipublic}, the threshold of the employed single muon trigger has been raised to $24~\GeV$. Consequently, muon candidates with a higher threshold of $\pt>26~\GeV$ are required offline as well. All other muon selection criteria are kept the same. The analysis of events containing single electrons and two or three jets is also envisaged for a potential update of the differential cross section measurement. Corresponding data events are recorded with an electron trigger that requires an electron candidate with a transverse momentum of at least $32~\GeV$ within $|\eta|<2.1$. Offline, events must contain a corresponding electron candidate with $\pt>35~\GeV$ within $|\eta|<2.1$. The candidate has to fulfill furthermore tight identification criteria which have been specifically designed to select most genuine electrons~\cite{CMS-DP-2017-004}.
 
@@ -93,19 +93,28 @@ The signal-depleted region is defined by selecting events with $\bdttch<0$ using
 }
 
 %##############################################
-\subsection{Signal extraction}
+\section{Signal extraction}
 %##############################################
 \label{sec:prospects-fit}
 
-The estimation of the amount of signal in data is performed 
+The amount of signal is estimated by performing a \gls{ml} fit to data. The distributions of the transverse W~boson mass and the two \gls{bdt} discriminants are used to construct a compound template as follows. In the fit the \mtw distribution as shown in Fig.~\ref{fig:pospects-fit-templ-mtw} is used for events with $\mtw<50~\GeV$ which provides sensitivity to the multijet event yield. The remaining events are split in two additional regions based on the \bdttch discriminant. For event with $\bdttch<0$ the \bdttt distribution is fitted as presented in Fig.~\ref{fig:pospects-fit-templ-bdttt} which is sensitive to the \wjets and \ttbar yields while the contribution by signal events is negligible in this region. Lastly, the \bdttch distribution is used for the remainder of events that fall in the region defined by $\bdttch$ and $\bdtqcd$. This region provides sensitivity to the amount of signal events which can be seen in Fig.~\ref{fig:pospects-fit-templ-bdttch}.
 
+\myfigure{\label{fig:pospects-fit-templ}Shape comparison of the fit components in 2j0t: (a) transverse W~boson mass; (b)~\bdttt discriminant trained to separate \ttbar from \wjets events; (c)~\bdttch discriminant trained to separate signal from \ttbar and \wjets events.}{
+\subfloat[\label{fig:pospects-fit-templ-mtw}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/prospects/fit/comp_2j1t_mtw_mtwinv_nol.pdf}}
+\subfloat[\label{fig:pospects-fit-templ-bdttt}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/fit/comp_2j1t_bdt_ttw_boost04_bdtinv.pdf}}\\
+\subfloat[\label{fig:pospects-fit-templ-bdttch}]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/fit/comp_2j1t_bdt_tch_boost04_bdt.pdf}}
+}
+
+In addition to the 2j1t region, the two \ttbar control region (3j1t,3j2t) are fitted simultaneously as well. Similar to the strategy described in Sec.~\ref{sec:diff13-fit} multiple \gls{ml} fits are performed to estimated the amount of signal events as a function of the top quark \pt, rapidity, and the polarization angle.
+
+ 
 
 %##############################################
-\section{Particle level studies}
+\section{Particle level selection}
 %##############################################
 \label{sec:prospects-fiducial-studies}
 
-Measuring differential cross sections at particle level has various benefits compared to the parton level as discussed in Sec.~\ref{sec:technique-levels}. In this section a technical study about reconstruction and selection of analysis objects at particle level for $t$-channel single-top-quark production is described which is based on Ref.~\cite{particleStudies}.
+Measuring differential cross sections at particle level has various benefits compared to the parton level as discussed in Sec.~\ref{sec:technique-levels}. In this section a technical study about the reconstruction and selection of analysis objects at particle level for $t$-channel single-top-quark production is described which is based on Ref.~\cite{particleStudies}.
 
 
 The distribution of the transverse momentum of the muon at reconstruction level is presented in Fig.~\ref{fig:prospects-particle-muon} after selecting events with one muon only. 
@@ -115,7 +124,7 @@ Hence, the inverse of the acceptance is what needs to be corrected by unfolding 
 Overall, the acceptance increases towards higher muon momenta which is a consequence of the muon isolation and identification requirements that become less stringent. 
 Furthermore, the particle level distribution displays a sharp turn-on at the muon \pt threshold which suggests that the muon momenta resolution is fairly similar to the reconstructed muon momentum.
 
-\myfigure[p]{\label{fig:prospects-particle-muon}Distributions of the transverse muon momentum after requiring events with one muon at reconstruction, particle, or parton level. No requirement on the number of jets is made. Top panel: common events selected at reconstruction level; bottom panel: acceptance of reconstruction level selection.}{
+\myfigure[p]{\label{fig:prospects-particle-muon}Distributions of the transverse muon momentum after requiring events with one muon at reconstruction, particle, or parton level. No requirement on the number of jets is made. Top panel: common events selected at reconstruction level; bottom panel: acceptance of reconstruction level selection. The figure is taken from Ref.~\cite{particleStudies}.}{
 \subfloat[\label{fig:prospects-particle-level-muonpt}]{\includegraphics[width=0.48\textwidth]{figures/prospects/fiducial/muon_particle_logpt.pdf}}\hspace{0.03\textwidth}
 \subfloat[\label{fig:prospects-particle-level-muoneta}]{\includegraphics[width=0.48\textwidth]{figures/prospects/fiducial/muon_particle_abseta.pdf}}
 }
@@ -134,7 +143,7 @@ This simplification leads, however, to a jet assignment problem for the pseudo-t
 It is solved by associating the jet that yields an invariant pseudo-top quark mass (together with the muon and neutrino candidate) which is closest to $172.5~\mathrm{GeV}$.
 
 
-\myfigure[phtb]{\label{fig:prospects-particle-njets}Distributions of the number of jets (left) for events with at least two selected jets at reconstruction level and number of b-tagged jets (right) for events with two selected jets at reconstruction and particle level. Top panels: common events selected at reconstruction level; bottom panels: acceptance of reconstruction level selection.}{
+\myfigure[phtb]{\label{fig:prospects-particle-njets}Distributions of the number of jets (left) for events with at least two selected jets at reconstruction level and number of b-tagged jets (right) for events with two selected jets at reconstruction and particle level. Top panels: common events selected at reconstruction level; bottom panels: acceptance of reconstruction level selection. The figures are taken from Ref.~\cite{particleStudies}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/fiducial/njet_particle.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/fiducial/nbjet_particle.pdf}}
 }
@@ -145,7 +154,7 @@ The observed turn-on in the \pt distribution reveals that the drop in the overla
 also two jets in the events can be attributed to the jet energy resolution.
 
 
-\myfigure[phtb]{\label{fig:prospects-particle-ljet}Distributions of the spectator jet: (left) transverse momentum; (right) absolute value of the pseudorapidity. Top panels: common events selected at reconstruction level; bottom panels: acceptance of reconstruction level selection.}{
+\myfigure[phtb]{\label{fig:prospects-particle-ljet}Distributions of the spectator jet: (left) transverse momentum; (right) absolute value of the pseudorapidity. Top panels: common events selected at reconstruction level; bottom panels: acceptance of reconstruction level selection. The figures are taken from Ref.~\cite{particleStudies}.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/fiducial/ljet_particle_logpt.pdf}}\hspace{0.03\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/fiducial/ljet_particle_eta.pdf}}
 }
@@ -159,13 +168,13 @@ The drop occurs mainly due to the applied \pt threshold of the selected muon and
 Therefore measuring this angle at the particle level would particularly benefit from a reduced extrapolation into the fiducial phase space.
 
 
-\myfigure[phtb]{\label{fig:prospects-particle-cosTheta}Distributions of the top quark polarization angle. Top panel: common events selected at reconstruction level; bottom panel: acceptance of reconstruction level selection.}{
+\myfigure[phtb]{\label{fig:prospects-particle-cosTheta}Distributions of the top quark polarization angle. Top panel: common events selected at reconstruction level; bottom panel: acceptance of reconstruction level selection. The figures are taken from Ref.~\cite{particleStudies}.}{
 \includegraphics[width=0.48\textwidth]{figures/prospects/fiducial/cosTheta_particle.pdf}
 }
 
 
 %##############################################
-\subsection{Unfolding pseudo-data}
+\section{Unfolding}
 %##############################################
 
 The unfolding of pseudo-data to particle and parton level is demonstrated in the following. For this, distributions of pseudo-data of the \mtw, and the \bdttt and \bdttch discriminants are generated from the simulated samples and the multijet template which includes a random a Poisson fluctuation per bin. The distributions are obtained in 12 intervals per top quark \pt, rapidity, or polarization angle for fitting. The estimated signal scale factors are passed to the unfolding. Here, response matrices for unfolding to parton or particle level are used. The response matrices in the muon channel for comparing parton and particle level are presented in Fig.~\ref{fig:prospects-response}. Compared to parton level the migrations in the polarization angle are particularly well reduced when unfolding to particle level instead.
@@ -179,6 +188,8 @@ The unfolding of pseudo-data to particle and parton level is demonstrated in the
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/unfolding/responseParton_mu_cos.pdf}}
 }
 
+The resulting unfolded spectra in muon channel are presented in Fig.~\ref{fig:pospects-unfolded}. The indicated vertical bar reflects the uncertainty on the estimated signal scale factor which has been propagated through the unfolding. Comparing the obtained spectra at particle and parton level side-by-side one can observe that the uncertainties in certain bins are largely increased at parton level compared to particle level which is a result of a low selection efficiency. This is particluar striking for the first bin in the top quark \pt distribution and for the last bin in the polarization angle distribution.
+
 \myfigure[p]{\label{fig:pospects-unfolded}Unfolded distributions using pseudo-data in muon channel for (left column)~particle level and (right column)~parton level: (top row)~top quark \pt; (middle row)~top quark rapidity; (bottom row)~polarization angle. The vertical bar indicates the expected statistical uncertainty as propagated from the \gls{ml} fits.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/unfolding/unfoldedParticle_mu_pt.pdf}}\hspace{0.02\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/unfolding/unfoldedParton_mu_pt.pdf}}\\
@@ -187,3 +198,9 @@ The unfolding of pseudo-data to particle and parton level is demonstrated in the
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/unfolding/unfoldedParticle_mu_cos.pdf}}\hspace{0.02\textwidth}
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/unfolding/unfoldedParton_mu_cos.pdf}}
 }
+
+
+%##############################################
+\section{Summary of studied prospects}
+%##############################################
+
