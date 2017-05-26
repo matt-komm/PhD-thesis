@@ -92,7 +92,7 @@ The dominant mechanism producing top quarks at hadron colliders is top quark pai
 \mytable{\label{tab:theory-ttbar-xsecs}Top quark pair production cross sections in per \acrlong{cm} energy.}{
 \begin{tabular}{@{}l r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l@{} }
 \toprule
-\gls{cm}~energy \hspace{0.3cm}      & \multicolumn{5}{c }{cross section}     \\
+\Acrlong{cm}~energy \hspace{0.3cm}      & \multicolumn{5}{c }{Cross section}     \\
 \midrule
 $8~\TeV$     & $252$ & $9$ & ${}^{+6.4}_{-8.6}$ & $\pm11.7$ & \\
 $13~\TeV$    & $831$ & $8$ & ${}^{+19.8}_{-29.2}$ & $\pm35.6$ & \\
@@ -126,7 +126,9 @@ The theoretical cross sections of the three single-top-quark production modes in
 \mytable{\label{tab:theory-singletop-xsecs}Single top quark cross sections per production mode and per \acrlong{cm} energy.}{
 \begin{tabular}{@{}l r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l  r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l@{}}
 \toprule
-Mode & \multicolumn{5}{c }{$\sigma^{8~\TeV}$} & \multicolumn{5}{c }{$\sigma^{13~\TeV}$}     \\
+Mode\hspace{1cm} & \multicolumn{10}{c }{Cross section}     \\
+\cmidrule{2-11}
+& \multicolumn{5}{c }{8~TeV} & \multicolumn{5}{c }{13~TeV}  \\
 \midrule
 $t$ channel     & $84$ & $7$ & ${}^{+2.6}_{-1.7}$ & $\pm2.8$ &   \hspace{0.15cm}   & $217$ & $0$ & ${}^{+6.6}_{-4.6}$ & $\pm6.2$ & \\
 tW channel      & $22$ & $4$ & $\pm0.6$ & $\pm1.4$ &      & $71$  & $7$ & $\pm1.8$ & $\pm3.4$ & \\
@@ -260,7 +262,7 @@ Such deviations from the \gls{sm} coupling structure can be characterized in the
 {O}_{1}(x_{1})\ldots {O}_{n}(x_{n})=\sum_{i}c_{1\ldots n}^{i}(x_{1},\ldots x_{n})\cdot{O}_{i}^\mathrm{eff}(x_{n})\,,
 \end{equation}
 
-where $O_{i}^\mathrm{eff}$ denote effective operators and $c^{i}$ are the so-called Wilson coefficients. The expansion is applicable if $x_{1\ldots n-1}$ are close to $x_n$, i.e. only the low energy limit of a \gls{uv}-complete theory is relevant. Otherwise, unitarity can be violate if the energy scale of a process within the \gls{eft} approaches the scale of the concrete \gls{bsm} theory as discussed in Sec.~\ref{sec:theory-observables}. In the example above this would be the case when the momentum transfer $q$ approaches $m_\chi$. Here, the \gls{eft} approach becomes invalid.
+where $O_{i}^\mathrm{eff}$ denote effective operators and $c^{i}$ are the so-called Wilson coefficients. The expansion is applicable if $x_{1\ldots n-1}$ are close to $x_n$\,, i.e. only the low energy limit of a \gls{uv}-complete theory is relevant. Otherwise, unitarity can be violate if the energy scale of a process within the \gls{eft} approaches the scale of the concrete \gls{bsm} theory as discussed in Sec.~\ref{sec:theory-observables}. In the example above this would be the case when the momentum transfer $q$ approaches $m_\chi$. Here, the \gls{eft} approach becomes invalid.
 
 One can extend the Lagrangian of the \gls{sm}, which contains only operators up to dimension-four, into an effective one as
 
@@ -333,7 +335,7 @@ The results from measurements of the $\mathrm{W}$~boson helicity fractions are p
 \includegraphics[width=0.95\textwidth]{figures/theory/whelicity_LHC_may2017.pdf}
 }
 
-Overall, the various measurements presented here show a good agreement with the \gls{sm} prediction. Since no deviation is observed, limits on the anomalous couplings can be derived. Global fits of the anomalous couplings are however a complicated and computing-intense undertaking. Given a certain point in the coupling hyperspace, multiple observables need to be computed and compared to the results from various measurements while accounting for statistical and systematic uncertainties. A sophisticated fitting framework called \TOPFITTER[] has been recently developed~\cite{Buckley:2015lku}. The current estimated couplings strength per operator contributing to single-top-quark production obtained from various measurements at the \gls{lhc} and the Tevatron are shown in Fig.~\ref{fig:theory-eft-fit}. The results are found to be consistent with the \gls{sm} expectation where those operators vanish.
+Overall, the various measurements presented here show a good agreement with the \gls{sm} prediction. Since no deviation is observed, limits on the anomalous couplings can be derived. Global fits of the anomalous couplings are however a complicated and computing-intense undertaking. Given a certain point in the coupling hyperspace, multiple observables need to be computed and compared to the results from various measurements while accounting for statistical and systematic uncertainties. A sophisticated fitting framework called \TOPFITTER[format=hyperbf] has been recently developed~\cite{Buckley:2015lku}. The current estimated couplings strength per operator contributing to single-top-quark production obtained from various measurements at the \gls{lhc} and the Tevatron are shown in Fig.~\ref{fig:theory-eft-fit}. The results are found to be consistent with the \gls{sm} expectation where those operators vanish.
 
 \myfigure[htbp]{\label{fig:theory-eft-fit}Coupling strength per operator contributing to single-top-quark production. Shown are 95\% confidence intervals. The Wilson coefficient $C_\mathrm{t}$ contains all contributions from four-fermion interactions. The figure is taken from Ref.~\cite{Buckley:2015lku}.}{
 \includegraphics[scale=0.85]{figures/theory/EFT_fit.pdf}
