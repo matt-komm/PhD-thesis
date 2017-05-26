@@ -1,41 +1,41 @@
 void responsePartilce_mu_cos()
 {
-//=========Macro generated from canvas: cv0.434209200626/
-//=========  (Fri May 26 07:01:23 2017) by ROOT version6.02/05
-   TCanvas *cv0.434209200626 = new TCanvas("cv0.434209200626", "",0,0,800,750);
+//=========Macro generated from canvas: cv0.341330861352/
+//=========  (Fri May 26 22:45:20 2017) by ROOT version6.02/05
+   TCanvas *cv0.341330861352 = new TCanvas("cv0.341330861352", "",0,0,800,750);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.434209200626->SetHighLightColor(2);
-   cv0.434209200626->Range(-1.43609,-1.358974,1.571429,1.205128);
-   cv0.434209200626->SetFillColor(0);
-   cv0.434209200626->SetFillStyle(4000);
-   cv0.434209200626->SetBorderMode(0);
-   cv0.434209200626->SetBorderSize(2);
-   cv0.434209200626->SetTickx(1);
-   cv0.434209200626->SetTicky(1);
-   cv0.434209200626->SetLeftMargin(0.145);
-   cv0.434209200626->SetRightMargin(0.19);
-   cv0.434209200626->SetTopMargin(0.08);
-   cv0.434209200626->SetBottomMargin(0.14);
-   cv0.434209200626->SetFrameFillStyle(0);
-   cv0.434209200626->SetFrameBorderMode(0);
-   cv0.434209200626->SetFrameFillStyle(0);
-   cv0.434209200626->SetFrameBorderMode(0);
+   cv0.341330861352->SetHighLightColor(2);
+   cv0.341330861352->Range(-1.43609,-1.358974,1.571429,1.205128);
+   cv0.341330861352->SetFillColor(0);
+   cv0.341330861352->SetFillStyle(4000);
+   cv0.341330861352->SetBorderMode(0);
+   cv0.341330861352->SetBorderSize(2);
+   cv0.341330861352->SetTickx(1);
+   cv0.341330861352->SetTicky(1);
+   cv0.341330861352->SetLeftMargin(0.145);
+   cv0.341330861352->SetRightMargin(0.19);
+   cv0.341330861352->SetTopMargin(0.08);
+   cv0.341330861352->SetBottomMargin(0.14);
+   cv0.341330861352->SetFrameFillStyle(0);
+   cv0.341330861352->SetFrameBorderMode(0);
+   cv0.341330861352->SetFrameFillStyle(0);
+   cv0.341330861352->SetFrameBorderMode(0);
    Double_t xAxis5[7] = {-1, -0.6666667, -0.3333333, 0, 0.3333333, 0.6666667, 1}; 
    Double_t yAxis1[13] = {-1, -0.8333333, -0.6666667, -0.5, -0.3333333, -0.1666667, 0, 0.1666667, 0.3333333, 0.5, 0.6666667, 0.8333333, 1}; 
    
    TH2F *responseParticle_cos = new TH2F("responseParticle_cos","",6, xAxis5,12, yAxis1);
-   responseParticle_cos->SetBinContent(1,274052.1);
-   responseParticle_cos->SetBinContent(2,394116.5);
-   responseParticle_cos->SetBinContent(3,537472.4);
-   responseParticle_cos->SetBinContent(4,653747.2);
-   responseParticle_cos->SetBinContent(5,713447.7);
-   responseParticle_cos->SetBinContent(6,499808.5);
+   responseParticle_cos->SetBinContent(1,771493.6);
+   responseParticle_cos->SetBinContent(2,1200631);
+   responseParticle_cos->SetBinContent(3,1708186);
+   responseParticle_cos->SetBinContent(4,2223330);
+   responseParticle_cos->SetBinContent(5,2511574);
+   responseParticle_cos->SetBinContent(6,1680448);
    responseParticle_cos->SetBinContent(9,32.62566);
    responseParticle_cos->SetBinContent(10,3.199883);
    responseParticle_cos->SetBinContent(11,0.5614738);
-   responseParticle_cos->SetBinContent(12,0.4347002);
+   responseParticle_cos->SetBinContent(12,0.4347001);
    responseParticle_cos->SetBinContent(13,0.5828991);
    responseParticle_cos->SetBinContent(14,1.074407);
    responseParticle_cos->SetBinContent(17,29.64393);
@@ -93,10 +93,10 @@ void responsePartilce_mu_cos()
    responseParticle_cos->SetBinContent(85,40.21289);
    responseParticle_cos->SetBinContent(86,11.34747);
    responseParticle_cos->SetBinContent(89,1.537163);
-   responseParticle_cos->SetBinContent(90,0.9729597);
-   responseParticle_cos->SetBinContent(91,0.7556633);
-   responseParticle_cos->SetBinContent(92,0.8418096);
-   responseParticle_cos->SetBinContent(93,9.545025);
+   responseParticle_cos->SetBinContent(90,0.9729596);
+   responseParticle_cos->SetBinContent(91,0.7556634);
+   responseParticle_cos->SetBinContent(92,0.8418095);
+   responseParticle_cos->SetBinContent(93,9.545024);
    responseParticle_cos->SetBinContent(94,52.90726);
    responseParticle_cos->SetBinContent(97,1.311045);
    responseParticle_cos->SetBinContent(98,0.674006);
@@ -178,7 +178,7 @@ void responsePartilce_mu_cos()
    responseParticle_cos->SetBinError(102,1265.75);
    responseParticle_cos->SetMinimum(0);
    responseParticle_cos->SetMaximum(50);
-   responseParticle_cos->SetEntries(720229);
+   responseParticle_cos->SetEntries(725509);
    responseParticle_cos->SetStats(0);
    responseParticle_cos->SetContour(200);
    responseParticle_cos->SetContourLevel(0,0);
@@ -441,7 +441,7 @@ palette->SetTitleSize(39.23077);
    pt->SetTextSize(37);
    AText = pt->AddText("Simulation");
    pt->Draw();
-   cv0.434209200626->Modified();
-   cv0.434209200626->cd();
-   cv0.434209200626->SetSelected(cv0.434209200626);
+   cv0.341330861352->Modified();
+   cv0.341330861352->cd();
+   cv0.341330861352->SetSelected(cv0.341330861352);
 }

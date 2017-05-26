@@ -1,39 +1,39 @@
 void responseParton_mu_cos()
 {
-//=========Macro generated from canvas: cv0.862249278296/
-//=========  (Fri May 26 07:01:23 2017) by ROOT version6.02/05
-   TCanvas *cv0.862249278296 = new TCanvas("cv0.862249278296", "",0,0,800,750);
+//=========Macro generated from canvas: cv0.958090425611/
+//=========  (Fri May 26 22:45:20 2017) by ROOT version6.02/05
+   TCanvas *cv0.958090425611 = new TCanvas("cv0.958090425611", "",0,0,800,750);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.862249278296->SetHighLightColor(2);
-   cv0.862249278296->Range(-1.43609,-1.358974,1.571429,1.205128);
-   cv0.862249278296->SetFillColor(0);
-   cv0.862249278296->SetFillStyle(4000);
-   cv0.862249278296->SetBorderMode(0);
-   cv0.862249278296->SetBorderSize(2);
-   cv0.862249278296->SetTickx(1);
-   cv0.862249278296->SetTicky(1);
-   cv0.862249278296->SetLeftMargin(0.145);
-   cv0.862249278296->SetRightMargin(0.19);
-   cv0.862249278296->SetTopMargin(0.08);
-   cv0.862249278296->SetBottomMargin(0.14);
-   cv0.862249278296->SetFrameFillStyle(0);
-   cv0.862249278296->SetFrameBorderMode(0);
-   cv0.862249278296->SetFrameFillStyle(0);
-   cv0.862249278296->SetFrameBorderMode(0);
+   cv0.958090425611->SetHighLightColor(2);
+   cv0.958090425611->Range(-1.43609,-1.358974,1.571429,1.205128);
+   cv0.958090425611->SetFillColor(0);
+   cv0.958090425611->SetFillStyle(4000);
+   cv0.958090425611->SetBorderMode(0);
+   cv0.958090425611->SetBorderSize(2);
+   cv0.958090425611->SetTickx(1);
+   cv0.958090425611->SetTicky(1);
+   cv0.958090425611->SetLeftMargin(0.145);
+   cv0.958090425611->SetRightMargin(0.19);
+   cv0.958090425611->SetTopMargin(0.08);
+   cv0.958090425611->SetBottomMargin(0.14);
+   cv0.958090425611->SetFrameFillStyle(0);
+   cv0.958090425611->SetFrameBorderMode(0);
+   cv0.958090425611->SetFrameFillStyle(0);
+   cv0.958090425611->SetFrameBorderMode(0);
    Double_t xAxis6[7] = {-1, -0.6666667, -0.3333333, 0, 0.3333333, 0.6666667, 1}; 
    Double_t yAxis2[13] = {-1, -0.8333333, -0.6666667, -0.5, -0.3333333, -0.1666667, 0, 0.1666667, 0.3333333, 0.5, 0.6666667, 0.8333333, 1}; 
    
    TH2F *responseParton_cos = new TH2F("responseParton_cos","",6, xAxis6,12, yAxis2);
-   responseParton_cos->SetBinContent(1,3409294);
-   responseParton_cos->SetBinContent(2,6423200);
-   responseParton_cos->SetBinContent(3,9345939);
-   responseParton_cos->SetBinContent(4,1.239952e+07);
-   responseParton_cos->SetBinContent(5,1.613202e+07);
-   responseParton_cos->SetBinContent(6,2.35621e+07);
+   responseParton_cos->SetBinContent(1,4524652);
+   responseParton_cos->SetBinContent(2,8276028);
+   responseParton_cos->SetBinContent(3,1.201879e+07);
+   responseParton_cos->SetBinContent(4,1.58414e+07);
+   responseParton_cos->SetBinContent(5,1.995812e+07);
+   responseParton_cos->SetBinContent(6,2.57439e+07);
    responseParton_cos->SetBinContent(9,16.00279);
-   responseParton_cos->SetBinContent(10,5.964273);
+   responseParton_cos->SetBinContent(10,5.964274);
    responseParton_cos->SetBinContent(11,3.245668);
    responseParton_cos->SetBinContent(12,2.167805);
    responseParton_cos->SetBinContent(13,1.46393);
@@ -41,7 +41,7 @@ void responseParton_mu_cos()
    responseParton_cos->SetBinContent(17,15.84249);
    responseParton_cos->SetBinContent(18,10.41002);
    responseParton_cos->SetBinContent(19,4.357436);
-   responseParton_cos->SetBinContent(20,2.669155);
+   responseParton_cos->SetBinContent(20,2.669154);
    responseParton_cos->SetBinContent(21,1.771978);
    responseParton_cos->SetBinContent(22,1.084844);
    responseParton_cos->SetBinContent(25,12.65649);
@@ -178,7 +178,7 @@ void responseParton_mu_cos()
    responseParton_cos->SetBinError(102,1254.68);
    responseParton_cos->SetMinimum(0);
    responseParton_cos->SetMaximum(50);
-   responseParton_cos->SetEntries(911074);
+   responseParton_cos->SetEntries(916354);
    responseParton_cos->SetStats(0);
    responseParton_cos->SetContour(200);
    responseParton_cos->SetContourLevel(0,0);
@@ -441,7 +441,7 @@ palette->SetTitleSize(39.23077);
    pt->SetTextSize(37);
    AText = pt->AddText("Simulation");
    pt->Draw();
-   cv0.862249278296->Modified();
-   cv0.862249278296->cd();
-   cv0.862249278296->SetSelected(cv0.862249278296);
+   cv0.958090425611->Modified();
+   cv0.958090425611->cd();
+   cv0.958090425611->SetSelected(cv0.958090425611);
 }

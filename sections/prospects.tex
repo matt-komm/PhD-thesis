@@ -10,7 +10,7 @@
 
 Prospects for measuring differential single-top-quark cross sections as a function of the top quark \pt, rapidity, and the polarization angle at parton and particle level are studied in the following. The chosen analysis strategy is largely based on the one developed in the context of the first measurement of differential cross section of $t$-channel single-top-quark-production at 13~\TeV (Ch.~\ref{ch:diff13}). The setup of this study is outlined in the following.
 
-The data statistics is increased by using \gls{pp} collision data corresponding to 36~\invfb which have been recored in 2016 with the \gls{cms} detector at a \acrlong{cm} energy of 13~\TeV. Events containing an isolated muon candidate and two or three jets are selected using mostly the criteria detailed in Sec.~\ref{sec:diff13-selection} with a few exceptions as highlighted below. Due to the higher instantaneous luminosity in the 2016 data-taking period compared to 2015 which peaked at $15.3~\mathrm{Hz}/\mathrm{nb}$~\cite{lumipublic}, the threshold of the employed single muon trigger has been raised to $24~\GeV$. Consequently, muon candidates with a higher threshold of $\pt>26~\GeV$ are required offline as well. All other muon selection criteria are kept the same. The analysis of events containing single electrons and two or three jets is also envisaged for a potential update of the differential cross section measurement. Corresponding data events are recorded with an electron trigger that requires an electron candidate with a transverse momentum of at least $32~\GeV$ within $|\eta|<2.1$. Offline, events must contain a corresponding electron candidate with $\pt>35~\GeV$ within $|\eta|<2.1$. In addition, an electron candidate has to fulfill tight identification criteria which have been specifically designed to select mostly genuine electrons~\cite{CMS-DP-2017-004}.
+The data statistics is increased by using \gls{pp} collision data corresponding to 36~\invfb which have been recored in 2016 with the \gls{cms} detector at a \acrlong{cm} energy of 13~\TeV. Events containing an isolated muon candidate and two or three jets are selected using mostly the criteria detailed in Sec.~\ref{sec:diff13-selection} with a few exceptions as highlighted below. Due to the higher instantaneous luminosity which peaked at $15.3~\mathrm{Hz}/\mathrm{nb}$~\cite{lumipublic} in the 2016 data-taking period compared to 2015, the threshold of the employed single muon trigger has been raised to $24~\GeV$. Consequently, muon candidates with a higher threshold of $\pt>26~\GeV$ are required offline as well. All other muon selection criteria are kept the same. The analysis of events containing single electrons and two or three jets is also envisaged for a potential update of the differential cross section measurement. Corresponding data events are recorded with an electron trigger that requires an electron candidate with a transverse momentum of at least $32~\GeV$ within $|\eta|<2.1$. Offline, events must contain a corresponding electron candidate with $\pt>35~\GeV$ within $|\eta|<2.1$. In addition, an electron candidate has to fulfill tight identification criteria which have been specifically designed to select mostly genuine electrons~\cite{CMS-DP-2017-004}.
 
 For b-tagging a new algorithm, the so-called \gls{cmva}-tagger (combined MVA)~\cite{CMS-PAS-BTV-15-001} is employed which includes amongst others the output of the previously used \gls{csv} algorithm in its training. Both algorithms have a mistagging rate of only 0.1\% for light-flavored jets originating from u,d,s quarks and gluons at their corresponding tight working points. An efficiency of about 55\% is obtained for tagging true b~jets with the \gls{cmva}-tagger which is approximately 10\% higher than the b-tagging efficiency of the \gls{csv} algorithm. 
 
@@ -18,14 +18,14 @@ The remainder of the event selection is kept identical to Sec.~\ref{sec:diff13-s
 
 The following samples of simulated events are used for this study. A sample of single-top-quark $t$-channel events has been generated with the \POWHEG generator interfaced with \PYTHIA{}8 and \MADSPIN. The \POWHEG generator interfaced with \PYTHIA{}8 is also used to generated events of tW single-top-quark and \ttbar production. Samples of \wjets and \zjets production are generated with the \MGAMC generator interfaced with \PYTHIA{}8. Exclusive \wjets samples with zero, one, or two extra jets are generated and merged with the \gls{fxfx} procedure~\cite{Frederix:2012ps}. The cross sections for normalizing these samples are identical to the ones used in Ch.~\ref{ch:diff13} and can be found in Tab.~\ref{tab:diff13-theo-xsecs} with the exception of the exclusive \wjets cross sections which are listed in Tab.~\ref{tab:prospects-theo-xsecs}.
 
-\mytable{\label{tab:prospects-theo-xsecs}Theoretical \gls{sm} cross sections used to normalize the exclusive \wjets samples.}{
-\begin{tabular}{@{}l  r c l@{}}
+\mytable{\label{tab:prospects-theo-xsecs}Theoretical \gls{sm} cross sections used to normalize the exclusive \wjets samples. The cross section have been calculated at \gls{nlo} with the \MGAMC generator.}{
+\begin{tabular}{@{}l  r@{}}
 \toprule
-Sample & Cross section && Accuracy \\
+Sample\hspace{3cm} & Cross section \\
 \midrule
-$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,0~jets}$ & $49\,670~\pb$ && \gls{nlo} \hfill (reported by \MGAMC) \\
-$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,1~jet}$ & $8\,264~\pb$ && \gls{nlo} \hfill (reported by \MGAMC) \\
-$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,2~jets}$ & $2\,544~\pb$ && \gls{nlo} \hfill (reported by \MGAMC) \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,0~jets}$ & $49\,670~\pb$ \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,1~jet}$ & $8\,264~\pb$ \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,2~jets}$ & $2\,544~\pb$ \\
 \bottomrule
 \end{tabular}
 }
@@ -43,7 +43,7 @@ Distributions of the reconstructed top quark mass in the 2j1t signal and 3j1t/3j
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j0t/muon_2j0t_lepton_met_deltaPhi_qcdnone.pdf}}
 }
 
-\myfigure[p]{\label{fig:pospects-topmass} Distributions of the reconstructed top quark mass for (left column)~electron and (right column)~muon channel: (top row)~signal region; (middle and bottom row)~\ttbar control region.}{
+\myfigure[p]{\label{fig:pospects-topmass} Distributions of the reconstructed top quark mass for (left column)~electron and (right column)~muon channel: (top row)~signal region; (middle and bottom row)~\ttbar control regions.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/prospects/plots/2j1t/electron_2j1t_top_mass_qcdnone_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j1t/muon_2j1t_top_mass_qcdnone.pdf}}\\
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/prospects/plots/3j1t/electron_3j1t_top_mass_qcdnone_nol.pdf}}
@@ -86,9 +86,9 @@ The resulting \bdttt discriminant is presented in Fig.~\ref{fig:prospects-bdt-tt
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j1t/muon_2j1t_bdt_ttw_boost04_CR.pdf}}
 }
 
-The signal-depleted region is defined by selecting events with $\bdttch<0$ using the discriminant of a second \gls{bdt} trained for separating signal from \wjets and \ttbar events. This second \gls{bdt}, \bdttch, that has been trained similar to the one used in Sec.~\ref{sec:diff13-bdt}. The distribution of its discriminant is shown in Fig.~\ref{fig:prospects-bdt-tch} where however data in the signal-enriched region ($\bdttch>0$) has been blinded since the strategy of the envisaged measurement is under development. It will be unblinded when the strategy has been finalized.
+The signal-depleted region is defined by selecting events with $\bdttch<0$ using the discriminant of a second \gls{bdt} trained for separating signal from \wjets and \ttbar events. This second \gls{bdt}, \bdttch, that has been trained similar to the one used in Sec.~\ref{sec:diff13-bdt}. The distribution of its discriminant is shown in Fig.~\ref{fig:prospects-bdt-tch} where however data in the signal-enriched region ($\bdttch>0$) has been blinded since the strategy of the envisaged measurement is under development. It will be unblinded when the strategy has been finalized which follows a similar strategy as taken for the top quark polarization measurement described in Sec.~\ref{sec:polarization-selection}.
 
-\myfigure{\label{fig:prospects-bdt-tch} Distributions of the \bdttch discriminant, trained for separating signal from \ttbar and \wjets events, in 2j1t (a)~electron and (b)~muon channel. Data has been blinded in the signal-enriched region $\bdttch>0$.}{
+\myfigure{\label{fig:prospects-bdt-tch} Distributions of the \bdttch discriminant, trained for separating signal from \ttbar and \wjets events, in 2j1t (a)~electron and (b)~muon channel. Data have been blinded in the signal-enriched region $\bdttch>0$.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/prospects/plots/2j1t/electron_2j1t_bdt_tch_boost04_qcdnone_blind_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j1t/muon_2j1t_bdt_tch_boost04_qcdnone_blind.pdf}}
 }
@@ -166,7 +166,7 @@ The unfolding of pseudo-data to particle and parton level is demonstrated in the
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/unfolding/responseParton_mu_cos.pdf}}
 }
 
-The resulting unfolded spectra in muon channel for the generated and fitted pseudo-data are presented in Fig.~\ref{fig:pospects-unfolded}. The indicated vertical bars reflect the expected statistical uncertainty on the estimated signal scale factor which has been propagated through the unfolding. Comparing the obtained spectra at particle and parton level side-by-side one can observe that the uncertainties in certain bins are largely increased at parton level compared to particle level which is a result of a low selection efficiency in those bins. This is in particular very significant for the first bin in the top quark \pt distribution and for the last bin in the distribution of the polarization angle. Thus, measuring differential cross sections at particle level as a function of these observables is clearly beneficial compared to parton level in terms of precision.
+The resulting unfolded spectra in muon channel for the generated and fitted pseudo-data are presented in Fig.~\ref{fig:pospects-unfolded}. The indicated vertical bars reflect the expected statistical uncertainty on the estimated signal scale factor which has been propagated through the unfolding. Comparing the obtained spectra at particle and parton level side-by-side one can observe that the uncertainties in certain bins are largely increased at parton level compared to particle level which is a result of a low selection efficiency in those bins. This is very significant in particular for the first bin in the top quark \pt distribution and for the last bin in the distribution of the polarization angle. Thus, measuring differential cross sections at particle level as a function of these observables is clearly beneficial compared to parton level in terms of precision.
 
 \myfigure[p]{\label{fig:pospects-unfolded}Unfolded distributions using pseudo-data in muon channel for (left column)~particle level and (right column)~parton level: (top row)~top quark \pt; (middle row)~top quark rapidity; (bottom row)~polarization angle. The vertical bar indicates the expected statistical uncertainty as propagated from the \gls{ml} fits.}{
 \subfloat[]{\includegraphics[width=0.48\textwidth]{figures/prospects/unfolding/unfoldedParticle_mu_pt.pdf}}\hspace{0.02\textwidth}

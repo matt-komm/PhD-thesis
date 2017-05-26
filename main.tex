@@ -5,7 +5,7 @@
 
 \begin{document}
 \setupTextStyle
-
+\begin{nolinenumbers}
 \renewcommand*{\arraystretch}{1.1}
 \input{sections/title}
 \renewcommand*{\arraystretch}{\mytablestrech}
@@ -16,6 +16,7 @@
 \tableofcontents
 \microtypesetup{protrusion=true}
 \cleardoublepage
+\end{nolinenumbers}
 
 \input{sections/introduction}
 \input{sections/theory}
@@ -27,8 +28,6 @@
 \input{sections/differential}
 \input{sections/prospects}
 \input{sections/conclusion}
-
-
 
 \cleardoublepage
 \appendix % do not forget - otherwise toc messed up!
@@ -47,10 +46,8 @@
 %\glsxtraddallcrossrefs
 %\forglsentries{\thislabel}{\xifinlist{\thislabel}{\indexedlist}{}{blub \thislabel}}
 %\glsaddall
-
+\begin{nolinenumbers}
 \printglossary[style=myglstyle,nopostdot,type=\acronymtype]
-
-
 %\glsxtraddallcrossrefs
 
 \renewcommand*{\arraystretch}{\mytablestrech}
@@ -60,7 +57,7 @@
 \bibliographystyle{style/bibstyle}
 \renewcommand{\bibname}{References}
 \bibliography{sections/references}
-
+\end{nolinenumbers}
 %\todototoc
 %\listoftodos
 

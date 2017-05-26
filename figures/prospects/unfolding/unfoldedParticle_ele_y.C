@@ -1,29 +1,29 @@
 void unfoldedParticle_ele_y()
 {
-//=========Macro generated from canvas: cv0.144179672344/
-//=========  (Fri May 26 07:23:31 2017) by ROOT version6.02/05
-   TCanvas *cv0.144179672344 = new TCanvas("cv0.144179672344", "",0,0,800,750);
+//=========Macro generated from canvas: cv0.570031470751/
+//=========  (Fri May 26 22:48:37 2017) by ROOT version6.02/05
+   TCanvas *cv0.570031470751 = new TCanvas("cv0.570031470751", "",0,0,800,750);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.144179672344->SetHighLightColor(2);
-   cv0.144179672344->Range(-0.4097561,-0.2729769,2.517073,1.381429);
-   cv0.144179672344->SetFillColor(0);
-   cv0.144179672344->SetFillStyle(4000);
-   cv0.144179672344->SetBorderMode(0);
-   cv0.144179672344->SetBorderSize(2);
-   cv0.144179672344->SetTickx(1);
-   cv0.144179672344->SetTicky(1);
-   cv0.144179672344->SetLeftMargin(0.14);
-   cv0.144179672344->SetRightMargin(0.04);
-   cv0.144179672344->SetTopMargin(0.08);
-   cv0.144179672344->SetBottomMargin(0.165);
-   cv0.144179672344->SetFrameFillStyle(0);
-   cv0.144179672344->SetFrameBorderMode(0);
-   cv0.144179672344->SetFrameFillStyle(0);
-   cv0.144179672344->SetFrameBorderMode(0);
+   cv0.570031470751->SetHighLightColor(2);
+   cv0.570031470751->Range(-0.4097561,-0.2844859,2.517073,1.439671);
+   cv0.570031470751->SetFillColor(0);
+   cv0.570031470751->SetFillStyle(4000);
+   cv0.570031470751->SetBorderMode(0);
+   cv0.570031470751->SetBorderSize(2);
+   cv0.570031470751->SetTickx(1);
+   cv0.570031470751->SetTicky(1);
+   cv0.570031470751->SetLeftMargin(0.14);
+   cv0.570031470751->SetRightMargin(0.04);
+   cv0.570031470751->SetTopMargin(0.08);
+   cv0.570031470751->SetBottomMargin(0.165);
+   cv0.570031470751->SetFrameFillStyle(0);
+   cv0.570031470751->SetFrameBorderMode(0);
+   cv0.570031470751->SetFrameFillStyle(0);
+   cv0.570031470751->SetFrameBorderMode(0);
    
-   TH2F *axis_responseParticle_y1 = new TH2F("axis_responseParticle_y1","",50,0,2.4,50,0,1.249076);
+   TH2F *axis_responseParticle_y1 = new TH2F("axis_responseParticle_y1","",50,0,2.4,50,0,1.301739);
    axis_responseParticle_y1->SetMarkerStyle(20);
    axis_responseParticle_y1->GetXaxis()->SetTitle("top quark |y|");
    axis_responseParticle_y1->GetXaxis()->SetNdivisions(1005);
@@ -53,20 +53,20 @@ void unfoldedParticle_ele_y()
    Double_t xAxis1[7] = {0, 0.2, 0.4, 0.6, 1, 1.6, 2.4}; 
    
    TH1D *genHist_responseParticle_y2 = new TH1D("genHist_responseParticle_y2","",6, xAxis1);
-   genHist_responseParticle_y2->SetBinContent(1,0.8955263);
-   genHist_responseParticle_y2->SetBinContent(2,0.8247431);
-   genHist_responseParticle_y2->SetBinContent(3,0.7385748);
-   genHist_responseParticle_y2->SetBinContent(4,0.6002008);
-   genHist_responseParticle_y2->SetBinContent(5,0.3798307);
-   genHist_responseParticle_y2->SetBinContent(6,0.05031548);
-   genHist_responseParticle_y2->SetBinError(0,0.001082615);
-   genHist_responseParticle_y2->SetBinError(1,0.002503717);
-   genHist_responseParticle_y2->SetBinError(2,0.002395013);
-   genHist_responseParticle_y2->SetBinError(3,0.002202673);
-   genHist_responseParticle_y2->SetBinError(4,0.00132486);
-   genHist_responseParticle_y2->SetBinError(5,0.0007568998);
-   genHist_responseParticle_y2->SetBinError(6,0.0002359686);
-   genHist_responseParticle_y2->SetEntries(835443.4);
+   genHist_responseParticle_y2->SetBinContent(1,0.9331259);
+   genHist_responseParticle_y2->SetBinContent(2,0.8439442);
+   genHist_responseParticle_y2->SetBinContent(3,0.746065);
+   genHist_responseParticle_y2->SetBinContent(4,0.5944562);
+   genHist_responseParticle_y2->SetBinContent(5,0.3613229);
+   genHist_responseParticle_y2->SetBinContent(6,0.05099597);
+   genHist_responseParticle_y2->SetBinError(0,0.0006824118);
+   genHist_responseParticle_y2->SetBinError(1,0.001578183);
+   genHist_responseParticle_y2->SetBinError(2,0.001509663);
+   genHist_responseParticle_y2->SetBinError(3,0.001388424);
+   genHist_responseParticle_y2->SetBinError(4,0.0008351076);
+   genHist_responseParticle_y2->SetBinError(5,0.0004771014);
+   genHist_responseParticle_y2->SetBinError(6,0.0001487395);
+   genHist_responseParticle_y2->SetEntries(2102667);
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
@@ -95,19 +95,19 @@ void unfoldedParticle_ele_y()
    Double_t xAxis2[7] = {0, 0.2, 0.4, 0.6, 1, 1.6, 2.4}; 
    
    TH1D *unfoldedHist_responseParticle_y3 = new TH1D("unfoldedHist_responseParticle_y3","",6, xAxis2);
-   unfoldedHist_responseParticle_y3->SetBinContent(1,0.8921972);
-   unfoldedHist_responseParticle_y3->SetBinContent(2,0.8235483);
-   unfoldedHist_responseParticle_y3->SetBinContent(3,0.7317969);
-   unfoldedHist_responseParticle_y3->SetBinContent(4,0.6017948);
-   unfoldedHist_responseParticle_y3->SetBinContent(5,0.3832674);
-   unfoldedHist_responseParticle_y3->SetBinContent(6,0.04976646);
-   unfoldedHist_responseParticle_y3->SetBinError(1,0.04038778);
-   unfoldedHist_responseParticle_y3->SetBinError(2,0.03561806);
-   unfoldedHist_responseParticle_y3->SetBinError(3,0.03311899);
-   unfoldedHist_responseParticle_y3->SetBinError(4,0.0184973);
-   unfoldedHist_responseParticle_y3->SetBinError(5,0.01382495);
-   unfoldedHist_responseParticle_y3->SetBinError(6,0.005599965);
-   unfoldedHist_responseParticle_y3->SetEntries(835457.4);
+   unfoldedHist_responseParticle_y3->SetBinContent(1,0.9298132);
+   unfoldedHist_responseParticle_y3->SetBinContent(2,0.842915);
+   unfoldedHist_responseParticle_y3->SetBinContent(3,0.7392929);
+   unfoldedHist_responseParticle_y3->SetBinContent(4,0.5961113);
+   unfoldedHist_responseParticle_y3->SetBinContent(5,0.3646758);
+   unfoldedHist_responseParticle_y3->SetBinContent(6,0.05043224);
+   unfoldedHist_responseParticle_y3->SetBinError(1,0.04215581);
+   unfoldedHist_responseParticle_y3->SetBinError(2,0.03670308);
+   unfoldedHist_responseParticle_y3->SetBinError(3,0.03393774);
+   unfoldedHist_responseParticle_y3->SetBinError(4,0.01864064);
+   unfoldedHist_responseParticle_y3->SetBinError(5,0.01356282);
+   unfoldedHist_responseParticle_y3->SetBinError(6,0.005749603);
+   unfoldedHist_responseParticle_y3->SetEntries(2102681);
    unfoldedHist_responseParticle_y3->SetMarkerStyle(20);
    unfoldedHist_responseParticle_y3->SetMarkerSize(1.2);
    unfoldedHist_responseParticle_y3->GetXaxis()->SetRange(1,6);
@@ -176,7 +176,7 @@ void unfoldedParticle_ele_y()
    pt->SetTextSize(37);
    AText = pt->AddText("Simulation");
    pt->Draw();
-   cv0.144179672344->Modified();
-   cv0.144179672344->cd();
-   cv0.144179672344->SetSelected(cv0.144179672344);
+   cv0.570031470751->Modified();
+   cv0.570031470751->cd();
+   cv0.570031470751->SetSelected(cv0.570031470751);
 }

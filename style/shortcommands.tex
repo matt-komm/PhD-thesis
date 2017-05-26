@@ -143,16 +143,3 @@
 \newcommand{\LHEF}[1][]{\texttt{\gls[#1]{lhef}}\xspace}
 \newcommand{\GFLASH}[1][]{\texttt{\gls[#1]{gflash}}\xspace}
 
-
-\newcommand{\electronfig}[2][]{
-\begin{tikzpicture}
-    \clip (0, 0) rectangle (5,5);
-    \node[anchor=south west,inner sep=0] at (0,0) {\adjincludegraphics[#1]{#2}};
-    \fill[white] (1.9,4.47) rectangle (2.23,4.75);
-\end{tikzpicture}
-}
-
-%\def\todolist{\subsection{TODO list}}
-%\newcommand{\addtodolist}[1]{\expandafter\def\expandafter\todolist\expandafter{\todolist{}\\ #1}}
-%\newcommand{\todo}[1]{\textsc{\color{red}{\textbf{TODO}: #1}}\addtodolist{#1}}
-%\newcommand{\todo}[1]{}

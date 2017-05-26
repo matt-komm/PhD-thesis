@@ -1,29 +1,29 @@
 void unfoldedParton_mu_y()
 {
-//=========Macro generated from canvas: cv0.554067293729/
-//=========  (Fri May 26 07:24:36 2017) by ROOT version6.02/05
-   TCanvas *cv0.554067293729 = new TCanvas("cv0.554067293729", "",0,0,800,750);
+//=========Macro generated from canvas: cv0.844233947566/
+//=========  (Fri May 26 22:48:50 2017) by ROOT version6.02/05
+   TCanvas *cv0.844233947566 = new TCanvas("cv0.844233947566", "",0,0,800,750);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.554067293729->SetHighLightColor(2);
-   cv0.554067293729->Range(-0.4097561,-0.1786281,2.517073,0.9039664);
-   cv0.554067293729->SetFillColor(0);
-   cv0.554067293729->SetFillStyle(4000);
-   cv0.554067293729->SetBorderMode(0);
-   cv0.554067293729->SetBorderSize(2);
-   cv0.554067293729->SetTickx(1);
-   cv0.554067293729->SetTicky(1);
-   cv0.554067293729->SetLeftMargin(0.14);
-   cv0.554067293729->SetRightMargin(0.04);
-   cv0.554067293729->SetTopMargin(0.08);
-   cv0.554067293729->SetBottomMargin(0.165);
-   cv0.554067293729->SetFrameFillStyle(0);
-   cv0.554067293729->SetFrameBorderMode(0);
-   cv0.554067293729->SetFrameFillStyle(0);
-   cv0.554067293729->SetFrameBorderMode(0);
+   cv0.844233947566->SetHighLightColor(2);
+   cv0.844233947566->Range(-0.4097561,-0.1807761,2.517073,0.9148366);
+   cv0.844233947566->SetFillColor(0);
+   cv0.844233947566->SetFillStyle(4000);
+   cv0.844233947566->SetBorderMode(0);
+   cv0.844233947566->SetBorderSize(2);
+   cv0.844233947566->SetTickx(1);
+   cv0.844233947566->SetTicky(1);
+   cv0.844233947566->SetLeftMargin(0.14);
+   cv0.844233947566->SetRightMargin(0.04);
+   cv0.844233947566->SetTopMargin(0.08);
+   cv0.844233947566->SetBottomMargin(0.165);
+   cv0.844233947566->SetFrameFillStyle(0);
+   cv0.844233947566->SetFrameBorderMode(0);
+   cv0.844233947566->SetFrameFillStyle(0);
+   cv0.844233947566->SetFrameBorderMode(0);
    
-   TH2F *axis_responseParton_y4 = new TH2F("axis_responseParton_y4","",50,0,2.4,50,0,0.8173589);
+   TH2F *axis_responseParton_y4 = new TH2F("axis_responseParton_y4","",50,0,2.4,50,0,0.8271876);
    axis_responseParton_y4->SetMarkerStyle(20);
    axis_responseParton_y4->GetXaxis()->SetTitle("top quark |y|");
    axis_responseParton_y4->GetXaxis()->SetNdivisions(1005);
@@ -53,21 +53,21 @@ void unfoldedParton_mu_y()
    Double_t xAxis3[7] = {0, 0.2, 0.4, 0.6, 1, 1.6, 2.4}; 
    
    TH1D *genHist_responseParton_y5 = new TH1D("genHist_responseParton_y5","",6, xAxis3);
-   genHist_responseParton_y5->SetBinContent(1,0.5832439);
-   genHist_responseParton_y5->SetBinContent(2,0.5718224);
-   genHist_responseParton_y5->SetBinContent(3,0.5544775);
-   genHist_responseParton_y5->SetBinContent(4,0.5144386);
-   genHist_responseParton_y5->SetBinContent(5,0.4150077);
-   genHist_responseParton_y5->SetBinContent(6,0.254139);
-   genHist_responseParton_y5->SetBinError(0,0.0001313279);
-   genHist_responseParton_y5->SetBinError(1,0.0002452864);
-   genHist_responseParton_y5->SetBinError(2,0.0002423663);
-   genHist_responseParton_y5->SetBinError(3,0.0002389773);
-   genHist_responseParton_y5->SetBinError(4,0.0001609245);
-   genHist_responseParton_y5->SetBinError(5,0.0001109631);
-   genHist_responseParton_y5->SetBinError(6,5.393608e-05);
-   genHist_responseParton_y5->SetBinError(7,8.727601e-06);
-   genHist_responseParton_y5->SetEntries(5.721285e+07);
+   genHist_responseParton_y5->SetBinContent(1,0.5901961);
+   genHist_responseParton_y5->SetBinContent(2,0.5781162);
+   genHist_responseParton_y5->SetBinContent(3,0.5605765);
+   genHist_responseParton_y5->SetBinContent(4,0.5199309);
+   genHist_responseParton_y5->SetBinContent(5,0.4169504);
+   genHist_responseParton_y5->SetBinContent(6,0.2450995);
+   genHist_responseParton_y5->SetBinError(0,0.0001096032);
+   genHist_responseParton_y5->SetBinError(1,0.0002047103);
+   genHist_responseParton_y5->SetBinError(2,0.0002022732);
+   genHist_responseParton_y5->SetBinError(3,0.0001994448);
+   genHist_responseParton_y5->SetBinError(4,0.0001343038);
+   genHist_responseParton_y5->SetBinError(5,9.260723e-05);
+   genHist_responseParton_y5->SetBinError(6,4.501378e-05);
+   genHist_responseParton_y5->SetBinError(7,7.283851e-06);
+   genHist_responseParton_y5->SetEntries(8.214124e+07);
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
@@ -96,19 +96,19 @@ void unfoldedParton_mu_y()
    Double_t xAxis4[7] = {0, 0.2, 0.4, 0.6, 1, 1.6, 2.4}; 
    
    TH1D *unfoldedHist_responseParton_y6 = new TH1D("unfoldedHist_responseParton_y6","",6, xAxis4);
-   unfoldedHist_responseParton_y6->SetBinContent(1,0.5838278);
-   unfoldedHist_responseParton_y6->SetBinContent(2,0.5681359);
-   unfoldedHist_responseParton_y6->SetBinContent(3,0.5460144);
-   unfoldedHist_responseParton_y6->SetBinContent(4,0.514344);
-   unfoldedHist_responseParton_y6->SetBinContent(5,0.4161194);
-   unfoldedHist_responseParton_y6->SetBinContent(6,0.2562439);
-   unfoldedHist_responseParton_y6->SetBinError(1,0.0374446);
-   unfoldedHist_responseParton_y6->SetBinError(2,0.03187222);
-   unfoldedHist_responseParton_y6->SetBinError(3,0.02971067);
-   unfoldedHist_responseParton_y6->SetBinError(4,0.01591224);
-   unfoldedHist_responseParton_y6->SetBinError(5,0.01123526);
-   unfoldedHist_responseParton_y6->SetBinError(6,0.01263161);
-   unfoldedHist_responseParton_y6->SetEntries(5.721287e+07);
+   unfoldedHist_responseParton_y6->SetBinContent(1,0.5908483);
+   unfoldedHist_responseParton_y6->SetBinContent(2,0.5744502);
+   unfoldedHist_responseParton_y6->SetBinContent(3,0.5520421);
+   unfoldedHist_responseParton_y6->SetBinContent(4,0.5198848);
+   unfoldedHist_responseParton_y6->SetBinContent(5,0.4180847);
+   unfoldedHist_responseParton_y6->SetBinContent(6,0.247159);
+   unfoldedHist_responseParton_y6->SetBinError(1,0.03803357);
+   unfoldedHist_responseParton_y6->SetBinError(2,0.03251425);
+   unfoldedHist_responseParton_y6->SetBinError(3,0.03025249);
+   unfoldedHist_responseParton_y6->SetBinError(4,0.01616476);
+   unfoldedHist_responseParton_y6->SetBinError(5,0.01146514);
+   unfoldedHist_responseParton_y6->SetBinError(6,0.01225999);
+   unfoldedHist_responseParton_y6->SetEntries(8.214125e+07);
    unfoldedHist_responseParton_y6->SetMarkerStyle(20);
    unfoldedHist_responseParton_y6->SetMarkerSize(1.2);
    unfoldedHist_responseParton_y6->GetXaxis()->SetRange(1,6);
@@ -177,7 +177,7 @@ void unfoldedParton_mu_y()
    pt->SetTextSize(37);
    AText = pt->AddText("Simulation");
    pt->Draw();
-   cv0.554067293729->Modified();
-   cv0.554067293729->cd();
-   cv0.554067293729->SetSelected(cv0.554067293729);
+   cv0.844233947566->Modified();
+   cv0.844233947566->cd();
+   cv0.844233947566->SetSelected(cv0.844233947566);
 }

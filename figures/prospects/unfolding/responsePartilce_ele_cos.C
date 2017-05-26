@@ -1,37 +1,37 @@
 void responsePartilce_ele_cos()
 {
-//=========Macro generated from canvas: cv0.740403692123/
-//=========  (Fri May 26 07:01:36 2017) by ROOT version6.02/05
-   TCanvas *cv0.740403692123 = new TCanvas("cv0.740403692123", "",0,0,800,750);
+//=========Macro generated from canvas: cv0.787234773563/
+//=========  (Fri May 26 22:48:15 2017) by ROOT version6.02/05
+   TCanvas *cv0.787234773563 = new TCanvas("cv0.787234773563", "",0,0,800,750);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.740403692123->SetHighLightColor(2);
-   cv0.740403692123->Range(-1.43609,-1.358974,1.571429,1.205128);
-   cv0.740403692123->SetFillColor(0);
-   cv0.740403692123->SetFillStyle(4000);
-   cv0.740403692123->SetBorderMode(0);
-   cv0.740403692123->SetBorderSize(2);
-   cv0.740403692123->SetTickx(1);
-   cv0.740403692123->SetTicky(1);
-   cv0.740403692123->SetLeftMargin(0.145);
-   cv0.740403692123->SetRightMargin(0.19);
-   cv0.740403692123->SetTopMargin(0.08);
-   cv0.740403692123->SetBottomMargin(0.14);
-   cv0.740403692123->SetFrameFillStyle(0);
-   cv0.740403692123->SetFrameBorderMode(0);
-   cv0.740403692123->SetFrameFillStyle(0);
-   cv0.740403692123->SetFrameBorderMode(0);
+   cv0.787234773563->SetHighLightColor(2);
+   cv0.787234773563->Range(-1.43609,-1.358974,1.571429,1.205128);
+   cv0.787234773563->SetFillColor(0);
+   cv0.787234773563->SetFillStyle(4000);
+   cv0.787234773563->SetBorderMode(0);
+   cv0.787234773563->SetBorderSize(2);
+   cv0.787234773563->SetTickx(1);
+   cv0.787234773563->SetTicky(1);
+   cv0.787234773563->SetLeftMargin(0.145);
+   cv0.787234773563->SetRightMargin(0.19);
+   cv0.787234773563->SetTopMargin(0.08);
+   cv0.787234773563->SetBottomMargin(0.14);
+   cv0.787234773563->SetFrameFillStyle(0);
+   cv0.787234773563->SetFrameBorderMode(0);
+   cv0.787234773563->SetFrameFillStyle(0);
+   cv0.787234773563->SetFrameBorderMode(0);
    Double_t xAxis5[7] = {-1, -0.6666667, -0.3333333, 0, 0.3333333, 0.6666667, 1}; 
    Double_t yAxis1[13] = {-1, -0.8333333, -0.6666667, -0.5, -0.3333333, -0.1666667, 0, 0.1666667, 0.3333333, 0.5, 0.6666667, 0.8333333, 1}; 
    
    TH2F *responseParticle_cos = new TH2F("responseParticle_cos","",6, xAxis5,12, yAxis1);
-   responseParticle_cos->SetBinContent(1,271378.1);
-   responseParticle_cos->SetBinContent(2,429698.4);
-   responseParticle_cos->SetBinContent(3,564088);
-   responseParticle_cos->SetBinContent(4,700112.4);
-   responseParticle_cos->SetBinContent(5,732668.3);
-   responseParticle_cos->SetBinContent(6,395416.9);
+   responseParticle_cos->SetBinContent(1,604282.5);
+   responseParticle_cos->SetBinContent(2,973129.1);
+   responseParticle_cos->SetBinContent(3,1339999);
+   responseParticle_cos->SetBinContent(4,1701265);
+   responseParticle_cos->SetBinContent(5,1766225);
+   responseParticle_cos->SetBinContent(6,905842.9);
    responseParticle_cos->SetBinContent(9,32.2975);
    responseParticle_cos->SetBinContent(10,2.958742);
    responseParticle_cos->SetBinContent(11,0.5117158);
@@ -42,9 +42,9 @@ void responsePartilce_ele_cos()
    responseParticle_cos->SetBinContent(18,11.8242);
    responseParticle_cos->SetBinContent(19,1.490065);
    responseParticle_cos->SetBinContent(20,0.5688227);
-   responseParticle_cos->SetBinContent(21,0.772712);
+   responseParticle_cos->SetBinContent(21,0.7727119);
    responseParticle_cos->SetBinContent(22,1.767136);
-   responseParticle_cos->SetBinContent(25,17.59383);
+   responseParticle_cos->SetBinContent(25,17.59384);
    responseParticle_cos->SetBinContent(26,23.34197);
    responseParticle_cos->SetBinContent(27,4.471477);
    responseParticle_cos->SetBinContent(28,0.7302336);
@@ -75,7 +75,7 @@ void responsePartilce_ele_cos()
    responseParticle_cos->SetBinContent(61,2.932036);
    responseParticle_cos->SetBinContent(62,1.289762);
    responseParticle_cos->SetBinContent(65,1.227432);
-   responseParticle_cos->SetBinContent(66,1.686302);
+   responseParticle_cos->SetBinContent(66,1.686301);
    responseParticle_cos->SetBinContent(67,7.602561);
    responseParticle_cos->SetBinContent(68,33.68607);
    responseParticle_cos->SetBinContent(69,10.96885);
@@ -84,7 +84,7 @@ void responsePartilce_ele_cos()
    responseParticle_cos->SetBinContent(74,0.9731504);
    responseParticle_cos->SetBinContent(75,2.402802);
    responseParticle_cos->SetBinContent(76,16.18081);
-   responseParticle_cos->SetBinContent(77,34.49283);
+   responseParticle_cos->SetBinContent(77,34.49282);
    responseParticle_cos->SetBinContent(78,1.79102);
    responseParticle_cos->SetBinContent(81,1.096006);
    responseParticle_cos->SetBinContent(82,0.7455312);
@@ -98,11 +98,11 @@ void responsePartilce_ele_cos()
    responseParticle_cos->SetBinContent(92,0.5097031);
    responseParticle_cos->SetBinContent(93,7.611619);
    responseParticle_cos->SetBinContent(94,52.9235);
-   responseParticle_cos->SetBinContent(97,0.6793564);
+   responseParticle_cos->SetBinContent(97,0.6793565);
    responseParticle_cos->SetBinContent(98,0.3937612);
    responseParticle_cos->SetBinContent(99,0.2566299);
    responseParticle_cos->SetBinContent(100,0.1419248);
-   responseParticle_cos->SetBinContent(101,0.08265743);
+   responseParticle_cos->SetBinContent(101,0.08265742);
    responseParticle_cos->SetBinContent(102,19.49312);
    responseParticle_cos->SetBinError(9,698.0365);
    responseParticle_cos->SetBinError(10,278.9277);
@@ -178,7 +178,7 @@ void responsePartilce_ele_cos()
    responseParticle_cos->SetBinError(102,711.7066);
    responseParticle_cos->SetMinimum(0);
    responseParticle_cos->SetMaximum(50);
-   responseParticle_cos->SetEntries(423489);
+   responseParticle_cos->SetEntries(428769);
    responseParticle_cos->SetStats(0);
    responseParticle_cos->SetContour(200);
    responseParticle_cos->SetContourLevel(0,0);
@@ -441,7 +441,7 @@ palette->SetTitleSize(39.23077);
    pt->SetTextSize(37);
    AText = pt->AddText("Simulation");
    pt->Draw();
-   cv0.740403692123->Modified();
-   cv0.740403692123->cd();
-   cv0.740403692123->SetSelected(cv0.740403692123);
+   cv0.787234773563->Modified();
+   cv0.787234773563->cd();
+   cv0.787234773563->SetSelected(cv0.787234773563);
 }
