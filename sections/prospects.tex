@@ -1,27 +1,41 @@
 \chapter{Prospects on differential \textsl{t}-channel measurements at 13~TeV}
 \label{ch:prospects}
 
-\intro{Prospects on extending the presented measurement in Ch.~\ref{ch:diff13} are discussed. \Acrlong{pp} collision data corresponding to 36~\invfb recored with the \gls{cms} experiment in 2016 are utilized for this study. Potential improvements in the training of \acrlongpl{bdt}, the fitting procedure, and in the unfolding are demonstrated. In particular, the measurement of differential cross sections at particle level is envisaged. The presented technical studies of fiducial definitions for $t$-channel single-top-quark events have been published in Ref.~\cite{particleStudies}.}
+\intro{Prospects on extending the presented measurement in Ch.~\ref{ch:diff13} are discussed. This study uses \gls{pp} collision data corresponding to 36~\invfb which were recored with the \gls{cms} experiment in 2016. Potential improvements in the training of \acrlongpl{bdt}, the fitting procedure, and in the unfolding are demonstrated. In particular, the measurement of differential cross sections at particle level is envisaged. The presented technical study of object definition and event selection at particle level for $t$-channel single-top-quark events has been published in Ref.~\cite{particleStudies}. }
 
 \todo{update note ref}
-
-\todo{fix all headers of electron plots}
 
 %##############################################
 \section{Setup}
 %##############################################
 
-The analysis strategy which has been developed in the context of the first measurement of differential cross section of $t$-channel single-top-quark-production (Ch.~\ref{ch:diff13}) is extended as follows. The data statistics is increased by using \gls{pp} collision data recored in 2016 with the \gls{cms} detector at a \acrlong{cm} energy of 13~\TeV corresponding to 36~\invfb. Events containing an isolated muon candidate and two or three jets are selected utilizing mostly the criteria detailed in Sec.~\ref{sec:diff13-selection} with a few exceptions as outlined in the following. Due to the higher instantaneous luminosity in the 2016 data-taking period compared to 2015 which peaked at $15.3~\mathrm{Hz}/\mathrm{nb}$~\cite{lumipublic}, the threshold of the employed single muon trigger has been raised to $24~\GeV$. Consequently, muon candidates with a higher threshold of $\pt>26~\GeV$ are required offline as well. All other muon selection criteria are kept the same. Events containing single electrons and two or three jets are envisaged for a potential update of the differential cross section measurement as well. Data events are recorded with an electron trigger that requires an electron candidate with a transverse momentum of at least $32~\GeV$ within $|\eta|<2.1$ and to fulfill additional tight identification criteria. Electron events for analysis must have a corresponding electron candidate with $\pt>35~\GeV$ within $|\eta|<2.1$. Tight identification criteria have to be fulfilled by the candidate which have been specifically designed to select the most genuine electrons~\cite{CMS-DP-2017-004}.
+The analysis strategy which has been developed in the context of the first measurement of differential cross section of $t$-channel single-top-quark-production (Ch.~\ref{ch:diff13}) is extended as follows. The data statistics is increased by using \gls{pp} collision data recored in 2016 with the \gls{cms} detector at a \acrlong{cm} energy of 13~\TeV corresponding to 36~\invfb. Events containing an isolated muon candidate and two or three jets are selected using mostly the criteria detailed in Sec.~\ref{sec:diff13-selection} with a few exceptions as outlined in the following. Due to the higher instantaneous luminosity in the 2016 data-taking period compared to 2015 which peaked at $15.3~\mathrm{Hz}/\mathrm{nb}$~\cite{lumipublic}, the threshold of the employed single muon trigger has been raised to $24~\GeV$. Consequently, muon candidates with a higher threshold of $\pt>26~\GeV$ are required offline as well. All other muon selection criteria are kept the same. The analysis of events containing single electrons and two or three jets is also envisaged for a potential update of the differential cross section measurement. Corresponding data events are recorded with an electron trigger that requires an electron candidate with a transverse momentum of at least $32~\GeV$ within $|\eta|<2.1$. Offline, events must contain a corresponding electron candidate with $\pt>35~\GeV$ within $|\eta|<2.1$. The candidate has to fulfill furthermore tight identification criteria which have been specifically designed to select most genuine electrons~\cite{CMS-DP-2017-004}.
+
+For b-tagging a new algorithm, the so-called \gls{cmva}-tagger (combined MVA)~\cite{CMS-PAS-BTV-15-001} is employed which includes amongst others the output of the previously used \gls{csv} algorithm in its training as well. At its tight working point an efficiency of about 55\% is obtained for true b~jets which is approximately 5\% higher than the efficiency of the \gls{csv} algorithm while both algorithms have a mistagging rate of only 0.1\% for light-flavored jets originating from u,d,s quarks and gluons.
+
+The remainder of the event selection is kept identical to Sec.~\ref{sec:diff13-selection} which concerns the veto of events containing additional leptons, the jet clustering, and the categorization of events into signal and control regions based on the number of selected jets and b-tags.
+
+The following samples of simulated events are used for this study. A sample of single-top-quark $t$-channel events has been generated with the \POWHEG generator interfaced with \PYTHIA{}8 and \MADSPIN. The \POWHEG generator interfaced with \PYTHIA{}8 is also used to generated events of tW single-top-quark and \ttbar production. Samples of \wjets and \zjets production are generated with the \MGAMC generator interfaced with \PYTHIA{}8. Exclusive \wjets samples with zero, one, or two extra jets are generated and merged with the \gls{fxfx} procedure~\cite{Frederix:2012ps}. The cross sections for normalizing these samples are identical to the ones used in Ch.~\ref{ch:diff13} and can be found in Tab.~\ref{tab:diff13-theo-xsecs} with the exception of the exclusive \wjets cross sections which are listed in Tab.~\ref{tab:prospects-theo-xsecs} instead.
+
+\mytable{\label{tab:prospects-theo-xsecs}Theoretical \gls{sm} cross sections used to normalize the exclusive \wjets samples.}{
+\begin{tabular}{@{}l  r c l@{}}
+\toprule
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,0~jets}$ & $49\,670~\pb$ && \gls{nlo} \hfill (reported by \MGAMC) \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,1~jet}$ & $8\,264~\pb$ && \gls{nlo} \hfill (reported by \MGAMC) \\
+$\mathrm{W}\to\ell\nu\mathrm{\,\mbox{+}\,2~jets}$ & $2\,544~\pb$ && \gls{nlo} \hfill (reported by \MGAMC) \\
+\bottomrule
+\end{tabular}
+}
 
 
-\gls{cmva}~\cite{CMS-PAS-BTV-15-001}
-
-\todo{add samples and event selection here as well}
+The contamination by multijet events are estimated in muon and electron channel through templates extracted from data in a sideband region. In the muon channel, the sideband region is defined by inverting the relative isolation as $\muiso>20\%$. In the electron channel on the other hand the isolation requirement is part of the used identification. Thus a sideband region is defined by vetoing the identification criteria. The resulting description of data by the multijet templates is validated in the 2j0t control region. In Fig.~\ref{fig:pospects-met-wjets} the \met distribution and the distribution of the $\phi$ angle between the lepton and the transverse momentum vector are presented for both channels after scaling the templates to the result of a \gls{ml} fit as detailed in Sec.~\ref{sec:prospects-fit}. The \met distributions display a good agreement between the data and predictions. A good description of data by the multijet template and the \wjets sample is also achieved for the $\Delta\phi(\mu,\met)$ distribution in the muon channel. In the electron channel a slight mismodeling is observed which may be mitigated by fine-tuning the sideband region further.
 
 
-\myfigure[p]{\label{fig:pospects-met-wjets} Distributions of the transverse missing energy in the (a)~electron and (b)~muon channel 2j0t control region.}{
+\myfigure[p]{\label{fig:pospects-met-wjets} Distributions of (top row)~the transverse missing energy and (bottom row)~the difference in $\phi$ angle between the lepton and the missing transverse energy in the 2j0t control region for (a)~electron and (b)~muon events.}{
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/prospects/plots/2j0t/electron_2j0t_met_qcdnone_nol.pdf}}
-\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j0t/muon_2j0t_met_qcdnone.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j0t/muon_2j0t_met_qcdnone.pdf}}\\
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/prospects/plots/2j0t/electron_2j0t_lepton_met_deltaPhi_qcdnone_nol.pdf}}
+\subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j0t/muon_2j0t_lepton_met_deltaPhi_qcdnone.pdf}}
 }
 
 \myfigure[p]{\label{fig:pospects-topmass} Distributions of the reconstructed top quark mass for (left column)~electron and (right column)~muon channel: (top row)~signal region; (bottom row)~\ttbar control region.}{
@@ -37,7 +51,7 @@ The analysis strategy which has been developed in the context of the first measu
 
 
 %##############################################
-\section{Extended BDT training}
+\section{New BDT training}
 %##############################################
 
 The following observables have been chosen as input to the \gls{bdt} training:
@@ -71,6 +85,11 @@ In particular, the
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/prospects/plots/2j1t/electron_2j1t_bdt_tch_boost04_qcdnone_blind_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j1t/muon_2j1t_bdt_tch_boost04_qcdnone_blind.pdf}}
 }
+
+%##############################################
+\subsection{Signal extraction}
+%##############################################
+\label{sec:prospects-fit}
 
 %##############################################
 \section{Fiducial studies}
@@ -116,8 +135,6 @@ particle level overlap: tightMu: >99\%, 2jets: 80\%, 2j1t: 70\%
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.16\width} 0},clip]{figures/prospects/plots/2j1t/electron_2j1t_cosTheta_tPL_CR_nol.pdf}}
 \subfloat[]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/prospects/plots/2j1t/muon_2j1t_cosTheta_tPL_CR.pdf}}
 }
-
-
 
 %##############################################
 \subsection{Excepted results on pseudo-data}
