@@ -251,7 +251,7 @@ where $A_\mathrm{fid.}$ denotes the acceptance of events in the fiducial phase s
 \section{Unfolding}
 %##############################################
 
-Distributions of reconstructed data events are typically distorts due to finite resolution, acceptance, and reconstruction inefficiencies of the detector with respect to the parton or particle level. The idea of unfolding in \gls{hep} is to ``revert'' these effects. An unfolded distribution can then easily be compared to the expectations from theory or to equivalent measurements. A reconstructed distribution can be modeled as
+Distributions of reconstructed data events are typically distorted due to finite resolution, acceptance, and reconstruction inefficiencies of the detector with respect to the parton or particle level. The idea of unfolding in \gls{hep} is to ``revert'' these effects. An unfolded distribution can then easily be compared to the expectations from theory or to equivalent measurements. A reconstructed distribution can be modeled as
 
 \begin{equation}
 \underbrace{~f(y)~}_\mathrm{reco.}=\int \underbrace{A(y)\,\epsilon(y)\, R(y,x)}_\mathrm{detector}~~\cdot \underbrace{~g(x)~}_\mathrm{true}\, \mathrm{d}x\,, \label{eq:technique-fredholm}
@@ -265,7 +265,7 @@ Equation~\ref{eq:technique-fredholm} can be discretized and written as a matrix 
 \vec{y} = \widetilde{\mathcal{R}}\cdot\vec{x}\,,\qquad \widetilde{\mathcal{R}}=\mathcal{A}\cdot\mathcal{E}\cdot\mathcal{R}\,, \label{eq:technique-folding}
 \end{equation}
 
-where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an observable in bin $i$ at truth level is measured in bin $j$ by the detector. Attempting to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ through a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. A simple inversion can result into unstable solutions with large variances and significant anticorrelations between bins. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model which is defined as
+where the continuous distributions are converted into vectors~(histograms) and the response, acceptance, and efficiency functions are described by matrices~(two-dimensional histograms). Elements of the response matrix $\mathcal{R}_{ij}$ can be interpreted as the transition probability $p_{i\to j}$ that an observable in bin $i$ at truth level is measured in bin $j$ by the detector. Attempting to solve Eq.~\ref{eq:technique-folding} for $\vec{x}$ through a simple inversion of the response matrix reveals that the unfolding problem is actually ill-posed. A simple inversion can result in unstable solutions with large variances and significant anticorrelations between bins. Figure~\ref{fig:technique-ill-unfolding} demonstrates this for a simple model which is defined as
 
 \begin{subequations}\label{eq:technique-unfolding-test-model}
 \begin{align}
