@@ -115,7 +115,7 @@ using the definitions $\partial_\mu\equiv\partial/\partial x_\mu$ ($\mu\in\{0\ld
 Interactions between particles are introduced in the \gls{sm} by requiring local invariance of the Lagrangian density for certain groups of gauge transformations. This is briefly demonstrated in the following for the case of a $\mathrm{U(1)}$ transformation which leads to \glshere{qed}. Transformating Eq.~\ref{eq:theory-diracL} using 
 
 \begin{equation}
-\psi(x)\mapsto\psi^{\prime}(x)=\psi\exp^{-iq\alpha(x)}\,, \label{eq:theory-u1-trafo}
+\psi(x)\mapsto\psi^{\prime}(x)=\psi(x)\cdot\exp\big(-iq\cdot\alpha(x)\big)\,, \label{eq:theory-u1-trafo}
 \end{equation}
 
 yields
@@ -170,8 +170,8 @@ which denotes whether the spin $\vec{s}$ is aligned along~($H=+1$) or against~($
 In the Glashow-Weinberg-Salam model~\cite{Salam:1964ry,Weinberg:1967tq,Glashow:1961tr} the fermion fields are split into left-handed doublet fields
 
 \begin{align}
-\vec{\mathrm{E}}_\mathrm{L}=\Bigg\{\colvec{2}{\nu_\mathrm{e,L}}{e^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\mu,\mathrm{L}}}{\mu^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\tau,\mathrm{L}}}{\tau^{\rmminus}_\mathrm{L}}\Bigg\} \label{eq:theory-su2-doublets}\,,\quad
-\vec{\mathrm{Q}}_\mathrm{L}=\Bigg\{\colvec{2}{\mathrm{u}_\mathrm{L}}{\mathrm{d}_\mathrm{L}},\colvec{2}{\mathrm{c}_\mathrm{L}}{\mathrm{s}_\mathrm{L}},\colvec{2}{\mathrm{t}_\mathrm{L}}{\mathrm{b}_\mathrm{L}}\Bigg\} 
+\vec{\mathrm{E}}_\mathrm{L}=\left\{\colvec{2}{\nu_\mathrm{e,L}}{e^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\mu,\mathrm{L}}}{\mu^{\rmminus}_\mathrm{L}},\colvec{2}{\nu_{\tau,\mathrm{L}}}{\tau^{\rmminus}_\mathrm{L}}\right\} \label{eq:theory-su2-doublets}\,,\quad
+\vec{\mathrm{Q}}_\mathrm{L}=\left\{\colvec{2}{\mathrm{u}_\mathrm{L}}{\mathrm{d}_\mathrm{L}},\colvec{2}{\mathrm{c}_\mathrm{L}}{\mathrm{s}_\mathrm{L}},\colvec{2}{\mathrm{t}_\mathrm{L}}{\mathrm{b}_\mathrm{L}}\right\} 
 \end{align}
 
 and right-handed singlet fields
@@ -183,7 +183,7 @@ and right-handed singlet fields
 of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any interaction within the \gls{sm}. The gauge transformation of the combined $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ group is
 
 \begin{equation}
-\psi\mapsto\psi\cdot\mathrm{e}^{-ig\vec{\alpha}(x)\cdot\vec{\omega}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2} \label{eq:theory-u1su2-transformation}
+\psi(x)\mapsto\psi(x)\cdot\exp\Big(-\tfrac{1}{2}ig\,\vec{\alpha}(x)\cdot\vec{\omega}\Big)\cdot\exp\Big(-\tfrac{1}{2}ig^{\prime}\,\beta(x)\Big) \label{eq:theory-u1su2-transformation}
 \end{equation}
 
 where $\omega_{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$, $g^{\prime}$ the corresponding conserved charges. This leads to four boson fields, $\mathrm{W}^{a}$ and $\mathrm{B}$, that interact with the fermions. In analogy to Eq.~\ref{eq:theory-EM-int} one obtains
@@ -287,12 +287,10 @@ where the coupling strengths are denoted by $\lambda$. After the symmetry breaki
 
 which allows to write the Lagrangian density in the quark mass eigenstates. In particular, using Eqs.~\ref{eq:theory-codev-su2-interaction} and~\ref{eq:theory-codev-breaking} this yields the interactions
 
-\begin{subequations}
 \begin{align}
 \mathcal{L}_{\mathrm{W}\bar{\mathrm{f}}\mathrm{f}~\mathrm{int.}}=\hphantom{+}i&\frac{g}{2\sqrt{2}}\,\Big[\bar{\nu}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\ell^{\rmminus}_{i}~+~{\ell}^{\rmplus}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\nu_{i}\Big]\nonumber\\
 +i&\frac{g}{2\sqrt{2}}\,\Big[\mathrm{V}_{ij}\,\bar{\mathrm{u}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\mathrm{d}_{j}~+~\mathrm{V}_{ij}^\dagger\,\bar{\mathrm{d}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\mathrm{u}_{j}\Big] \label{eq:theory-qqW-int}
 \end{align}
-\end{subequations}
 
 between the $\mathrm{W}$~bosons and fermions where $\mathrm{V}_{ij}=(U^\dagger_\mathrm{u}U_\mathrm{d})_{ij}$ denotes the \glshere{ckm} matrix. Its elements are free parameters of the \gls{sm} and have to be measured experimentally. A global fit using a multitude of measurements~\cite{Olive:2016xmw} while assuming unitarity for the three quark generations yields
 

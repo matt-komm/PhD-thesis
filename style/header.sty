@@ -1,8 +1,10 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
+%\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
+\usepackage[papersize={17cm,24cm},total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} %fix rendering of pages to nonalpha
 \usepackage[nouppercase]{scrpage2}
 \usepackage{ifthen}
 \usepackage{amsmath}
@@ -81,7 +83,7 @@
 \usepackage{xcolor} %more advance color usage
 \definecolor{ucl}{rgb}{0.05,0.15,0.45}
 \definecolor{gray}{rgb}{0.7,0.7,0.7}
-\definecolor{textgray}{rgb}{0.65,0.65,0.65}
+\definecolor{textgray}{rgb}{0.7,0.7,0.7}
 \definecolor{lightgray}{rgb}{0.85,0.85,0.85}
 \definecolor{darkgreen}{rgb}{0.0,0.45,0.}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.5}
@@ -148,7 +150,7 @@
 \newcommand*{\numberfont}{\sffamily\selectfont}
 
 \newlength{\myrulewidth}
-\setlength{\myrulewidth}{0.9pt}
+\setlength{\myrulewidth}{0.65pt}
 
 \def\hrulefill{\leavevmode\leaders\hrule height \myrulewidth\hfill\kern\z@}
 
@@ -325,8 +327,8 @@
 \setkomafont{subsubsection}{\normalfont\huge\numberfont}
 
 \RedeclareSectionCommands[
-  beforeskip=0.1\baselineskip plus 0.25\baselineskip,
-  afterskip=0.1\baselineskip
+  beforeskip=0.3\baselineskip plus 0.15\baselineskip minus 0.1\baselineskip,
+  afterskip=0.15\baselineskip
 ]{section,subsection,subsubsection}
 
 \renewcommand{\@seccntformat}[1]{{\parbox[b][1\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
@@ -507,7 +509,7 @@
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{0.28\baselineskip plus 0.06\baselineskip minus 0.04\baselineskip}
     %\setlength{\parsep}{0cm}
-    \renewcommand{\baselinestretch}{1.09}\normalsize
+    \renewcommand{\baselinestretch}{1.08}\normalsize
 
 
     %formel abstände 
