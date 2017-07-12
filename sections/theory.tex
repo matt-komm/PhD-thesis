@@ -90,10 +90,10 @@ For each fundamental particle there exists a charge-conjugated partner called an
 In the framework of \gls{qft} particles are described as excitation modes of quantized fields. This is referred to as ``canonical'' or ``second'' quantization which allows to describe the dynamics of many-particle systems\footnote{An alternative quantization can be achieved via path integrals.}. Field operators can be decomposed as
 
 \begin{equation}
-\hat{\psi}(x)=\sum_{i}^{\mathrm{N}}u_{i}(x)\hat{a}_{i}\,,\qquad\hat{\psi}^{\dagger}(x)=\sum_{i}^{\mathrm{N}}u^{\star}_{i}(x)\hat{a}^{\dagger}_{i}\,,
+\psi(x)=\sum_{i}^{\mathrm{N}}u_{i}(x)\,a_{i}\,,\qquad\psi^{\dagger}(x)=\sum_{i}^{\mathrm{N}}u^{\star}_{i}(x)\,a^{\dagger}_{i}\,,
 \end{equation}
 
-where $u_{i}(x)$ denotes the ordinary wave function of a single particle and $\hat{a}^{\dagger}_{i}$ ($\hat{a}_{i}$) its creation (annihilation) operator, respectively. As in classical mechanics the action of a system can be expressed as
+where $u_{i}(x)$ denotes the ordinary wave function of a single particle and $a^{\dagger}_{i}$ ($a_{i}$) its creation (annihilation) operator, respectively. As in classical mechanics the action of a system can be expressed as
 
 \begin{equation}
 S=\int\mathrm{L}\,\mathrm{d}t=\iint\mathcal{L}\,\mathrm{d}^{3}\vec{x}\,\mathrm{dt}=\int\mathcal{L}\,\mathrm{d}^{4}x
@@ -109,10 +109,20 @@ with the Lagrangian density $\mathcal{L}$. For example, a system of free fermion
 using the definitions $\partial_\mu\equiv\partial/\partial x_\mu$ ($\mu\in\{0\ldots3\}$) and $\bar{\psi}\equiv\psi^\dagger\gamma^{0}$, where $\gamma_\mu$ denote the Dirac matrices\footnote{Multiple representations are possible. The matrices need to satisfy a Clifford algebra with the anticommutation relation: $\big\{\gamma^\mu,\gamma^\nu\big\}=\gamma^\mu\gamma^\nu+\gamma^\nu\gamma^\mu=2g^{\mu\nu}$.}. The principle of least action, $\delta \mathrm{S}=0$, that is satisfied by the Euler-Lagrange equation yields the equation of motion as
 
 \begin{equation}
-\frac{\partial\mathcal{L}}{\partial\bar{\psi}}-\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)=\big(i\gamma^\mu\partial_\mu-m\big)\psi=0\,. \\
+\frac{\partial\mathcal{L}}{\partial\bar{\psi}}-\frac{\partial}{\partial_\mu}\Bigg(\frac{\partial\mathcal{L}}{\partial\big(\partial_\mu\bar{\psi}\big)}\Bigg)=\big(i\gamma^\mu\partial_\mu-m\big)\psi=0\,.
 \end{equation}
 
-Interactions between particles are introduced in the \gls{sm} by requiring local invariance of the Lagrangian density for certain groups of gauge transformations. This is briefly demonstrated in the following for the case of a $\mathrm{U(1)}$ transformation which leads to \glshere{qed}. Transformating Eq.~\ref{eq:theory-diracL} using 
+Assuming $\psi\propto e^{-ip^{\mu}x_{\mu}}$ leads to the well-known energy-momentum relation
+
+\begin{subequations}
+\begin{align}
+0&=\big(-i\gamma^\mu\partial_\mu-m\big)^\star\cdot \big(-i\gamma^\nu\partial_\nu-m\big)\psi\\
+ &=\big(\partial^{\mu}\partial_{\mu}+m^{2}\big)\psi \qquad \mathrm{(Klein\mbox{-}Gordon~equation)}  \\
+ &\Rightarrow \big(-p^{\mu}p_{\mu}+m^{2}\big) = 0\,.
+\end{align}
+\end{subequations}
+
+Interactions between particles are introduced in the \gls{sm} by requiring local invariance of the Lagrangian density for certain groups of gauge transformations. This is briefly demonstrated in the following for the case of a $\mathrm{U(1)}$ transformation which leads to \glshere{qed}. Transforming Eq.~\ref{eq:theory-diracL} using 
 
 \begin{equation}
 \psi(x)\mapsto\psi^{\prime}(x)=\psi(x)\cdot\exp\big(-iq\cdot\alpha(x)\big)\,, \label{eq:theory-u1-trafo}
@@ -217,7 +227,7 @@ in the form of a ``Mexican hat'' as shown in Fig.~\ref{fig:theory-higgs-potentia
 \end{equation}
 
 \myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field with a non-zero \glshere{vev} $\phi_0$ which leads to symmetry breaking.}{
-\includegraphics[width=0.5\textwidth]{figures/theory/higgspot.pdf}
+\includegraphics[scale=0.35]{figures/theory/higgspot.pdf}
 }
 
 One says that this shifted \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry when parameterizing $\phi$ around the minimum of $V(\phi)$ as
@@ -229,7 +239,7 @@ One says that this shifted \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry wh
 where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $\mathrm{H}$ the Higgs boson. In fact, the symmetry still exists but is ``hidden''. A $\mathrm{SU(2)}$ transformation called ``unitary gauge'' can be performed such that $\vec{\theta}$ vanishes. One says that these three Goldstone bosons and their degrees of freedom are ``eaten'' by the $\mathrm{W}$ and $\mathrm{Z}$~bosons to become massive. Hence, through the extra degree of freedom they can also have a longitudinal polarization after symmetry breaking. The parametrization is chosen such that it leaves the minimum invariant under the $\mathrm{U(1)}$ subgroup transformation
 
 \begin{equation}
-\phi\mapsto\phi\cdot\mathrm{e}^{-ig\alpha_{3}(x)\omega_{3}/2}\cdot\mathrm{e}^{-ig^{\prime}\beta(x)/2}. \label{eq:theory-broken-u1-trans}
+\phi(x)\mapsto\phi(x)\cdot\exp\Big(-\tfrac{1}{2}ig\,\alpha_{3}(x)\cdot\omega_{3}\Big)\cdot\exp\Big(-\tfrac{1}{2}ig^{\prime}\,\beta(x)\Big). \label{eq:theory-broken-u1-trans}
 \end{equation}
 
 Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields amongst others the following Lagrangian densities capturing the non-interacting terms:
@@ -249,7 +259,7 @@ fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle 
 \begin{equation}
 \colvec{2}{\mathrm{Z}}{\mathrm{A}}=\begin{pmatrix}
 \cos\theta_\mathrm{W} & -\sin\theta_\mathrm{W} \\
-\sin\theta_\mathrm{W} & \cos\theta_\mathrm{W}
+\sin\theta_\mathrm{W} & \hphantom{-}\cos\theta_\mathrm{W}
 \end{pmatrix}
 \colvec{2}{\mathrm{W}_{3}}{\mathrm{B}}\,,\qquad \cos\theta_\mathrm{W}=\frac{g}{\sqrt{g^2+g^{\prime 2}}}\,,
 \end{equation}
@@ -321,19 +331,19 @@ The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}$, between $\mathrm{
 The theory of \glshere{qcd} describes the strong interaction between quarks and gluons. It is connected to a $\mathrm{SU(3)}$ gauge group resulting into the Lagrangian density of
 
 \begin{align}
-\mathcal{L}_\mathrm{\gls{qcd}}=\bar{\psi}i\gamma^{\mu}\big(\partial_{\mu}-ig\vec{\mathrm{G}}_\mu\vec{\lambda}\big)\psi-\tfrac{1}{4}\vec{\mathrm{G}}_{\mu\nu}\vec{\mathrm{G}}^{\mu\nu},\qquad \psi=\colvec{3}{\psi_\mathrm{red}}{\psi_\mathrm{green}}{\psi_\mathrm{blue}}
+\mathcal{L}_\mathrm{\gls{qcd}}=\bar{\psi}i\gamma^{\mu}\big(\partial_{\mu}-ig\,\vec{\mathrm{G}}_\mu\cdot\vec{\lambda}\big)\psi-\tfrac{1}{4}\vec{\mathrm{G}}_{\mu\nu}\vec{\mathrm{G}}^{\mu\nu},\qquad \psi=\colvec{3}{\psi_\mathrm{red}}{\psi_\mathrm{green}}{\psi_\mathrm{blue}}
 \end{align}
 
 which is invariant under the transformation
 
 \begin{equation}
-\psi\mapsto\psi\mathrm{e}^{-ig\vec{\alpha}(x)\vec{\lambda}}\,.
+\psi(x)\mapsto\psi(x)\cdot\exp\Big(-ig\,\vec{\alpha}(x)\cdot\vec{\lambda}\Big)\,.
 \end{equation}
 
-The fields $\vec{\mathrm{G}}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The conserved charge of the group is called ``color'' (red, green, blue) which is however equal in strength for all charges. The generators $\lambda_a$~($a\in{1\ldots8}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure leads to gluon self-interactions through the gluon field strength tensor
+The fields $\vec{\mathrm{G}}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The conserved charge of the group is called ``color'' (red, green, blue) which is however equal in strength for all charges. The generators $\lambda_a$~($a\in\{1\ldots8\}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure leads to gluon self-interactions through the gluon field strength tensor
 
 \begin{equation}
-\mathrm{G}_{\mu\nu}^{a}=\partial_{\mu} \mathrm{G}_\nu^{a}-\partial_{\nu} \mathrm{G}_{\mu}^{a}+gf^{abc}\mathrm{G}_{\mu,b}\mathrm{G}_{\nu,c}\,.
+\mathrm{G}_{\mu\nu}^{a}=\partial_{\mu} \mathrm{G}_\nu^{a}-\partial_{\nu} \mathrm{G}_{\mu}^{a}+g\,f^{abc}\mathrm{G}_{\mu,b}\mathrm{G}_{\nu,c}\,.
 \end{equation}
 
 No free quarks can exist in nature because of a phenomenon called ``color-confinement''. The \gls{qcd} potential between two quarks can be approximated as a ``Coulomb-plus-linear'' potential~\cite{Sumino2003173}
