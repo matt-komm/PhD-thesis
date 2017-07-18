@@ -289,13 +289,13 @@
 
 
 \mdfdefinestyle{chstyle}{%
-    linewidth=1.3\myrulewidth,
+    linewidth=2\myrulewidth,
     leftmargin=0pt,
-    innerleftmargin=0.065\textwidth,
+    innerleftmargin=0.085\textwidth,
     rightmargin=0pt,
     innerrightmargin=0pt,
-    innertopmargin=7pt,
-    innerbottommargin=7pt,
+    innertopmargin=1pt,
+    innerbottommargin=1pt,
     linecolor=gray,
     topline=false,
     rightline=false,
@@ -309,9 +309,9 @@
      \parbox{\textwidth}{
         \chapterheadstartvskip
         %\parbox{\textwidth}{\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}\\[0.55cm]
-        \parbox[c][][c]{0.09\textwidth}{\color{gray}\fontsize{32}{32}\textrm{\raisebox{-0.13em}{\thechapter{}.}}}
+        \parbox[c][][c]{0.12\textwidth}{\centering\color{gray}\fontsize{36}{36}\textrm{\raisebox{-0.13em}{\thechapter{}.}}}
         \hspace{0.04\textwidth}
-        \parbox[c][][c]{0.85\textwidth}{\begin{mdframed}[style=chstyle]\textls*[120]{\color{textgray}\LARGE\textsf{{\chaptername}}}\\[0.25\baselineskip]\usekomafont{chapter} #1\end{mdframed}}\\[0.65cm]
+        \parbox[c][][c]{0.82\textwidth}{\begin{mdframed}[style=chstyle]\fontsize{32}{32}\usekomafont{chapter} #1\end{mdframed}}\\[0.65cm]
 
         %\vspace{0.45cm}
         %\parbox{\textwidth}{\color{gray}\rule{\textwidth}{\myrulewidth}}\\[0.0cm]
