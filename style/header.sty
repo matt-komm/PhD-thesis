@@ -311,7 +311,7 @@
         %\parbox{\textwidth}{\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}\\[0.55cm]
         \parbox[c][][c]{0.12\textwidth}{\centering\color{gray}\fontsize{36}{36}\textrm{\raisebox{-0.13em}{\thechapter{}.}}}
         \hspace{0.04\textwidth}
-        \parbox[c][][c]{0.82\textwidth}{\begin{mdframed}[style=chstyle]\fontsize{32}{32}\usekomafont{chapter} #1\end{mdframed}}\\[0.65cm]
+        \parbox[c][][c]{0.82\textwidth}{\begin{mdframed}[style=chstyle]\fontsize{32}{32}\usekomafont{chapter} #1\end{mdframed}}\\[0.75cm]
 
         %\vspace{0.45cm}
         %\parbox{\textwidth}{\color{gray}\rule{\textwidth}{\myrulewidth}}\\[0.0cm]
@@ -327,11 +327,11 @@
 \setkomafont{subsubsection}{\normalfont\huge\numberfont}
 
 \RedeclareSectionCommands[
-  beforeskip=0.3\baselineskip plus 0.15\baselineskip minus 0.1\baselineskip,
-  afterskip=0.15\baselineskip
+  beforeskip=0.35\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip,
+  afterskip=0.18\baselineskip
 ]{section,subsection,subsubsection}
 
-\renewcommand{\@seccntformat}[1]{{\parbox[b][1\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
+\renewcommand{\@seccntformat}[1]{{\parbox[b][0.7\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
 
 
 %strecke zeilenabstände im table
@@ -466,7 +466,7 @@
 }
 
 %%chapter intro
-\newcommand{\intro}[1]{\parbox{\textwidth}{\textsl{#1}}\\[4\parskip]}
+\newcommand{\intro}[1]{\parbox{\textwidth}{\textsl{#1}}\\[5\parskip]}
 
 
 %% footnote
