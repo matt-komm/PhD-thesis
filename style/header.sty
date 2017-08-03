@@ -40,7 +40,7 @@
 
 \usepackage[sc]{mathpazo}
 %\usepackage{times}
-
+%\usepackage{newcent}
 %\usepackage[bitstream-charter]{mathdesign}
 
 
@@ -55,13 +55,15 @@
 %\usepackage{mathptmx}
 
 %sans serif
-\usepackage{comfortaa}
+%\usepackage{comfortaa}
 %\usepackage{tgheros}
-%\usepackage[default]{gfsneohellenic}
+%\usepackage[light,math]{kurier}
 %\usepackage[scale=1.11]{biolinum}
 %\usepackage{cabin}
 %\usepackage{carlito}
+
 %\usepackage[sf]{quattrocento}
+%\usepackage{classico}
 
 
 %\usepackage{libertinust1math}
@@ -129,9 +131,9 @@
 \usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=false,breaklinks=true,linkcolor=gray]{hyperref}
 %\usepackage[hyperfootnotes=false,breaklinks=true,colorlinks=false,pdfborder={20 20 0.5},citebordercolor=green]{hyperref}
 %\usepackage[hyperfootnotes=false,colorlinks=true,breaklinks=true,allcolors=darkblue,citecolor=darkgreen]{hyperref}
-\usepackage[disable,color=white,linecolor=red,bordercolor=red,textsize
-=small]{todonotes}
-\setlength{\marginparwidth}{3cm}
+%\usepackage[disable,color=white,linecolor=red,bordercolor=red,textsize=small]{todonotes}
+\usepackage[color=white,linecolor=red,bordercolor=red,textsize=small]{todonotes}
+\setlength{\marginparwidth}{1.9cm}
 \usepackage[perpage]{footmisc}
 \usepackage{xspace} %intelligent spacing e.g. after inline equations
 \usepackage[nottoc]{tocbibind} %puts references into toc
@@ -148,7 +150,7 @@
 %\newcommand*{\numberfont}{\fontfamily{pbk}\selectfont}
 
 \newcommand*{\numberfont}{\sffamily\selectfont}
-
+%\newcommand*{\numberfont}{\ffmfamily}
 \newlength{\myrulewidth}
 \setlength{\myrulewidth}{0.65pt}
 
@@ -327,8 +329,8 @@
 \setkomafont{subsubsection}{\normalfont\huge\numberfont}
 
 \RedeclareSectionCommands[
-  beforeskip=0.35\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip,
-  afterskip=0.18\baselineskip
+  beforeskip=0.5\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip,
+  afterskip=0.25\baselineskip
 ]{section,subsection,subsubsection}
 
 \renewcommand{\@seccntformat}[1]{{\parbox[b][0.7\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
