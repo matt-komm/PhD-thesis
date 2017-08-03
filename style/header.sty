@@ -64,7 +64,7 @@
 %\renewcommand{\sfdefault}{iwona}
 %\usepackage[light]{roboto}
 
-\usepackage[sf]{quattrocento}
+%\usepackage[sf]{quattrocento}
 %\usepackage{classico}
 
 
@@ -293,9 +293,9 @@
 
 
 \mdfdefinestyle{chstyle}{%
-    linewidth=1.5\myrulewidth,
+    linewidth=0.\myrulewidth,
     leftmargin=0pt,
-    innerleftmargin=0.05\textwidth,
+    innerleftmargin=0.0\textwidth,
     rightmargin=0pt,
     innerrightmargin=0pt,
     innertopmargin=0pt,
@@ -316,14 +316,12 @@
         \chapterheadstartvskip
         \microtypesetup{protrusion=false}
         \parbox[t][][b]{0.27\textwidth}{\color{gray}\usekomafont{chapter}\chaptername~~\thechapter{}.}
-        %\parbox[c][][c]{0.82\textwidth}{\begin{mdframed}[style=chstyle]\fontsize{32}{32}\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
         \parbox[t][][b]{0.72\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
-        %\usekomafont{chapter}{\numberfont\color{gray}\chaptername~\thechapter{}.\quad\rule{2\myrulewidth}{0.5cm}}\quad#1\\[0.5cm]
         \microtypesetup{protrusion=true}
     }
 }
 
-\setkomafont{chapter}{\normalfont\fontsize{17}{25}\selectfont\numberfont}
+\setkomafont{chapter}{\normalfont\fontsize{19}{27}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace{0.3cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace{0.8cm}}
 

@@ -143,8 +143,6 @@ where the arbitrary phase $\alpha(x)$ is a function of the local space-time coor
 
 In summary, this procedure results in a Lagrangian density containing the following terms
 
-\todo{should minus*i interaction term?}
-
 \begin{subequations}
 \begin{align}
 \mathcal{L}=\hphantom{+}&\bar{\psi}\,\big(i\gamma^\mu\partial_\mu-m\big)\psi &(\mathrm{fermion~propagator}) \\
@@ -206,30 +204,28 @@ where $\omega_{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$\,, $g^{\p
 +\sum_{j}^\mathrm{singlets}\,&\bar{\psi}^{j}_\mathrm{R}~\gamma^{\mu}\Big(\tfrac{1}{2}g^{\prime}\,\mathrm{B}_{\mu}\Big)\,\psi^{j}_\mathrm{R} + \mathrm{\gls{hc}} \label{eq:theory-codev-su2-interaction}
 \end{align}
 
-where the summations are implied over the fermion doublet and singlet fields. A fermion mass term $ m_\mathrm{f}\,\bar{\psi}{}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}\,(\bar{\psi}{}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}{}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it violates the invariance under the $\mathrm{SU(2)}$ transformation. This is solved by Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585} which introduces mass terms not only for fermions but also for the gauge bosons through ``symmetry breaking''. For this, a new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{\rmplus},\phi^{0})$\footnote{$\phi^{\rmplus}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.}, invariant under $\mathrm{U(1)}\otimes\mathrm{SU(2)}$ transformation, is added to the Lagrangian density
-
-\todo{not clear if in interaction terms above is '-i' missing}
+where the summations are implied over the fermion doublet and singlet fields. A fermion mass term $ m_\mathrm{f}\,\bar{\psi}{}_\mathrm{f}\psi_\mathrm{f}=m_\mathrm{f}\,(\bar{\psi}{}_\mathrm{f,L}\psi_\mathrm{f,R}+\bar{\psi}{}_\mathrm{f,R}\psi_\mathrm{f,L})$ cannot be added to the Lagrangian density since it violates the invariance under the $\mathrm{SU(2)}$ transformation. This is solved by Englert-Brout-Higgs-Guralnik-Hagen-Kibble-mechanism~\cite{HIGGS1964132,PhysRevLett.13.508,PhysRevLett.13.321,PhysRevLett.13.585} which introduces mass terms not only for fermions but also for the gauge bosons through the concept of ``symmetry breaking''. For this, a new scalar $\mathrm{SU(2)}$ doublet field $\phi=(\phi^{\rmplus},\phi^{0})$\footnote{$\phi^{\rmplus}$ annihilates positively charge scalar particles / creates antiparticles with negative charge; $\phi^{0}$ annihilates neutral particles / creates neutral antiparticles.}, invariant under Eq.~\ref{eq:theory-u1su2-transformation}, is added to the Lagrangian density which interacts with the gauge bosons as
 
 \begin{subequations}
 \begin{align}
 \mathcal{L}_{\phi}&=\big(D_{\mu}\phi\big)^{\dagger}\big(D^{\mu}\phi\big)-\mathrm{V}(\phi) \label{eq:theory-phi-propagator} \\
-D^{\mu}\phi&=\big(\partial^{\mu}+\tfrac{1}{2}ig\vec{\mathrm{W}}^{\mu}\cdot\vec{\omega}+\tfrac{1}{2}ig^{\prime}\mathrm{B}^{\mu}\big)\phi \label{eq:theory-phi-codev}
+D^{\mu}\phi&=\big(\partial^{\mu}-\tfrac{1}{2}ig\vec{\mathrm{W}}^{\mu}\cdot\vec{\omega}-\tfrac{1}{2}ig^{\prime}\mathrm{B}^{\mu}\big)\phi\,. \label{eq:theory-phi-codev}
 \end{align}
 \end{subequations}
 
-which interacts with the gauge bosons. In addition, $\phi$ has a potential 
+In addition $\phi$ has a potential 
 
 \begin{equation}
-\mathrm{V}(\phi)=-\mu^2\phi^\dagger\phi+\tfrac{1}{2}\lambda(\phi^\dagger\phi)^2
+\mathrm{V}(\phi)=-\mu^2\phi^\dagger\phi+\tfrac{1}{2}\lambda(\phi^\dagger\phi)^2 \label{eq:theory-higgs-pot}
 \end{equation}
 
-in the form of a ``Mexican hat'' as shown in Fig.~\ref{fig:theory-higgs-potential} that leads to a non-zero \glshere{vev} for $\mu^2>0$ of 
+in the form of a ``Mexican hat'' as shown in Fig.~\ref{fig:theory-higgs-potential} that leads to a non-zero \glshere{vev} for $\phi$ for $\mu^2>0$ of 
 
 \begin{equation}
 \phi_0=\sqrt{\frac{\mu^{2}}{2\lambda}}\equiv \frac{v}{\sqrt{2}}\,.
 \end{equation}
 
-\myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field with a non-zero \glshere{vev} $\phi_0$ which leads to symmetry breaking.}{
+\myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field $\phi$ with a non-zero \glshere{vev} $\phi_0$ that leads to symmetry breaking.}{
 \includegraphics[scale=0.3]{figures/theory/higgspot.pdf}
 }
 
@@ -239,10 +235,10 @@ One says that this shifted \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry wh
 \phi(x) \Bigg|_{\phi_0} =~\frac{1}{\sqrt{2}}\colvec{2}{0}{v+\mathrm{H}(x)}\cdot \exp\left(-i\,\frac{\vec{\theta}(x)\cdot\vec{\omega}}{2v}\right)\,, \label{eq:theory-phi-dev}
 \end{equation}
 
-where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $\mathrm{H}$ the Higgs boson. In fact, the symmetry still exists but is ``hidden''. A $\mathrm{SU(2)}$ transformation called ``unitary gauge'' can be performed such that $\vec{\theta}$ vanishes. One says that these three Goldstone bosons and their degrees of freedom are ``eaten'' by the $\mathrm{W}$ and $\mathrm{Z}$~bosons to become massive. Hence, through the extra degree of freedom they can also have a longitudinal polarization after symmetry breaking. The parametrization is chosen such that it leaves the minimum invariant under the $\mathrm{U(1)}$ subgroup transformation
+where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $\mathrm{H}$ the Higgs boson. In fact, the symmetry still exists but is ``hidden''. A $\mathrm{SU(2)}$ transformation called ``unitary gauge'' can be performed such that $\vec{\theta}$ vanishes. One says that these three Goldstone bosons and their degrees of freedom are ``eaten'' by the $\mathrm{W}$ and $\mathrm{Z}$~bosons to become massive. Hence, through the extra degrees of freedom they can also have a longitudinal polarization after symmetry breaking. The parametrization of $\phi$ is chosen such that it leaves the minimum invariant under the $\mathrm{U(1)}$ subgroup transformation
 
 \begin{equation}
-\phi(x)\mapsto\phi(x)\cdot\exp\Big(-\tfrac{1}{2}ig\,\alpha_{3}(x)\cdot\omega_{3}\Big)\cdot\exp\Big(-\tfrac{1}{2}ig^{\prime}\,\beta(x)\Big)\,. \label{eq:theory-broken-u1-trans}
+\phi(x)\mapsto\phi(x)\cdot\mathrm{e}^{-\tfrac{1}{2}ig\,\alpha_{3}(x)\cdot\omega_{3}}\,\cdot\,\mathrm{e}^{-\tfrac{1}{2}ig^{\prime}\,\beta(x)}\,. \label{eq:theory-broken-u1-trans}
 \end{equation}
 
 Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields amongst others the following Lagrangian densities capturing the non-interacting terms:
@@ -257,7 +253,7 @@ Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yi
 \end{subequations}
 
 The first term (Eq.~\ref{eq:theory-higgs}) describes the free scalar Higgs boson with mass $m_\mathrm{H}=\lambda v$. Next, the $\mathrm{W}_{1}$ and $\mathrm{W}_{2}$
-fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle pair $\mathrm{W}^{\pm}=(\mathrm{W}_1\mp i\mathrm{W}_2)/\sqrt{2}$ with mass $m_\mathrm{W}=\frac{1}{2}gv$. Lastly, the fields $\mathrm{W}_3$ and $\mathrm{B}$ appear to be in a mixed mass state in Eq.~\ref{eq:theory-a3b}. By performing a rotation of the couplings
+fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle pair $\mathrm{W}^{\pm}=(\mathrm{W}_1\mp i\mathrm{W}_2)/\sqrt{2}$ with mass $m_\mathrm{W}=\frac{1}{2}gv$\,. Lastly, the fields $\mathrm{W}_3$ and $\mathrm{B}$ in Eq.~\ref{eq:theory-a3b} appear to be in a mixed-mass state. By performing a rotation of the couplings
 
 \begin{equation}
 \colvec{2}{\mathrm{Z}}{\mathrm{A}}=\begin{pmatrix}
@@ -267,7 +263,7 @@ fields in Eq.~\ref{eq:theory-a1a2} can be identified as a particle/antiparticle 
 \colvec{2}{\mathrm{W}_{3}}{\mathrm{B}}\,,\qquad \cos\theta_\mathrm{W}=\frac{g}{\sqrt{g^2+g^{\prime 2}}}\,,
 \end{equation}
 
-where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson, the $\mathrm{Z}$~boson, with mass $m_\mathrm{Z}=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $\mathrm{A}_\mu$, the photon, can be identified. The angle is determined as $\sin^2\theta_\mathrm{W} \approx 0.23$~\cite{Olive:2016xmw} through the couplings $g$ and $g^\prime$. Equation~\ref{eq:theory-phi-propagator} also yields the relation $\rho=m_\mathrm{W}^{2}/(m_\mathrm{Z}^{2}\cdot\cos\theta_\mathrm{W}^{2})=1$ which is called ``custodial symmetry''. Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
+where $\theta_\mathrm{W}$ is called the ``weak-mixing'' or ``Weinberg'' angle, another massive boson, the $\mathrm{Z}$~boson, with mass $m_\mathrm{Z}=v\sqrt{g^2+g^{\prime2}}/2$ and a massless boson $\mathrm{A}_\mu$, the photon, can be identified. The angle is determined as $\sin^2\theta_\mathrm{W} \approx 0.23$~\cite{Olive:2016xmw} through the couplings $g$ and $g^\prime$. Equation~\ref{eq:theory-phi-propagator} also yields the relation $\rho=m_\mathrm{W}^{2}/(m_\mathrm{Z}^{2}\cdot\cos\theta_\mathrm{W}^{2})=1$ which is commonly referred to as ``custodial symmetry''. Rewriting the covariant derivative of Eq.~\ref{eq:theory-phi-codev} into these mass eigenstates yields
 
 \begin{align}
 D_\mu=&\hphantom{-}\partial_\mu~+~i\frac{g}{\sqrt{2}}\cdot\Big(\mathrm{W}^{\rmplus}_\mu T^{\rmplus}+\mathrm{W}^{\rmminus}_\mu T^{\rmminus}\Big)\nonumber\\
@@ -280,29 +276,43 @@ where $T^{\pm}$ denote the ladder operators, $Y$ the $\mathrm{U(1)}$ so-called `
 e=\frac{g^{\prime}\,g}{\sqrt{g^2+g^{\prime 2}}}\,,
 \end{equation}
 
-which is measured as $\aem=e^2/(4\pi)\approx1/137$~\cite{Olive:2016xmw} and the corresponding electric charge to be $Q=T_3+Y$ which is invariant under Eq.~\ref{eq:theory-broken-u1-trans}. For the weak coupling constant one finds the relation $e=g\cdot\sin\theta_\mathrm{W}$ which yields $\aw=\aem/\sin^2\theta_\mathrm{W}\approx0.032\,$. The value of the \gls{vev} can be estimated from muon lifetime measurements through the Fermi coupling constant as $v=(\sqrt{2}\,\mathrm{G}_\mathrm{F})^{-1/2}\approx 246~\GeV$~\cite{PhysRevLett.106.041803}. A consequence of electroweak symmetry breaking is the prediction of the Higgs boson which was finally discovered in July 2012 independently by the \gls{atlas}~\cite{Aad:2012tfa} and \gls{cms}~\cite{Chatrchyan:2012xdj} collaborations and thus completed the electroweak theory.
+which is measured as $\aem=e^2/(4\pi)\approx1/137$~\cite{Olive:2016xmw} and the corresponding electric charge to be $Q=T_3+Y$ which is invariant under Eq.~\ref{eq:theory-broken-u1-trans} and thus conserved. For the weak coupling constant one finds the relation $e=g\cdot\sin\theta_\mathrm{W}$ which yields $\aw=\aem/\sin^2\theta_\mathrm{W}\approx0.032\,$. The value of the \gls{vev} can be estimated from muon lifetime measurements (e.g. Ref.~\cite{PhysRevLett.106.041803}) through the Fermi coupling constant, $\mathrm{G}_\mathrm{F}$, as
 
+\begin{equation}
+\frac{\mathrm{G}_\mathrm{F}}{\sqrt{2}}\approx\frac{g^2}{8\,m_\mathrm{W}^{2}}=\frac{1}{2\,v^2}
+\quad\Rightarrow\quad v=(\sqrt{2}\,\mathrm{G}_\mathrm{F})^{-1/2}\approx 246~\GeV\,.
+\end{equation}
+ 
+A consequence of electroweak symmetry breaking is the prediction of the Higgs boson. Its mass is not predicted by the \gls{sm} since $\lambda$ is a free parameter of the ``Mexican hat'' potential (Eq.~\ref{eq:theory-higgs-pot}). The Higgs boson was finally discovered in July 2012 independently by the \gls{atlas}~\cite{Aad:2012tfa} and \gls{cms}~\cite{Chatrchyan:2012xdj} collaborations and thus completed the electroweak theory. 
 
-Fermion masses can be generated as well by interacting with the Higgs field. One introduces Yukawa interactions as
+\todo{check above if ok written}
+
+Gauge-invariant fermion mass terms can be generated as well through symmetry breaking by introducing Yukawa interactions between the fermions and the Higgs field as
 
 \begin{subequations}
 \begin{align}
-\mathcal{L}_\mathrm{Yukawa~lepton~int.}=&-\lambda_{e}^{ii}\cdot\bar{\mathrm{E}}^{i}_\mathrm{L}\phi\cdot\mathrm{e}^{i}_\mathrm{R}+\mathrm{\gls{hc}}\,, \label{eq:theory-lepton-yukawa}\\
-\mathcal{L}_\mathrm{Yukawa~quark~int.}=&-\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi\cdot\mathrm{u}^{k}_\mathrm{R} +\mathrm{\gls{hc}}\,, \label{eq:theory-quark-yukawa}
+\mathcal{L}_\mathrm{Yukawa~lepton~int.}=&-\sum_{i}\lambda_{e}^{ii}\cdot\bar{\mathrm{E}}^{i}_\mathrm{L}\phi\cdot\mathrm{e}^{i}_\mathrm{R}+\mathrm{\gls{hc}}\,, \label{eq:theory-lepton-yukawa}\\
+\mathcal{L}_\mathrm{Yukawa~quark~int.}=&-\sum_{i,j}\lambda_{d}^{ij}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\phi\cdot\mathrm{d}^{j}_\mathrm{R}-\sum_{i,j,k}\lambda_{u}^{ik}\cdot\bar{\mathrm{Q}}^{i}_\mathrm{L}\epsilon^{ij}\phi^{j}\cdot\mathrm{u}^{k}_\mathrm{R} +\mathrm{\gls{hc}}\,, \label{eq:theory-quark-yukawa}
 \end{align}
 \end{subequations}
 
-where the coupling strengths are denoted by $\lambda\,$. After the symmetry breaking a mass term for the electron, muon and tau lepton of $m_\ell=-\lambda_\ell v/\sqrt{2}$ is introduced. The quarks can be disentangled from their mixed mass state through a rotation of the fields 
+where $\lambda_{X}^{ij}\,$  denote the coupling strengths and $\epsilon^{ij}$ an antisymmetric matrix. After symmetry breaking mass terms for the electron, muon and tau lepton of 
+
+\begin{equation}
+\mathcal{L}_\mathrm{Yukawa~lepton~int.}\supset-\frac{\lambda_\mathrm{e} v}{\sqrt{2}}\,\mathrm{e}_\mathrm{L}\mathrm{e}_\mathrm{R}-\frac{\lambda_{\mu} v}{\sqrt{2}}\,{\mu}_\mathrm{L}{\mu}_\mathrm{R}-\frac{\lambda_{\tau} v}{\sqrt{2}}\,{\tau}_\mathrm{L}{\tau}_\mathrm{R}+\mathrm{\gls{hc}}
+\end{equation}
+
+can be identified. The quarks can be disentangled from their mixed-mass state through a rotation of the fields 
 
 \begin{equation}
 \mathrm{u}^{i}_\mathrm{L}\mapsto U^{ij}_\mathrm{u}\mathrm{u}^{j}_\mathrm{L}\,,\qquad \mathrm{d}^{i}_\mathrm{L}\mapsto U^{ij}_\mathrm{d}\mathrm{d}^{j}_\mathrm{L}\,,
 \end{equation}
 
-which allows to write the Lagrangian density in the quark mass eigenstates. In particular, using Eqs.~\ref{eq:theory-codev-su2-interaction} and~\ref{eq:theory-codev-breaking} this yields the interactions
+which allows to write the Lagrangian density in the quark mass eigenstates. In particular, using Eqs.~\ref{eq:theory-codev-su2-interaction} and~\ref{eq:theory-codev-breaking}, this yields the interaction terms
 
 \begin{align}
-\mathcal{L}_{\mathrm{W}\bar{\mathrm{f}}\mathrm{f}~\mathrm{int.}}=\hphantom{+}i&\frac{g}{2\sqrt{2}}\,\Big[\bar{\nu}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\ell^{\rmminus}_{i}~+~{\ell}^{\rmplus}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\nu_{i}\Big]\nonumber\\
-+i&\frac{g}{2\sqrt{2}}\,\Big[\mathrm{V}_{ij}\,\bar{\mathrm{u}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\mathrm{d}_{j}~+~\mathrm{V}_{ij}^\dagger\,\bar{\mathrm{d}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\mathrm{u}_{j}\Big] \label{eq:theory-qqW-int}
+\mathcal{L}_{\mathrm{W}\bar{\mathrm{f}}\mathrm{f}~\mathrm{int.}}=\hphantom{+}i&\frac{g}{2\sqrt{2}}\sum_{i}\,\Big(\bar{\nu}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\ell^{\rmminus}_{i}~+~{\ell}^{\rmplus}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\nu_{i}\Big)\nonumber\\
++i&\frac{g}{2\sqrt{2}}\sum_{i,j}\,\Big(\mathrm{V}_{ij}\,\bar{\mathrm{u}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmplus}_\mu\,\mathrm{d}_{j}~+~\mathrm{V}_{ij}^\dagger\,\bar{\mathrm{d}}_{i}(\gamma^\mu-\gamma^\mu\gamma^5) \mathrm{W}^{\rmminus}_\mu\,\mathrm{u}_{j}\Big) \label{eq:theory-qqW-int}
 \end{align}
 
 between the $\mathrm{W}$~bosons and fermions where $\mathrm{V}_{ij}=(U^\dagger_\mathrm{u}U_\mathrm{d})_{ij}$ denotes the \glshere{ckm} matrix. Its elements are free parameters of the \gls{sm} and have to be measured experimentally. A global fit using a multitude of measurements~\cite{Olive:2016xmw} while assuming unitarity for the three quark generations yields
@@ -320,6 +330,7 @@ between the $\mathrm{W}$~bosons and fermions where $\mathrm{V}_{ij}=(U^\dagger_\
 0.009 & 0.040 & 0.999 
 \end{pmatrix}\,.
 \end{equation}
+
 
 The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}\,$, between $\mathrm{W}$~bosons and the fermions is referred to as a \glshere{va} structure because of its spatial transformation properties. Axial vectors do not switch sign under parity transformation  unlike normal spatial vectors\footnote{A typical example of an axial vector (also known as pseudovector) is the angular momentum $\vec{L}=\vec{r}\times \vec{p}\,$.}. This allows only left-handed fermions or right-handed antifermions to couple to $\mathrm{W}$~bosons as observed by the Wu experiment.
 
