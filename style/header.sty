@@ -56,13 +56,15 @@
 
 %sans serif
 %\usepackage{comfortaa}
-%\usepackage{tgheros}
+%\usepackage[scale=0.9]{tgheros}
 %\usepackage[light,math]{kurier}
 %\usepackage[scale=1.11]{biolinum}
 %\usepackage{cabin}
 %\usepackage{carlito}
+%\renewcommand{\sfdefault}{iwona}
+%\usepackage[light]{roboto}
 
-%\usepackage[sf]{quattrocento}
+\usepackage[sf]{quattrocento}
 %\usepackage{classico}
 
 
@@ -256,7 +258,7 @@
 \clearscrheadfoot
 \ihead{\headmark}
 \ohead[\pagemark]{\pagemark}
-\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{textgray}\chaptername\,\thechapter{}.}\enspace #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{textgray}\chaptername~\thechapter{}.}\enspace #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{{\numberfont\color{textgray}\thesection{}.}\enspace #1}}
 \renewcommand{\subsectionmark}[1]{\markright{{\numberfont\color{textgray}\thesubsection{}.}\enspace #1}}
 \fboxrule=\myrulewidth
@@ -291,13 +293,15 @@
 
 
 \mdfdefinestyle{chstyle}{%
-    linewidth=2.4\myrulewidth,
+    linewidth=1.5\myrulewidth,
     leftmargin=0pt,
-    innerleftmargin=0.085\textwidth,
+    innerleftmargin=0.05\textwidth,
     rightmargin=0pt,
     innerrightmargin=0pt,
-    innertopmargin=1pt,
+    innertopmargin=0pt,
     innerbottommargin=0pt,
+    skipabove=0pt,
+    skipbelow=0pt,
     linecolor=gray,
     topline=false,
     rightline=false,
@@ -310,17 +314,16 @@
 \def\@makechapterhead#1{
      \parbox{\textwidth}{
         \chapterheadstartvskip
-        %\parbox{\textwidth}{\headline{\textls*[180]{\Large\textsf{\chaptername}}\quad\LARGE\numberfont{\thechapter}}}\\[0.55cm]
-        \parbox[c][][c]{0.12\textwidth}{\centering\color{gray}\fontsize{36}{36}\textrm{\raisebox{-0.13em}{\thechapter{}.}}}
-        \hspace{0.04\textwidth}
-        \parbox[c][][c]{0.82\textwidth}{\begin{mdframed}[style=chstyle]\fontsize{32}{32}\usekomafont{chapter} #1\end{mdframed}}\\[0.75cm]
-
-        %\vspace{0.45cm}
-        %\parbox{\textwidth}{\color{gray}\rule{\textwidth}{\myrulewidth}}\\[0.0cm]
+        \microtypesetup{protrusion=false}
+        \parbox[t][][b]{0.27\textwidth}{\color{gray}\usekomafont{chapter}\chaptername~~\thechapter{}.}
+        %\parbox[c][][c]{0.82\textwidth}{\begin{mdframed}[style=chstyle]\fontsize{32}{32}\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
+        \parbox[t][][b]{0.72\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
+        %\usekomafont{chapter}{\numberfont\color{gray}\chaptername~\thechapter{}.\quad\rule{2\myrulewidth}{0.5cm}}\quad#1\\[0.5cm]
+        \microtypesetup{protrusion=true}
     }
 }
 
-\setkomafont{chapter}{\normalfont\fontsize{19}{24}\selectfont\numberfont}
+\setkomafont{chapter}{\normalfont\fontsize{17}{25}\selectfont\numberfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace{0.3cm}}
 \renewcommand*{\chapterheadendvskip}{\vspace{0.8cm}}
 
