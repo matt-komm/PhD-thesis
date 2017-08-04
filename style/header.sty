@@ -60,9 +60,10 @@
 %\usepackage[light,math]{kurier}
 %\usepackage[scale=1.11]{biolinum}
 %\usepackage{cabin}
-%\usepackage{carlito}
+\usepackage[scale=1.05]{carlito}
 %\renewcommand{\sfdefault}{iwona}
 %\usepackage[light]{roboto}
+%\usepackage{tgadventor}
 
 %\usepackage[sf]{quattrocento}
 %\usepackage{classico}
@@ -86,9 +87,9 @@
 \usepackage{color}
 \usepackage{xcolor} %more advance color usage
 \definecolor{ucl}{rgb}{0.05,0.15,0.45}
-\definecolor{gray}{rgb}{0.7,0.7,0.7}
-\definecolor{textgray}{rgb}{0.7,0.7,0.7}
-\definecolor{lightgray}{rgb}{0.85,0.85,0.85}
+\definecolor{gray}{rgb}{0.75,0.75,0.75}
+\definecolor{textgray}{rgb}{0.75,0.75,0.75}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
 \definecolor{darkgreen}{rgb}{0.0,0.45,0.}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.5}
 
@@ -293,13 +294,13 @@
 
 
 \mdfdefinestyle{chstyle}{%
-    linewidth=0.\myrulewidth,
+    linewidth=0\myrulewidth,
     leftmargin=0pt,
-    innerleftmargin=0.0\textwidth,
+    innerleftmargin=0.03\textwidth,
     rightmargin=0pt,
     innerrightmargin=0pt,
     innertopmargin=0pt,
-    innerbottommargin=0pt,
+    innerbottommargin=15pt,
     skipabove=0pt,
     skipbelow=0pt,
     linecolor=gray,
@@ -315,8 +316,10 @@
      \parbox{\textwidth}{
         \chapterheadstartvskip
         \microtypesetup{protrusion=false}
-        \parbox[t][][b]{0.27\textwidth}{\color{gray}\usekomafont{chapter}\chaptername~~\thechapter{}.}
-        \parbox[t][][b]{0.72\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
+        %\colorbox{gray}{\parbox[t][][b]{0.21\textwidth}{\color{white}\usekomafont{chapter}\hfill\chaptername\\\mbox{}\hfill\thechapter{}.}}
+        \parbox[t][][b]{0.25\textwidth}{\color{gray}\usekomafont{chapter}\hfill\textls*[103]{\textrm{\chaptername}}\\\mbox{}\hfill\textls*[103]{\textrm{\thechapter{}}.}}
+        \hspace{0.03\textwidth}
+        \parbox[t][][b]{0.7\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
         \microtypesetup{protrusion=true}
     }
 }

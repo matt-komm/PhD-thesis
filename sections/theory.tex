@@ -115,7 +115,7 @@ Assuming $\psi\propto e^{-ip^{\mu}x_{\mu}}$ leads to the well-known energy-momen
 
 \begin{subequations}
 \begin{align}
-0&=\big(-i\gamma^\mu\partial_\mu-m\big)^\star\cdot \big(-i\gamma^\nu\partial_\nu-m\big)\psi\\
+0&=\big(-i\gamma^\mu\partial_\mu-m\big)^\star\cdot ~\big(-i\gamma^\nu\partial_\nu-m\big)\psi\\
  &=\big(\partial^{\mu}\partial_{\mu}+m^{2}\big)\psi \qquad \mathrm{(Klein\mbox{-}Gordon~equation)}  \\
  &\Rightarrow \big(-p^{\mu}p_{\mu}+m^{2}\big) = 0\,.
 \end{align}
@@ -126,19 +126,19 @@ Interactions between particles are introduced in the \gls{sm} by requiring local
 Applying the gauge transformation
 
 \begin{equation}
-\psi(x)\mapsto\psi^{\prime}(x)=\psi(x)\cdot\mathrm{e}^{-iq\cdot\alpha(x)}\,, \label{eq:theory-u1-trafo}
+\psi(x)~\mapsto~\psi^{\prime}(x)=\psi(x)\cdot\mathrm{e}^{-iq\cdot\alpha(x)}\,, \label{eq:theory-u1-trafo}
 \end{equation}
 
 on Eq.~\ref{eq:theory-diracL} yields
 
 \begin{equation}
-\mathcal{L}(\psi,\partial_\mu\psi)\mapsto\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})=\bar{\psi}\,\Big(i\gamma^\mu\partial_\mu+q\,\gamma^\mu\partial_\mu\alpha(x)-m\Big)\,\psi\not=\mathcal{L}(\psi,\partial_\mu\psi)\,,
+\mathcal{L}(\psi,\partial_\mu\psi)~\mapsto~\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})=\bar{\psi}\,\Big(i\gamma^\mu\partial_\mu+q\,\gamma^\mu\partial_\mu\alpha(x)-m\Big)\,\psi\not=\mathcal{L}(\psi,\partial_\mu\psi)\,,
 \end{equation}
 
 where the arbitrary phase $\alpha(x)$ is a function of the local space-time coordinate $x$\,. The invariance $\mathcal{L}(\psi,\partial_\mu\psi)=\mathcal{L}(\psi^{\prime},\partial_\mu\psi^{\prime})$ is restored by adding a bosonic spin-1 field $\mathrm{A}_{\mu}(x)$ to the Lagrangian density which interacts with $\psi$ and transforms under Eq.~\ref{eq:theory-u1-trafo} as
 
 \begin{equation}
-\mathrm{A}_{\mu}(x)\mapsto \mathrm{A}^{\prime}_{\mu}(x)=\mathrm{A}_\mu(x)-\partial_\mu\alpha(x)\,.
+\mathrm{A}_{\mu}(x)~\mapsto~ \mathrm{A}^{\prime}_{\mu}(x)=\mathrm{A}_\mu(x)-\partial_\mu\alpha(x)\,.
 \end{equation}
 
 In summary, this procedure results in a Lagrangian density containing the following terms
@@ -194,7 +194,7 @@ and right-handed singlet fields
 of the $\mathrm{SU(2)}$ group. Right-handed neutrinos do not participate in any interactions described by the \gls{sm}. The gauge transformation of the combined $\mathrm{U(1)}\otimes \mathrm{SU(2)}$ group is
 
 \begin{equation}
-\psi(x)\mapsto\psi(x)\,\cdot\,\underbrace{\mathrm{e}^{-\tfrac{1}{2}ig\,\vec{\alpha}(x)\cdot\vec{\omega}}}_\mathrm{SU(2)}\,\cdot\,\underbrace{\mathrm{e}^{-\tfrac{1}{2}ig^{\prime}\,\beta(x)}}_\mathrm{U(1)}\,, \label{eq:theory-u1su2-transformation}
+\psi(x)~\mapsto~\psi^\prime(x)=\psi(x)\,\cdot\,\underbrace{\mathrm{e}^{-\tfrac{1}{2}ig\,\vec{\alpha}(x)\cdot\vec{\omega}}}_\mathrm{SU(2)}\,\cdot\,\underbrace{\mathrm{e}^{-\tfrac{1}{2}ig^{\prime}\,\beta(x)}}_\mathrm{U(1)}\,, \label{eq:theory-u1su2-transformation}
 \end{equation}
 
 where $\omega_{a}$~($a\in\{1,2,3\}$) denote the Pauli matrices and $g$\,, $g^{\prime}$ the corresponding conserved charges. This leads to four boson fields, $\mathrm{W}^{a}$ and $\mathrm{B}$, that interact with the fermions. In analogy to Eq.~\ref{eq:theory-EM-int} one obtains the \glshere{ewk} interactions
@@ -225,7 +225,7 @@ in the form of a ``Mexican hat'' as shown in Fig.~\ref{fig:theory-higgs-potentia
 \phi_0=\sqrt{\frac{\mu^{2}}{2\lambda}}\equiv \frac{v}{\sqrt{2}}\,.
 \end{equation}
 
-\myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field $\phi$ with a non-zero \glshere{vev} $\phi_0$ that leads to symmetry breaking.}{
+\myfigure{\label{fig:theory-higgs-potential}The ``Mexican hat'' potential of the Higgs field $\phi$ with a non-zero \acrfull{vev} $\phi_0$ that leads to symmetry breaking.}{
 \includegraphics[scale=0.3]{figures/theory/higgspot.pdf}
 }
 
@@ -238,14 +238,14 @@ One says that this shifted \gls{vev} ``breaks'' the $\mathrm{SU(2)}$ symmetry wh
 where $\vec{\theta}$ denotes three so-called ``Goldstone'' bosons and $\mathrm{H}$ the Higgs boson. In fact, the symmetry still exists but is ``hidden''. A $\mathrm{SU(2)}$ transformation called ``unitary gauge'' can be performed such that $\vec{\theta}$ vanishes. One says that these three Goldstone bosons and their degrees of freedom are ``eaten'' by the $\mathrm{W}$ and $\mathrm{Z}$~bosons to become massive. Hence, through the extra degrees of freedom they can also have a longitudinal polarization after symmetry breaking. The parametrization of $\phi$ is chosen such that it leaves the minimum invariant under the $\mathrm{U(1)}$ subgroup transformation
 
 \begin{equation}
-\phi(x)\mapsto\phi(x)\cdot\mathrm{e}^{-\tfrac{1}{2}ig\,\alpha_{3}(x)\cdot\omega_{3}}\,\cdot\,\mathrm{e}^{-\tfrac{1}{2}ig^{\prime}\,\beta(x)}\,. \label{eq:theory-broken-u1-trans}
+\psi(x)~\mapsto~\psi^\prime(x)=\psi(x)\cdot\mathrm{e}^{-\tfrac{1}{2}ig\,\alpha_{3}(x)\cdot\omega_{3}}\,\cdot\,\mathrm{e}^{-\tfrac{1}{2}ig^{\prime}\,\beta(x)}\,. \label{eq:theory-broken-u1-trans}
 \end{equation}
 
 Inserting Eq.~\ref{eq:theory-phi-dev} into Eq.~\ref{eq:theory-phi-propagator} yields amongst others the following Lagrangian densities capturing the non-interacting terms:
 
 \begin{subequations}
 \begin{align}
-\mathcal{L}_\mathrm{Higgs}=&\hphantom{-}\tfrac{1}{2}(\partial_{\mu}\mathrm{H}^{\dagger})(\partial^{\mu}\mathrm{H})-\lambda^2 v^2 \mathrm{H}^2 \label{eq:theory-higgs} \\
+\mathcal{L}_\mathrm{Higgs~boson}=&\hphantom{-}\tfrac{1}{2}(\partial_{\mu}\mathrm{H}^{\dagger})(\partial^{\mu}\mathrm{H})-\lambda^2 v^2 \mathrm{H}^2 \label{eq:theory-higgs} \\
 \mathcal{L}_\mathrm{W_1,W_2~bosons}=&-\tfrac{1}{4}\big(\mathrm{W}_{1,\mu\nu}\mathrm{W}^{\mu\nu}_{1}+\mathrm{W}_{2,\mu\nu}\mathrm{W}^{\mu\nu}_{2}\big)\nonumber\\&+\tfrac{1}{8}g^2 v^2 \big(\mathrm{W}_{1,\mu} \mathrm{W}_{1}^{\mu}+\mathrm{W}_{2,\mu} \mathrm{W}_{2}^{\mu}\big) \label{eq:theory-a1a2} \\
 \mathcal{L}_\mathrm{W_3,B~bosons}=&-\tfrac{1}{4}\big(\mathrm{B}_{\mu\nu}\mathrm{B}^{\mu\nu}+\mathrm{W}_{3,\mu\nu}\mathrm{W}^{\mu\nu}_{3}\big)\nonumber\\
 &+\tfrac{1}{8}v^2 \big(g\mathrm{W}_{3,\mu}-g^{\prime}\mathrm{B}_\mu\big)\big(g\mathrm{W}_{3}^{\mu}-g^{\prime}\mathrm{B}^\mu\big)\,. \label{eq:theory-a3b}
@@ -283,7 +283,7 @@ which is measured as $\aem=e^2/(4\pi)\approx1/137$~\cite{Olive:2016xmw} and the 
 \quad\Rightarrow\quad v=(\sqrt{2}\,\mathrm{G}_\mathrm{F})^{-1/2}\approx 246~\GeV\,.
 \end{equation}
  
-A consequence of electroweak symmetry breaking is the prediction of the Higgs boson. Its mass is not predicted by the \gls{sm} since $\lambda$ is a free parameter of the ``Mexican hat'' potential (Eq.~\ref{eq:theory-higgs-pot}). The Higgs boson was finally discovered in July 2012 independently by the \gls{atlas}~\cite{Aad:2012tfa} and \gls{cms}~\cite{Chatrchyan:2012xdj} collaborations and thus completed the electroweak theory. 
+A consequence of electroweak symmetry breaking is the prediction of the Higgs boson. Its mass is not predicted by the \gls{sm} since it is a function of the free parameter $\lambda$ of the ``Mexican hat'' potential (Eq.~\ref{eq:theory-higgs-pot}). The Higgs boson was finally discovered in July 2012 independently by the \gls{atlas}~\cite{Aad:2012tfa} and \gls{cms}~\cite{Chatrchyan:2012xdj} collaborations and thus completed the electroweak theory. 
 
 \todo{check above if ok written}
 
@@ -299,13 +299,13 @@ Gauge-invariant fermion mass terms can be generated as well through symmetry bre
 where $\lambda_{X}^{ij}\,$  denote the coupling strengths and $\epsilon^{ij}$ an antisymmetric matrix. After symmetry breaking mass terms for the electron, muon and tau lepton of 
 
 \begin{equation}
-\mathcal{L}_\mathrm{Yukawa~lepton~int.}\supset-\frac{\lambda_\mathrm{e} v}{\sqrt{2}}\,\mathrm{e}_\mathrm{L}\mathrm{e}_\mathrm{R}-\frac{\lambda_{\mu} v}{\sqrt{2}}\,{\mu}_\mathrm{L}{\mu}_\mathrm{R}-\frac{\lambda_{\tau} v}{\sqrt{2}}\,{\tau}_\mathrm{L}{\tau}_\mathrm{R}+\mathrm{\gls{hc}}
+\mathcal{L}_\mathrm{Yukawa~lepton~int.}\supset-\underbrace{\frac{\lambda_\mathrm{e} v}{\sqrt{2}}\,}_{\equiv m_\mathrm{e}}\bar{\mathrm{e}}_\mathrm{L}\mathrm{e}_\mathrm{R}-\underbrace{\frac{\lambda_{\mu} v}{\sqrt{2}}\,}_{\equiv m_{\mu}}\bar{\mu}_\mathrm{L}{\mu}_\mathrm{R}-\underbrace{\frac{\lambda_{\tau} v}{\sqrt{2}}\,}_{\equiv m_{\tau}}\bar{\tau}_\mathrm{L}{\tau}_\mathrm{R}+\mathrm{\gls{hc}}
 \end{equation}
 
 can be identified. The quarks can be disentangled from their mixed-mass state through a rotation of the fields 
 
 \begin{equation}
-\mathrm{u}^{i}_\mathrm{L}\mapsto U^{ij}_\mathrm{u}\mathrm{u}^{j}_\mathrm{L}\,,\qquad \mathrm{d}^{i}_\mathrm{L}\mapsto U^{ij}_\mathrm{d}\mathrm{d}^{j}_\mathrm{L}\,,
+\mathrm{u}^{i}_\mathrm{L}~\mapsto~ U^{ij}_\mathrm{u}\mathrm{u}^{j}_\mathrm{L}\,,\qquad \mathrm{d}^{i}_\mathrm{L}~\mapsto~ U^{ij}_\mathrm{d}\mathrm{d}^{j}_\mathrm{L}\,,
 \end{equation}
 
 which allows to write the Lagrangian density in the quark mass eigenstates. In particular, using Eqs.~\ref{eq:theory-codev-su2-interaction} and~\ref{eq:theory-codev-breaking}, this yields the interaction terms
@@ -351,7 +351,7 @@ The theory of \glshere{qcd} describes the strong interaction between quarks and 
 which is invariant under the transformation
 
 \begin{equation}
-\psi(x)\mapsto\psi(x)\cdot\exp\Big(-ig\,\vec{\alpha}(x)\cdot\vec{\lambda}\Big)\,.
+\psi(x)~\mapsto~\psi^\prime(x)=\psi(x)\cdot\mathrm{e}^{-ig\,\vec{\alpha}(x)\cdot\vec{\lambda}}\,.
 \end{equation}
 
 The fields $\vec{\mathrm{G}}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The conserved charge of the group is called ``color'' (red, green, blue) which is however equal in strength for all charges. The generators $\lambda_a$~($a\in\{1\ldots8\}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure leads to gluon self-interactions through the gluon field strength tensor
@@ -439,7 +439,7 @@ The optical theorem, which can be derived from the unitarity $\mathcal{S}^{\dagg
 The \gls{sm} is believed to be not the final theory describing fundamental interactions. In the following, some of its problems are briefly outlined.
 
 \begin{description}
-\item[Gravity] The \gls{sm} cannot describe gravitational interactions. Its mediator, the graviton, would have to be a spin~2 boson which however leads non-renormalizable divergences. However, at energy scales reached by colliders, it is fine to ignore gravitational interactions since those become only comparable in strength to the electroweak and strong interactions at the Planck scale which is $\mathcal{O}(10^{18}~\GeV)$ if there are no extra dimensions.
+\item[Gravity] The \gls{sm} cannot describe gravitational interactions. Its mediator, the graviton, would have to be a spin~2 boson which however leads non-renormalizable divergences. At energy scales reached by colliders, it is fine nonetheless to ignore gravitational interactions since those become only comparable in strength to the electroweak and strong interactions at the Planck scale which is $\mathcal{O}(10^{18}~\GeV)$ if there are no extra dimensions.
 \item[Naturalness] A large correction to the bare Higgs boson mass originates from top quark loops due to Yukawa interactions. Those need to be absorbed by the physical mass through renormalization. The resulting mass can be written as $m^{2}_\mathrm{H}\approx m_\mathrm{bare}+\lambda_\mathrm{t}^{2}\mu^2/(16\pi^2)\,$. If the \gls{sm} is valid up to the Planck scale it would require an extraordinary fine-tuning of the bare Higgs mass in order to cancel this large correction. Such a coincidence is considered to be not very ``natural''.
 \item[Dark matter and dark energy] Cosmological observations of rotation speeds of galaxies, mapping of matter distributions through micro-lensing, and acoustic oscillations in the cosmic microwave background suggest that there exists a yet unidentified kind of matter, called ``dark matter''. An even more puzzling building block of the universe which is missing from the \gls{sm} is dark energy. It is a crucial ingredient to describe the expansion of the universe.
 
