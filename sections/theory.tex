@@ -287,7 +287,7 @@ A consequence of electroweak symmetry breaking is the prediction of the Higgs bo
 
 \todo{check above if ok written}
 
-Gauge-invariant fermion mass terms can be generated as well through symmetry breaking by introducing Yukawa interactions between the fermions and the Higgs field as
+By introducing gauge-invariant Yukawa interactions between the fermions and the Higgs field as 
 
 \begin{subequations}
 \begin{align}
@@ -296,7 +296,7 @@ Gauge-invariant fermion mass terms can be generated as well through symmetry bre
 \end{align}
 \end{subequations}
 
-where $\lambda_{X}^{ij}\,$  denote the coupling strengths and $\epsilon^{ij}$ an antisymmetric matrix. After symmetry breaking mass terms for the electron, muon and tau lepton of 
+where $\lambda_{X}^{ij}\,$  denote the coupling strengths and $\epsilon^{ij}$ an antisymmetric matrix, fermion mass terms are generated as well. After the symmetry breaking mass terms for the electron, muon and tau lepton of 
 
 \begin{equation}
 \mathcal{L}_\mathrm{Yukawa~lepton~int.}\supset-\underbrace{\frac{\lambda_\mathrm{e} v}{\sqrt{2}}\,}_{\equiv m_\mathrm{e}}\bar{\mathrm{e}}_\mathrm{L}\mathrm{e}_\mathrm{R}-\underbrace{\frac{\lambda_{\mu} v}{\sqrt{2}}\,}_{\equiv m_{\mu}}\bar{\mu}_\mathrm{L}{\mu}_\mathrm{R}-\underbrace{\frac{\lambda_{\tau} v}{\sqrt{2}}\,}_{\equiv m_{\tau}}\bar{\tau}_\mathrm{L}{\tau}_\mathrm{R}+\mathrm{\gls{hc}}
@@ -317,24 +317,22 @@ which allows to write the Lagrangian density in the quark mass eigenstates. In p
 
 between the $\mathrm{W}$~bosons and fermions where $\mathrm{V}_{ij}=(U^\dagger_\mathrm{u}U_\mathrm{d})_{ij}$ denotes the \glshere{ckm} matrix. Its elements are free parameters of the \gls{sm} and have to be measured experimentally. A global fit using a multitude of measurements~\cite{Olive:2016xmw} while assuming unitarity for the three quark generations yields
 
-\begin{equation}
+\begin{align}
+V_\mathrm{\gls{ckm}}&=\begin{pmatrix}
+|\ckm{ud}| & |\ckm{us}| & |\ckm{ub}| \\
+|\ckm{cd}| & |\ckm{cs}| & |\ckm{cb}| \\
+|\ckm{td}| & |\ckm{ts}| & |\ckm{tb}| 
+\end{pmatrix}\nonumber
+\\&=
 \begin{pmatrix}
-\ckm{ud} & \ckm{us} & \ckm{ub} \\
-\ckm{cd} & \ckm{cs} & \ckm{cb} \\
-\ckm{td} & \ckm{ts} & \ckm{tb} 
-\end{pmatrix}
-~=~
-\begin{pmatrix}
-0.974 & 0.225 & 0.004 \\
-0.225 & 0.974 & 0.041 \\
-0.009 & 0.040 & 0.999 
+0.9743\pm0.0001 & 0.2250\pm0.0005 & 0.0036\pm0.0001 \\
+0.2249\pm0.0005 & 0.9735\pm0.0001 & 0.0411\pm0.0013 \\
+0.0088\pm0.0003 & 0.0403\pm0.0013 & 0.9992\pm0.0001 
 \end{pmatrix}\,.
-\end{equation}
+\end{align}
 
 
 The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}\,$, between $\mathrm{W}$~bosons and the fermions is referred to as a \glshere{va} structure because of its spatial transformation properties. Axial vectors do not switch sign under parity transformation  unlike normal spatial vectors\footnote{A typical example of an axial vector (also known as pseudovector) is the angular momentum $\vec{L}=\vec{r}\times \vec{p}\,$.}. This allows only left-handed fermions or right-handed antifermions to couple to $\mathrm{W}$~bosons as observed by the Wu experiment.
-
-\todo{add uncertainties to the CKM}
 
 
 %##############################################
@@ -342,42 +340,42 @@ The coupling structure, $\gamma_{\mu}-\gamma_{\mu}\gamma_{5}\,$, between $\mathr
 %##############################################
 \label{sec:theory-qcd}
 
-The theory of \glshere{qcd} describes the strong interaction between quarks and gluons. It is connected to a $\mathrm{SU(3)}$ gauge group resulting into the Lagrangian density of
+The theory of \glshere{qcd} describes the strong interaction between quarks and gluons. It is connected to a $\mathrm{SU(3)}$ gauge group with the Lagrangian density 
 
 \begin{align}
-\mathcal{L}_\mathrm{\gls{qcd}}=\bar{\psi}i\gamma^{\mu}\big(\partial_{\mu}-ig\,\vec{\mathrm{G}}_\mu\cdot\vec{\lambda}\big)\psi-\tfrac{1}{4}\vec{\mathrm{G}}_{\mu\nu}\vec{\mathrm{G}}^{\mu\nu}\,,\qquad \psi=\colvec{3}{\psi_\mathrm{red}}{\psi_\mathrm{green}}{\psi_\mathrm{blue}}\,,
+\mathcal{L}_\mathrm{\gls{qcd}}=\bar{\psi}i\gamma^{\mu}\big(\partial_{\mu}-ig_{s}\,\vec{\mathrm{G}}_\mu\cdot\vec{\lambda}\big)\psi-\tfrac{1}{4}\vec{\mathrm{G}}_{\mu\nu}\vec{\mathrm{G}}^{\mu\nu}\,,\qquad \psi=\colvec{3}{\psi_\mathrm{red}}{\psi_\mathrm{green}}{\psi_\mathrm{blue}}\,,
 \end{align}
 
-which is invariant under the transformation
+which is invariant under the local gauge transformation
 
 \begin{equation}
-\psi(x)~\mapsto~\psi^\prime(x)=\psi(x)\cdot\mathrm{e}^{-ig\,\vec{\alpha}(x)\cdot\vec{\lambda}}\,.
+\psi(x)~\mapsto~\psi^\prime(x)=\psi(x)\cdot\mathrm{e}^{-ig_{s}\,\vec{\alpha}(x)\cdot\vec{\lambda}}\,.
 \end{equation}
 
-The fields $\vec{\mathrm{G}}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The conserved charge of the group is called ``color'' (red, green, blue) which is however equal in strength for all charges. The generators $\lambda_a$~($a\in\{1\ldots8\}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure leads to gluon self-interactions through the gluon field strength tensor
+The fields $\vec{\mathrm{G}}_\mu$ describe eight gluons which represent the massless gauge bosons of the group. The conserved charge of the group is called ``color'' (red, green, blue) which is equal in strength for all charges. The generators $\lambda_a$~($a\in\{1\ldots8\}$) obey the relation $[\lambda_a,\lambda_b]=if_{abc}\lambda^c$ with the antisymmetric structure constant $f_{abc}$. A common representation of $\vec{\lambda}$ is given by the Gell-Mann matrices. The non-abelian group structure leads to gluon self-interactions through the gluon field strength tensor
 
 \begin{equation}
-\mathrm{G}_{\mu\nu}^{a}=\partial_{\mu} \mathrm{G}_\nu^{a}-\partial_{\nu} \mathrm{G}_{\mu}^{a}+g\,f^{abc}\mathrm{G}_{\mu,b}\mathrm{G}_{\nu,c}\,.
+\mathrm{G}_{\mu\nu}^{a}=\partial_{\mu} \mathrm{G}_\nu^{a}-\partial_{\nu} \mathrm{G}_{\mu}^{a}+g_{s}\,f^{abc}\mathrm{G}_{\mu,b}\mathrm{G}_{\nu,c}\,.
 \end{equation}
 
 No free quarks can exist in nature because of a phenomenon called ``color-confinement''. The \gls{qcd} potential between two quarks can be approximated as a ``Coulomb-plus-linear'' potential~\cite{Sumino2003173}
 
 \begin{equation}
-V(r)=-\frac{4\cdot\as}{3r}+k\cdot r\,,
+V(r)=-\frac{4\cdot\as}{3r}+k\cdot r\,,\quad \as=\frac{g_{s}^2}{4\pi}\,,
 \end{equation}
 
-where a linear term dominates at large distances $r$ or equivalently small exchanged energies. The factor $k$ can be understood as a ``gluon-spring'' tension similar to that of a harmonic oscillator. New quark/antiquark pairs can be created from the vacuum if the gluon field energy exceeds the mass of the new pair. This can lead to a cascade of particles emerging from the gluon field at sufficiently large energies which bind ``free'' quarks into color-neutral singlets called hadrons. Such a process is referred to as hadronization. In experiments, one usually clusters therefore collimated particles into a jet whose momentum is then used to infer the momentum of a quark or gluon candidate at its origin.
+where a linear term dominates at large distances $r$ or equivalently small exchanged energies. The factor $k$ can be understood as a ``gluon-spring'' tension similar to that of a harmonic oscillator. New quark/antiquark pairs can be created from the vacuum if the gluon field energy exceeds the mass of the new pair. This can lead to a cascade of particles emerging from the gluon field at sufficiently large energies which bind ``free'' quarks into color-neutral singlets called hadrons. Such a process is referred to as hadronization. In experiments the momentum of a quark or gluon candidate is therefore inferred by clustering collimated particles into jets and summing their momenta. \todo{check writing above}
 
-Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\uppi^{\rmplus}$~($\mathrm{u}\bar{\mathrm{d}}$), $\uppi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$), kaons $\mathrm{K}^{\rmplus}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$) and $\mathrm{J}/\Psi$~($\mathrm{c}\bar{\mathrm{c}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). The baryon number, $\mathrm{B}\equiv N\text{(baryons)}-N\text{(antibaryons)}\,$, is conserved in interactions. In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates~\cite{Aaij:2014jqa,Aaij:2016iza} and even ``pentaquarks'' forming a bound state of five quarks~\cite{Aaij:2015tga}.
+Hadrons can be either mesons which consist of quark-antiquark pairs~($\bar{\mathrm{q}}\mathrm{q}$) or baryons consisting of quark triplets~($\mathrm{qqq}$). These constituents of a hadron are referred to as ``valence quarks''. Common mesons are the pions $\uppi^{\rmplus}$~($\mathrm{u}\bar{\mathrm{d}}$), $\uppi^{0}$~($(\mathrm{u}\bar{\mathrm{u}}-\mathrm{d}\bar{\mathrm{d}})/\sqrt{2}$), kaons $\mathrm{K}^{\rmplus}$~($\mathrm{u}\bar{\mathrm{s}}$), $\mathrm{K}^{0}$~($\mathrm{d}\bar{\mathrm{s}}$) and $\mathrm{J}/\Psi$~($\mathrm{c}\bar{\mathrm{c}}$). Typical baryons are the proton~($\mathrm{uud}$), the neutron~($\mathrm{udd}$), and~$\Lambda^{0}$~($\mathrm{uds}$). The baryon number, $\mathrm{B}\equiv N\text{(baryons)}-N\text{(antibaryons)}\,$, is conserved in interactions. Hence, the proton is stable and cannot decay because it is the lightest baryon. In 2003, a new bound state containing four quarks has been observed by the Belle experiment~\cite{PhysRevLett.91.262001} at \gls{kek}, Japan. The \gls{lhcb} experiment at the \gls{lhc}, \gls{cern} confirmed this observation in 2013~\cite{Aaij:2013zoa} followed by the discovery of more so-called ``tetraquark'' candidates~\cite{Aaij:2014jqa,Aaij:2016iza} and even ``pentaquarks'' forming a bound state of five quarks~\cite{Aaij:2015tga}.
 
-Besides valence quarks and gluons, virtual quarks, so-called ``sea quarks'', are considered constituents of a hadron as well. This whole group of particles is commonly referred to as partons. In hadron collision experiments at a sufficiently high momentum transfer, one can approximate all partons as free which allows to treat hadron-hadron scattering as a single parton-parton interaction instead~\cite{Feynman:1969wa}. The momentum of a parton is expressed as a fraction of the hadron momentum $\vec{p}_\mathrm{parton}=x\cdot \vec{p}_\mathrm{hadron}\,$. Then, the probability of 
+Besides the valence quarks, virtual quarks, so-called ``sea quarks'', and gluons are considered constituents of a hadron as well. This whole group of particles is commonly referred to as partons. In hadron collision experiments at a sufficiently high momentum transfer, one can approximate all partons as free which allows to treat hadron-hadron scattering as a single parton-parton interaction instead~\cite{Feynman:1969wa}. The momentum of a parton is expressed in terms of the fraction of the hadron momentum $\vec{p}_\mathrm{parton}=x\cdot \vec{p}_\mathrm{hadron}\,$, where $x$ is also referred to as ``Bj\"orken scaling variable''~\cite{Bjorken:1967fb}. Then, the probability of 
 finding two parton flavors $f_{i}$ with momentum fraction $x_{i}$ interacting at an energy scale $\mu_\mathrm{F}$ in a hadron-hadron collision is given by the \glshere{pdf} as $\mathrm{\gls{pdf}}(x_{1},f_{1},\mu_\mathrm{F})\cdot\mathrm{\gls{pdf}}(x_{2},f_{2},\mu_\mathrm{F})\,$. The \glspl{pdf} are normalized such that
 
 \begin{equation}
 \sum_{f}^\mathrm{partons}\int_{0}^{1}\mathrm{d}x~x\cdot \mathrm{PDF}(x,\mu_\mathrm{F},f)=1
 \end{equation}
 
-yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``factorization scale'' below which non-perturbative low energy effects such as soft gluon emissions have been absorbed into the \gls{pdf}. Measuring the \glspl{pdf} at scale $\mu_\mathrm{F}$, one can extrapolate them to any other scale by solving the DGLAP\footnote{Named after the authors: Y. Dokshitzer, W. Gribow, L. Lipatow, G. Altarelli, G. Parisi} equation~\cite{Dokshitzer:1977sg,Gribov:1972ri,Altarelli:1977zs}. A review of common \gls{pdf} sets which are currently used in descriptions of \gls{lhc} collisions can be found in Ref.~\cite{Accardi2016}. There are various groups estimating \gls{pdf} sets from fits to experimental data using different approaches; e.g. CTEQ, MMHT~(formerly MSTW), ABM, HERAPDF, and NNPDF. Exemplary distributions taken from the NNPDF group~(version 3.0), using the \LHAPDF[format=hyperbf] library~\cite{Buckley:2014ana}, are shown in Fig.~\ref{fig:theory-nnpdf-dist} for $\mu_\mathrm{F}=10~\GeV$ and $\mu_\mathrm{F}=100~\GeV$. More information on this \gls{pdf} set can be found in Ref.~\cite{Ball:2014uwa}. At a momentum fraction of $x\approx0.2$ one can observe an excess of the up and down quark distributions as expected from the valence quark composition of the proton. These vanish at low momentum fractions at which the contributions from sea quarks and the gluon dominate.
+yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``factorization scale'' below which non-perturbative low energy effects such as soft gluon emissions have been absorbed into the \gls{pdf}. Measuring the \glspl{pdf} at scale $\mu_\mathrm{F}$, one can extrapolate them to any other scale by solving the DGLAP\footnote{Named after the authors: Dokshitzer, Gribow, Lipatow, Altarelli, and Parisi.} equation~\cite{Dokshitzer:1977sg,Gribov:1972ri,Altarelli:1977zs}. A review of common \gls{pdf} sets which are currently used in descriptions of \gls{lhc} collisions can be found in Ref.~\cite{Accardi2016}. There are various groups estimating \gls{pdf} sets from fits to experimental data using different approaches; e.g. CTEQ, MMHT~(formerly MSTW), ABM, HERAPDF, and NNPDF. Exemplary distributions taken from the NNPDF group~(version 3.0), using the \LHAPDF[format=hyperbf] library~\cite{Buckley:2014ana}, are shown in Fig.~\ref{fig:theory-nnpdf-dist} for $\mu_\mathrm{F}=10~\GeV$ and $\mu_\mathrm{F}=100~\GeV$. More information on this \gls{pdf} set can be found in Ref.~\cite{Ball:2014uwa}. At a momentum fraction of $x\approx0.2$ one can observe an excess of the up and down quark distributions as expected from the valence quark composition of the proton. These vanish at low momentum fractions at which the contributions from virtual sea quarks and gluons dominate.
 
 \myfigure{\label{fig:theory-nnpdf-dist}NNPDF\,$3.0$ \gls{nnlo} PDF set in 5 flavor scheme for $\as(m_\mathrm{Z})=0.118$ and factorization scales of (a)~$10~\GeV$ and (b)~$100~\GeV$. The gluon \gls{pdf} has been scaled down by a factor of $0.1$.}{
 \subfloat[]{\includegraphics[width=0.49\textwidth]{figures/theory/nnpdf_q10.pdf}}\hspace{0.01\textwidth}
@@ -387,10 +385,10 @@ yields the total momentum of the hadron. The scale $\mu_\mathrm{F}$ is called ``
 At high energies, quantum fluctuations lead to divergences. In order to let a theory still describe the experimental energy regime, physical quantities are redefined at the so-called ``renormalization scale'' $\mu_\mathrm{R}$. This leads amongst others to a ``running'' behavior of the coupling constants as a function of $\mu_\mathrm{R}$. Beyond this scale, high energy effects such as loop corrections to propagators~(``self-energy'') are absorbed in the physical quantities through a renormalization of the fields. In particular, the running behavior of the strong coupling constant is found to be 
 
 \begin{equation}
-\as(\mu_\mathrm{R})=\frac{\as(\mu_{0}^{2})}{1+\as(\mu_\mathrm{0}^2)\cdot\tfrac{33-2\cdot n_f}{12\pi}\cdot\ln\Big(\tfrac{|\mu_\mathrm{R}^2|}{\mu_{0}^{2}}\Big)}\,,
+\as(\mu_\mathrm{R})=\frac{\as(\mu_{0}^{2})}{1+\as(\mu_\mathrm{0}^2)\cdot\tfrac{33-2\cdot n_f}{12\pi}\cdot\ln\Big(\tfrac{|\mu_\mathrm{R}^2|}{\mu_{0}^{2}}\Big)}\,, \label{eq:theory-running-as}
 \end{equation}
 
-where $n_f$ denotes the number of quarks and $\mu_{0}$ is a reference scale where the coupling is known from measurements, e.g. $\mu_{0}=m_\mathrm{Z}\,$. The world average of the strong coupling constant $\as=g/(4\pi^2)$ at the $\mathrm{Z}$~boson mass is currently estimated to be $\as(m_\mathrm{Z})=0.1181\pm0.0011$~\cite{Olive:2016xmw}. 
+where $n_f$ denotes the number of quarks and $\mu_{0}$ is a reference scale where the coupling is known from measurements, e.g. $\mu_{0}=m_\mathrm{Z}\,$. The current world average of the strong coupling constant at the $\mathrm{Z}$~boson mass is estimated to be $\as(m_\mathrm{Z})=0.1181\pm0.0011$~\cite{Olive:2016xmw}. 
 
 Quarks can be treated as ``asymptotically free'' since the strong coupling decreases towards larger energies. On the other hand, following the behavior of $\as(\mu^2_\mathrm{R})$ to lower energies, a limit $\Lambda_\mathrm{\gls{qcd}}\approx 200~\MeV$ is found at which $\as$ becomes even larger than one. Below such energies, perturbative calculations of observables can no longer be performed~(see Sec.~\ref{sec:theory-observables}). 
 
@@ -403,14 +401,21 @@ Quarks can be treated as ``asymptotically free'' since the strong coupling decre
 %##############################################
 \label{sec:theory-observables}
 
-A particle scattering process or decay is fully characterized by the initial and final state particles as well as the interactions between them. Experimental observables are inclusive and differential cross sections as well as decay rates which can be calculated using perturbation theory. The cornerstone of such a calculation is the \glshere{smatrix} which describes the transition probability of a system from an initial to a final multiparticle state as $|\langle i|\mathcal{S}|f\rangle|^{2}\,$. In the Heisenberg picture the \gls{smatrix} is given by the Dyson series
+A particle scattering process or decay is fully characterized by the initial and final state particles as well as the interactions between them. Typical experimental observables are inclusive and differential cross sections as well as decay rates which can be calculated using perturbation theory. The cornerstone of such a calculation is the \glshere{smatrix} which describes the transition probability of a system from an initial to a final multiparticle state as $|\langle i|\mathcal{S}|f\rangle|^{2}\,$. In the Heisenberg picture the \gls{smatrix} is given by the Dyson series
 
 \begin{align}
 \mathcal{S}&=\mathrm{T}\Big[\exp\Big(-i\int\mathrm{d}^{4}x~\mathcal{H}_\mathrm{int}(t)\Big)\Big]\nonumber\\
 &=\sum_{n=0}^{\infty}\frac{(-i)^{n}}{n!}\int_{-\infty}^{\infty}\mathrm{d}^{4}x_{1}\ldots \int_{-\infty}^{\infty}\mathrm{d}^{4}x_{n}~\mathrm{T}\Big[\mathcal{H}_\mathrm{int}(t_{1})\ldots\mathcal{H}_\mathrm{int}(t_{n})\Big]\,, \label{eq:theory-dyson-series}
 \end{align}
 
-where particle interactions are described within the non-free part of the Hamiltonian density $\mathcal{H}_\mathrm{int}=\mathcal{H}-\mathcal{H}_\mathrm{free}\,$. The operator $\mathrm{T}$ ensures that products of $\mathcal{H}_\mathrm{int}(t_{i})$ are ordered by time. Typically one captures the interaction terms for $n\geq1$ of Eq.~\ref{eq:theory-dyson-series} into a \glshere{me} denoted $\mathcal{M}$ instead. If $\mathcal{H}_\mathrm{int}>1$ the series does not converges and one says the problem is not solvable perturbatively. For instance, the ground states of hadrons can not be calculated perturbatively because of the running of the strong coupling constant. An alternative approach based on lattice gauge theory allowed to solve this problem~\cite{Durr:2008zz}.
+where particle interactions are described within the non-free part of the Hamiltonian density $\mathcal{H}_\mathrm{int}=\mathcal{H}-\mathcal{H}_\mathrm{free}\,$. The operator $\mathrm{T}$ ensures that products of $\mathcal{H}_\mathrm{int}(t_{i})$ are ordered by time. The transition amplitude from an initial to a final multiparticle state with particles $\psi_i^\mathrm{in/out}$ respectively is then given by
+
+\begin{align}
+\mathcal{A}_\mathrm{in\to out}&=\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\mathcal{S}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle \\
+&=\underbrace{\langle\psi_{1}^\mathrm{out}\ldots\psi_{N^{\prime}}^\mathrm{out}\,|\,\psi_{1}^\mathrm{in}\ldots\psi_{N}^\mathrm{in}\rangle}_\mathrm{no~interaction}~+~i\mathcal{M}\,(2\pi)^{4}\delta^{4}\big(\Sigma p^\mathrm{in}_{i}-\Sigma p^\mathrm{out}_{j}\big)
+\end{align}
+
+where the \glshere{me}, $\mathcal{M}$, captures the interaction terms at all orders of the perturbative series. \todo{check if the amplitude eq fits here} If $\mathcal{H}_\mathrm{int}>1$ the series does not converge and one says the problem is not solvable perturbatively. For instance, the ground states of hadrons can not be calculated perturbatively\footnote{An alternative approach based on lattice gauge theory allowed to solve this problem~\cite{Durr:2008zz}.} because of the running of the strong coupling constant.
 
 For a scattering process, given a flux $L=\rho v$ of incoming particles with density $\rho$ and velocity $v$, the cross section $\sigma$ is defined as the number of interactions per unit density~($\rho=1$). It is usually denoted in the unit ``barn''~[$\mathrm{b}$] which is defined as $1~\mathrm{b}\equiv 10^{-28}~\mathrm{m}^{2}\,$.  The number of interaction events per time is given by $\mathrm{d}N/\mathrm{d}t=L\sigma\,$. The flux $L$ is commonly referred to as luminosity. In the case of hadron-hadron collisions the total cross section can be calculated from the partonic cross section $\sigma(f_{i}f_{j}\to X)$ for a given process  as
 
@@ -420,17 +425,16 @@ For a scattering process, given a flux $L=\rho v$ of incoming particles with den
 
 where additional summations and integrations over the \glspl{pdf} are required to account for the individual contributions per incoming parton flavor $f_{i}$ and momentum fraction $x_{i}\,$.
 
-Cross sections can be written in terms of the number of interaction vertices contributing to $\mathcal{M}$ originating from the perturbative series~(Eq.~\ref{eq:theory-dyson-series}). This allows to the expand them as a power series in terms of the coupling constant $\alpha$ as
+Cross sections can be written in terms of the number of interaction vertices contributing to $\mathcal{M}$ originating from elements of the perturbative series~(Eq.~\ref{eq:theory-dyson-series}). This allows to the expand them as a power series in terms of the coupling constant $\alpha$ as
 
 \begin{equation}
-\sigma=\sigma_\mathrm{\gls{lo}}\cdot\Big[1+\Big(\frac{\alpha}{2\pi}\Big)\cdot\sigma_\mathrm{1}+\Big(\frac{\alpha}{2\pi}\Big)^2\cdot\sigma_{2}+\Big(\frac{\alpha}{2\pi}\Big)^{3}\cdot\sigma_{3}+\ldots\Big]\,.
+\sigma=\sigma_\mathrm{\gls{lo}}\cdot\Big(1+\Big(\frac{\alpha}{2\pi}\Big)\cdot\sigma_\mathrm{1}+\Big(\frac{\alpha}{2\pi}\Big)^2\cdot\sigma_{2}+\Big(\frac{\alpha}{2\pi}\Big)^{3}\cdot\sigma_{3}+\ldots\Big)\,.
 \end{equation}
 
-Depending at which term the series is cut off one speaks of \glshere{lo}, \glshere{nlo}, or \glshere{nnlo} accuracy in $\alpha$. In general, it is desirable to calculated observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{Partonic \gls{lo} cross sections can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$\,. Hence an uncertainty due to a scale variation can be even considered meaningless.}.
+Depending at which term the series is cut off one speaks of \glshere{lo}, \glshere{nlo}, or \glshere{nnlo} accuracy in $\alpha$. In general, it is desirable to calculate observables beyond \gls{lo}. Predictions including higher order corrections tend to be less affected by theoretical uncertainties which originate from a variation of the chosen renormalization and factorization scales\footnote{Partonic \gls{lo} cross sections (without loops) can only be monotonous functions of $\mu_\mathrm{R}$ since $\sigma\propto\alpha(\mu_\mathrm{R})$\,. Hence an uncertainty due to a scale variation can be even considered meaningless.}.
 
-The optical theorem, which can be derived from the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix}, states that the imaginary part of a forward scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the total scattering amplitude of producing all possible intermediate particles $\sum_{X}\mathcal{M}^\dagger(i/f\to X)$ from the inital or final state. Since a total cross section is at least as big as the single forward scattering cross section one finds that the matrix elements are bound and cannot be arbitrary large. Nonetheless, a theory may describe experimental data well but violates the unitarity bound at higher energies. Such a case would hint towards a new physics model which restores unitarity by introducing new particles or interactions above the experimentally probable energy regime. This is called \glshere{uv} completion. Hence, a unitarity-violating theory may just reflect the low energy limit of an unknown \gls{uv}-complete theory. Exemplary, the $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\to\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}$ scattering amplitude would grow as $\mathcal{M}\sim s/m_\mathrm{W}^2$ if there is no Higgs boson and eventually violate unitarity at $\sqrt{s}\approx1~\TeV$.
+The optical theorem, which can be derived from the unitarity $\mathcal{S}^{\dagger}\mathcal{S}=1$ of the \gls{smatrix}, states that the imaginary part of a forward scattering amplitude $\mathcal{M}(i\to f)$ is directly related to the total scattering amplitude of producing all possible intermediate particles $\sum_{X}\mathcal{M}^\dagger(i/f\to X)$ from the inital or final state. Since a total cross section is at least as big as the single forward scattering cross section one finds that the matrix elements $\mathcal{M}$ are bound and cannot be arbitrary large. Nonetheless, a theory may describe experimental data well but violates the unitarity bound at higher energies. Such a case would hint towards a new physics model which restores unitarity by introducing new particles or interactions above the experimentally probable energy regime. This is called \glshere{uv} completion. Hence, a unitarity-violating theory may just reflect the low energy limit of an unknown \gls{uv}-complete theory. Exemplary, the $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\to\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}$ scattering amplitude would grow as $\mathcal{M}\sim s/m_\mathrm{W}^2$ if there is no Higgs boson and eventually violate unitarity at $\sqrt{s}\approx1~\TeV$\,.
 
-\todo{make clear that SM w/o Higgs valid below 1 TeV}
 
 %##############################################
 \section{Open questions}
@@ -439,9 +443,11 @@ The optical theorem, which can be derived from the unitarity $\mathcal{S}^{\dagg
 The \gls{sm} is believed to be not the final theory describing fundamental interactions. In the following, some of its problems are briefly outlined.
 
 \begin{description}
-\item[Gravity] The \gls{sm} cannot describe gravitational interactions. Its mediator, the graviton, would have to be a spin~2 boson which however leads non-renormalizable divergences. At energy scales reached by colliders, it is fine nonetheless to ignore gravitational interactions since those become only comparable in strength to the electroweak and strong interactions at the Planck scale which is $\mathcal{O}(10^{18}~\GeV)$ if there are no extra dimensions.
-\item[Naturalness] A large correction to the bare Higgs boson mass originates from top quark loops due to Yukawa interactions. Those need to be absorbed by the physical mass through renormalization. The resulting mass can be written as $m^{2}_\mathrm{H}\approx m_\mathrm{bare}+\lambda_\mathrm{t}^{2}\mu^2/(16\pi^2)\,$. If the \gls{sm} is valid up to the Planck scale it would require an extraordinary fine-tuning of the bare Higgs mass in order to cancel this large correction. Such a coincidence is considered to be not very ``natural''.
+\item[Gravity] The \gls{sm} cannot describe gravitational interactions. The mediator of gravity, the graviton, would have to be a spin~2 boson which however leads non-renormalizable divergences. At energy scales reached by colliders, it is fine nonetheless to ignore gravitational interactions since those become only comparable in strength to the electroweak and strong interactions at the Planck scale which is $\mathcal{O}(10^{18}~\GeV)$ if there are no extra dimensions.
+\item[Naturalness] A large correction to the bare Higgs boson mass originates from top quark loops due to Yukawa interactions. Those need to be absorbed by the physical mass through renormalization. The resulting mass can be written as $m^{2}_\mathrm{H}\approx m^\mathrm{bare}_\mathrm{H}+\lambda_\mathrm{t}^{2}\mu^2/(16\pi^2)\,$. If the \gls{sm} is valid up to the Planck scale it would require an extraordinary fine-tuning of the bare Higgs mass in order to cancel this large correction. Such a coincidence is considered to be not very ``natural''.
 \item[Dark matter and dark energy] Cosmological observations of rotation speeds of galaxies, mapping of matter distributions through micro-lensing, and acoustic oscillations in the cosmic microwave background suggest that there exists a yet unidentified kind of matter, called ``dark matter''. An even more puzzling building block of the universe which is missing from the \gls{sm} is dark energy. It is a crucial ingredient to describe the expansion of the universe.
 
 \end{description}
+
+\todo{add how much DM/energy is there}
 
