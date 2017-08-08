@@ -94,7 +94,7 @@ ROOT.gStyle.SetStatBorderSize(1)
 ROOT.gStyle.SetStatH(0.1)
 ROOT.gStyle.SetStatW(0.15)
 
-ROOT.gStyle.SetHatchesSpacing(0.8/math.sqrt(cvscale))
+ROOT.gStyle.SetHatchesSpacing(0.9/math.sqrt(cvscale))
 ROOT.gStyle.SetHatchesLineWidth(int(2*cvscale))
 
 # ROOT.gStyle.SetStaROOT.TStyle(Style_t style = 1001)
@@ -248,8 +248,8 @@ cv.SetLogz(0)
 cv.SetTopMargin(1-cvymax)
 cv.SetBottomMargin(cvymin)
 
-itemSpace=1
-skipSpace =0.7
+itemSpace=0.9
+skipSpace =1
 
 rootObj=[]
 
@@ -262,8 +262,8 @@ def drawMeasurement(index,mean,stat,tot,statColor,sysColor):
     boxSys1 = ROOT.TBox(mean-tot,index+space,mean-stat,index+itemSpace-space)
     #tf.SetLineColor(color.GetNumber())
     boxSys1.SetFillColor(sysColor.GetNumber())
-    boxSys1.SetLineColor(0)
-    boxSys1.SetLineWidth(3)
+    boxSys1.SetLineColor(sysColorDark.GetNumber())
+    boxSys1.SetLineWidth(2)
     boxSys1.SetFillStyle(1001)
     rootObj.append(boxSys1)
     boxSys1.Draw("SameF")
@@ -272,17 +272,17 @@ def drawMeasurement(index,mean,stat,tot,statColor,sysColor):
     boxSys2 = ROOT.TBox(mean+tot,index+space,mean+stat,index+itemSpace-space)
     #tf.SetLineColor(color.GetNumber())
     boxSys2.SetFillColor(sysColor.GetNumber())
-    boxSys2.SetLineColor(0)
-    boxSys2.SetLineWidth(3)
+    boxSys2.SetLineColor(sysColorDark.GetNumber())
+    boxSys2.SetLineWidth(2)
     boxSys2.SetFillStyle(1001)
     rootObj.append(boxSys2)
     boxSys2.Draw("SameF")
     boxSys2.Draw("SameL")
     
-    boxStat = ROOT.TBox(mean-stat,index+space*0.9,mean+stat,index+itemSpace-space*0.9)
+    boxStat = ROOT.TBox(mean-stat,index+space*1,mean+stat,index+itemSpace-space*1)
     #tf.SetLineColor(color.GetNumber())
     boxStat.SetFillColor(statColor.GetNumber())
-    boxStat.SetLineColor(0)
+    boxStat.SetLineColor(statColorDark.GetNumber())
     boxStat.SetLineWidth(2)
     boxStat.SetFillStyle(1001)
     rootObj.append(boxStat)
@@ -311,17 +311,17 @@ heightMax = 1
 
     
 resultList = [
-    ["t+#bar{t}","two bins",27.6,3.1,11.5],
-    ["t+#bar{t}","shape",26.0,2.6,10.5],
-    ["top quark#kern[-0.5]{ }+#kern[-0.5]{ }antiquark"],
+    ["t+#bar{t}","Two bins",27.6,3.1,11.5],
+    ["t+#bar{t}","Shape",26.0,2.6,10.5],
+    ["Top quark#kern[-0.5]{ }+#kern[-0.5]{ }antiquark"],
     [""],
-    ["#bar{t}","two bins",20.3,5.7,16.0],
-    ["#bar{t}","shape",21.1,4.6,13.8],
-    ["top antiquark"],
+    ["#bar{t}","Two bins",20.3,5.7,16.0],
+    ["#bar{t}","Shape",21.1,4.6,13.8],
+    ["Top antiquark"],
     [""],
-    ["t","two bins",31.7,3.7,11.2],
-    ["t","shape",29.0,3.2,10.5],
-    ["top quark"],
+    ["t","Two bins",31.7,3.7,11.2],
+    ["t","Shape",29.0,3.2,10.5],
+    ["Top quark"],
 ]
 
 for i,res in enumerate(resultList):
@@ -361,23 +361,32 @@ legend.SetBorderSize(0)
 legend.SetTextFont(43)
 legend.SetTextSize(35*fontScale)
 legend.SetFillStyle(0)
+
+statColorDark = newColor(0.9,0.4,0.15)
+sysColorDark = newColor(0.65,0.65,0.65)
             
-statColor = newColor(0.5,0.25,1)
-sysColor = newColor(0.8,0.8,0.8)
+statColor = newColor(1,0.75,0.4)
+sysColor = newColor(0.92,0.92,0.92)
 
-statColorBright = newColor(0.6,0.4,1)
-sysColorBright = newColor(0.8,0.8,0.8)
+statColorBright = newColor(1,0.65,0.35)
+sysColorBright = newColor(0.85,0.85,0.85)
 
-#addVLine((resultList[1][2]+resultList[1][3])*0.01,statColor.GetNumber(),2,2)
-#addVLine((resultList[1][2]-resultList[1][3])*0.01,statColor.GetNumber(),2,2)
 
-#addVLine((resultList[1][2]+resultList[1][4])*0.01,sysColor.GetNumber(),2,2)
-#addVLine((resultList[1][2]-resultList[1][4])*0.01,sysColor.GetNumber(),2,2)
+
 
 drawBox((resultList[1][2]-resultList[1][3])*0.01,(resultList[1][2]+resultList[1][3])*0.01,statColorBright)
 
 drawBox((resultList[1][2]-resultList[1][3])*0.01,(resultList[1][2]-resultList[1][4])*0.01,sysColorBright)
 drawBox((resultList[1][2]+resultList[1][3])*0.01,(resultList[1][2]+resultList[1][4])*0.01,sysColorBright)
+
+addVLine((resultList[1][2]+resultList[1][3])*0.01,statColorDark.GetNumber(),2,1)
+addVLine((resultList[1][2]-resultList[1][3])*0.01,statColorDark.GetNumber(),2,1)
+
+#addVLine((resultList[1][2]+resultList[1][4])*0.01,sysColorDark.GetNumber(),2,1)
+#addVLine((resultList[1][2]-resultList[1][4])*0.01,sysColorDark.GetNumber(),2,1)
+
+#addVLine(resultList[1][2]*0.01,1,3,1)
+
 
 currentHeight = 0.5
 for res in resultList:

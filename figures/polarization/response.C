@@ -1,27 +1,27 @@
 void response()
 {
-//=========Macro generated from canvas: cv_dist0.332069118724/
-//=========  (Fri May  5 17:40:07 2017) by ROOT version6.02/05
-   TCanvas *cv_dist0.332069118724 = new TCanvas("cv_dist0.332069118724", "",0,0,800,650);
+//=========Macro generated from canvas: cv_dist0.335640098134/
+//=========  (Tue Aug  8 12:28:08 2017) by ROOT version6.02/05
+   TCanvas *cv_dist0.335640098134 = new TCanvas("cv_dist0.335640098134", "",0,0,800,650);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv_dist0.332069118724->SetHighLightColor(2);
-   cv_dist0.332069118724->Range(-1.427481,-1.343949,1.625954,1.203822);
-   cv_dist0.332069118724->SetFillColor(0);
-   cv_dist0.332069118724->SetFillStyle(4000);
-   cv_dist0.332069118724->SetBorderMode(0);
-   cv_dist0.332069118724->SetBorderSize(2);
-   cv_dist0.332069118724->SetTickx(1);
-   cv_dist0.332069118724->SetTicky(1);
-   cv_dist0.332069118724->SetLeftMargin(0.14);
-   cv_dist0.332069118724->SetRightMargin(0.205);
-   cv_dist0.332069118724->SetTopMargin(0.08);
-   cv_dist0.332069118724->SetBottomMargin(0.135);
-   cv_dist0.332069118724->SetFrameFillStyle(0);
-   cv_dist0.332069118724->SetFrameBorderMode(0);
-   cv_dist0.332069118724->SetFrameFillStyle(0);
-   cv_dist0.332069118724->SetFrameBorderMode(0);
+   cv_dist0.335640098134->SetHighLightColor(2);
+   cv_dist0.335640098134->Range(-1.427481,-1.343949,1.625954,1.203822);
+   cv_dist0.335640098134->SetFillColor(0);
+   cv_dist0.335640098134->SetFillStyle(4000);
+   cv_dist0.335640098134->SetBorderMode(0);
+   cv_dist0.335640098134->SetBorderSize(2);
+   cv_dist0.335640098134->SetTickx(1);
+   cv_dist0.335640098134->SetTicky(1);
+   cv_dist0.335640098134->SetLeftMargin(0.14);
+   cv_dist0.335640098134->SetRightMargin(0.205);
+   cv_dist0.335640098134->SetTopMargin(0.08);
+   cv_dist0.335640098134->SetBottomMargin(0.135);
+   cv_dist0.335640098134->SetFrameFillStyle(0);
+   cv_dist0.335640098134->SetFrameBorderMode(0);
+   cv_dist0.335640098134->SetFrameFillStyle(0);
+   cv_dist0.335640098134->SetFrameBorderMode(0);
    
    TH2F *response = new TH2F("response","",6,-1,1,12,-1,1);
    response->SetBinContent(9,9.090879);
@@ -383,12 +383,12 @@ palette->SetTitleSize(35);
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
-   ci = TColor::GetColor("#ff0e27");
+   ci = TColor::GetColor("#ff1c35");
    palette->SetFillColor(ci);
    palette->SetFillStyle(1001);
    response->GetListOfFunctions()->Add(palette,"br");
    response->SetMarkerStyle(20);
-   response->SetMarkerSize(1.5);
+   response->SetMarkerSize(1.9);
    response->GetXaxis()->SetTitle("Parton level cos#kern[0.1]{#theta}#scale[0.7]{#lower[0.28]{#mu}}#kern[-1.1]{*}");
    response->GetXaxis()->SetNdivisions(508);
    response->GetXaxis()->SetLabelFont(43);
@@ -568,7 +568,7 @@ palette->SetTitleSize(35);
    response_copy1->SetEntries(2634282);
    response_copy1->SetDirectory(0);
    response_copy1->SetMarkerStyle(20);
-   response_copy1->SetMarkerSize(1.5);
+   response_copy1->SetMarkerSize(1.9);
    response_copy1->GetXaxis()->SetTitle("Parton level cos#kern[0.1]{#theta}#scale[0.7]{#lower[0.28]{#mu}}#kern[-1.1]{*}");
    response_copy1->GetXaxis()->SetNdivisions(508);
    response_copy1->GetXaxis()->SetLabelFont(43);
@@ -615,7 +615,7 @@ palette->SetTitleSize(35);
    pt->SetTextSize(35);
    AText = pt->AddText("Simulation");
    pt->Draw();
-   cv_dist0.332069118724->Modified();
-   cv_dist0.332069118724->cd();
-   cv_dist0.332069118724->SetSelected(cv_dist0.332069118724);
+   cv_dist0.335640098134->Modified();
+   cv_dist0.335640098134->cd();
+   cv_dist0.335640098134->SetSelected(cv_dist0.335640098134);
 }
