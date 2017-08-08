@@ -58,9 +58,9 @@
 %\usepackage{comfortaa}
 %\usepackage[scale=0.9]{tgheros}
 %\usepackage[light,math]{kurier}
-%\usepackage[scale=1.11]{biolinum}
+%\usepackage[scale=1.09]{biolinum}
 %\usepackage{cabin}
-\usepackage[scale=1.05]{carlito}
+%\usepackage[scale=1.05]{carlito}
 %\renewcommand{\sfdefault}{iwona}
 %\usepackage[light]{roboto}
 %\usepackage{tgadventor}
@@ -294,14 +294,14 @@
 
 
 \mdfdefinestyle{chstyle}{%
-    linewidth=0\myrulewidth,
+    linewidth=1.5\myrulewidth,
     leftmargin=0pt,
-    innerleftmargin=0.03\textwidth,
+    innerleftmargin=0.08\textwidth,
     rightmargin=0pt,
     innerrightmargin=0pt,
-    innertopmargin=0pt,
-    innerbottommargin=15pt,
-    skipabove=0pt,
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    skipabove=5pt,
     skipbelow=0pt,
     linecolor=gray,
     topline=false,
@@ -317,9 +317,13 @@
         \chapterheadstartvskip
         \microtypesetup{protrusion=false}
         %\colorbox{gray}{\parbox[t][][b]{0.21\textwidth}{\color{white}\usekomafont{chapter}\hfill\chaptername\\\mbox{}\hfill\thechapter{}.}}
-        \parbox[t][][b]{0.25\textwidth}{\color{gray}\usekomafont{chapter}\hfill\textls*[103]{\textrm{\chaptername}}\\\mbox{}\hfill\textls*[103]{\textrm{\thechapter{}}.}}
-        \hspace{0.03\textwidth}
-        \parbox[t][][b]{0.7\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
+        %\parbox[t][][b]{0.27\textwidth}{\color{gray}\usekomafont{chapter}\hfill{\chaptername}~\thechapter{}.}
+        %\hspace{0.04\textwidth}
+        %\parbox[t][][b]{0.67\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
+        %\parbox[t][][b]{0.99\textwidth}{\usekomafont{chapter}\hangindent=1.2em{\color{gray}\chaptername~\thechapter{}.\hspace*{0.8em}\rule{2.6\myrulewidth}{14pt}}\hspace*{1em}#1}
+        \parbox[c][][c]{0.12\textwidth}{\textrm{\fontsize{24}{24}\selectfont\hfill\color{gray}\thechapter{}.}}%
+        \hspace{0.06\textwidth}
+        \parbox[c][][c]{0.81\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
         \microtypesetup{protrusion=true}
     }
 }
