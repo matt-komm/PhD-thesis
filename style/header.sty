@@ -2,7 +2,7 @@
 %% Use with book (standard) document class not KOMA!
 
 %\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
-\usepackage[papersize={17cm,24cm},total={12cm,20cm},headsep=12pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
+\usepackage[papersize={17.5cm,24.75cm},total={12cm,20cm},headsep=12pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} %fix rendering of pages to nonalpha
 \usepackage[nouppercase]{scrpage2}
@@ -38,7 +38,10 @@
 
 %\usepackage{kpfonts}
 
-\usepackage[sc]{mathpazo}
+
+
+%\usepackage[sc]{mathpazo}
+\usepackage[scale=0.97]{tgpagella}
 %\usepackage{times}
 %\usepackage{newcent}
 %\usepackage[bitstream-charter]{mathdesign}
@@ -64,10 +67,13 @@
 %\renewcommand{\sfdefault}{iwona}
 %\usepackage[light]{roboto}
 %\usepackage{tgadventor}
+%\usepackage[scaled]{luximono}
 
-\usepackage{PTSansNarrow}
-%\usepackage{PTSansCaption}
-%\renewcommand{\sfdefault}{paratype}
+%\usepackage{PTSansNarrow}
+%\usepackage{PTSans}
+%\renewcommand{\sfdefault}{pag} %avant garde
+%\usepackage[sfdefault]{AlegreyaSans}
+\usepackage[scaled=0.9]{helvet}
 
 %\usepackage[sf]{quattrocento}
 %\usepackage{classico}
@@ -156,8 +162,17 @@
 %\newcommand*{\numberfont}{\fontfamily{qhv}\selectfont}
 %\newcommand*{\numberfont}{\fontfamily{pbk}\selectfont}
 
-\newcommand*{\numberfont}{\sffamily\selectfont}
-%\newcommand*{\numberfont}{\ffmfamily}
+\newcommand*{\numberfont}{\sffamily}
+\newcommand*{\sectionfont}{\sffamily\bfseries}
+%\newcommand*{\sectionfont}{\usefont{T1}{PTSansNarrow-TLF}{m}{n}}
+
+
+%\newcommand*{\numberfont}{\usefont{T1}{PTSans-TLF}{m}{n}}
+%\newcommand*{\sectionfont}{\usefont{T1}{PTSansNarrow-TLF}{m}{n}}
+
+%\newcommand*{\numberfont}{\usefont{T1}{LinuxBiolinumT-OsF}{m}{n}}
+%\newcommand*{\sectionfont}{\usefont{T1}{LinuxBiolinumT-OsF}{m}{n}}
+
 \newlength{\myrulewidth}
 \setlength{\myrulewidth}{0.65pt}
 
@@ -253,6 +268,9 @@
 \renewcommand{\cfttoctitlefont}{\usekomafont{chapter}}
 \renewcommand{\cftchapfont}{\rm\bf}
 \renewcommand{\cftsecfont}{}
+\setlength{\cftbeforechapskip}{1.5\baselineskip plus 1\baselineskip minus 1\baselineskip}
+\setlength\cftaftertoctitleskip{0.8cm-\cftbeforechapskip}
+\setlength{\cftbeforesecskip}{0.05\baselineskip}
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
@@ -298,7 +316,7 @@
 
 
 \mdfdefinestyle{chstyle}{%
-    linewidth=2.8\myrulewidth,
+    linewidth=4\myrulewidth,
     leftmargin=0pt,
     innerleftmargin=0.08\textwidth,
     rightmargin=0pt,
@@ -325,24 +343,25 @@
         %\hspace{0.04\textwidth}
         %\parbox[t][][b]{0.67\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
         %\parbox[t][][b]{0.99\textwidth}{\usekomafont{chapter}\hangindent=1.2em{\color{gray}\chaptername~\thechapter{}.\hspace*{0.8em}\rule{2.6\myrulewidth}{14pt}}\hspace*{1em}#1}
-        \parbox[c][][c]{0.12\textwidth}{\textrm{\fontsize{24}{24}\selectfont\hfill\color{gray}\thechapter{}.}}%
-        \hspace{0.08\textwidth}
-        \parbox[c][][c]{0.79\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
+        \parbox[c][][c]{0.10\textwidth}{{\sectionfont\fontsize{24}{24}\selectfont\bfseries\hfill\color{gray}\thechapter{}.}}%
+        \hspace{0.06\textwidth}
+        \parbox[c][][c]{0.83\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}\begin{flushleft}#1\end{flushleft}\end{mdframed}}
+        \chapterheadendvskip
         \microtypesetup{protrusion=true}
     }
 }
 
-\setkomafont{chapter}{\normalfont\fontsize{19}{27}\selectfont\numberfont}
+\setkomafont{chapter}{\normalfont\fontsize{17}{22}\selectfont\sectionfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace{0.3cm}}
-\renewcommand*{\chapterheadendvskip}{\vspace{0.8cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace{0.5cm}}
 
-\setkomafont{section}{\normalfont\huge\numberfont}
-\setkomafont{subsection}{\normalfont\huge\numberfont}
-\setkomafont{subsubsection}{\normalfont\huge\numberfont}
+\setkomafont{section}{\normalfont\fontsize{13}{13}\sectionfont}
+\setkomafont{subsection}{\normalfont\fontsize{13}{13}\sectionfont}
+\setkomafont{subsubsection}{\normalfont\fontsize{13}{13}\sectionfont}
 
 \RedeclareSectionCommands[
-  beforeskip=0.5\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip,
-  afterskip=0.25\baselineskip
+  beforeskip=0.65\baselineskip plus 0.15\baselineskip minus 0.1\baselineskip,
+  afterskip=0.05\baselineskip
 ]{section,subsection,subsubsection}
 
 \renewcommand{\@seccntformat}[1]{{\parbox[b][0.7\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
@@ -480,7 +499,7 @@
 }
 
 %%chapter intro
-\newcommand{\intro}[1]{\parbox{\textwidth}{\textsl{#1}}\\[5\parskip]}
+\newcommand{\intro}[1]{\parbox{\textwidth}{\textsl{#1}}\\[0.5cm]}
 
 
 %% footnote
@@ -523,7 +542,7 @@
     \setlength{\parindent}{0.cm} %Absatzeinzug
     \setlength{\parskip}{0.28\baselineskip plus 0.06\baselineskip minus 0.04\baselineskip}
     %\setlength{\parsep}{0cm}
-    \renewcommand{\baselinestretch}{1.08}\normalsize
+    \renewcommand{\baselinestretch}{1.085}\normalsize
 
 
     %formel abstände 
