@@ -174,7 +174,7 @@
 %\newcommand*{\sectionfont}{\usefont{T1}{LinuxBiolinumT-OsF}{m}{n}}
 
 \newlength{\myrulewidth}
-\setlength{\myrulewidth}{0.65pt}
+\setlength{\myrulewidth}{0.75pt}
 
 \def\hrulefill{\leavevmode\leaders\hrule height \myrulewidth\hfill\kern\z@}
 
@@ -332,7 +332,7 @@
     leftline=true
 }
 
-\def\headline#1{ {\color{gray}\hbox to \hsize{\lower.3em\hbox{#1}\hspace{2.5ex}\hrulefill}}}
+\newcommand*\ruleline[1]{\noindent\raisebox{1ex}{\makebox[\linewidth]{{\color{gray}\hrulefill}\hspace{1ex}\raisebox{-.65ex}{#1}}}}
 
 \def\@makechapterhead#1{
      \parbox{\textwidth}{
