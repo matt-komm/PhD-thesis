@@ -186,9 +186,9 @@ green = numpy.array([0.00,0.05, 0.8, 0.9, 0.8,0.20, 0.05])
 blue  = numpy.array([1.00,0.87, 1.00, 0., 0.0,0.00, 0.05])
 
 for i in range(len(red)):
-    red[i]=min(red[i]*1.1,1.0)
-    green[i]=min(green[i]*1.05,1.0)
-    blue[i]=min(blue[i]*1.1+0.1,1.0)
+    red[i]=min(red[i]*1.15+0.15,1.0)
+    green[i]=min(green[i]*1.15+0.05,1.0)
+    blue[i]=min(blue[i]*1.2+0.15,1.0)
 
 start=ROOT.TColor.CreateGradientColorTable(len(stops), stops, red, green, blue, 200)
 ROOT.gStyle.SetNumberContours(200)
@@ -279,7 +279,7 @@ hist = ROOT.TH2F("corr","",len(corr[0]),0,len(corr[0]),len(corr[0]),0,len(corr[0
 hist.GetZaxis().Set(0,-100,100)
 hist.GetZaxis().SetRangeUser(-100,100)
 hist.GetZaxis().SetTitle("Correlation (%)")
-hist.SetMarkerSize(1.5)
+hist.SetMarkerSize(1.9)
 for ibin,corrX in enumerate(reversed(corr)):
     for jbin,val in enumerate(corrX):
         hist.SetBinContent(ibin+1,jbin+1,val*100.)

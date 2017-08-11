@@ -103,7 +103,7 @@
 \definecolor{darkgreen}{rgb}{0.0,0.45,0.}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.5}
 
-\usepackage{array}%tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
+\usepackage{array} %tabellanartige Strukturen z.B. fuer Formeln Spalten im mathematischen Modus
 \usepackage{calc}%erweitert setlength etc. damit auch arithmetische Funktionen benutzt werden koennen
 \usepackage[hyphens,obeyspaces]{url}
 \Urlmuskip=0mu plus 1mu\relax
@@ -237,7 +237,7 @@
  \renewenvironment{theglossary}%
   %{\begin{multicols}{2}\begin{description}}%begin
   %{\end{description}\end{multicols}}%end
-   {\begin{multicols*}{2}}%begin
+   {\vspace*{-1.\baselineskip}\begin{multicols*}{2}}%begin
    {\end{multicols*}}%end
  % Set the table's header:
  \renewcommand*{\glossaryheader}{}%
@@ -265,15 +265,12 @@
 %% Setup TOC
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
-\renewcommand{\cfttoctitlefont}{\usekomafont{chapter}}
 \renewcommand{\cftchapfont}{\rm\bf}
 \renewcommand{\cftsecfont}{}
 \setlength{\cftbeforechapskip}{1.5\baselineskip plus 1\baselineskip minus 1\baselineskip}
-\setlength\cftaftertoctitleskip{0.8cm-\cftbeforechapskip}
 \setlength{\cftbeforesecskip}{0.05\baselineskip}
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
-
 %\newcommand{\appendixchapter}[1]{\tocless\chapter{#1}\addcontentsline{toc}{chapter}{\textbf{\chaptername~\thechapter\quad#1}}}
 \newcommand{\appendixchapter}[1]{\chapter{#1}}
 
@@ -334,6 +331,7 @@
 
 \newcommand*\ruleline[1]{\noindent\raisebox{1ex}{\makebox[\linewidth]{{\color{gray}\hrulefill}\hspace{1ex}\raisebox{-.65ex}{#1}}}}
 
+%numbered chapters
 \def\@makechapterhead#1{
      \parbox{\textwidth}{
         \chapterheadstartvskip
@@ -350,6 +348,36 @@
         \microtypesetup{protrusion=true}
     }
 }
+
+%unnumbered chapter
+\def\@makeschapterhead#1{
+     \parbox{\textwidth}{
+        \chapterheadstartvskip
+        \microtypesetup{protrusion=false}
+        %\colorbox{gray}{\parbox[t][][b]{0.21\textwidth}{\color{white}\usekomafont{chapter}\hfill\chaptername\\\mbox{}\hfill\thechapter{}.}}
+        %\parbox[t][][b]{0.27\textwidth}{\color{gray}\usekomafont{chapter}\hfill{\chaptername}~\thechapter{}.}
+        %\hspace{0.04\textwidth}
+        %\parbox[t][][b]{0.67\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
+        %\parbox[t][][b]{0.99\textwidth}{\usekomafont{chapter}\hangindent=1.2em{\color{gray}\chaptername~\thechapter{}.\hspace*{0.8em}\rule{2.6\myrulewidth}{14pt}}\hspace*{1em}#1}
+        \hspace{0.05\textwidth}\parbox[c][][c]{0.9\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}\begin{flushleft}#1\end{flushleft}\end{mdframed}}
+        \chapterheadendvskip
+        \microtypesetup{protrusion=true}
+    }
+}
+
+%toc chapter
+\def\@cftmaketoctitle{%
+ %\vspace*{\cftbeforetoctitleskip}
+ %\interlinepenalty\@M
+ %{\cfttoctitlefont\contentsname}{\cftaftertoctitle}
+ \chapter*{\contentsname}
+ \cftmarktoc
+ \par\nobreak
+ \vskip \cftaftertoctitleskip
+ \vskip -\cftbeforechapskip
+ %\@afterheading
+}
+
 
 \setkomafont{chapter}{\normalfont\fontsize{17}{22}\selectfont\sectionfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace{0.3cm}}
@@ -387,7 +415,7 @@
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
 %abstand zwischen caption und figure,table
 \captionsetup[figure]{labelsep=vline,font={small,stretch=1.12},farskip=3pt,aboveskip=0.6\baselineskip,belowskip=0.0\baselineskip}
-\captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0\baselineskip,belowskip=0.5\baselineskip}
+\captionsetup[table]{labelsep=vline,font={small,stretch=1.12},aboveskip=0.5\baselineskip,belowskip=0.0\baselineskip}
 \captionsetup[subfloat]{labelsep=space,font={small,stretch=1.12},farskip=5pt,captionskip=3pt} %distance between fig & subcaption
 
 \setlength\floatsep{1.2\baselineskip plus 3pt minus 1pt}
