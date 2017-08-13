@@ -5,7 +5,7 @@
 
 \intro{A theoretical introduction about the top quark and its production mechanisms is given in this chapter. A feature of the top quark is that its spin orientation is preserved in decays due to an interplay between its high mass and electroweak interactions which allows to study the coupling structure of various processes. In particular, aspects of the production of single top quarks in \textit{t}~channel via W~boson exchange are detailed. Furthermore, \gls{bsm} production mechanisms, detectable through an alteration of the Wtb coupling structure, are discussed which can be characterized using \acrlong{eft}. The chapter is concluded with a discussion of recent experimental results.}
 
-The top quark is the heaviest known fundamental particle so far. Its high mass of $m_\mathrm{t}=172.44\pm0.49~\GeV$~\cite{Khachatryan:2015hba} is close to the minimum of the Higgs potential. Using Eq.~\ref{eq:theory-quark-yukawa}, this implies a Yukawa coupling of 
+The top quark is the heaviest known fundamental particle so far. Its high mass of $m_\mathrm{t}=172.44\pm0.49~\GeV$~\cite{Khachatryan:2015hba} is close to the minimum of the Higgs potential. Using Eq.~\ref{eq:theory-quark-yukawa}, one obtains a Yukawa coupling strength of 
 
 \begin{equation}
 \mathcal{L}_\mathrm{top~mass}=-\bar{\mathrm{t}}_\mathrm{L}\,\underbrace{\lambda_\mathrm{t}\,\frac{\,v}{\sqrt{2}}}_{=m_\mathrm{t}}\,\mathrm{t}_\mathrm{R}\,,\qquad\Rightarrow\quad \lambda_\mathrm{t}=\frac{\sqrt{2}\,m_\mathrm{t}}{v}\approx 1\,. 
@@ -87,7 +87,7 @@ The charged lepton is a nearly perfect spin analyzer for studying the top quark 
 %##############################################
 \label{sec:theory-ttbar-production}
 
-The dominant mechanism producing top quarks at hadron colliders is top quark pair production through strong interactions via gluon~($gg\to\ttbar$) or quark fusion~($\mathrm{q}\bar{\mathrm{q}}\to\ttbar$). Figure~\ref{fig:theory-feynman-ttbar} shows the contributing Feynman diagrams at \gls{lo}. Especially the production channel via gluon fusion leads to a large cross section at the \gls{lhc} because of the steeply increasing gluon \gls{pdf} towards smaller momentum fractions. This channel contributes approximately $80\range90\%$ to the total cross section in the \gls{lhc} \acrlong{cm} energy regime of $7\range14~\TeV$~\cite{Olive:2016xmw}. The theoretical \ttbar cross sections in pp collisions at \acrlong{cm} energies of $8$ and $13~\TeV$, relevant for this thesis are listed in Tab.~\ref{tab:theory-ttbar-xsecs}. Those have been calculated at \gls{nnlo}+NNLL accuracy using the \textsc{Top++}\,2.0 program~\cite{Czakon:2011xx,Czakon:2013goa} assuming a top quark mass of $172.5~\GeV$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
+The dominant mechanism producing top quarks at hadron colliders is top quark pair production through strong interactions via gluon~($gg\to\ttbar$) or quark fusion~($\mathrm{q}\bar{\mathrm{q}}\to\ttbar$). Figure~\ref{fig:theory-feynman-ttbar} shows the corresponding Feynman diagrams at \gls{lo}. Especially the production channel via gluon fusion leads to a large cross section at the \gls{lhc} compared to the Tevatron because of the steeply increasing gluon \gls{pdf} towards smaller momentum fractions. The $gg\to\ttbar$ channel contributes approximately $80\range90\%$ to the total \ttbar production cross section in the \gls{lhc} \acrlong{cm} energy regime of $7\range14~\TeV$~\cite{Olive:2016xmw}. The theoretical \ttbar cross sections in pp collisions at \acrlong{cm} energies of $8$ and $13~\TeV$, relevant for this thesis are listed in Tab.~\ref{tab:theory-ttbar-xsecs}. Those have been calculated at \gls{nnlo}+NNLL accuracy using the \textsc{Top++}\,2.0 program~\cite{Czakon:2011xx,Czakon:2013goa} assuming a top quark mass of $172.5~\GeV$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
 
 \myfigure{\label{fig:theory-feynman-ttbar}Feynman diagrams of \ttbar production at \gls{lo}: (a)~quark fusion; (b,c)~gluon fusion.}{
 \subfloat[]{\includegraphics[scale=0.75]{figures/theory/qq2tt_1.pdf}}\hspace{0.03\textwidth}
@@ -95,7 +95,7 @@ The dominant mechanism producing top quarks at hadron colliders is top quark pai
 \subfloat[]{\includegraphics[scale=0.75]{figures/theory/qq2tt_3.pdf}}
 }
 
-\mytable{\label{tab:theory-ttbar-xsecs}Top quark pair production cross sections in per \acrlong{cm} energy.}{
+\mytable{\label{tab:theory-ttbar-xsecs}Top quark pair production cross sections per \acrlong{cm} energy.}{
 \begin{tabular}{@{}l r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l@{} }
 \toprule
 \Acrlong{cm}~energy \hspace{0.3cm}      & \multicolumn{5}{c }{Cross section}     \\
@@ -113,9 +113,7 @@ $13~\TeV$    & $831$ & $8$ & ${}^{+19.8}_{-29.2}$ & $\pm35.6$ & \\
 %##############################################
 \label{sec:theory-single-top-production}
 
-\todo{why is nu analyzing power so much less than for the lepton}
-
-Besides the production in pairs, top quarks can be produced singly through electroweak interactions. At \gls{lo}, one can categorize the production into three main channels depending on the exchanged $\mathrm{W}$~boson and its virtuality $Q^{2}=-p_{\mu}p^{\mu}$. The corresponding Feynman diagrams are presented in Fig.~\ref{fig:theory-feynman-singletop}. Overall, the single-top-quark cross sections are smaller than for pair production due to the electroweak coupling strength $\aw<\as$. Additionally, the requirement of sea quarks~($\mathrm{b}$, $\bar{\mathrm{q}}$) in the initial states whose \glspl{pdf} increase less steeply at low momentum fractions compared to the gluon \gls{pdf} suppresses the cross sections further~(see Fig.~\ref{fig:theory-nnpdf-dist}).
+Besides producing top quarks in pairs, single top quarks can be produced through electroweak interactions as well. At \gls{lo} one can categorize the production into three main channels depending on the exchanged $\mathrm{W}$~boson and its virtuality, $Q^{2}=-p_{\mu}p^{\mu}$\,. The corresponding Feynman diagrams are presented in Fig.~\ref{fig:theory-feynman-singletop}. Overall, the single-top-quark cross sections are smaller than for pair production due to the electroweak coupling strength $\aw<\as$. Additionally, the requirement of sea quarks~($\mathrm{b}$, $\bar{\mathrm{q}}$) in the initial states whose \glspl{pdf} increase less steeply at low momentum fractions compared to the gluon \gls{pdf} suppresses the cross sections further~(see Fig.~\ref{fig:theory-nnpdf-dist}).
 
 \myfigure{\label{fig:theory-feynman-singletop}Feynman diagrams of electroweak single-top-quark production at \gls{lo} in the 5 flavor scheme.}{
 \subfloat[\label{fig:theory-singletop-tch}$t$ channel]{\includegraphics[scale=0.75]{figures/theory/ST_tch.pdf}}\hspace{0.05\textwidth}
@@ -124,17 +122,19 @@ Besides the production in pairs, top quarks can be produced singly through elect
 }
 
 \begin{description}
-\item[$\boldsymbol{t}$ channel] The production of single top quarks in $t$-channel~(Fig.~\ref{fig:theory-singletop-tch}) has the highest cross section in $\mathrm{pp}$ collisions. Here, the virtuality of the $\mathrm{W}$~boson is found to be $Q^2>0$ and hence it is said to be ``space-like''. A characteristic feature of this mode is the additional spectator quark $q^\prime$ which recoils against the $\mathrm{W}$~boson and tends therefore being scattered fairly forward. In $t$-channel production, top quarks are produced roughly twice more often than top antiquarks reflecting the u~over d~valence quark ratio of the proton. This ratio depends however on the \acrlong{cm} energy. At higher energies, lower momentum fractions are reached at which the contributions from the valence quarks become less dominant. Hence the $\sigma(\mathrm{t})/\sigma(\bar{\mathrm{t}})$ charge ratio is sensitive to the \gls{pdf} of the proton.
-\item[$\boldsymbol{s}$ channel] The mode with the smallest single-top-quark production cross section is via $s$ channel~(Fig.~\ref{fig:theory-singletop-sch}). This is because of the ``time-like'' $\mathrm{W}$~boson which has to have a large virtuality $Q^2<0$ to produce the heavier top quark. In various \gls{bsm} scenarios, the cross section of this process is expected to increase due to new heavy particles such as $\mathrm{W}^\prime$ or charged Higgs bosons which may even be produced on their mass shell, $p_{\mu}p^{\mu}-m^{2}=0$, and hence occur as a resonance.
-\item[tW] The third mode is the production of a single top quark in association with a $\mathrm{W}$~boson~(Fig.~\ref{fig:theory-singletop-tWch}). Here, the $\mathrm{W}$~boson can be produced on-shell $Q^2=-m_\mathrm{W}^{2}$. It is commonly referred to as ``tW channel''. This process interferes at \gls{nlo} with \ttbar production which complicates its definition. In the \glshere{dr} scheme  diagrams with two resonant top quarks are subtracted from the amplitude whereas in the \glshere{ds} scheme the contribution from \ttbar is locally removed from the cross section~\cite{Tait:1999cf,1126-6708-2009-11-074}. The difference between both schemes lies in the treatment of the interference term which is kept in \gls{ds} but removed in \gls{dr}. A new approach is to combine both production modes and the inference between them into a process with a $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\,\mathrm{b}\,\bar{\mathrm{b}}+X$ final state~\cite{Cascioli:2013wga} whose simulation is currently being studied.
+\item[$\boldsymbol{t}$ channel] The production via $t$-channel~(Fig.~\ref{fig:theory-singletop-tch}) has the highest single top quark cross section in $\mathrm{pp}$ collisions. The virtuality of the $\mathrm{W}$~boson is found to be $Q^2>0$ and hence it is said to be ``space-like''. A characteristic feature of this mode is the production of an additional spectator quark ($\mathrm{q}^\prime$) which recoils against the $\mathrm{W}$~boson and tends therefore to be scattered fairly forward in the \gls{cms} detector~($|\eta|\sim 3$)\,. In this production mode top quarks are produced roughly twice more often than top antiquarks which is a consequence of the up-over-down valence quark composition of the proton. Hence the production ratio, $\sigma(\mathrm{t})/\sigma(\bar{\mathrm{t}})$, is sensitive to the \gls{pdf} of the proton. The ratio depends however on the \acrlong{cm} energy since at higher energies lower momentum fractions are reached at which the contributions from the valence quarks become less dominant. 
+
+\item[$\boldsymbol{s}$ channel] Amongst the three main single-top-quark production channels the one with the smallest cross section is the $s$ channel~(Fig.~\ref{fig:theory-singletop-sch}). This is because of the ``time-like'' $\mathrm{W}$~boson ($Q^2<0$) which has to have a large virtuality to produce the heavier top quark. In various \gls{bsm} scenarios however the cross section of this process is expected to increase due to new heavy particles such as $\mathrm{W}^\prime$ or charged Higgs bosons which may even be produced on their mass shell, $p_{\mu}p^{\mu}-m^{2}=0$, and hence occur as a resonance.
+
+\item[tW] The third mode is the production of a single top quark in association with a $\mathrm{W}$~boson~(Fig.~\ref{fig:theory-singletop-tWch}). Here, the $\mathrm{W}$~boson can be produced on-shell $Q^2=-m_\mathrm{W}^{2}$. It is commonly referred to as ``tW channel''. This process interferes at \gls{nlo} with \ttbar production which complicates its definition. In the \glshere{dr} scheme diagrams with two resonant top quarks are subtracted from the common amplitude whereas in the \glshere{ds} scheme the contribution from \ttbar is locally removed from the cross section~\cite{Tait:1999cf,1126-6708-2009-11-074}. The difference between both schemes lies in the treatment of the interference term which is kept in the \gls{ds} but removed in the \gls{dr}. A new approach has been developed where the \ttbar and tW production and the inference between them are combined into a process with a $\mathrm{W}^{\rmplus}\mathrm{W}^{\rmminus}\,\mathrm{b}\,\bar{\mathrm{b}}+X$ final state~\cite{Cascioli:2013wga} whose simulation is currently being studied~\cite{Jezo:2016ujg}.
 \end{description}
 
-The theoretical cross sections of the three single-top-quark production modes in pp collisions for center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-singletop-xsecs}. These have been calculated at \gls{nlo} in \gls{qcd} with the \HATHOR\,$2.1$ program~\cite{Aliev:2010zk,Kant:2014oha} using a top quark mass of $m_\mathrm{t}=172.5~\GeV$ while setting the factorization and renormalization scales to $\mu_\mathrm{R}=\mu_\mathrm{F}=m_\mathrm{t}$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
+The theoretical cross sections of the three single-top-quark production modes in pp collisions for center-of-mass energies of $8$ and $13~\TeV$, relevant for this thesis, are listed in Tab.~\ref{tab:theory-singletop-xsecs}. These have been calculated at \gls{nlo} in \gls{qcd} with the \HATHOR{}\,v$2.1$ program~\cite{Aliev:2010zk,Kant:2014oha} using a top quark mass of $m_\mathrm{t}=172.5~\GeV$ while setting the factorization and renormalization scales to $\mu_\mathrm{R}=\mu_\mathrm{F}=m_\mathrm{t}$. The \gls{pdf} uncertainty includes also the uncertainty on \as.
 
-\mytable{\label{tab:theory-singletop-xsecs}Single top quark cross sections per production mode and per \acrlong{cm} energy.}{
+\mytable{\label{tab:theory-singletop-xsecs}Single top quark cross sections per production mode and \acrlong{cm} energy.}{
 \begin{tabular}{@{}l r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l  r@{.}l@{}l@{$\,\mathrm{(scale)}$}l@{$\,\mathrm{(\gls{pdf})}~\pb$}l@{}}
 \toprule
-Mode\hspace{1cm} & \multicolumn{10}{c }{Cross section}     \\
+Mode\hspace{1cm} & \multicolumn{10}{c }{Cross section / \acrlong{cm} energy}     \\
 \cmidrule{2-11}
 & \multicolumn{5}{c }{8~TeV} & \multicolumn{5}{c }{13~TeV}  \\
 \midrule
@@ -145,13 +145,13 @@ $s$ channel     & $5$  & $24$ & ${}^{+0.15}_{-0.12}$ & $\pm0.16$ &      & $10$  
 \end{tabular}
 }
 
-Measurements of single-top-quark cross sections allow to extract a limit on the \gls{ckm} matrix element $\vtb$. If one assumes $|\vtd|^2+|\vts|^2\ll|\vtb|^2$ then the $\mathrm{t}\to\mathrm{bW}$ branching ratio can be approximated as
+Measurements of single-top-quark cross sections allow to extract a limit on the \gls{ckm} matrix element $\vtb$\,. If one assumes $|\vtd|^2+|\vts|^2\ll|\vtb|^2$ then the $\mathrm{t}\to\mathrm{bW}$ branching ratio can be approximated as
 
 \begin{equation}
 \mathcal{B}(\mathrm{t}\to\mathrm{bW})=\frac{|\vtb|^2}{\underbrace{|\vtd|^2+|\vts|^2}_{\ll|\vtb|^2}+|\vtb|^2}\approx 100\%\,.
 \end{equation}
 
-Hence, the cross section is independent of the top quark decay vertex and therefore directly proportional to $|f_\mathrm{L}\cdot\vtb|^2$. The form factor $f_\mathrm{L}$ is introduced to absorb potential contributions from \gls{bsm} physics that modify the left-handed coupling strength. It is $f_\mathrm{L}^\mathrm{SM}=1$ in the \gls{sm}. A measured single-top-quark cross section can then be used to extract the value of $|f_\mathrm{L}\vtb|$ as
+Hence, the cross section is independent of the top quark decay vertex and therefore directly proportional to $|f_\mathrm{L}\cdot\vtb|^2$\,. The form factor $f_\mathrm{L}$ is introduced to absorb potential contributions from \gls{bsm} physics that modify the left-handed coupling strength. It is $f_\mathrm{L}^\mathrm{SM}=1$ in the \gls{sm}. A measured single-top-quark cross section can then be used to extract the value of $|f_\mathrm{L}\vtb|$ as
 
 \begin{equation}
 |f_\mathrm{L}\vtb|=\sqrt{\frac{\sigma_\mathrm{measured}}{\sigma_\mathrm{theory}}}\,.
