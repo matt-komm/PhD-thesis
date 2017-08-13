@@ -2,7 +2,7 @@
 %% Use with book (standard) document class not KOMA!
 
 %\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
-\usepackage[papersize={17.5cm,24.75cm},total={12cm,20cm},headsep=12pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
+\usepackage[papersize={17.5cm,24.75cm},total={12cm,20cm},headsep=12pt,headheight=12pt,footskip=0pt,centering,includefoot,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} %fix rendering of pages to nonalpha
 \usepackage[nouppercase]{scrpage2}
@@ -11,7 +11,6 @@
 \allowdisplaybreaks[1] %allows breaks but avoids them as much as possible
 
 %%FONTS
-
 
 %special
 %\usepackage{calligra}
@@ -33,15 +32,21 @@
 
 %\usepackage{mathpple}
 %\usepackage{newtxtext,newtxmath}
-%\usepackage{newpxtext,eulerpx}
+%\usepackage[scaled=1]{newpxmath,newpxtext}
 %\usepackage{mbtimes}
 
 %\usepackage{kpfonts}
 
 
 
-%\usepackage[sc]{mathpazo}
-\usepackage[scale=0.97]{tgpagella}
+\usepackage[sc]{mathpazo}
+%\usepackage{pxfonts}
+
+%\usepackage{kpfonts}
+
+%\usepackage[scale=1.]{tgpagella}
+
+
 %\usepackage{times}
 %\usepackage{newcent}
 %\usepackage[bitstream-charter]{mathdesign}
@@ -50,7 +55,7 @@
 %\usepackage{palatino} %cms
 %\usepackage{mathpazo} %cms
 
-%\usepackage{mathpazo}
+%\usepackage[sc]{mathpazo}
 %\usepackage{newtxmath}
 %\usepackage[utopia]{mathdesign}
 %\usepackage{fourier}
@@ -73,7 +78,9 @@
 %\usepackage{PTSans}
 %\renewcommand{\sfdefault}{pag} %avant garde
 %\usepackage[sfdefault]{AlegreyaSans}
-\usepackage[scaled=0.9]{helvet}
+\usepackage[scaled=0.92]{helvet}
+
+
 
 %\usepackage[sf]{quattrocento}
 %\usepackage{classico}
@@ -89,6 +96,7 @@
 
 \usepackage[OT1,T1]{fontenc}
 \usepackage[latin9]{inputenc}
+
 
 \pagestyle{scrheadings}
 \usepackage{scrextend}
@@ -144,8 +152,8 @@
 \usepackage[hyperfootnotes=false,colorlinks=false,hidelinks=false,breaklinks=true,linkcolor=gray]{hyperref}
 %\usepackage[hyperfootnotes=false,breaklinks=true,colorlinks=false,pdfborder={20 20 0.5},citebordercolor=green]{hyperref}
 %\usepackage[hyperfootnotes=false,colorlinks=true,breaklinks=true,allcolors=darkblue,citecolor=darkgreen]{hyperref}
-%\usepackage[disable,color=white,linecolor=red,bordercolor=red,textsize=small]{todonotes}
-\usepackage[color=white,linecolor=red,bordercolor=red,textsize=small]{todonotes}
+\usepackage[disable,color=white,linecolor=red,bordercolor=red,textsize=small]{todonotes}
+%\usepackage[color=white,linecolor=red,bordercolor=red,textsize=small]{todonotes}
 \setlength{\marginparwidth}{1.9cm}
 \usepackage[perpage]{footmisc}
 \usepackage{xspace} %intelligent spacing e.g. after inline equations
@@ -225,9 +233,6 @@
 \renewcommand*{\glsgroupskip}{}
 
 
-
-
-
 \setlength{\columnsep}{0.06\textwidth}
 
 
@@ -267,7 +272,7 @@
 \setcounter{tocdepth}{3}
 \renewcommand{\cftchapfont}{\rm\bf}
 \renewcommand{\cftsecfont}{}
-\setlength{\cftbeforechapskip}{1.5\baselineskip plus 1\baselineskip minus 1\baselineskip}
+\setlength{\cftbeforechapskip}{1\baselineskip}
 \setlength{\cftbeforesecskip}{0.05\baselineskip}
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
@@ -359,7 +364,7 @@
         %\hspace{0.04\textwidth}
         %\parbox[t][][b]{0.67\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
         %\parbox[t][][b]{0.99\textwidth}{\usekomafont{chapter}\hangindent=1.2em{\color{gray}\chaptername~\thechapter{}.\hspace*{0.8em}\rule{2.6\myrulewidth}{14pt}}\hspace*{1em}#1}
-        \hspace{0.05\textwidth}\parbox[c][][c]{0.9\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}\begin{flushleft}#1\end{flushleft}\end{mdframed}}
+        \hspace{0.05\textwidth}\parbox[c][][c]{0.94\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}\begin{flushleft}#1\end{flushleft}\end{mdframed}}
         \chapterheadendvskip
         \microtypesetup{protrusion=true}
     }
@@ -373,8 +378,8 @@
  \chapter*{\contentsname}
  \cftmarktoc
  \par\nobreak
- \vskip \cftaftertoctitleskip
- \vskip -\cftbeforechapskip
+ %\vskip \cftaftertoctitleskip
+ %\vskip -\cftbeforechapskip
  %\@afterheading
 }
 
@@ -467,9 +472,19 @@
 %references font
 %\renewcommand\theremark{{\itshape\thesection\arabic{remark}}\reset@font}
 
+%import \star from computer modern (more thin symbol)
+%\DeclareSymbolFont{cmm-oml}{OML}{cmm}{m}{n}
+%\DeclareMathSymbol{\star}{0}{cmm-oml}{"3F}
+
+
+%\DeclareSymbolFont{ppl-oms}{OMS}{ppl}{m}{n}
+%\DeclareSymbolFont{ppl-omx}{OMX}{ppl}{m}{n}
+%\DeclareMathRadical{\newsqrt}{ppl-omx}{"70}{ppl-oms}{"70}
+
 % New definition of square root:
 % it renames \sqrt as \oldsqrt
 \let\oldsqrt\sqrt
+%\let\sqrt\newsqrt
 % it defines the new \sqrt in terms of the old one
 \def\sqrt{\mathpalette\DHLhksqrt}
 \def\DHLhksqrt#1#2{%
