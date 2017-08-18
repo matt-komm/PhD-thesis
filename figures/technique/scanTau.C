@@ -1,55 +1,55 @@
 void scanTau()
 {
-//=========Macro generated from canvas: cv0.0450339851799/
-//=========  (Mon May 22 17:58:06 2017) by ROOT version6.04/16
-   TCanvas *cv0.0450339851799 = new TCanvas("cv0.0450339851799", "",0,0,800,700);
+//=========Macro generated from canvas: cv0.298862549946/
+//=========  (Fri Aug 18 04:43:45 2017) by ROOT version6.04/16
+   TCanvas *cv0.298862549946 = new TCanvas("cv0.298862549946", "",0,0,800,700);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.0450339851799->SetHighLightColor(2);
-   cv0.0450339851799->Range(-2.834532,-1.587952,2.920863,1.183133);
-   cv0.0450339851799->SetFillColor(0);
-   cv0.0450339851799->SetFillStyle(4000);
-   cv0.0450339851799->SetBorderMode(0);
-   cv0.0450339851799->SetBorderSize(2);
-   cv0.0450339851799->SetLogx();
-   cv0.0450339851799->SetTickx(1);
-   cv0.0450339851799->SetTicky(1);
-   cv0.0450339851799->SetLeftMargin(0.145);
-   cv0.0450339851799->SetRightMargin(0.16);
-   cv0.0450339851799->SetTopMargin(0.03);
-   cv0.0450339851799->SetBottomMargin(0.14);
-   cv0.0450339851799->SetFrameFillStyle(0);
-   cv0.0450339851799->SetFrameBorderMode(0);
-   cv0.0450339851799->SetFrameFillStyle(0);
-   cv0.0450339851799->SetFrameBorderMode(0);
+   cv0.298862549946->SetHighLightColor(2);
+   cv0.298862549946->Range(-2.834532,-1.587952,2.920863,1.183133);
+   cv0.298862549946->SetFillColor(0);
+   cv0.298862549946->SetFillStyle(4000);
+   cv0.298862549946->SetBorderMode(0);
+   cv0.298862549946->SetBorderSize(2);
+   cv0.298862549946->SetLogx();
+   cv0.298862549946->SetTickx(1);
+   cv0.298862549946->SetTicky(1);
+   cv0.298862549946->SetLeftMargin(0.145);
+   cv0.298862549946->SetRightMargin(0.16);
+   cv0.298862549946->SetTopMargin(0.03);
+   cv0.298862549946->SetBottomMargin(0.14);
+   cv0.298862549946->SetFrameFillStyle(0);
+   cv0.298862549946->SetFrameBorderMode(0);
+   cv0.298862549946->SetFrameFillStyle(0);
+   cv0.298862549946->SetFrameBorderMode(0);
    
-   TH2F *axis0.938608622578__1 = new TH2F("axis0.938608622578__1","",50,0.01,100,50,-1.2,1.1);
-   axis0.938608622578__1->SetMarkerStyle(20);
-   axis0.938608622578__1->GetXaxis()->SetTitle("Regularization strength #tau");
-   axis0.938608622578__1->GetXaxis()->SetNdivisions(1005);
-   axis0.938608622578__1->GetXaxis()->SetLabelFont(43);
-   axis0.938608622578__1->GetXaxis()->SetLabelOffset(0.0077);
-   axis0.938608622578__1->GetXaxis()->SetLabelSize(36.92308);
-   axis0.938608622578__1->GetXaxis()->SetTitleSize(40.38462);
-   axis0.938608622578__1->GetXaxis()->SetTickLength(0.04242424);
-   axis0.938608622578__1->GetXaxis()->SetTitleOffset(1.2);
-   axis0.938608622578__1->GetXaxis()->SetTitleFont(43);
-   axis0.938608622578__1->GetYaxis()->SetTitle("Averaged correlations");
-   axis0.938608622578__1->GetYaxis()->SetNdivisions(506);
-   axis0.938608622578__1->GetYaxis()->SetLabelFont(43);
-   axis0.938608622578__1->GetYaxis()->SetLabelOffset(0.0077);
-   axis0.938608622578__1->GetYaxis()->SetLabelSize(36.92308);
-   axis0.938608622578__1->GetYaxis()->SetTitleSize(40.38462);
-   axis0.938608622578__1->GetYaxis()->SetTitleOffset(1.2);
-   axis0.938608622578__1->GetYaxis()->SetTitleFont(43);
-   axis0.938608622578__1->GetZaxis()->SetLabelFont(43);
-   axis0.938608622578__1->GetZaxis()->SetLabelOffset(0.0077);
-   axis0.938608622578__1->GetZaxis()->SetLabelSize(36.92308);
-   axis0.938608622578__1->GetZaxis()->SetTitleSize(40.38462);
-   axis0.938608622578__1->GetZaxis()->SetTitleOffset(1.2);
-   axis0.938608622578__1->GetZaxis()->SetTitleFont(43);
-   axis0.938608622578__1->Draw("AXIS");
+   TH2F *axis0.0615863187187__1 = new TH2F("axis0.0615863187187__1","",50,0.01,100,50,-1.2,1.1);
+   axis0.0615863187187__1->SetMarkerStyle(20);
+   axis0.0615863187187__1->GetXaxis()->SetTitle("Regularization strength #tau");
+   axis0.0615863187187__1->GetXaxis()->SetNdivisions(1005);
+   axis0.0615863187187__1->GetXaxis()->SetLabelFont(43);
+   axis0.0615863187187__1->GetXaxis()->SetLabelOffset(0.0077);
+   axis0.0615863187187__1->GetXaxis()->SetLabelSize(36.92308);
+   axis0.0615863187187__1->GetXaxis()->SetTitleSize(40.38462);
+   axis0.0615863187187__1->GetXaxis()->SetTickLength(0.04242424);
+   axis0.0615863187187__1->GetXaxis()->SetTitleOffset(1.2);
+   axis0.0615863187187__1->GetXaxis()->SetTitleFont(43);
+   axis0.0615863187187__1->GetYaxis()->SetTitle("Averaged correlations");
+   axis0.0615863187187__1->GetYaxis()->SetNdivisions(506);
+   axis0.0615863187187__1->GetYaxis()->SetLabelFont(43);
+   axis0.0615863187187__1->GetYaxis()->SetLabelOffset(0.0077);
+   axis0.0615863187187__1->GetYaxis()->SetLabelSize(36.92308);
+   axis0.0615863187187__1->GetYaxis()->SetTitleSize(40.38462);
+   axis0.0615863187187__1->GetYaxis()->SetTitleOffset(1.2);
+   axis0.0615863187187__1->GetYaxis()->SetTitleFont(43);
+   axis0.0615863187187__1->GetZaxis()->SetLabelFont(43);
+   axis0.0615863187187__1->GetZaxis()->SetLabelOffset(0.0077);
+   axis0.0615863187187__1->GetZaxis()->SetLabelSize(36.92308);
+   axis0.0615863187187__1->GetZaxis()->SetTitleSize(40.38462);
+   axis0.0615863187187__1->GetZaxis()->SetTitleOffset(1.2);
+   axis0.0615863187187__1->GetZaxis()->SetTitleFont(43);
+   axis0.0615863187187__1->Draw("AXIS");
    TBox *box = new TBox(0.01,-1.2,0.3,1.1);
 
    Int_t ci;      // for color index setting
@@ -4134,7 +4134,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#1944e5");
+   ci = TColor::GetColor("#355de2");
    graph->SetLineColor(ci);
    graph->SetLineWidth(3);
    graph->SetMarkerStyle(20);
@@ -6177,7 +6177,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#3326cc");
+   ci = TColor::GetColor("#523fc6");
    graph->SetLineColor(ci);
    graph->SetLineStyle(2);
    graph->SetLineWidth(4);
@@ -8221,7 +8221,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#4c11b2");
+   ci = TColor::GetColor("#6e2aaa");
    graph->SetLineColor(ci);
    graph->SetLineWidth(3);
    graph->SetMarkerStyle(20);
@@ -10264,7 +10264,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#660499");
+   ci = TColor::GetColor("#8a1d8d");
    graph->SetLineColor(ci);
    graph->SetLineStyle(2);
    graph->SetLineWidth(4);
@@ -12308,7 +12308,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#7f007f");
+   ci = TColor::GetColor("#a71971");
    graph->SetLineColor(ci);
    graph->SetLineWidth(3);
    graph->SetMarkerStyle(20);
@@ -14351,7 +14351,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#990466");
+   ci = TColor::GetColor("#c31d55");
    graph->SetLineColor(ci);
    graph->SetLineStyle(2);
    graph->SetLineWidth(4);
@@ -16395,7 +16395,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#b2114c");
+   ci = TColor::GetColor("#df2a38");
    graph->SetLineColor(ci);
    graph->SetLineWidth(3);
    graph->SetMarkerStyle(20);
@@ -18438,7 +18438,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#cc2633");
+   ci = TColor::GetColor("#fc3f1c");
    graph->SetLineColor(ci);
    graph->SetLineStyle(2);
    graph->SetLineWidth(4);
@@ -20482,7 +20482,7 @@ void scanTau()
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
 
-   ci = TColor::GetColor("#e54419");
+   ci = TColor::GetColor("#1185d00");
    graph->SetLineColor(ci);
    graph->SetLineWidth(3);
    graph->SetMarkerStyle(20);
@@ -20518,33 +20518,33 @@ void scanTau()
    
    graph->Draw("l");
    
-   TH2F *axis0.938608622578_copy__2 = new TH2F("axis0.938608622578_copy__2","",50,0.01,100,50,-1.2,1.1);
-   axis0.938608622578_copy__2->SetDirectory(0);
-   axis0.938608622578_copy__2->SetMarkerStyle(20);
-   axis0.938608622578_copy__2->GetXaxis()->SetTitle("Regularization strength #tau");
-   axis0.938608622578_copy__2->GetXaxis()->SetNdivisions(1005);
-   axis0.938608622578_copy__2->GetXaxis()->SetLabelFont(43);
-   axis0.938608622578_copy__2->GetXaxis()->SetLabelOffset(0.0077);
-   axis0.938608622578_copy__2->GetXaxis()->SetLabelSize(36.92308);
-   axis0.938608622578_copy__2->GetXaxis()->SetTitleSize(40.38462);
-   axis0.938608622578_copy__2->GetXaxis()->SetTickLength(0.04242424);
-   axis0.938608622578_copy__2->GetXaxis()->SetTitleOffset(1.2);
-   axis0.938608622578_copy__2->GetXaxis()->SetTitleFont(43);
-   axis0.938608622578_copy__2->GetYaxis()->SetTitle("Averaged correlations");
-   axis0.938608622578_copy__2->GetYaxis()->SetNdivisions(506);
-   axis0.938608622578_copy__2->GetYaxis()->SetLabelFont(43);
-   axis0.938608622578_copy__2->GetYaxis()->SetLabelOffset(0.0077);
-   axis0.938608622578_copy__2->GetYaxis()->SetLabelSize(36.92308);
-   axis0.938608622578_copy__2->GetYaxis()->SetTitleSize(40.38462);
-   axis0.938608622578_copy__2->GetYaxis()->SetTitleOffset(1.2);
-   axis0.938608622578_copy__2->GetYaxis()->SetTitleFont(43);
-   axis0.938608622578_copy__2->GetZaxis()->SetLabelFont(43);
-   axis0.938608622578_copy__2->GetZaxis()->SetLabelOffset(0.0077);
-   axis0.938608622578_copy__2->GetZaxis()->SetLabelSize(36.92308);
-   axis0.938608622578_copy__2->GetZaxis()->SetTitleSize(40.38462);
-   axis0.938608622578_copy__2->GetZaxis()->SetTitleOffset(1.2);
-   axis0.938608622578_copy__2->GetZaxis()->SetTitleFont(43);
-   axis0.938608622578_copy__2->Draw("sameaxis");
+   TH2F *axis0.0615863187187_copy__2 = new TH2F("axis0.0615863187187_copy__2","",50,0.01,100,50,-1.2,1.1);
+   axis0.0615863187187_copy__2->SetDirectory(0);
+   axis0.0615863187187_copy__2->SetMarkerStyle(20);
+   axis0.0615863187187_copy__2->GetXaxis()->SetTitle("Regularization strength #tau");
+   axis0.0615863187187_copy__2->GetXaxis()->SetNdivisions(1005);
+   axis0.0615863187187_copy__2->GetXaxis()->SetLabelFont(43);
+   axis0.0615863187187_copy__2->GetXaxis()->SetLabelOffset(0.0077);
+   axis0.0615863187187_copy__2->GetXaxis()->SetLabelSize(36.92308);
+   axis0.0615863187187_copy__2->GetXaxis()->SetTitleSize(40.38462);
+   axis0.0615863187187_copy__2->GetXaxis()->SetTickLength(0.04242424);
+   axis0.0615863187187_copy__2->GetXaxis()->SetTitleOffset(1.2);
+   axis0.0615863187187_copy__2->GetXaxis()->SetTitleFont(43);
+   axis0.0615863187187_copy__2->GetYaxis()->SetTitle("Averaged correlations");
+   axis0.0615863187187_copy__2->GetYaxis()->SetNdivisions(506);
+   axis0.0615863187187_copy__2->GetYaxis()->SetLabelFont(43);
+   axis0.0615863187187_copy__2->GetYaxis()->SetLabelOffset(0.0077);
+   axis0.0615863187187_copy__2->GetYaxis()->SetLabelSize(36.92308);
+   axis0.0615863187187_copy__2->GetYaxis()->SetTitleSize(40.38462);
+   axis0.0615863187187_copy__2->GetYaxis()->SetTitleOffset(1.2);
+   axis0.0615863187187_copy__2->GetYaxis()->SetTitleFont(43);
+   axis0.0615863187187_copy__2->GetZaxis()->SetLabelFont(43);
+   axis0.0615863187187_copy__2->GetZaxis()->SetLabelOffset(0.0077);
+   axis0.0615863187187_copy__2->GetZaxis()->SetLabelSize(36.92308);
+   axis0.0615863187187_copy__2->GetZaxis()->SetTitleSize(40.38462);
+   axis0.0615863187187_copy__2->GetZaxis()->SetTitleOffset(1.2);
+   axis0.0615863187187_copy__2->GetZaxis()->SetTitleFont(43);
+   axis0.0615863187187_copy__2->Draw("sameaxis");
    
    TLegend *leg = new TLegend(0.845,0.17,0.999,0.97,NULL,"brNDC");
    leg->SetBorderSize(0);
@@ -20565,7 +20565,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph1","#bar{#rho}#lower[0.3]{#scale[0.7]{1}}","L");
 
-   ci = TColor::GetColor("#1944e5");
+   ci = TColor::GetColor("#355de2");
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(3);
@@ -20575,7 +20575,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph2","#bar{#rho}#lower[0.3]{#scale[0.7]{2}}","L");
 
-   ci = TColor::GetColor("#3326cc");
+   ci = TColor::GetColor("#523fc6");
    entry->SetLineColor(ci);
    entry->SetLineStyle(2);
    entry->SetLineWidth(4);
@@ -20585,7 +20585,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph3","#bar{#rho}#lower[0.3]{#scale[0.7]{3}}","L");
 
-   ci = TColor::GetColor("#4c11b2");
+   ci = TColor::GetColor("#6e2aaa");
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(3);
@@ -20595,7 +20595,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph4","#bar{#rho}#lower[0.3]{#scale[0.7]{4}}","L");
 
-   ci = TColor::GetColor("#660499");
+   ci = TColor::GetColor("#8a1d8d");
    entry->SetLineColor(ci);
    entry->SetLineStyle(2);
    entry->SetLineWidth(4);
@@ -20605,7 +20605,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph5","#bar{#rho}#lower[0.3]{#scale[0.7]{5}}","L");
 
-   ci = TColor::GetColor("#7f007f");
+   ci = TColor::GetColor("#a71971");
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(3);
@@ -20615,7 +20615,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph6","#bar{#rho}#lower[0.3]{#scale[0.7]{6}}","L");
 
-   ci = TColor::GetColor("#990466");
+   ci = TColor::GetColor("#c31d55");
    entry->SetLineColor(ci);
    entry->SetLineStyle(2);
    entry->SetLineWidth(4);
@@ -20625,7 +20625,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph7","#bar{#rho}#lower[0.3]{#scale[0.7]{7}}","L");
 
-   ci = TColor::GetColor("#b2114c");
+   ci = TColor::GetColor("#df2a38");
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(3);
@@ -20635,7 +20635,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph8","#bar{#rho}#lower[0.3]{#scale[0.7]{8}}","L");
 
-   ci = TColor::GetColor("#cc2633");
+   ci = TColor::GetColor("#fc3f1c");
    entry->SetLineColor(ci);
    entry->SetLineStyle(2);
    entry->SetLineWidth(4);
@@ -20645,7 +20645,7 @@ void scanTau()
    entry->SetTextFont(43);
    entry=leg->AddEntry("Graph9","#bar{#rho}#lower[0.3]{#scale[0.7]{9}}","L");
 
-   ci = TColor::GetColor("#e54419");
+   ci = TColor::GetColor("#1185d00");
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetLineWidth(3);
@@ -20654,7 +20654,7 @@ void scanTau()
    entry->SetMarkerSize(1);
    entry->SetTextFont(43);
    leg->Draw();
-   cv0.0450339851799->Modified();
-   cv0.0450339851799->cd();
-   cv0.0450339851799->SetSelected(cv0.0450339851799);
+   cv0.298862549946->Modified();
+   cv0.298862549946->cd();
+   cv0.298862549946->SetSelected(cv0.298862549946);
 }

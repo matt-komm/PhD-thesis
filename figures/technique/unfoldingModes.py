@@ -415,9 +415,9 @@ for ibin in range(N):
     histReco.SetBinContent(ibin+1,vecReco[ibin])
 
 histReco.SetMarkerStyle(20)
-histReco.SetMarkerSize(1.5)
-histReco.SetMarkerColor(newColor(0.45,0.0,1).GetNumber())
-histReco.SetLineColor(newColor(0.45,0.0,1).GetNumber())
+histReco.SetMarkerSize(1.6)
+histReco.SetMarkerColor(newColor(0.6,0.1,1).GetNumber())
+histReco.SetLineColor(newColor(0.6,0.1,1).GetNumber())
 histReco.SetLineWidth(3)
 #normHist(histReco)
 
@@ -425,7 +425,7 @@ histRecoPoi = histReco.Clone(histReco.GetName()+"poi")
 histRecoPoi.SetMarkerStyle(20)
 histRecoPoi.SetMarkerColor(newColor(1,0.4,0.0).GetNumber())
 histRecoPoi.SetLineColor(newColor(1,0.4,0.0).GetNumber())
-histRecoPoi.SetMarkerSize(1.5)
+histRecoPoi.SetMarkerSize(1.6)
 histRecoPoi.SetLineWidth(4)
 #histRecoPoi.SetLineStyle(2)
 
