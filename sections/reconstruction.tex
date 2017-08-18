@@ -65,7 +65,7 @@ The vertex reconstruction tries to locate points of \gls{pp} interactions which 
 The first step in the vertex reconstruction encompasses the forming clusters of spatially-close tracks. For this, tracks which are close to the beam spot are selected and supplied to a \glshere{da} algorithm~\cite{726788}. It is based on a statistical mechanics model where each track reflects a microstate. The association of a track to a vertex candidate is floating and controlled by a probability denoted $p_{i}$ in the following. A quantity
 
 \begin{equation}
-F=-T\sum_{i}^\mathrm{tracks}\,p_{i}\cdot\log\left(\sum_{j}^\mathrm{vertices}\,\rho_{j}\cdot\exp\left[-\frac{1}{T}\frac{\Big(z_{i}^\mathrm{(track)}-z_{j}^\mathrm{(vertex)}\Big)^2}{\sigma_{z,i}^2}\right]\right)\,,
+F=-T\sum_{i}^\mathrm{tracks}\,p_{i}\cdot\Bigg(\sum_{j}^\mathrm{vertices}\,\rho_{j}\cdot\exp\Big[-\big(z_{i}^\scriptn{\mathrm{(track)}}-z_{j}^\scriptn{\mathrm{(vertex)}}\big)^2\Big/\big(T\cdot\sigma_{z,i}^2\big)\Big]\Bigg)\,,
 \end{equation}
  
 which is an analog of the free energy in a thermodynamical model, is monitored while decreasing the corresponding temperature $T$ of the system. Here, $z_{i}$ are the track/vertex positions, $\sigma_{i}$ denotes the uncertainty of the track positions, and $\rho_{k}$ is an additional weight to treat overlapping vertices effectively. A protovertex is split in two nearby ones if a minimum of the free energy is reached. The decrease of temperature is stopped when a trade-off between the expected spatial vertex resolution and the probability of splitting a proper vertex falsely is reached.
@@ -239,7 +239,7 @@ The \met scale is improved by propagating the corrected energy for \gls{pf} cand
 where $\vec{p}_{\mathrm{T},i}^\scriptn{\mathrm{\,\gls{pu}\mbox{-}only}}$ denotes the transverse jet momentum after applying only the first level of energy corrections which deals with the contribution from pileup. The resulting improvement is demonstrated in Fig.~\ref{fig:reconstruction-met}. It shows the parallel component of the missing momentum vector $u_{\parallel}$ along the direction of a reconstructed $\mathrm{Z}$~boson or photon $\vec{q}_\mathrm{T}$ in a ratio over the recoil momentum. After propagating the applied jet energy corrections to \pvmiss, the energy scale of its parallel component is reconstructed well within 3\% or better for recoil momenta above $50~\GeV$. At low momenta, contributions from unclustered \gls{pf} candidates dominate which results in a degradation of the energy scale.
 
 \myfigure{\label{fig:reconstruction-met}The average $\pvmiss$ component parallel to the recoiling $\mathrm{Z}/\gamma$ boson as a function of the boson's momentum. The figure is taken from Ref.~\cite{CMS-PAS-JME-12-002}.}{
-\includegraphics[width=0.6\textwidth]{figures/reconstruction/met_recoil.pdf}
+\includegraphics[width=0.5\textwidth]{figures/reconstruction/met_recoil.pdf}
 }
 
 In 8~TeV data and simulation an additional correction is applied to decrease the influence of pileup on the \met scale. Since typical inelastic \gls{pp} interactions do not produce any prompt neutrinos, pileup events will only lead to a smearing of the \met due to the finite detector response for measuring neutral particle momenta. This can be mitigated by subtracting the amount of charged and neutral energy associated to pileup vertices where the latter is estimated from the amount of charged hadron activity.
