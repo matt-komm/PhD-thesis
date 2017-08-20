@@ -1,8 +1,8 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-%\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includefoot,includehead]{geometry}
-\usepackage[papersize={17.5cm,24.75cm},total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includefoot,includehead]{geometry}
+\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includefoot,includehead]{geometry}
+%\usepackage[papersize={17.5cm,24.75cm},total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includefoot,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} %fix rendering of pages to nonalpha
 \usepackage[nouppercase]{scrpage2}
@@ -352,7 +352,10 @@
         %\hspace{0.04\textwidth}
         %\parbox[t][][b]{0.67\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
         %\parbox[t][][b]{0.99\textwidth}{\usekomafont{chapter}\hangindent=1.2em{\color{gray}\chaptername~\thechapter{}.\hspace*{0.8em}\rule{2.6\myrulewidth}{14pt}}\hspace*{1em}#1}
-        \usekomafont{chapter}{\color{gray}\thechapter{}.\hspace*{1.0em}\rule{3\myrulewidth}{11.5pt}}\hspace*{1.2em}#1
+        
+        %\usekomafont{chapter}{\color{gray}\thechapter{}.\hspace*{1.0em}\rule{3\myrulewidth}{11.5pt}}\hspace*{1.2em}#1
+        \usekomafont{chapter}
+        \parbox[t][][b]{0.08\textwidth}{\color{gray}\thechapter{}.\hspace*{1.0em}\rule{3\myrulewidth}{11.5pt}}\hspace*{1.2em}\parbox[t][][b]{0.85\textwidth}{#1}
         \chapterheadendvskip
         \microtypesetup{protrusion=true}
     }
