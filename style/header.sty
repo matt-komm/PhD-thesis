@@ -1,8 +1,8 @@
 %% Xheader by mKomm
 %% Use with book (standard) document class not KOMA!
 
-%\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includehead]{geometry}
-\usepackage[papersize={17.5cm,24.75cm},total={12cm,20cm},headsep=12pt,headheight=12pt,footskip=0pt,centering,includefoot,includehead]{geometry}
+%\usepackage[a4paper,total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includefoot,includehead]{geometry}
+\usepackage[papersize={17.5cm,24.75cm},total={12cm,20cm},headsep=10pt,headheight=12pt,footskip=0pt,centering,includefoot,includehead]{geometry}
 %\usepackage[nouppercase,headsepline]{scrpage2}
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} %fix rendering of pages to nonalpha
 \usepackage[nouppercase]{scrpage2}
@@ -105,9 +105,10 @@
 \usepackage{color}
 \usepackage{xcolor} %more advance color usage
 \definecolor{ucl}{rgb}{0.05,0.15,0.45}
-\definecolor{gray}{rgb}{0.75,0.75,0.75}
-\definecolor{textgray}{rgb}{0.75,0.75,0.75}
-\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+%do not change color anymore!!! - look ok with bold chapter in headers
+\definecolor{gray}{rgb}{0.71,0.71,0.71}
+\definecolor{textgray}{rgb}{0.71,0.71,0.71}
+\definecolor{lightgray}{rgb}{0.71,0.71,0.71}
 \definecolor{darkgreen}{rgb}{0.0,0.45,0.}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.5}
 
@@ -163,6 +164,11 @@
 \usepackage{glossary-mcols}
 \usepackage{stringstrings} %substrings
 \usepackage{anyfontsize}
+
+
+%\usepackage{draftwatermark}
+%\SetWatermarkText{\includegraphics{BigDraft}}
+%\SetWatermarkScale{1}
 
 %global styles
 %\newcommand*{\numberfont}{\fontfamily{pplj}\selectfont}
@@ -283,9 +289,9 @@
 \clearscrheadfoot
 \ihead{\headmark}
 \ohead[\pagemark]{\pagemark}
-\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{textgray}\chaptername~\thechapter{}.}\enspace #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{{\numberfont\color{textgray}\thesection{}.}\enspace #1}}
-\renewcommand{\subsectionmark}[1]{\markright{{\numberfont\color{textgray}\thesubsection{}.}\enspace #1}}
+\renewcommand{\chaptermark}[1]{\markboth{{\numberfont\color{textgray}\bfseries\chaptername~\thechapter{}.}\enspace #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{{\numberfont\color{textgray}\bfseries\thesection{}.}\enspace #1}}
+\renewcommand{\subsectionmark}[1]{\markright{{\numberfont\color{textgray}\bfseries\thesubsection{}.}\enspace #1}}
 \fboxrule=\myrulewidth
 %\ohead[\vspace{-0.6pt}\fcolorbox{gray}{gray!30}{\parbox[c][][c]{0.6cm}{\pagemark}}]{\vspace{-0.6pt}\fcolorbox{gray}{gray!30}{\parbox[c][][c]{0.6cm}{\pagemark}}}
 
@@ -320,12 +326,12 @@
 \mdfdefinestyle{chstyle}{%
     linewidth=4\myrulewidth,
     leftmargin=0pt,
-    innerleftmargin=0.08\textwidth,
+    innerleftmargin=0.05\textwidth,
     rightmargin=0pt,
     innerrightmargin=0pt,
-    innertopmargin=5pt,
-    innerbottommargin=5pt,
-    skipabove=7pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
     skipbelow=0pt,
     linecolor=gray,
     topline=false,
@@ -346,9 +352,7 @@
         %\hspace{0.04\textwidth}
         %\parbox[t][][b]{0.67\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
         %\parbox[t][][b]{0.99\textwidth}{\usekomafont{chapter}\hangindent=1.2em{\color{gray}\chaptername~\thechapter{}.\hspace*{0.8em}\rule{2.6\myrulewidth}{14pt}}\hspace*{1em}#1}
-        \parbox[c][][c]{0.10\textwidth}{{\sectionfont\fontsize{24}{24}\selectfont\bfseries\hfill\color{gray}\thechapter{}.}}%
-        \hspace{0.06\textwidth}
-        \parbox[c][][c]{0.83\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}\begin{flushleft}#1\end{flushleft}\end{mdframed}}
+        \usekomafont{chapter}{\color{gray}\thechapter{}.\hspace*{1.0em}\rule{3\myrulewidth}{11.5pt}}\hspace*{1.2em}#1
         \chapterheadendvskip
         \microtypesetup{protrusion=true}
     }
@@ -364,7 +368,7 @@
         %\hspace{0.04\textwidth}
         %\parbox[t][][b]{0.67\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}#1\end{mdframed}}\\[0.75cm]
         %\parbox[t][][b]{0.99\textwidth}{\usekomafont{chapter}\hangindent=1.2em{\color{gray}\chaptername~\thechapter{}.\hspace*{0.8em}\rule{2.6\myrulewidth}{14pt}}\hspace*{1em}#1}
-        \hspace{0.05\textwidth}\parbox[c][][c]{0.94\textwidth}{\begin{mdframed}[style=chstyle]\usekomafont{chapter}\begin{flushleft}#1\end{flushleft}\end{mdframed}}
+        \usekomafont{chapter}{\color{gray}\hspace*{1.em}\rule{3\myrulewidth}{11.5pt}}\hspace*{1.2em}#1
         \chapterheadendvskip
         \microtypesetup{protrusion=true}
     }
