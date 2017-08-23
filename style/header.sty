@@ -278,7 +278,7 @@
 \setcounter{tocdepth}{3}
 \renewcommand{\cftchapfont}{\rm\bf}
 \renewcommand{\cftsecfont}{}
-\setlength{\cftbeforechapskip}{1\baselineskip}
+\setlength{\cftbeforechapskip}{1.6\baselineskip}
 \setlength{\cftbeforesecskip}{0.05\baselineskip}
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
@@ -411,11 +411,11 @@
 \setkomafont{subsubsection}{\normalfont\fontsize{13}{13}\sectionfont}
 
 \RedeclareSectionCommands[
-  beforeskip=0.65\baselineskip plus 0.15\baselineskip minus 0.1\baselineskip,
+  beforeskip=0.5\baselineskip plus 0.15\baselineskip minus 0.1\baselineskip,
   afterskip=0.05\baselineskip
 ]{section,subsection,subsubsection}
 
-\renewcommand{\@seccntformat}[1]{{\parbox[b][0.7\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
+\renewcommand{\@seccntformat}[1]{{\parbox[b][0.85\baselineskip][b]{\widthof{\csname the#1\endcsname.\hspace{1ex}}}{\csname the#1\endcsname.\hspace{1ex}}}} %dot after the(sub)section
 
 
 %strecke zeilenabstände im table

@@ -94,7 +94,7 @@ The \gls{bdt} is trained on events in the 2j1t region only while the resulting d
 \subfloat[only for \bdttch]{\adjincludegraphics[height=4.8cm,trim={0 0 {0.\width} 0},clip]{figures/polarization/afterBgCorr/2j1t/muon_2j1t_bjet_pt_qcdnone.pdf}}
 }
 
-In a preliminary version of this analysis~\cite{CMS-PAS-TOP-13-001}, events with $\mtw>50~\GeV$ or $\met>45~\GeV$ are selected in muon and electron channel respectively to reject multijet events. To allow a fair comparison, the working points of the \bdtqcd discriminant have been chosen such that a similar signal selection efficiency is obtained per channel. The performance of the working points and a comparison with the preliminary analysis are presented in Tab.~\ref{tab:polarization-qcdeff}. The \bdtqcd discriminant allows to reject about twice as many multijet events with respect to \mtw, \met for the chosen working points while retaining approximately the same amount of signal events.
+In a preliminary version of this analysis events with $\mtw>50~\GeV$ or $\met>45~\GeV$ are selected in muon and electron channel respectively to reject multijet events~\cite{CMS-PAS-TOP-13-001}. To allow a fair comparison the working points of the \bdtqcd discriminant have been chosen such that a similar signal selection efficiency is obtained per channel. The performance of the working points and a comparison with the preliminary analysis are presented in Tab.~\ref{tab:polarization-qcdeff}. The \bdtqcd discriminant allows to reject about twice as many multijet events with respect to \mtw, \met for the chosen working points while retaining approximately the same amount of signal events.
 
 \mytable{\label{tab:polarization-qcdeff}Selection efficiencies of multijet and signal events using \bdtqcd, \mtw, and \met working points. The latter two observables and corresponding working points have been utilized in a preliminary version of the analysis to reject multijet events~\cite{CMS-PAS-TOP-13-001}.}{
 \begin{tabular}{@{}l  c c c c c@{}}
@@ -272,8 +272,8 @@ Process & \multicolumn{4}{c}{Muon channel} & & \multicolumn{4}{c}{Electron chann
 \ttbar          & 58539&629     & \hspace{0.4cm} 3118&34       && 48208&518     &  \hspace{0.4cm} 2182&26 \\
 tW              & 6518&76       & 311&12        && 5370&64       & 215&6 \\
 $s$~channel     & 1059&20       & 72&4          && 808&17        & 44&3 \\
-W+heavy quark flavor  & 30472&1520    & 2101&113      && 20707&1034    & 836&48 \\ 
-W+light quark flavor  & 3824&202      & 252&21        && 2720&145      & 94&11 \\
+W+heavy flavor  & 30472&1520    & 2101&113      && 20707&1034    & 836&48 \\ 
+W+light flavor  & 3824&202      & 252&21        && 2720&145      & 94&11 \\
 \zjets          & 10284&561     & 371&32        && 10696&572     & 175&27 \\
 Diboson         & 1108&56       & 33&2          && 792&40        & 16&1 \\
 Multijet        & 21416&10707   & 427&214       && 33961&16979   & 423&212 \\
@@ -327,10 +327,9 @@ After subtracting the remaining background contributions from data in Fig.~\ref{
 
 
 %##############################################
-\section{Unfolding and asymmetry measurement}
+\section{Unfolding and asymmetry estimation}
 %##############################################
 \label{sec:polarization-unfolding}
-
 
 Unfolding to parton level is performed with the \TUNFOLD method~\cite{1748-0221-7-10-T10003}. To stabilize the $\chi^\scriptn{2}$ minimization inside the method twice as many bins are considered at reconstruction level compared to parton level. The parton level is extended to include also $\mathrm{t}\to\mathrm{b}\tau\nu$ decays since about 6\% of the selected muons stem from intermediate tau decays which has been studied in simulation~(see Sec.~\ref{sec:technique-levels}). In such events the polarization angle at parton level is defined between the spectator quark and the tau lepton instead which yields a similar shape compared to events where the W~boson decays directly into muons. The resulting response matrix is presented in Fig.~\ref{fig:polarization-response}. The angle is smeared through manifold effects such as imperfections in the top quark reconstruction and b-tagging where the latter also influences how the spectator jet is chosen. 
  
@@ -514,9 +513,6 @@ The measured \AmuTplusTbar value from the differential cross section is compatib
 \myfigure{\label{fig:polarization-asymmetries}Comparison of the extracted top quark spin asymmetries as obtained through a linear fit to the shape of the differential cross sections or through the analytical two-bin cross check.}{
 \includegraphics[width=0.7\textwidth]{figures/polarization/results.pdf}
 }
-
-
-\todo{check this section for writing}
 
 %##############################################
 \section{Limits on anomalous couplings}

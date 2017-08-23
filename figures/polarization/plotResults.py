@@ -199,7 +199,7 @@ def newColor(red,green,blue):
 newColor.colorindex=301
 
 def getDarkerColor(color):
-    darkerColor=newColor(color.GetRed()*0.6,color.GetGreen()*0.6,color.GetBlue()*0.6)
+    darkerColor=newColor(color.GetRed()*0.8,color.GetGreen()*0.8,color.GetBlue()*0.8)
     return darkerColor
 
 

@@ -1,27 +1,27 @@
 void responseParton_mu_y()
 {
-//=========Macro generated from canvas: cv0.577019361422/
-//=========  (Tue Aug 22 23:20:07 2017) by ROOT version6.02/05
-   TCanvas *cv0.577019361422 = new TCanvas("cv0.577019361422", "",0,0,800,750);
+//=========Macro generated from canvas: cv0.516171471651/
+//=========  (Wed Aug 23 03:26:03 2017) by ROOT version6.02/05
+   TCanvas *cv0.516171471651 = new TCanvas("cv0.516171471651", "",0,0,800,750);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.577019361422->SetHighLightColor(2);
-   cv0.577019361422->Range(-0.5233082,-0.4307692,3.085714,2.646154);
-   cv0.577019361422->SetFillColor(0);
-   cv0.577019361422->SetFillStyle(4000);
-   cv0.577019361422->SetBorderMode(0);
-   cv0.577019361422->SetBorderSize(2);
-   cv0.577019361422->SetTickx(1);
-   cv0.577019361422->SetTicky(1);
-   cv0.577019361422->SetLeftMargin(0.145);
-   cv0.577019361422->SetRightMargin(0.19);
-   cv0.577019361422->SetTopMargin(0.08);
-   cv0.577019361422->SetBottomMargin(0.14);
-   cv0.577019361422->SetFrameFillStyle(0);
-   cv0.577019361422->SetFrameBorderMode(0);
-   cv0.577019361422->SetFrameFillStyle(0);
-   cv0.577019361422->SetFrameBorderMode(0);
+   cv0.516171471651->SetHighLightColor(2);
+   cv0.516171471651->Range(-0.5233082,-0.4307692,3.085714,2.646154);
+   cv0.516171471651->SetFillColor(0);
+   cv0.516171471651->SetFillStyle(4000);
+   cv0.516171471651->SetBorderMode(0);
+   cv0.516171471651->SetBorderSize(2);
+   cv0.516171471651->SetTickx(1);
+   cv0.516171471651->SetTicky(1);
+   cv0.516171471651->SetLeftMargin(0.145);
+   cv0.516171471651->SetRightMargin(0.19);
+   cv0.516171471651->SetTopMargin(0.08);
+   cv0.516171471651->SetBottomMargin(0.14);
+   cv0.516171471651->SetFrameFillStyle(0);
+   cv0.516171471651->SetFrameBorderMode(0);
+   cv0.516171471651->SetFrameFillStyle(0);
+   cv0.516171471651->SetFrameBorderMode(0);
    Double_t xAxis2[7] = {0, 0.3, 0.7, 1, 1.4, 1.8, 2.4}; 
    Double_t yAxis2[7] = {0, 0.3, 0.7, 1, 1.4, 1.8, 2.4}; 
    
@@ -381,7 +381,7 @@ palette->SetTitleSize(39.23077);
    pt->SetTextSize(37);
    AText = pt->AddText("Simulation");
    pt->Draw();
-   cv0.577019361422->Modified();
-   cv0.577019361422->cd();
-   cv0.577019361422->SetSelected(cv0.577019361422);
+   cv0.516171471651->Modified();
+   cv0.516171471651->cd();
+   cv0.516171471651->SetSelected(cv0.516171471651);
 }

@@ -1,27 +1,27 @@
 void responseParticle_mu_cos()
 {
-//=========Macro generated from canvas: cv0.0534934469228/
-//=========  (Tue Aug 22 23:19:55 2017) by ROOT version6.02/05
-   TCanvas *cv0.0534934469228 = new TCanvas("cv0.0534934469228", "",0,0,800,750);
+//=========Macro generated from canvas: cv0.216256341065/
+//=========  (Wed Aug 23 01:52:19 2017) by ROOT version6.02/05
+   TCanvas *cv0.216256341065 = new TCanvas("cv0.216256341065", "",0,0,800,750);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   cv0.0534934469228->SetHighLightColor(2);
-   cv0.0534934469228->Range(-1.43609,-1.358974,1.571429,1.205128);
-   cv0.0534934469228->SetFillColor(0);
-   cv0.0534934469228->SetFillStyle(4000);
-   cv0.0534934469228->SetBorderMode(0);
-   cv0.0534934469228->SetBorderSize(2);
-   cv0.0534934469228->SetTickx(1);
-   cv0.0534934469228->SetTicky(1);
-   cv0.0534934469228->SetLeftMargin(0.145);
-   cv0.0534934469228->SetRightMargin(0.19);
-   cv0.0534934469228->SetTopMargin(0.08);
-   cv0.0534934469228->SetBottomMargin(0.14);
-   cv0.0534934469228->SetFrameFillStyle(0);
-   cv0.0534934469228->SetFrameBorderMode(0);
-   cv0.0534934469228->SetFrameFillStyle(0);
-   cv0.0534934469228->SetFrameBorderMode(0);
+   cv0.216256341065->SetHighLightColor(2);
+   cv0.216256341065->Range(-1.43609,-1.358974,1.571429,1.205128);
+   cv0.216256341065->SetFillColor(0);
+   cv0.216256341065->SetFillStyle(4000);
+   cv0.216256341065->SetBorderMode(0);
+   cv0.216256341065->SetBorderSize(2);
+   cv0.216256341065->SetTickx(1);
+   cv0.216256341065->SetTicky(1);
+   cv0.216256341065->SetLeftMargin(0.145);
+   cv0.216256341065->SetRightMargin(0.19);
+   cv0.216256341065->SetTopMargin(0.08);
+   cv0.216256341065->SetBottomMargin(0.14);
+   cv0.216256341065->SetFrameFillStyle(0);
+   cv0.216256341065->SetFrameBorderMode(0);
+   cv0.216256341065->SetFrameFillStyle(0);
+   cv0.216256341065->SetFrameBorderMode(0);
    Double_t xAxis1[7] = {-1, -0.6666667, -0.3333333, 0, 0.3333333, 0.6666667, 1}; 
    Double_t yAxis1[7] = {-1, -0.6666667, -0.3333333, 0, 0.3333333, 0.6666667, 1}; 
    
@@ -369,7 +369,7 @@ palette->SetTitleSize(39.23077);
    pt->SetTextSize(37);
    AText = pt->AddText("Simulation");
    pt->Draw();
-   cv0.0534934469228->Modified();
-   cv0.0534934469228->cd();
-   cv0.0534934469228->SetSelected(cv0.0534934469228);
+   cv0.216256341065->Modified();
+   cv0.216256341065->cd();
+   cv0.216256341065->SetSelected(cv0.216256341065);
 }
