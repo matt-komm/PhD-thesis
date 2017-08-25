@@ -1,0 +1,1522 @@
+void plots/2j1t/electron_2j1t_bdt_tch_qcdnone_blind_nol()
+{
+//=========Macro generated from canvas: cvelectron_2j1t_bdt_tch_qcdnone_blind90301/
+//=========  (Fri Aug 25 02:00:12 2017) by ROOT version6.02/05
+   TCanvas *cvelectron_2j1t_bdt_tch_qcdnone_blind90301 = new TCanvas("cvelectron_2j1t_bdt_tch_qcdnone_blind90301", "",0,0,800,650);
+   gStyle->SetOptFit(1);
+   gStyle->SetOptStat(0);
+   gStyle->SetOptTitle(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetHighLightColor(2);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->Range(0,0,1,1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetFillColor(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetBorderMode(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetBorderSize(2);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetTickx(1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetTicky(1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetLeftMargin(0.1150442);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetRightMargin(0.227083);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetTopMargin(0.04002582);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetBottomMargin(0.08064517);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetFrameFillStyle(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetFrameLineWidth(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetFrameBorderMode(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetFrameBorderSize(0);
+  
+// ------------>Primitives in pad: cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1
+   TPad *cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1 = new TPad("cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1", "",0,0,1,1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->Draw();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->cd();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->Range(-1.466667,0.06666676,1.866667,3.87619);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetFillColor(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetFillStyle(4000);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetBorderMode(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetBorderSize(2);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetTickx(1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetTicky(1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetLeftMargin(0.14);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetRightMargin(0.26);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetTopMargin(0.65);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetBottomMargin(0.14);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetFrameFillStyle(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetFrameBorderMode(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetFrameFillStyle(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->SetFrameBorderMode(0);
+   
+   TH2F *axisRes657291 = new TH2F("axisRes657291","",50,-1,1,50,0.6,1.4);
+   axisRes657291->SetMarkerStyle(20);
+   axisRes657291->GetXaxis()->SetTitle("BDT#lower[0.3]{#scale[0.7]{#it{t}-ch.}}");
+   axisRes657291->GetXaxis()->SetNdivisions(1005);
+   axisRes657291->GetXaxis()->SetLabelFont(43);
+   axisRes657291->GetXaxis()->SetLabelOffset(0.0105);
+   axisRes657291->GetXaxis()->SetLabelSize(32);
+   axisRes657291->GetXaxis()->SetTitleSize(35);
+   axisRes657291->GetXaxis()->SetTickLength(0.04166667);
+   axisRes657291->GetXaxis()->SetTitleOffset(1.135);
+   axisRes657291->GetXaxis()->SetTitleFont(43);
+   axisRes657291->GetYaxis()->SetTitle("Data/MC");
+   axisRes657291->GetYaxis()->SetNdivisions(406);
+   axisRes657291->GetYaxis()->SetLabelFont(43);
+   axisRes657291->GetYaxis()->SetLabelOffset(0.0087);
+   axisRes657291->GetYaxis()->SetLabelSize(32);
+   axisRes657291->GetYaxis()->SetTitleSize(35);
+   axisRes657291->GetYaxis()->SetTickLength(0.07142857);
+   axisRes657291->GetYaxis()->SetTitleOffset(1.32);
+   axisRes657291->GetYaxis()->SetTitleFont(43);
+   axisRes657291->GetZaxis()->SetLabelFont(43);
+   axisRes657291->GetZaxis()->SetLabelOffset(0.0087);
+   axisRes657291->GetZaxis()->SetLabelSize(32);
+   axisRes657291->GetZaxis()->SetTitleSize(35);
+   axisRes657291->GetZaxis()->SetTitleOffset(1.32);
+   axisRes657291->GetZaxis()->SetTitleFont(43);
+   axisRes657291->Draw("AXIS");
+   TBox *box = new TBox(-1,0.9711258,-0.9230769,1.028874);
+
+   Int_t ci;      // for color index setting
+   TColor *color; // for color definition with alpha
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-1,0.9711258,-0.9230769,1.028874);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.9230769,0.9855416,-0.8461538,1.014458);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.9230769,0.9855416,-0.8461538,1.014458);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.8461538,0.9827877,-0.7692308,1.017212);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.8461538,0.9827877,-0.7692308,1.017212);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.7692308,0.9813974,-0.6923077,1.018603);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.7692308,0.9813974,-0.6923077,1.018603);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.6923077,0.982256,-0.6153846,1.017744);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.6923077,0.982256,-0.6153846,1.017744);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.6153846,0.9825127,-0.5384615,1.017487);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.6153846,0.9825127,-0.5384615,1.017487);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.5384615,0.9818806,-0.4615385,1.018119);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.5384615,0.9818806,-0.4615385,1.018119);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.4615385,0.982288,-0.3846154,1.017712);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.4615385,0.982288,-0.3846154,1.017712);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.3846154,0.9817306,-0.3076923,1.018269);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.3846154,0.9817306,-0.3076923,1.018269);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.3076923,0.981577,-0.2307692,1.018423);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.3076923,0.981577,-0.2307692,1.018423);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.2307692,0.9806959,-0.1538462,1.019304);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.2307692,0.9806959,-0.1538462,1.019304);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.1538462,0.9823724,-0.07692308,1.017628);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.1538462,0.9823724,-0.07692308,1.017628);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.07692308,0.9818584,0,1.018142);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(-0.07692308,0.9818584,0,1.018142);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0,0.9807328,0.07692308,1.019267);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0,0.9807328,0.07692308,1.019267);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.07692308,0.9820839,0.1538462,1.017916);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.07692308,0.9820839,0.1538462,1.017916);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.1538462,0.9818286,0.2307692,1.018171);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.1538462,0.9818286,0.2307692,1.018171);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.2307692,0.9793811,0.3076923,1.020619);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.2307692,0.9793811,0.3076923,1.020619);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.3076923,0.9792543,0.3846154,1.020746);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.3076923,0.9792543,0.3846154,1.020746);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.3846154,0.9769548,0.4615385,1.023045);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.3846154,0.9769548,0.4615385,1.023045);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.4615385,0.9758012,0.5384615,1.024199);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.4615385,0.9758012,0.5384615,1.024199);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.5384615,0.9733887,0.6153846,1.026611);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.5384615,0.9733887,0.6153846,1.026611);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.6153846,0.9750318,0.6923077,1.024968);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.6153846,0.9750318,0.6923077,1.024968);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.6923077,0.9755565,0.7692308,1.024444);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.6923077,0.9755565,0.7692308,1.024444);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.7692308,0.9743598,0.8461538,1.02564);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.7692308,0.9743598,0.8461538,1.02564);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.8461538,0.977234,0.9230769,1.022766);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.8461538,0.977234,0.9230769,1.022766);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.9230769,0.9591713,1,1.040829);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(3345);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   box = new TBox(0.9230769,0.9591713,1,1.040829);
+
+   ci = TColor::GetColor("#cccccc");
+   box->SetFillColor(ci);
+   box->SetFillStyle(0);
+
+   ci = TColor::GetColor("#999999");
+   box->SetLineColor(ci);
+   box->SetLineWidth(2);
+   box->Draw();
+   Double_t xAxis1[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHistdata6693785652 = new TH1F("setHistdata6693785652","",26, xAxis1);
+   setHistdata6693785652->SetBinContent(1,0.9408472);
+   setHistdata6693785652->SetBinContent(2,0.9326786);
+   setHistdata6693785652->SetBinContent(3,0.9816051);
+   setHistdata6693785652->SetBinContent(4,1.003258);
+   setHistdata6693785652->SetBinContent(5,1.006215);
+   setHistdata6693785652->SetBinContent(6,1.000714);
+   setHistdata6693785652->SetBinContent(7,1.010039);
+   setHistdata6693785652->SetBinContent(8,1.014266);
+   setHistdata6693785652->SetBinContent(9,1.031687);
+   setHistdata6693785652->SetBinContent(10,1.069004);
+   setHistdata6693785652->SetBinContent(11,1.022116);
+   setHistdata6693785652->SetBinContent(12,1.02592);
+   setHistdata6693785652->SetBinContent(13,0.9996897);
+   setHistdata6693785652->SetBinError(1,0.01115481);
+   setHistdata6693785652->SetBinError(2,0.006221868);
+   setHistdata6693785652->SetBinError(3,0.007295004);
+   setHistdata6693785652->SetBinError(4,0.007946363);
+   setHistdata6693785652->SetBinError(5,0.008024343);
+   setHistdata6693785652->SetBinError(6,0.007989873);
+   setHistdata6693785652->SetBinError(7,0.008053299);
+   setHistdata6693785652->SetBinError(8,0.008126101);
+   setHistdata6693785652->SetBinError(9,0.008573611);
+   setHistdata6693785652->SetBinError(10,0.008878207);
+   setHistdata6693785652->SetBinError(11,0.008884273);
+   setHistdata6693785652->SetBinError(12,0.009024334);
+   setHistdata6693785652->SetBinError(13,0.008863835);
+   setHistdata6693785652->SetEntries(194235);
+   setHistdata6693785652->SetFillStyle(0);
+   setHistdata6693785652->SetMarkerStyle(20);
+   setHistdata6693785652->SetMarkerSize(1.15);
+   setHistdata6693785652->GetXaxis()->SetNdivisions(1005);
+   setHistdata6693785652->GetXaxis()->SetLabelFont(43);
+   setHistdata6693785652->GetXaxis()->SetLabelOffset(0.0105);
+   setHistdata6693785652->GetXaxis()->SetLabelSize(32);
+   setHistdata6693785652->GetXaxis()->SetTitleSize(35);
+   setHistdata6693785652->GetXaxis()->SetTickLength(0.05);
+   setHistdata6693785652->GetXaxis()->SetTitleOffset(1.135);
+   setHistdata6693785652->GetXaxis()->SetTitleFont(43);
+   setHistdata6693785652->GetYaxis()->SetNdivisions(506);
+   setHistdata6693785652->GetYaxis()->SetLabelFont(43);
+   setHistdata6693785652->GetYaxis()->SetLabelOffset(0.0087);
+   setHistdata6693785652->GetYaxis()->SetLabelSize(32);
+   setHistdata6693785652->GetYaxis()->SetTitleSize(35);
+   setHistdata6693785652->GetYaxis()->SetTitleOffset(1.32);
+   setHistdata6693785652->GetYaxis()->SetTitleFont(43);
+   setHistdata6693785652->GetZaxis()->SetLabelFont(43);
+   setHistdata6693785652->GetZaxis()->SetLabelOffset(0.0087);
+   setHistdata6693785652->GetZaxis()->SetLabelSize(32);
+   setHistdata6693785652->GetZaxis()->SetTitleSize(35);
+   setHistdata6693785652->GetZaxis()->SetTitleOffset(1.32);
+   setHistdata6693785652->GetZaxis()->SetTitleFont(43);
+   setHistdata6693785652->Draw("PESame");
+   
+   TF1 *axisLine766771 = new TF1("axisLine76677","1",-1,1);
+   axisLine766771->SetFillColor(19);
+   axisLine766771->SetFillStyle(0);
+   axisLine766771->SetMarkerStyle(20);
+   axisLine766771->SetLineWidth(1);
+   axisLine766771->GetXaxis()->SetNdivisions(1005);
+   axisLine766771->GetXaxis()->SetLabelFont(43);
+   axisLine766771->GetXaxis()->SetLabelOffset(0.0105);
+   axisLine766771->GetXaxis()->SetLabelSize(32);
+   axisLine766771->GetXaxis()->SetTitleSize(35);
+   axisLine766771->GetXaxis()->SetTickLength(0.05);
+   axisLine766771->GetXaxis()->SetTitleOffset(1.135);
+   axisLine766771->GetXaxis()->SetTitleFont(43);
+   axisLine766771->GetYaxis()->SetNdivisions(506);
+   axisLine766771->GetYaxis()->SetLabelFont(43);
+   axisLine766771->GetYaxis()->SetLabelOffset(0.0087);
+   axisLine766771->GetYaxis()->SetLabelSize(32);
+   axisLine766771->GetYaxis()->SetTitleSize(35);
+   axisLine766771->GetYaxis()->SetTitleOffset(1.32);
+   axisLine766771->GetYaxis()->SetTitleFont(43);
+   axisLine766771->Draw("SameL");
+   
+   TH2F *axisRes65729_copy3 = new TH2F("axisRes65729_copy3","",50,-1,1,50,0.6,1.4);
+   axisRes65729_copy3->SetDirectory(0);
+   axisRes65729_copy3->SetMarkerStyle(20);
+   axisRes65729_copy3->GetXaxis()->SetTitle("BDT#lower[0.3]{#scale[0.7]{#it{t}-ch.}}");
+   axisRes65729_copy3->GetXaxis()->SetNdivisions(1005);
+   axisRes65729_copy3->GetXaxis()->SetLabelFont(43);
+   axisRes65729_copy3->GetXaxis()->SetLabelOffset(0.0105);
+   axisRes65729_copy3->GetXaxis()->SetLabelSize(32);
+   axisRes65729_copy3->GetXaxis()->SetTitleSize(35);
+   axisRes65729_copy3->GetXaxis()->SetTickLength(0.04166667);
+   axisRes65729_copy3->GetXaxis()->SetTitleOffset(1.135);
+   axisRes65729_copy3->GetXaxis()->SetTitleFont(43);
+   axisRes65729_copy3->GetYaxis()->SetTitle("Data/MC");
+   axisRes65729_copy3->GetYaxis()->SetNdivisions(406);
+   axisRes65729_copy3->GetYaxis()->SetLabelFont(43);
+   axisRes65729_copy3->GetYaxis()->SetLabelOffset(0.0087);
+   axisRes65729_copy3->GetYaxis()->SetLabelSize(32);
+   axisRes65729_copy3->GetYaxis()->SetTitleSize(35);
+   axisRes65729_copy3->GetYaxis()->SetTickLength(0.07142857);
+   axisRes65729_copy3->GetYaxis()->SetTitleOffset(1.32);
+   axisRes65729_copy3->GetYaxis()->SetTitleFont(43);
+   axisRes65729_copy3->GetZaxis()->SetLabelFont(43);
+   axisRes65729_copy3->GetZaxis()->SetLabelOffset(0.0087);
+   axisRes65729_copy3->GetZaxis()->SetLabelSize(32);
+   axisRes65729_copy3->GetZaxis()->SetTitleSize(35);
+   axisRes65729_copy3->GetZaxis()->SetTitleOffset(1.32);
+   axisRes65729_copy3->GetZaxis()->SetTitleFont(43);
+   axisRes65729_copy3->Draw("sameaxis");
+   
+   TPaveText *pt = new TPaveText(0.08,0.322,0.135,0.378,"brNDC");
+   pt->SetFillColor(0);
+   pt->Draw();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_1->Modified();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->cd();
+  
+// ------------>Primitives in pad: cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2
+   TPad *cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2 = new TPad("cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2", "",0,0,1,1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->Draw();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->cd();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->Range(-1.466667,-21155.32,1.866667,39288.45);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetFillColor(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetFillStyle(4000);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetBorderMode(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetBorderSize(2);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetTickx(1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetTicky(1);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetLeftMargin(0.14);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetRightMargin(0.26);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetTopMargin(0.08);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetBottomMargin(0.35);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetFrameFillStyle(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetFrameBorderMode(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetFrameFillStyle(0);
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->SetFrameBorderMode(0);
+   
+   TH2F *axis557244 = new TH2F("axis557244","",50,-1,1,50,0,34452.95);
+   axis557244->SetMarkerStyle(20);
+   axis557244->GetXaxis()->SetNdivisions(1005);
+   axis557244->GetXaxis()->SetLabelFont(43);
+   axis557244->GetXaxis()->SetLabelOffset(0.0105);
+   axis557244->GetXaxis()->SetLabelSize(0);
+   axis557244->GetXaxis()->SetTitleSize(35);
+   axis557244->GetXaxis()->SetTickLength(0.025);
+   axis557244->GetXaxis()->SetTitleOffset(1.135);
+   axis557244->GetXaxis()->SetTitleFont(43);
+   axis557244->GetYaxis()->SetTitle("Events / bin");
+   axis557244->GetYaxis()->SetNdivisions(506);
+   axis557244->GetYaxis()->SetLabelFont(43);
+   axis557244->GetYaxis()->SetLabelOffset(0.0087);
+   axis557244->GetYaxis()->SetLabelSize(32);
+   axis557244->GetYaxis()->SetTitleSize(35);
+   axis557244->GetYaxis()->SetTickLength(0.02631579);
+   axis557244->GetYaxis()->SetTitleOffset(1.32);
+   axis557244->GetYaxis()->SetTitleFont(43);
+   axis557244->GetZaxis()->SetLabelFont(43);
+   axis557244->GetZaxis()->SetLabelOffset(0.0087);
+   axis557244->GetZaxis()->SetLabelSize(32);
+   axis557244->GetZaxis()->SetTitleSize(35);
+   axis557244->GetZaxis()->SetTitleOffset(1.32);
+   axis557244->GetZaxis()->SetTitleFont(43);
+   axis557244->Draw("AXIS");
+   
+   THStack * = new THStack();
+   ->SetName("");
+   ->SetTitle("");
+   Double_t xAxis2[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *_stack_1 = new TH1F("_stack_1","",26, xAxis2);
+   _stack_1->SetMinimum(-16.49194);
+   _stack_1->SetMaximum(25297.62);
+   _stack_1->SetDirectory(0);
+   _stack_1->SetStats(0);
+   _stack_1->SetMarkerStyle(20);
+   _stack_1->GetXaxis()->SetNdivisions(1005);
+   _stack_1->GetXaxis()->SetLabelFont(43);
+   _stack_1->GetXaxis()->SetLabelOffset(0.0105);
+   _stack_1->GetXaxis()->SetLabelSize(32);
+   _stack_1->GetXaxis()->SetTitleSize(35);
+   _stack_1->GetXaxis()->SetTickLength(0.05);
+   _stack_1->GetXaxis()->SetTitleOffset(1.135);
+   _stack_1->GetXaxis()->SetTitleFont(43);
+   _stack_1->GetYaxis()->SetNdivisions(506);
+   _stack_1->GetYaxis()->SetLabelFont(43);
+   _stack_1->GetYaxis()->SetLabelOffset(0.0087);
+   _stack_1->GetYaxis()->SetLabelSize(32);
+   _stack_1->GetYaxis()->SetTitleSize(35);
+   _stack_1->GetYaxis()->SetTitleOffset(1.32);
+   _stack_1->GetYaxis()->SetTitleFont(43);
+   _stack_1->GetZaxis()->SetLabelFont(43);
+   _stack_1->GetZaxis()->SetLabelOffset(0.0087);
+   _stack_1->GetZaxis()->SetLabelSize(32);
+   _stack_1->GetZaxis()->SetTitleSize(35);
+   _stack_1->GetZaxis()->SetTitleOffset(1.32);
+   _stack_1->GetZaxis()->SetTitleFont(43);
+   ->SetHistogram(_stack_1);
+   
+   Double_t xAxis3[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHisttChannel779055 = new TH1F("setHisttChannel779055","",26, xAxis3);
+   setHisttChannel779055->SetBinContent(1,52.53234);
+   setHisttChannel779055->SetBinContent(2,241.2486);
+   setHisttChannel779055->SetBinContent(3,324.7657);
+   setHisttChannel779055->SetBinContent(4,415.1692);
+   setHisttChannel779055->SetBinContent(5,513.9189);
+   setHisttChannel779055->SetBinContent(6,624.3644);
+   setHisttChannel779055->SetBinContent(7,748.908);
+   setHisttChannel779055->SetBinContent(8,828.5237);
+   setHisttChannel779055->SetBinContent(9,886.9697);
+   setHisttChannel779055->SetBinContent(10,989.5419);
+   setHisttChannel779055->SetBinContent(11,1040.207);
+   setHisttChannel779055->SetBinContent(12,1105.789);
+   setHisttChannel779055->SetBinContent(13,1216.927);
+   setHisttChannel779055->SetBinContent(14,1300.724);
+   setHisttChannel779055->SetBinContent(15,1378.005);
+   setHisttChannel779055->SetBinContent(16,1502.514);
+   setHisttChannel779055->SetBinContent(17,1598.501);
+   setHisttChannel779055->SetBinContent(18,1675.367);
+   setHisttChannel779055->SetBinContent(19,1729.986);
+   setHisttChannel779055->SetBinContent(20,1815.626);
+   setHisttChannel779055->SetBinContent(21,1928.172);
+   setHisttChannel779055->SetBinContent(22,2090.53);
+   setHisttChannel779055->SetBinContent(23,2341.755);
+   setHisttChannel779055->SetBinContent(24,2707.445);
+   setHisttChannel779055->SetBinContent(25,2918.506);
+   setHisttChannel779055->SetBinContent(26,857.5979);
+   setHisttChannel779055->SetBinError(1,2.01376);
+   setHisttChannel779055->SetBinError(2,4.326724);
+   setHisttChannel779055->SetBinError(3,5.005415);
+   setHisttChannel779055->SetBinError(4,5.639113);
+   setHisttChannel779055->SetBinError(5,6.263104);
+   setHisttChannel779055->SetBinError(6,6.896051);
+   setHisttChannel779055->SetBinError(7,7.544705);
+   setHisttChannel779055->SetBinError(8,7.918085);
+   setHisttChannel779055->SetBinError(9,8.183739);
+   setHisttChannel779055->SetBinError(10,8.646188);
+   setHisttChannel779055->SetBinError(11,8.846749);
+   setHisttChannel779055->SetBinError(12,9.112596);
+   setHisttChannel779055->SetBinError(13,9.565872);
+   setHisttChannel779055->SetBinError(14,9.875306);
+   setHisttChannel779055->SetBinError(15,10.16546);
+   setHisttChannel779055->SetBinError(16,10.61241);
+   setHisttChannel779055->SetBinError(17,10.93211);
+   setHisttChannel779055->SetBinError(18,11.19024);
+   setHisttChannel779055->SetBinError(19,11.36626);
+   setHisttChannel779055->SetBinError(20,11.63273);
+   setHisttChannel779055->SetBinError(21,11.98265);
+   setHisttChannel779055->SetBinError(22,12.46975);
+   setHisttChannel779055->SetBinError(23,13.19549);
+   setHisttChannel779055->SetBinError(24,14.1757);
+   setHisttChannel779055->SetBinError(25,14.71823);
+   setHisttChannel779055->SetBinError(26,7.98548);
+   setHisttChannel779055->SetEntries(467747);
+   setHisttChannel779055->SetDirectory(0);
+
+   ci = TColor::GetColor("#ff0505");
+   setHisttChannel779055->SetFillColor(ci);
+
+   ci = TColor::GetColor("#990303");
+   setHisttChannel779055->SetLineColor(ci);
+   setHisttChannel779055->SetLineWidth(2);
+   setHisttChannel779055->SetMarkerStyle(20);
+   setHisttChannel779055->GetXaxis()->SetNdivisions(1005);
+   setHisttChannel779055->GetXaxis()->SetLabelFont(43);
+   setHisttChannel779055->GetXaxis()->SetLabelOffset(0.0105);
+   setHisttChannel779055->GetXaxis()->SetLabelSize(32);
+   setHisttChannel779055->GetXaxis()->SetTitleSize(35);
+   setHisttChannel779055->GetXaxis()->SetTickLength(0.05);
+   setHisttChannel779055->GetXaxis()->SetTitleOffset(1.135);
+   setHisttChannel779055->GetXaxis()->SetTitleFont(43);
+   setHisttChannel779055->GetYaxis()->SetNdivisions(506);
+   setHisttChannel779055->GetYaxis()->SetLabelFont(43);
+   setHisttChannel779055->GetYaxis()->SetLabelOffset(0.0087);
+   setHisttChannel779055->GetYaxis()->SetLabelSize(32);
+   setHisttChannel779055->GetYaxis()->SetTitleSize(35);
+   setHisttChannel779055->GetYaxis()->SetTitleOffset(1.32);
+   setHisttChannel779055->GetYaxis()->SetTitleFont(43);
+   setHisttChannel779055->GetZaxis()->SetLabelFont(43);
+   setHisttChannel779055->GetZaxis()->SetLabelOffset(0.0087);
+   setHisttChannel779055->GetZaxis()->SetLabelSize(32);
+   setHisttChannel779055->GetZaxis()->SetTitleSize(35);
+   setHisttChannel779055->GetZaxis()->SetTitleOffset(1.32);
+   setHisttChannel779055->GetZaxis()->SetTitleFont(43);
+   ->Add(setHisttChannel77905,"HIST F");
+   Double_t xAxis4[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHisttWChannel490596 = new TH1F("setHisttWChannel490596","",26, xAxis4);
+   setHisttWChannel490596->SetBinContent(1,605.3622);
+   setHisttWChannel490596->SetBinContent(2,1981.585);
+   setHisttWChannel490596->SetBinContent(3,1272.542);
+   setHisttWChannel490596->SetBinContent(4,1016.273);
+   setHisttWChannel490596->SetBinContent(5,954.1341);
+   setHisttWChannel490596->SetBinContent(6,952.6236);
+   setHisttWChannel490596->SetBinContent(7,928.7078);
+   setHisttWChannel490596->SetBinContent(8,907.0289);
+   setHisttWChannel490596->SetBinContent(9,860.1942);
+   setHisttWChannel490596->SetBinContent(10,840.014);
+   setHisttWChannel490596->SetBinContent(11,824.3635);
+   setHisttWChannel490596->SetBinContent(12,782.528);
+   setHisttWChannel490596->SetBinContent(13,779.7819);
+   setHisttWChannel490596->SetBinContent(14,732.3311);
+   setHisttWChannel490596->SetBinContent(15,679.132);
+   setHisttWChannel490596->SetBinContent(16,633.2457);
+   setHisttWChannel490596->SetBinContent(17,576.8478);
+   setHisttWChannel490596->SetBinContent(18,496.95);
+   setHisttWChannel490596->SetBinContent(19,375.295);
+   setHisttWChannel490596->SetBinContent(20,288.3884);
+   setHisttWChannel490596->SetBinContent(21,229.9859);
+   setHisttWChannel490596->SetBinContent(22,190.5989);
+   setHisttWChannel490596->SetBinContent(23,157.0815);
+   setHisttWChannel490596->SetBinContent(24,128.182);
+   setHisttWChannel490596->SetBinContent(25,78.79398);
+   setHisttWChannel490596->SetBinContent(26,14.6604);
+   setHisttWChannel490596->SetBinError(1,10.58034);
+   setHisttWChannel490596->SetBinError(2,19.12525);
+   setHisttWChannel490596->SetBinError(3,15.25712);
+   setHisttWChannel490596->SetBinError(4,13.61644);
+   setHisttWChannel490596->SetBinError(5,13.15294);
+   setHisttWChannel490596->SetBinError(6,13.12639);
+   setHisttWChannel490596->SetBinError(7,12.96504);
+   setHisttWChannel490596->SetBinError(8,12.77566);
+   setHisttWChannel490596->SetBinError(9,12.44194);
+   setHisttWChannel490596->SetBinError(10,12.32162);
+   setHisttWChannel490596->SetBinError(11,12.18405);
+   setHisttWChannel490596->SetBinError(12,11.88085);
+   setHisttWChannel490596->SetBinError(13,11.84787);
+   setHisttWChannel490596->SetBinError(14,11.46949);
+   setHisttWChannel490596->SetBinError(15,11.07026);
+   setHisttWChannel490596->SetBinError(16,10.67239);
+   setHisttWChannel490596->SetBinError(17,10.21086);
+   setHisttWChannel490596->SetBinError(18,9.481102);
+   setHisttWChannel490596->SetBinError(19,8.227183);
+   setHisttWChannel490596->SetBinError(20,7.2044);
+   setHisttWChannel490596->SetBinError(21,6.425639);
+   setHisttWChannel490596->SetBinError(22,5.866099);
+   setHisttWChannel490596->SetBinError(23,5.303624);
+   setHisttWChannel490596->SetBinError(24,4.791649);
+   setHisttWChannel490596->SetBinError(25,3.750761);
+   setHisttWChannel490596->SetBinError(26,1.629523);
+   setHisttWChannel490596->SetEntries(101602);
+   setHisttWChannel490596->SetDirectory(0);
+
+   ci = TColor::GetColor("#f9c40c");
+   setHisttWChannel490596->SetFillColor(ci);
+
+   ci = TColor::GetColor("#957507");
+   setHisttWChannel490596->SetLineColor(ci);
+   setHisttWChannel490596->SetLineWidth(2);
+   setHisttWChannel490596->SetMarkerStyle(20);
+   setHisttWChannel490596->GetXaxis()->SetNdivisions(1005);
+   setHisttWChannel490596->GetXaxis()->SetLabelFont(43);
+   setHisttWChannel490596->GetXaxis()->SetLabelOffset(0.0105);
+   setHisttWChannel490596->GetXaxis()->SetLabelSize(32);
+   setHisttWChannel490596->GetXaxis()->SetTitleSize(35);
+   setHisttWChannel490596->GetXaxis()->SetTickLength(0.05);
+   setHisttWChannel490596->GetXaxis()->SetTitleOffset(1.135);
+   setHisttWChannel490596->GetXaxis()->SetTitleFont(43);
+   setHisttWChannel490596->GetYaxis()->SetNdivisions(506);
+   setHisttWChannel490596->GetYaxis()->SetLabelFont(43);
+   setHisttWChannel490596->GetYaxis()->SetLabelOffset(0.0087);
+   setHisttWChannel490596->GetYaxis()->SetLabelSize(32);
+   setHisttWChannel490596->GetYaxis()->SetTitleSize(35);
+   setHisttWChannel490596->GetYaxis()->SetTitleOffset(1.32);
+   setHisttWChannel490596->GetYaxis()->SetTitleFont(43);
+   setHisttWChannel490596->GetZaxis()->SetLabelFont(43);
+   setHisttWChannel490596->GetZaxis()->SetLabelOffset(0.0087);
+   setHisttWChannel490596->GetZaxis()->SetLabelSize(32);
+   setHisttWChannel490596->GetZaxis()->SetTitleSize(35);
+   setHisttWChannel490596->GetZaxis()->SetTitleOffset(1.32);
+   setHisttWChannel490596->GetZaxis()->SetTitleFont(43);
+   ->Add(setHisttWChannel49059,"HIST F");
+   Double_t xAxis5[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHistTTJets153557 = new TH1F("setHistTTJets153557","",26, xAxis5);
+   setHistTTJets153557->SetBinContent(1,3476.055);
+   setHistTTJets153557->SetBinContent(2,14585.88);
+   setHistTTJets153557->SetBinContent(3,10699.17);
+   setHistTTJets153557->SetBinContent(4,9026.462);
+   setHistTTJets153557->SetBinContent(5,8806.937);
+   setHistTTJets153557->SetBinContent(6,8707.227);
+   setHistTTJets153557->SetBinContent(7,8534.018);
+   setHistTTJets153557->SetBinContent(8,8527.957);
+   setHistTTJets153557->SetBinContent(9,8009.271);
+   setHistTTJets153557->SetBinContent(10,7757.049);
+   setHistTTJets153557->SetBinContent(11,7445.958);
+   setHistTTJets153557->SetBinContent(12,7198.814);
+   setHistTTJets153557->SetBinContent(13,6970.641);
+   setHistTTJets153557->SetBinContent(14,6675.187);
+   setHistTTJets153557->SetBinContent(15,6502);
+   setHistTTJets153557->SetBinContent(16,6108.171);
+   setHistTTJets153557->SetBinContent(17,5458.589);
+   setHistTTJets153557->SetBinContent(18,4856.584);
+   setHistTTJets153557->SetBinContent(19,3800.944);
+   setHistTTJets153557->SetBinContent(20,3142.904);
+   setHistTTJets153557->SetBinContent(21,2623.518);
+   setHistTTJets153557->SetBinContent(22,2260.571);
+   setHistTTJets153557->SetBinContent(23,1856.047);
+   setHistTTJets153557->SetBinContent(24,1484.008);
+   setHistTTJets153557->SetBinContent(25,880.2044);
+   setHistTTJets153557->SetBinContent(26,143.7754);
+   setHistTTJets153557->SetBinError(1,36.85179);
+   setHistTTJets153557->SetBinError(2,75.56581);
+   setHistTTJets153557->SetBinError(3,64.58125);
+   setHistTTJets153557->SetBinError(4,59.33916);
+   setHistTTJets153557->SetBinError(5,58.52874);
+   setHistTTJets153557->SetBinError(6,58.1582);
+   setHistTTJets153557->SetBinError(7,57.55781);
+   setHistTTJets153557->SetBinError(8,57.48533);
+   setHistTTJets153557->SetBinError(9,55.69922);
+   setHistTTJets153557->SetBinError(10,54.76359);
+   setHistTTJets153557->SetBinError(11,53.64071);
+   setHistTTJets153557->SetBinError(12,52.67412);
+   setHistTTJets153557->SetBinError(13,51.85668);
+   setHistTTJets153557->SetBinError(14,50.76303);
+   setHistTTJets153557->SetBinError(15,50.0975);
+   setHistTTJets153557->SetBinError(16,48.5858);
+   setHistTTJets153557->SetBinError(17,45.94029);
+   setHistTTJets153557->SetBinError(18,43.32119);
+   setHistTTJets153557->SetBinError(19,38.24376);
+   setHistTTJets153557->SetBinError(20,34.80153);
+   setHistTTJets153557->SetBinError(21,31.75649);
+   setHistTTJets153557->SetBinError(22,29.44479);
+   setHistTTJets153557->SetBinError(23,26.65465);
+   setHistTTJets153557->SetBinError(24,23.75662);
+   setHistTTJets153557->SetBinError(25,18.25869);
+   setHistTTJets153557->SetBinError(26,7.39958);
+   setHistTTJets153557->SetEntries(429101);
+   setHistTTJets153557->SetDirectory(0);
+
+   ci = TColor::GetColor("#f9910c");
+   setHistTTJets153557->SetFillColor(ci);
+
+   ci = TColor::GetColor("#955707");
+   setHistTTJets153557->SetLineColor(ci);
+   setHistTTJets153557->SetLineWidth(2);
+   setHistTTJets153557->SetMarkerStyle(20);
+   setHistTTJets153557->GetXaxis()->SetNdivisions(1005);
+   setHistTTJets153557->GetXaxis()->SetLabelFont(43);
+   setHistTTJets153557->GetXaxis()->SetLabelOffset(0.0105);
+   setHistTTJets153557->GetXaxis()->SetLabelSize(32);
+   setHistTTJets153557->GetXaxis()->SetTitleSize(35);
+   setHistTTJets153557->GetXaxis()->SetTickLength(0.05);
+   setHistTTJets153557->GetXaxis()->SetTitleOffset(1.135);
+   setHistTTJets153557->GetXaxis()->SetTitleFont(43);
+   setHistTTJets153557->GetYaxis()->SetNdivisions(506);
+   setHistTTJets153557->GetYaxis()->SetLabelFont(43);
+   setHistTTJets153557->GetYaxis()->SetLabelOffset(0.0087);
+   setHistTTJets153557->GetYaxis()->SetLabelSize(32);
+   setHistTTJets153557->GetYaxis()->SetTitleSize(35);
+   setHistTTJets153557->GetYaxis()->SetTitleOffset(1.32);
+   setHistTTJets153557->GetYaxis()->SetTitleFont(43);
+   setHistTTJets153557->GetZaxis()->SetLabelFont(43);
+   setHistTTJets153557->GetZaxis()->SetLabelOffset(0.0087);
+   setHistTTJets153557->GetZaxis()->SetLabelSize(32);
+   setHistTTJets153557->GetZaxis()->SetTitleSize(35);
+   setHistTTJets153557->GetZaxis()->SetTitleOffset(1.32);
+   setHistTTJets153557->GetZaxis()->SetTitleFont(43);
+   ->Add(setHistTTJets15355,"HIST F");
+   Double_t xAxis6[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHistWJetsAMCexHF232738 = new TH1F("setHistWJetsAMCexHF232738","",26, xAxis6);
+   setHistWJetsAMCexHF232738->SetBinContent(1,1660.495);
+   setHistWJetsAMCexHF232738->SetBinContent(2,3796.386);
+   setHistWJetsAMCexHF232738->SetBinContent(3,2923.77);
+   setHistWJetsAMCexHF232738->SetBinContent(4,2333.909);
+   setHistWJetsAMCexHF232738->SetBinContent(5,2389.792);
+   setHistWJetsAMCexHF232738->SetBinContent(6,2402.249);
+   setHistWJetsAMCexHF232738->SetBinContent(7,2289.821);
+   setHistWJetsAMCexHF232738->SetBinContent(8,2130.964);
+   setHistWJetsAMCexHF232738->SetBinContent(9,1683.874);
+   setHistWJetsAMCexHF232738->SetBinContent(10,1715.04);
+   setHistWJetsAMCexHF232738->SetBinContent(11,1400.28);
+   setHistWJetsAMCexHF232738->SetBinContent(12,1679.67);
+   setHistWJetsAMCexHF232738->SetBinContent(13,1697.102);
+   setHistWJetsAMCexHF232738->SetBinContent(14,1345.66);
+   setHistWJetsAMCexHF232738->SetBinContent(15,1274.895);
+   setHistWJetsAMCexHF232738->SetBinContent(16,1380.458);
+   setHistWJetsAMCexHF232738->SetBinContent(17,1064.672);
+   setHistWJetsAMCexHF232738->SetBinContent(18,1464.958);
+   setHistWJetsAMCexHF232738->SetBinContent(19,824.7854);
+   setHistWJetsAMCexHF232738->SetBinContent(20,516.4257);
+   setHistWJetsAMCexHF232738->SetBinContent(21,1060.178);
+   setHistWJetsAMCexHF232738->SetBinContent(22,477.1893);
+   setHistWJetsAMCexHF232738->SetBinContent(23,469.8775);
+   setHistWJetsAMCexHF232738->SetBinContent(24,360.5644);
+   setHistWJetsAMCexHF232738->SetBinContent(25,348.6559);
+   setHistWJetsAMCexHF232738->SetBinContent(26,195.9455);
+   setHistWJetsAMCexHF232738->SetBinError(1,170.7541);
+   setHistWJetsAMCexHF232738->SetBinError(2,279.9532);
+   setHistWJetsAMCexHF232738->SetBinError(3,263.7595);
+   setHistWJetsAMCexHF232738->SetBinError(4,243.8106);
+   setHistWJetsAMCexHF232738->SetBinError(5,233.8729);
+   setHistWJetsAMCexHF232738->SetBinError(6,232.0019);
+   setHistWJetsAMCexHF232738->SetBinError(7,235.5373);
+   setHistWJetsAMCexHF232738->SetBinError(8,220.4133);
+   setHistWJetsAMCexHF232738->SetBinError(9,212.4727);
+   setHistWJetsAMCexHF232738->SetBinError(10,211.4552);
+   setHistWJetsAMCexHF232738->SetBinError(11,197.3835);
+   setHistWJetsAMCexHF232738->SetBinError(12,187.2644);
+   setHistWJetsAMCexHF232738->SetBinError(13,183.8782);
+   setHistWJetsAMCexHF232738->SetBinError(14,180.3315);
+   setHistWJetsAMCexHF232738->SetBinError(15,169.9323);
+   setHistWJetsAMCexHF232738->SetBinError(16,162.9614);
+   setHistWJetsAMCexHF232738->SetBinError(17,159.4181);
+   setHistWJetsAMCexHF232738->SetBinError(18,160.3864);
+   setHistWJetsAMCexHF232738->SetBinError(19,143.0519);
+   setHistWJetsAMCexHF232738->SetBinError(20,131.8135);
+   setHistWJetsAMCexHF232738->SetBinError(21,131.99);
+   setHistWJetsAMCexHF232738->SetBinError(22,118.2826);
+   setHistWJetsAMCexHF232738->SetBinError(23,110.868);
+   setHistWJetsAMCexHF232738->SetBinError(24,109.055);
+   setHistWJetsAMCexHF232738->SetBinError(25,88.1707);
+   setHistWJetsAMCexHF232738->SetBinError(26,46.64513);
+   setHistWJetsAMCexHF232738->SetEntries(15224);
+   setHistWJetsAMCexHF232738->SetDirectory(0);
+
+   ci = TColor::GetColor("#1bb320");
+   setHistWJetsAMCexHF232738->SetFillColor(ci);
+
+   ci = TColor::GetColor("#106b13");
+   setHistWJetsAMCexHF232738->SetLineColor(ci);
+   setHistWJetsAMCexHF232738->SetLineWidth(2);
+   setHistWJetsAMCexHF232738->SetMarkerStyle(20);
+   setHistWJetsAMCexHF232738->GetXaxis()->SetNdivisions(1005);
+   setHistWJetsAMCexHF232738->GetXaxis()->SetLabelFont(43);
+   setHistWJetsAMCexHF232738->GetXaxis()->SetLabelOffset(0.0105);
+   setHistWJetsAMCexHF232738->GetXaxis()->SetLabelSize(32);
+   setHistWJetsAMCexHF232738->GetXaxis()->SetTitleSize(35);
+   setHistWJetsAMCexHF232738->GetXaxis()->SetTickLength(0.05);
+   setHistWJetsAMCexHF232738->GetXaxis()->SetTitleOffset(1.135);
+   setHistWJetsAMCexHF232738->GetXaxis()->SetTitleFont(43);
+   setHistWJetsAMCexHF232738->GetYaxis()->SetNdivisions(506);
+   setHistWJetsAMCexHF232738->GetYaxis()->SetLabelFont(43);
+   setHistWJetsAMCexHF232738->GetYaxis()->SetLabelOffset(0.0087);
+   setHistWJetsAMCexHF232738->GetYaxis()->SetLabelSize(32);
+   setHistWJetsAMCexHF232738->GetYaxis()->SetTitleSize(35);
+   setHistWJetsAMCexHF232738->GetYaxis()->SetTitleOffset(1.32);
+   setHistWJetsAMCexHF232738->GetYaxis()->SetTitleFont(43);
+   setHistWJetsAMCexHF232738->GetZaxis()->SetLabelFont(43);
+   setHistWJetsAMCexHF232738->GetZaxis()->SetLabelOffset(0.0087);
+   setHistWJetsAMCexHF232738->GetZaxis()->SetLabelSize(32);
+   setHistWJetsAMCexHF232738->GetZaxis()->SetTitleSize(35);
+   setHistWJetsAMCexHF232738->GetZaxis()->SetTitleOffset(1.32);
+   setHistWJetsAMCexHF232738->GetZaxis()->SetTitleFont(43);
+   ->Add(setHistWJetsAMCexHF23273,"HIST F");
+   Double_t xAxis7[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHistWJetsAMCexLF90039 = new TH1F("setHistWJetsAMCexLF90039","",26, xAxis7);
+   setHistWJetsAMCexLF90039->SetBinContent(1,411.1284);
+   setHistWJetsAMCexLF90039->SetBinContent(2,1178.224);
+   setHistWJetsAMCexLF90039->SetBinContent(3,969.201);
+   setHistWJetsAMCexLF90039->SetBinContent(4,622.959);
+   setHistWJetsAMCexLF90039->SetBinContent(5,543.4318);
+   setHistWJetsAMCexLF90039->SetBinContent(6,525.0237);
+   setHistWJetsAMCexLF90039->SetBinContent(7,719.3129);
+   setHistWJetsAMCexLF90039->SetBinContent(8,766.605);
+   setHistWJetsAMCexLF90039->SetBinContent(9,536.9756);
+   setHistWJetsAMCexLF90039->SetBinContent(10,437.4318);
+   setHistWJetsAMCexLF90039->SetBinContent(11,449.4119);
+   setHistWJetsAMCexLF90039->SetBinContent(12,286.9281);
+   setHistWJetsAMCexLF90039->SetBinContent(13,470.9506);
+   setHistWJetsAMCexLF90039->SetBinContent(14,266.4785);
+   setHistWJetsAMCexLF90039->SetBinContent(15,426.2607);
+   setHistWJetsAMCexLF90039->SetBinContent(16,395.0472);
+   setHistWJetsAMCexLF90039->SetBinContent(17,258.4706);
+   setHistWJetsAMCexLF90039->SetBinContent(18,290.7125);
+   setHistWJetsAMCexLF90039->SetBinContent(19,288.8195);
+   setHistWJetsAMCexLF90039->SetBinContent(20,291.3693);
+   setHistWJetsAMCexLF90039->SetBinContent(21,222.834);
+   setHistWJetsAMCexLF90039->SetBinContent(22,210.2117);
+   setHistWJetsAMCexLF90039->SetBinContent(23,233.9896);
+   setHistWJetsAMCexLF90039->SetBinContent(24,91.29915);
+   setHistWJetsAMCexLF90039->SetBinContent(25,78.42419);
+   setHistWJetsAMCexLF90039->SetBinContent(26,0.2477512);
+   setHistWJetsAMCexLF90039->SetBinError(1,120.5291);
+   setHistWJetsAMCexLF90039->SetBinError(2,179.8993);
+   setHistWJetsAMCexLF90039->SetBinError(3,147.8935);
+   setHistWJetsAMCexLF90039->SetBinError(4,137.8614);
+   setHistWJetsAMCexLF90039->SetBinError(5,117.4459);
+   setHistWJetsAMCexLF90039->SetBinError(6,110.8145);
+   setHistWJetsAMCexLF90039->SetBinError(7,122.6279);
+   setHistWJetsAMCexLF90039->SetBinError(8,130.4194);
+   setHistWJetsAMCexLF90039->SetBinError(9,112.3923);
+   setHistWJetsAMCexLF90039->SetBinError(10,95.32441);
+   setHistWJetsAMCexLF90039->SetBinError(11,124.004);
+   setHistWJetsAMCexLF90039->SetBinError(12,84.78089);
+   setHistWJetsAMCexLF90039->SetBinError(13,109.1662);
+   setHistWJetsAMCexLF90039->SetBinError(14,114.2698);
+   setHistWJetsAMCexLF90039->SetBinError(15,94.0541);
+   setHistWJetsAMCexLF90039->SetBinError(16,99.66021);
+   setHistWJetsAMCexLF90039->SetBinError(17,114.1071);
+   setHistWJetsAMCexLF90039->SetBinError(18,102.9414);
+   setHistWJetsAMCexLF90039->SetBinError(19,97.93552);
+   setHistWJetsAMCexLF90039->SetBinError(20,86.46885);
+   setHistWJetsAMCexLF90039->SetBinError(21,113.1444);
+   setHistWJetsAMCexLF90039->SetBinError(22,74.35429);
+   setHistWJetsAMCexLF90039->SetBinError(23,67.3206);
+   setHistWJetsAMCexLF90039->SetBinError(24,62.82925);
+   setHistWJetsAMCexLF90039->SetBinError(25,41.94476);
+   setHistWJetsAMCexLF90039->SetBinError(26,16.73969);
+   setHistWJetsAMCexLF90039->SetEntries(3175);
+   setHistWJetsAMCexLF90039->SetDirectory(0);
+
+   ci = TColor::GetColor("#4dff97");
+   setHistWJetsAMCexLF90039->SetFillColor(ci);
+
+   ci = TColor::GetColor("#2e995a");
+   setHistWJetsAMCexLF90039->SetLineColor(ci);
+   setHistWJetsAMCexLF90039->SetLineWidth(2);
+   setHistWJetsAMCexLF90039->SetMarkerStyle(20);
+   setHistWJetsAMCexLF90039->GetXaxis()->SetNdivisions(1005);
+   setHistWJetsAMCexLF90039->GetXaxis()->SetLabelFont(43);
+   setHistWJetsAMCexLF90039->GetXaxis()->SetLabelOffset(0.0105);
+   setHistWJetsAMCexLF90039->GetXaxis()->SetLabelSize(32);
+   setHistWJetsAMCexLF90039->GetXaxis()->SetTitleSize(35);
+   setHistWJetsAMCexLF90039->GetXaxis()->SetTickLength(0.05);
+   setHistWJetsAMCexLF90039->GetXaxis()->SetTitleOffset(1.135);
+   setHistWJetsAMCexLF90039->GetXaxis()->SetTitleFont(43);
+   setHistWJetsAMCexLF90039->GetYaxis()->SetNdivisions(506);
+   setHistWJetsAMCexLF90039->GetYaxis()->SetLabelFont(43);
+   setHistWJetsAMCexLF90039->GetYaxis()->SetLabelOffset(0.0087);
+   setHistWJetsAMCexLF90039->GetYaxis()->SetLabelSize(32);
+   setHistWJetsAMCexLF90039->GetYaxis()->SetTitleSize(35);
+   setHistWJetsAMCexLF90039->GetYaxis()->SetTitleOffset(1.32);
+   setHistWJetsAMCexLF90039->GetYaxis()->SetTitleFont(43);
+   setHistWJetsAMCexLF90039->GetZaxis()->SetLabelFont(43);
+   setHistWJetsAMCexLF90039->GetZaxis()->SetLabelOffset(0.0087);
+   setHistWJetsAMCexLF90039->GetZaxis()->SetLabelSize(32);
+   setHistWJetsAMCexLF90039->GetZaxis()->SetTitleSize(35);
+   setHistWJetsAMCexLF90039->GetZaxis()->SetTitleOffset(1.32);
+   setHistWJetsAMCexLF90039->GetZaxis()->SetTitleFont(43);
+   ->Add(setHistWJetsAMCexLF9003,"HIST F");
+   Double_t xAxis8[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHistDY2762210 = new TH1F("setHistDY2762210","",26, xAxis8);
+   setHistDY2762210->SetBinContent(1,191.1967);
+   setHistDY2762210->SetBinContent(2,386.6934);
+   setHistDY2762210->SetBinContent(3,500.2617);
+   setHistDY2762210->SetBinContent(4,561.892);
+   setHistDY2762210->SetBinContent(5,549.9466);
+   setHistDY2762210->SetBinContent(6,650.7775);
+   setHistDY2762210->SetBinContent(7,670.1387);
+   setHistDY2762210->SetBinContent(8,664.7258);
+   setHistDY2762210->SetBinContent(9,581.1471);
+   setHistDY2762210->SetBinContent(10,517.5486);
+   setHistDY2762210->SetBinContent(11,564.8335);
+   setHistDY2762210->SetBinContent(12,430.7302);
+   setHistDY2762210->SetBinContent(13,494.0078);
+   setHistDY2762210->SetBinContent(14,423.2328);
+   setHistDY2762210->SetBinContent(15,342.1116);
+   setHistDY2762210->SetBinContent(16,318.9489);
+   setHistDY2762210->SetBinContent(17,329.2531);
+   setHistDY2762210->SetBinContent(18,348.5164);
+   setHistDY2762210->SetBinContent(19,285.785);
+   setHistDY2762210->SetBinContent(20,205.6845);
+   setHistDY2762210->SetBinContent(21,154.3451);
+   setHistDY2762210->SetBinContent(22,160.3126);
+   setHistDY2762210->SetBinContent(23,147.3398);
+   setHistDY2762210->SetBinContent(24,110.5622);
+   setHistDY2762210->SetBinContent(25,102.8668);
+   setHistDY2762210->SetBinContent(26,3.615119);
+   setHistDY2762210->SetBinError(1,35.62039);
+   setHistDY2762210->SetBinError(2,41.42813);
+   setHistDY2762210->SetBinError(3,46.23691);
+   setHistDY2762210->SetBinError(4,55.73303);
+   setHistDY2762210->SetBinError(5,48.56627);
+   setHistDY2762210->SetBinError(6,56.61255);
+   setHistDY2762210->SetBinError(7,59.72588);
+   setHistDY2762210->SetBinError(8,55.66052);
+   setHistDY2762210->SetBinError(9,52.71121);
+   setHistDY2762210->SetBinError(10,62.5036);
+   setHistDY2762210->SetBinError(11,58.47095);
+   setHistDY2762210->SetBinError(12,50.21532);
+   setHistDY2762210->SetBinError(13,56.28299);
+   setHistDY2762210->SetBinError(14,45.03024);
+   setHistDY2762210->SetBinError(15,39.36107);
+   setHistDY2762210->SetBinError(16,37.90093);
+   setHistDY2762210->SetBinError(17,44.362);
+   setHistDY2762210->SetBinError(18,48.07073);
+   setHistDY2762210->SetBinError(19,40.98677);
+   setHistDY2762210->SetBinError(20,31.97071);
+   setHistDY2762210->SetBinError(21,23.69958);
+   setHistDY2762210->SetBinError(22,24.61568);
+   setHistDY2762210->SetBinError(23,23.59161);
+   setHistDY2762210->SetBinError(24,27.46559);
+   setHistDY2762210->SetBinError(25,26.26065);
+   setHistDY2762210->SetBinError(26,3.615119);
+   setHistDY2762210->SetEntries(2566);
+   setHistDY2762210->SetDirectory(0);
+
+   ci = TColor::GetColor("#3d7bea");
+   setHistDY2762210->SetFillColor(ci);
+
+   ci = TColor::GetColor("#24498c");
+   setHistDY2762210->SetLineColor(ci);
+   setHistDY2762210->SetLineWidth(2);
+   setHistDY2762210->SetMarkerStyle(20);
+   setHistDY2762210->GetXaxis()->SetNdivisions(1005);
+   setHistDY2762210->GetXaxis()->SetLabelFont(43);
+   setHistDY2762210->GetXaxis()->SetLabelOffset(0.0105);
+   setHistDY2762210->GetXaxis()->SetLabelSize(32);
+   setHistDY2762210->GetXaxis()->SetTitleSize(35);
+   setHistDY2762210->GetXaxis()->SetTickLength(0.05);
+   setHistDY2762210->GetXaxis()->SetTitleOffset(1.135);
+   setHistDY2762210->GetXaxis()->SetTitleFont(43);
+   setHistDY2762210->GetYaxis()->SetNdivisions(506);
+   setHistDY2762210->GetYaxis()->SetLabelFont(43);
+   setHistDY2762210->GetYaxis()->SetLabelOffset(0.0087);
+   setHistDY2762210->GetYaxis()->SetLabelSize(32);
+   setHistDY2762210->GetYaxis()->SetTitleSize(35);
+   setHistDY2762210->GetYaxis()->SetTitleOffset(1.32);
+   setHistDY2762210->GetYaxis()->SetTitleFont(43);
+   setHistDY2762210->GetZaxis()->SetLabelFont(43);
+   setHistDY2762210->GetZaxis()->SetLabelOffset(0.0087);
+   setHistDY2762210->GetZaxis()->SetLabelSize(32);
+   setHistDY2762210->GetZaxis()->SetTitleSize(35);
+   setHistDY2762210->GetZaxis()->SetTitleOffset(1.32);
+   setHistDY2762210->GetZaxis()->SetTitleFont(43);
+   ->Add(setHistDY27622,"HIST F");
+   Double_t xAxis9[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHistQCD_DD1644411 = new TH1F("setHistQCD_DD1644411","",26, xAxis9);
+   setHistQCD_DD1644411->SetBinContent(1,1164.502);
+   setHistQCD_DD1644411->SetBinContent(2,1922.962);
+   setHistQCD_DD1644411->SetBinContent(3,1755.595);
+   setHistQCD_DD1644411->SetBinContent(4,1911.574);
+   setHistQCD_DD1644411->SetBinContent(5,1868.712);
+   setHistQCD_DD1644411->SetBinContent(6,1813.547);
+   setHistQCD_DD1644411->SetBinContent(7,1682.749);
+   setHistQCD_DD1644411->SetBinContent(8,1534.068);
+   setHistQCD_DD1644411->SetBinContent(9,1476.83);
+   setHistQCD_DD1644411->SetBinContent(10,1305.531);
+   setHistQCD_DD1644411->SetBinContent(11,1224.55);
+   setHistQCD_DD1644411->SetBinContent(12,1113.011);
+   setHistQCD_DD1644411->SetBinContent(13,1094.539);
+   setHistQCD_DD1644411->SetBinContent(14,1063.035);
+   setHistQCD_DD1644411->SetBinContent(15,1024.279);
+   setHistQCD_DD1644411->SetBinContent(16,903.0384);
+   setHistQCD_DD1644411->SetBinContent(17,860.3957);
+   setHistQCD_DD1644411->SetBinContent(18,711.8223);
+   setHistQCD_DD1644411->SetBinContent(19,732.1145);
+   setHistQCD_DD1644411->SetBinContent(20,647.5706);
+   setHistQCD_DD1644411->SetBinContent(21,567.4876);
+   setHistQCD_DD1644411->SetBinContent(22,513.3302);
+   setHistQCD_DD1644411->SetBinContent(23,390.9957);
+   setHistQCD_DD1644411->SetBinContent(24,339.5444);
+   setHistQCD_DD1644411->SetBinContent(25,210.2049);
+   setHistQCD_DD1644411->SetBinContent(26,40.0469);
+   setHistQCD_DD1644411->SetBinError(1,35.19876);
+   setHistQCD_DD1644411->SetBinError(2,52.87341);
+   setHistQCD_DD1644411->SetBinError(3,52.81258);
+   setHistQCD_DD1644411->SetBinError(4,45.41927);
+   setHistQCD_DD1644411->SetBinError(5,48.98717);
+   setHistQCD_DD1644411->SetBinError(6,47.26314);
+   setHistQCD_DD1644411->SetBinError(7,44.808);
+   setHistQCD_DD1644411->SetBinError(8,42.35339);
+   setHistQCD_DD1644411->SetBinError(9,43.23788);
+   setHistQCD_DD1644411->SetBinError(10,38.67507);
+   setHistQCD_DD1644411->SetBinError(11,40.37774);
+   setHistQCD_DD1644411->SetBinError(12,39.19317);
+   setHistQCD_DD1644411->SetBinError(13,38.29903);
+   setHistQCD_DD1644411->SetBinError(14,36.56022);
+   setHistQCD_DD1644411->SetBinError(15,37.18467);
+   setHistQCD_DD1644411->SetBinError(16,34.85775);
+   setHistQCD_DD1644411->SetBinError(17,32.15214);
+   setHistQCD_DD1644411->SetBinError(18,31.47131);
+   setHistQCD_DD1644411->SetBinError(19,30.26411);
+   setHistQCD_DD1644411->SetBinError(20,25.91869);
+   setHistQCD_DD1644411->SetBinError(21,25.25032);
+   setHistQCD_DD1644411->SetBinError(22,23.21415);
+   setHistQCD_DD1644411->SetBinError(23,20.60578);
+   setHistQCD_DD1644411->SetBinError(24,23.26866);
+   setHistQCD_DD1644411->SetBinError(25,16.25675);
+   setHistQCD_DD1644411->SetBinError(26,6.247221);
+   setHistQCD_DD1644411->SetEntries(50318);
+   setHistQCD_DD1644411->SetDirectory(0);
+
+   ci = TColor::GetColor("#cccccc");
+   setHistQCD_DD1644411->SetFillColor(ci);
+
+   ci = TColor::GetColor("#7a7a7a");
+   setHistQCD_DD1644411->SetLineColor(ci);
+   setHistQCD_DD1644411->SetLineWidth(2);
+   setHistQCD_DD1644411->SetMarkerStyle(20);
+   setHistQCD_DD1644411->GetXaxis()->SetNdivisions(1005);
+   setHistQCD_DD1644411->GetXaxis()->SetLabelFont(43);
+   setHistQCD_DD1644411->GetXaxis()->SetLabelOffset(0.0105);
+   setHistQCD_DD1644411->GetXaxis()->SetLabelSize(32);
+   setHistQCD_DD1644411->GetXaxis()->SetTitleSize(35);
+   setHistQCD_DD1644411->GetXaxis()->SetTickLength(0.05);
+   setHistQCD_DD1644411->GetXaxis()->SetTitleOffset(1.135);
+   setHistQCD_DD1644411->GetXaxis()->SetTitleFont(43);
+   setHistQCD_DD1644411->GetYaxis()->SetNdivisions(506);
+   setHistQCD_DD1644411->GetYaxis()->SetLabelFont(43);
+   setHistQCD_DD1644411->GetYaxis()->SetLabelOffset(0.0087);
+   setHistQCD_DD1644411->GetYaxis()->SetLabelSize(32);
+   setHistQCD_DD1644411->GetYaxis()->SetTitleSize(35);
+   setHistQCD_DD1644411->GetYaxis()->SetTitleOffset(1.32);
+   setHistQCD_DD1644411->GetYaxis()->SetTitleFont(43);
+   setHistQCD_DD1644411->GetZaxis()->SetLabelFont(43);
+   setHistQCD_DD1644411->GetZaxis()->SetLabelOffset(0.0087);
+   setHistQCD_DD1644411->GetZaxis()->SetLabelSize(32);
+   setHistQCD_DD1644411->GetZaxis()->SetTitleSize(35);
+   setHistQCD_DD1644411->GetZaxis()->SetTitleOffset(1.32);
+   setHistQCD_DD1644411->GetZaxis()->SetTitleFont(43);
+   ->Add(setHistQCD_DD16444,"HIST F");
+   ->Draw("same");
+   Double_t xAxis10[27] = {-1, -0.9230769, -0.8461538, -0.7692308, -0.6923077, -0.6153846, -0.5384615, -0.4615385, -0.3846154, -0.3076923, -0.2307692, -0.1538462, -0.07692308, 0, 0.07692308, 0.1538462, 0.2307692, 0.3076923, 0.3846154, 0.4615385, 0.5384615, 0.6153846, 0.6923077, 0.7692308, 0.8461538, 0.9230769, 1}; 
+   
+   TH1F *setHistdata669312 = new TH1F("setHistdata669312","",26, xAxis10);
+   setHistdata669312->SetBinContent(1,7114);
+   setHistdata669312->SetBinContent(2,22471);
+   setHistdata669312->SetBinContent(3,18106);
+   setHistdata669312->SetBinContent(4,15940);
+   setHistdata669312->SetBinContent(5,15724);
+   setHistdata669312->SetBinContent(6,15687);
+   setHistdata669312->SetBinContent(7,15730);
+   setHistdata669312->SetBinContent(8,15579);
+   setHistdata669312->SetBinContent(9,14480);
+   setHistdata669312->SetBinContent(10,14498);
+   setHistdata669312->SetBinContent(11,13236);
+   setHistdata669312->SetBinContent(12,12924);
+   setHistdata669312->SetBinContent(13,12720);
+   setHistdata669312->SetBinError(1,84.34453);
+   setHistdata669312->SetBinError(2,149.9033);
+   setHistdata669312->SetBinError(3,134.5585);
+   setHistdata669312->SetBinError(4,126.2537);
+   setHistdata669312->SetBinError(5,125.3954);
+   setHistdata669312->SetBinError(6,125.2478);
+   setHistdata669312->SetBinError(7,125.4193);
+   setHistdata669312->SetBinError(8,124.8159);
+   setHistdata669312->SetBinError(9,120.3329);
+   setHistdata669312->SetBinError(10,120.4076);
+   setHistdata669312->SetBinError(11,115.0478);
+   setHistdata669312->SetBinError(12,113.6838);
+   setHistdata669312->SetBinError(13,112.783);
+   setHistdata669312->SetEntries(194209);
+   setHistdata669312->SetFillStyle(0);
+   setHistdata669312->SetMarkerStyle(20);
+   setHistdata669312->SetMarkerSize(1.15);
+   setHistdata669312->GetXaxis()->SetNdivisions(1005);
+   setHistdata669312->GetXaxis()->SetLabelFont(43);
+   setHistdata669312->GetXaxis()->SetLabelOffset(0.0105);
+   setHistdata669312->GetXaxis()->SetLabelSize(32);
+   setHistdata669312->GetXaxis()->SetTitleSize(35);
+   setHistdata669312->GetXaxis()->SetTickLength(0.05);
+   setHistdata669312->GetXaxis()->SetTitleOffset(1.135);
+   setHistdata669312->GetXaxis()->SetTitleFont(43);
+   setHistdata669312->GetYaxis()->SetNdivisions(506);
+   setHistdata669312->GetYaxis()->SetLabelFont(43);
+   setHistdata669312->GetYaxis()->SetLabelOffset(0.0087);
+   setHistdata669312->GetYaxis()->SetLabelSize(32);
+   setHistdata669312->GetYaxis()->SetTitleSize(35);
+   setHistdata669312->GetYaxis()->SetTitleOffset(1.32);
+   setHistdata669312->GetYaxis()->SetTitleFont(43);
+   setHistdata669312->GetZaxis()->SetLabelFont(43);
+   setHistdata669312->GetZaxis()->SetLabelOffset(0.0087);
+   setHistdata669312->GetZaxis()->SetLabelSize(32);
+   setHistdata669312->GetZaxis()->SetTitleSize(35);
+   setHistdata669312->GetZaxis()->SetTitleOffset(1.32);
+   setHistdata669312->GetZaxis()->SetTitleFont(43);
+   setHistdata669312->Draw("PESame");
+   
+   TH2F *axis55724_copy13 = new TH2F("axis55724_copy13","",50,-1,1,50,0,34452.95);
+   axis55724_copy13->SetDirectory(0);
+   axis55724_copy13->SetMarkerStyle(20);
+   axis55724_copy13->GetXaxis()->SetNdivisions(1005);
+   axis55724_copy13->GetXaxis()->SetLabelFont(43);
+   axis55724_copy13->GetXaxis()->SetLabelOffset(0.0105);
+   axis55724_copy13->GetXaxis()->SetLabelSize(0);
+   axis55724_copy13->GetXaxis()->SetTitleSize(35);
+   axis55724_copy13->GetXaxis()->SetTickLength(0.025);
+   axis55724_copy13->GetXaxis()->SetTitleOffset(1.135);
+   axis55724_copy13->GetXaxis()->SetTitleFont(43);
+   axis55724_copy13->GetYaxis()->SetTitle("Events / bin");
+   axis55724_copy13->GetYaxis()->SetNdivisions(506);
+   axis55724_copy13->GetYaxis()->SetLabelFont(43);
+   axis55724_copy13->GetYaxis()->SetLabelOffset(0.0087);
+   axis55724_copy13->GetYaxis()->SetLabelSize(32);
+   axis55724_copy13->GetYaxis()->SetTitleSize(35);
+   axis55724_copy13->GetYaxis()->SetTickLength(0.02631579);
+   axis55724_copy13->GetYaxis()->SetTitleOffset(1.32);
+   axis55724_copy13->GetYaxis()->SetTitleFont(43);
+   axis55724_copy13->GetZaxis()->SetLabelFont(43);
+   axis55724_copy13->GetZaxis()->SetLabelOffset(0.0087);
+   axis55724_copy13->GetZaxis()->SetLabelSize(32);
+   axis55724_copy13->GetZaxis()->SetTitleSize(35);
+   axis55724_copy13->GetZaxis()->SetTitleOffset(1.32);
+   axis55724_copy13->GetZaxis()->SetTitleFont(43);
+   axis55724_copy13->Draw("sameaxis");
+   
+   pt = new TPaveText(0.165,0.855,0.165,0.855,"brNDC");
+   pt->SetBorderSize(0);
+   pt->SetFillColor(0);
+   pt->SetTextAlign(11);
+   pt->SetTextFont(63);
+   pt->SetTextSize(32);
+   TText *AText = pt->AddText("CMS");
+   pt->Draw();
+   
+   pt = new TPaveText(0.265,0.855,0.265,0.855,"brNDC");
+   pt->SetBorderSize(0);
+   pt->SetFillColor(0);
+   pt->SetTextAlign(11);
+   pt->SetTextFont(53);
+   pt->SetTextSize(32);
+   AText = pt->AddText("Preliminary");
+   pt->Draw();
+   
+   pt = new TPaveText(0.165,0.79,0.165,0.79,"brNDC");
+   pt->SetBorderSize(0);
+   pt->SetFillStyle(0);
+   pt->SetTextAlign(11);
+   pt->SetTextFont(43);
+   pt->SetTextSize(32);
+   AText = pt->AddText("");
+   pt->Draw();
+   
+   pt = new TPaveText(0.74,0.94,0.74,0.94,"brNDC");
+   pt->SetBorderSize(0);
+   pt->SetFillColor(0);
+   pt->SetTextAlign(31);
+   pt->SetTextFont(43);
+   pt->SetTextSize(34);
+   AText = pt->AddText("e#kern[-0.5]{ }+#kern[-0.5]{ }2j1t, 36#kern[-0.5]{ }fb#lower[-0.7]{#scale[0.7]{-1}} (13TeV)");
+   pt->Draw();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301_2->Modified();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->cd();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->Modified();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->cd();
+   cvelectron_2j1t_bdt_tch_qcdnone_blind90301->SetSelected(cvelectron_2j1t_bdt_tch_qcdnone_blind90301);
+}
